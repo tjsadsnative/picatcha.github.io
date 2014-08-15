@@ -1,8 +1,289 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<title>AdsNaitve Native Ad API</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<style type="text/css">
+		.logo { width: 40px; margin-top: -5px; margin-right: 10px; }
+		#main-content {  }
+		.bs-component { margin-top: 30px; }
+		.panel-primary .panel-heading a { color: white; }
+		.panel-body ul { padding: 0; list-style: none; }
+		.sidebar-nav {
+		  position: fixed;
+		  z-index: 1000;
+		  transition: all 0.4s ease 0s;
+		}
+	</style>
 </head>
 <body>
-	<h1>API</h1>
+	<div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand"><img src="/img/email-logo.png" class="logo">AdsNative Technical Documentation</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://adsnative.com/" target="_blank">AdsNative.com &#8594;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="main-content">
+
+      <div class="page-header">
+        <div class="row">
+          <div class="col-lg-3 col-md-5 col-sm-6">
+            <div class="bs-component sidebar-nav">
+	              <div class="panel panel-default">
+	                <div class="panel-body">
+	                  <a href="/">Home</a>
+	                </div>
+
+	              </div>
+
+	              <div class="panel panel-primary">
+	                <div class="panel-heading"><a href="/api/">API Documentation</a></div>
+	               	<div class="panel-body">
+	               		<ul>
+		                  <li><a href="#json">Native Ad JSON</a></li>
+		                  <li><a href="#formatted-json">Native Ad JSON with Formatted HTML</a></li>
+		                </ul>
+	                </div>
+	              </div>
+
+	             <!--  <div class="panel panel-default">
+	                <div class="panel-heading"><a href="/js-sdk/">JS SDK</a></div>
+	              </div>
+
+	              <div class="panel panel-default">
+	                <div class="panel-heading"><a href="/ios-sdk/">iOS SDK</a></div>
+	              </div>
+
+	              <div class="panel panel-default">
+	                <div class="panel-heading"><a href="/android-sdk/">Android SDK</a></div>
+	              </div>
+
+	              <div class="panel panel-default">
+	                <div class="panel-heading"><a href="/js-sdk/">AdsNative Native RTB</a></div>
+	              </div> -->
+
+	            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+            </div>
+
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-6">
+          	<h2>AdsNaitve Native Ad API</h2>
+          	<div class="details"><p>Welcome to the AdsNative API documentation.</p>
+
+			<h3>Terms of Use</h3>
+
+			<p>This is our public-facing API documentation, but it's still subject to the 
+			overall Terms of Use for Adsnative.com. The AdsNative APIs are owned by AdsNative and are licensed to you on a 
+			worldwide  (except as otherwise limited limited below), non-exclusive, non-sublicenseable, revocable basis on the terms 
+			and conditions set forth by AdsNative. These Terms of Use define legal use of the AdsNative APIs, all updates, 
+			revisions, substitutions, and any derivative works made by or for you. All rights not expressly granted to you are 
+			reserved by AdsNative.</p>
+
+			<h3>Base URL</h3>
+
+			<pre>http://api.adsnative.com</pre>
+
+			<h3>Allowed HTTPs requests:</h3>
+
+			<pre>GET    :   List resource/s</pre>
+
+			<h3>Description Of Usual Server Responses</h3>
+			<div class="highlight">
+				<pre>200: <strong>OK</strong> - Request successful (some API calls may return 201, though)
+201: <strong>Created</strong> - Request successful,resource was created
+204: <strong>No Content</strong> - Request successful but with nothing to return (i.e. response empty)
+400: <strong>Bad Request</strong> - Request could not be understood or was missing required parameters.
+401: <strong>Unauthorized</strong> - Authentication failed or user doesn't have permissions for requested operation.
+403: <strong>Forbidden</strong> - Access denied.
+404: <strong>Not Found</strong> - Resource  not found
+405: <strong>Method Not Allowed</strong> - requested method is not supported for resource.
+503: <strong>Service Unavailable</strong> - Exceeded your rate limit</pre>
+			</div>
+
+			<h3>HTTPS / SSL</h3>
+			<p>Just make an https:// call instead of http:// and you're all set.</p>
+
+			<h3>JSON & JSONP Response Format</h3>
+			<p>v1 only supports a single format, JSON. JSONP is also officially supported, just add a callback parameter to your request and the response will be encapsulated in the value you specified.</p>
+
+			<h3>Request Rate Limiting</h3>
+			<p>We do not currently enforce a rate limit</p>
+
+			<h3>Support</h3>
+			<p>Please treat this little site as a living document. If you have any inquiries or feature requests, please contact 
+			developers@adsnative.com for a prompt reply.</p>
+			</div>
+
+			<a id="json"></a>
+			<h3>Native Ad JSON</h3>
+			<p>
+			The following is a section of resources related to displaying our advertising units
+			</p>
+			<p>
+			List a single ad unit for an ad-zone placement on your website. 
+			</p>	
+
+			<pre> GET /ad.json </pre>
+
+			<h4>Required Parameters</h4>
+			<table style="width: 100%; margin: 12px 0 0 0;" class="table">
+			<tbody>
+			<tr><td style="width: 140px;"><b>zid</b></td><td>This is the ad placement token that can be found in your <a href="http://console.adsnative.com/placements/">dashboard</a></td></tr>
+			<tr><td style="width: 140px;"></td><td></td></tr>
+			</tbody>
+			</table>
+
+			<h4>Optional Parameters<h4>
+			<table style="width: 100%; margin: 12px 0 0 0;" class="table">
+			<tbody>
+			<tr><td style="width: 140px;"><b>ip</b></td><td>client's ipaddress to be used for city, region or country targeting</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>ua</b></td><td>client's user agent</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>al</b></td><td>client's accept-language settings (e.g. 'en-us') to be used for language specific targeting</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>uuid</b></td><td>client's unique identifier to be used for frequency capping. AdsNative will attempt to set a uuid value in a cookie if parameter is not passed.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>kw</b></td><td>keyword targeting</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>cat</b></td><td>category targeting</td><td></td></tr>
+			</tbody>
+			</table>
+
+			<h4>Response<h4>
+			<table style="width: 100%; margin: 12px 0 0 0;" class="table">
+			<tbody>
+			<tr><td style="width: 140px;"><b>status</b></td><td>The status of the ad response. Returns 'OK' when a valid ad is present.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>count</b></td><td>Number of native ads returned.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>type</b></td><td>content type of the native ad. It's either 'story' or 'video'.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>title</b></td><td>title of the native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>summary</b></td><td>summary part of the native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>imageSrc</b></td><td>URL of the image attached with native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>embedUrl</b></td><td>Returns the IFRAME embed code of a video player, in case the 'type' of the ad is 'video'. This embed code video works on all platforms. For native, platforms it need to be wrapped in a Web View.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>url</b></td><td>click URL for the whole native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>target</b></td><td>after click action for the native ad. If it's '_blank', it should be opened in new window/view. If it's '_parent' or empty, it should be opened in the same window/view.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>backgroundColor</b></td><td>Background color value set in Adsnative Dashboard for the ad unit. This allows you to control the background color of the ad unit from AdsNative Dashboard. You can choose to ignore this value</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>brandImageUrl</b></td><td>URL of the brand image/logo.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>promotedBy</b></td><td>Name of the brand promoting the content.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>promotedByTag</b></td><td>Prefix for the brand name configured in AdsNative Dashboard for the current ad unit. For e.g. 'Promoted by' or 'Sponsored by'. </td><td></td></tr>
+			<tr><td style="width: 140px;"><b>promotedByUrl</b></td><td>click URL that needs to be called in case user clicks on either brand name or brand image.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>trackingTags</b></td><td>tags for tracking impression and third-party tracking. These are typically image or script tags that can droppped anywhere in the web page or in case of native platforms, within a 1x1 Web View. If you are looking for an alternative method for your platform, please contact AdsNative team for more options.</td><td></td></tr>
+			</tbody>
+			</table>
+
+			<h4>Example Response<h4>
+			<pre>
+<code>{
+	"<strong>ad</strong>": {
+	    "<strong>backgroundColor</strong>": "#fefff2",
+	    "<strong>brandImageUrl</strong>": "http://dev-www.adsnative.com/media/brand_images/1/82cc86ad-9070-4b90-9006-1fbca6697694.jpg",
+	    "<strong>embedUrl</strong>": "http://api.adsnative.com/v1/creative.html?crid=xyz&sid=sid123",
+	    "<strong>imageSrc</strong>": "http://files-www2.adsnative.com/media/1/xyz.jpg",
+	    "<strong>promotedBy</strong>": "Tesla",
+	    "<strong>promotedByTag</strong>": "Promoted by",
+	    "<strong>promotedByUrl</strong>": "http://api.adsnative.com/v1/ad.click?u=http%3A%2F%2Fxyz.com%2F&sid=sid123",
+	    "<strong>summary</strong>": "Tesla teased electric motorheads earlier this week by announcing an event that would show off its curious battery swapping system...",
+	    "<strong>target</strong>": "_parent",
+	    "<strong>title</strong>": "Tesla Shows Off A 90-Second Battery Swap System, Wants It At Supercharging Stations By Year's End",
+	    "<strong>trackingTags</strong>": "<img src=\"http://dev-api.adsnative.com/v1/log/impression.gif?crid=LFGRP9OI&sid=tnqvzhb71xh8da4349n1myyhhkp4k8r3\" BORDER=0 WIDTH=1 HEIGHT=1>",
+	    "<strong>type</strong>": "story",
+	    "<strong>url</strong>": "http://api.adsnative.com/v1/ad.click?u=http%3A%2F%2Fxyz.com%2F&sid=sid123"
+	},
+	"<strong>cid</strong>": "cid123",
+	"<strong>count</strong>": 1,
+	"<strong>crid</strong>": "crid123",
+	"<strong>sid</strong>": "sid123",
+	"<strong>status</strong>": "OK",
+	"<strong>uuid</strong>": "uuid123",
+	"<strong>zid</strong>": "ping"
+}</code>
+			</pre>
+
+			<a id="formatted-json"></a>
+			<h3>Native Ad JSON with Formatted HTML</h3>
+			<p>Ad JSON call to get formatted html to render native ad</p>
+
+			<pre> GET /ad-template.json </pre>
+
+			<h4>Required Parameters</h4>
+			<table style="width: 100%; margin: 12px 0 0 0;" class="table">
+			<tbody>
+			<tr><td style="width: 140px;"><b>zid</b></td><td>This is the ad placement token that can be found in your <a href="http://console.adsnative.com/placements/">dashboard</a></td></tr>
+			<tr><td style="width: 140px;"></td><td></td></tr>
+			</tbody>
+			</table>
+
+			<h4>Optional Parameters<h4>
+			<table style="width: 100%; margin: 12px 0 0 0;" class="table">
+			<tbody>
+			<tr><td style="width: 140px;"><b>ip</b></td><td>client's ipaddress to be used for city, region or country targeting</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>ua</b></td><td>client's user agent</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>al</b></td><td>client's accept-language settings (e.g. 'en-us') to be used for language specific targeting</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>uuid</b></td><td>client's unique identifier to be used for frequency capping. AdsNative will attempt to set a uuid value in a cookie if parameter is not passed.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>kw</b></td><td>keyword targeting</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>cat</b></td><td>category targeting</td><td></td></tr>
+			</tbody>
+			</table>
+
+			<h4>Response<h4>
+			<table style="width: 100%; margin: 12px 0 0 0;" class="table">
+			<tbody>
+			<tr><td style="width: 140px;"><b>status</b></td><td>The status of the ad response. Returns 'OK' when a valid ad is present.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>count</b></td><td>Number of native ads returned.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>type</b></td><td>content type of the native ad. It's either 'story' or 'video'.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>title</b></td><td>title of the native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>summary</b></td><td>summary part of the native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>imageSrc</b></td><td>URL of the image attached with native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>embedUrl</b></td><td>Returns the IFRAME embed code of a video player, in case the 'type' of the ad is 'video'. This embed code video works on all platforms. For native, platforms it need to be wrapped in a Web View.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>url</b></td><td>click URL for the whole native ad.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>target</b></td><td>after click action for the native ad. If it's '_blank', it should be opened in new window/view. If it's '_parent' or empty, it should be opened in the same window/view.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>backgroundColor</b></td><td>Background color value set in Adsnative Dashboard for the ad unit. This allows you to control the background color of the ad unit from AdsNative Dashboard. You can choose to ignore this value</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>brandImageUrl</b></td><td>URL of the brand image/logo.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>promotedBy</b></td><td>Name of the brand promoting the content.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>promotedByTag</b></td><td>Prefix for the brand name configured in AdsNative Dashboard for the current ad unit. For e.g. 'Promoted by' or 'Sponsored by'. </td><td></td></tr>
+			<tr><td style="width: 140px;"><b>promotedByUrl</b></td><td>click URL that needs to be called in case user clicks on either brand name or brand image.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>trackingTags</b></td><td>tags for tracking impression and third-party tracking. These are typically image or script tags that can droppped anywhere in the web page or in case of native platforms, within a 1x1 Web View. If you are looking for an alternative method for your platform, please contact AdsNative team for more options.</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>style</b></td><td>Additional CSS styling which should be inserted in HEAD tags of html</td><td></td></tr>
+			<tr><td style="width: 140px;"><b>html</b></td><td>The formatted HTML which should be inserted where the native ad is to be displayed</td><td></td></tr>
+			</tbody>
+			</table>
+
+			<h4>Example Response<h4>
+
+			<pre>
+<code>{
+    "<strong>ad</strong>": {
+        "<strong>backgroundColor</strong>": "#fefff2",
+        "<strong>brandImageUrl</strong>": "http://dev-www.adsnative.com/media/brand_images/1/82cc86ad-9070-4b90-9006-1fbca6697694.jpg",
+        "<strong>embedUrl</strong>": "http://api.adsnative.com/v1/creative.html?crid=xyz&sid=sid123",
+        "<strong>imageSrc</strong>": "http://files-www2.adsnative.com/media/1/xyz.jpg",
+        "<strong>promotedBy</strong>": "Tesla",
+        "<strong>promotedByTag</strong>": "Promoted by",
+        "<strong>promotedByUrl</strong>": "http://api.adsnative.com/v1/ad.click?u=http%3A%2F%2Fxyz.com%2F&sid=sid123",
+        "<strong>summary</strong>": "Tesla teased electric motorheads earlier this week by announcing an event that would show off its curious battery swapping system...",
+        "<strong>target</strong>": "_parent",
+        "<strong>title</strong>": "Tesla Shows Off A 90-Second Battery Swap System, Wants It At Supercharging Stations By Year's End",
+        "<strong>trackingTags</strong>": "<img src=\"http://dev-api.adsnative.com/v1/log/impression.gif?crid=LFGRP9OI&sid=tnqvzhb71xh8da4349n1myyhhkp4k8r3\" BORDER=0 WIDTH=1 HEIGHT=1>",
+        "<strong>type</strong>": "story",
+        "<strong>url</strong>": "http://api.adsnative.com/v1/ad.click?u=http%3A%2F%2Fxyz.com%2F&sid=sid123",
+        "<strong>style</strong>": "body { margin:0px; text-align:left !important; }\n#adsnative-story { display:block; margin:0; width:290px; height:230px; padding:10px 5px; font-family:Helvetica, Arial, sans-serif; }\n#adsnative-profile-pic { float:left; margin-right:5px; }\n#adsnative-profile-pic img { border:2px solid #DDD; }\n#adsnative-content { float:left; width:240px; text-align:left; }\n#adsnative-content h2 { margin:0; padding0; text-align:left !important; }\n#adsnative-content h2 a { font-size:14px; color:#000; text-decoration:none; text-align:left !important; }\n#adsnative-content p { font-size:14px;  color:#333; margin:5px 0; text-align:left !important; }\n#adsnative-content label.adsnative-author { font-size:12px; color:#999; }\n#adsnative-video { margin:10px 0 20px 47px; }\ndiv.adsnative-powered-by { margin: -10px 25px  auto auto !important; }",
+        "<strong>html</strong>": "&lt;div id=\&quot;adsnative-story\&quot;&gt;\n\t&lt;div id=\&quot;adsnative-profile-pic\&quot;&gt;\n\t\t&lt;img src=\&quot;//static.adsnative.com/media/877/74f345a3-09f4-4633-bebf-c3b487cd28fc.jpg\&quot; class=\&quot;\&quot; width=\&quot;38\&quot; height=\&quot;38\&quot; style=\&quot;\&quot; /&gt;\n\t&lt;/div&gt;\n\t&lt;div id=\&quot;adsnative-content\&quot;&gt;\n\t\t&lt;h2&gt;&lt;a href=\&quot;http://api.adsnative.com/v1/ad.click?sid=mbf3mciudn3aj1jhlqut44y9yey5gxuj\&quot; target=\&quot;_parent\&quot; class=\&quot;\&quot; style=\&quot;\&quot;&gt;DIOR SUMMER 2014 - The &#39;Transat&#39; Look - Application Secrets&lt;/a&gt;&lt;/h2&gt;\n\t\t&lt;p class=\&quot;\&quot; style=\&quot;\&quot;&gt;More on: http://bit.ly/1khr2tD As Dior&#39;s International Make-up Designer, Violette lets us in on her secrets for the Transat look. Subscribe to Dior YouTube Channel : http://bit.ly/RSW5RW&lt;/p&gt;  \n\t\t&lt;label class=\&quot;adsnative-author\&quot; style=\&quot;\&quot;&gt;Promoted by Dior&lt;/label&gt; \n\t&lt;/div&gt; \n\t&lt;div class=\&quot;adsnative-reset\&quot;&gt;&lt;/div&gt;\n\t&lt;div id=\&quot;adsnative-video\&quot;&gt;&lt;iframe src=\&quot;http://api.adsnative.com/v1/creative.html?crid=X1Y5YAQJ&amp;sid=mbf3mciudn3aj1jhlqut44y9yey5gxuj\&quot; class=\&quot;\&quot; style=\&quot;border: none; \&quot; width=\&quot;220\&quot; height=\&quot;140\&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\n\t&lt;div class=\&quot;adsnative-reset\&quot;&gt;&lt;/div&gt;\n&lt;/div&gt;",
+    },
+    "<strong>cid</strong>": "cid123",
+    "<strong>count</strong>": 1,
+    "<strong>crid</strong>": "crid123",
+    "<strong>sid</strong>": "sid123",
+    "<strong>status</strong>": "OK",
+    "<strong>uuid</strong>": "uuid123",
+    "<strong>zid</strong>": "ping"
+}</code>
+</pre>
+
+          </div>
+        </div>
+      </div>
+
+      </div>
 </body>
 </html>
