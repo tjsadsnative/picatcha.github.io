@@ -1,19 +1,8 @@
 <html>
 <head>
 	<title>AdsNative Technical Documentation</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<style type="text/css">
-		.logo { width: 40px; margin-top: -5px; margin-right: 10px; }
-		#main-content {  }
-		.bs-component { margin-top: 30px; }
-		.panel-primary .panel-heading a { color: white; }
-		.panel-body ul { padding: 0; list-style: none; }
-		.sidebar-nav {
-		  position: fixed;
-		  z-index: 1000;
-		  transition: all 0.4s ease 0s;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/general.min.css">
 </head>
 <body>
 	<div class="navbar navbar-default">
@@ -33,21 +22,37 @@
 
       <div class="page-header">
         <div class="row">
-          <div class="col-lg-3 col-md-5 col-sm-6">
+          <div class="col-lg-3 col-md-3 col-sm-3">
             <div class="bs-component">
-	              <div class="panel panel-primary">
+	              <div class="panel panel-default">
 	                <div class="panel-body">
 	                  <a href="/">Home</a>
 	                </div>
+
 	              </div>
 
 	              <div class="panel panel-default">
 	                <div class="panel-heading"><a href="/api/">API Documentation</a></div>
+	               	<div class="panel-body">
+	               		<ul>
+		                  <li><a href="#json">Native Ad JSON</a></li>
+		                  <li><a href="#formatted-json">Native Ad JSON with Formatted HTML</a></li>
+		                </ul>
+	                </div>
 	              </div>
 
-	              <!-- <div class="panel panel-default">
+	             <div class="panel panel-default">
 	                <div class="panel-heading"><a href="/js-sdk/">JS SDK</a></div>
+	                <div class="panel-body">
+	               		<ul>
+		                  <li><a href="#generalized-js">'Generalized' RenderJS</a></li>
+		                  <li><a href="#effective-js">Making RenderJS Effective</a></li>
+		                  <li><a href="#advanced-js-api">RenderJS Advanced API</a></li>
+		                </ul>
+	                </div>
 	              </div>
+
+	              <!-- 
 
 	              <div class="panel panel-default">
 	                <div class="panel-heading"><a href="/ios-sdk/">iOS SDK</a></div>
@@ -65,7 +70,7 @@
             </div>
 
           </div>
-          <div class="col-lg-8 col-md-7 col-sm-6">
+          <div class="col-lg-8 col-md-8 col-sm-8">
           	<h3>AdsNative Technical Documentation</h3>
             <p class="lead">Welcome to AdsNative Technical Documentations. AdsNative is full-stack platform for native advertisement.</p>
           </div>

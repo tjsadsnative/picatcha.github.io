@@ -2,18 +2,7 @@
 <head>
 	<title>AdsNaitve Native Ad API</title>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	<style type="text/css">
-		.logo { width: 40px; margin-top: -5px; margin-right: 10px; }
-		#main-content {  }
-		.bs-component { margin-top: 30px; }
-		.panel-primary .panel-heading a { color: white; }
-		.panel-body ul { padding: 0; list-style: none; }
-		.sidebar-nav {
-		  position: fixed;
-		  z-index: 1000;
-		  transition: all 0.4s ease 0s;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/css/general.min.css">
 </head>
 <body>
 	<div class="navbar navbar-default">
@@ -33,7 +22,7 @@
 
       <div class="page-header">
         <div class="row">
-          <div class="col-lg-3 col-md-5 col-sm-6">
+          <div class="col-lg-3 col-md-3 col-sm-3">
             <div class="bs-component sidebar-nav">
 	              <div class="panel panel-default">
 	                <div class="panel-body">
@@ -42,7 +31,7 @@
 
 	              </div>
 
-	              <div class="panel panel-primary">
+	              <div class="panel panel-default">
 	                <div class="panel-heading"><a href="/api/">API Documentation</a></div>
 	               	<div class="panel-body">
 	               		<ul>
@@ -52,11 +41,18 @@
 	                </div>
 	              </div>
 
-	             <!--  <div class="panel panel-default">
+	             <div class="panel panel-primary">
 	                <div class="panel-heading"><a href="/js-sdk/">JS SDK</a></div>
+	                <div class="panel-body">
+	               		<ul>
+		                  <li><a href="#generalized-js">'Generalized' RenderJS</a></li>
+		                  <li><a href="#effective-js">Making RenderJS Effective</a></li>
+		                  <li><a href="#advanced-js-api">RenderJS Advanced API</a></li>
+		                </ul>
+	                </div>
 	              </div>
 
-	              <div class="panel panel-default">
+	              <!--  <div class="panel panel-default">
 	                <div class="panel-heading"><a href="/ios-sdk/">iOS SDK</a></div>
 	              </div>
 
@@ -72,9 +68,9 @@
             </div>
 
           </div>
-          <div class="col-lg-8 col-md-7 col-sm-6">
-          	<h2>AdsNaitve Native Ad API</h2>
-          	<div class="details"><p>Welcome to the AdsNative API documentation.</p>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+          	<h2>AdsNative Native Ad API</h2>
+          	<p>Welcome to the AdsNative API documentation.</p>
 
 			<h3>Terms of Use</h3>
 
@@ -118,7 +114,6 @@
 			<h3>Support</h3>
 			<p>Please treat this little site as a living document. If you have any inquiries or feature requests, please contact 
 			developers@adsnative.com for a prompt reply.</p>
-			</div>
 
 			<a id="json"></a>
 			<h3>Native Ad JSON</h3>
