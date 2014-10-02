@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Adsnative Developer Center - iOS SDK</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6675472/719942/css/fonts.css" />
+
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/assets/js/modernizr.js"></script>
+</head>
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src=/assets/img/landing-brand-small.png></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <!-- <li ><a href="/blog/">Nerds</a></li> -->
+        <li ><a target="_blank" href="http://docs.adsnative.com/api_reference/">API</a></li>
+        <li ><a href="/sdk/">SDK & Integrations</a></li>
+        <li ><a href="/guides/">Placement Guides</a></li>
+       <!--  <li ><a href="/contact/">Code Samples</a></li> -->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+            <div id="blue">
+    <div class="container">
+        <div class="row">
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+<div class="container mtb">
+    <div class="row">
+        <div id="nav-sidebar" class="col-lg-3 hidden-xs hidden-sm">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <h4>API</h4>
+    <ul class="docs-nav">
+        <li>
+            <a target="_blank" href="http://docs.adsnative.com/api_reference/">Full API Documentation <small class="glyphicon glyphicon-share"></small></a>
+        </li>
+    </ul>
+    <h4>SDK & Integrations</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="/sdk/generalized-render-js">Javascript SDK</a>
+        </li>
+        <li>
+            <a href="/sdk/js-api/"> - Javascript API Docs</a>
+        </li>
+        <li>
+            <a href="/sdk/generalized-render-js"> - Generalized Render JS</a>
+        </li>
+        <!-- <li>
+            <a href=""> - Making Render JS Calls</a>
+        </li> -->
+        <li>
+            <a href="/sdk/ios-sdk">iOS SDK</a>
+        </li>
+        <li>
+            <a href="/sdk/android-sdk">Android SDK</a>
+        </li>
+    </ul>
+    <h4>Placement Guides</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="/guides/placement-setup">Placement Creations Basics</a>
+        </li>
+        <li>
+            <a href="/guides/markup-language">Native Markup Language</a>
+        </li>
+        <li>
+            <a href="/guides/css-path">CSS Path Guide</a>
+        </li>
+    </ul>
+    <div class="spacing"></div>
+</div>
+        <! -- SINGLE POST -->
+        <div class="col-lg-9">
+            <! -- Blog Post  -->
+            <!-- <p><img class="img-responsive" src="/assets/img/blog/"></p> -->
+
+            <!-- <a href="/sdk/ios-sdk"><h3 class="ctitle">iOS SDK</h3></a>   -->
+            <h1 id="ios-sdk"><strong>iOS SDK</strong></h1>
+
+<h2 id="download">Download</h2>
+
+<p><a href="https://github.com/picatcha/AdsNative-iOS-SDK/archive/master.zip">ZIP File</a></p>
+
+<h3 id="installing-adsnative-in-your-xcode-project">Installing AdsNative in your XCode project</h3>
+
+<p>Step 1. Clone the git repository into your desired folder. </p>
+
+<p><code>git clone git@github.com:picatcha/AdsNative-iOS-SDK.git</code></p>
+
+<p>OR </p>
+
+<p>Download the zip by clicking on the button shown on right of the Github page.</p>
+
+<p>Step 2. Drag and drop “AdsNative” folder from the repository into your project’s root folder.</p>
+
+<p><code>![alt text](https://s3.amazonaws.com/adsnative-public/images/add-folder.png "")</code></p>
+
+<p>Step 3. Check “Copy items…”, select “Create groups for..” and “Finish”.</p>
+
+<p><code>![alt text](https://s3.amazonaws.com/adsnative-public/images/copy-project.png "")</code></p>
+
+<p>Step 4. It should look something like this…</p>
+
+<p><code>![alt text](https://s3.amazonaws.com/adsnative-public/images/final.png "")</code></p>
+
+<p>Step 5. Under “Targets -&gt; Build Phases”, add the <code>AdSupport.Framework</code>.</p>
+
+<pre><code>![alt text](https://s3.amazonaws.com/adsnative-public/images/add-frameworks.png "")
+
+![alt text](https://s3.amazonaws.com/adsnative-public/images/lookup.png "")
+</code></pre>
+
+<p>Step 6. Repeat the process for <code>SystemConfiguration.Framework</code>.</p>
+
+<h4 id="using-adsnative-apis">Using AdsNative APIs</h4>
+
+<p>Step 7. Add <code>#import "Adsnative.h"</code> in your header file whenever you plan to use AdsNative. </p>
+
+<p>Step 8. Create an ANAdRequest object, initializing it with the zone ID provided to you. You will have to pass this object to most of the requests you make to AdsNative.</p>
+
+<pre><code>ANAdRequest *request = [ANAdRequest requestWithAdUnitID:@"INSERT-YOUR-ZONE-ID-HERE"];
+</code></pre>
+<p>Step 9. Request that sponsored content make a call to the following non-blocking function:</p>
+
+<pre><code>[ANSponsoredStory loadRequest:request
+  onSuccess:^(ANSponsoredStory *story) {
+        NSLog(@"Title: %@", story.title);
+    }
+  onError:^(NSError *error) {
+        // Oops ad request was not successful
+    }];
+</code></pre>
+
+<p>Step 10. Please note that when you create UIView or any UIView based class using the information provided by the above ANSponsoredStory object, you will have to attach that view to the ANSponsoredStory object. The same is true for ViewController or the native browser used by the app to open the sponsored content. This allows AdsNative track various events occuring on the sponsored content. </p>
+
+<p>The following code snippet shows an example of code that can be used in a table view:</p>
+
+<pre><code>- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([[news objectAtIndex:indexPath.row] isKindOfClass:[ANSponsoredStory class]]) {
+        ANSponsoredStory *sponsoredStory = [news objectAtIndex:indexPath.row];
+        //Configure the ANSponsoredStory on select/tap action here.
+        HandleSelectBlock handleSelectBlock = ^(){
+            //Begin: Your code - Open the full content view of your choice
+            NSLog(@"click handler in block");
+            SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:sponsoredStory.url];
+            [self presentModalViewController:webViewController animated:YES];
+            //End: Your code
+            
+            //This line is important and should be called in all cases except for video ads. Pass the full content view as an argument
+            if([sponsoredStory.type  isEqual: @"story"]){
+                [sponsoredStory attachFullContentToView:webViewController.view];
+            }
+        };
+        [sponsoredStory attachToView:cell onSelect:handleSelectBlock];
+    }
+}
+</code></pre>
+
+<p>Notice that the user click/tap handler also needs to be passed to the attachToView function, which will handle the user’s tap event and take your desired action - typically opening a native browser.</p>
+
+<p>You can look at the TestApplication provided in the project for a detailed example and instructions on how to best use the AdsNative SDK.</p>
+
+
+            <div class="spacing"></div>
+            <p><csmall>Last Updated: Sep 24, 2014. | By: Dhawal Mujumdar</csmall></p>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-9 -->
+    </div><! --/row -->
+</div><! --/container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script>
+// Portfolio
+(function($) {
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+    </body>
+</html>

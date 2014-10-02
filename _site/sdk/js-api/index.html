@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Adsnative Developer Center - RenderJS Advanced API</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6675472/719942/css/fonts.css" />
+
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/assets/js/modernizr.js"></script>
+</head>
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src=/assets/img/landing-brand-small.png></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <!-- <li ><a href="/blog/">Nerds</a></li> -->
+        <li ><a target="_blank" href="http://docs.adsnative.com/api_reference/">API</a></li>
+        <li ><a href="/sdk/">SDK & Integrations</a></li>
+        <li ><a href="/guides/">Placement Guides</a></li>
+       <!--  <li ><a href="/contact/">Code Samples</a></li> -->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+            <div id="blue">
+    <div class="container">
+        <div class="row">
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+<div class="container mtb">
+    <div class="row">
+        <div id="nav-sidebar" class="col-lg-3 hidden-xs hidden-sm">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <h4>API</h4>
+    <ul class="docs-nav">
+        <li>
+            <a target="_blank" href="http://docs.adsnative.com/api_reference/">Full API Documentation <small class="glyphicon glyphicon-share"></small></a>
+        </li>
+    </ul>
+    <h4>SDK & Integrations</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="/sdk/generalized-render-js">Javascript SDK</a>
+        </li>
+        <li>
+            <a href="/sdk/js-api/"> - Javascript API Docs</a>
+        </li>
+        <li>
+            <a href="/sdk/generalized-render-js"> - Generalized Render JS</a>
+        </li>
+        <!-- <li>
+            <a href=""> - Making Render JS Calls</a>
+        </li> -->
+        <li>
+            <a href="/sdk/ios-sdk">iOS SDK</a>
+        </li>
+        <li>
+            <a href="/sdk/android-sdk">Android SDK</a>
+        </li>
+    </ul>
+    <h4>Placement Guides</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="/guides/placement-setup">Placement Creations Basics</a>
+        </li>
+        <li>
+            <a href="/guides/markup-language">Native Markup Language</a>
+        </li>
+        <li>
+            <a href="/guides/css-path">CSS Path Guide</a>
+        </li>
+    </ul>
+    <div class="spacing"></div>
+</div>
+        <! -- SINGLE POST -->
+        <div class="col-lg-9">
+            <! -- Blog Post  -->
+            <!-- <p><img class="img-responsive" src="/assets/img/blog/"></p> -->
+
+            <!-- <a href="/sdk/js-api"><h3 class="ctitle">RenderJS Advanced API</h3></a>   -->
+            <h1 id="javascript-api-docs"><strong>Javascript API Docs</strong></h1>
+
+<p>In some advanced cases, you may not want AdsNative RenderJS to handle automatic ad rendering (such as infinite scrolling, or if you want to show the native ad on certain user actions, etc.). In this case, you may want to circumvent the RenderJS default behavior. </p>
+
+<p>Insert the following tag in the HEAD section of your webpage. By doing this, RenderJS will not fetch or render any native ads until explicitly called by given functions. Please also note that you need to include the below code before using any of the given function calls.</p>
+
+<pre><code>&lt;!-- Begin ADSNATIVE Code --&gt;
+&lt;script type="text/javascript"&gt;
+var _AdsNativeOpts = {
+    blockAdLoad: true
+};
+&lt;/script&gt;
+&lt;script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"&gt;&lt;/script&gt;
+&lt;!-- End ADSNATIVE Code --&gt;
+</code></pre>
+
+<h3 id="prefetch-native-ad">Prefetch Native Ad</h3>
+
+<p>You can choose to prefetch the native ad from the AdsNative server for a given ad unit before the document is ready, as well as before you are ready to render the ad. This way there will not be any latency for network requests, and the ad will be for ready for rendering when it needs to be.</p>
+
+<p>All the calls to the API are handled through ‘_AdsNative’ object.</p>
+
+<pre><code>var keywords = []
+_AdsNative.fetchAds(['YOUR_PLACEMENT_KEY-1', 'YOUR_PLACEMENT_KEY-2'], keywords, function(status, apiKey){
+    if(status){ //if a native ad is returned
+
+    }
+});
+</code></pre>
+
+<p>Above is an example of the ‘fetchAds’ function, which will call all available arguments. You can fetch multiple placements, and specify current page keywords for keyword targeting. Notice that you can also provide a callback for the event that the ad request is finished. The callback function provides ‘status’ and ‘apiKey’ as arguments. ‘status’ is a boolean value which indicates whether there is an ad returned for a current request. Depending on the result, you can take an action. apiKey gives an indication to which placement the call is for. The callback is then returned for each placement.</p>
+
+<h3 id="display-native-ad">Display Native Ad</h3>
+
+<p>Once the ad is prefetched you can choose to display that native ad at the desired event. For example in the case of infinite scroll, you may want to display it when the user scrolls down. Or you may want to show it when the second page shows up, etc. You can use the ‘displayAd’ function to show an ad for a placement.</p>
+
+<pre><code>_AdsNative.displayAd('YOUR_PLACEMENT_KEY-1', 'native-ad-element-id')
+</code></pre>
+
+<p>You need to specify the API key of the placement that needs to be displayed, and then the ID of the element in which the native ad should be displayed. This ‘native-ad-element-id’ element should be an empty div because when the displayAd in included, this element will be replaced by the native ad.</p>
+
+<h3 id="complete-example">Complete Example</h3>
+
+<p>The following is a complete example, which uses all of the above functions. It is a simple example, where ads get displayed immediately once the page is ready.</p>
+
+<pre><code>&lt;html&gt;
+	&lt;head&gt;
+	&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id="an-ad-abc"&gt;&lt;/div&gt;
+	&lt;div id="an-ad-xyz"&gt;&lt;/div&gt;
+
+	&lt;!-- Begin ADSNATIVE Code --&gt;
+	&lt;script type="text/javascript"&gt;
+	var _AdsNativeOpts = {
+	    blockAdLoad: true
+	};
+	&lt;/script&gt;
+	&lt;script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"&gt;&lt;/script&gt;
+	&lt;!-- End ADSNATIVE Code --&gt;
+
+	&lt;script type="text/javascript"&gt;
+	_AdsNative.fetchAds(['abc', 'xyz'], ['sports', 'autos'], function(status, apiKey){
+	    if(status){ //if a native ad is returned
+	        $(document).ready(function(){
+	             _AdsNative.displayAd(apiKey, 'an-ad-'+apiKey)
+	        });
+	    }
+	});
+	&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+            <div class="spacing"></div>
+            <p><csmall>Last Updated: Sep 24, 2014. | By: Dhawal Mujumdar</csmall></p>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-9 -->
+    </div><! --/row -->
+</div><! --/container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script>
+// Portfolio
+(function($) {
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+    </body>
+</html>

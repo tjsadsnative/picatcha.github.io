@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Adsnative Developer Center - CSS Path Guide</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6675472/719942/css/fonts.css" />
+
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/assets/js/modernizr.js"></script>
+</head>
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src=/assets/img/landing-brand-small.png></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <!-- <li ><a href="/blog/">Nerds</a></li> -->
+        <li ><a target="_blank" href="http://docs.adsnative.com/api_reference/">API</a></li>
+        <li ><a href="/sdk/">SDK & Integrations</a></li>
+        <li ><a href="/guides/">Placement Guides</a></li>
+       <!--  <li ><a href="/contact/">Code Samples</a></li> -->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+            <div id="blue">
+    <div class="container">
+        <div class="row">
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+<div class="container mtb">
+    <div class="row">
+        <div id="nav-sidebar" class="col-lg-3 hidden-xs hidden-sm">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <h4>API</h4>
+    <ul class="docs-nav">
+        <li>
+            <a target="_blank" href="http://docs.adsnative.com/api_reference/">Full API Documentation <small class="glyphicon glyphicon-share"></small></a>
+        </li>
+    </ul>
+    <h4>SDK & Integrations</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="/sdk/generalized-render-js">Javascript SDK</a>
+        </li>
+        <li>
+            <a href="/sdk/js-api/"> - Javascript API Docs</a>
+        </li>
+        <li>
+            <a href="/sdk/generalized-render-js"> - Generalized Render JS</a>
+        </li>
+        <!-- <li>
+            <a href=""> - Making Render JS Calls</a>
+        </li> -->
+        <li>
+            <a href="/sdk/ios-sdk">iOS SDK</a>
+        </li>
+        <li>
+            <a href="/sdk/android-sdk">Android SDK</a>
+        </li>
+    </ul>
+    <h4>Placement Guides</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="/guides/placement-setup">Placement Creations Basics</a>
+        </li>
+        <li>
+            <a href="/guides/markup-language">Native Markup Language</a>
+        </li>
+        <li>
+            <a href="/guides/css-path">CSS Path Guide</a>
+        </li>
+    </ul>
+    <div class="spacing"></div>
+</div>
+        <! -- SINGLE POST -->
+        <div class="col-lg-9">
+            <! -- Blog Post  -->
+            <!-- <p><img class="img-responsive" src="/assets/img/blog/"></p> -->
+
+            <!-- <a href="/guides/css-path"><h3 class="ctitle">CSS Path Guide</h3></a>   -->
+            <h1 id="css-path-guide"><strong>CSS Path Guide</strong></h1>
+<p>AdsNative follows its own format by specifying the CSS Path to simplify and optimize native ad injections.</p>
+
+<p>Check out this example:
+<code>#div-id &gt; div.class:eq(0) &gt; div.class2:eq(2)</code></p>
+
+<p>Here are some basic rules to follow:<br />
+  1. Start by listing the outermost elements from left to right.<br />
+  2. AdsNative will insert the placement just before the element for which you configure the CSS Path - unless you have <code>:after</code> after the last element, in which case it will insert it after the element. For example, <code>#div-id &gt; div.class:eq(0) &gt; div.class2:eq(2):after</code> will output the placement after the given element.<br />
+  3. Each div element relation is separated with  ` &gt; <code>. (Leaving a blank space before and after is part of the syntax, and the cssPath follows a strict syntax.)  </code> &gt; ` means ‘child of’.<br />
+  4. If you are specifying an element with its ID, specify it as <code>#element-id-string</code>. In this case, do not specify the element name.<br />
+  5. If you are specifying an element by class name, specify the element name followed by <code>.</code>, class name, and the index of the element, as there can be multiple elements within a given class name. Example <code>div.class:eq(0)</code><br />
+  6. If you want to specify just an element name, you can specify it as <code>element-name:eq(0)</code></p>
+
+<p>A few examples of valid CSS Paths:<br />
+  1. <code>#content &gt; ul.main:eq(0) &gt; li:eq(0)</code><br />
+  2. <code>#content &gt; ul.main:eq(0) &gt; li:eq(10)</code><br />
+  3. <code>#content</code><br />
+  4. <code>#content:after</code><br />
+  5. <code>ul.main-content:eq(0) &gt; li:eq(10)</code></p>
+
+<p>A few examples of invalid CSS Paths:<br />
+  1. <code>#content&gt;ul.main:eq(0) &gt; li:eq(0)</code> (no spaces)<br />
+  2. <code>#content:eq(0) &gt; li.post:eq(0)</code> (:eq(0) for element name with ID)<br />
+  3. <code>div#content &gt; li:eq(10)</code> (div element name in css path)<br />
+  4. <code>#content &gt; ul.main &gt; li:eq(10)</code> (no index specified for ul)</p>
+
+<p>Try to specify the shortest css path whenever possible. Which basically means - try to use the nearest element with an ID, and then work downwards. Element name search takes the longest, then element with class name, and element with div id is the fastest.</p>
+
+
+            <div class="spacing"></div>
+            <p><csmall>Last Updated: Sep 24, 2014. | By: Dhawal Mujumdar</csmall></p>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-9 -->
+    </div><! --/row -->
+</div><! --/container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script>
+// Portfolio
+(function($) {
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+    </body>
+</html>
