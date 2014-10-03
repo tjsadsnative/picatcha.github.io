@@ -1,3 +1,15 @@
+---
+layout: post
+title: "OpenRTB Spec"
+folder: "SDKs & Integrations"
+date: 2014-09-24
+author: Brad Thorson
+categories: 
+- sdk 
+img: ""
+thumb: ""
+excerpt: "AdsNative OpenRTB Native Ad Specs"
+---
 #AdsNative OpenRTB Native Ad Specs
 
 ##Overview
