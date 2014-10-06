@@ -2,7 +2,7 @@
 layout: post
 title: "OpenRTB Spec"
 folder: "SDKs & Integrations"
-date: 2014-09-24
+date: 2014-10-02
 author: Brad Thorson
 categories: 
 - sdk 
@@ -10,17 +10,17 @@ img: ""
 thumb: ""
 excerpt: "AdsNative OpenRTB Native Ad Specs"
 ---
-#AdsNative OpenRTB Native Ad Specs
+#**AdsNative OpenRTB Native Ad Specs**
 
 ##Overview
 
-1. AdsNative receives a request on page load 
-2. AdsNative Exchange makes bid requests via a JSON HTTP POST to our bidding partners endpoints
-3. AdsNative Exchange uses DSI (demand source integration) technology to award the impression to one of the following sources at the second highest price:
-  1. Adsnative Marketplace
-  2. Direct Sold campaigns via AdsNative Platform
-  3. Bidders on AdsNative Exchange(you)
-4. If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the url you have specified in “nurl” with all OpenRTB 2.2 macros replaced
+a. AdsNative receives a request on page load 
+b. AdsNative Exchange makes bid requests via a JSON HTTP POST to our bidding partners endpoints
+c. AdsNative Exchange uses DSI (demand source integration) technology to award the impression to one of the following sources at the second highest price:
+  c.1. Adsnative Marketplace
+  c.2. Direct Sold campaigns via AdsNative Platform
+  c.3. Bidders on AdsNative Exchange(you)
+d. If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the url you have specified in “nurl” with all OpenRTB 2.2 macros replaced
 
 ---
 
