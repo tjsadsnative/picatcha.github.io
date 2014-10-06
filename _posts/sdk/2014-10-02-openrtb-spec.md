@@ -14,13 +14,13 @@ excerpt: "AdsNative OpenRTB Native Ad Specs"
 
 ##Overview
 
-a. AdsNative receives a request on page load 
-b. AdsNative Exchange makes bid requests via a JSON HTTP POST to our bidding partners endpoints
-c. AdsNative Exchange uses DSI (demand source integration) technology to award the impression to one of the following sources at the second highest price:
-  c.1. Adsnative Marketplace
-  c.2. Direct Sold campaigns via AdsNative Platform
-  c.3. Bidders on AdsNative Exchange(you)
-d. If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the url you have specified in “nurl” with all OpenRTB 2.2 macros replaced
+1. AdsNative receives a request on page load 
+2. AdsNative Exchange makes bid requests via a JSON HTTP POST to our bidding partners endpoints
+3. AdsNative Exchange uses DSI (demand source integration) technology to award the impression to one of the following sources at the second highest price:
+  1. Adsnative Marketplace
+  2. Direct Sold campaigns via AdsNative Platform
+  3. Bidders on AdsNative Exchange(you)
+4. If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the url you have specified in “nurl” with all OpenRTB 2.2 macros replaced
 
 ---
 
@@ -28,7 +28,7 @@ d. If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the
 
 The RTB request will mainly stay the same for native ads with the following changes:
 
-1. In Impression Object, a new type of object will be sent called as ‘Native Object’ which has the information related to given native ad placement, which is included in ‘ext’ field of impression object. The object fields are as follows,
+In Impression Object, a new type of object will be sent called as ‘Native Object’ which has the information related to given native ad placement, which is included in ‘ext’ field of impression object. The object fields are as follows,
 
 ### 1.1 Native Object
 
