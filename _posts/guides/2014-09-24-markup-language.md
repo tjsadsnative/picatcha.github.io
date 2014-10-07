@@ -10,13 +10,13 @@ img: ""
 thumb: ""
 excerpt: "Native Markup Language helps you to build native placements for your site"
 ---
-# **AdsNative Markup Language**
+# AdsNative Markup Language
 
 Note: Tags follow strict syntax. If a space or comma is off, it will throw an error.
 Additionally, all variable values, except booleans, need to be in quotations.
 
 
-## **Ad Content Information**
+## Ad Content Information
 
 ### Post Title
 
@@ -63,7 +63,7 @@ will be rendered as:
 | resize | boolean | `false` | Will set the image as a background-img of a div and crop it to specified dimentions |
 
 
-## **Brand Information**
+## Brand Information
 
 ### Brand Image
 
@@ -95,11 +95,11 @@ will be rendered as:
 | prefix | Boolean | `true` | Add prefix such as 'Promoted by' and then brand name |
 
 
-## **Post Click Behavior**
+## Post Click Behavior
 
 ### Post Click URL
 
-### {% raw %} {{ post_url() }} {% endraw %}
+#### {% raw %} {{ post_url() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
