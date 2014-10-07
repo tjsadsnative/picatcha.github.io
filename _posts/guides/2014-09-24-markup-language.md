@@ -24,7 +24,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 Example:
 
-{% raw %} `{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}` {% endraw %}
+`{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}`
 
 will be rendered as:
 
@@ -41,7 +41,7 @@ will be rendered as:
 
 ### Post Summary
 
-#### {% raw %}{{ post_summary() }}{% endraw %}
+#### {{ post_summary() }}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -51,7 +51,7 @@ will be rendered as:
 
 ###Feature Image
 
-#### {% raw %}{{ feature_image() }}{% endraw %}
+#### {{ feature_image() }}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -67,7 +67,7 @@ will be rendered as:
 
 ### Brand Image
 
-#### {% raw %}{{ brand_image() }}{% endraw %}
+#### {{ brand_image() }}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -82,7 +82,7 @@ will be rendered as:
 
 ### Brand Name 
 
-#### {% raw %}{{ post_author() }}{% endraw %}
+#### {{ post_author() }}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -99,7 +99,7 @@ will be rendered as:
 
 ### Post Click URL
 
-#### {% raw %} {{ post_url() }} {% endraw %}
+#### {{ post_url() }}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
