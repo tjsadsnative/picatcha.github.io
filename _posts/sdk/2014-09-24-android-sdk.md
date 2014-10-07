@@ -26,7 +26,7 @@ excerpt: "AdsNative Android SDK documentation and links"
 
 Open the build.gradle file and edit your dependencies to include the new .jar file:
 
-```
+```Groovy
 #!groovy
 dependencies {
     compile files('libs/AdsNativeAndroidSDK.jar')
@@ -48,7 +48,7 @@ Go to *Project > Properties > Java Build Path > Libraries > Add external Jar* an
 
 **3.** Add permissions to your *AndroidManifest.xml* file:
 
-```
+```XML
 #!xml
 
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />   
@@ -57,7 +57,7 @@ Go to *Project > Properties > Java Build Path > Libraries > Add external Jar* an
 
 **4.** Add WebViewActivity to your *AndroidManifest.xml* file:
 
-```
+```XML
 #!xml
 
 <activity android:name="com.adsnative.android.sdk.WebViewActivity"
@@ -72,7 +72,7 @@ Go to *Project > Properties > Java Build Path > Libraries > Add external Jar* an
 
 We tried to make this as simple as possible. All you have to do is create an array of integers containing positions of sponsored stories in a ListView. Then create new *AdsNativeListAdapter*.
 
-```
+```Java
 #!java
 
 int[] sponsoredStoryPositions = {0, 4, 13, 69};
@@ -96,7 +96,7 @@ We use SponsoredStoryController to fetch and manage our SponsoredStory.
 Method getSponsoredStoryView( ... ) also sets time and impression logging listeners.
 
 
-```
+```Java
 #!java
 
 SponsoredStoryController sponsoredStoryController = new SponsoredStoryController(getBaseContext());
@@ -125,7 +125,7 @@ sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListene
 #### Put SponsoredStory at the bottom of the screen. ####
 
 
-```
+```Java
 #!java
 
 RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.my_activty_relative_layout);
@@ -153,7 +153,7 @@ sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListene
 
 Adding a session ID tag to the developer's custom View is obligatory in order to protect from render conflicts.
 
-```
+```Java
 #!java
 
 //textView is a child of relativeLayout
@@ -180,7 +180,7 @@ sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListene
 
 Adding session ID tag to the developer's custom View is obligatory, in order to protect from render conflicts.
 
-```
+```Java
 #!java
 
 RelativeLayout mParent = (RelativeLayout) findViewById(R.id.my_activity_main_relative_layout);
@@ -208,7 +208,7 @@ sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListene
 XML file:
 
 
-```
+```XML
 #!xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/my_activity_main_relative_layout"
