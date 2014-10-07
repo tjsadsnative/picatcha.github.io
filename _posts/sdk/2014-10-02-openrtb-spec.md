@@ -110,7 +110,7 @@ viewtracker|recommended|array of strings|-|Array of video view tracking URLs— 
 
 ## 3. OpenRTB Example Request
 
-```
+```JSON
 {
    "id":"1234567890",
    "tmax":120,
@@ -190,7 +190,7 @@ viewtracker|recommended|array of strings|-|Array of video view tracking URLs— 
 
 ## 4. OpenRTB Example Response
 
-```
+```JSON
 {
    "id":"1234567890",
    "seatbid":[
