@@ -17,8 +17,8 @@ The following are default ad tags provided by AdsNative, which will automaticall
 
 ```
 <!-- Begin ADSNATIVE Code -->
-	<script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js">
-	</script>
+  <script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js">
+  </script>
 <!-- End ADSNATIVE Code -->
 ```
 
@@ -34,9 +34,9 @@ In this option you can insert the following tags directly into the location wher
 
 ```
 <body>
-	<div id=“native-adzone-1”></div>
+  <div id=“native-adzone-1”></div>
 
-	<div id=“native-adzone-2”></div>
+  <div id=“native-adzone-2”></div>
 </body>
 ```
 
@@ -44,11 +44,11 @@ If latency is still an issue, you can insert the following tags directly into th
 
 ```
 <!-- Begin ADSNATIVE Code -->
-	<script type="text/javascript">
-		var _AdsNativeOpts = {
-			'zid': '<ADZONE_KEY>',
-		};
-	</script>
-	<script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"></script>
+  <script type="text/javascript">
+    var _AdsNativeOpts = {
+      'zid': '<ADZONE_KEY>',
+    };
+  </script>
+  <script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"></script>
 <!-- End ADSNATIVE Code -->
 ````
