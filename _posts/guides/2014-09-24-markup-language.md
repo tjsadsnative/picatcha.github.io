@@ -20,7 +20,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ### Post Title
 
-#### {% raw %} {{ post_title() }} {% endraw %}
+#### {{ post_title() }}
 
 Example:
 
