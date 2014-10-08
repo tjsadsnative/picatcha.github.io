@@ -37,7 +37,9 @@ Additionally, all variable values, except booleans, need to be in quotations.
 | --- | --- |
 | `{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}` |   |
 
-
+```
+Test code block
+```
 
 ### Post Summary
 
