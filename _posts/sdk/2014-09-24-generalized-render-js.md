@@ -12,7 +12,7 @@ excerpt: "AdsNative uses RenderJS to render native ads"
 ---
 # **'Generalized' RenderJS** (default behavior)
 
-The following are default ad tags provided by AdsNative, which will automatically render configured placements or native ads in the correct location on the intended pages. It is called "Generalized" RenderJS because you can use the same piece of code for any placement and site domain you have, making it easier for publishers to install the tags on their sites. Insert the following tags in your webpage in `<head>` section of your site (i.e. just before `</head>` tag).
+The following are default ad tags provided by AdsNative, which will automatically render configured placements or native ads in the correct location on the intended pages. It is called "Generalized" RenderJS because you can use the same piece of code for any placement and site domain you have, making it easier for publishers to install the tags on their sites. Best practice it to insert the following tag at the bottom of your webpage as the first script in the footer.
 
 
 ```HTML
