@@ -34,8 +34,8 @@ Additionally, all variable values, except booleans, need to be in quotations.
 ##### Examples
 
 Example1: <br>
-`{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}` 
-<br>
+```{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}```
+<br><br>
 will be rendered as:
 
 
