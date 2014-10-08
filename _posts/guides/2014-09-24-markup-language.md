@@ -35,7 +35,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
-| `Javascript{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}` | `<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>` |
+| ```Javascript{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}``` | `<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>` |
 |`{{ post_title(class="testclass", style="line-height: 1em;") }}`|`<a href="http://ad_link" target="_blank" class="testclass" style="line-height: 1em;">Native Ad Title <div class="adsnative-icon-external-link"></div></a>`|
 
 ### Post Summary
