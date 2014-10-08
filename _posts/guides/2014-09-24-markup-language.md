@@ -33,10 +33,10 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ##### Examples
 
-`{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}`
+{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}
 
 will be rendered as:
-`<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>`
+<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>
 
 ### Post Summary
 
