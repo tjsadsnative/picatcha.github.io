@@ -37,9 +37,10 @@ Additionally, all variable values, except booleans, need to be in quotations.
 | --- | --- |
 | {% raw %} {{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} {% endraw %} | `<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>` |
 
+
 ### Post Summary
 
-#### {{ post_summary() }}
+#### {% raw %} {{ post_summary() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -56,7 +57,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ###Feature Image
 
-#### {{ feature_image() }}
+#### {% raw %} {{ feature_image() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -78,7 +79,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ### Brand Image
 
-#### {{ brand_image() }}
+#### {% raw %} {{ brand_image() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -98,7 +99,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ### Brand Name 
 
-#### {{ post_author() }}
+#### {% raw %} {{ post_author() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -120,7 +121,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ### Post Click URL
 
-#### {{ post_url() }}
+#### {% raw %} {{ post_url() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
