@@ -36,8 +36,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 `{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}`
 
 will be rendered as:
-`<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>` |
-|`{{ post_title(class="testclass", style="line-height: 1em;") }}`|`<a href="http://ad_link" target="_blank" class="testclass" style="line-height: 1em;">Native Ad Title <div class="adsnative-icon-external-link"></div></a>`
+`<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>`
 
 ### Post Summary
 
