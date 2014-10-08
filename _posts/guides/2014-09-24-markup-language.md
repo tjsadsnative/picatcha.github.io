@@ -32,7 +32,7 @@ will be rendered as:
 
 | Name | Type  | Default | Description | Example |
 | --- | --- | --- | --- | --- |
-| class | String | `null` | Class applied to the `<a>` tag | `{{ post_title(classs="testclass") }}`<br>`<a href="http://ad_link" target="_blank" class="testclass" style="">Creative Title</a> |
+| class | String | `null` | Class applied to the `<a>` tag | `{{ post_title(classs="testclass") }}`<br>`<a href="http://ad_link" target="_blank" class="testclass" style="">Creative Title</a>` |
 | style | CSS | `null` | CSS styling applied to the `<a>` tag |
 | a | Boolean | `true` | Hyperlinks the element |
 | h | String | `null` | Specify the h element of the title |
