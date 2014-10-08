@@ -95,7 +95,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
-
+|   |   |
 
 ### Brand Name 
 
@@ -115,7 +115,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
-
+|   |   |
 
 ## Post Click Behavior
 
@@ -131,3 +131,4 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
+|   |   |
