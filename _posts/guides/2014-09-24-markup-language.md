@@ -36,6 +36,10 @@ Additionally, all variable values, except booleans, need to be in quotations.
 | Syntax | Rendered HTML  |
 | --- | --- |
 | `{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}` | `<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>` |
+|`{{ post_title(h="h1", h_class="post-title") }}`|`<a href="http://ad_link” target="_blank" class="" style="">
+<h1 class="post-title" style="">
+Ad Title
+</h1></a>`|
 
 ### Post Summary
 
