@@ -33,7 +33,11 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ##### Examples
 
-{% raw %} `{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}` {% endraw %}
+Example1: <br>
+`{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}` 
+<br>
+will be rendered as:
+
 
 ### Post Summary
 
