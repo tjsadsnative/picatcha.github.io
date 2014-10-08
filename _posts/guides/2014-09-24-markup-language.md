@@ -31,7 +31,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 | h_class | String | `null` | Class applied to the h element of the title |
 | h_style | CSS | `null` | Specify the h element of the title |
 
-##### Examples
+### Examples
 | Syntax | Rendered HTML |
 
 
