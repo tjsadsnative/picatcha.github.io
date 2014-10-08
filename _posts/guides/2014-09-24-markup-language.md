@@ -30,8 +30,8 @@ will be rendered as:
 
 `<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>`
 
-| Name | Type  | Default | Description |
-| --- | --- | --- | --- |
+| Name | Type  | Default | Description | Example |
+| --- | --- | --- | --- | --- |
 | class | String | `null` | Class applied to the `<a>` tag |
 | style | CSS | `null` | CSS styling applied to the `<a>` tag |
 | a | Boolean | `true` | Hyperlinks the element |
@@ -43,8 +43,8 @@ will be rendered as:
 
 #### {{ post_summary() }}
 
-| Name | Type  | Default | Description |
-| --- | --- | --- | --- |
+| Name | Type  | Default | Description | Example |
+| --- | --- | --- | --- | --- |
 | class | String | `null` | Class applied to the element tag |
 | style | CSS | `null` | CSS styling applied to the element tag |
 | tagName | String | `null` | Specifies the element tag, otherwise it is injected as a raw test |
@@ -53,8 +53,8 @@ will be rendered as:
 
 #### {{ feature_image() }}
 
-| Name | Type  | Default | Description |
-| --- | --- | --- | --- |
+| Name | Type  | Default | Description | Example |
+| --- | --- | --- | --- | --- |
 | class | String | `null` | Class applied to the `<img>` tag |
 | style | CSS | `null` | CSS styling applied to the `<img>` tag |
 | a | Boolean | `false` | Hyperlinks the element |
@@ -69,8 +69,8 @@ will be rendered as:
 
 #### {{ brand_image() }}
 
-| Name | Type  | Default | Description |
-| --- | --- | --- | --- |
+| Name | Type  | Default | Description | Example |
+| --- | --- | --- | --- | --- |
 | class | String | `null` | Class applied to the `<img>` tag |
 | style | CSS | `null` | CSS styling applied to the `<img>` tag |
 | a | Boolean | `false` | Hyperlinks the element |
@@ -84,8 +84,8 @@ will be rendered as:
 
 #### {{ post_author() }}
 
-| Name | Type  | Default | Description |
-| --- | --- | --- | --- |
+| Name | Type  | Default | Description | Example |
+| --- | --- | --- | --- | --- |
 | class | String | `null` | Class applied to the element tag |
 | style | CSS | `null` | CSS styling applied to the element tag |
 | tagName | String | `null` | Specifies the element tag, otherwise injected as raw test |
@@ -101,6 +101,6 @@ will be rendered as:
 
 #### {{ post_url() }}
 
-| Name | Type  | Default | Description |
-| --- | --- | --- | --- |
+| Name | Type  | Default | Description | Example |
+| --- | --- | --- | --- | -- |
 | a | Boolean | `true` | Hyperlinks the element |
