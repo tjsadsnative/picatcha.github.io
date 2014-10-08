@@ -41,24 +41,35 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 #### {{ post_summary() }}
 
-| Name | Type  | Default | Description | Example |
-| --- | --- | --- | --- | --- |
+| Name | Type  | Default | Description |
+| --- | --- | --- | --- |
 | class | String | `null` | Class applied to the element tag |
 | style | CSS | `null` | CSS styling applied to the element tag |
 | tagName | String | `null` | Specifies the element tag, otherwise it is injected as a raw test |
+
+##### Examples
+
+| Syntax | Rendered HTML  |
+| --- | --- |
+
 
 ###Feature Image
 
 #### {{ feature_image() }}
 
-| Name | Type  | Default | Description | Example |
-| --- | --- | --- | --- | --- |
+| Name | Type  | Default | Description |
+| --- | --- | --- | --- |
 | class | String | `null` | Class applied to the `<img>` tag |
 | style | CSS | `null` | CSS styling applied to the `<img>` tag |
 | a | Boolean | `false` | Hyperlinks the element |
 | a_class | String | `null` | Class assigned to the hyperlink |
 | a_style | CSS | `null` | CSS styling applied to the hyperlink |
 | resize | boolean | `false` | Will set the image as a background-img of a div and crop it to specified dimentions |
+
+##### Examples
+
+| Syntax | Rendered HTML  |
+| --- | --- |
 
 
 ## Brand Information
@@ -67,8 +78,8 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 #### {{ brand_image() }}
 
-| Name | Type  | Default | Description | Example |
-| --- | --- | --- | --- | --- |
+| Name | Type  | Default | Description |
+| --- | --- | --- | --- |
 | class | String | `null` | Class applied to the `<img>` tag |
 | style | CSS | `null` | CSS styling applied to the `<img>` tag |
 | a | Boolean | `false` | Hyperlinks the element |
@@ -77,13 +88,18 @@ Additionally, all variable values, except booleans, need to be in quotations.
 | width | String | `null` | Specifies the width of the brand image |
 | height | String | `null` | Specifies the height of the brand image |
 
+##### Examples
+
+| Syntax | Rendered HTML  |
+| --- | --- |
+
 
 ### Brand Name 
 
 #### {{ post_author() }}
 
-| Name | Type  | Default | Description | Example |
-| --- | --- | --- | --- | --- |
+| Name | Type  | Default | Description |
+| --- | --- | --- | --- |
 | class | String | `null` | Class applied to the element tag |
 | style | CSS | `null` | CSS styling applied to the element tag |
 | tagName | String | `null` | Specifies the element tag, otherwise injected as raw test |
@@ -92,6 +108,11 @@ Additionally, all variable values, except booleans, need to be in quotations.
 | a_style | CSS | `null` | CSS styling applied to the hyperlink |
 | prefix | Boolean | `true` | Add prefix such as 'Promoted by' and then brand name |
 
+##### Examples
+
+| Syntax | Rendered HTML  |
+| --- | --- |
+
 
 ## Post Click Behavior
 
@@ -99,6 +120,11 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 #### {{ post_url() }}
 
-| Name | Type  | Default | Description | Example |
-| --- | --- | --- | --- | -- |
+| Name | Type  | Default | Description |
+| --- | --- | --- | --- |
 | a | Boolean | `true` | Hyperlinks the element |
+
+##### Examples
+
+| Syntax | Rendered HTML  |
+| --- | --- |
