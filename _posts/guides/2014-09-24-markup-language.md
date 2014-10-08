@@ -35,7 +35,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
-|`{{ post_title() }}`|`<h2 class=large_title style=color:#fff;>Native Ad Title</h2>`|
+|{{ post_title() }}|<h2 class=large_title style=color:#fff;>Native Ad Title</h2>|
 |`a`|
 
 ### Post Summary
