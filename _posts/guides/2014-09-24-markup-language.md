@@ -35,11 +35,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
-| {% raw %} {{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} {% endraw %} |   |
-
-```
-{% raw %} {{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} {% endraw %}
-```
+| {% raw %} {{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} {% endraw %} | `<h2 class="large_title" style="color:#fff;">Native Ad Title</h2>` |
 
 ### Post Summary
 
