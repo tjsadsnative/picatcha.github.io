@@ -14,7 +14,7 @@ excerpt: "Native Markup Language helps you to build native placements for your s
 
 Note: Tags follow strict syntax. If a space or comma is off, it will throw an error.
 Additionally, all variable values, except booleans, need to be in quotations.
-
+`{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}`
 
 ## Ad Content Information
 
@@ -23,7 +23,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 #### {% raw %} {{ post_title() }} {% endraw %}
 Example1: 
 
-`{{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }}`
+
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
