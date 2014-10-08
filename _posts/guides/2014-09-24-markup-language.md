@@ -51,6 +51,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
+|   |   |
 
 
 ###Feature Image
@@ -70,6 +71,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 | Syntax | Rendered HTML  |
 | --- | --- |
+|   |   |
 
 
 ## Brand Information
