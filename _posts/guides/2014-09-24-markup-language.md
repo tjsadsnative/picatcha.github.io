@@ -54,7 +54,8 @@ AdsNative Markup:
 
 Rendered HTML tag:
 ```
-<a href="http://ad_link" target="_blank" class="testclass" style="line-height: 1em;">Native Ad Title <div class="adsnative-icon-external-link"></div></a>
+<a href="http://ad_link" target="_blank" class="testclass" style="line-height: 1em;">
+Native Ad Title <div class="adsnative-icon-external-link"></div></a>
 ```
 
 
