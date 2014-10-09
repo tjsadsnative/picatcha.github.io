@@ -33,13 +33,14 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 #### Examples
 
-##### Example 1
-AdsNative Markup:
+ Example 1 <br>
+
+AdsNative Markup: 
 ```
 {% raw %} {{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} {% endraw %}
 ```
 
-Will be rendered as:
+Rendered HTML tag:
 ```
 <h2 class="large_title" style="color:#fff;">Native Ad Title</h2>
 ```
