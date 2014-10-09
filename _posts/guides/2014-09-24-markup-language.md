@@ -45,6 +45,17 @@ Rendered HTML tag:
 <h2 class="large_title" style="color:#fff;">Native Ad Title</h2>
 ```
 
+ Example 2 <br>
+
+AdsNative Markup: 
+```
+{% raw %} {{ post_title(class="testclass", style="line-height: 1em;") }} {% endraw %}
+```
+
+Rendered HTML tag:
+```
+<a href="http://ad_link" target="_blank" class="testclass" style="line-height: 1em;">Native Ad Title <div class="adsnative-icon-external-link"></div></a>
+```
 
 
 ### Post Summary
