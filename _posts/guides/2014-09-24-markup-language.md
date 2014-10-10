@@ -124,19 +124,3 @@ Rendered HTML tag:
 | Syntax | Rendered HTML  |
 | --- | --- |
 |   |   |
-
-## Post Click Behavior
-
-### Post Click URL
-
-#### {% raw %} {{ post_url() }} {% endraw %}
-
-| Name | Type  | Default | Description |
-| --- | --- | --- | --- |
-| a | Boolean | `true` | Hyperlinks the element |
-
-##### Examples
-
-| Syntax | Rendered HTML  |
-| --- | --- |
-|   |   |
