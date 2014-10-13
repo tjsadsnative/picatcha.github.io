@@ -49,7 +49,7 @@ Rendered HTML tag:
  
 AdsNative Markup: 
 ```
-{{ post_title(class="testclass", style="line-height: 1em;") }}
+{% raw %} {{ post_title(class="testclass", style="line-height: 1em;") }} {% endraw %}
 ```
 
 Rendered HTML tag:
