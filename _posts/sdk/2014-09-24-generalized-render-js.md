@@ -30,9 +30,11 @@ The optimal way to set up RenderJS to manage all your native inventory is to pla
 
 ```HTML
 <body>
+  <div class="article" id="story-1">
   <div id=“native-adzone-1”></div>
-
+  <div class="article" id="story-2">
   <div id=“native-adzone-2”></div>
+  <div class="article" id="story-3">
 </body>
 ```
 
