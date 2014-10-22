@@ -69,13 +69,6 @@ Ad Title
 | style | CSS | `null` | CSS styling applied to the element tag |
 | tagName | String | `null` | Specifies the element tag, otherwise it is injected as a raw test |
 
-##### Examples
-
-| Syntax | Rendered HTML  |
-| --- | --- |
-|   |   |
-
-
 ###Feature Image
 
 #### {% raw %} {{ feature_image() }} {% endraw %}
@@ -88,13 +81,6 @@ Ad Title
 | a_class | String | `null` | Class assigned to the hyperlink |
 | a_style | CSS | `null` | CSS styling applied to the hyperlink |
 | resize | boolean | `false` | Will set the image as a background-img of a div and crop it to specified dimentions |
-
-##### Examples
-
-| Syntax | Rendered HTML  |
-| --- | --- |
-|   |   |
-
 
 ## Brand Information
 
@@ -112,12 +98,6 @@ Ad Title
 | width | String | `null` | Specifies the width of the brand image |
 | height | String | `null` | Specifies the height of the brand image |
 
-##### Examples
-
-| Syntax | Rendered HTML  |
-| --- | --- |
-|   |   |
-
 ### Brand Name 
 
 #### {% raw %} {{ post_author() }} {% endraw %}
@@ -131,9 +111,3 @@ Ad Title
 | a_class | String | `null` | Class assigned to the hyperlink |
 | a_style | CSS | `null` | CSS styling applied to the hyperlink |
 | prefix | Boolean | `true` | Add prefix such as 'Promoted by' and then brand name |
-
-##### Examples
-
-| Syntax | Rendered HTML  |
-| --- | --- |
-|   |   |
