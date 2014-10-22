@@ -5783,3 +5783,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+blockquote{
+  border:none;
+}

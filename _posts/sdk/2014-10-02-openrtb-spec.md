@@ -10,16 +10,16 @@ img: ""
 thumb: ""
 excerpt: "AdsNative OpenRTB Native Ad Specs"
 ---
-#**AdsNative OpenRTB Native Ad Specs**
+# **AdsNative OpenRTB Native Ad Specs**
 
-##Overview
+## Overview
 
 1. AdsNative receives a request on page load 
 2. AdsNative Exchange makes bid requests via a JSON HTTP POST to our bidding partners endpoints
 3. AdsNative Exchange uses DSI (demand source integration) technology to award the impression to one of the following sources at the second highest price:
-  1. Adsnative Marketplace
-  2. Direct Sold campaigns via AdsNative Platform
-  3. Bidders on AdsNative Exchange(you)
+	a. Adsnative Marketplace
+	b. Direct Sold campaigns via AdsNative Platform
+	c. Bidders on AdsNative Exchange(you)
 4. If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the url you have specified in “nurl” with all OpenRTB 2.2 macros replaced
 
 ---
@@ -45,7 +45,7 @@ media|recommended|object|-|Defines the asset requirements for ‘media’ (video
 brandname|recommended|object|-|Defines the asset requirements for ‘brandname’’ (video or image) field. See table 1.1.2
 ctatext|recommended|object|-|Defines the asset requirements for ‘ctatext’ (video or image) field. See table 1.1.2
 
-####1.1.1 Ad Unit Types (Field: atype)
+#### 1.1.1 Ad Unit Types (Field: atype)
 
 Defined by the IAB Native Playbook - http://www.iab.net/media/file/IAB-Native-Advertising-Playbook2.pdf
 
@@ -59,13 +59,13 @@ Value | Name | Notes
 5|In ad native|Native placement inside IAB standard ad unit
 6|Custom|”Can’t Be Contained” 
 
-####1.1.2 Title/Excerpt/Brand-name/ctatext Object
+#### 1.1.2 Title/Excerpt/Brand-name/ctatext Object
 
 Field | Scope | Type | Default | Description
 ---|---|---|---|---
 length|recommended|integer|140|Maximum length that can be displayed in the ctatext ﬁeld. If bidder supplies text that’s longer, text may be truncated when it’s displayed.
 
-####1.1.3 Media/Icon Object
+#### 1.1.3 Media/Icon Object
 
 Field | Scope | Type | Default | Description
 ---|---|---|---|---
@@ -79,7 +79,7 @@ maxwidth|optional|integer|-|Maximum width of the main image or video in pixels. 
 
 The RTB Response for a native ad only differs from the typical RTB 2.x response in a few ways:
 
-1. adm: creative is passed as JSON in the “ext.admjson” object rather than passed in adm.
+>  - adm: creative is passed as JSON in the “ext.admjson” object rather than passed in adm.
 
 ### 2.1 Bid Object
 
