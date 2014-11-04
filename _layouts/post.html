@@ -5,8 +5,7 @@ layout: default
 {% include wrap.html %}
 
 <div class="container mtb">
-    <div class="row">
-        {% include sidebar.html %}
+    <div class="row" data-spy="scroll" data-target="#nav-sidebar">
         <! -- SINGLE POST -->
         <div class="col-lg-9">
             <! -- Blog Post  -->
@@ -25,5 +24,6 @@ layout: default
                 <a href="#"><i class="fa fa-google-plus"></i></a>		 		
             </p> -->
         </div><! --/col-lg-9 -->
+        {% include sidebar.html %}
     </div><! --/row -->
 </div><! --/container -->
