@@ -7,10 +7,9 @@
 <script src="{{ "/assets/js/jquery.isotope.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/assets/js/custom.js" | prepend: site.baseurl }}"></script>
 <script>
+//Attachin scrollspy to nav
+$('body').scrollspy({ target: '.nav-sidebar' });
 (function($) {
-	//Attachin Affix to side nav
-	$('#sidebar-ul').affix({});
-
 	//Eanabling mooth scrolling
 	$('a[href*=#]:not([href=#])').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

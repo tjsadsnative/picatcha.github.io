@@ -585,6 +585,9 @@ csmall {
 	list-style: none; 
 	margin-bottom: 0px; 
 }
+#nav-sidebar .docs-nav li.active a{
+	font-weight: 600;
+}
 .docs-nav li a, 
 .docs-nav li a:hover, {
 	color:#2f2f2f; 
