@@ -18,9 +18,9 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 ## Ad Content Information
 
-### Post Title
+### Creative Title
 
-#### {% raw %} {{ post_title() }} {% endraw %}
+#### {% raw %} {{ creative_title() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@ Additionally, all variable values, except booleans, need to be in quotations.
 
 AdsNative Markup: <br>
 ```
-{% raw %} {{ post_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} {% endraw %}
+{% raw %} {{ creative_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} {% endraw %}
 ```
 
 Rendered HTML tag:<br>
@@ -49,7 +49,7 @@ Rendered HTML tag:<br>
  
 AdsNative Markup: <br>
 ```
-{% raw %} {{ post_title(class="testclass", style="line-height: 1em;") }} {% endraw %}
+{% raw %} {{ creative_title(class="testclass", style="line-height: 1em;") }} {% endraw %}
 ```
 
 Rendered HTML tag:<br>
@@ -59,9 +59,9 @@ Ad Title
 </a>
 ```
 
-### Post Summary
+### Creative Summary
 
-#### {% raw %} {{ post_summary() }} {% endraw %}
+#### {% raw %} {{ creative_summary() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -69,9 +69,9 @@ Ad Title
 | style | CSS | `null` | CSS styling applied to the element tag |
 | tagName | String | `null` | Specifies the element tag, otherwise it is injected as a raw test |
 
-###Feature Image
+###Creative Image
 
-#### {% raw %} {{ feature_image() }} {% endraw %}
+#### {% raw %} {{ creative_image() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -84,9 +84,9 @@ Ad Title
 
 ## Brand Information
 
-### Brand Image
+### Brand Icon
 
-#### {% raw %} {{ brand_image() }} {% endraw %}
+#### {% raw %} {{ brand_icon() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
@@ -98,9 +98,9 @@ Ad Title
 | width | String | `null` | Specifies the width of the brand image |
 | height | String | `null` | Specifies the height of the brand image |
 
-### Brand Name 
+### Brand Title 
 
-#### {% raw %} {{ post_author() }} {% endraw %}
+#### {% raw %} {{ brand_title() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
