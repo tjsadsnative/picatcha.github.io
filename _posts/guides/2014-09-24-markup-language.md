@@ -2,8 +2,8 @@
 layout: post
 title: "Native Markup Language"
 folder: "Placement Guides"
-date: 2014-09-24
-author: Dhawal Mujumdar
+date: 2014-11-13
+author: Brad Thorson
 categories: 
 - guides 
 img: ""
