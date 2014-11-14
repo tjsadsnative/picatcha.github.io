@@ -71,7 +71,7 @@ Ad Title
 
 ###Creative Image
 
-#### {% raw %} {{ creative_image() }} {% endraw %}
+#### {% raw %} {{ creative_media() }} {% endraw %}
 
 | Name | Type  | Default | Description |
 | --- | --- | --- | --- |
