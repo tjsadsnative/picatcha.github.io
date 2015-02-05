@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Adsnative Developer Center - Native Markup Language</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6675472/719942/css/fonts.css" />
+
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--<script src="/assets/js/modernizr.js"></script>-->
+</head>
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src=/assets/img/landing-brand-small.png></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <!-- <li ><a href="/blog/">Nerds</a></li> -->
+        <li ><a target="_blank" href="http://docs.adsnative.com/api_reference/">API</a></li>
+        <li ><a href="/tech/">Technical Docs</a></li>
+       <!--  <li ><a href="/contact/">Code Samples</a></li> -->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+            <div id="blue">
+    <div class="container">
+        <div class="row">
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+<div class="container mtb">
+    <div class="row" >
+        <! -- SINGLE POST -->
+        <div class="col-lg-9 post-container">
+            <! -- Blog Post  -->
+            <!-- <p><img class="img-responsive" src="/assets/img/blog/"></p> -->
+
+            <!-- <a href="/markup-language"><h3 class="ctitle">Native Markup Language</h3></a>   -->
+            <h1 id="adsnative-markup-language">AdsNative Markup Language</h1>
+
+<p>Note: Tags follow strict syntax. If a space or comma is off, it will throw an error.<br />
+Additionally, all variable values, except booleans, need to be in quotations.</p>
+
+<h2 id="ad-content-information">Ad Content Information</h2>
+
+<h3 id="creative-title">Creative Title</h3>
+
+<h4 id="creativetitle-">{{ creative_title() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the <code>&lt;a&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the <code>&lt;a&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>true</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>h</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specify the h element of the title</td>
+    </tr>
+    <tr>
+      <td>h_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the h element of the title</td>
+    </tr>
+    <tr>
+      <td>h_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>Specify the h element of the title</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples">Examples</h4>
+
+<p>Example 1 <br /></p>
+
+<p>AdsNative Markup: <br />
+<code>
+ {{ creative_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} 
+</code></p>
+
+<p>Rendered HTML tag:<br />
+<code>
+&lt;h2 class="large_title" style="color:#fff;"&gt;Native Ad Title&lt;/h2&gt;
+</code></p>
+
+<p><br /> Example 2 <br /></p>
+
+<p>AdsNative Markup: <br />
+<code>
+ {{ creative_title(class="testclass", style="line-height: 1em;") }} 
+</code></p>
+
+<p>Rendered HTML tag:<br />
+<code>
+&lt;a href="http://ad_link" target="_blank" class="testclass" style="line-height: 1em;"&gt;
+Ad Title
+&lt;/a&gt;
+</code></p>
+
+<h3 id="creative-summary">Creative Summary</h3>
+
+<h4 id="creativesummary-">{{ creative_summary() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>tagName</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the element tag, otherwise it is injected as a raw test</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>###Creative Image</p>
+
+<h4 id="creativemedia-">{{ creative_media() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>a_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class assigned to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>a_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>resize</td>
+      <td>boolean</td>
+      <td><code>false</code></td>
+      <td>Will set the image as a background-img of a div and crop it to specified dimentions</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="brand-information">Brand Information</h2>
+
+<h3 id="brand-icon">Brand Icon</h3>
+
+<h4 id="brandicon-">{{ brand_icon() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>a_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class assigned to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>a_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the width of the brand image</td>
+    </tr>
+    <tr>
+      <td>height</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the height of the brand image</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="brand-title">Brand Title</h3>
+
+<h4 id="brandtitle-">{{ brand_title() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>tagName</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the element tag, otherwise injected as raw test</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>a_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class assigned to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>a_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>prefix</td>
+      <td>Boolean</td>
+      <td><code>true</code></td>
+      <td>Add prefix such as ‘Promoted by’ and then brand name</td>
+    </tr>
+  </tbody>
+</table>
+
+
+            <div class="spacing"></div>
+            <p><csmall>Last Updated: Nov 13, 2014. | By: Brad Thorson</csmall></p>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-9 -->
+        <div id="nav-sidebar" class="col-lg-3 hidden-xs hidden-sm affix nav-sidebar">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <ul id="sidebar-ul" class="nav">
+    <h4>SDK & Integrations</h4>
+    <ul class="docs-nav">
+        <li class="active">
+            <a href="#js-api"> Javascript API Docs</a>
+        </li>
+        <li>
+            <a href="#generalized-js">Generalized Render JS</a>
+        </li>
+        <!-- <li>
+            <a href=""> - Making Render JS Calls</a>
+        </li> -->
+        <li>
+            <a href="#ios">iOS SDK</a>
+        </li>
+        <li>
+            <a href="#android">Android SDK</a>
+        </li>
+        <li>
+           <a href="#openrtb">OpenRTB</a>
+        </li>
+        <li>
+           <a href="#cookie">Cookie Sync</a>
+        </li>
+    </ul>
+    <h4>Placement Guides</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="#placement-basics">Placement Creations Basics</a>
+        </li>
+        <li>
+            <a href="#nml">Native Markup Language</a>
+        </li>
+        <li>
+            <a href="#csspath">CSS Path Guide</a>
+        </li>
+    </ul>
+    <h4>API</h4>
+    <ul class="docs-nav">
+        <li>
+            <a target="_blank" href="#reporting_api">Reporting API</a>
+        </li>
+        <li>
+            <a target="_blank" href="http://docs.adsnative.com/api_reference/">Full API Documentation <small class="glyphicon glyphicon-share"></small></a>
+        </li>
+    </ul>
+    </ul>
+    <div class="spacing"></div>
+</div>
+
+    </div><! --/row -->
+</div><! --/container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script>
+//Attachin scrollspy to nav
+$('body').scrollspy({ target: '.nav-sidebar' });
+(function($) {
+	//Eanabling mooth scrolling
+	$('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	 });
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+    </body>
+</html>

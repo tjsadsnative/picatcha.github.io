@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Adsnative Developer Center - Tech</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6675472/719942/css/fonts.css" />
+
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--<script src="/assets/js/modernizr.js"></script>-->
+</head>
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src=/assets/img/landing-brand-small.png></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <!-- <li ><a href="/blog/">Nerds</a></li> -->
+        <li ><a target="_blank" href="http://docs.adsnative.com/api_reference/">API</a></li>
+        <li class="active"><a href="/tech/">Technical Docs</a></li>
+       <!--  <li ><a href="/contact/">Code Samples</a></li> -->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+            <div id="blue">
+    <div class="container">
+        <div class="row">
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+<div class="container mtb">
+    <div class="row" >
+        <! -- SINGLE POST -->
+        <div class="col-lg-9 post-container">
+            <! -- Blog Post  -->
+            <!-- <p><img class="img-responsive" src="/assets/img/blog/"></p> -->
+
+            <!-- <a href="/tech"><h3 class="ctitle">Tech</h3></a>   -->
+            <section id="js-api"></section>
+
+<h1 id="javascript-api-docs"><strong>Javascript API Docs</strong></h1>
+
+<p>In some advanced cases, you may not want AdsNative RenderJS to handle automatic ad rendering (such as infinite scrolling, or if you want to show the native ad on certain user actions, etc.). In this case, you may want to circumvent the RenderJS default behavior. </p>
+
+<p>Insert the following tag in the HEAD section of your webpage. By doing this, RenderJS will not fetch or render any native ads until explicitly called by given functions. Please also note that you need to include the below code before using any of the given function calls.</p>
+
+<pre><code class="language-HTML">&lt;!-- Begin ADSNATIVE Code --&gt;
+  &lt;script type="text/javascript"&gt;
+    var _AdsNativeOpts = {
+      blockAdLoad: true
+    };
+  &lt;/script&gt;
+  &lt;script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"&gt;&lt;/script&gt;
+&lt;!-- End ADSNATIVE Code --&gt;
+</code></pre>
+
+<h3 id="prefetch-native-ad">Prefetch Native Ad</h3>
+
+<p>You can choose to prefetch the native ad from the AdsNative server for a given ad unit before the document is ready, as well as before you are ready to render the ad. This way there will not be any latency for network requests, and the ad will be for ready for rendering when it needs to be.</p>
+
+<p>All the calls to the API are handled through ‘_AdsNative’ object.</p>
+
+<pre><code class="language-JavaScript">var keywords = []
+_AdsNative.fetchAds(['YOUR_PLACEMENT_KEY-1', 'YOUR_PLACEMENT_KEY-2'], keywords, function(status, apiKey){
+  if(status){ //if a native ad is returned
+  }
+});
+</code></pre>
+
+<p>Above is an example of the ‘fetchAds’ function, which will call all available arguments. You can fetch multiple placements, and specify current page keywords for keyword targeting. Notice that you can also provide a callback for the event that the ad request is finished. The callback function provides ‘status’ and ‘apiKey’ as arguments. ‘status’ is a boolean value which indicates whether there is an ad returned for a current request. Depending on the result, you can take an action. apiKey gives an indication to which placement the call is for. The callback is then returned for each placement.</p>
+
+<h3 id="display-native-ad">Display Native Ad</h3>
+
+<p>Once the ad is prefetched you can choose to display that native ad at the desired event. For example in the case of infinite scroll, you may want to display it when the user scrolls down. Or you may want to show it when the second page shows up, etc. You can use the ‘displayAd’ function to show an ad for a placement.</p>
+
+<pre><code class="language-JavaScript">_AdsNative.displayAd('YOUR_PLACEMENT_KEY-1', 'native-ad-element-id')
+</code></pre>
+
+<p>You need to specify the API key of the placement that needs to be displayed, and then the ID of the element in which the native ad should be displayed. This ‘native-ad-element-id’ element should be an empty div because when the displayAd in included, this element will be replaced by the native ad.</p>
+
+<h3 id="complete-example">Complete Example</h3>
+
+<p>The following is a complete example, which uses all of the above functions. It is a simple example, where ads get displayed immediately once the page is ready.</p>
+
+<pre><code class="language-HTML">&lt;html&gt;
+	&lt;head&gt;
+	&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id="an-ad-abc"&gt;&lt;/div&gt;
+	&lt;div id="an-ad-xyz"&gt;&lt;/div&gt;
+
+	&lt;!-- Begin ADSNATIVE Code --&gt;
+	&lt;script type="text/javascript"&gt;
+	var _AdsNativeOpts = {
+	    blockAdLoad: true
+	};
+	&lt;/script&gt;
+	&lt;script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"&gt;&lt;/script&gt;
+	&lt;!-- End ADSNATIVE Code --&gt;
+
+	&lt;script type="text/javascript"&gt;
+	_AdsNative.fetchAds(['abc', 'xyz'], ['sports', 'autos'], function(status, apiKey){
+	    if(status){ //if a native ad is returned
+	        $(document).ready(function(){
+	             _AdsNative.displayAd(apiKey, 'an-ad-'+apiKey)
+	        });
+	    }
+	});
+	&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr class="divider" />
+
+<section id="generalized-js"></section>
+
+<h1 id="generalized-renderjs-default-behavior"><strong>‘Generalized’ RenderJS</strong> (default behavior)</h1>
+
+<p>The following are default ad tags provided by AdsNative, which will automatically render configured placements or native ads in the correct location on the intended pages. It is called “Generalized” RenderJS because you can use the same piece of code for any placement and site domain you have, making it easier for publishers to install the tags on their sites. Best practice it to insert the following tag at the bottom of your webpage as the first script in the footer.</p>
+
+<pre><code class="language-HTML">&lt;!-- Begin ADSNATIVE Code --&gt;
+  &lt;script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"&gt;
+  &lt;/script&gt;
+&lt;!-- End ADSNATIVE Code --&gt;
+</code></pre>
+
+<h3 id="making-renderjs-effective">Making RenderJS Effective</h3>
+
+<p>“Generalized” RenderJS uses a configured CSS Path to search and insert the native ad into the correct location. The harder the CSS Path is to locate, the higher the rendering latency. The shortest and best CSS Path is a unique div id.</p>
+
+<p>The optimal way to set up RenderJS to manage all your native inventory is to place RenderJS in your header and then hardcode in anchor divs in your body at the exact location you want ads to be injected.</p>
+
+<pre><code class="language-HTML">&lt;body&gt;
+  &lt;div class="article" id="story-1"&gt;&lt;/div&gt;
+  
+  &lt;div id=“native-adzone-1”&gt;&lt;/div&gt;
+  
+  &lt;div class="article" id="story-2"&gt;&lt;/div&gt;
+  
+  &lt;div id=“native-adzone-2”&gt;&lt;/div&gt;
+  
+  &lt;div class="article" id="story-3"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>If latency is still an issue, you can insert the following tags directly into the location where the native ad should be rendered.</p>
+
+<pre><code class="language-HTML">&lt;!-- Begin ADSNATIVE Code --&gt;
+  &lt;script type="text/javascript"&gt;
+    var _AdsNativeOpts = {
+      apiKey: '&lt;ADZONE_KEY&gt;',
+    };
+  &lt;/script&gt;
+  &lt;script type="text/javascript" src="//static.adsnative.com/static/js/render.v1.js"&gt;&lt;/script&gt;
+&lt;!-- End ADSNATIVE Code --&gt;
+</code></pre>
+<hr class="divider" />
+
+<section id="ios"></section>
+
+<h1 id="ios-sdk"><strong>iOS SDK</strong></h1>
+
+<h2 id="download">Download</h2>
+
+<p><a href="https://github.com/picatcha/AdsNative-iOS-SDK/archive/master.zip">ZIP File</a></p>
+
+<h3 id="installing-adsnative-in-your-xcode-project">Installing AdsNative in your XCode project</h3>
+
+<p>Step 1. Clone the git repository into your desired folder. </p>
+
+<p><code>git clone git@github.com:picatcha/AdsNative-iOS-SDK.git</code></p>
+
+<p>OR </p>
+
+<p>Download the zip by clicking on the button shown on right of the Github page.</p>
+
+<p>Step 2. Drag and drop “AdsNative” folder from the repository into your project’s root folder.</p>
+
+<p><img src="https://s3.amazonaws.com/adsnative-public/images/add-folder.png" alt="" /></p>
+
+<p>Step 3. Check “Copy items…”, select “Create groups for..” and “Finish”.</p>
+
+<p><img src="https://s3.amazonaws.com/adsnative-public/images/copy-project.png" alt="" /></p>
+
+<p>Step 4. It should look something like this…</p>
+
+<p><img src="https://s3.amazonaws.com/adsnative-public/images/final.png" alt="" /></p>
+
+<p>Step 5. Under “Targets -&gt; Build Phases”, add the <code>AdSupport.Framework</code>.</p>
+
+<p><img src="https://s3.amazonaws.com/adsnative-public/images/add-frameworks.png" alt="" /></p>
+
+<p><img src="https://s3.amazonaws.com/adsnative-public/images/lookup.png" alt="" /></p>
+
+<p>Step 6. Repeat the process for <code>SystemConfiguration.Framework</code>.</p>
+
+<h4 id="using-adsnative-apis">Using AdsNative APIs</h4>
+
+<p>Step 7. Add <code>#import "Adsnative.h"</code> in your header file whenever you plan to use AdsNative. </p>
+
+<p>Step 8. Create an ANAdRequest object, initializing it with the zone ID provided to you. You will have to pass this object to most of the requests you make to AdsNative.</p>
+
+<pre><code>ANAdRequest *request = [ANAdRequest requestWithAdUnitID:@"INSERT-YOUR-ZONE-ID-HERE"];
+</code></pre>
+<p>Step 9. Request that sponsored content make a call to the following non-blocking function:</p>
+
+<pre><code>[ANSponsoredStory loadRequest:request
+  onSuccess:^(ANSponsoredStory *story) {
+        NSLog(@"Title: %@", story.title);
+    }
+  onError:^(NSError *error) {
+        // Oops ad request was not successful
+    }];
+</code></pre>
+
+<p>Step 10. Please note that when you create UIView or any UIView based class using the information provided by the above ANSponsoredStory object, you will have to attach that view to the ANSponsoredStory object. The same is true for ViewController or the native browser used by the app to open the sponsored content. This allows AdsNative track various events occuring on the sponsored content. </p>
+
+<p>The following code snippet shows an example of code that can be used in a table view:</p>
+
+<pre><code>- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([[news objectAtIndex:indexPath.row] isKindOfClass:[ANSponsoredStory class]]) {
+        ANSponsoredStory *sponsoredStory = [news objectAtIndex:indexPath.row];
+        //Configure the ANSponsoredStory on select/tap action here.
+        HandleSelectBlock handleSelectBlock = ^(){
+            //Begin: Your code - Open the full content view of your choice
+            NSLog(@"click handler in block");
+            SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:sponsoredStory.url];
+            [self presentModalViewController:webViewController animated:YES];
+            //End: Your code
+            
+            //This line is important and should be called in all cases except for video ads. Pass the full content view as an argument
+            if([sponsoredStory.type  isEqual: @"story"]){
+                [sponsoredStory attachFullContentToView:webViewController.view];
+            }
+        };
+        [sponsoredStory attachToView:cell onSelect:handleSelectBlock];
+    }
+}
+</code></pre>
+
+<p>Notice that the user click/tap handler also needs to be passed to the attachToView function, which will handle the user’s tap event and take your desired action - typically opening a native browser.</p>
+
+<p>You can look at the TestApplication provided in the project for a detailed example and instructions on how to best use the AdsNative SDK.</p>
+
+<hr class="divider" />
+
+<section id="android"></section>
+
+<h1 id="android-sdk"><strong>Android SDK</strong></h1>
+
+<h2 id="download-1">Download</h2>
+
+<p><a href="https://github.com/picatcha/adsnative_android_sdk/archive/master.zip">ZIP File</a></p>
+
+<h2 id="installing-adsnative-into-your-project">Installing AdsNative into your project</h2>
+
+<p><strong>1.</strong> Download AdsNativeAndroidSDK.jar and copy it to your <em>/libs/</em> folder inside of your application project.</p>
+
+<p><strong>For Android Studio users:</strong></p>
+
+<p>Open the build.gradle file and edit your dependencies to include the new .jar file:</p>
+
+<pre><code class="language-Groovy">#!groovy
+dependencies {
+    compile files('libs/AdsNativeAndroidSDK.jar')
+}
+</code></pre>
+
+<p>or </p>
+
+<p>Go to <em>File &gt; Project structure</em>. Choose your module and add dependency to your project by <em>+ &gt; File dependency</em> and choose <em>AdsNativeAndroidSDK.jar</em> from your <em>/libs/</em> folder. </p>
+
+<p>** For Eclipse users:**</p>
+
+<p>Go to <em>Project &gt; Properties &gt; Java Build Path &gt; Libraries &gt; Add external Jar</em> and choose <em>AdsNativeAndroidSDK.jar</em> from your <em>/libs/</em> folder.</p>
+
+<p><strong>2.</strong> Add <a href="http://developer.android.com/google/play-services/setup.html">Google Play Services</a> to your project.</p>
+
+<p><strong>3.</strong> Add permissions to your <em>AndroidManifest.xml</em> file:</p>
+
+<pre><code class="language-XML">#!xml
+
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;   
+&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+</code></pre>
+
+<p><strong>4.</strong> Add WebViewActivity to your <em>AndroidManifest.xml</em> file:</p>
+
+<pre><code class="language-XML">#!xml
+
+&lt;activity android:name="com.adsnative.android.sdk.WebViewActivity"
+               android:configChanges="orientation|screenSize" /&gt;
+</code></pre>
+
+<p><strong>5.</strong> Minimum Android SDK: Android 2.3 API (9)</p>
+
+<h2 id="using-adsnative-apis-1">Using AdsNative APIs</h2>
+
+<h3 id="integrating-sponsored-stories-into-listview-in-listactivity">Integrating sponsored stories into ListView in ListActivity</h3>
+
+<p>We tried to make this as simple as possible. All you have to do is create an array of integers containing positions of sponsored stories in a ListView. Then create new <em>AdsNativeListAdapter</em>.</p>
+
+<pre><code class="language-Java">#!java
+
+int[] sponsoredStoryPositions = {0, 4, 13, 69};
+AdsNativeListAdapter adsNativeListAdapter = 
+    new AdsNativeListAdapter(getBaseContext(), myAdapter, sponsoredStoryPositions, AD_UNIT_ID);
+setListAdapter(adsNativeListAdapter);
+
+//fetch and add SponsoredStories to the ListView
+adsNativeListAdapter.loadSponsoredStories();  
+</code></pre>
+
+<p>Sponsored stories are going to be fetched and added to the ListView.</p>
+
+<ul>
+  <li>myAdapter - developers’ list adapter</li>
+  <li>sponsoredStoryPositions - positions on the ListView where sponsored stories are going to be added.</li>
+  <li>AD_UNIT_ID - AdsNative user ID</li>
+</ul>
+
+<h3 id="fetching-single-sponsoredstory">Fetching single SponsoredStory</h3>
+
+<p>We use SponsoredStoryController to fetch and manage our SponsoredStory. <br />
+Method getSponsoredStoryView( … ) also sets time and impression logging listeners.</p>
+
+<pre><code class="language-Java">#!java
+
+SponsoredStoryController sponsoredStoryController = new SponsoredStoryController(getBaseContext());
+
+//fetches sponsored story
+sponsoredStoryController.fetchSponsoredStory(AD_UNIT_ID); 
+
+//listener when sponsored story is completely fetched 
+sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListener() {
+            @Override
+            public void onSponsoredStory(SponsoredStory sponsoredStory) {
+                View view = sponsoredStoryController.getSponsoredStoryView(sponsoredStory);
+            }
+
+            @Override
+            public void onFailure(FailureMessage failureMessage) {
+                Log.e(ERROR_TAG, failureMessage.getMessage());
+            }
+});
+</code></pre>
+
+<ul>
+  <li>view - View object with default layout for SponsoredStory with layout_width = “match_parent” and layout_height=”wrap_content”</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="put-sponsoredstory-at-the-bottom-of-the-screen">Put SponsoredStory at the bottom of the screen.</h4>
+
+<pre><code class="language-Java">#!java
+
+RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.my_activty_relative_layout);
+
+sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListener() {
+            @Override
+            public void onSponsoredStory(SponsoredStory sponsoredStory) {
+                View view = sponsoredStoryController.getSponsoredStoryView(sponsoredStory);
+                RelativeLayout.LayoutParams layoutParams = 
+                              new RelativeLayout.LayoutParams(
+                                             ViewGroup.LayoutParams.WRAP_CONTENT, 
+                                             ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM); 
+                relativeLayout.addView(view, layoutParams);
+            }
+
+            @Override
+            public void onFailure(FailureMessage failureMessage) {
+                Log.e(ERROR_TAG, failureMessage.getMessage());
+            }
+});
+</code></pre>
+
+<h4 id="attach-data-to-the-developers-custom-views-located-inside-a-specified-layout-make-sure-that-the-layout-has-already-been-attached-to-some-sort-of-a-parent-ie-in-xml-layout-files">Attach data to the developer’s custom Views located inside a specified layout. Make sure that the layout has already been attached to some sort of a parent, i.e. in xml layout files.</h4>
+
+<p>Adding a session ID tag to the developer’s custom View is obligatory in order to protect from render conflicts.</p>
+
+<pre><code class="language-Java">#!java
+
+//textView is a child of relativeLayout
+RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.my_sponsored_story_layout);
+TextView textView = (TextView) findViewById(R.id.my_sponsored_story_text);
+
+//Attach SponsoredStory to specified container (container has to be an instance of RelativeLayout) 
+sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListener() {
+            @Override
+            public void onSponsoredStory(SponsoredStory sponsoredStory) {
+                textView.set("I'm SponsoredStory with title: " + sponsoredStory.getSponsoredStoryData().getTitle());
+                relativeLayout.setTag(sponsoredStory.getSponsoredStoryData().getSessionId());
+                sponsoredStoryController.getSponsoredStoryView(sponsoredStory, relativeLayout);
+            }
+
+            @Override
+            public void onFailure(FailureMessage failureMessage) {
+                Log.e(ERROR_TAG, failureMessage.getMessage());
+            }
+});
+</code></pre>
+
+<h4 id="attach-data-to-the-developers-custom-views-that-are-inside-a-specified-layout-that-has-not-been-attached-to-any-parent">Attach data to the developer’s custom Views that are inside a specified layout that has NOT been attached to any parent.</h4>
+
+<p>Adding session ID tag to the developer’s custom View is obligatory, in order to protect from render conflicts.</p>
+
+<pre><code class="language-Java">#!java
+
+RelativeLayout mParent = (RelativeLayout) findViewById(R.id.my_activity_main_relative_layout);
+
+//textView is a child of relativeLayout.
+RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.my_sponsored_story_layout);
+TextView textView = (TextView) findViewById(R.id.my_sponsored_story_text);
+
+//Attach SponsoredStory to specified container (container has to be an instance of RelativeLayout) 
+sponsoredStoryController.setOnSponsoredStoryListener(new OnSponsoredStoryListener() {
+            @Override
+            public void onSponsoredStory(SponsoredStory sponsoredStory) {
+                textView.set("I'm SponsoredStory with title: " + sponsoredStory.getSponsoredStoryData().getTitle());
+                relativeLayout.setTag(sponsoredStory.getSponsoredStoryData().getSessionId());
+                sponsoredStoryController.getSponsoredStoryView(sponsoredStory, relativeLayout, mParent);
+            }
+
+            @Override
+            public void onFailure(FailureMessage failureMessage) {
+                Log.e(ERROR_TAG, failureMessage.getMessage());
+            }
+});
+</code></pre>
+
+<p>XML file:</p>
+
+<pre><code class="language-XML">#!xml
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_activity_main_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+
+    &lt;RelativeLayout
+        android:id="@+id/my_sponsored_story_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" &gt;
+
+        &lt;TextView
+            android:id="@+id/my_sponsored_story_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" /&gt;
+
+    &lt;/RelativeLayout&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
+<hr class="divider" />
+
+<section id="openrtb"></section>
+
+<h1 id="adsnative-openrtb-native-ad-specs"><strong>AdsNative OpenRTB Native Ad Specs</strong></h1>
+
+<h2 id="overview">Overview</h2>
+
+<ol>
+  <li>AdsNative receives a request on page load </li>
+  <li>AdsNative Exchange makes bid requests via a JSON HTTP POST to our bidding partners endpoints</li>
+  <li>AdsNative Exchange uses DSI (demand source integration) technology to award the impression to one of the following sources at the second highest price:<br />
+ a. Adsnative Marketplace<br />
+ b. Direct Sold campaigns via AdsNative Platform<br />
+ c. Bidders on AdsNative Exchange(you)</li>
+  <li>If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the url you have specified in “nurl” with all OpenRTB 2.2 macros replaced</li>
+</ol>
+
+<hr />
+
+<h2 id="openrtb-request">1. OpenRTB Request</h2>
+
+<p>The RTB request will mainly stay the same for native ads with the following changes:</p>
+
+<p>In Impression Object, a new type of object will be sent called as ‘Native Object’ which has the information related to given native ad placement, which is included in ‘ext’ field of impression object. The object fields are as follows,</p>
+
+<h3 id="native-object">1.1 Native Object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ver</td>
+      <td>required</td>
+      <td>string</td>
+      <td>1.0</td>
+      <td>Version of OpenRTB native extension.  Will correspond with supply-side support of speciﬁc ﬁelds.  Default will be exchange dependent.</td>
+    </tr>
+    <tr>
+      <td>admsupport</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Native Ad Markup supported: List of supported creative ﬁelds in response’s “admjson” ﬁeld. If, for example, “excerpt” isn’t in admsupport, the publisher format will not show a text even if provided by the bidder. Supported fields are divided between optional and required fields. DSPs can choose to ignore optional fields, but required fields should be passed in the response.<br /><br />Example:<br />{ “required”: [ “title”, “excerpt”, “media” ], “optional”: [ “icon”, “brandname”, “ctatext” ]},<br /><br />Supported fields<br />1. title<br />2. excerpt<br />3. image<br />4. video<br />5. media (video OR image)<br />6. icon<br />7. brandname<br />8. ctatext</td>
+    </tr>
+    <tr>
+      <td>atype</td>
+      <td>recommended</td>
+      <td>integer</td>
+      <td>0</td>
+      <td>Native ad placement type. See table 1.1.1</td>
+    </tr>
+    <tr>
+      <td>seq</td>
+      <td>optional</td>
+      <td>integer</td>
+      <td>0</td>
+      <td>Sequence number of the ad in the stream. 0 for the ﬁrst ad, 1 for the second ad, and so on. This is not the sequence number of the native ad in the stream overall.</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘title’ field. See table 1.1.2</td>
+    </tr>
+    <tr>
+      <td>excerpt</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘excerpt’ field. See table 1.1.2</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘icon’ field. See table 1.1.3</td>
+    </tr>
+    <tr>
+      <td>media</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘media’ (video or image) field. See table 1.1.3</td>
+    </tr>
+    <tr>
+      <td>brandname</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘brandname’’ (video or image) field. See table 1.1.2</td>
+    </tr>
+    <tr>
+      <td>ctatext</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘ctatext’ (video or image) field. See table 1.1.2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ad-unit-types-field-atype">1.1.1 Ad Unit Types (Field: atype)</h4>
+
+<p>Defined by the IAB Native Playbook - http://www.iab.net/media/file/IAB-Native-Advertising-Playbook2.pdf</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Name</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Unknown</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>In Feed</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Search</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Recommendation widget</td>
+      <td>Suggested articles, etc..</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Promoted Listings</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>In ad native</td>
+      <td>Native placement inside IAB standard ad unit</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Custom</td>
+      <td>”Can’t Be Contained”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="titleexcerptbrand-namectatext-object">1.1.2 Title/Excerpt/Brand-name/ctatext Object</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>length</td>
+      <td>recommended</td>
+      <td>integer</td>
+      <td>140</td>
+      <td>Maximum length that can be displayed in the ctatext ﬁeld. If bidder supplies text that’s longer, text may be truncated when it’s displayed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="mediaicon-object">1.1.3 Media/Icon Object</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>aspectratio</td>
+      <td>recommended</td>
+      <td>float</td>
+      <td>-</td>
+      <td>Width of the brand image in pixels</td>
+    </tr>
+    <tr>
+      <td>minwidth</td>
+      <td>recommended</td>
+      <td>integer</td>
+      <td>-</td>
+      <td>Minimum width of the main image or video in pixels that should be provided. DSP can choose to provide bigger image/video than minwidth and AdsNative will take care of resizing it to given placement width. Minwidth is also the final width of the placement media size that will be rendered in.</td>
+    </tr>
+    <tr>
+      <td>maxwidth</td>
+      <td>optional</td>
+      <td>integer</td>
+      <td>-</td>
+      <td>Maximum width of the main image or video in pixels. Typically in AdsNative this field will not be passed and in that case it means there is no max size limit on image/video that can be passed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="openrtb-response">2. OpenRTB Response</h2>
+
+<p>The RTB Response for a native ad only differs from the typical RTB 2.x response in a few ways:</p>
+
+<blockquote>
+  <ul>
+    <li>adm: creative is passed as JSON in the “ext.admjson” object rather than passed in adm.</li>
+  </ul>
+</blockquote>
+
+<h3 id="bid-object">2.1 Bid Object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>adm</td>
+      <td>optional</td>
+      <td>string</td>
+      <td>empty string</td>
+      <td>Pass as empty string for native ads</td>
+    </tr>
+    <tr>
+      <td>crtype</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>“native”</td>
+      <td>Please code creative type to “native” for native ads.</td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>required</td>
+      <td>float</td>
+      <td>-</td>
+      <td>CPM price of bid</td>
+    </tr>
+    <tr>
+      <td>nurl</td>
+      <td>recomended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Win Notify URL.  NOTE:  OpenRTB defined macro substitutions are supported, but any returned markup from nurl response will be IGNORED</td>
+    </tr>
+    <tr>
+      <td>ext</td>
+      <td>required</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Container for admjson object</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="admjson-object">2.2 admjson Object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>required</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Title of the native ad. Required for all native ads.</td>
+    </tr>
+    <tr>
+      <td>clk</td>
+      <td>required</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Destination click URL. Required for all native ads.</td>
+    </tr>
+    <tr>
+      <td>excerpt</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Post excerpt.</td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>URL for the post image to be shown in the native ad. Supports jpg, gif and png.</td>
+    </tr>
+    <tr>
+      <td>video</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>URL for the iframe to be shown in the native ad.</td>
+    </tr>
+    <tr>
+      <td>brandname</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Brand Name that should appear with the native ad - typically shown as ‘Sponsored by BrandName’</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>URL for the icon image to be shown in the native ad. Supports jpg, gif and png.</td>
+    </tr>
+    <tr>
+      <td>ctatext</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Call to action text</td>
+    </tr>
+    <tr>
+      <td>imptracker</td>
+      <td>recommended</td>
+      <td>array of strings</td>
+      <td>-</td>
+      <td>Array of impression tracking URLs— typically only passed when using 3rd party trackers.</td>
+    </tr>
+    <tr>
+      <td>viewtracker</td>
+      <td>recommended</td>
+      <td>array of strings</td>
+      <td>-</td>
+      <td>Array of video view tracking URLs— typically only passed when using 3rd party trackers.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="openrtb-example-request">3. OpenRTB Example Request</h2>
+
+<pre><code class="language-JSON">{
+   "id":"1234567890",
+   "tmax":120,
+   "site":{
+      "page":"http://test.com/abc",
+      "sectioncat":[
+         "IAB1",
+         "IAB2",
+               ],
+      "domain":"test.com",
+      "id":11
+   },
+   "imp":[
+      {
+         "id":1,
+         "tagid":"avbOrp1HxO48ljsNKImICytOIuc_LXRHQmhAzS7g",
+         "bidfloorcur":"USD",
+         "bidfloor":0.2,
+         "ext":{
+            "native":{
+               "ver":1.0,
+               "atype":1,
+               "admsupport":{
+                  "required":[
+                     "title",
+                     "excerpt",
+                     "media"
+                  ],
+                  "optional":[
+                     "icon",
+                     "brandname",
+                     "ctatext"
+                  ]
+               },
+               "title":{
+                  "length":120
+               },
+               "excerpt":{
+                  "length":140
+               },
+               "icon":{
+                  "minwidth":75,
+                  "aspectratio":1
+               },
+               "media":{
+                  "minwidth":280,
+                  "aspectratio":1.33
+               },
+               "brandname":{
+                  "length":20
+               },
+               "ctatext":{
+                  "length":60
+               }
+            }
+         }
+      }
+   ],
+   "user":{
+      "id":"2724126367da1792a4d1ec4522c17e7230c30aea"
+   },
+   "device":{
+      "ip":"127.0.0.1",
+      "osv":"10.9.2",
+      "dnt":0,
+      "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36",
+      "devicetype":2,
+      "model":"Other",
+      "os":"Mac OS X"
+   },
+   "id":"513263a3-d76c-43ec-96e5-fd26f672e208",
+   "at":2
+}
+</code></pre>
+
+<hr />
+
+<h2 id="openrtb-example-response">4. OpenRTB Example Response</h2>
+
+<pre><code class="language-JSON">{
+   "id":"1234567890",
+   "seatbid":[
+      {
+         "bid":[
+            {
+               "id":"1",
+               "impid":"1",
+               "price":9.43,
+               "adid":"314",
+               "nurl":"http://adserver.com/winnotice?impid=102",
+               "adm":"",
+               "adomain":[
+                  "advertiserdomain.com"
+               ],
+               "cid":"campaign111",
+               "crid":"creative112",
+               "attr":[
+                  1,
+                  2,
+                  4,
+                  5,
+                  6,
+                  7,
+                  12
+               ],
+               "ext":{
+                  "admjson":{
+                     "title": "Ad Title",
+                     "excerpt": "This is where you can describe the post",
+                     "brandname": "Brand Name",
+                     "image":"http://adserver.com/pathtoiconimage",
+                     "icon":"http://adserver.com/pathtomainimage",
+                     "clk":"https://itunes.apple.com/us/app/mygame",
+                     "imptracker":[
+                        "http://3rdpartyadserver.com/imptracker?impid=102",
+                        "http://anotheradserver.com/imptracker?impid=102"
+                     ]
+                  }
+               }
+            }
+         ],
+         "seat":"512"
+      }
+   ],
+   "bidid":"abc1123",
+   "cur":"USD"
+}
+</code></pre>
+
+<hr class="divider" />
+
+<section id="cookie"></section>
+
+<h1 id="adsnative-cookie-sync-specs"><strong>AdsNative Cookie Sync Specs</strong></h1>
+
+<h2 id="overview-1">Overview</h2>
+
+<ul>
+  <li>To build an association between AdsNative cookies and DSP cookies, AdsNative provides a simple cookie matching service and hosted match table for clients.  </li>
+</ul>
+
+<hr />
+
+<h2 id="components">1. Components</h2>
+
+<p>The main components of the cookie match are:</p>
+
+<p>AdsNative match URL endpoint (<strong>ANcm</strong>):   <code>http://bevo.adsnative.com/cm.gif</code></p>
+
+<p>DSP-provided match URL endpoint (<strong>DSPcm</strong>): <code>http://ads.dsp.com/cookie.gif</code></p>
+
+<p>Cookie matching is implemented through 302 redirects between <strong>ANcm</strong> and <strong>DSPcm</strong></p>
+
+<h2 id="parameters">2. Parameters</h2>
+
+<p>The following parameters may be attached to ANcm:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameters</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dspid (required)</td>
+      <td>DSP Identifier -  Assigned by Adsnative</td>
+    </tr>
+    <tr>
+      <td>buid (required)</td>
+      <td>DSP User Cookie ID</td>
+    </tr>
+    <tr>
+      <td>rurl (optional)</td>
+      <td>Redirect URL - only allowed for smode=2</td>
+    </tr>
+    <tr>
+      <td>smode</td>
+      <td>Sync Mode (int) <br /> <br />1 = Adsnative pings <strong>DSPcm</strong> to sync. <strong>[Default]</strong> <br /> 2 = DSPs initiates cookie syncing and pings <strong>ANcm</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="sync-modes">3. Sync Modes</h2>
+
+<p>To provide flexibility for clients, AdsNative cookie matching services can be accessed with two modes:</p>
+
+<blockquote>
+  <ol>
+    <li><strong>Default</strong> On request from AdsNative publisher sites, Adsnative will ping <strong>DSPcm</strong> to initiate cookie sync.<br />
+a. <strong>ANcm</strong> will be served on all AdsNative publisher sites.   <br />
+b. When a user visits the publisher’s site, AdsNative issues a 302 redirect to the <strong>DSPcm</strong>. <br />
+c. If there exists a DSP cookie id, the DSP should 302 redirect back to <strong>ANcm</strong> with the following arguments:
+      <ul>
+        <li><strong>dspid</strong> - DSP identifier on the AdsNative Exchange [Provided by Adsnative]</li>
+        <li><strong>buid</strong> - DSP’s user cookie id <br /> http://bevo.adsnative.com/cm.gif?dspid=1234&amp;buid=HJPK4VSL <br />
+d. AdsNative will then serve a 1x1 gif pixel on user’s browser.</li>
+      </ul>
+    </li>
+    <li>When user visits a demand partner’s sites, DSPs can ping <strong>ANcm</strong> to initiate cookie sync.<br />
+a. For use when cookie syncing directly from an advertiser websites. <br />
+b. When a user visits any website that the DSP is tracking users on, the DSP should issue a 302 redirect to <strong>ANcm</strong> with the:
+      <ul>
+        <li><strong>dspid</strong></li>
+        <li><strong>buid</strong></li>
+        <li><strong>smode=2</strong></li>
+        <li>rurl [optional]: DSP may pass an additional <strong>rurl</strong> parameter to specify an url-encoded redirect URL that AdsNative will issue when cookie sync is completed. <br />
+c. AdsNative redirect to rurl defined. If no rurl is provided, AdsNative will return a 1x1 transparent pixel to the user’s browser.</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<p><strong>For example:</strong></p>
+
+<pre><code> http://bevo.adsnative.com/cm.gif?smode=2&amp;dspid=1234&amp;buid=HJPK4VSL&amp;rurl=http%3A//ad.dsp.com/match.gif
+</code></pre>
+
+<h2 id="openrtb-integration">4. OpenRTB Integration</h2>
+
+<p>Cookie sync is used in conjunction with the Adsnative RTB Exchange:  The bid request object will contain both the Adsnative User ID, provided in the User.id field, and the matched DSP Cookie ID, provided in the User.buyeruid field.</p>
+
+<hr class="divider" />
+
+<section id="placement-basics"></section>
+
+<h1 id="placement-creation-basics"><strong>Placement Creation Basics</strong></h1>
+
+<p>In this guide you will find the required documentation for creating placements.</p>
+
+<p>When you create a new placement, you will be taken to the placement settings page. Feel free to edit any settings that you deem important for your placement.</p>
+
+<p><img src="/assets/img/blog/placement.png" /></p>
+
+<hr class="divider" />
+
+<section id="nml"></section>
+
+<h1 id="adsnative-markup-language"><strong>AdsNative Markup Language</strong></h1>
+
+<p>Note: Tags follow strict syntax. If a space or comma is off, it will throw an error.<br />
+Additionally, all variable values, except booleans, need to be in quotations.</p>
+
+<h2 id="ad-content-information">Ad Content Information</h2>
+
+<h3 id="creative-title">Creative Title</h3>
+
+<h4 id="creativetitle-">{{ creative_title() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the <code>&lt;a&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the <code>&lt;a&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>true</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>h</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specify the h element of the title</td>
+    </tr>
+    <tr>
+      <td>h_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the h element of the title</td>
+    </tr>
+    <tr>
+      <td>h_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>Specify the h element of the title</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples-1">Examples</h4>
+
+<p>Example 1 <br /></p>
+
+<p>AdsNative Markup: <br />
+<code>
+ {{ creative_title(a=false, h="h2", h_class="large_title", h_style="color:#fff;") }} 
+</code></p>
+
+<p>Rendered HTML tag:<br />
+<code>
+&lt;h2 class="large_title" style="color:#fff;"&gt;Native Ad Title&lt;/h2&gt;
+</code></p>
+
+<p><br /> Example 2 <br /></p>
+
+<p>AdsNative Markup: <br />
+<code>
+ {{ creative_title(class="testclass", style="line-height: 1em;") }} 
+</code></p>
+
+<p>Rendered HTML tag:<br />
+<code>
+&lt;a href="http://ad_link" target="_blank" class="testclass" style="line-height: 1em;"&gt;
+Ad Title
+&lt;/a&gt;
+</code></p>
+
+<h3 id="creative-summary">Creative Summary</h3>
+
+<h4 id="creativesummary-">{{ creative_summary() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>tagName</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the element tag, otherwise it is injected as a raw test</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="creative-media">Creative Media</h3>
+
+<h4 id="creativemedia-">{{ creative_media() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>a_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class assigned to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>a_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>resize</td>
+      <td>boolean</td>
+      <td><code>false</code></td>
+      <td>Will set the image as a background-img of a div and crop it to specified dimentions</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="brand-information">Brand Information</h2>
+
+<h3 id="brand-icon">Brand Icon</h3>
+
+<h4 id="brandicon-">{{ brand_icon() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the <code>&lt;img&gt;</code> tag</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>a_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class assigned to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>a_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the width of the brand image</td>
+    </tr>
+    <tr>
+      <td>height</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the height of the brand image</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="brand-title">Brand Title</h3>
+
+<h4 id="brandtitle-">{{ brand_title() }}</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the element tag</td>
+    </tr>
+    <tr>
+      <td>tagName</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Specifies the element tag, otherwise injected as raw test</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+      <td>Hyperlinks the element</td>
+    </tr>
+    <tr>
+      <td>a_class</td>
+      <td>String</td>
+      <td><code>null</code></td>
+      <td>Class assigned to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>a_style</td>
+      <td>CSS</td>
+      <td><code>null</code></td>
+      <td>CSS styling applied to the hyperlink</td>
+    </tr>
+    <tr>
+      <td>prefix</td>
+      <td>Boolean</td>
+      <td><code>true</code></td>
+      <td>Add prefix such as ‘Promoted by’ and then brand name</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider" />
+
+<section id="csspath"></section>
+
+<h1 id="css-path-guide"><strong>CSS Path Guide</strong></h1>
+<p>AdsNative follows its own format by specifying the CSS Path to simplify and optimize native ad injections.</p>
+
+<p>Check out this example:
+<code>#div-id &gt; div.class:eq(0) &gt; div.class2:eq(2)</code></p>
+
+<p>Here are some basic rules to follow:<br />
+  1. Start by listing the outermost elements from left to right.<br />
+  2. AdsNative will insert the placement just before the element for which you configure the CSS Path - unless you have <code>:after</code> after the last element, in which case it will insert it after the element. For example, <code>#div-id &gt; div.class:eq(0) &gt; div.class2:eq(2):after</code> will output the placement after the given element.<br />
+  3. Each div element relation is separated with  ` &gt; <code>. (Leaving a blank space before and after is part of the syntax, and the cssPath follows a strict syntax.)  </code> &gt; ` means ‘child of’.<br />
+  4. If you are specifying an element with its ID, specify it as <code>#element-id-string</code>. In this case, do not specify the element name.<br />
+  5. If you are specifying an element by class name, specify the element name followed by <code>.</code>, class name, and the index of the element, as there can be multiple elements within a given class name. Example <code>div.class:eq(0)</code><br />
+  6. If you want to specify just an element name, you can specify it as <code>element-name:eq(0)</code></p>
+
+<p>A few examples of valid CSS Paths:<br />
+  1. <code>#content &gt; ul.main:eq(0) &gt; li:eq(0)</code><br />
+  2. <code>#content &gt; ul.main:eq(0) &gt; li:eq(10)</code><br />
+  3. <code>#content</code><br />
+  4. <code>#content:after</code><br />
+  5. <code>ul.main-content:eq(0) &gt; li:eq(10)</code></p>
+
+<p>A few examples of invalid CSS Paths:<br />
+  1. <code>#content&gt;ul.main:eq(0) &gt; li:eq(0)</code> (no spaces)<br />
+  2. <code>#content:eq(0) &gt; li.post:eq(0)</code> (:eq(0) for element name with ID)<br />
+  3. <code>div#content &gt; li:eq(10)</code> (div element name in css path)<br />
+  4. <code>#content &gt; ul.main &gt; li:eq(10)</code> (no index specified for ul)</p>
+
+<p>Try to specify the shortest css path whenever possible. Which basically means - try to use the nearest element with an ID, and then work downwards. Element name search takes the longest, then element with class name, and element with div id is the fastest.</p>
+
+<hr class="divider" />
+
+<section id="reporting_api"></section>
+
+<h1 id="reporting-api"><strong>Reporting API</strong></h1>
+
+<p>AdsNative provides a set of Console API endpoints to retrieve reporting statistics for ad placements and campaigns of an organization.</p>
+
+<h2 id="oauth-2">OAuth 2</h2>
+<p>To get access to the reporting API, you must authenticate your API request using the OAuth 2 protocol, you can find out more at <a href="http://oauth.net" target="_blank">http://oauth.net</a>.  </p>
+
+<h3 id="access-tokens">Access Tokens</h3>
+<p>If you are already familiar OAuth, you can get started by retrieving your access token.</p>
+
+<p><strong>Make a POST request to:</strong></p>
+
+<pre><code> POST https://console.adsnative.com//api/v1/oauth/token/?
+    grant_type=client_credentials&amp;
+    client_id=CLIENTID&amp;
+    client_secret=CLIENTSECRET
+</code></pre>
+
+<p>Once granted access by your account executive, you can get the <strong>Client ID</strong> and <strong>Client Secret</strong> from your organization’s <a href="http://console.adsnative.com/settings" target="_blank">account settings</a> page.</p>
+
+<h3 id="making-api-calls">Making API Calls</h3>
+
+<p>With a valid access token, your app can make calls to the reporting API endpoints by sending the access token as a “Bearer” token in the “Authorization” request header.</p>
+
+<pre><code>curl -H "Authorization: Bearer aBcdeFgHiJK" \
+https://console.adsnative.com/api/v1/reports/campaigns
+</code></pre>
+
+<h3 id="reporting-api-endpoints">Reporting API Endpoints</h3>
+
+<p>The Reporting API end-points are listed in <a href="https://console.adsnative.com/api/v1/docs/" target="_blank">https://console.adsnative.com/api/v1/docs/</a></p>
+
+
+            <div class="spacing"></div>
+            <p><csmall>Last Updated: Nov 18, 2014. | By: Brad Thorson</csmall></p>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-9 -->
+        <div id="nav-sidebar" class="col-lg-3 hidden-xs hidden-sm affix nav-sidebar">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <ul id="sidebar-ul" class="nav">
+    <h4>SDK & Integrations</h4>
+    <ul class="docs-nav">
+        <li class="active">
+            <a href="#js-api"> Javascript API Docs</a>
+        </li>
+        <li>
+            <a href="#generalized-js">Generalized Render JS</a>
+        </li>
+        <!-- <li>
+            <a href=""> - Making Render JS Calls</a>
+        </li> -->
+        <li>
+            <a href="#ios">iOS SDK</a>
+        </li>
+        <li>
+            <a href="#android">Android SDK</a>
+        </li>
+        <li>
+           <a href="#openrtb">OpenRTB</a>
+        </li>
+        <li>
+           <a href="#cookie">Cookie Sync</a>
+        </li>
+    </ul>
+    <h4>Placement Guides</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="#placement-basics">Placement Creations Basics</a>
+        </li>
+        <li>
+            <a href="#nml">Native Markup Language</a>
+        </li>
+        <li>
+            <a href="#csspath">CSS Path Guide</a>
+        </li>
+    </ul>
+    <h4>API</h4>
+    <ul class="docs-nav">
+        <li>
+            <a target="_blank" href="#reporting_api">Reporting API</a>
+        </li>
+        <li>
+            <a target="_blank" href="http://docs.adsnative.com/api_reference/">Full API Documentation <small class="glyphicon glyphicon-share"></small></a>
+        </li>
+    </ul>
+    </ul>
+    <div class="spacing"></div>
+</div>
+
+    </div><! --/row -->
+</div><! --/container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script>
+//Attachin scrollspy to nav
+$('body').scrollspy({ target: '.nav-sidebar' });
+(function($) {
+	//Eanabling mooth scrolling
+	$('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	 });
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+    </body>
+</html>

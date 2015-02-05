@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Adsnative Developer Center - OpenRTB Spec</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6675472/719942/css/fonts.css" />
+
+
+    
+    <!-- Custom CSS -->
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--<script src="/assets/js/modernizr.js"></script>-->
+</head>
+
+    <body>
+        <!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src=/assets/img/landing-brand-small.png></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <!-- <li ><a href="/blog/">Nerds</a></li> -->
+        <li ><a target="_blank" href="http://docs.adsnative.com/api_reference/">API</a></li>
+        <li ><a href="/tech/">Technical Docs</a></li>
+       <!--  <li ><a href="/contact/">Code Samples</a></li> -->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+            <div id="blue">
+    <div class="container">
+        <div class="row">
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+<div class="container mtb">
+    <div class="row" >
+        <! -- SINGLE POST -->
+        <div class="col-lg-9 post-container">
+            <! -- Blog Post  -->
+            <!-- <p><img class="img-responsive" src="/assets/img/blog/"></p> -->
+
+            <!-- <a href="/openrtb-spec"><h3 class="ctitle">OpenRTB Spec</h3></a>   -->
+            <h1 id="adsnative-openrtb-native-ad-specs"><strong>AdsNative OpenRTB Native Ad Specs</strong></h1>
+
+<h2 id="overview">Overview</h2>
+
+<ol>
+  <li>AdsNative receives a request on page load </li>
+  <li>AdsNative Exchange makes bid requests via a JSON HTTP POST to our bidding partners endpoints</li>
+  <li>AdsNative Exchange uses DSI (demand source integration) technology to award the impression to one of the following sources at the second highest price:<br />
+ a. Adsnative Marketplace<br />
+ b. Direct Sold campaigns via AdsNative Platform<br />
+ c. Bidders on AdsNative Exchange(you)</li>
+  <li>If a bidder wins the auction, AdsNative Exchange will send an HTTP GET to the url you have specified in “nurl” with all OpenRTB 2.2 macros replaced</li>
+</ol>
+
+<hr />
+
+<h2 id="openrtb-request">1. OpenRTB Request</h2>
+
+<p>The RTB request will mainly stay the same for native ads with the following changes:</p>
+
+<p>In Impression Object, a new type of object will be sent called as ‘Native Object’ which has the information related to given native ad placement, which is included in ‘ext’ field of impression object. The object fields are as follows,</p>
+
+<h3 id="native-object">1.1 Native Object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ver</td>
+      <td>required</td>
+      <td>string</td>
+      <td>1.0</td>
+      <td>Version of OpenRTB native extension.  Will correspond with supply-side support of speciﬁc ﬁelds.  Default will be exchange dependent.</td>
+    </tr>
+    <tr>
+      <td>admsupport</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Native Ad Markup supported: List of supported creative ﬁelds in response’s “admjson” ﬁeld. If, for example, “excerpt” isn’t in admsupport, the publisher format will not show a text even if provided by the bidder. Supported fields are divided between optional and required fields. DSPs can choose to ignore optional fields, but required fields should be passed in the response.<br /><br />Example:<br />{ “required”: [ “title”, “excerpt”, “media” ], “optional”: [ “icon”, “brandname”, “ctatext” ]},<br /><br />Supported fields<br />1. title<br />2. excerpt<br />3. image<br />4. video<br />5. media (video OR image)<br />6. icon<br />7. brandname<br />8. ctatext</td>
+    </tr>
+    <tr>
+      <td>atype</td>
+      <td>recommended</td>
+      <td>integer</td>
+      <td>0</td>
+      <td>Native ad placement type. See table 1.1.1</td>
+    </tr>
+    <tr>
+      <td>seq</td>
+      <td>optional</td>
+      <td>integer</td>
+      <td>0</td>
+      <td>Sequence number of the ad in the stream. 0 for the ﬁrst ad, 1 for the second ad, and so on. This is not the sequence number of the native ad in the stream overall.</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘title’ field. See table 1.1.2</td>
+    </tr>
+    <tr>
+      <td>excerpt</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘excerpt’ field. See table 1.1.2</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘icon’ field. See table 1.1.3</td>
+    </tr>
+    <tr>
+      <td>media</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘media’ (video or image) field. See table 1.1.3</td>
+    </tr>
+    <tr>
+      <td>brandname</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘brandname’’ (video or image) field. See table 1.1.2</td>
+    </tr>
+    <tr>
+      <td>ctatext</td>
+      <td>recommended</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Defines the asset requirements for ‘ctatext’ (video or image) field. See table 1.1.2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ad-unit-types-field-atype">1.1.1 Ad Unit Types (Field: atype)</h4>
+
+<p>Defined by the IAB Native Playbook - http://www.iab.net/media/file/IAB-Native-Advertising-Playbook2.pdf</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Name</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Unknown</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>In Feed</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Search</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Recommendation widget</td>
+      <td>Suggested articles, etc..</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Promoted Listings</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>In ad native</td>
+      <td>Native placement inside IAB standard ad unit</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Custom</td>
+      <td>”Can’t Be Contained”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="titleexcerptbrand-namectatext-object">1.1.2 Title/Excerpt/Brand-name/ctatext Object</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>length</td>
+      <td>recommended</td>
+      <td>integer</td>
+      <td>140</td>
+      <td>Maximum length that can be displayed in the ctatext ﬁeld. If bidder supplies text that’s longer, text may be truncated when it’s displayed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="mediaicon-object">1.1.3 Media/Icon Object</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>aspectratio</td>
+      <td>recommended</td>
+      <td>float</td>
+      <td>-</td>
+      <td>Width of the brand image in pixels</td>
+    </tr>
+    <tr>
+      <td>minwidth</td>
+      <td>recommended</td>
+      <td>integer</td>
+      <td>-</td>
+      <td>Minimum width of the main image or video in pixels that should be provided. DSP can choose to provide bigger image/video than minwidth and AdsNative will take care of resizing it to given placement width. Minwidth is also the final width of the placement media size that will be rendered in.</td>
+    </tr>
+    <tr>
+      <td>maxwidth</td>
+      <td>optional</td>
+      <td>integer</td>
+      <td>-</td>
+      <td>Maximum width of the main image or video in pixels. Typically in AdsNative this field will not be passed and in that case it means there is no max size limit on image/video that can be passed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="openrtb-response">2. OpenRTB Response</h2>
+
+<p>The RTB Response for a native ad only differs from the typical RTB 2.x response in a few ways:</p>
+
+<blockquote>
+  <ul>
+    <li>adm: creative is passed as JSON in the “ext.admjson” object rather than passed in adm.</li>
+  </ul>
+</blockquote>
+
+<h3 id="bid-object">2.1 Bid Object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>adm</td>
+      <td>optional</td>
+      <td>string</td>
+      <td>empty string</td>
+      <td>Pass as empty string for native ads</td>
+    </tr>
+    <tr>
+      <td>crtype</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>“native”</td>
+      <td>Please code creative type to “native” for native ads.</td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td>required</td>
+      <td>float</td>
+      <td>-</td>
+      <td>CPM price of bid</td>
+    </tr>
+    <tr>
+      <td>nurl</td>
+      <td>recomended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Win Notify URL.  NOTE:  OpenRTB defined macro substitutions are supported, but any returned markup from nurl response will be IGNORED</td>
+    </tr>
+    <tr>
+      <td>ext</td>
+      <td>required</td>
+      <td>object</td>
+      <td>-</td>
+      <td>Container for admjson object</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="admjson-object">2.2 admjson Object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Scope</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>required</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Title of the native ad. Required for all native ads.</td>
+    </tr>
+    <tr>
+      <td>clk</td>
+      <td>required</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Destination click URL. Required for all native ads.</td>
+    </tr>
+    <tr>
+      <td>excerpt</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Post excerpt.</td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>URL for the post image to be shown in the native ad. Supports jpg, gif and png.</td>
+    </tr>
+    <tr>
+      <td>video</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>URL for the iframe to be shown in the native ad.</td>
+    </tr>
+    <tr>
+      <td>brandname</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Brand Name that should appear with the native ad - typically shown as ‘Sponsored by BrandName’</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>URL for the icon image to be shown in the native ad. Supports jpg, gif and png.</td>
+    </tr>
+    <tr>
+      <td>ctatext</td>
+      <td>recommended</td>
+      <td>string</td>
+      <td>-</td>
+      <td>Call to action text</td>
+    </tr>
+    <tr>
+      <td>imptracker</td>
+      <td>recommended</td>
+      <td>array of strings</td>
+      <td>-</td>
+      <td>Array of impression tracking URLs— typically only passed when using 3rd party trackers.</td>
+    </tr>
+    <tr>
+      <td>viewtracker</td>
+      <td>recommended</td>
+      <td>array of strings</td>
+      <td>-</td>
+      <td>Array of video view tracking URLs— typically only passed when using 3rd party trackers.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="openrtb-example-request">3. OpenRTB Example Request</h2>
+
+<pre><code class="language-JSON">{
+   "id":"1234567890",
+   "tmax":120,
+   "site":{
+      "page":"http://test.com/abc",
+      "sectioncat":[
+         "IAB1",
+         "IAB2",
+               ],
+      "domain":"test.com",
+      "id":11
+   },
+   "imp":[
+      {
+         "id":1,
+         "tagid":"avbOrp1HxO48ljsNKImICytOIuc_LXRHQmhAzS7g",
+         "bidfloorcur":"USD",
+         "bidfloor":0.2,
+         "ext":{
+            "native":{
+               "ver":1.0,
+               "atype":1,
+               "admsupport":{
+                  "required":[
+                     "title",
+                     "excerpt",
+                     "media"
+                  ],
+                  "optional":[
+                     "icon",
+                     "brandname",
+                     "ctatext"
+                  ]
+               },
+               "title":{
+                  "length":120
+               },
+               "excerpt":{
+                  "length":140
+               },
+               "icon":{
+                  "minwidth":75,
+                  "aspectratio":1
+               },
+               "media":{
+                  "minwidth":280,
+                  "aspectratio":1.33
+               },
+               "brandname":{
+                  "length":20
+               },
+               "ctatext":{
+                  "length":60
+               }
+            }
+         }
+      }
+   ],
+   "user":{
+      "id":"2724126367da1792a4d1ec4522c17e7230c30aea"
+   },
+   "device":{
+      "ip":"127.0.0.1",
+      "osv":"10.9.2",
+      "dnt":0,
+      "ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36",
+      "devicetype":2,
+      "model":"Other",
+      "os":"Mac OS X"
+   },
+   "id":"513263a3-d76c-43ec-96e5-fd26f672e208",
+   "at":2
+}
+</code></pre>
+
+<hr />
+
+<h2 id="openrtb-example-response">4. OpenRTB Example Response</h2>
+
+<pre><code class="language-JSON">{
+   "id":"1234567890",
+   "seatbid":[
+      {
+         "bid":[
+            {
+               "id":"1",
+               "impid":"1",
+               "price":9.43,
+               "adid":"314",
+               "nurl":"http://adserver.com/winnotice?impid=102",
+               "adm":"",
+               "adomain":[
+                  "advertiserdomain.com"
+               ],
+               "cid":"campaign111",
+               "crid":"creative112",
+               "attr":[
+                  1,
+                  2,
+                  4,
+                  5,
+                  6,
+                  7,
+                  12
+               ],
+               "ext":{
+                  "admjson":{
+                     "title": "Ad Title",
+                     "excerpt": "This is where you can describe the post",
+                     "brandname": "Brand Name",
+                     "image":"http://adserver.com/pathtoiconimage",
+                     "icon":"http://adserver.com/pathtomainimage",
+                     "clk":"https://itunes.apple.com/us/app/mygame",
+                     "imptracker":[
+                        "http://3rdpartyadserver.com/imptracker?impid=102",
+                        "http://anotheradserver.com/imptracker?impid=102"
+                     ]
+                  }
+               }
+            }
+         ],
+         "seat":"512"
+      }
+   ],
+   "bidid":"abc1123",
+   "cur":"USD"
+}
+</code></pre>
+
+
+            <div class="spacing"></div>
+            <p><csmall>Last Updated: Oct 2, 2014. | By: Brad Thorson</csmall></p>
+            <!-- <h6>SHARE:</h6>
+            <p class="share">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-tumblr"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
+            </p> -->
+        </div><! --/col-lg-9 -->
+        <div id="nav-sidebar" class="col-lg-3 hidden-xs hidden-sm affix nav-sidebar">
+   <!--  <h4>Search</h4>
+    <div class="hline"></div>
+        <p>
+            <br/>
+            <input type="text" class="form-control" placeholder="Search something">
+        </p>
+    <div class="spacing"></div> -->
+    <ul id="sidebar-ul" class="nav">
+    <h4>SDK & Integrations</h4>
+    <ul class="docs-nav">
+        <li class="active">
+            <a href="#js-api"> Javascript API Docs</a>
+        </li>
+        <li>
+            <a href="#generalized-js">Generalized Render JS</a>
+        </li>
+        <!-- <li>
+            <a href=""> - Making Render JS Calls</a>
+        </li> -->
+        <li>
+            <a href="#ios">iOS SDK</a>
+        </li>
+        <li>
+            <a href="#android">Android SDK</a>
+        </li>
+        <li>
+           <a href="#openrtb">OpenRTB</a>
+        </li>
+        <li>
+           <a href="#cookie">Cookie Sync</a>
+        </li>
+    </ul>
+    <h4>Placement Guides</h4>
+    <ul class="docs-nav">
+        <li>
+            <a href="#placement-basics">Placement Creations Basics</a>
+        </li>
+        <li>
+            <a href="#nml">Native Markup Language</a>
+        </li>
+        <li>
+            <a href="#csspath">CSS Path Guide</a>
+        </li>
+    </ul>
+    <h4>API</h4>
+    <ul class="docs-nav">
+        <li>
+            <a target="_blank" href="#reporting_api">Reporting API</a>
+        </li>
+        <li>
+            <a target="_blank" href="http://docs.adsnative.com/api_reference/">Full API Documentation <small class="glyphicon glyphicon-share"></small></a>
+        </li>
+    </ul>
+    </ul>
+    <div class="spacing"></div>
+</div>
+
+    </div><! --/row -->
+</div><! --/container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/retina-1.1.0.js"></script>
+<script src="/assets/js/jquery.hoverdir.js"></script>
+<script src="/assets/js/jquery.hoverex.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<script src="/assets/js/jquery.isotope.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script>
+//Attachin scrollspy to nav
+$('body').scrollspy({ target: '.nav-sidebar' });
+(function($) {
+	//Eanabling mooth scrolling
+	$('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	 });
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+    </body>
+</html>
