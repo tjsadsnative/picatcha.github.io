@@ -58,17 +58,33 @@ mixpanel.init("12e31a2d02bd9df681cd1c5da4481313");</script>
 	<script type="text/javascript">
 		document.domain = 'adsnative.com';
 	</script>
+
+
 </head>
 <body id="demo-preview-container">
 
 	<main id="preview-content">
 	    <div class="row-fluid iphone">
-			<iframe id="preview-window" class="span12 iphone" src="http://docs.adsnative.com/preview/babynameslog/index.html"></iframe>
+			<iframe id="preview-window" class="span12 iphone"></iframe>
 		</div>
 	</main>
 
 
 	
+    <!-- script to grab the urls parameters and add them to the iframes url -->
+    <script type="text/javascript">
+        var u = document.URL;
+        var params = u.split("?");
+        //the one hardcoded part
+        var source = "http://docs.adsnative.com/preview/babynameslog/index.html";
+
+        if (params.length > 1){
+            params = params[1];
+            source = source + "?" + params;
+        }
+
+        document.getElementById("preview-window").setAttribute("src", source);
+    </script>
 
 	<script type="text/javascript">
    var _gaq = _gaq || [];
