@@ -97,6 +97,13 @@ mixpanel.init("12e31a2d02bd9df681cd1c5da4481313");</script>
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+//setting the useragent in order to emulate a mobile device
+  navigator.__defineGetter__('userAgent', function(){
+          return 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4'
+          });
+
+  navigator.userAgent;
 </script>
 
 
