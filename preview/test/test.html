@@ -5,9 +5,15 @@
     </script>
 </head>
     <body>
-        <div id="cat" onclick="parent.call_cats();">
+        <div id="cat" onclick="doIt()">
             <img src="http://oh-my-cat.com/wp-content/uploads/2014/12/cats.jpg">
         </div>
+
+        <script>
+            function doIt(){
+                window.parent.call_cats();
+            }
+        </script>
     </body>
 </html>
 
