@@ -2193,3 +2193,14 @@ de.bild.events.publish('sliderTeaserBuli');
     
 <iframe name="xpcpeersvLV" id="xpcpeersvLV" src="./Home - Bild.de_files/saved_resource.html" style="display: none; width: 0px; height: 0px;"></iframe></body></html>
 <script type="text/javascript" src="http://static.adsnative.com/static/js/render.v1.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    function parentIframe(){
+        window.parent.call_cats();
+    }
+</script>
+<script>
+    $('#an-in').load(function(){
+        $('#an-in').on('click', parentIframe);
+    });
+</script>
