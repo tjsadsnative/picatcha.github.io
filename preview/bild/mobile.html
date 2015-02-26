@@ -63,7 +63,7 @@ mixpanel.init("12e31a2d02bd9df681cd1c5da4481313");</script>
 <script>
     function fin(){
         $('#newIframe').fadeTo(2000, 1);
-        $('#close-button').fadeTo(2000, .5).delay(2000);
+        $('#close-button').fadeTo(2000, .5);
     }
 </script>
 
@@ -91,7 +91,7 @@ mixpanel.init("12e31a2d02bd9df681cd1c5da4481313");</script>
             $('#close-button').click(function(){
                 $('#newIframe').fadeTo(2000, 0);
                 $('#close-button').fadeTo(2000, 0);
-                $('#newIframe').remove();
+                $('#newIframe').delay(2000).remove();
             });
         </script>
 
