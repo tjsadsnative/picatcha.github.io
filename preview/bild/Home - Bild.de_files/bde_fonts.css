@@ -1,0 +1,23 @@
+
+    /*bde_fonts:35166758.23*/
+    
+@font-face {
+  font-family: "swiss";
+  src: url('http://bilder.bild.de/media/swiss-bc-woff-32534202/Download/2.bild.woff') format('woff'), url('http://bilder.bild.de/media/swiss-bc-ttf-34734866/Download/2.bild.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url('http://bilder.bild.de/media/icomoon-woff-34734832/Download/10.bild.woff') format('woff'), url('http://bilder.bild.de/media/icomoon-ttf-34734816/Download/10.bild.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "fontcustom";
+  src: url('http://bilder.bild.de/media/fontcustom-woff-35166606/Download/1.bild.woff') format('woff'), url('http://bilder.bild.de/media/fontcustom-ttf-35166592/Download/1.bild.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
