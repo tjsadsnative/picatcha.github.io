@@ -49,6 +49,9 @@
 	}
 </script>
 <script>
+    document.domain='adsnative.com';
+</script>
+<script>
                     sas_renderMode = 0;
                     sas_scriptDomain = 'http://cdn1.smartadserver.com';
                 </script>
@@ -427,8 +430,18 @@ de.bild.events.publish('initModule',['sso']);
             <div class="lead">
                 <div class="grid50 tsr3">
                     <div class="col">
-                        <div id="ywRoiEcfXQ-J0TxWb7hndb7_Hce30VAJPGL0hDRa">
+                        <div id="an-in">
+                            <div class="hentry tsr3">
+                                <span class="tsr-img icon-premium-bildplus">
+                                    <img class="photo" src="http://static.adsnative.com/media/709/e5a4fb53-13b3-4733-bef9-7c71b54f419a.jpg">
+                                </span>
+                                <h3 class="entry-title">
+                                    <span class="kicker">Sponsored Content</span>
+                                    10 Commandments of Native
+                              </h3>
+                            </div>
                         </div>
+
             </div>
             <div class="col">
             <div class="hentry tsr3">
@@ -2196,14 +2209,11 @@ de.bild.events.publish('sliderTeaserBuli');
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
     function parentIframe(){
-        window.parent.call_cats();
+        window.parent.openIframe();
     }
 </script>
 <script>
-    $('#an-in').load(function(){
-        alert('an-in loaded');
-        $('#an-in').on('click', parentIframe);
-    });
+    $('#an-in').on('click', parentIframe);
 </script>
 
 </body></html>
