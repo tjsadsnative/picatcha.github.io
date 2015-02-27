@@ -62,10 +62,10 @@ mixpanel.init("12e31a2d02bd9df681cd1c5da4481313");</script>
 <!-- script to make iframe and button fade in and out -->
 <script>
     function fin(){
-        $('#newIframe').fadeTo(2000, 1);
-        $('#preview-window').fadeTo(2000, 0);
-        $('#close-button').fadeTo(2000, 1);
-        $('#top-border').fadeTo(2000, 1);
+        $('#newIframe').fadeTo(1000, 1);
+        $('#preview-window').fadeTo(1000, 0);
+        $('#close-button').fadeTo(1000, 1);
+        $('#top-border').fadeTo(1000, 1);
     }
 </script>
 
@@ -96,10 +96,10 @@ mixpanel.init("12e31a2d02bd9df681cd1c5da4481313");</script>
 
         <script type="text/javascript">
             $('#close-button').click(function(){
-                $('#newIframe').fadeTo(2000, 0);
-                $('#close-button').fadeTo(2000, 0);
-                $('#top-border').fadeTo(2000, 0);
-                $('#preview-window').fadeTo(2000, 1);
+                $('#newIframe').fadeTo(1000, 0);
+                $('#close-button').fadeTo(1000, 0);
+                $('#top-border').fadeTo(1000, 0);
+                $('#preview-window').fadeTo(1000, 1);
                 setTimeout(function(){
                     $('#newIframe').remove();
                 }, 2000);
