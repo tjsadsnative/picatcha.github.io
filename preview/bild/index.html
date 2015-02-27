@@ -64,12 +64,12 @@
             <img id="loader" src="images/loader.gif" style="padding-left: 49%; padding-top: 30%;">
         </div>
 
-        <div id="top-bordr" style="background-color: white; opacity:0; width: 100%; height: 50px; display: block; position: fixed; z-index: 1001;">
-            <p style="font-size: 25px; font-family: Arial; font-weight: bold; opacity: 1; left: 2%; top: 10px; line-height: 1.2em; position: absolute; color: black; z-index: 1004;">
+        <div id="top-bordr" style="background-color: rgb(237, 237, 237); opacity:0; width: 100%; height: 50px; display: block; position: fixed; z-index: 1001;">
+            <p style="font-size: 25px; font-family: Arial; font-weight: bold; opacity: 1; left: 2%; top: 10px; line-height: 1.2em; position: absolute; color: rgb(69, 69, 69); z-index: 1004;">
                 Promoted by GE
             </p>
         </div>
-        <img id="close-buttn" src="images/close.png" style="opacity:0; width: 40px; height: 40px; top: 5px; left: 85%; display: block; position: fixed; z-index: 1003;">
+        <img id="close-buttn" src="images/close.png" style="opacity:0; width: 40px; height: 40px; top: 4px; left: 89%; display: block; position: fixed; z-index: 1003;">
 
     <script>
          de.bild.events.publish("bodyAccessible");
@@ -80,6 +80,7 @@
     <div class="hidden">
     <script src="./Home - Bild.de_files/iam.js"></script>
         <!-- IVW VERSION="2.0" -->
+        <!--
         <script>
             if ((typeof(doTracking) == "undefined") || doTracking()) {
                 var iam_data = {
@@ -91,6 +92,7 @@
                 de.bild.events.publish('track/ivw2/count', [iam_data]);
             }
         </script>
+        -->
     <script src="./Home - Bild.de_files/webtrekkwap,35166572.3-35439740.3-35166574.1-35439742.1.bild.js"></script>
     <!--
     <script>
@@ -132,6 +134,7 @@
         wt.internalSearch = "";
     </script>
         -->
+        <!--
    <script>
        if (typeof(wt) != "undefined")
        {
@@ -187,7 +190,9 @@
 
         }
     </script>
+    -->
 
+    <!--
     <script>
         (function (scriptSrc, callback) {
             var headTag = document.getElementsByTagName('head')[0];
@@ -203,6 +208,8 @@
             headTag.appendChild(scriptTag);
         })("http://rem-track.bild.de/rem-1.1/static/remclient/1.0/remclient.js", triggerRemRequest);
     </script>
+    -->
+    <!--
 <script>
         //gibt es einen neuen Status?
         de.bild.events.subscribe('autoLoadFinished', triggerREMRequest);
@@ -227,6 +234,7 @@
             }
         }
     </script>
+    -->
 <script type="text/javascript">
        function nuggadReady()
        {
@@ -598,41 +606,6 @@ de.bild.events.publish('initModule',['sso']);
             </div>
             </div>
         </section>
-    <div class="widget">
-        <header class="group-header">
-            <h2>
-                <a href="http://m.bild.de/news/aktuell/news/newsticker-archiv-35735788,variante=S.bildMobile.html">Newsticker</a></h2>
-        </header>
-        <ol class="newsticker-widget module">
-            <!-- news ticker widget -->
-                    <li class="newsticker-item">
-                        <a href="http://m.bild.de/news/aktuell/news/newsticker-archiv-35735788,variante=S,wantedContextId=39913916.bildMobile.html">
-                            <time datetime="2015-02-25T01:30:32+01:00">01:30</time>
-                            <span class="newsticker-category"></span>
-
-                            <h3>Amnesty: Fünf Mächte im Sicherheitsrat sollen Vetorecht aufgeben</h3>
-                        </a>
-                    </li>
-                <!-- news ticker widget -->
-                    <li class="newsticker-item">
-                        <a href="http://m.bild.de/news/aktuell/news/newsticker-archiv-35735788,variante=S,wantedContextId=39913912.bildMobile.html">
-                            <time datetime="2015-02-25T01:25:45+01:00">01:25</time>
-                            <span class="newsticker-category"></span>
-
-                            <h3>Koalitionsspitze einigt sich auf Prüfung von Mindestlohn-Bürokratie</h3>
-                        </a>
-                    </li>
-                <!-- news ticker widget -->
-                    <li class="newsticker-item">
-                        <a href="http://m.bild.de/news/aktuell/news/newsticker-archiv-35735788,variante=S,wantedContextId=39913892.bildMobile.html">
-                            <time datetime="2015-02-25T01:19:13+01:00">01:19</time>
-                            <span class="newsticker-category"></span>
-
-                            <h3>Koalition räumt Streit bei Mietpreisbremse aus</h3>
-                        </a>
-                    </li>
-                </ol>
-    </div></div></div>
             <div class="faux">
                         <div class="content s12 ">
                             <div class="contentbar">
@@ -921,8 +894,6 @@ de.bild.events.publish('initModule',['sso']);
 </div>
     </section>
 <section>
-    <div class="module">
-    <div class="wk_wetterwidget"><style scoped="" type="text/css">@import ""./Home - Bild.de_files/bde_fonts.css"";</style>	<a id="wk_link_weather" href="http://m.wetter.bild.de/?lat=undefined&lon=undefined">	<div class="wk_header">		<h3 id="wk_forecast_city">Berlin heute</h3>	</div>		<div class="wk_forecast_day">		<div class="wk_col">			<div class="wk_forecast_temp"><span class="wk_tempmax" id="wkfcst_tmax0">8°C</span> | <span class="wk_tempmin" id="wkfcst_tmin0">1°C</span></div>			<div class="wk_forecast_weather" id="wkfcst_w0">wolkig</div>			<div class="wk_temp_act">Aktuell <span id="wk_temp">0°C</span></div>		</div>		<div class="wk_col">			<div class="wk_forecast_symbol" id="wkfcst_s0"><img alt="wolkig" src="./Home - Bild.de_files/wolkig.svg"></div>		</div>	</div>	<div class="wk_forecast_tbl">				<div class="wk_col">			<div class="wk_forecast_date" id="wkfcst_d1">Mi</div>			<div id="wkfcst_s1"><img alt="Regenschauer" src="./Home - Bild.de_files/regenschauer.svg"></div>			<p><span class="wk_tempmax" id="wkfcst_tmax1">9°C</span><br><span class="tempmin" id="wkfcst_tmin1">1°C</span></p>		</div>		<div class="wk_col">			<div class="wk_forecast_date" id="wkfcst_d2">Do</div>			<div id="wkfcst_s2"><img alt="wolkig" src="./Home - Bild.de_files/wolkig.svg"></div>			<p><span class="wk_tempmax" id="wkfcst_tmax2">8°C</span><br><span class="wk_tempmin" id="wkfcst_tmin2">0°C</span></p>		</div>		<div class="wk_col">			<div class="wk_forecast_date" id="wkfcst_d3">Fr</div>			<div id="wkfcst_s3"><img alt="wolkig" src="./Home - Bild.de_files/wolkig.svg"></div>			<p><span class="wk_tempmax" id="wkfcst_tmax3">9°C</span><br><span class="wk_tempmin" id="wkfcst_tmin3">0°C</span></p>		</div>		<div class="wk_col">			<div class="wk_forecast_date" id="wkfcst_d4">Sa</div>			<div id="wkfcst_s4"><img alt="Schneeregenschauer" src="./Home - Bild.de_files/schneeregenschauer.svg"></div>			<p><span class="wk_tempmax" id="wkfcst_tmax4">8°C</span><br><span class="wk_tempmin" id="wkfcst_tmin4">1°C</span></p>		</div>		<div class="wk_col">			<div class="wk_forecast_date" id="wkfcst_d5">So</div>			<div id="wkfcst_s5"><img alt="wolkig" src="./Home - Bild.de_files/wolkig.svg"></div>			<p><span class="wk_tempmax" id="wkfcst_tmax5">8°C</span><br><span class="wk_tempmin" id="wkfcst_tmin5">1°C</span></p>		</div>		<div class="wk_col">			<div class="wk_forecast_date" id="wkfcst_d6">Mo</div>			<div id="wkfcst_s6"><img alt="Regenschauer" src="./Home - Bild.de_files/regenschauer.svg"></div>			<p><span class="wk_tempmax" id="wkfcst_tmax6">11°C</span><br><span class="wk_tempmin" id="wkfcst_tmin6">2°C</span></p>		</div>			</div>	</a>			<button class="wk_geo" onclick="getLocation()">Geo</button><script type="text/javascript">var id = 0;var search = '10115';function loadXMLDoc(lat, lon){(function() {	var wkAPI = "http://m.wetter.bild.de/wetterwidget_latlon_json.asp?jsoncallback=?";		$.getJSON( wkAPI, {		lat: lat,		lon: lon,		format: "json"	})	.done(function( data ) {		document.getElementById('wk_forecast_city').innerHTML=data.ort+" heute";		document.getElementById('wk_temp').innerHTML=data.aktuelle_temperatur+"&deg;C";		document.getElementById('wk_link_weather').href="http://m.wetter.bild.de/?lat="+lat+"&lon="+lon;		$.each( data.wetter, function( i, item ) {			document.getElementById('wkfcst_s'+i).innerHTML='<img alt="'+item.wetter+'" src="http://m.wetter.bild.de/icons/svg/'+item.symbol+'">';			document.getElementById('wkfcst_tmin'+i).innerHTML=item.tmin+'&deg;C';			document.getElementById('wkfcst_tmax'+i).innerHTML=item.tmax+'&deg;C';			if (i>0){				document.getElementById('wkfcst_d'+i).innerHTML=item.wochentag;			}else{				document.getElementById('wkfcst_w'+i).innerHTML=item.wetter;			}		});		if (!Modernizr.svg) {			$('img[src$=".svg"]',$('#wk_link_weather')).each(function(){				$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));			});		}		});	})();	}de.bild.mobile.deviceInfo.getGeoData(function(geolocation){	loadXMLDoc(geolocation.latitude, geolocation.longitude);});function getLocation(){	de.bild.mobile.deviceInfo.renewGeoData(function(geolocation){		loadXMLDoc(geolocation.latitude, geolocation.longitude);	});}if (!Modernizr.svg) {	$('img[src$=".svg"]',$('#wk_link_weather')).each(function(){		$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));	});}</script></div></div>
 </section>
 <section>
             <header class="group-header">
