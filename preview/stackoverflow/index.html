@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://preview.adsnative.com/stackoverflow_careers/ -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <!--<base url="http://stackoverflow.com/">--><base href=".">
+
+    <title>javascript - A better way to table cell editing by using Angular JS - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=00a326f96f68">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=41f6e13ade69">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://preview.adsnative.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=ea71a5211a91">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="A better way to table cell editing by using Angular JS">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am asking these questions to share and have better understanding about how to implement certain things with Angular better.
+
+Note* Front-end is Angular. Back-end is Django
+
+1.    Inline editing
+
+On ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js">
+    <link rel="canonical" href="http://stackoverflow.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js">
+
+
+
+    <script type="text/javascript" async="" src="./stackoverflow_files_files/saved_resource"></script><script type="text/javascript" src="./stackoverflow_files_files/saved_resource(1)"></script><script type="text/javascript" async="" src="./stackoverflow_files_files/ados"></script><script async="" src="./stackoverflow_files_files/quant.js"></script><script async="" src="./stackoverflow_files_files/beacon.js"></script><script async="" src="./stackoverflow_files_files/analytics.js"></script><script type="text/javascript" async="" src="./stackoverflow_files_files/ados.js"></script><script src="./stackoverflow_files_files/jquery.min.js"></script>
+    <script src="./stackoverflow_files_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stackoverflow_files_files/all.css">
+
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;A better way to table cell editing by using Angular JS&#39;" href="http://preview.adsnative.com/feeds/question/28751700">
+    <meta name="twitter:app:country" content="US">
+    <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:iphone" content="871299723">
+    <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js">
+    <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:ipad" content="871299723">
+    <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js">
+    <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+    <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js">
+    <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+    <script>
+
+        StackExchange.ready(function () {
+
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:28751700});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '28751700');
+
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1424981017,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"ad77065410497392716ff499cbcfc84d","isAnonymous":true,"ab":{"next_answer_hook":{"v":"a","g":2}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"87f20631f47a","js/moderator.en.js":"3cdb19b2c791","js/full-anon.en.js":"c5525e7a9906","js/full.en.js":"3cc5fd385969","js/wmd.en.js":"282041077a84","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"d96cd4adc9de","js/help.en.js":"b5f40fd81205","js/tageditor.en.js":"3a2a3f54b3e3","js/tageditornew.en.js":"cc317fe6c48f","js/inline-tag-editing.en.js":"48f13b102998","js/revisions.en.js":"8e050c5bb5cd","js/review.en.js":"f1c330c67f2e","js/tagsuggestions.en.js":"44b9e82a8064","js/post-validation.en.js":"6c43d75a921c","js/explore-qlist.en.js":"257ba4cb7b04","js/events.en.js":"b8dadb80a850","js/keyboard-shortcuts.en.js":"136b80fdf69d","js/external-editor.en.js":"333f2972598f","js/external-editor.en.js":"333f2972598f","js/snippet-javascript.en.js":"410aced69c52","js/snippet-javascript-codemirror.en.js":"acd1d40324cf"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+
+
+<script src="./stackoverflow_files_files/ad-template.json"></script><script async="" src="./stackoverflow_files_files/full-anon.en.js"></script><script async="" src="./stackoverflow_files_files/snippet-javascript.en.js"></script><script async="" src="./stackoverflow_files_files/post-validation.en.js"></script><script async="" src="./stackoverflow_files_files/external-editor.en.js"></script><script type="text/javascript" src="./stackoverflow_files_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><style type="text/css">div.adsnative-labels { } div.adsnative-powered-by { margin-right:5px !important; font-size: 11px; color: #777; float: right; text-align: right; margin-right: 0px; }div.adsnative-powered-by a { text-decoration: none; color: #333; font-size:14px;  font-family: "BenchNine", sans-serif; }div.adsnative-powered-by a:hover { color: #cc0033; }.adsnative-sponsored-label { font-size:12px; color: #999; margin-bottom:5px; }.adsnative-share-buttons { float: left; margin-left:8px; margin-bottom:5px; }.adsnative-share-button { text-decoration:none; display:block; height:24px; float:left; margin-right:10px; padding-left:25px; line-height:21px; font-size:14px; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;  }.adsnative-fb-share { background:url(http://static.adsnative.com/static/img/facebook.png) no-repeat; color:#3a5899; }.adsnative-tw-share { background:url(http://static.adsnative.com/static/img/twitter.png) no-repeat; color:#40aceb; }.adsnative-cta-button { display:block; float:left; width:100%; margin:8px 0px auto; border-radius: 0px; background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf) ); border:1px solid #DDD; padding:8px 0; font-size:14px; font-family:Helvetica, Arial, sans-serif; text-decoration:none; text-align:center; text-shadow:none; color:#004276; text-shadow:0 1px 0 rgba(255,255,255, 1); }div.adsnative-reset { clear: both; }[class^="adsnative-icon-"], [class*=" adsnative-icon-"] { display:none; }div { margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-size: 100%;
+vertical-align: baseline;
+background: transparent; font-family: "Lucida Grande",lucida,arial,sans-serif; }
+
+span { margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-size: 100%;
+vertical-align: baseline;
+background: transparent; }
+
+p { margin-bottom: 10px; }
+
+a:link { text-decoration: none; color: #0099cc; }
+a:hover { text-decoration: underline;  }
+
+.node { padding-bottom: 10px;
+margin-bottom: 20px; }
+
+.node_article { overflow: hidden; }
+
+.node_article .picture { float: left;
+min-height: 54px;
+width: 54px;
+position: absolute;
+margin-top: 5px; }
+
+.node_article .picture img { width: 54px; }
+
+.node_article .info_bar { width: 620px;
+margin-bottom: 15px; }
+
+.node_article .clearfix { display: block; }
+
+.node_article .info_bar h1.title_smaller, .node_review .info_bar h1.title_smaller { font-weight: normal;
+color: black;
+line-height: 1.1;
+font-size: 28px;
+margin: 0 0 5px 70px; }
+
+.node_article .info_bar h1.title_smaller a { color: black; }
+
+.node_article .info_bar .submitted { font-size: 10px;
+color: #999999;
+margin: 0 0 10px 70px; }
+
+.node_article .read_more, .node_review .read_more { font-weight: bold; }</style><style type="text/css">div.adsnative-labels { } div.adsnative-powered-by { margin-right:5px !important; font-size: 11px; color: #777; float: right; text-align: right; margin-right: 0px; }div.adsnative-powered-by a { text-decoration: none; color: #333; font-size:14px;  font-family: "BenchNine", sans-serif; }div.adsnative-powered-by a:hover { color: #cc0033; }.adsnative-sponsored-label { font-size:12px; color: #999; margin-bottom:5px; }.adsnative-share-buttons { float: left; margin-left:8px; margin-bottom:5px; }.adsnative-share-button { text-decoration:none; display:block; height:24px; float:left; margin-right:10px; padding-left:25px; line-height:21px; font-size:14px; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;  }.adsnative-fb-share { background:url(http://static.adsnative.com/static/img/facebook.png) no-repeat; color:#3a5899; }.adsnative-tw-share { background:url(http://static.adsnative.com/static/img/twitter.png) no-repeat; color:#40aceb; }.adsnative-cta-button { display:block; float:left; width:100%; margin:8px 0px auto; border-radius: 0px; background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf) ); border:1px solid #DDD; padding:8px 0; font-size:14px; font-family:Helvetica, Arial, sans-serif; text-decoration:none; text-align:center; text-shadow:none; color:#004276; text-shadow:0 1px 0 rgba(255,255,255, 1); }div.adsnative-reset { clear: both; }[class^="adsnative-icon-"], [class*=" adsnative-icon-"] { display:none; }div#hireme {
+  color: #333;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  text-align: left;
+  line-height: 130%;
+  padding: 0;
+  margin: 12px 0;
+  -moz-background-size: 210px;
+  -o-background-size: 210px;
+  -webkit-background-size: 210px;
+  background-size: 210px;
+  width: 210px;
+  overflow: hidden;
+  clear: both;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  border: 5px solid transparent;
+}
+div#hireme.tagged {
+  line-height: 140%;
+}
+  div#hireme.near-you {
+  background-image: none;
+}
+div#hireme.orange {
+  background-color: #fc9a24;
+  border-color: #fc9a24;
+  background-position: center 3px;
+}
+div#hireme>a.top {
+width: 100%;
+height: 45px;
+display: block;
+color: #fff;
+text-align: center;
+font-size: 20px;
+line-height: 42px;
+}
+div#hireme>ul {
+margin: 0;
+padding: 12px 0 0;
+list-style: none;
+display: block;
+background-color: #fff;
+}
+div#hireme>ul>li {
+padding: 0 12px 12px;
+margin: 0!important;
+}
+div#hireme>ul>li>a>div.company {
+font-weight: 700;
+}
+div#hireme>ul>li>a>div {
+color: #666;
+float: none;
+}
+div#hireme>ul>li>a span.post-tag {
+background: #f7fdff;
+text-align: center;
+color: #3e6d8e;
+background-color: #e4edf4;
+padding: .25em .5em;
+margin: 2px 2px 2px 0;
+text-decoration: none;
+font-size: 12px;
+line-height: 1.4;
+white-space: nowrap;
+display: inline-block;
+border-radius: 0;
+border: 1px solid #e4edf4;
+float: none;
+}</style></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+
+    </div>
+    <div class="modal-content" id="your-communities-section">
+
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f28751700%2fa-better-way-to-table-cell-editing-by-using-angular-js" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f28751700%2fa-better-way-to-table-cell-editing-by-using-angular-js" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 137 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f28751700%2fa-better-way-to-table-cell-editing-by-using-angular-js" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f28751700%2fa-better-way-to-table-cell-editing-by-using-angular-js" class="login-link">log in</a>
+                            <a href="http://preview.adsnative.com/tour">tour</a>
+
+                            <a href="http://preview.adsnative.com/stackoverflow_careers/#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://preview.adsnative.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://preview.adsnative.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=anon-topbar">stack overflow careers</a>
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://preview.adsnative.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://preview.adsnative.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://preview.adsnative.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://preview.adsnative.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://preview.adsnative.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://preview.adsnative.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://preview.adsnative.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://preview.adsnative.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="content" class="snippet-hidden">
+
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://preview.adsnative.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://preview.adsnative.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js" class="question-hyperlink">A better way to table cell editing by using Angular JS</a></h1>
+		</div>
+			<div id="mainbar">
+
+
+
+<div class="question" data-questionid="28751700" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk992797079",4).setZone(43) ; });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk992797079"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6NjYyODExLCJkaSI6Ijg2MTIyNmQwNGVjMzRiODdhZjg0NzEwZTkwN2M5OGY1IiwiZG0iOjEsImZjIjo2ODQ1MjksImZsIjo0MTAxODMsImlwIjoiNTAuMTU2LjUxLjIwIiwia3ciOiJqYXZhc2NyaXB0LGFycmF5cyxhbmd1bGFyanMiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInN0Ijo4Mjc3LCJ1ayI6InVlMS1jMjQ5OGI3MjM2ZWY0YjFmOGZjNmI4YTQ2NDE4NzEyMSIsInpuIjo0MywidHMiOjE0MjU1MDk5ODY0ODEsImJmIjp0cnVlLCJwbiI6ImFkemVyazk5Mjc5NzA3OSIsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vY3YvZ2V0LW9uZT91dG1fc291cmNlPXN0YWNrb3ZlcmZsb3cuY29tJnV0bV9tZWRpdW09YWQmdXRtX2NhbXBhaWduPWNhbmRpZGF0ZXMtYWRkLWN2JnV0bV9jb250ZW50PWxiLWNhcmVlcnMtbGlua2VkaW4ifQ&s=PaXg2dejyX-d_OQq29l2kPfumBw" rel="nofollow" target="_blank" title=""><img src="./stackoverflow_files_files/cfa6d7112df94e14b466de3f85f0bcac.png" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./stackoverflow_files_files/i.gif"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://preview.adsnative.com/stackoverflow_careers/#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="28751700">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+    <a class="star-off" href="http://preview.adsnative.com/stackoverflow_careers/#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>
+
+</div>
+
+            </td>
+
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I am asking these questions to share and have better understanding about how to implement certain things with Angular better.</p>
+
+<p><strong>Note* Front-end is Angular. Back-end is Django</strong></p>
+
+<p><strong>1.    Inline editing</strong></p>
+
+<p>On cell click the data becomes editable and it is bound to that cellâ€™s <code>ng-model</code>. So when I <code>ng-blur</code> from a cell, I send an update to database. Also, I have the position of that cell, so if I need to do anything to that cell in the future, it is just constant time access to my <code>$scope.array</code>.  Now there is a small issue here and I am not sure if there is one solid and right solution to this.</p>
+
+<ul>
+<li><p>Since editing changes the scope right away, then I am not sure what
+to do in callback functions. The logical thing is to update if
+callback is success and otherwise if error. </p>
+
+<p>At the moment I implement this way: If success do not do anything,
+otherwise have Django send me the unchanged data to update my record
+(revert the update).</p></li>
+</ul>
+
+<p><strong>2.    Using form to edit cells in the row</strong></p>
+
+<p>I have an extra column for actions (edit, delete â€¦). If a user clicks on edit action, I will load that rowâ€™s data into a form. User will make changes and save the new row to database. </p>
+
+<ul>
+<li>On callback success I get the new updated row. Since I know the
+<code>$index</code> of the row in the table, I can still use constant time access
+to <code>$scope.array</code> to update that row. On error do nothing (show an
+error or warning message).</li>
+</ul>
+
+<p>My concern is about being consistent throughout the application. As you noticed, I am using indices a lot to avoid loops.
+<strong>Any tips or suggestions on above points?</strong></p>
+
+<p><strong>Other issue:</strong> I introduced table sorting which uses <code>orderBy:â€™column-headingâ€™:Boolean</code>. Sorting is happening on the view but that does not reflect on $scope.array. This messes up my indices because they represent positions on the view and not in the <code>$scope.array</code>. At this point I am not able to update my <code>$scope.array</code> in constant time. I have to use loop.
+<strong>Any tips on this issue?</strong></p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://preview.adsnative.com/questions/tagged/javascript" class="post-tag js-gps-track" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://preview.adsnative.com/questions/tagged/arrays" class="post-tag js-gps-track" title="show questions tagged &#39;arrays&#39;" rel="tag">arrays</a> <a href="http://preview.adsnative.com/questions/tagged/angularjs" class="post-tag js-gps-track" title="show questions tagged &#39;angularjs&#39;" rel="tag">angularjs</a>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://preview.adsnative.com/q/28751700" title="short permalink to this question" class="short-link" id="link-post-28751700">share</a></div>
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2015-02-26 20:02:28Z" class="relativetime">1 min ago</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://preview.adsnative.com/users/1471089/brian"><div class="gravatar-wrapper-32"><img src="./stackoverflow_files_files/jUiX1.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://preview.adsnative.com/users/1471089/brian">Brian</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,942</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="38 bronze badges"><span class="badge3"></span><span class="badgecount">38</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-28751700" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-28751700" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://preview.adsnative.com/stackoverflow_careers/#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers" class="no-answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+						</h2>
+						<div style="display:none;">
+							<div id="tabs">
+        <a href="http://preview.adsnative.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://preview.adsnative.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://preview.adsnative.com/questions/28751700/a-better-way-to-table-cell-editing-by-using-angular-js?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>
+				</div>
+
+
+
+											<h2 class="bottom-notice bottom-share-links" style="padding-top: 8px; margin-bottom: -8px;">
+								Know someone who can answer?
+								Share a link to this <a href="http://preview.adsnative.com/q/28751700">question</a> via <a href="mailto:?subject=Stack%20Overflow%20Question&body=A%20better%20way%20to%20table%20cell%20editing%20by%20using%20Angular%20JS%0Ahttp%3a%2f%2fstackoverflow.com%2fq%2f28751700%3fsem%3d2">email</a>, <a href="https://plus.google.com/share?url=http%3a%2f%2fstackoverflow.com%2fq%2f28751700%3fsgp%3d2">Google+</a>, <a href="http://twitter.com/share?url=http%3a%2f%2fstackoverflow.com%2fq%2f28751700%3fstw%3d2">Twitter</a>, or <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fstackoverflow.com%2fq%2f28751700%3fsfb%3d2">Facebook</a>.
+							</h2>
+					<a name="new-answer"></a>
+						<form id="post-form" action="http://preview.adsnative.com/questions/28751700/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="28751700">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="http://stackoverflow.com/">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="ad77065410497392716ff499cbcfc84d">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+
+            <div class="form-item new-post-login">
+
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://preview.adsnative.com/users/login?returnurl=%2fquestions%2f28751700%2fa-better-way-to-table-cell-editing-by-using-angular-js%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f28751700%2fa-better-way-to-table-cell-editing-by-using-angular-js%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://preview.adsnative.com/stackoverflow_careers/#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+							Browse other questions tagged <a href="http://preview.adsnative.com/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://preview.adsnative.com/questions/tagged/arrays" class="post-tag" title="show questions tagged &#39;arrays&#39;" rel="tag">arrays</a> <a href="http://preview.adsnative.com/questions/tagged/angularjs" class="post-tag" title="show questions tagged &#39;angularjs&#39;" rel="tag">angularjs</a>  or <a href="http://preview.adsnative.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2015-02-26 20:02:28Z"><b>today</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>2 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			        </tbody></table>
+			    </div>
+
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk2040985454",[17,2221]).setZone(45) ; });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2040985454"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6MTg2NjI0LCJjaCI6MTE3OCwiY3IiOjY5NTU1NiwiZGkiOiI3ZjcwZjBmNWUxOWQ0OWJkYWExZmI3MTVlYTFmNGQ1MiIsImRtIjoxLCJmYyI6NzIxNTg2LCJmbCI6NDQxMzM0LCJpcCI6IjUwLjE1Ni41MS4yMCIsImt3IjoiamF2YXNjcmlwdCxhcnJheXMsYW5ndWxhcmpzIiwibnciOjIyLCJwYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJzdCI6ODI3NywidWsiOiJ1ZTEtYzI0OThiNzIzNmVmNGIxZjhmYzZiOGE0NjQxODcxMjEiLCJ6biI6NDUsInRzIjoxNDI1NTA5OTg2NDg0LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsyMDQwOTg1NDU0IiwidXIiOiJodHRwOi8vY2FyZWVycy5zdGFja292ZXJmbG93LmNvbS9jdi9nZXQtb25lP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdy5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249Y2FuZGlkYXRlcy1hZGQtY3YmdXRtX2NvbnRlbnQ9c2ItbGF1bmNoLXlvdXJzZWxmIn0&s=BLFMYKf-Fw_zvBmOlQ5mupNSQJI" rel="nofollow" target="_blank" title=""><img src="./stackoverflow_files_files/578f2ad4eed04a95b0fe312bd237c11c.png" title="" alt="" border="0" width="220" height="250"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./stackoverflow_files_files/i(1).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://preview.adsnative.com/stackoverflow_careers/#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+
+        <div id="xleb_3nSzDst82Tc5XEPVBktGxjF5AIXt7WyfQpf" class="an-container"><div id="hireme" class="orange near-you tagged">
+  <a href="http://careers.stackoverflow.com/" target="_blank" class="top">
+    <span>Jobs near you</span>
+  </a>
+  <ul class="jobs"></ul></div>
+  <li class="city">
+      <a href="http://careers.stackoverflow.com/jobs/location/New%20York%2C%20New%20York" target="_blank">More jobs near New York…</a>
+    </li></div> 
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/17106461?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://preview.adsnative.com/questions/17106461/what-is-angular-way-to-transform-a-table-cell?rq=1" class="question-hyperlink">What is angular way to transform a table cell</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/18318109?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://preview.adsnative.com/questions/18318109/whats-a-good-approach-to-creating-a-table-in-angular-js-that-highlights-cells-w?rq=1" class="question-hyperlink">What's a good approach to creating a table in angular JS that highlights cells when they change?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/22101700?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://preview.adsnative.com/questions/22101700/angular-update-a-table-cell?rq=1" class="question-hyperlink">Angular - update a table cell</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/23881580?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://preview.adsnative.com/questions/23881580/how-do-you-update-an-existing-item-in-an-angular-array-that-has-changed-externa?rq=1" class="question-hyperlink">How do you update an existing item in an Angular Array (that has changed externally)?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/23988217?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://preview.adsnative.com/questions/23988217/arrays-in-angular-js?rq=1" class="question-hyperlink">Arrays in Angular JS</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/24066286?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://preview.adsnative.com/questions/24066286/angular-watch-on-an-array-of-objects?rq=1" class="question-hyperlink">Angular $watch on an array of objects</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/24670422?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://preview.adsnative.com/questions/24670422/angular-pushing-item-in-an-empty-array?rq=1" class="question-hyperlink">Angular pushing item in an empty array</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/25982186?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://preview.adsnative.com/questions/25982186/angular-x-editable-table-save-on-change?rq=1" class="question-hyperlink">Angular X-Editable table save on change</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/26599883?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-2
+    </div>
+</a><a href="http://preview.adsnative.com/questions/26599883/how-to-use-json-array-length-in-angular?rq=1" class="question-hyperlink">How to use json array length in angular?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://preview.adsnative.com/q/28421427?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://preview.adsnative.com/questions/28421427/editable-table-cell-in-angularjs?rq=1" class="question-hyperlink">Editable Table Cell in AngularJS</a>
+</div>
+
+                    </div>
+				</div>
+
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="http://blender.stackexchange.com/questions/26305/convert-an-image-with-black-background-to-a-black-and-white" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Convert an image with black background to a black and white
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/28744990/why-is-scala-hashmap-slow" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is Scala hashmap slow?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/167200/can-conservation-of-momentum-be-violated" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can conservation of momentum be violated?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-engineering" title="Engineering Stack Exchange"></div><a href="http://engineering.stackexchange.com/questions/1864/how-should-the-public-raise-questions-about-unsafe-structures-in-the-united-stat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:595 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How should the public raise questions about unsafe structures in the United States?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/31556/80s-tv-action-series-about-an-electric-man" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    80s TV action series about an "electric man"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1166168/sum-and-divisibility-puzzle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Sum and Divisibility Puzzle
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/274278/is-it-premature-optimization-to-add-database-indices" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it premature optimization to add database indices?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/230692/informal-way-of-saying-moreover" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Informal way of saying "moreover"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/82657/conways-game-of-life-in-python3" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Conway's Game of Life in Python3
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-lifehacks" title="Lifehacks Stack Exchange"></div><a href="http://lifehacks.stackexchange.com/questions/5656/removing-pepper-juice-from-eyes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:593 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Removing Pepper Juice From Eyes
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/40598/would-it-be-acceptable-to-occasionally-sleep-at-the-lab" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Would it be acceptable to occasionally sleep at the lab?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-craftcms" title="Craft CMS Stack Exchange"></div><a href="http://craftcms.stackexchange.com/questions/8396/how-to-redirect-to-coming-soon-template" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:563 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to redirect to Coming Soon template
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/9629/ten-rebus-puzzles" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Ten Rebus puzzles
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/40595/same-last-name-as-supervisor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Same last name as supervisor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/44946/will-a-credit-card-issuer-cancel-an-account-if-it-never-incurs-interest" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Will a credit card issuer cancel an account if it never incurs interest?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/882345/how-to-make-shift-ctrl-and-alt-toggle-like-caps-lock" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to make Shift, Ctrl and Alt toggle like Caps lock
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-vi" title="Vi and Vim Stack Exchange"></div><a href="http://vi.stackexchange.com/questions/2248/how-to-create-syntax-folding-for-pascal" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:599 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to create syntax folding for pascal
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/274459/when-not-to-apply-dependency-inversion" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When NOT to apply Dependency Inversion?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/95675/how-can-i-make-a-random-generator-that-is-biased-by-prior-events" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I make a "random" generator that is biased by prior events?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="http://history.stackexchange.com/questions/20603/why-did-native-americans-die-from-european-diseases-while-europeans-didnt-catch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Native Americans die from European diseases while Europeans didn't catch serious diseases from the New World?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/590187/how-to-prevent-output-from-and-operator-send-to-background-operator-and" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to prevent output from '&amp;' and '&gt;' operator (send to background operator and redirection operator)
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/187052/how-to-remove-duplicate-characters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to remove duplicate characters?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1166798/inequality-from-chapter-5-of-the-book-how-to-think-like-a-mathematician" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Inequality from Chapter 5 of the book *How to Think Like a Mathematician*
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/590298/how-to-stock-all-files-with-the-same-suffix-into-a-table" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to stock all files with the same suffix into a table?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="http://preview.adsnative.com/stackoverflow_careers/#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://preview.adsnative.com/feeds/question/28751700" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/28751700/ivc/7d4c');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/28751700/ivc/7d4c" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+
+        </div><div><div align="center">
+<!-- FM Content Well 650x300 Zone -->
+
+
+<!-- FM Content Well 650x300 Zone -->
+<script type="text/javascript" src="./stackoverflow_files_files/9020" async=""></script><script type="" async="">federated_media_section = "thehandmadehome-index";</script></div></div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://preview.adsnative.com/tour">tour</a>
+                    <a href="http://preview.adsnative.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://preview.adsnative.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2015 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2015.2.26.2347
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Begin ADSNATIVE Code -->
+    <script type="text/javascript" src="./stackoverflow_files_files/render.v1.js">
+    </script><img src="./stackoverflow_files_files/cm.gif" style="height: 1px; width: 1px; border: none;">
+    <!-- End ADSNATIVE Code -->
+
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('javascript,arrays,angularjs');; ados_load(); });
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+
+        ga('set', 'dimension2', '|javascript|arrays|angularjs|');
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+
+    
+
+<div id="an-infeed" class="node article published promoted even clear-block">
+  <div class="node_article">
+    <div class="picture">
+        <img src="./stackoverflow_files_files/50d96799-ea05-4b83-9fa0-8f73c9831ad7.jpg" class="" width="" height="" style="">
+    </div>
+    <div class="info_bar clearfix">
+      <h1 class="title_smaller"><a href="http://bevo.adsnative.com/ck?url=https%3A%2F%2Fdeals.maclife.com%2Fsales%2Fthe-name-your-own-price-game-design-bundle&sid=odxjipgsnnqi1ijew56yt3am9zf4sjk3" target="_blank" class="" style="">Deals: Enter to Win Your Very Own PS4 Plus Battlefield 4 <div class="adsnative-icon-external-link"></div></a></h1>
+	  	<div class="submitted">
+		    <span class="posted_date" style="">Sponsored Post by MacLife</span>
+	   </div>
+    </div>
+     <a href="http://bevo.adsnative.com/ck?url=https%3A%2F%2Fdeals.maclife.com%2Fsales%2Fthe-name-your-own-price-game-design-bundle&sid=odxjipgsnnqi1ijew56yt3am9zf4sjk3" target="_blank"><p></p><div class="" style=";background-image:url(&#39;http://static.adsnative.com/media/nw-187/99866977-3438-487d-bc42-2a7a4a275070.jpg&#39;);width:590px;height:250px;background-size:cover;background-position:center center;background-repeat: no-repeat;"></div><p></p></a>
+     <p>Who says Mac owners aren't gamers? We love to get in on the action any way we can--be it on our favorite Apple device...</p>
+<div class="readmore_link"><a href="http://bevo.adsnative.com/ck?url=https%3A%2F%2Fdeals.maclife.com%2Fsales%2Fthe-name-your-own-price-game-design-bundle&sid=odxjipgsnnqi1ijew56yt3am9zf4sjk3" class="link read_more" target="_blank" sl-processed="1"><p>»Read More</p></a></div>
+  </div>
+</div></body></html>
