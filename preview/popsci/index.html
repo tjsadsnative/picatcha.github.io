@@ -745,15 +745,15 @@ xsd: http://www.w3.org/2001/XMLSchema#
     $(window).scroll(function(){
           var win = $(window).scrollTop();
           var h = $(window).height();
+          console.log(vid);
           var pl = vid.offset().top;
           var ph = vid.height();
           if ((win < pl) && ((win + h) > (pl + ph))){
+              console.log(vid.src);
               console.log('true');
-              player.playVideo();
           }
           else{
               console.log('false');
-              player.pauseVideo();
           }
       });
 </script>
