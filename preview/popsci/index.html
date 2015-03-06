@@ -742,26 +742,37 @@ xsd: http://www.w3.org/2001/XMLSchema#
        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
     var shouldAuto = true;
+    var shouldPlay = true;
     $(window).scroll(function(){
-          var vid = $('.an-video');
+          var ifr = $('.an-video');
           var win = $(window).scrollTop();
           var h = $(window).height();
           var pl = vid.offset().top;
           var ph = vid.height();
+          var vid = ifr.contents().find('#theplayer');
           if ((win < pl) && ((win + h) > (pl + ph))){
-              console.log(vid.attr('src'));
-              if (shouldAuto){
-                  vid.attr('src', vid.attr('src') + '&autoplay=1');
-                  shouldAuto = false;
-              }
-              console.log('true');
+              if (shoudPlay){
+                vid.play();
+                shouldPlay = false;
+            }
+
+             // console.log(vid.attr('src'));
+             // if (shouldAuto){
+             //     vid.attr('src', vid.attr('src') + '&autoplay=1');
+             //     shouldAuto = false;
+             // }
+             // console.log('true');
           }
           else{
-              var s = vid.attr('src').split('&autoplay=1');
-              vid.attr('src', s[0]);
-              console.log(vid.attr('src'));
-              console.log('false');
-              shouldAuto = true;
+              if (!shouldPlay){
+                  vid.pause();
+                  shouldPlay = true;
+              }
+             // var s = vid.attr('src').split('&autoplay=1');
+             // vid.attr('src', s[0]);
+             // console.log(vid.attr('src'));
+             // console.log('false');
+             // shouldAuto = true;
           }
       });
 </script>
