@@ -747,8 +747,8 @@ xsd: http://www.w3.org/2001/XMLSchema#
           var ifr = $('.an-video');
           var win = $(window).scrollTop();
           var h = $(window).height();
-          var pl = vid.offset().top;
-          var ph = vid.height();
+          var pl = ifr.offset().top;
+          var ph = ifr.height();
           var vid = ifr.contents().find('#theplayer');
           if ((win < pl) && ((win + h) > (pl + ph))){
               if (shoudPlay){
