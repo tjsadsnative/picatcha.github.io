@@ -747,9 +747,11 @@ xsd: http://www.w3.org/2001/XMLSchema#
           var h = $(window).height();
           var pl = vid.offset().top;
           var ph = vid.height();
-          if ((win < pl) && ((win + h) > (pl + ph))){
+          var shouldAuto = true;
+          if (((win < pl) && ((win + h) > (pl + ph))) && shouldAuto){
+              shouldAuto = false;
               console.log(vid.attr('src'));
-              vid.attr('src', vid.attr('src') + '?autoplay=1');
+              vid.attr('src', vid.attr('src') + '&autoplay=1');
               console.log('true');
           }
           else{
