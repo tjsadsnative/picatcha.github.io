@@ -757,6 +757,9 @@ xsd: http://www.w3.org/2001/XMLSchema#
               console.log('true');
           }
           else{
+              var s = vid.attr('src').split('&autoplay=1');
+              vid.attr('src', s[0]);
+              console.log(vid.attr('src'));
               console.log('false');
           }
       });
