@@ -749,6 +749,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
           var ph = vid.height();
           if ((win < pl) && ((win + h) > (pl + ph))){
               console.log(vid.attr('src'));
+              vid.attr('src', vid.attr('src') + '?autoplay=1');
               console.log('true');
           }
           else{
