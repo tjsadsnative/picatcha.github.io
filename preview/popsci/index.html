@@ -742,7 +742,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
     var shouldAuto = true;
-    var shouldPlay = true;
+    //var shouldPlay = true;
     $(window).scroll(function(){
           var vid = $('.an-video');
           var win = $(window).scrollTop();
@@ -756,12 +756,10 @@ xsd: http://www.w3.org/2001/XMLSchema#
             //    shouldPlay = false;
             //}
 
-             console.log(vid.attr('src'));
              if (shouldAuto){
                   vid.attr('src', vid.attr('src') + '&auto_play=1');
                   shouldAuto = false;
               }
-              console.log('true');
           }
           else{
             //  if (!shouldPlay){
@@ -770,8 +768,6 @@ xsd: http://www.w3.org/2001/XMLSchema#
             //  }
               var s = vid.attr('src').split('&auto_play=1');
               vid.attr('src', s[0]);
-              console.log(vid.attr('src'));
-              console.log('false');
               shouldAuto = true;
           }
       });
