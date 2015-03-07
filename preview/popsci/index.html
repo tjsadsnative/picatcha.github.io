@@ -744,12 +744,12 @@ xsd: http://www.w3.org/2001/XMLSchema#
     var shouldAuto = true;
     var shouldPlay = true;
     $(window).scroll(function(){
-          var ifr = $('.an-video');
+          var vid = $('.an-video');
           var win = $(window).scrollTop();
           var h = $(window).height();
-          var pl = ifr.offset().top;
-          var ph = ifr.height();
-          var vid = ifr.contents().find('#theplayer');
+          var pl = vid.offset().top;
+          var ph = vid.height();
+          //var vid = ifr.contents().find('#theplayer');
           if ((win < pl) && ((win + h) > (pl + ph))){
             //  if (shoudPlay){
             //    vid.play();
@@ -768,7 +768,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
             //      vid.pause();
             //      shouldPlay = true;
             //  }
-              var s = vid.attr('src').split('&autoplay=1');
+              var s = vid.attr('src').split('&auto_play=1');
               vid.attr('src', s[0]);
               console.log(vid.attr('src'));
               console.log('false');
