@@ -751,28 +751,28 @@ xsd: http://www.w3.org/2001/XMLSchema#
           var ph = ifr.height();
           var vid = ifr.contents().find('#theplayer');
           if ((win < pl) && ((win + h) > (pl + ph))){
-              if (shoudPlay){
-                vid.play();
-                shouldPlay = false;
-            }
+            //  if (shoudPlay){
+            //    vid.play();
+            //    shouldPlay = false;
+            //}
 
-             // console.log(vid.attr('src'));
-             // if (shouldAuto){
-             //     vid.attr('src', vid.attr('src') + '&autoplay=1');
-             //     shouldAuto = false;
-             // }
-             // console.log('true');
+             console.log(vid.attr('src'));
+             if (shouldAuto){
+                  vid.attr('src', vid.attr('src') + '&auto_play=1');
+                  shouldAuto = false;
+              }
+              console.log('true');
           }
           else{
-              if (!shouldPlay){
-                  vid.pause();
-                  shouldPlay = true;
-              }
-             // var s = vid.attr('src').split('&autoplay=1');
-             // vid.attr('src', s[0]);
-             // console.log(vid.attr('src'));
-             // console.log('false');
-             // shouldAuto = true;
+            //  if (!shouldPlay){
+            //      vid.pause();
+            //      shouldPlay = true;
+            //  }
+              var s = vid.attr('src').split('&autoplay=1');
+              vid.attr('src', s[0]);
+              console.log(vid.attr('src'));
+              console.log('false');
+              shouldAuto = true;
           }
       });
 </script>
