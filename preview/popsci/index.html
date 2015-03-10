@@ -758,7 +758,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
             //}
 
              if (shouldAuto){
-                  vid.attr('src', vid.attr('src') + '&autoplay=1');
+                  vid.attr('src', vid.attr('src') + '&auto_play=1');
                   shouldAuto = false;
               }
           }
@@ -767,7 +767,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
             //      vid.pause();
             //      shouldPlay = true;
             //  }
-              var s = vid.attr('src').split('&autoplay=1');
+              var s = vid.attr('src').split('&auto_play=1');
               vid.attr('src', s[0]);
               shouldAuto = true;
           }
