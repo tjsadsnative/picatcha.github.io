@@ -740,6 +740,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button id="cboxPrevious"></button><button id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><button id="cboxClose"></button></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><img width="4" height="4" id="moat8980291000000" style="display: none;">
        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- script to make video autoplay when you scroll over it -->
 <script>
     var shouldAuto = true;
     //var shouldPlay = true;
@@ -757,7 +758,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
             //}
 
              if (shouldAuto){
-                  vid.attr('src', vid.attr('src') + '&auto_play=1');
+                  vid.attr('src', vid.attr('src') + '&autoplay=1');
                   shouldAuto = false;
               }
           }
@@ -766,7 +767,7 @@ xsd: http://www.w3.org/2001/XMLSchema#
             //      vid.pause();
             //      shouldPlay = true;
             //  }
-              var s = vid.attr('src').split('&auto_play=1');
+              var s = vid.attr('src').split('&autoplay=1');
               vid.attr('src', s[0]);
               shouldAuto = true;
           }
