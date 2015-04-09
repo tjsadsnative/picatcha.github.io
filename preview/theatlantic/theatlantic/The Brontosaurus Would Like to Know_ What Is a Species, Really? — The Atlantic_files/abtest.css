@@ -1,0 +1,73 @@
+/* sharekit test
+adding instapaper, whatsapp, pocket, tumblr
+    "desktop",
+    {"btn": {
+        "ctrl1": 0.25,
+        "ctrl2": 0.25,
+        "whts": 0.1, //Whatsapp on mobile
+        "pckt": 0.1, //Pocket on desktop & mobile
+        "ppr": 0.1, //Instapaper on desktop & mobile
+        "tmblr": 0.1, //Tumblr on desktop & mobile
+        "pin": 0.1, //Pinterest on desktop & mobile;
+    }
+}
+ */
+
+.social-icon.color.instapaper:before,.social-icons.color .social-icon.instapaper:before {
+    color: #fff;
+    background: #999999;
+}
+
+.social-icon.color.tumblr:before,.social-icons.color .social-icon.tumblr:before {
+    color: #fff;
+    background: #36465e;
+}
+
+.social-icon.color.pocket:before,.social-icons.color .social-icon.pocket:before {
+    color: #fff;
+    background: #eb5050;
+}
+
+.social-icon.color.pinterest:before,.social-icons.color .social-icon.pinterest:before {
+    color: #fff;
+    background: #cb2527;
+}
+
+.social-icon.instapaper:before {
+    content: "\f139";
+}
+
+.social-icon.pocket:before {
+    content: "\f13a";
+}
+
+.social-icon.tumblr:before {
+    content: "\f114";
+}
+
+.social-icon.pinterest:before {
+    content: "\f13d";
+}
+
+.social-icons .instapaper,
+.social-icons .pocket,
+.social-icons .tumblr,
+.social-icons .pinterest{
+    display: none;
+}
+
+.test-btnutm-ppr .article-tools .social-icons .instapaper{
+    display: inline-block;
+}
+
+.test-btnutm-tmblr .article-tools .social-icons .tumblr{
+    display: inline-block;
+}
+
+.test-btnutm-pckt .article-tools .social-icons .pocket{
+    display: inline-block;
+}
+
+.test-btnutm-pin .article-tools .social-icons .pinterest{
+    display: inline-block;
+}
