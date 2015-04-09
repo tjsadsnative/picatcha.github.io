@@ -1,0 +1,220 @@
+/**
+ * Gumdrop Social Buttons
+ */
+
+.component-social {
+    list-style-type: none;
+    padding-left: 0;
+    overflow: hidden
+}
+
+.component-social a {
+    text-decoration: none
+}
+
+.component-social a:hover {
+    text-decoration: underline
+}
+
+.component-social li {
+    padding-top: 12px
+}
+
+.component-social span {
+    display: none
+}
+
+
+.component-social.horizontal li {
+    padding-top: 0;
+    float: left;
+    margin-bottom: 5px;
+    padding-right: 10px
+}
+
+.social-icon {
+    color: #fff;
+}
+
+.social-icon:before {
+    font-family: 'atl-icons';
+}
+
+.social-icon::before {
+    font-family: 'atl-icons';
+}
+
+.social-icon.round:before,.social-icons.round .social-icon:before {
+    display: inline-block;
+    line-height: 1;
+    padding: 10px;
+    background: 10px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: color .2s,background .2s;
+    -moz-transition: color .2s,background .2s;
+    -o-transition: color .2s,background .2s;
+    transition: color .2s,background .2s;
+}
+
+.social-icon.box:before,.social-icons.box .social-icon:before {
+    display: inline-block;
+    line-height: 1;
+    padding: 5px;
+    background: #666;
+}
+
+.social-icon.facebook:before {
+    content: "\f10f";
+}
+
+.social-icon.twitter:before {
+    content: "\f115";
+}
+
+.social-icon.googleplus:before {
+    content: "\f111";
+}
+
+.social-icon.linkedin:before {
+    content: "\f112";
+}
+
+.social-icon.rss:before {
+    content: "\f113";
+}
+
+.social-icon.email:before {
+    content: "\f10d";
+}
+
+.social-icon.print:before {
+    content: "\f12c";
+}
+
+.social-icon.apple:before {
+    content: "\f10c";
+}
+
+.social-icon.googleplay:before {
+    content: "\f110";
+}
+
+.social-icon.alerts:before {
+    content: "\f133";
+}
+
+.social-icon.contact:before {
+    content: "\f134";
+}
+
+.social-icon.comments:before {
+    content: "\f116";
+}
+
+.social-icon.reddit:before {
+    content: "\f137";;
+}
+
+.social-icon.instapaper:before {
+    content: "\f139";
+}
+
+.social-icon.pocket:before {
+    content: "\f13a";
+}
+
+.social-icon.tumblr:before {
+    content: "\f114";
+}
+
+.social-icon.pinterest:before {
+    content: "\f13d";
+}
+
+.social-icon.color:before,.social-icons.color .social-icon:before {
+    color: #fff;
+    background: #333;
+}
+
+.social-icon.color:hover:before,.social-icons.color .social-icon:hover:before {
+    background: #111;
+}
+
+
+.social-icon.color.facebook:before,.social-icons.color .social-icon.facebook:before {
+    color: #fff;
+    background: #3d5ba8;
+}
+
+.social-icon.color.facebook:hover:before,.social-icons.color .social-icon.facebook:hover:before {
+    background: #2f4783;
+}
+
+.social-icon.color.twitter:before,.social-icons.color .social-icon.twitter:before {
+    color: #fff;
+    background: #24abe2;
+}
+
+.social-icon.color.twitter:hover:before,.social-icons.color .social-icon.twitter:hover:before {
+    background: #198cba;
+}
+
+.social-icon.color.googleplus:before,.social-icons.color .social-icon.googleplus:before {
+    color: #fff;
+    background: #e04426;
+}
+
+.social-icon.color.googleplus:hover:before,.social-icons.color .social-icon.googleplus:hover:before {
+    background: #b9341a;
+}
+
+.social-icon.color.linkedin:before,.social-icons.color .social-icon.linkedin:before {
+    color: #fff;
+    background: #007bb6;
+}
+
+.social-icon.color.linkedin:hover:before,.social-icons.color .social-icon.linkedin:hover:before {
+    background: #005983;
+}
+
+.social-icon.color.reddit:before,.social-icons.color .social-icon.reddit:before {
+    color: #fff;
+    background: #FF4500;
+}
+
+.social-icon.color.reddit:hover:before,.social-icons.color .social-icon.reddit:hover:before {
+    background: #E53600;
+}
+
+.social-icon.color.rss:before,.social-icons.color .social-icon.rss:before {
+    color: #fff;
+    background: #f7941e;
+}
+
+.social-icon.color.rss:hover:before,.social-icons.color .social-icon.rss:hover:before {
+    background: #da7a08;
+}
+
+.social-icon.color.instapaper:before,.social-icons.color .social-icon.instapaper:before {
+    color: #fff;
+    background: #999999;
+}
+
+.social-icon.color.tumblr:before,.social-icons.color .social-icon.tumblr:before {
+    color: #fff;
+    background: #36465e;
+}
+
+.social-icon.color.pocket:before,.social-icons.color .social-icon.pocket:before {
+    color: #fff;
+    background: #eb5050;
+}
+
+.social-icon.color.pinterest:before,.social-icons.color .social-icon.pinterest:before {
+    color: #fff;
+    background: #cb2527;
+}
