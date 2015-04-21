@@ -1,0 +1,48 @@
+<!-- refer empty --><!-- get widget::28806:0:192::v2 --><!-- db --><!-- set widget::28806:0:192::v2 -->
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: '7', c2: '6036161', c3: '10566', c4: '28806' });
+    (function() {
+        var s = document.createElement('script'), el = document.getElementsByTagName('script')[0]; s.async = true;
+        s.src = (document.location.protocol == 'https:' ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js'; el.parentNode.insertBefore(s, el);
+    })();
+
+    function ci_click(ctr_link){
+
+
+        if (navigator.appName.toUpperCase().match(/MICROSOFT INTERNET EXPLORER/)){
+            var params  = 'resizeable=1,toolbar=1,menubar=1,scrollbars=1';
+            var target_window='ci_window';
+            var winW = 0, winH = 0;
+
+            if (document.body && document.body.offsetWidth) {
+                winW = document.body.offsetWidth;
+                winH = document.body.offsetHeight;
+            }
+
+            if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth ) {
+                winW = document.documentElement.offsetWidth;
+                winH = document.documentElement.offsetHeight;
+            }
+
+            if (window.innerWidth && window.innerHeight) {
+                winW = window.innerWidth;
+                winH = window.innerHeight;
+            }
+
+                                params +=',width=' + winW + ',height=' + winH;
+            
+
+            window.open('index.html', target_window, params);
+
+            var link=document.getElementById('ci_link_28806');
+            link.target=target_window;
+            link.href=ctr_link;
+            link.click();
+
+            return false;
+        }
+    }
+    var CITra = "<img src='http://cdn.crowdignite.com/img/i.gif?t=" +(new Date()).getTime()+"&r="+Math.floor((Math.random()*1000000)+1)+"' style='width:0px;height:0px;display:none;position:absolute' />";
+	document.getElementById("_CI_widget_2").innerHTML = "<style type='text/css'> #_ci_widget_div_28806, #_ci_widget_div_28806 div, #_ci_widget_div_28806 a, #_ci_widget_div_28806 abbr, #_ci_widget_div_28806 b, #_ci_widget_div_28806 canvas, #_ci_widget_div_28806 center, #_ci_widget_div_28806 code, #_ci_widget_div_28806 dd, #_ci_widget_div_28806 dl, #_ci_widget_div_28806 dt, #_ci_widget_div_28806 embed, #_ci_widget_div_28806 font, #_ci_widget_div_28806 form, #_ci_widget_div_28806 h1, #_ci_widget_div_28806 h2, #_ci_widget_div_28806 h3, #_ci_widget_div_28806 iframe, #_ci_widget_div_28806 img, #_ci_widget_div_28806 li, #_ci_widget_div_28806 ol, #_ci_widget_div_28806 p, #_ci_widget_div_28806 span, #_ci_widget_div_28806 strong, #_ci_widget_div_28806 table, #_ci_widget_div_28806 tbody, #_ci_widget_div_28806 td, #_ci_widget_div_28806 tfoot, #_ci_widget_div_28806 th, #_ci_widget_div_28806 thead, #_ci_widget_div_28806 tr, #_ci_widget_div_28806 ul { border:0; margin:0; padding:0; background:none; font-size:100%; line-height: 1.2em; } #_ci_widget_div_28806 b,strong { font-weight:bold; } #_ci_widget_div_28806 img { max-width:none!important; color: transparent; font-size: 0; vertical-align: middle; -ms-interpolation-mode: bicubic; width:auto!important; } #_ci_widget_div_28806 li { display: list-item; } #_ci_widget_div_28806 table { background: #ffffff; border-collapse: separate; border-spacing:4px; width:100%; } #_ci_widget_div_28806 th, #_ci_widget_div_28806 td, #_ci_widget_div_28806 caption { font-weight: normal; vertical-align: top; text-align: left; } #_ci_widget_div_28806 svg { overflow: hidden; } #_ci_widget_div_28806 { width: 634px; height: auto; } #widget_table_28806 td { text-align: center; } #widget_table_28806 a { font-family: Arial; } #widget_table_28806 img { border: medium solid #ffffff; } #widget_powered_div { background-color:#ffffff; text-align:center; font-family: Arial;width: 634px; } </style> <div id='_ci_widget_div_28806' style='' ><center><table class='widget_table' id='widget_table_28806' cellpadding='0' cellspacing='0' border='0'><a id='ci_link_28806' href='javascript:void(0)' style='display:none;'></a><tr><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/nude_sims_3_2' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/71412209/0/1/21819376?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=0&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/71412209/0/1/21819376?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=0&referp=0'\u0022><img nopin='nopin' alt='Nude Sims 3' src='http://cdn1.crowdignite.com/img/upload/cache/28806/140x79__4f1ce637625af.jpg?t=1360969714' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/nude_sims_3_2' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/71412209/0/1/21819376?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=0&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/71412209/0/1/21819376?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=0&referp=0'\u0022>Nude Sims 3</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/senran_kagura_estival_versus_gets_artbook' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/793814855/0/1/64118235?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=1&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/793814855/0/1/64118235?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=1&referp=0'\u0022><img nopin='nopin' alt='Senran Kagura: Estival Versus Gets Artbook' src='http://cdn1.crowdignite.com/img/upload/cache/28806/140x79_senran_kagura_feature_54fec68d016b6.jpg?t=1425983117' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/senran_kagura_estival_versus_gets_artbook' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/793814855/0/1/64118235?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=1&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/793814855/0/1/64118235?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=1&referp=0'\u0022>Senran Kagura: Estival Versus Gets Artbook</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/danica_patrick_says_she_s_sick_of_being_sexy' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/349807324/0/1/53434039?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=2&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/349807324/0/1/53434039?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=2&referp=0'\u0022><img nopin='nopin' alt='Danica Patrick Says She\'s Sick of Being Sexy' src='http://cdn1.crowdignite.com/img/upload/cache/28806/140x79__53c6d20b6e3f8.png?t=1410458110' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/danica_patrick_says_she_s_sick_of_being_sexy' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/349807324/0/1/53434039?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=2&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/349807324/0/1/53434039?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=2&referp=0'\u0022>Danica Patrick Says She\'s Sick of Being Sexy</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/caroline_wozniacki_featured_in_sports_illustrated_swimsuit_issue' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/777928973/0/1/62874243?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=3&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/777928973/0/1/62874243?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=3&referp=0'\u0022><img nopin='nopin' alt='Caroline Wozniacki Featured In Sports Illustrated Swimsuit Issue' src='http://cdn1.crowdignite.com/img/upload/cache/28806/140x79_10985992_986009624760232_259701590_n_54da9c4868fb9.jpg?t=1423613000' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/caroline_wozniacki_featured_in_sports_illustrated_swimsuit_issue' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28806/777928973/0/1/62874243?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=3&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28806/777928973/0/1/62874243?ltype=0&wtype=0&user_id=9313126b48a135bc365fc940e87204d5&slot=3&referp=0'\u0022>Caroline Wozniacki Featured In Sports Illustrated Swimsuit Issue</a></div></td></tr></table></center></div>" + CITra;
+
+<!-- 0.0806s -->
