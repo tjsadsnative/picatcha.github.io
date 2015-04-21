@@ -1,1 +1,0 @@
-PARSELY.pInit({"apikey":"craveonline.com","settings":{"debug":false,"widget":false,"tracker":true},"customizations":null,"track_ip_addresses":true,"bundle":"/code/ptrack-v0.4.0-engaged-time.js","track_third_party_cookies":true,"uuid":"f842bc4e-087d-46a6-83b6-78a41d5c2ea7"});
