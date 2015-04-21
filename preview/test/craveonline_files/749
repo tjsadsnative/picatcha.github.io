@@ -1,0 +1,48 @@
+<!-- refer empty --><!-- get widget::749:0:916::v2 --><!-- db --><!-- set widget::749:0:916::v2 -->
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: '7', c2: '6036161', c3: '227', c4: '749' });
+    (function() {
+        var s = document.createElement('script'), el = document.getElementsByTagName('script')[0]; s.async = true;
+        s.src = (document.location.protocol == 'https:' ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js'; el.parentNode.insertBefore(s, el);
+    })();
+
+    function ci_click(ctr_link){
+
+
+        if (navigator.appName.toUpperCase().match(/MICROSOFT INTERNET EXPLORER/)){
+            var params  = 'resizeable=1,toolbar=1,menubar=1,scrollbars=1';
+            var target_window='ci_window';
+            var winW = 0, winH = 0;
+
+            if (document.body && document.body.offsetWidth) {
+                winW = document.body.offsetWidth;
+                winH = document.body.offsetHeight;
+            }
+
+            if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth ) {
+                winW = document.documentElement.offsetWidth;
+                winH = document.documentElement.offsetHeight;
+            }
+
+            if (window.innerWidth && window.innerHeight) {
+                winW = window.innerWidth;
+                winH = window.innerHeight;
+            }
+
+                                params +=',width=' + winW + ',height=' + winH;
+            
+
+            window.open('index.html', target_window, params);
+
+            var link=document.getElementById('ci_link_749');
+            link.target=target_window;
+            link.href=ctr_link;
+            link.click();
+
+            return false;
+        }
+    }
+    var CITra = "<img src='http://cdn.crowdignite.com/img/i.gif?t=" +(new Date()).getTime()+"&r="+Math.floor((Math.random()*1000000)+1)+"' style='width:0px;height:0px;display:none;position:absolute' />";
+	document.getElementById("_CI_widget_1").innerHTML = "<style type='text/css'> #_ci_widget_div_749, #_ci_widget_div_749 div, #_ci_widget_div_749 a, #_ci_widget_div_749 abbr, #_ci_widget_div_749 b, #_ci_widget_div_749 canvas, #_ci_widget_div_749 center, #_ci_widget_div_749 code, #_ci_widget_div_749 dd, #_ci_widget_div_749 dl, #_ci_widget_div_749 dt, #_ci_widget_div_749 embed, #_ci_widget_div_749 font, #_ci_widget_div_749 form, #_ci_widget_div_749 h1, #_ci_widget_div_749 h2, #_ci_widget_div_749 h3, #_ci_widget_div_749 iframe, #_ci_widget_div_749 img, #_ci_widget_div_749 li, #_ci_widget_div_749 ol, #_ci_widget_div_749 p, #_ci_widget_div_749 span, #_ci_widget_div_749 strong, #_ci_widget_div_749 table, #_ci_widget_div_749 tbody, #_ci_widget_div_749 td, #_ci_widget_div_749 tfoot, #_ci_widget_div_749 th, #_ci_widget_div_749 thead, #_ci_widget_div_749 tr, #_ci_widget_div_749 ul { border:0; margin:0; padding:0; background:none; font-size:100%; line-height: 1.2em; } #_ci_widget_div_749 b,strong { font-weight:bold; } #_ci_widget_div_749 img { max-width:none!important; color: transparent; font-size: 0; vertical-align: middle; -ms-interpolation-mode: bicubic; width:auto!important; } #_ci_widget_div_749 li { display: list-item; } #_ci_widget_div_749 table { background: #ffffff; border-collapse: separate; border-spacing:4px; width:100%; } #_ci_widget_div_749 th, #_ci_widget_div_749 td, #_ci_widget_div_749 caption { font-weight: normal; vertical-align: top; text-align: left; } #_ci_widget_div_749 svg { overflow: hidden; } #_ci_widget_div_749 { width: 634px; height: auto; } #widget_table_749 td { text-align: center; } #widget_table_749 a { font-family: Arial; } #widget_table_749 img { border: medium solid #none; } #widget_powered_div { background-color:#ffffff; text-align:center; font-family: Arial;width: 634px; } #_ci_widget_div_749 { background:transparent !important; }</style> <div id='_ci_widget_div_749' style='' ><center><table class='widget_table' id='widget_table_749' cellpadding='0' cellspacing='0' border='0'><a id='ci_link_749' href='javascript:void(0)' style='display:none;'></a><tr><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/dc_comics_reveals_superman_and_wonder_woman_s_new_costumes' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/795039749/0/1/67525089?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=0&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/795039749/0/1/67525089?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=0&referp=0'\u0022><img nopin='nopin' alt='DC Comics Reveals Superman and Wonder Woman\'s New Costumes' src='http://cdn1.crowdignite.com/img/upload/cache/749/140x79_ww_cv41_550203fec588e.jpg?t=1426195454' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/dc_comics_reveals_superman_and_wonder_woman_s_new_costumes' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/795039749/0/1/67525089?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=0&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/795039749/0/1/67525089?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=0&referp=0'\u0022>DC Comics Reveals Superman and Wonder Woman\'s New Costumes</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/the_hottest_actresses_on_primetime_television' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/672362589/0/1/54273029?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=1&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/672362589/0/1/54273029?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=1&referp=0'\u0022><img nopin='nopin' alt='The Hottest Actresses on Primetime Television' src='http://cdn1.crowdignite.com/img/upload/cache/749/140x79_minka_kelly_people_in_tv_photo_u42_53f38901e24ba.jpg?t=1408469249' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/the_hottest_actresses_on_primetime_television' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/672362589/0/1/54273029?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=1&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/672362589/0/1/54273029?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=1&referp=0'\u0022>The Hottest Actresses on Primetime Television</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/the_most_extreme_body_transformations_done_for_movie_roles' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/595248001/0/1/62264357?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=2&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/595248001/0/1/62264357?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=2&referp=0'\u0022><img nopin='nopin' alt='The Most Extreme Body Transformations Done for Movie Roles' src='http://cdn1.crowdignite.com/img/upload/cache/749/140x79__54c94e24b1326.png?t=1422478905' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/the_most_extreme_body_transformations_done_for_movie_roles' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/595248001/0/1/62264357?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=2&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/595248001/0/1/62264357?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=2&referp=0'\u0022>The Most Extreme Body Transformations Done for Movie Roles</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/the_cast_and_characters_of_the_warcraft_movie_revealed' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/725688959/0/1/57791153?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=3&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/725688959/0/1/57791153?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=3&referp=0'\u0022><img nopin='nopin' alt='The Cast and Characters of the Warcraft Movie Revealed!' src='http://cdn1.crowdignite.com/img/upload/cache/749/140x79_warchart33_545dfc6b8b7df.jpg?t=1415445611' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/the_cast_and_characters_of_the_warcraft_movie_revealed' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/749/725688959/0/1/57791153?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=3&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/749/725688959/0/1/57791153?ltype=0&wtype=0&user_id=e455c622904953ad7222fb7debde2a43&slot=3&referp=0'\u0022>The Cast and Characters of the Warcraft Movie Revealed!</a></div></td></tr></table></center></div>" + CITra;
+
+<!-- 0.0711s -->
