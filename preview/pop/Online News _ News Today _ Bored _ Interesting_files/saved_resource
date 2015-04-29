@@ -1,0 +1,28 @@
+
+var ftGUID_1074698="264923EDFF57D3";
+var ftConfID_1074698="0";
+var ftParams_1074698="ftx=&fty=&ftadz=&ftscw=&ft_custom=8396225411624982496&ft_section=83d7551a-fa20-4b00-be54-4008a568ec96&ft_keyword=&ftOBA=1&ft_ifb=1&ft_domain=popwebnews.com&ft_referrer=http%3A%2F%2Fpopwebnews.com%2F&cachebuster=814267.2325484455";
+var ftKeyword_1074698="";
+var ftCustom_1074698="8396225411624982496";
+var ftSection_1074698="83d7551a-fa20-4b00-be54-4008a568ec96";
+var ftSegment_1074698="fw9";
+var ftSegmentList_1074698=[{s:'fw9'}];
+var ftRuleMatch_1074698="0";
+var ftTimestamp_1074698="1430328487";
+var ftGeoC2_1074698="us";
+var ftGeoState_1074698="ca";
+var ftGeoCity_1074698="los angeles";
+var ftISP_1074698="comcast cable communications inc.";
+var ftSpeed_1074698="cable";
+var ftDMA_1074698="803";
+var ftLong_1074698="-118.351";
+var ftLat_1074698="34.0677";
+var ftPostal_1074698="90036";
+var ftTimeZone_1074698="-700";
+var ftMobileCarrier_1074698="";
+var ftImp1074698 = {};
+ftImp1074698.privacy = "x";
+ftImp1074698.guidAge = "26";
+
+document.write('<scr'+'ipt src="https://secure.flashtalking.com/xre/107/1074698/994610/js/j-1074698-994610.js" id="ftscript_m1074698" name="ftscript_m1074698"></scr'+'ipt>');
+                    
