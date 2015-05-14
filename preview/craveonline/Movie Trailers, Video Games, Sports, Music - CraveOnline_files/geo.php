@@ -1,1 +1,0 @@
-gn_country='US';visitor_country='US';ip='73.223.72.169';exdate=new Date();exdate.setDate(exdate.getDate()+ 7);document.cookie="gn_country=US; expires=" + exdate.toGMTString() + "; path=/";document.cookie="visitor_country=US; expires=" + exdate.toGMTString() + "; path=/";
