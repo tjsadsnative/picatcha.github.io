@@ -80,84 +80,7 @@
 <body>
  
  
-<script type="text/javascript">
-    var quantSegs="";
-    var quant_segs_beg = document.cookie.indexOf('quant_segs');
-    if (quant_segs_beg >= 0) {
-    quant_segs_beg = document.cookie.indexOf('=', quant_segs_beg) + 1;
-    if (quant_segs_beg > 0) {
-    var quant_segs_end = document.cookie.indexOf(';', quant_segs_beg);
-    if (quant_segs_end == -1) quant_segs_end = document.cookie.length;
-    quantSegs = unescape(document.cookie.substring(quant_segs_beg, quant_segs_end));
-    }
-    }
-    function qc_results(result) {
-    var qc = "";
-    for (var i = 0; i < result.segments.length; i++) {
-         qc += "qc=" + result.segments[i].id + "&"; //customizable per your ad server
-      }
-      document.cookie = "quant_segs=" + escape(qc);
-    }
-  </script>
- 
- 
-<script type="text/javascript">
-    <!--
-    var rsi_segs = [];
-    var segs_beg=document.cookie.indexOf('rsi_segs=');
-    if (segs_beg>=0){
-    segs_beg=document.cookie.indexOf('=',segs_beg)+1;
-    if(segs_beg>0){
-    var segs_end=document.cookie.indexOf(';',segs_beg);
-    if(segs_end==-1) segs_end=document.cookie.length;
-    rsi_segs=document.cookie.substring(segs_beg,segs_end).split('|');
-    }
-    }
-    var segLen=100;
-    segQS="";
-    if (rsi_segs.length<segLen){segLen=rsi_segs.length}
-    for (var i=0;i<segLen;i++){
-    segQS+=("a"+"="+rsi_segs[i])
-    }
-    //-->
-  </script>
-<script type="text/javascript">
-    var gsegQS = "";
-    gsegQS=segQS.replace(/E0/g,'&a=E0').replace("a=&","")+'&';
-  </script>
- 
- 
- 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=152105514834711&version=v2.0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
- 
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-116532-3']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
- 
- 
- 
-<script type="text/javascript">
-      (function() {
-          var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true;
-          em.src = ('https:' == document.location.protocol ? 'https://za-ssl' : 'http://za-cdn') + '.effectivemeasure.net/em.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s);
-      })();
-  </script>
 <noscript>
 <img src="http://za.effectivemeasure.net/em_image" alt="" style="position:absolute; left:-5px;"/>
 </noscript>
@@ -779,63 +702,9 @@ this.page.api_key='XPR06fiYHnbpWsGLguSXSC6xAJbFwjE7Aspad64UVzPWKyxWrCcuHSYgesOjt
 	</noscript>
 	<!-- End Quantcast Measurement -->
 	<!-- END GUARDIAN ONLINE BEHAVIOURAL TARGETING CODE -->
-  <script async src="http://mg.co.za/js/application.min.js"></script>
-  	<script type="text/javascript">
-	    var _sf_async_config = { uid: 50226, domain: 'mg.co.za', useCanonical: true };
-	    (function() {
-	      function loadChartbeat() {
-	        window._sf_endpt = (new Date()).getTime();
-	        var e = document.createElement('script');
-	        e.setAttribute('language', 'javascript');
-	        e.setAttribute('type', 'text/javascript');
-	         e.setAttribute('src','//mg.co.za/js/chartbeat.min.js');
-	        document.body.appendChild(e);
-	      };
-	      var oldonload = window.onload;
-	      window.onload = (typeof window.onload != 'function') ?
-	        loadChartbeat : function() { oldonload(); loadChartbeat(); };
-	    })();
-	  </script>
-
-	  
-
-		
-          <!-- Begin AD CLICK ENGAGE Code -->
-        <script type="text/javascript" src="//d3m9pgf48clj74.cloudfront.net/static/js/render.v1.js"></script>
-      <!-- End AD CLICK ENGAGE Code -->
-
-      <script type="text/javascript">
-        window._ttf = window._ttf || [];
-        _ttf.push({
-               pid          : 28710
-               ,lang        : "en"
-               ,format      : "inread"
-               ,components  : { skip: {delay : 3}}
-               ,css         : "margin: 0px 0px 10px;"
-        });
-
-        (function (d) {
-                var js, s = d.getElementsByTagName('script')[0];
-                js = d.createElement('script');
-                js.async = true;
-                js.src = '//cdn.teads.tv/js/all-v2.js';
-                s.parentNode.insertBefore(js, s);
-        })(window.document);
-      </script>
-    
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50acb9753a548de4" async="async"></script>
-    <script type="text/javascript">
-    var addthis_share = {
-         // ... other options
-         url_transforms : {
-              shorten: {
-                   twitter: 'bitly'
-              }
-         },
-         shorteners : {
-              bitly : {}
-         }
-    }
-    </script>
+ <!-- Begin ADSNATIVE Code -->
+<script type="text/javascript" src="//static.adsnative.com/static/js/render.v1.js"></script>
+<!-- End ADSNATIVE Code -->
+					
 </body>
 </html>
