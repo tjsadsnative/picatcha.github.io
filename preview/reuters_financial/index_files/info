@@ -1,0 +1,10 @@
+<!--[if !IE]> This has been served from cache <![endif]-->
+<!--[if !IE]> Request served from apache server: S264630NJ2XSF20 <![endif]-->
+<!--[if !IE]> Cached on Wed, 08 Jul 2015 21:35:02 GMT and will expire on Wed, 08 Jul 2015 21:40:02 GMT <![endif]-->
+<!--[if !IE]> token: 3de5614a-2213-44b9-b3e2-f435d83056e3 <![endif]-->
+<!--[if !IE]> CSTAT-UUID: 9b9b4c8b-b20c-4925-8a53-7a1c2d5b97a5 <![endif]-->
+
+	Reuters.namespace("info");
+	Reuters.info.edition = 'BETAUS';
+	Reuters.info.gigyaAPIKey = '2_5UlTf5KVL1qEVXO0ZoNYPoxhzCHYvubplalCtItzf8EuG3Tn6WKHR0hVysesYMdj';
+	Reuters.utils.setInfoCookie();
