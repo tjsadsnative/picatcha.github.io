@@ -1,0 +1,3 @@
+var kid='a1dfe66706b512c1fcb69ca52ff6fbda';document.write('<div id="kmn_tag_'+kid+'" class="kmn-div">');
+kmn_sa.spark(kid,{codes:'p44,p28,p26,p13,h',srv:'a3'});kmn_data[kid]={chain:'N1',codes:['p44','p28','p26','p13','h'],full_index:1,order:'44p',w:728,h:90,s2sCodes:['j','d'],s2sBaseUrl:'//s2s.komoona.com/'};var pubId=32702,siteId=62163,kadId=210300,kadtype=1,kadwidth=728,kadheight=90,kadpageurl='http%3A%2F%2Fgettingbalance.com';kmn_sa.write_js('//ads.pubmatic.com/AdServer/js/showad.js');
+document.write('</div>');
