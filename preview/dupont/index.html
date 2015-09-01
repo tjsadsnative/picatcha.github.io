@@ -238,7 +238,11 @@ var _prum = [['id', '53a042bcabe53d647c136b5e'],
 .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
 
 <body class="single single-post postid-72294 single-format-video ltr" itemscope="" itemtype="http://schema.org/WebPage" style="">
-
+ <div id="loading-background" style="width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.7); z-index: 10001; position: fixed;">
+  <div id="loading" style="font-color: blue;">
+        <i id="loading-gif" class="fa fa-spinner fa-spin" style="color: #294766; z-index: 10002; font-size: 140px; top: 40%; left: 42%; position: fixed"></i>
+        <p id="loading-text" style="color: #294766; font-family: Optima, sans-serif; z-index:10002; position: fixed; font-size: 50px; top: 62%; left: 40%;">Loading...</p>
+    </div>
     <div id="pageslide" class="st-menu st-effect">
     	<a href="http://blog.dupontregistry.com/the-lifestyle/learn-to-drive-like-a-pro-at-atlanta-motorsports-park/#" id="close-pageslide"><i class="icomoon-remove-sign"></i></a>
     <div class="block"><ul class="menu"><li id="menu-item-83285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83285"><a href="http://blog.dupontregistry.com/">Home</a></li>
@@ -1191,6 +1195,12 @@ var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_
   </div>
 </div>
 </div>
+<script>
+    $('.an-container').ready(function(){
+        $('#loading').remove();
+        $('#loading-background').remove();
+    });
+</script>
 <!-- Begin ADSNATIVE Code -->
 <script type="text/javascript" src="//static.adsnative.com/static/js/render.v1.js"></script>
 <!-- End ADSNATIVE Code -->
