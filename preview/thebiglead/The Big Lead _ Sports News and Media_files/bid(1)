@@ -1,0 +1,2 @@
+/* aax response */
+amznads.updateAds({"ads":{"a728x90p1":"<iframe src=\"http://aax-us-pdx.amazon-adsystem.com/e/dtb/impi?b=INlVyLjyYkJcpid7bVWc274AAAFRFsJ5fQYAAAwSSstvMw&ps=a728x90p1&rnd=144674\" id=\"amzn43685.14120931044\" onload=\"window.amzncsm.rmD(this,'INlVyLjyYkJcpid7bVWc274AAAFRFsJ5fQYAAAwSSstvMw',  window, document, 3090);\"  width=\"728\" height=\"90\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\"><\/iframe>"},"ev":true,"status":"ok"})
