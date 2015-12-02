@@ -3947,7 +3947,7 @@ if (objCtr.defineProperty) {
   return Backbone.NativeView;
 }));
 
-//     Eyein.js 2.1
+//     Eyein.js 2.2
 //     Article enrichment plugin.
 //     Mobli Media Inc.
 //     Dependencies: underscore.js, backbone.js, backbone.nativeajax.js, backbone.nativeview.js, classList.js
@@ -3966,14 +3966,17 @@ EyeInBackbone.View = EyeInBackbone.NativeView;
 // Define `eyein` object structure and set some default parameters
 window.eyein = {
   options: {
-    version: '2.1', // Plugin version
+    version: '2.2', // Plugin version
     env: 'stg', // Plugin enviroment
     serverUrl: '', // API base URL
     baseUrl: '', // Path to plugin files
     pageUrl: '', // Containg page URL to send to API
     userId: 'anonymous', // User that embedded the plugin
-    mediaLimit: 30, // No. of media to load for a story
-    relatedString: '' // String for finding related items when there is no match
+    mediaLimit: 50, // No. of media to load for a story
+    relatedString: '', // String for finding related items when there is no match
+    adFrequency: 0,
+    adOffset: 0,
+    sideAdIndex: 0
   },
   endpoints: {
     statistics: 'publisher-statistics',
@@ -4104,13 +4107,23 @@ eyein.initializeViews = function(options) {
           label, // label
           1 // value
         );
-      });
-    //this.mainView.preview.relatedStories.collection.setRelatedStoriesUrl(this.options.relatedString);
+      }
+    );
+
     this.mainView.preview.relatedStories.collection.url = eyein.options.serverUrl + 'one?url=' + eyein.options.pageUrl; // For one.co.il
     this.mainView.preview.relatedStories.collection.fetch({reset: true, success: function() {
-    if (self.mainView.preview.relatedStories.collection.length > 2)
+      if (self.mainView.preview.relatedStories.collection.length > 2) {
         self.mainView.render();
-    },
+        eyeinga(
+          'send',
+          'event',
+          eyein.options.userId, // category
+          'related_preview_displayed', // action
+          'no-story', // label
+          1 // value
+        );
+      }
+    }
   });
   }
   // Trigger events when resizing and scrolling the window
@@ -4118,8 +4131,7 @@ eyein.initializeViews = function(options) {
   window.addEventListener('scroll', _.throttle(function() { EyeInBackbone.trigger('window:scroll'); }, 30));
 };
 
-// Old initialization function (for backwards compatiblity) - 
-// calls new function with formatted parameters
+// Old initialization function (for backwards compatiblity) - calls new function with formatted parameters
 eyein.init = function(url, rows, columns, width, theme, userId, lang) {
   var options = {};
 
@@ -4292,14 +4304,14 @@ eyein.templates.modal = {
         '<div id="eyein-expanded-prev" class="expanded-arrow mobile-hidden chevron-dark"></div>' +
         '<div id="eyein-expanded-next" class="expanded-arrow mobile-hidden chevron-dark"></div>' +
       '</div>' +
-      '<div id="eyein-media-counter">5 of 32</div>' +
       '<div id="eyein-mobile-indicator"></div>' +
     '</div>' +
     '<div id="eyein-related-stories">' +
-      '<div id="eyein-ad-main" class="advertisement"></div>' +
       '<h3>Related Events & Trends</h3>' +
     '</div>' +
-    '<a href="http://publishers.eyein.com/" target="_blank" id="eyein-powered-by">Powered by EYEIN</a>'
+    '<a href="http://publishers.eyein.com/" target="_blank" id="eyein-powered-by">Powered by EYEIN</a>' +
+    '<div id="eyein-main-ad"><div id="eyein-main-ad-placeholder"></div></div>' +
+    '<div id="eyein-side-ad" class="advertisement"><div id="eyein-side-ad-placeholder"></div></div>'
 };
 
 // Alert popup template
@@ -4345,7 +4357,7 @@ eyein.templates.mediaItem = {
     '<div class="media-header">' +
       '<a class="user-details" href="<%= userUrl %>" target="_blank">' +
         '<% if (social_network == "twitter") { %>' +
-          '<div class="profile-picture" style="background-image: url(<%= user.profile_image %>), url(<%= eyein.options.baseUrl %>profile.jpg);"></div>' +
+          '<div class="profile-picture" style="background-image: url(<%= user.profile_image %>)"></div>' +
         '<% } %>' +
         '<% if (social_network == "twitter") { %>' +
           '<span class="display-name"><%= user.user_screen_name %></span>' +
@@ -4364,7 +4376,7 @@ eyein.templates.mediaItem = {
       '<% if (type == "image") { %>' + 
         '<img <%= src %>="<%= image_url %>">' +
       '<% } else if (playVideo == "full") { %>' + 
-        '<video <%= src %>="<%= video_url %>" style="background-image: url(<%= image_url %>);" loop></video>' +
+        '<video <%= src %>="<%= video_url %>" preload="none" style="background-image: url(<%= image_url %>);" loop></video>' +
         '<div class="play-icon"></div>' +
       '<% } else if (playVideo == "image" || isMobile) { %>' +
         '<img <%= src %>="<%= image_url %>">' +
@@ -4389,7 +4401,7 @@ eyein.templates.mediaItem = {
         '<% } else if (social_network == "twitter") { %>' +
           '<span class="footer-icon reply reply-<%= footerTheme %>"></span>' +
           '<span class="footer-icon retweet retweet-<%= footerTheme %>"></span>' +
-          '<span class="footer-icon favorite star-<%= footerTheme %>"></span>' +
+          '<span class="footer-icon favorite like-<%= footerTheme %>"></span>' +
         '<% } %>' +
         '<div class="footer-icon report"></div>' +
       '</div>' +
@@ -4598,8 +4610,8 @@ eyein.views.MediaItemList = EyeInBackbone.View.extend({
     this.options = {
       limit: (options.limit) ? options.limit : 100,
       playVideo: (options.playVideo) ? options.playVideo : 'image',
-      adFrequency: (options.adFrequency) ? options.adFrequency : 6,
-      adOffset: (options.adOffset) ? options.adOffset : 3,
+      adFrequency: (options.adFrequency) ? options.adFrequency : 0,
+      adOffset: (options.adOffset) ? options.adOffset : 1,
       lazyLoad: (options.lazyLoad) ? options.lazyLoad : false,
       imageCover: (options.imageCover) ? options.imageCover : false
     };
@@ -4627,6 +4639,7 @@ eyein.views.MediaItemList = EyeInBackbone.View.extend({
     }, this);
   },
   render: function() {
+    this.totalLength = 0;
     _.each(_.first(this.mediaItemViews, this.options.limit), function(mediaItemView, index) {
 
       if (index > 0 && (index - this.options.adOffset) % this.options.adFrequency == 0) {
@@ -4814,8 +4827,11 @@ eyein.views.StoryItem = EyeInBackbone.View.extend({
 eyein.views.StoryItemList = EyeInBackbone.View.extend({
   tagName: 'div',
   className: 'story-list',
-  initialize: function() {
-    var self = this;
+  initialize: function(options) {
+    this.options = {
+      adIndex: (options.adIndex) ? options.adIndex : -1
+    };
+
     this.storyItemViews = [];
 
     this.reset();
@@ -4832,7 +4848,9 @@ eyein.views.StoryItemList = EyeInBackbone.View.extend({
     }, this);
   },
   render: function() {
-    _.each(this.storyItemViews, function(storyItemView) {
+    _.each(this.storyItemViews, function(storyItemView, index) {
+      if (index == this.options.adIndex)
+        this.el.appendChild(document.getElementById('eyein-side-ad'));
       storyItemView.render();
       this.el.appendChild(storyItemView.el);
     }, this);
@@ -4979,7 +4997,12 @@ eyein.views.Modal = EyeInBackbone.View.extend({
     this.currentGalleryIndex = -1;
     this.mediaItemHeight = 0;
     this.containerHeight = 0;
+
+    // Media item size (changes according to display size)
     this.mediaSize = 500;
+
+    // Adsnative holder
+    this.mainAdPlacement = 0;
 
     this.alertContainer = new eyein.views.AlertContainer();
     _.bindAll(this, 'renderContent');
@@ -5010,6 +5033,9 @@ eyein.views.Modal = EyeInBackbone.View.extend({
     // Listen to content clicks
     this.listenTo(this.mediaItemList, 'medialist:click', this.showExpandedMedia);
     this.listenTo(this.relatedStories, 'storylist:click', function(storyItem) {
+      // Hide related bar
+      self.$('#eyein-related-stories')[0].classList.remove('visible')
+
       // Send statistics
       eyeinga(
         'send',
@@ -5021,17 +5047,22 @@ eyein.views.Modal = EyeInBackbone.View.extend({
       );
 
       // Stop statistics timers & send result
-      var now = new Date().getTime();
-      var storyTimeSpent = now - self.modalTimer;
-      
+      if (self.firstStory) {
+        var now = new Date().getTime();
+        self.firstStoryTimeSpent = now - self.modalTimer;
+        self.firstStory = false;
+      }
+
       eyeinga(
         'send',
         'event',
         eyein.options.userId, // category
-        'story_time_spent', // action
+        'story_media_seen', // action
         self.model.id, // label
-        storyTimeSpent // value
+        self.storyMediaCounter // value
       );
+
+      self.storyMediaCounter = 1;
 
       self.changeStory(storyItem);
     });
@@ -5136,27 +5167,47 @@ eyein.views.Modal = EyeInBackbone.View.extend({
       this.scrollGallery(this.currentGalleryIndex+1);
   },
   showExpandedMedia: function(index) {
-    var adFrequency = this.mediaItemList.options.adFrequency + 1;
-    var adOffset = this.mediaItemList.options.adOffset;
-    var noOfAds = (index < adOffset) ? 0 : Math.floor((index - adOffset) / (adFrequency)) + 1;
+    var adFrequency = 0;
+    var adOffset = 0;
+    var noOfAds = 0;
 
-    this.scrollGallery(index + noOfAds);
+    if (this.mediaItemList.options.adFrequency) {
+      adFrequency = this.mediaItemList.options.adFrequency + 1;
+      adOffset = this.mediaItemList.options.adOffset;
+      noOfAds = (index < adOffset) ? 0 : Math.floor((index - adOffset) / (adFrequency)) + 1;
+    }
+      
+    this.scrollGallery(index + noOfAds, true);
   },
-  scrollGallery: function(index) {
+  scrollGallery: function(index, forceScroll) {
     var self = this;
 
     // Change expanded media if a different media is clicked
-    if (index != this.currentGalleryIndex) {
+    if (forceScroll || index != this.currentGalleryIndex || index == 0) {
       this.currentGalleryIndex = index;
 
-      var adFrequency = this.mediaItemList.options.adFrequency + 1;
-      var adOffset = this.mediaItemList.options.adOffset;
-      var noOfAds = (index < adOffset) ? 0 : Math.floor((index - adOffset) / (adFrequency)) + 1;
+      var adFrequency = 0;
+      var adOffset = 0;
+      var noOfAds = 0;
+
+      if (this.mediaItemList.options.adFrequency) {
+        adFrequency = this.mediaItemList.options.adFrequency + 1;
+        adOffset = this.mediaItemList.options.adOffset;
+        noOfAds = (index < adOffset) ? 0 : Math.floor((index - adOffset) / (adFrequency)) + 1;
+      }
 
       // Check if current index is ad or media
-      if (index > 0 && (index - adOffset) % (adFrequency) == 0) {
+      if (index > 0 && adFrequency && (index - adOffset) % (adFrequency) == 0) {
+        // Hide expanded media & do animation
         this.expandedMedia.el.classList.add('hidden');
-        self.mediaItemList.el.style.marginLeft = (-(this.mediaSize/2) - index*this.mediaSize) + "px";
+        var translateString = 'translateX(' + (-(this.mediaSize/2) - index*this.mediaSize) + 'px)';
+        self.mediaItemList.el.style.transform = translateString;
+        self.mediaItemList.el.style['-webkit-transform'] = translateString;
+
+        _.delay(function() {
+          // Keep media hidden
+          self.expandedMedia.el.classList.add('hidden');
+        }, 300);
 
         // Unmark all items in list
         _.each(eyein.mainView.modal.mediaItemList.el.childNodes, function(element) {
@@ -5164,12 +5215,16 @@ eyein.views.Modal = EyeInBackbone.View.extend({
         });
 
         // Mark selected item
-        eyein.mainView.modal.mediaItemList.$('.advertisement')[noOfAds-1].classList.add('selected');
+        this.mediaItemList.$('.advertisement')[noOfAds-1].classList.add('selected');
 
-        // Update counter
-        this.$('#eyein-media-counter')[0].innerHTML = '';
+        // Move ad to place
+        this.mediaItemList.$('.advertisement')[noOfAds-1].appendChild(this.$('#eyein-main-ad')[0]);
       }
       else {
+        // Move ad to place if it is next
+        if ((index+1 - adOffset) % (adFrequency) == 0)
+          this.mediaItemList.$('.advertisement')[noOfAds].appendChild(this.$('#eyein-main-ad')[0]);
+
         var mediaIndex = index - noOfAds;
         var mediaItem = this.model.mediaItems.at(mediaIndex);
 
@@ -5177,7 +5232,10 @@ eyein.views.Modal = EyeInBackbone.View.extend({
         if (!this.expandedMedia.el.classList.contains('hidden'))
           this.expandedMedia.el.classList.add('hidden');
 
-        self.mediaItemList.el.style.marginLeft = (-(this.mediaSize/2) - index*this.mediaSize) + "px";
+        var translateString = 'translateX(' + (-(this.mediaSize/2) - index*this.mediaSize) + 'px)';
+        self.mediaItemList.el.style.transform = translateString;
+        self.mediaItemList.el.style['-webkit-transform'] = translateString;
+
         _.delay(function() {
           if (self.expandedMedia.el.classList.contains('hidden')) {
             self.expandedMedia.el.classList.remove('hidden');
@@ -5194,27 +5252,10 @@ eyein.views.Modal = EyeInBackbone.View.extend({
         });
 
         // Mark selected item
-        this.mediaItemList.mediaItemViews[mediaIndex].el.classList.add('selected');
-
-
-        // Update counter
-        this.$('#eyein-media-counter')[0].innerHTML = mediaIndex+1 + ' of ' + this.model.mediaItems.length;
-       
-        // Media statistics
-        if (!eyein.userAgent.mobile) {
-          eyein.utils.sendStatistic('modal_media_selected_desktop', 1, this.model.get('id'), mediaItem.get('social_id'));
-
-          if (this.previousMediaIndex > -1) {
-            var now = new Date().getTime();
-            var mediaOpenTime = now - this.mediaTimer;
-            eyein.utils.sendStatistic('modal_media_time_spent_desktop',
-              mediaOpenTime,
-              this.model.get('id'),
-              this.model.mediaItems.at(this.previousMediaIndex).get('social_id'));
-
-            this.mediaTimer = now;
-          }
-        }
+        var mediaItemView = this.mediaItemList.mediaItemViews[mediaIndex];
+        mediaItemView.el.classList.add('selected');
+        var scrollTo = mediaItemView.el.offsetTop;
+        eyein.utils.smoothScroll(self.$('#eyein-story-media')[0], scrollTo - 30, 200);
 
         // On mobile, display full view for video
         if (mediaItem.get('type') == 'video')
@@ -5250,100 +5291,117 @@ eyein.views.Modal = EyeInBackbone.View.extend({
   },
   changeStory: function(storyItem) {
     var self = this;
+
+    this.currentGalleryIndex = -1;
+    this.currentMediaIndex = -1;
+    this.previousMediaIndex = -1;
+
+    // Move ads so they will not be deleted
+    this.el.appendChild(this.$('#eyein-main-ad')[0]);
+    //this.el.appendChild(this.$('#eyein-side-ad')[0]);
+
     this.model.setUrlId(storyItem.get('id'));
     this.model.fetch({success: function() {
       self.renderContent();
-      self.showExpandedMedia(0);
       self.initializeScrollArray();
       self.checkWhichItemIsScrolled();
+      self.showExpandedMedia(0);
+      self.relatedStories.el.scrollTop = 0;
+
+      // Hide mobile expanded view
+      self.$('#eyein-expanded-media')[0].classList.add('mobile-hidden');
     }});
     document.getElementById('eyein-related-stories').scrollTop = 0;
   },
   initializeScrollArray: function() {
     var self = this;
-    self.scrollArray = [];
-    var list = self.$("#eyein-story-media .media-list")[0].childNodes;
-    var offset = list[0].offsetTop;
-    var j = 0;
-    for(i = 0; i < self.mediaItemList.collection.length; i++){
-      if (list[j].offsetHeight == 0){
-        j++;
-      }
-      self.scrollArray[i] = {
-        index: i,
-        top: list[j].offsetTop - offset
-      }
-      j++;
-    }
 
-    var rectContainer = self.$('#eyein-story-media')[0].getBoundingClientRect();
-    self.containerHeight = rectContainer.height - 130;
+    this.scrollArray = [];
+    var list = this.$("#eyein-story-media .media-list")[0].childNodes;
+    var listOffset = list[0].offsetTop;
+    var adCounter = 0;
+
+    _.each(list, function(element, index, list) {
+      if (element.classList.contains('advertisement'))
+        adCounter++;
+
+      self.scrollArray[index] = {
+        index: index,
+        mediaIndex: (index - adCounter),
+        top: element.offsetTop - listOffset
+      };
+    });
+
+    var rectContainer = this.$('#eyein-story-media')[0].getBoundingClientRect();
+    this.containerHeight = rectContainer.height - 130;
+    this.currentGalleryIndex = -1;
   },
   searchScrollArray: function(position){
     for(i = 0; i< this.scrollArray.length; i++){
-      if(position < this.scrollArray[i].top){
+      if (position < this.scrollArray[i].top){
         return this.scrollArray[i-1];
       }
     }
     return this.scrollArray[this.scrollArray.length-1];
   },
   checkWhichItemIsScrolled: function() {
-    var scrollPosition = - (this.mediaItemList.el.getBoundingClientRect().top - 120);
-    var scrollPositionWithOffset = Math.floor(this.containerHeight/2 + scrollPosition);
-    var scrolledItem = this.searchScrollArray(scrollPositionWithOffset);
-
-    if (!scrolledItem)
-      this.currentMediaIndex = 0;
-    else
-      this.currentMediaIndex = scrolledItem.index;
-
-    // If the media is in one column, apply lazy loading (otherwise load everything)
-    var itemsToLoad = this.mediaItemList.mediaItemViews;
-    if (!this.$('#eyein-story-media')[0].classList.contains('no-lazy')) {
-      var firstLoad = this.currentMediaIndex;
-      if (this.currentMediaIndex > 0)
-        firstLoad -= 1;
-
-      var itemsToLoad = itemsToLoad.slice(firstLoad, this.currentMediaIndex+4);
+    if (eyein.userAgent.isDesktop) {
+      _.each(this.mediaItemList.mediaItemViews, function(mediaItem) {
+        mediaItem.loadMedia();
+      });
     }
+    else {
+      var scrollPosition = - (this.mediaItemList.el.getBoundingClientRect().top - 120);
+      var scrollPositionWithOffset = Math.floor(this.containerHeight/2 + scrollPosition);
+      var scrolledItem = this.searchScrollArray(scrollPositionWithOffset);
+      var index = (scrolledItem) ? scrolledItem.index : 0;
 
-    _.each(itemsToLoad, function(mediaItem) {
-      mediaItem.loadMedia();
-    })
+      this.previousMediaIndex = this.currentMediaIndex;
+      this.currentMediaIndex = (scrolledItem) ? scrolledItem.mediaIndex : 0;
 
-    if (this.currentMediaIndex != this.previousMediaIndex) {
-      // send statistics for mobile media selection
-      if(eyein.userAgent.mobile) {
-        timeOnMedia = new Date().getTime() - this.mediaTimer;
-        if (timeOnMedia > 1000){
-          if (this.currentMediaIndex >= 0){
-            eyein.utils.sendStatistic(
-              'modal_media_selected_mobile', 1,
-              this.model.get('id'),
-              this.mediaItemList.collection.at(this.currentMediaIndex).get('social_id'));
-          }
-          if (this.currentMediaIndex >= 0){
-          eyein.utils.sendStatistic(
-            'modal_media_time_spent_mobile', timeOnMedia,
-            this.model.get('id'),
-            this.mediaItemList.collection.at(this.previousMediaIndex).get('social_id'));
-          }
+      // If the media is in one column, apply lazy loading (otherwise load everything)
+      var itemsToLoad = this.mediaItemList.mediaItemViews;
+      if (!this.$('#eyein-story-media')[0].classList.contains('no-lazy')) {
+        var firstLoad = this.currentMediaIndex;
+        if (this.currentMediaIndex > 0)
+          firstLoad -= 1;
+
+        itemsToLoad = itemsToLoad.slice(firstLoad, this.currentMediaIndex+4);
+      }
+
+      _.each(itemsToLoad, function(mediaItem) {
+        mediaItem.loadMedia();
+      });
+
+      if (this.currentGalleryIndex != index) {
+        this.currentGalleryIndex = index;
+
+        if (this.mediaItemList.options.adFrequency) {
+          // Move ad to place if it is or next
+          var adFrequency = this.mediaItemList.options.adFrequency + 1;
+          var adOffset = this.mediaItemList.options.adOffset;
+          var noOfAds = (index < adOffset) ? 0 : Math.floor((index - adOffset) / (adFrequency)) + 1;
+
+          if ((index+1 - adOffset) % (adFrequency) == 0)
+            this.mediaItemList.$('.advertisement')[noOfAds].appendChild(this.$('#eyein-main-ad')[0]);
+          else if ((index - adOffset) % (adFrequency) == 0)
+            this.mediaItemList.$('.advertisement')[noOfAds-1].appendChild(this.$('#eyein-main-ad')[0]);
         }
-        this.previousMediaIndex = this.currentMediaIndex
-        this.mediaTimer = new Date().getTime();
       }
     }
   },
   show: function(mediaIndex) {
     var self = this;
 
-    // Start statistics timers
+    // Start statistics timers & counters
     self.modalTimer = new Date().getTime();
     self.mediaTimer = new Date().getTime();
 
+    self.firstStory = true;
+    self.mediaCounter = 1;
+
     // Reset the model
-    var modelJSON = 
-    {
+    var modelJSON = {
       story: eyein.mainStory.toJSON(),
       media: eyein.mainStory.mediaItems.toJSON()
     }
@@ -5356,6 +5414,23 @@ eyein.views.Modal = EyeInBackbone.View.extend({
 
     if (this.model.mediaItems.length)
       this.showExpandedMedia(mediaIndex || 0);
+
+    // Hide mobile expanded view
+    this.$('#eyein-expanded-media')[0].classList.add('mobile-hidden');
+
+    // Initialize ads
+    if (this.mainAdPlacement) {
+      this.mainAdPlacement.fetchAd(function(status) {
+        if (status)
+          self.mainAdPlacement.displayAd('eyein-main-ad-placeholder');
+      });
+    }
+    if (this.sideAdPlacement) {
+      this.sideAdPlacement.fetchAd(function(status) {
+        if (status)
+          self.sideAdPlacement.displayAd('eyein-side-ad-placeholder');
+      });
+    }
 
     // Mobile Safari native scrolling hack
     this.$('#eyein-story-media')[0].style['-webkit-overflow-scrolling'] = 'auto';
@@ -5373,20 +5448,54 @@ eyein.views.Modal = EyeInBackbone.View.extend({
     // Stop statistics timers & send result
     var now = new Date().getTime();
     var modalOpenTime = now - this.modalTimer;
-    var mediaOpenTime = now - this.mediaTimer;
 
     eyein.utils.sendStatistic('modal_time_spent', modalOpenTime, eyein.mainStory.id);
 
-    if (eyein.userAgent.mobile) {
-      eyein.utils.sendStatistic('modal_media_time_spent_mobile',
-      mediaOpenTime,self.model.get('id'),
-      self.mediaItemList.collection.at(this.previousMediaIndex).get('social_id')); // TO DO CHECK!!!
+    var now = new Date().getTime();
+
+    if (self.firstStory) {
+      // If still on the first story, calculate `first_story_time_spent`
+      this.firstStoryTimeSpent = now - self.modalTimer;
     }
     else {
-      eyein.utils.sendStatistic('modal_media_time_spent_desktop',
-        mediaOpenTime,this.model.get('id'),
-        self.expandedMedia.model.get('social_id'));
+      // If not on the first story, calculate `related_stories_time_spent`
+      var relatedStoriesTimeSpent = now - self.firstStoryTimeSpent - self.modalTimer;
+      if (relatedStoriesTimeSpent < 5*60*1000) {
+        eyeinga(
+          'send',
+          'event',
+          eyein.options.userId, // category
+          'related_stories_time_spent', // action
+          self.model.id, // label
+          relatedStoriesTimeSpent // value
+        );
+      }
     }
+
+    // send `first_story_time_spent` in any case
+    if (this.firstStoryTimeSpent < 5*60*1000) {
+      eyeinga(
+        'send',
+        'event',
+        eyein.options.userId, // category
+        'first_story_time_spent', // action
+        self.model.id, // label
+        this.firstStoryTimeSpent // value
+      );
+    }
+
+    eyeinga(
+      'send',
+      'event',
+      eyein.options.userId, // category
+      'story_media_seen', // action
+      self.model.id, // label
+      self.storyMediaCounter // value
+    );
+
+    // Move ads so they will not be deleted
+    this.el.appendChild(this.$('#eyein-main-ad')[0]);
+    this.el.appendChild(this.$('#eyein-side-ad')[0]);
 
     this.el.parentElement.classList.remove('eyein-modal-open');
     
@@ -5406,14 +5515,11 @@ eyein.views.Modal = EyeInBackbone.View.extend({
   },
   checkMobile: function() {
     var mobileIndicator = this.$('#eyein-mobile-indicator')[0];
-    var isDesktop = (window.document.defaultView.getComputedStyle(mobileIndicator).getPropertyValue('z-index') == '0');
-    if (isDesktop) {
-      this.$('#eyein-story-media')[0].classList.add('no-lazy');
+    eyein.userAgent.isDesktop = (window.document.defaultView.getComputedStyle(mobileIndicator).getPropertyValue('z-index') == '0');
+    if (eyein.userAgent.isDesktop) {
       this.setMediaSize();
     }
     else {
-      this.$('#eyein-story-media')[0].classList.remove('no-lazy');
-
       this.expandedMedia.el.style.width = '';
       this.$('#eyein-expanded-media')[0].style.width = '';
       _.each(this.$('#eyein-story-media .media-item'), function(mediaItem) {
@@ -5423,21 +5529,19 @@ eyein.views.Modal = EyeInBackbone.View.extend({
   },
   setMediaSize: function() {
     var self = this;
-    this.mediaSize = this.$('#eyein-modal-content')[0].offsetHeight - 160;
-    if (this.mediaSize < 400) {
+    this.mediaSize = this.$('#eyein-modal-content')[0].offsetHeight - 100;
+    // Set minimum media size
+    if (this.mediaSize < 400)
       this.mediaSize = 400;
-      this.$('#eyein-media-counter')[0].style.display = 'none';
-    }
-    else
-      this.$('#eyein-media-counter')[0].style.display = '';
-
 
     this.expandedMedia.el.style.width = this.mediaSize + 'px';
     this.$('#eyein-expanded-media')[0].style.width = (this.mediaSize + 150) + 'px';
     this.$('#eyein-expanded-prev')[0].style.top = (this.mediaSize / 2) + 'px';
     this.$('#eyein-expanded-next')[0].style.top = (this.mediaSize / 2) + 'px';
 
-    self.mediaItemList.el.style.marginLeft = (- (this.mediaSize/2) - this.currentGalleryIndex*this.mediaSize) + "px";
+    var translateString = 'translateX(' + (-(this.mediaSize/2) - this.currentGalleryIndex*this.mediaSize) + 'px)';
+    self.mediaItemList.el.style.transform = translateString;
+    self.mediaItemList.el.style['-webkit-transform'] = translateString;
 
     _.each(this.$('#eyein-story-media .media-item, #eyein-story-media .advertisement'), function(mediaItem) {
       mediaItem.style.width = self.mediaSize + 'px';
@@ -5468,6 +5572,22 @@ eyein.views.Main = EyeInBackbone.View.extend({
   },
   render: function() {
     var self = this;
+
+    // Inject adsNative code to containing webpage
+    window._AdsNativeOpts = { blockAdLoad: true };
+
+    var script = document.createElement('script');
+    var loaded;
+    script.setAttribute('type','text/javascript');
+    script.setAttribute('src', '//static.adsnative.com/static/js/render.v1.js');
+    script.onreadystatechange = script.onload = function() {
+      if (!loaded) {
+        self.modal.mainAdPlacement = new AdsNative('GpMgm7qHcawgK1gNu4qDUHC-GX20zFHiqMVGV0kD');
+        self.modal.sideAdPlacement = new AdsNative('Nf1I_2LNDoegRK48QJ7Cet-m2xG9zMlOQoQYLYuq');
+      }
+      loaded = true;
+    };
+    document.getElementsByTagName('head')[0].appendChild(script);
 
     // Inject eyein CSS to containing webpage (with version param for cache busting)
     window.document.head.insertAdjacentHTML('beforeend',
