@@ -1,0 +1,61 @@
+BrightTag.instance.errors({enabled:false});
+BrightTag.instance.dbe('seattletimes page taxonomy', 't_omni_pagename', {pageId:1041625});
+BrightTag.instance.dbe('url', 'location.href', {pageId:468312});
+BrightTag.instance.secondary(function(serverURL) {
+try { if (eval('bt_data(\x27seattletimes page taxonomy\x27).indexOf(\x22sports\x22) \x3e -1')) {
+serverURL.cf(1654309);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22sports\x22) \x3e -1')) {
+serverURL.cf(1654318);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27) \x3d\x3d \x22http://www.seattletimes.com/\x22')) {
+serverURL.cf(1708799);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22news\x22) \x3e -1')) {
+serverURL.cf(1708827);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22business\x22) \x3e -1')) {
+serverURL.cf(1708831);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22entertainment\x22) \x3e -1')) {
+serverURL.cf(1708840);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22food-drink\x22) \x3e -1')) {
+serverURL.cf(1708862);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22life\x22) \x3e -1')) {
+serverURL.cf(1708907);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22homes\x22) \x3e -1')) {
+serverURL.cf(1708912);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22travel\x22) \x3e -1')) {
+serverURL.cf(1708916);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22opinion\x22) \x3e -1')) {
+serverURL.cf(1708926);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22jobs\x22) \x3e -1')) {
+serverURL.cf(1708930);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22http://autos.seattletimes.com/\x22) \x3e -1')) {
+serverURL.cf(1708944);
+}
+} catch(e) { bt_handle_exception(e); }
+try { if (eval('bt_data(\x27url\x27).indexOf(\x22shopping\x22) \x3e -1')) {
+serverURL.cf(1708952);
+}
+} catch(e) { bt_handle_exception(e); }
+});

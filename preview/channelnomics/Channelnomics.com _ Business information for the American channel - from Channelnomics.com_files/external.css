@@ -1,0 +1,63 @@
+/* Site url: http://www.channelnomics.com */
+/* Site type: Desktop */
+/* Author: Puneet Udasi */
+/* Last updated by/date: Puneet/03-09-15 */
+/*
+Moved to cn-com.css - Please remove. 
+These are now deprecated styles
+
+
+#newsletters {
+	border:2px dotted #1B3A70;
+	padding:10px;
+	clear:both;
+	height:100px;
+}
+#newsletters input[type=text] {
+	width:60% !important; 
+	float:left; 
+	padding:0.360em 5px 0.360em 28px;
+	margin:0 0 20px 0; 
+	outline:none; 
+	border:1px solid #d7d7d7; 
+	background-color:#fbfbfb; 
+	font-family:Arial, serif;
+	color:#666;
+	background-position:4px 4px;
+	font-size:100%;
+}
+#newsletters input[type=submit] {
+	float:left
+	background-color:;#1b3a70;  
+	color: #fff;
+	border: 1px solid #1b3a70;
+	height: 32px;
+	padding:0 5px 0;
+	margin:0;
+	line-height:1;
+	font-weight:normal;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	background-repeat: no-repeat; 
+	border-top-left-radius:0px;
+	border-top-right-radius:5px;
+	border-bottom-left-radius:0px;
+	border-bottom-right-radius:5px; 
+	cursor: pointer;
+}
+input[type=submit]:hover {  background-color:#c00; border:1px solid #c00;}
+
+#newsletters input[type="submit"] {
+    float: left !important;
+}
+*/
+
+
+#newsletters input[type="text"] {
+    margin-left: 0% !important;
+}
+
+#newsletters {
+    border:none !important;
+	background:#EFEFEF;
+	height:150px !important;
+}

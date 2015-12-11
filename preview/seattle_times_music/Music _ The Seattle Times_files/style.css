@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	
+	display: block;
+}
+body {
+	
+	line-height: 1;
+}
+ol, ul {
+	
+	list-style: none;
+}
+blockquote, q {
+	
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*---------------*/
+
+#container {
+	top: 0px;
+	left: 0px;
+	width: 728px;
+	height: 90px;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	border: 1px solid #A7A7A7;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	overflow: hidden;
+}
+
+#banner {
+	top: 0px;
+	left: 0px;
+	width: 728px;
+	height: 90px;
+	display: block;
+	overflow: hidden;
+	background: #0056B8;
+}
+
+
+#clicktag {
+    position: absolute;
+    top: 0px;
+	left: 0px;
+    width: 300px;
+    height: 250px;
+	opacity: 0;
+    z-index: 100;
+}
+
+
+#brand {
+	position: absolute;
+	bottom: 21px;
+	right: 27px;
+	z-index: 1;
+}
+
+.text {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+#copy1 {
+	top: 4px;
+	left: -106px;
+	position: absolute;
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+}
+
+#copy1b {
+
+	position: absolute;
+	background: url('spritesheet.png') no-repeat 0 0;
+	width: 377px;
+	height: 78px;
+	top: 4px;
+	left: 6px;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+}
+
+#copy2 {
+	top: 61px;
+	left: -943px;
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+}
+
+#copy2b {
+	background: url('spritesheet.png') no-repeat -1px -160px;
+	width: 170px;
+	height: 12px;
+	position: absolute;
+	top: 61px;
+    left: 24px;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+
+}
+
+
+#copy3 {
+	top:14px;
+	right: -900px;
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
+#copy3b {
+	background: url('spritesheet.png') no-repeat 0 -88px;
+	width: 160px;
+	height: 60px;
+	position: absolute;
+	top: 14px;
+    right: 354px;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+
+}
+
+#WhiteBorder {
+	width: 176px;
+	height: 76px;
+	display: block;
+	top: 5px;
+	left: -138px;
+	position: absolute;
+	border-left: 1px solid #FFFFFF;
+	opacity: 0;
+	
+}
+
+#PhoneNumber {
+	display: block;
+	position: absolute;
+	top: 53px;
+	right: 187px;
+
+	
+}
+
+
+#CTA {
+	position: absolute;
+    left: 416px;
+    top: 24px;
+    z-index: 2;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#ctaBtnOver {
+	position: absolute;
+	top: 1px;
+	left: -50px;
+    width: 64px;
+    height: 21px;
+    background : url('shimmer.png') no-repeat;
+	z-index: 3;
+	overflow: hidden;
+	opacity: 0;
+}
+
+
+
+.CTACopy1, .CTACopy2 .CTA, .logo, .copy1, .copy2, .copy3, .PhoneNumber {
+  background-image: url('spritesheet.png');
+  background-repeat: no-repeat;
+  position:absolute;
+}
+
+
+.PhoneNumber {
+	background: url('spritesheet.png') no-repeat -473px -100px;
+	width: 119px;
+	height: 16px;
+}
+
+.CTA {
+	background: url('spritesheet.png') no-repeat -203px -149px;
+	width: 127px;
+	height: 29px;
+}
+
+.logo {
+	background: url('spritesheet.png') no-repeat -174px -94px;
+	width: 134px;
+	height: 41px;
+}
+
+.copy1 {
+	background: url('spritesheet.png') no-repeat 0 0;
+	width: 377px;
+	height: 78px;
+}
+
+.copy2 {
+	background: url('spritesheet.png') no-repeat -1px -160px;
+	width: 166px;
+	height: 12px;
+}
+
+.copy3 {
+	background: url('spritesheet.png') no-repeat 0 -88px;
+	width: 160px;
+	height: 60px;
+}
+
+#CTACopy1 {
+	background: url('spritesheet.png') no-repeat -445px -10px;
+	width: 79px;
+	height: 9px;
+	top: 8px;
+}
+
+#CTACopy2 {
+	background: url('spritesheet.png') no-repeat -444px -28px;
+	width: 61px;
+	height: 9px;
+	opacity: 0;
+	top: 8px;
+}
+
+.CTACopys {
+	position: absolute;
+	top: 7px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
