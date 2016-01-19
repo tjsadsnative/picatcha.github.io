@@ -1,0 +1,733 @@
+/*jslint browser: true, devel: true, ass: true, eqeq: true, nomen: true, regexp: true, unparam: true, sloppy: true, stupid: true, sub: true, vars: true, white: true */
+/*global jQuery: true, PMC_PinIt_Overlay: true */
+/**
+ * Copyright (c) 2015 PMC
+ * @version 1.0
+ * @since 2012-04-09
+ * @author Hau Vong
+ * @ref: https://developers.pinterest.com/pin_it/
+ */
+
+/*
+ * @usage:
+
+PMC_PinIt_Overlay( { options } );
+default options:
+	selector: 'img.pinit-overlay',  // default selector
+	padding: 10,  // default offset padding
+	position: "top-left"	// top-left, top-center, top-right, center, bottom-lef, bottom-center, bottom-right
+
+// to bind pinit overlay to multiple selectors
+PMC_PinIt_Overlay().bindto(['img.class1','img.class2',...]);
+
+// Use this function to dynamic place the pinit button over an image
+PMC_PinIt_Overlay().overlay( jQuery('img1').get(0) );
+
+//For example update pinit button when gallery image render
+jQuery(document).on('pmc-gallery-image-rendered',function(data){
+	if ( typeof data.node != 'undefined' ) {
+		PMC_PinIt_Overlay({
+			selector: false,
+			position: 'top-center'
+		}).overlay( jQuery(data.node).find( 'img' ).get(0) );
+	}
+});
+
+// Image override pinit button positioin
+<img class="pinit-overlay" pinit-position="center" src="..." />
+*/
+
+var PMC_PinIt_Overlay = PMC_PinIt_Overlay || function( args ){
+	// expose variable self to allow scope function to access this object
+	var self = this;
+
+	if ( typeof self.options === 'undefined' ) {
+		self.options = {
+			selector: "img.pinit-overlay",
+			padding: 10,
+			position: "top-left",
+			min_width: 200,
+			min_height: 100
+		};
+	}
+	if ( typeof args != 'undefined' ) {
+		jQuery.extend(self.options,args);
+	}
+
+	// if object already initialize, just return self
+	if ( typeof self.initialized !== 'undefined' ) {
+		return self;
+	}
+
+	if ( typeof self.selectors === 'undefined' ) {
+		self.selectors = [];
+	}
+	self.initialized = true;
+
+	function overlay_selectors() {
+		var idx;
+		// we need to de-queue all current un-binded selectors
+		var selectors = self.selectors;
+		self.selectors = [];
+		for( idx in selectors ) {
+			jQuery(selectors[idx] + ':visible').each(function(){
+				self.attach(this);
+			});
+		}
+	} // function overlay_selectors
+
+	// initialize and bind events if document is ready or bind to document ready event
+	function init() {
+		if ( 'loading' == document.readyState ) {
+			if ( typeof self.init_event_binded !== 'undefined' ) {
+				return;
+			}
+			jQuery(document).ready(overlay_selectors);
+		} else {
+			overlay_selectors();
+		}
+
+		if ( typeof self.init_event_binded === 'undefined' ) {
+			// image position might be change after document is fully loaded
+			jQuery(window).load(function(){
+				// we need to re-attach/refresh the pinit button if image changed position
+				jQuery('[pmc-pinit-attached]').each(function(){
+					self.attach(this);
+				});
+			});
+		}
+
+		self.init_event_binded = true;
+		return self;
+	} // init
+
+	/* Public functions */
+
+	self.overlay = function( el ) {
+		if ( typeof el === 'undefined' || ! el ) {
+			return;
+		}
+		self.attach(el,'pmc-pinit-overlay-btn');
+		if ( 'complete' != document.readyState ) {
+			if ( ! jQuery(el).attr('pmc-pinit-onload') ) {
+				jQuery(el).attr('pmc-pinit-onload',true);
+				var overlay_options = jQuery.extend({},self.options);
+				jQuery(el).on('load',function(){
+					var saved_options = self.options;
+					self.options = overlay_options;
+					self.attach(this,'pmc-pinit-overlay-btn');
+					self.options = saved_options;
+				});
+			}
+		}
+	};
+
+	// Attach pinit button to an element or refresh existing attached button position
+	// when id is passed, re-use and move that pinit button instead
+	self.attach = function( el, id ) {
+
+		if ( typeof el === 'undefined' || ! el ) {
+			return;
+		}
+		if ( typeof id === 'undefined' || !id ) {
+			id = jQuery(el).attr('pmc-pinit-attached');
+		} else {
+			jQuery('[pmc-pinit-attached="' + id + '"]').removeAttr('pmc-pinit-attached');
+		}
+		if ( typeof id === 'undefined' || ! id ) {
+			id = "pmc-pinit-overlay-btn" + Math.round(new Date().getTime() + (Math.random() * 100));
+		}
+		if ( ! jQuery('#'+id).length ) {
+			jQuery(el).attr('pmc-pinit-attached',id);
+			jQuery('body').append( jQuery("<a/>",{id:id,class:"pmc-pinit-overlay-btn",href:"#",style:"display:none"}) );
+		}
+
+		var btn_width  = jQuery('#'+id).width();
+		var btn_height = jQuery('#'+id).height();
+		var img_offset = jQuery(el).offset();
+		var img_width  = jQuery(el).width();
+		var img_height = jQuery(el).height();
+		var position   = jQuery(el).attr('pinit-position');
+		var img_url    = jQuery(el).attr('src');
+
+		if ( img_width < self.options.min_width || img_height < self.options.min_height ) {
+			return;
+		}
+
+		if ( typeof img_url === 'undefined' ) {
+			img_url = jQuery('img',el).attr('src');
+		}
+
+		var pinurl = 'https://pinterest.com/pin/create/button/?'
+			+'url='+encodeURIComponent(document.location.href)
+			+'&media='+encodeURIComponent(img_url);
+
+		// if element has no position define, use default position
+		if ( typeof position === 'undefined' || !position ) {
+			position = self.options.position;
+		}
+
+		var css = {};
+
+		switch ( position ) {
+			case "top-left":
+				css = {top: (img_offset.top+self.options.padding) + "px", left: (img_offset.left+self.options.padding) + "px" };
+				break;
+			case "top-center":
+				css = {top: (img_offset.top+self.options.padding) + "px", left: (img_offset.left+(img_width-btn_width)/2) + "px" };
+				break;
+			case "top-right":
+				css = {top: (img_offset.top+self.options.padding) + "px", left: (img_offset.left+img_width-btn_width-self.options.padding) + "px" };
+				break;
+			case "bottom-left":
+				css = {top: (img_offset.top+img_height-btn_height-self.options.padding) + "px", left: (img_offset.left+self.options.padding) + "px" };
+				break;
+			case "bottom-center":
+				css = {top: (img_offset.top+img_height-btn_height-self.options.padding) + "px", left: (img_offset.left+(img_width-btn_width)/2) + "px" };
+				break;
+			case "bottom-right":
+				css = {top: (img_offset.top+img_height-btn_height-self.options.padding) + "px", left: (img_offset.left+img_width-btn_width-self.options.padding) + "px" };
+				break;
+			case "center":
+			default:
+				css = {top: (img_offset.top+((img_height-btn_height)/2)) + "px", left: (img_offset.left+(img_width-btn_width)/2) + "px" };
+				break;
+		}
+		jQuery('#'+id)
+			.css(css)
+			.attr('href',pinurl)
+			.show();
+	}; // public attach function
+
+	self.bindto = function( selectors ) {
+		var idx;
+		if ( selectors ) {
+			if ( typeof selectors === 'string' ) {
+				self.selectors.push(selectors);
+			} else {
+				for( idx in selectors ) {
+					self.selectors.push(selectors[idx]);
+				}
+			}
+		}
+		// return self object
+		return init();
+	}; // public bindto function
+
+	// return a self object
+	return self.bindto(self.options.selector);
+};;
+jQuery(document).ready(function(){
+	PMC_PinIt_Overlay({
+		selector: false,
+		position: "top-left",
+		padding : 5
+	}).bindto(["#content .main-post article img"]);
+});
+;
+/**
+ * Version: 3.0
+ */
+
+(function(window, $) {
+
+window.AdLoader = function(id, map) {
+	var self = this,
+		wrapper = $(id);
+
+	/**
+	 * Bind all events and prepare the class.
+	 */
+	self.initialize = function() {
+
+	}
+};
+
+})(window, jQuery);
+
+/**
+ * Doubleclick Ad functions.
+ * @type {{load_ad: Function, rotateAd: Function}}
+ */
+var pmc_adm_doubleclick = {
+
+	load_ad: function () {
+		ad_Iframe_div = jQuery(".pmc-adm-iframe-div").eq(0);
+
+		if (ad_Iframe_div.length > 0) {
+
+			var doc_width = jQuery(document).width();
+			var ordnum = Math.random() * 1000000000000000000;
+
+			adIframe = jQuery('<iframe class="pmc-adm-iframe ' + ad_Iframe_div.data('adclass') + '" src="'
+				+ ad_Iframe_div.data('adurl') + ';ord=' + ordnum + '" width="'
+				+ ad_Iframe_div.data('adwidth') + 'px" height="'
+				+ ad_Iframe_div.data('adheight')
+				+ 'px"	marginwidth="0" marginheight="0"  frameborder="0" scrolling="no"></ifr'
+				+ 'ame>');
+
+			ad_Iframe_div.replaceWith(adIframe);
+
+			if (ad_Iframe_div.data('adrender') > 0) {
+				setTimeout(pmc_admanager.load_ad(), ad_Iframe_div.data('adrender'));
+			}
+			else if (ad_Iframe_div.data('adrender') == 0) {
+				adIframe.load(function () {
+					this.load_ad();
+				});
+			} else {
+				this.load_ad();
+			}
+		} // if
+	},
+	rotateAd: function (cls) {
+
+		var rotateClass = cls ? cls : 'pmc-adm-iframe';
+		rotateClass = '.' + rotateClass;
+		var ordnum = Math.random() * 1000000000000000000;
+
+		jQuery(rotateClass).each(function () {
+			sourceUrl = jQuery(this).attr("src");
+			sourceUrl = sourceUrl.replace(/ord=[\.0-9]+/i, "ord=" + ordnum);
+			jQuery(this).attr({
+				src: sourceUrl
+			});
+		});
+	}
+};
+
+/**
+ * Google Publisher Ad Tags.
+ */
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+	var gads = document.createElement('script');
+	gads.async = true;
+	gads.type = 'text/javascript';
+	var useSSL = 'https:' == document.location.protocol;
+	gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(gads, node);
+})();
+
+/**
+ * Google Publisher Tags ad functions
+ *
+ * @since 2013-11-08 Amit Gupta
+ * @version 2013-11-12 Amit Gupta
+ * @version 2014-02-18 Amit Gupta - added set_location()
+ */
+var pmc_adm_gpt = {
+	skin_targeting_kw: 0,
+	ad_slots: {},
+	settings: {},
+	rendered: {},
+	render_ad_type: 'default',
+
+	init: function( settings ) {
+		this.settings = settings;
+		var self = this;
+		googletag.cmd.push( function() {
+			for ( var t in self.settings.ad_list ) {
+				var ads = self.settings.ad_list[t];
+				for ( var i in ads ) {
+					var ad = ads[i];
+					var slot;
+					// is ad restricted by devices?
+					if ( typeof ad['devices'] != 'undefined' && typeof ad['devices'].length == 'number' ) {
+						if ( !self.is_device( ad['devices'] ) ) {
+							continue;
+						}
+					}
+					if ( typeof ad['oop'] != 'undefined' && ad['oop'] ) {
+						slot = googletag.defineOutOfPageSlot( self.apply_slot_filter( ad['slot'] ), ad['id'] );
+					} else {
+						slot = googletag.defineSlot( self.apply_slot_filter( ad['slot'] ), ad['width'], ad['id'] );
+					}
+					if ( slot ) {
+						slot.addService( googletag.pubads() );
+						for ( var j in ad['targeting'] ) {
+							slot.setTargeting( j, ad['targeting'][j] );
+						}
+						self.ad_slots[ ad['id'] ] = slot;
+					}
+				} // for
+			} //for
+
+
+			self.set_targeting_keywords( self.settings['ad_targetings'] );
+			self.set_skin_targetting_kw();
+			// Need single request for performance and DFP ads synced
+			// important: single request must be call before enableServices...
+			googletag.pubads().enableSingleRequest();
+			googletag.pubads().collapseEmptyDivs();
+			googletag.pubads().disableInitialLoad();	// we do not want to render the ads yet
+			googletag.enableServices();
+
+			// need to loop through all valid ads to trigger ad display
+			for ( var t in self.settings.ad_list ) {
+				var ads = self.settings.ad_list[t];
+				for ( i in ads ) {
+					if ( typeof self.ad_slots[ads[i]['id']] == 'undefined' ) {
+						continue;
+					}
+					googletag.display( ads[i]['id'] );
+				}
+			}
+
+		}); // googletag.cmd.push ..
+
+		if ( this.render_ad_type ) {
+			pmc_adm_gpt.render_ads();
+		}
+	},
+
+	render_ad: function( ad, targeting ) {
+		var self = this;
+
+		if ( typeof ad === 'undefined' || ! ad ) {
+			return;
+		}
+
+		// ad slot already defined, let's skip
+		if ( typeof self.ad_slots[ ad['id'] ] != 'undefined' || self.ad_slots[ ad['id'] ] ) {
+			return;
+		}
+
+		// is ad restricted by devices?
+		if ( typeof ad['devices'] != 'undefined' && typeof ad['devices'].length == 'number' ) {
+			if ( !this.is_device( ad['devices'] ) ) {
+				return;
+			}
+		}
+
+		if ( typeof self.ad_slots[ ad['id'] ] !== 'undefined' ) {
+			googletag.cmd.push( function() {
+				googletag.pubads().refresh( [ self.ad_slots[ ad['id'] ] ] );
+			} );
+		}
+
+	},
+
+	// return true if there is ads for ad type
+	has_ads: function( ad_type ) {
+
+		if ( typeof ad_type == 'undefined' || '' == ad_type ) {
+			ad_type = this.render_ad_type;
+		}
+
+		if ( ! ad_type || typeof this.settings.ad_list == 'undefined' ) {
+			return false;
+		}
+
+		if ( typeof this.settings.ad_list[ad_type] == 'undefined' ) {
+			return false;
+		}
+
+		var list = this.settings.ad_list[ad_type];
+
+		for ( var i in list ) {
+			var ad = list[i];
+			// is ad restricted by devices?
+			if ( typeof ad['devices'] != 'undefined' && typeof ad['devices'].length == 'number' ) {
+				if ( !this.is_device( ad['devices'] ) ) {
+					continue;
+				}
+			}
+			return true;
+		}
+
+		return false;
+	},
+
+	// render ads by ad type: default, interrupt-ads, interrupt-ads-gallery
+	render_ads: function( ad_type ) {
+		if ( typeof ad_type == 'undefined' || '' == ad_type ) {
+			ad_type = this.render_ad_type;
+		}
+
+		if ( ! ad_type || typeof this.settings.ad_list == 'undefined' ) {
+			return;
+		}
+
+		if ( typeof this.settings.ad_list[ad_type] == 'undefined' ) {
+			return;
+		}
+
+		var self = this;
+
+		googletag.cmd.push( function() {
+			var ads = self.settings.ad_list[ad_type];
+			var slots = [];
+
+			for ( var i in ads ) {
+				var ad = ads[i];
+				if ( typeof self.ad_slots[ ad['id'] ] !== 'undefined' ) {
+					slots.push( self.ad_slots[ ad['id'] ] );
+				}
+			}
+
+			if ( slots.length > 0 ) {
+				googletag.pubads().refresh( slots );
+			}
+		} );
+
+		self.rendered[ad_type] = true;
+
+	},
+
+	// render ads by ad type: default, interrupt-ads, interrupt-ads-gallery
+	rotate_ads: function( ad_type ) {
+		this.render_ads( ad_type );
+	},
+
+	remove_ads: function( ad_type ) {
+		if ( typeof ad_type == 'undefined' || '' == ad_type ) {
+			ad_type = this.render_ad_type;
+		}
+
+		if ( ! ad_type || typeof this.settings.ad_list == 'undefined' ) {
+			return;
+		}
+
+		if ( typeof this.settings.ad_list[ad_type] == 'undefined' ) {
+			return;
+		}
+
+		if ( typeof this.rendered[ad_type] == 'undefined' ) {
+			return;
+		}
+
+		var ads = this.settings.ad_list[ad_type];
+		var slots = [];
+
+		for ( var i in ads ) {
+			var ad = ads[i];
+			if ( typeof this.ad_slots[ ad['id'] ] !== 'undefined' ) {
+				jQuery('#' + ad['id'] ).html('');
+			}
+		}
+	},
+
+	is_mobile: function() {
+		if ( typeof this._is_mobile == 'undefined' ) {
+			this._is_mobile = null != navigator.userAgent.match(/mobile|iPhone|Blackberry|Android|MIDP|AvantGo|BlackBerry|J2ME|Opera Mini|DoCoMo|NetFront|Nokia|PalmOS|PalmSource|portalmmm|Plucker|ReqwirelessWeb|SonyEricsson|Symbian|UP\.Browser|Windows CE|Xiino/i);
+		}
+		return this._is_mobile;
+	},
+	is_desktop: function() {
+		return ! this.is_mobile();
+	},
+	is_device: function( device ) {
+		if ( typeof this._device_string == 'undefined' ) {
+			if ( this.is_mobile() ) {
+				this._device_string = 'mobile';
+			} else {
+				this._device_string = 'desktop';
+			}
+		}
+		if ( typeof device == 'string' ) {
+			return device == this._device_string;
+		}
+		if ( typeof device.indexOf == 'function' ) {
+			return device.indexOf( this._device_string ) > -1;
+		}
+		return false;
+	},
+
+	apply_filters: function ( filter, value, data1 ) {
+		if ( typeof pmc == 'undefined' || typeof pmc.hooks == 'undefined' || typeof pmc.hooks.apply_filters == 'undefined') {
+			return value;
+		}
+		return pmc.hooks.apply_filters( filter, value, data1 );
+	},
+
+	apply_slot_filter: function( slot ) {
+		return this.apply_filters( 'pmc_adm_gpt_slot', slot );
+	},
+
+	apply_ad_width_filter: function( ad_width, slot  ) {
+		return this.apply_filters( 'pmc_adm_gpt_ad_width', ad_width, slot );
+	},
+
+	// refresh ads by div class name
+	refresh_ads: function( cls ) {
+		if ( typeof cls == 'undefined' ) {
+			cls = 'ad-rotatable';
+		}
+
+		var self = this;
+		var slots_to_refresh = [];
+
+		jQuery( '.pmc-adm-goog-pub-div .' + cls ).each( function() {
+			var div_id = jQuery( this ).attr( 'id' );
+
+			if ( typeof self.ad_slots[ div_id ] !== 'undefined' ) {
+				slots_to_refresh.push( self.ad_slots[ div_id ] );
+			}
+		} ).promise().done( function() {
+			if ( slots_to_refresh && slots_to_refresh.length > 0 ) {
+				googletag.pubads().refresh( slots_to_refresh );
+			}
+		} );
+	},
+	/**
+	 * If geo location is available then pass that to GPT as well
+	 *
+	 * @since 2014-02-18 Amit Gupta
+	 */
+	set_location: function() {
+		if ( ! pmc.geolocation || ! pmc.geolocation.get() ) {
+			return false;
+		}
+
+		var coords = pmc.geolocation.get();
+
+		if ( ! coords.latitude || ! coords.longitude ) {
+			return false;
+		}
+
+		//if location data has accuracy then convert it into MM else assume default of 50 meters
+		var precision = ( coords.accuracy && parseFloat( coords.accuracy ) > 0 ) ? parseInt( parseFloat( coords.accuracy ) * 1000 ) : 50000;
+
+		googletag.pubads().setLocation( coords.latitude, coords.longitude, precision );
+
+		return true;
+	},
+	display_ad: function (div_id) {
+		googletag.display(div_id);
+	},
+	set_skin_targetting_kw: function () {
+		var self = this;
+		if (self.skin_targeting_kw === 0) {
+			self.skin_targeting_kw = Math.floor((Math.random() * 10) + 1);
+		}
+
+		if (self.skin_targeting_kw !== 0) {
+			googletag.pubads().setTargeting("skin", self.skin_targeting_kw.toString());
+		}
+	},
+
+	set_targeting_keywords: function( args ) {
+		if ( typeof googletag.pubads == 'undefined' ) {
+			return;
+		}
+
+		args = this.apply_filters( 'pmc-adm-set-targeting-keywords', args );
+		for (key in args) {
+			var value = args[key];
+			value = this.apply_filters( 'pmc-adm-set-targeting-keywords-' + key , value );
+			if ( typeof value != 'undefined' && '' != value ) {
+				googletag.pubads().setTargeting( key, value );
+			}
+		}
+	}
+
+};
+
+
+// Common ad functions
+var pmc_admanager = {
+	settings: {
+		interrupts_hide_container: '#container',
+		redirect_interval: 0,
+		interrupt_counter: 0
+	},
+	load_ad: function() {
+		pmc_adm_doubleclick.load_ad();
+	},
+	rotateAd: function( cls ) {
+		pmc_adm_doubleclick.rotateAd( cls );
+	},
+	show_interrupt_ads: function( force ) {
+		pmc_adm_gpt.render_ad_type = '';
+		var self = this;
+		if ( document.readyState == 'complete' || ( typeof force != 'undefined' && force ) ) {
+			if ( !pmc_adm_gpt.has_ads('interrupt-ads') ) {
+				this.hide_interrupt_ads();
+				return;
+			}
+
+			if ( typeof this.settings.interrupts_hide_container != 'undefined' && jQuery(this.settings.interrupts_hide_container).length ) {
+				jQuery( this.settings.interrupts_hide_container ).hide();
+			}
+			if ( self.settings.redirect_interval ) {
+				clearInterval( this.settings.redirect_interval );
+			}
+			self.settings.redirect_interval = setInterval( "pmc_admanager.interrupt_timer()", 1000 );
+			jQuery('body').addClass('interrupt-ads');
+			jQuery('#pmc-adm-interrupts-container').show();
+			pmc_adm_gpt.rotate_ads('interrupt-ads');
+		} else {
+			jQuery(document).ready(function(){
+				self.show_interrupt_ads( true );
+			});
+		}
+	},
+	hide_interrupt_ads: function() {
+		if ( typeof this.settings.interrupts_hide_container != 'undefined' && jQuery(this.settings.interrupts_hide_container).length ) {
+			jQuery( this.settings.interrupts_hide_container ).show();
+		}
+		clearInterval( this.settings.redirect_interval );
+		this.settings.redirect_interval = 0;
+		jQuery('body').removeClass('interrupt-ads');
+		jQuery('#pmc-adm-interrupts-container').hide();
+		pmc_adm_gpt.remove_ads('interrupt-ads');
+		pmc_adm_gpt.render_ad_type = 'default';
+		pmc_adm_gpt.rotate_ads();
+		var event = new CustomEvent( "pmc-hide-interrupt-ads", { "detail": "Fires when the interrupt ads are done."});
+		document.dispatchEvent( event );
+	},
+	hide_interrupt: function() {
+		this.hide_interrupt_ads();
+	},
+	interrupt_timer : function(){
+		if( this.settings.interrupt_counter == 0 ){
+			this.hide_interrupt_ads();
+		}else{
+			if ( this.settings.redirect_interval ) {
+				this.settings.interrupt_counter --;
+			}
+			if ( document.getElementById( "pmc_ads_interrupts_timer" ) ) {
+				document.getElementById( "pmc_ads_interrupts_timer" ).innerHTML = this.settings.interrupt_counter;
+			}
+		}
+	}
+
+};
+
+jQuery(document).ready(function () {
+	pmc_admanager.load_ad();
+});
+
+
+if ( typeof rotateAd === 'function') {
+	_pmc_other_rotateAd = rotateAd;
+}
+rotateAd = function ( ad_class ) {
+	pmc_adm_gpt.refresh_ads( ad_class );
+	if ( typeof _pmc_other_rotateAd === 'function' && _pmc_other_rotateAd !=  rotateAd ) {
+		try {
+			_pmc_other_rotateAd( ad_class );
+		} catch(e){}
+	}
+};
+
+
+/**
+ * Request for Geo Location in browser
+ *
+ * @since 2014-02-18 Amit Gupta
+ */
+/*
+ * disabled for the time being pending some reports about ads not showing up on 411
+ * @since 2014-02-18 Amit Gupta
+ *
+if ( pmc.geolocation ) {
+	pmc.geolocation.get();
+}
+*/
+
+//EOF
+;

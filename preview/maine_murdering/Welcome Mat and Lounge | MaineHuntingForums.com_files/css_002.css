@@ -1,0 +1,1365 @@
+@charset "UTF-8";
+
+/* --- EXTRA.css --- */
+
+#uix_wrapper #content {
+    margin-top: -10px;
+}
+
+#uix_wrapper #content .pageWidth .pageContent {
+    padding: 0px 4px 10px!important;
+}
+/* Main Content */
+
+.mainContainer .mainContent,
+.mainContainer_noSidebar {
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -khtml-border-radius: 0;
+    -webkit-border-radius: 0; -moz-border-radius: 0; -khtml-border-radius: 0; border-radius: 0;
+}
+
+#content .pageWidth .pageContent {
+    padding: 10px 4px !important;
+}
+
+.textCtrl {
+    font-family: 'PT Sans', Helvetica, sans-serif;
+}
+/* Form */
+
+.xenForm {
+    max-width: 1300px;
+}
+/* Header */
+
+#logoBlock .funbox {
+    overflow: visible;
+}
+
+#logoBlock .funbox .funboxWrapper {
+margin-top: -10px;
+}
+/* Navbar */
+
+.navTabs .navTab.selected .tabLinks {
+    background: rgb(231, 226, 224);
+}
+
+.navTabs .navTab.selected .tabLinks a {
+    color: rgb(137, 166, 51);
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.navTabs .navTab.selected .navLink {
+    background: none;
+    border-top: 6px solid rgb(137, 166, 51);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    color: #ffffff;
+    line-height: 38px;
+}
+
+.navTabs .navTab.selected .tabLinks a:hover,
+.navTabs .navTab.selected .tabLinks a:focus {
+    color: rgb(227, 156, 3);
+}
+
+.navTabs .navTab.PopupClosed .navLink {
+    color: #ffffff;
+}
+
+.navTabs .navTab.account .navLink .accountUsername {
+    color: #cccccc;
+}
+
+.navTabs .navTab.account .avatar img {
+    width: 36px;
+    height: 36px;
+}
+
+#navigation .navTabs .selected .navLink .itemCount {
+    top: 37%;
+}
+
+.homePage .navTabs .navTab.selected .tabLinks {
+    display: none;
+}
+
+.homePage #navigation.activeSticky .pageContent {
+    height: 42px;
+}
+
+.homePage #navigation .navTabs .navTab.selected .navLink {
+    /*height: 35px;*/
+
+    border-bottom: none;
+}
+
+a.navLink.OverlayTrigger {
+    background: #859731;
+    /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM4NTk3MzEiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MyUiIHN0b3AtY29sb3I9IiM2YTdlMGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #859731 50%, #6a7e0b 53%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #859731), color-stop(53%, #6a7e0b));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top, #859731 50%, #6a7e0b 53%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, #859731 50%, #6a7e0b 53%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, #859731 50%, #6a7e0b 53%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, #859731 50%, #6a7e0b 53%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#859731', endColorstr='#6a7e0b', GradientType=0);
+    /* IE6-8 */
+}
+
+.Menu {
+    z-index: 1111111;
+}
+
+.breadcrumb .crust a.crumb {
+    background: none;
+}
+/* search */
+
+.uix_searchTab #QuickSearchPlaceholder {
+    color: #ffffff;
+}
+
+#calroot {
+    background: #ffffff;
+}
+
+.mainContainer_noSidebar > *:last-child {
+    background: #FAFAFA;
+    padding-bottom: 10px;
+}
+/* welcome Block */
+
+.uix_welcomeBlock_wrap {
+    background: #c97029;
+    background: url(images/welcome-bg.jpg);
+}
+
+#uix_welcomeBlock .uix_welcomeBlock_content {
+    text-align: center;
+}
+
+#uix_welcomeBlock a.callToAction span {
+    font-size: 25px;
+    background: #ffcc00;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1); -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1); -khtml-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1); box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffcc00), color-stop(100%, #d7ad00));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, #ffcc00 0%, #d7ad00 100%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffcc00', endColorstr='#d7ad00', GradientType=0);
+    /* IE6-9 */
+}
+
+#uix_welcomeBlock a.callToAction:hover {
+    background: #d7ad00;
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7ad00), color-stop(100%, #ffcc00));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, #d7ad00 0%, #ffcc00 100%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#d7ad00', endColorstr='#ffcc00', GradientType=0);
+    /* IE6-9 */
+}
+/* Top 728 */
+
+.mainContent .funbox {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#uix_wrapper .funbox {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.funbox .funboxWrapper {
+    padding-bottom: 16px;
+}
+/* Homepage Widget Tabs */
+
+.tabs li a,
+.tabs.noLinks li {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgb(227, 156, 3);
+    background-repeat: repeat-x;
+    background-position: top;
+    padding: 4px 15px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    border: 1px solid #93a058;
+}
+
+.tabs li.active a,
+.tabs.noLinks li.active {
+    background-color: rgb(137, 166, 51);
+    color: #ffffff;
+    padding: 5px 20px;
+    border: none;
+}
+
+.discussionList .sectionHeaders {
+    border-top: 1px solid rgb(137, 166, 51);
+    border-bottom: 1px solid rgb(137, 166, 51);
+    background: #ffffff;
+}
+
+.discussionList .sectionHeaders a {
+    color: #000000;
+    font-weight: bold;
+}
+
+.discussionList .sectionHeaders dd a[href]:hover {
+
+background-color: rgb(137, 166, 51);
+}
+
+.primaryContent .tabs {
+    border-bottom: none;
+    padding-top: 6px;
+}
+
+.pairsJustified dt {
+    color: #333;
+}
+
+.discussionListItem .stats .minor {
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 0;
+}
+
+.discussionListItem .stats .major {
+    font-weight: bold;
+    color: rgb(73, 64, 57);
+    margin-top: 0px;
+    padding: 0 0 8px;
+}
+
+.pairsJustified dd {
+    color: rgb(137, 166, 51);
+    font-weight: normal;
+}
+
+.DiscussionList .pairsJustified dd {
+    float: none;
+    text-align: left;
+}
+
+.discussionListItem .lastPostInfo .username {
+    color: rgb(137, 166, 51);
+}
+
+.discussionListItem,
+.memberListItem {
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.homePage .section.sectionMain.widget-container.widget-tabs {
+    margin-top: 19px;
+}
+
+.homePage .section.sectionMain.widget-container.widget-tabs .widget-panes {
+    padding: 1px 8px 8px;
+    -webkit-border-radius: 0; -moz-border-radius: 0; -khtml-border-radius: 0; border-radius: 0;
+}
+
+.homePage .tabs {
+    font-size: 18px;
+}
+
+.discussionListItems .discussionListItem .titleText {
+    padding-left: 20px;
+}
+
+.DiscussionList .discussionListItem .posterAvatar .avatar img {
+    width: 48px;
+    height: 48px;
+}
+
+.discussionListItem .stats dl {
+    padding: 0;
+}
+
+.homePage .discussionListItem .titleText .title {
+    padding: 0 0 8px;
+    font-size: 12pt;
+}
+
+.discussionListItem .titleText .title {
+    font-size: 15pt;
+    padding: 0 0 8px;
+}
+
+.discussionListItem .secondRow {
+    padding: 8px 0;
+}
+
+.discussionListItems .lastPostInfo dt {
+    padding-bottom: 8px;
+    margin-top: -7px;
+}
+
+.homePage.muted,
+body a.muted,
+body .muted a {
+    color: #cccccc;
+}
+
+.title > span {
+    margin-left: 17px;
+}
+
+.joinConversation {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 12px 0 25px 5px;
+    display: block;
+    color: #333333;
+}
+
+.joinConversation a {
+    color: #333333;
+
+}
+
+.homePage h2 {
+    font-size: 30px;
+    font-weight: 700;
+    display: block;
+    color: #333333;
+    margin-left: 5px;
+}
+/* Home Page Articles */
+
+#content .pageWidth .pageContent {
+    padding: 10px 14px;
+}
+
+
+
+.ctaFtAvatarPage {
+    display: none !important;
+}
+
+.ctaFtThreadContentAvatarPage .ctaFtThreadTextAvatarPage {
+    margin-top: -20px;
+}
+
+.sectionMain .ctaFtThreadTextAvatarPage img {
+    max-width: 35%;
+    float: left;
+    margin: 40px 10px 10px 0px;
+}
+
+.ctaFtSharePage,
+.ctaFtFooterPage {
+    clear: both;
+}
+/* Forum */
+
+.mainContent .nodeList {
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -khtml-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.mainContent .nodeList .categoryStrip {
+    border: none;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -khtml-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.nodeList.sectionMain {
+    -webkit-box-shadow: none; -moz-box-shadow: none; -khtml-box-shadow: none; box-shadow: none;
+}
+
+.forum_list .nodeList .categoryStrip .nodeTitle {
+    font-size: 16pt;
+    font-weight: 700;
+    padding: 8px 0;
+    font-family: 'PT Sans Narrow', Helvetica, sans-serif;
+}
+
+.node .unread .nodeText .nodeTitle {
+    color:rgb(73, 64, 57);
+}
+
+.pairsInline dt {
+    font-size: 15px;
+    color: #999999;
+}
+
+.pairsInline dd {
+    font-size: 15px;
+    color: rgb(137, 166, 51);
+}
+
+.nodeList .node .nodeIcon {
+    margin: 10px 10px 10px 21px;
+}
+
+.nodeTitle .uix_nodeTitle_status {
+    background-color: rgb(137, 166, 51);
+    padding: 2px 6px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.nodeList .node .nodeLastPost {
+    padding: 0 10px;
+    height: 50px;
+}
+
+.node .nodeLastPost .lastThreadTitle {
+    font-size: 16px;
+    color: #2c2c2c;
+    font-weight: 500;
+    padding: 6px 0;
+}
+
+.nodeList .secondaryContent a {
+    color: rgb(137, 166, 51);
+}
+
+.nodeList .secondaryContent .lastThreadUser a {
+    color: #999999;
+}
+
+.lastThreadMeta .lastThreadUser {
+    color: #999999;
+}
+
+.lastThreadMeta abbr {
+    color: #999999;
+    font-size: 14px;
+}
+
+.lastThreadMeta .DateTime {
+    color: #999999;
+    font-size: 14px;
+}
+
+.nodeList .node .nodeStats {
+    margin-top: 8px;
+}
+
+.nodeList .node .subForumList {
+    overflow: hidden;
+    margin: 0px 0 10px;
+    margin-left: 56px;
+}
+
+.nodeList .node .subForumList li .nodeTitle {
+    font-size: 14px;
+    color: #666666;
+    padding: 2px 0;
+}
+
+.nodeList .node .subForumList li .nodeTitle a:before {
+    display: none;
+}
+
+.nodeList .node .subForumList li .unread .nodeTitle:before {
+    padding-left: 17px;
+}
+
+.nodeList .node .subForumList li .nodeTitle:before {
+    padding-left: 16px;
+}
+
+.breadcrumb .crust a.crumb {
+    border-bottom: none;
+}
+
+.breadcrumb .crust:hover a.crumb {
+    background: none;
+    color: rgb(227, 156, 3);
+}
+
+.discussionList .discussionListItem .posterAvatar .miniMe img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Watched Threads */
+
+a.watch {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px;
+    background: #cc0000;
+    -webkit-border-radius: 2px; -moz-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;
+}
+
+a.watch:hover {
+    color: #ffffff;
+    text-decoration:none;
+    background: rgb(137, 166, 51);
+    
+}
+
+.watch .fa-binoculars {
+    padding-right: 4px;
+}
+
+.subHeading {
+    background: rgb(248,251,253);
+}
+/* Forum Categories */
+
+.nodeList .categoryStrip {
+    background: rgb(137, 166, 51);
+}
+/* Message Layout */
+
+.messageUserBlock .userBanner {
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+.userBanner {
+    -webkit-border-radius: 2px; -moz-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;
+}
+
+.userBanner a {
+    color: #FFFFFF;
+}
+
+.userBanner.wrapped.bannerRed span,
+.userBanner.wrapped.bannerGreen span,
+.userBanner.wrapped.bannerOrange span,
+.userBanner.wrapped.bannerPremium span {
+    top: -3px !important;
+    width: 2px;
+    height: 2px;
+}
+
+.extraUserInfo .pairsInline .fa {
+    font-size: 20px;
+    opacity: .8;
+    color: rgb(118, 118, 118);
+}
+
+.messageUserBlock .extraUserInfo .pairsInline {
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 31%;
+}
+
+.messageUserBlock .extraUserInfo {
+    color: rgb(102, 102, 102);
+    font-size: 15px;
+    margin: 5px 10px;
+    padding: 0 !important;
+    border: none;
+}
+
+.extraUserInfo .pairsInline > dd {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.messageUserBlock a.username {
+    text-align: center;
+    color: rgb(137, 166, 51);
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.userBanner.bannerPremium {
+    color: #FFFFFF;
+    background-color: #166734;
+    border: 1px solid #129a4a;
+}
+
+.userBanner.bannerPremium a {
+    color: #FFFFFF;
+    background-color: #de613b;
+    padding: 1px 22px;
+    border: 1px solid #a1290f;
+    display: inline-block;
+}
+
+.userBanner.bannerPremium strong {
+    background-color: #FFFFFF;
+    padding: 3px 1px;
+    border: 1px solid #166734;
+}
+
+.userBanner.bannerPremium.wrapped span {
+    background-color: #129a4a;
+}
+
+.userBanner.bannerGreen {
+    background-color: #166734;
+    border-color: #129a4a;
+}
+
+.userBanner.bannerGreen.wrapped span {
+    background-color: #129a4a;
+}
+
+.messageUserBlock h3.userText {
+    background-color: #FFFFFF;
+    border-top: none;
+}
+
+#trophyIcons {
+    text-align: center;
+    min-width: 40px;
+    margin: 10px 0;
+}
+
+.profilePage #trophyIcons {
+    text-align: left;
+}
+
+.userBannerCMG .userBanner:first-of-type {
+    margin-top: 10px;
+}
+
+.userBannerCMG .userBanner:last-of-type {
+    margin-bottom: 5px;
+}
+
+.messageList .messageUserInfo {
+	background:none;
+
+}
+
+.messageList .messageUserInfo .blogIndicatorEmpty,
+.messageList .messageUserInfo .blogIndicatorContainer {
+    display: none;
+}
+
+.messageUserBlock .arrow {
+    display: none;
+}
+/* Threads */
+
+.mainContent .titleBar h1 {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.mainContent #pageDescription {
+    font-size: 18px;
+    color: #333333;
+}
+
+.mainContent #pageDescription a {
+    color: rgb(137, 166, 51);
+}
+
+.message .messageMeta .publicControls .control {
+    color: #ffffff;
+    background-color: rgb(137, 166, 51);
+    font-size: 16px;
+}
+
+.message .messageMeta .publicControls .control:hover {
+    background-color: rgb(227, 156, 3);
+}
+
+.similarthreads_blueLine {
+    display: none;
+}
+
+.similarThreadsThreadView {
+    background: #feebd9;
+    border: 1px solid #fd9840;
+}
+
+.similarThreadsThreadView .dataTable tr.dataRow td {
+    border: none;
+    color: #ca661a;
+    padding: 15px 0 5px 11px;
+}
+
+.similarThreadsThreadView .dataTable tr.dataRow td a {
+    color: #ca661a;
+}
+
+.messageList .similarThreadsThreadView .dataTable tr.dataRow th,
+.mainContent .similarThreadsThreadView .dataTable tr.dataRow th {
+    padding: 10px;
+    background: #fd9840;
+    border: none;
+    font-family: 'PT Sans', Arial, sans-serif;
+}
+
+.killAds {
+    color: rgb(137, 166, 51);
+    text-align: center;
+    display: block;
+}
+
+.killAds a {
+    text-decoration: underline;
+}
+
+.killAds a:hover {
+    color: rgb(227, 156, 3);
+    text-decoration: underline;
+    -webkit-box-shadow: none; -moz-box-shadow: none; -khtml-box-shadow: none; box-shadow: none;
+    background: none;
+}
+/* Gallery */
+
+.xengalleryPage .mainContainer_noSidebar > *:last-child {
+    background: none;
+}
+
+.xengallery_media_view .mainContainer .mainContent > *:last-child {
+    padding: 5px;
+}
+
+.xengalleryContainer .insideContainer {
+    background: #fafafa;
+    padding: 0 5px;
+    margin-top: -8px;
+}
+
+.xengallerySideBar .section {
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -khtml-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.rateBlock .rating {
+    width: 134px;
+}
+
+.rating button.star {
+    width: 25px!important;
+    height: 20px!important;
+}
+/* Sidebar */
+
+.sidebar .uix_socialMediaLinks {
+    text-align: right;
+}
+
+.sidebar .uix_socialMediaLinks li a {
+    -webkit-box-shadow: none; -moz-box-shadow: none; -khtml-box-shadow: none; box-shadow: none;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar .uix_socialMediaLinks li a .uix_icon:before {
+    height: 30px;
+    line-height: 30px;
+}
+
+.uix_mainSidebar .sidebar {
+    margin-top: 15px;
+}
+
+.sidebar .section {
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -khtml-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.section.funbox {
+    -webkit-box-shadow: none; -moz-box-shadow: none; -khtml-box-shadow: none; box-shadow: none;
+}
+
+#SignupButton .inner {
+    font-size: 20px;
+    background: #ffcc00;
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffcc00), color-stop(100%, #d7ad00));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, #ffcc00 0%, #d7ad00 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, #ffcc00 0%, #d7ad00 100%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffcc00', endColorstr='#d7ad00', GradientType=0);
+    /* IE6-9 */
+}
+
+#SignupButton a:hover {
+    background: #d7ad00;
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7ad00), color-stop(100%, #ffcc00));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, #d7ad00 0%, #ffcc00 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, #d7ad00 0%, #ffcc00 100%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#d7ad00', endColorstr='#ffcc00', GradientType=0);
+    /* IE6-9 */
+}
+
+.pageContent #uix_welcomeBlock {
+    margin: 16px 0 25px;
+}
+
+.uix_welcomeBlock_content .ctaLoginFacebook,
+.uix_welcomeBlock_content .ctaLoginTwitter,
+.uix_welcomeBlock_content .ctaLoginGoogle {
+    max-width: 180px;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1); -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1); -khtml-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1); box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
+}
+
+.sidebar .visitorPanel .username {
+    font-size: 14pt;
+}
+
+.visitorText .pairsJustified dt {
+    color: #333;
+}
+
+.sidebar .section .primaryContent h3,
+.sidebar .section .secondaryContent h3,
+.profilePage .mast .section.infoBlock h3 {
+    padding: 7px 8px;
+}
+
+.avatarHeap ol {
+    padding-bottom: 13px;
+}
+
+.sidebar .section .secondaryContent .profileProgress h3 {
+    padding: 0;
+    font-size: 18px;
+    margin: 10px 0 4px;
+}
+
+.sidebar .primaryContent .tabs {
+    background: #ffffff;
+}
+/* Profile Progress */
+
+.mainContent .PanelScroller .scrollContainer {
+    border: hidden;
+}
+
+.mainContent #Notices .panel .noticeContent {
+  padding: 10px;
+  color: #000000;
+}
+
+.mainContent .PanelScroller .panel, .mainContent .PanelScrollerOff .panel {
+  background-color: #ffff66;
+}
+
+.profileProgressNotice h3 {
+    margin: 2px 0;
+    background: #94ba1f;
+    padding: 8px;
+    Color: #ffffff;
+    font-size: 18px;
+}
+
+.profileProgressNotice span,
+.profileProgress h3 span {
+    Color: #dae75b;
+}
+
+.profileProgressNotice p {
+    margin: 8px 0 8px 8px;
+    font-weight: 700;
+    color: #333333;
+    font-size: 17px;
+}
+
+.noticeContent .profileProgressNotice {
+    font-size: 16px;
+    margin-top: -2px;
+}
+
+ul.RemainingTasks.fa-ul {
+    margin-left: 2em;
+}
+
+.profileProgressNotice ul {
+    margin-top: 0;
+    width: 100%;
+    float: left;
+    color: #333333;
+}
+
+.profileProgressNotice ul li {
+    float: left;
+    width: 27%;
+    list-style-type: none;
+    margin: 6px 20px;
+}
+
+.noticeContent .profileProgressNotice ul li.done a {
+    text-decoration: none;
+    color: #cccccc;
+    font-style: normal;
+}
+
+.profileProgressNotice ul li.done {
+    color: #cccccc;
+}
+
+.visitorText .profileProgress .progressBar .progressGraphic {
+    background: #99cc33;
+    /* Old browsers */
+
+    background: -moz-linear-gradient(left, #99cc33 0%, #dbe85c 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #99cc33), color-stop(100%, #dbe85c));
+    /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(left, #99cc33 0%, #dbe85c 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(left, #99cc33 0%, #dbe85c 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(left, #99cc33 0%, #dbe85c 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to right, #99cc33 0%, #dbe85c 100%);
+    /* W3C */
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#99cc33', endColorstr='#dbe85c', GradientType=1);
+    /* IE6-9 */
+}
+/* Profile Page */
+
+.profilePage .section .tabs.mainTabs li.active a {
+    background-color: rgb(137, 166, 51);
+}
+
+ul#ProfilePanes {
+    background: white;
+}
+
+.profilePage .mainProfileColumn {
+    background: #ffffff;
+}
+
+.profilePage .tabs.mainTabs {
+    border-bottom: none;
+}
+
+.profilePage .sectionFooter {
+    border-bottom: none;
+    background: none;
+}
+
+.profilePage .profileContent {
+    margin: 0 20px;
+}
+/* Signup Page */
+
+.register_form .xenForm {
+    background: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; border-radius: 4px;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); -khtml-box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1); box-shadow: 0 2px 2px rgba(0, 0, 0, .2), inset 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.register_form .xenForm .ctrlUnit {
+    padding-top: 20px;
+}
+/* Trophy Page */
+
+.waindigo_help_trophies_trophies .section {
+    margin: 1px auto;
+    background: none;
+}
+
+.primaryContent .trophy .info .title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.primaryContent .trophy .info .description {
+    font-size: 15px;
+    color: rgb(51, 51, 51);
+    padding: 2px 0;
+}
+/* Contest Confirmation Page */
+
+.gridSpan {
+    width: 30%;
+}
+
+.titleContainer h2 {
+    font-size: 19px;
+}
+
+.avforums_competitions_view .mainContainer .mainContent > *:last-child {
+    background: #FAFAFA;
+}
+
+.competitionText .messageText {
+    padding-left: 10px;
+}
+
+.prizeMessage {
+    color: rgb(137, 166, 51);
+}
+
+.entryForm .widget h3 {
+    color: #ffffff;
+    font-size: 18px;
+    background: rgb(137, 166, 51);
+    padding: 8px 0 8px 10px;
+}
+
+.entryForm .discussionListItem .titleText h3.title {
+    font-size: 15pt;
+    padding: 0 0 8px;
+    background: none;
+    color: #333333;
+}
+
+.gridSection {
+    background: #ffffff;
+}
+
+.winner .usernameContainer a{
+    color:rgb(137, 166, 51);
+}
+/* Similar Threads */
+
+.sectionMain table.dataTable {
+    margin: 0px 0;
+}
+
+.sectionMain .dataTable tr.dataRow th {
+    background: rgb(137, 166, 51);
+    border-bottom: 1px solid rgb(247, 249, 239);
+    border-top: 1px solid rgb(248, 251, 253);
+    /* color: rgb(52,77,93); */
+
+    color: white;
+    font-size: 13pt;
+    font-family: 'PT Sans Narrow', Helvetica, sans-serif;
+    padding: 5px 10px;
+    font-weight: 700;
+}
+/* GritterContainer */
+
+.GritterContainer-CMG-UIX .gritter-item {
+    background: #697e0b;
+    -webkit-border-radius: 0 0 0 0; -moz-border-radius: 0 0 0 0; -khtml-border-radius: 0 0 0 0; border-radius: 0 0 0 0;
+}
+
+.gritter-close {
+    top: 0;
+    right: 0;
+}
+/* CMG custom */
+
+.align-right-CMG {
+    clear: both;
+    text-align: right;
+}
+
+.align-center-CMG {
+    text-align: center;
+}
+/* Bottom Page Home Page Nav */
+
+.PageNav .pageNavHeader,
+.PageNav a,
+.PageNav .scrollable {
+    font-size: 20px;
+}
+
+.PageNav nav .scrollable {
+    width: 122px;
+}
+
+.PageNav .pageNavHeader {
+    display: none;
+}
+
+.PageNav a {
+    color: #333;
+    background: none;
+    border: none;
+    font-size: 20px;
+    width: auto;
+    padding: 0 6px;
+}
+
+.PageNav a:hover,
+.PageNav a:focus {
+    color: rgb(137, 166, 51);
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+
+.PageNav a.currentPage {
+    color: rgb(137, 166, 51);
+    background: none;
+    font-weight: bold;
+}
+/* Footer */
+
+#copyright,
+#copyright p,
+#copyright a,
+#copyright span {
+    color: rgb(102, 102, 102) !important;
+    font-size: 14px;
+}
+
+#copyright p {
+    padding: 20px 10px 60px 10px;
+}
+
+#uix_footer_columns .uix_footer_columns_container {
+    border-top: 10px solid rgb(137, 166, 51);
+}
+
+footer #uix_footer_columns h3 {
+    font-family: 'PT Sans', Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+#uix_footer_columns .pageContent {
+    color: #cccccc;
+}
+
+.footer a {
+    color: rgb(73, 64, 57);
+}
+
+footer #uix_footer_columns .uix_footer_columns_container > li ul.footerMenu > li > a {
+    border-bottom: none;
+    color: #cccccc;
+}
+
+.footerLegal .pageContent {
+    margin-top: -16px;
+    background: rgb(58, 51, 46);
+}
+
+.uix_footer_columns_col1 img {
+    max-width: 100%;
+}
+/* Overlay Card */
+
+div.xenOverlay {
+    z-index: 999999 !important;
+}
+
+.xenOverlay .formOverlay .heading {
+
+    background-color: rgb(137, 166, 51);
+
+}
+
+.xenOverlay.memberCard .userInfo h3 a {
+    color: #ffffff;
+}
+
+.xenOverlay.memberCard .userInfo .userStats dd {
+    color: #ffffff;
+}
+
+.xenOverlay.memberCard .userInfo .userLinks a {
+    color: #999999;
+}
+
+@media (max-width: 1070px) {
+
+    /* Header Ad */
+    
+    #logo {
+        max-width:400px;
+    }
+}
+
+@media (max-width: 1023px) {
+
+ 
+    
+    /* Header Ad */
+    
+    #logo {
+        float:none;
+        margin:0 auto;
+        max-width:500px;
+    }
+    
+    #logoBlock .funbox {
+	width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    
+    
+    .Responsive .sectionMain .ctaFtThreadTextAvatarPage img {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header Ad */
+    
+    #logoBlock .funbox {
+	width: 100%;
+    }
+
+    #logoBlock .funbox .funboxWrapper {
+        margin-top: -25px;
+    }
+
+    /* Navbar */
+
+    .Responsive #navigation .navTabs .navLink .itemCount {
+        top: 36%;
+    }
+    /* Front Page Articles */
+
+    .Responsive .sectionMain .ctaFtThreadTextAvatarPage img {
+        max-width: 100%;
+    }
+    /* Post Thread button */
+
+    .Responsive .forum_view .breadBoxTop.withTopCtrl .topCtrl a.callToAction {
+        line-height: 50px;
+    }
+    .Responsive .forum_view .breadBoxTop .topCtrl {
+        line-height: 40px;
+    }
+    /* Thread list widget */
+
+    .Responsive .discussionListItem .listBlock.stats .major {
+        font-size: 11px;
+        margin-left: 15px;
+    }
+    .Responsive .messageUserInfo {
+        width: 100% !important;
+    }
+    .Responsive .messageUserBlock .userBannerCMG .userBanner {
+        float: left;
+    }
+    .userBannerCMG {
+        clear: both;
+        width: 100%;
+        float: left;
+        padding-top: 5px;
+    }
+    #trophyIcons {
+        /*display: block;
+        float: left;
+        margin-top: 70px;
+        text-align: left;
+        position: relative;
+        left: -45%;
+        width: 100%;*/
+    }
+    #trophyIcons a {
+        display: inline-block;
+        float: right;
+        margin: 5px;
+    }
+}

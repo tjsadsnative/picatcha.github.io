@@ -1,0 +1,28 @@
+OX_4362429433({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?bi=2eeac12e-03b6-434f-ad23-02423958cab7&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"537434000",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"728",
+            "height":"90",
+            "html":"<!-- Beginning PassBack for Ad unit twitchy/passback ### size: [[728,90]] -->\n\t<script type='text/javascript' src='http://www.googletagservices.com/tag/js/gpt.js'>\n\t\tgoogletag.pubads().definePassback('6177/twitchy/passback', [[728,90]]).setTargeting('net',['openx']).display();\n\t</script>\n<!-- End Passback -->",
+            "target":"_blank",
+            "ts":"1fHJpZD0xNTZkZjBkNi00NzE1LTQzYTUtOWZhYy1jYTA2NTM5NzJmM2F8cnQ9MTQ1MjcyMTk2OXxhdWlkPTUzNzQzNDAwMHxhdW09RE1JRC5XRUJ8c2lkPTUzNzE4NTQzNHxwdWI9NTM3MTA2MDExfHBjPVVTRHxyYWlkPTA2NTNkMzlhLWNlYWMtNDc3YS1hMjA0LTIyNWQwNDA1ZWEwZHx1cj1CTFhCcEJjQWF0",
+            "type":"html",
+            "ad_url":"<!-- Beginning PassBack for Ad unit twitchy/passback ### size: [[728,90]] -->\n\t<script type='text/javascript' src='http://www.googletagservices.com/tag/js/gpt.js'>\n\t\tgoogletag.pubads().definePassback('6177/twitchy/passback', [[728,90]]).setTargeting('net',['openx']).display();\n\t</script>\n<!-- End Passback -->"
+          }
+        ]
+      }
+    ]
+  }
+});

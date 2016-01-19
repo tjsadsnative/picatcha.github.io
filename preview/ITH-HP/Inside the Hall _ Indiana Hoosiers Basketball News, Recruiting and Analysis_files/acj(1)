@@ -1,0 +1,28 @@
+OX_9820722096({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?bi=98e9ae53-b9f2-463b-b07b-d8c3e049af53&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"538103336",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"300",
+            "height":"250",
+            "html":"<script type='text/javascript' src='http://www.googletagservices.com/tag/js/gpt.js'>\n  googletag.pubads().definePassback('/20893548/yb/openxpassback', [300, 250]).display();\n</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD03MTBiZTk2MC04YjEyLTQxZDgtYWFiMy01Yjg4ZDk3YTg3NjJ8cnQ9MTQ1MjA1MzIzN3xhdWlkPTUzODEwMzMzNnxhdW09RE1JRC5XRUJ8c2lkPTUzNzIxNzkyNnxwdWI9NTM3MTE5MjExfHBjPVVTRHxyYWlkPTZiMjNiMTI0LTljYzItNDQ0NS1iOWExLTQwYjA0YzNkNjU5OXx1cj1mWU14ZENyZTl0",
+            "type":"html",
+            "ad_url":"<script type='text/javascript' src='http://www.googletagservices.com/tag/js/gpt.js'>\n  googletag.pubads().definePassback('/20893548/yb/openxpassback', [300, 250]).display();\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

@@ -1,5 +1,0 @@
-var DISQUSWIDGETS;
-
-if (typeof DISQUSWIDGETS != 'undefined') {
-    DISQUSWIDGETS.displayCount({"text":{"and":"and","comments":{"zero":"0","multiple":"{num}","one":"1"}},"counts":[{"id":"http:\/\/www.insidethehall.com\/2015\/12\/02\/film-session-alcorn-state\/","comments":0},{"id":"http:\/\/www.insidethehall.com\/2015\/12\/02\/what-to-expect-duke\/","comments":120},{"id":"http:\/\/www.insidethehall.com\/2015\/11\/30\/video-tom-crean-reacts-to-win-over-alcorn-state\/","comments":0},{"id":"http:\/\/www.insidethehall.com\/2015\/11\/30\/the-minute-after-alcorn-state\/","comments":87},{"id":"http:\/\/www.insidethehall.com\/2015\/12\/01\/indiana-faces-first-true-road-test-duke\/","comments":83},{"id":"http:\/\/www.insidethehall.com\/2015\/12\/02\/potb-100-reviewing-ius-trip-to-maui-duke-preview\/","comments":1},{"id":"http:\/\/www.insidethehall.com\/2015\/12\/01\/five-takeaways-from-indianas-win-over-alcorn-state\/","comments":41}]});
-}

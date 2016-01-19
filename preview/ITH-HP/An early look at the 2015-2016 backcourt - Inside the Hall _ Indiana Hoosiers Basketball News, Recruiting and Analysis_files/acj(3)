@@ -1,0 +1,28 @@
+OX_7896790017({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?bi=98e9ae53-b9f2-463b-b07b-d8c3e049af53&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"538000431",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"160",
+            "height":"600",
+            "html":"<script language=\"JavaScript\">\nvar zflag_nid=\"305\"; var zflag_cid=\"35579/1752/1\"; var zflag_sid=\"638\"; var zflag_width=\"160\"; var zflag_height=\"600\"; var zflag_sz=\"7\"; var zflag_click=\"http://us-ads.openx.net/w/1.0/rc?bi=98e9ae53-b9f2-463b-b07b-d8c3e049af53&ts=1fHJpZD05NDJjZjdmNi1lZDU0LTQ4OGEtYjQ5Yy00YzdlZGIzMzc1ZGJ8cnQ9MTQ1MjAzNDI1NHxhdWlkPTUzODAwMDQzMXxhdW09RE1JRC5XRUJ8c2lkPTUzNzE5ODU3NnxwdWI9MTk5NDR8cGM9VVNEfHJhaWQ9NzRhZGUyY2YtNGEwMS00YjBhLWE5YzMtODQ1YjBlZWVlN2Y4fHVyPXRVeThlRVR0ajg&r=\"; \n</script>\n<script language=\"JavaScript\" src=\"http://c5.zedo.com/jsc/c5/fo.js\"></script>",
+            "target":"_blank",
+            "ts":"1fHJpZD05NDJjZjdmNi1lZDU0LTQ4OGEtYjQ5Yy00YzdlZGIzMzc1ZGJ8cnQ9MTQ1MjAzNDI1NHxhdWlkPTUzODAwMDQzMXxhdW09RE1JRC5XRUJ8c2lkPTUzNzE5ODU3NnxwdWI9MTk5NDR8cGM9VVNEfHJhaWQ9NzRhZGUyY2YtNGEwMS00YjBhLWE5YzMtODQ1YjBlZWVlN2Y4fHVyPXRVeThlRVR0ajg",
+            "type":"html",
+            "ad_url":"<script language=\"JavaScript\">\nvar zflag_nid=\"305\"; var zflag_cid=\"35579/1752/1\"; var zflag_sid=\"638\"; var zflag_width=\"160\"; var zflag_height=\"600\"; var zflag_sz=\"7\"; var zflag_click=\"http://us-ads.openx.net/w/1.0/rc?bi=98e9ae53-b9f2-463b-b07b-d8c3e049af53&ts=1fHJpZD05NDJjZjdmNi1lZDU0LTQ4OGEtYjQ5Yy00YzdlZGIzMzc1ZGJ8cnQ9MTQ1MjAzNDI1NHxhdWlkPTUzODAwMDQzMXxhdW09RE1JRC5XRUJ8c2lkPTUzNzE5ODU3NnxwdWI9MTk5NDR8cGM9VVNEfHJhaWQ9NzRhZGUyY2YtNGEwMS00YjBhLWE5YzMtODQ1YjBlZWVlN2Y4fHVyPXRVeThlRVR0ajg&r=\"; \n</script>\n<script language=\"JavaScript\" src=\"http://c5.zedo.com/jsc/c5/fo.js\"></script>"
+          }
+        ]
+      }
+    ]
+  }
+});

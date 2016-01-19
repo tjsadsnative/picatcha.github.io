@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://s0.2mdn.net/2438645/1444249055452/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script><meta name="ad.size" content="width=300,height=250"><script type="text/javascript">var clickTag="http://www.staples.com";</script><style>a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}*,:after,:before{box-sizing:border-box}.banner *{position:absolute;z-index:1;font-weight:100}.banner{width:300px;height:250px;position:relative;margin:0 auto;overflow:hidden;background:#fff;color:#fff;border:1px solid #000;font-family:'Helvetica Neue'}a{color:inherit}#replay{padding:0;border:none;background:url(replay.png) no-repeat;width:19px;height:19px;left:5px;top:2px;z-index:2000;display:none;cursor:pointer}.logo{top:5px;left:107px;z-index:15}.t-more,.t-office{left:149px;width:0;height:0}.t-more{top:94px;z-index:5}.t-office{top:131px;z-index:5}.t-essentials{top:163px;left:149px;width:0;height:0;z-index:5}.paper,.post-it,.sharpie{top:93pt;left:149px;width:0;height:0}.post-it{z-index:2}.paper{z-index:1}.sharpie{z-index:2}.savings{top:59px;left:-131px}.shop-now{top:248px;left:18px}.footer{top:248px;left:0;width:298px;height:40px;border-top:1px solid #c00;background:#fff}.more{top:13px;left:78px}.clickthrough{left:0;top:0;bottom:0;right:0;z-index:1000;background-color:rgba(255,255,255,0)}</style></head><body><div class="banner"><img class="logo" src="logo(2).png"> <img class="t-more" src="t-more.png" style="top: -200px; left: -388px; width: 296px; height: 80px; transform: rotate(180deg);"> <img class="t-office" src="t-office.png" style="top: 263px; left: 608px; width: 296px; height: 66px; transform: rotate(180deg);"> <img class="t-essentials" src="t-essentials.png" style="top: 600px; left: -284px; width: 296px; height: 38px; transform: rotate(180deg);"><div class="products" style="top: -10px; left: 66px;"><img class="post-it" src="post-it.png" style="top: 139px; left: 96px; width: 43px; height: 50px;"> <img class="paper" src="paper.png" style="top: 72px; left: 96px; width: 119px; height: 90px;"> <img class="sharpie" src="sharpie.png" style="top: 119px; left: 157px; width: 71px; height: 70px;"></div><img class="savings" src="savings.png" style="left: 18px;"> <img class="shop-now" src="shop-now.png" style="top: 161px;"><div class="footer" style="top: 208px;"><img class="more" src="more.png"></div><a class="clickthrough" href="javascript:window.open(window.clickTag); void(0)"></a> <button id="replay" title="Replay" style="display: inline-block;"></button></div><script src="jquery.min(1).js"></script><script>!function(t,e,i,a){"use strict";t(e).load(function(){var i=t(".t-more").clone(),a=t(".t-office").clone(),o=t(".t-essentials").clone();(e.play=function(){t(".t-more").delay(250).animate({top:74,left:76,width:148,height:40},125).animate({top:76,left:86,width:128,height:35},62).delay(1811).animate({top:74,left:76,width:148,height:40},250).animate({deg:180,top:-200,left:-388,width:296,height:80},{duration:250,step:function(e,i){"deg"==i.prop&&t(this).css({transform:"rotate("+e+"deg)"})}}),t(".t-office").delay(687).animate({top:121,left:76,width:148,height:33},125).animate({top:123,left:86,width:128,height:29},62).delay(1478).animate({top:121,left:76,width:148,height:33},250).animate({deg:180,top:263,left:608,width:296,height:66},{duration:250,step:function(e,i){"deg"==i.prop&&t(this).css({transform:"rotate("+e+"deg)"})}}),t(".t-essentials").delay(1124).animate({top:163,left:76,width:148,height:19},125).animate({top:164,left:86,width:128,height:16},62).delay(1e3).animate({top:163,left:76,width:148,height:19},250).animate({deg:180,top:600,left:-284,width:296,height:38},{duration:250,step:function(e,i){"deg"==i.prop&&t(this).css({transform:"rotate("+e+"deg)"})}}),t(".post-it").delay(2498).animate({top:112,left:27,width:120,height:140},250).animate({top:139,left:96,width:43,height:50},125),t(".paper").delay(2498).animate({top:0,left:17,width:264,height:200},250).animate({top:72,left:96,width:119,height:90},125),t(".sharpie").delay(2498).animate({top:95,left:133,width:152,height:150},250).animate({top:119,left:157,width:71,height:70},125,function(){t(".products").delay(625).animate({top:-10,left:66},250,"swing")}),t(".savings").delay(3873).animate({left:23},250,"swing").animate({left:18},125,"swing"),t(".shop-now").delay(4123).animate({top:141},125,"swing").animate({top:161},62,"swing"),t(".footer").delay(4373).animate({top:208},125,"swing"),t("#replay").delay(4623).fadeIn(500)})(),t("#replay").click(function(){t(".t-more").remove(),t(".t-office").remove(),t(".t-essentials").remove(),i=i.insertAfter(".logo").clone(),a=a.insertAfter(".t-more").clone(),o=o.insertAfter(".t-office").clone(),t("*","body").removeAttr("style"),play()})})}(jQuery,window,document);</script></body></html>

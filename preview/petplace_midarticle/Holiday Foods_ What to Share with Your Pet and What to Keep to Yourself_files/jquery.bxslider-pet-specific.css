@@ -1,0 +1,250 @@
+/**
+ * BxSlider v4.0 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2012
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.bx-wrapper {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	*zoom: 1;
+	background: #ffffff;
+}
+
+.homeSlider { }
+
+.homeSlider .bx-wrapper { background: none; }
+
+.bx-wrapper img {
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.homeSlider .slide {
+	display:table;
+	max-height: 430px;
+	z-index: 1; 
+	width: 100%;
+}
+
+.homeSlider .bannerHeadline { 
+	position: absolute;
+	width: 96%;
+	padding-top: 5%;
+	color: #ffffff;
+	font-size: 2.7em;
+	line-height: 1.2;
+	text-shadow: 0px 0px 25px rgb(0,0,0);
+	font-weight: 100;
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1) and (max-width: 830px) { 
+    /* Retina-specific stuff here */
+    .homeSlider .bannerHeadline {
+    	font-weight: 300;
+    }
+}
+
+.homeSlider .bannerHeadline a{
+	font-size: .5em !important;
+	color: rgb(255,255,255);
+	display: block;
+}
+
+.homeSlider .bannerImage { vertical-align:bottom; z-index: 1;}
+
+.homeSlider .bannerImage img { width: 100%; }
+
+
+/** THEME
+===================================*/
+
+/*.bx-wrapper { max-width: 1100px !important; }*/
+
+.homeSlider .bx-wrapper { padding:0; }
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+	position: relative;
+	width: 100%;
+	z-index: 3000;
+}
+.bx-controls.bx-has-pager{
+	width: 100%;
+}
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+	min-height: 50px;
+	background: url(images/bx_loader.gif) center center no-repeat #fff;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+
+/* PAGER */
+
+.bx-wrapper .bx-pager {
+	text-align: center;
+	font-size: .85em;
+	font-family: Arial;
+	font-weight: bold;
+	color: #666;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+	background: rgb(165,224,229);
+	text-indent: -9999px;
+	display: block;
+	width: 11px;
+	height: 11px;
+	margin: 0 5px;
+	outline: 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+	background: rgb(24,174,189);
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.bx-wrapper .bx-prev {
+	left: 0;
+	background: url(/css/images/chevron-thin-left.png) no-repeat left 90px;
+}
+
+.bx-wrapper .bx-next {
+	right: 0;
+	background: url(/css/images/chevron-thin-right.png) no-repeat right 90px;
+}
+
+.bx-wrapper .bx-controls-direction a {
+	position: absolute;
+	top: 0;
+	outline: 0;
+	width: 66px;
+	height: 100%;
+	max-height: 430px;
+	text-indent: -9999px;
+	z-index: 9999;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+	display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+
+.bx-wrapper .bx-controls-auto {
+	text-align: center;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start {
+	display: block;
+	text-indent: -9999px;
+	width: 10px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -11px no-repeat;
+	margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+	background-position: -86px 0;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop {
+	display: block;
+	text-indent: -9999px;
+	width: 9px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -44px no-repeat;
+	margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+	background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+	text-align: left;
+	width: 80%;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+	right: 0;
+	width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.bx-wrapper .bx-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #666\9;
+	background: rgba(80, 80, 80, 0.75);
+	width: 100%;
+}
+
+.bx-wrapper .bx-caption span {
+	color: #fff;
+	font-family: Arial;
+	display: block;
+	font-size: .85em;
+	padding: 10px;
+}
+
+/* CUSTOM */
+.bx-wrapper .articleGallery img{
+	width: auto;
+	margin: 0 auto;
+}
+.bx-wrapper .description{
+	line-height: 1.4em;
+	font-size: 14px;
+	color: rgb(85, 85, 85);
+	margin-bottom: 20px;
+}
+.slider {
+	width: 290px;
+	margin: 40px auto 10px;
+}
+ul.articleGallery, ul.articleGallery li{
+	margin: 0;
+	padding: 0;
+}

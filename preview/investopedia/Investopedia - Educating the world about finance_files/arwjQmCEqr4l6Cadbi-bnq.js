@@ -1,0 +1,1 @@
+Tynt.sc({"d":true,"aw":"15","ad":false,"st":true,"f":"Investopedia","domain":"investopedia.com"})

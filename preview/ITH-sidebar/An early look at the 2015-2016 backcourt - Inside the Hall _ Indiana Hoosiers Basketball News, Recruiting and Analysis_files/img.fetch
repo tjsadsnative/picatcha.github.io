@@ -1,0 +1,19 @@
+document.write("<!-- MID 39350 -->\n\
+<script type=\"text/javascript\">\n\
+var udmsid = 7839;\n\
+<\/script>\n\
+\n\
+<!-- BEGIN JS TAG - GSN.com - 160x600 < - DO NOT MODIFY -->\n\
+<SCRIPT SRC=\"https://secure.adnxs.com/ttj?id=6043055&cb=892445\" TYPE=\"text/javascript\"><\/script>\n\
+<!-- END TAG --><!-- Start Quantcast tag -->\n\
+        <script type=\"text/javascript\">\n\
+        _qoptions={\n\
+        qacct:\"p-effSsmMYCbAck\",\n\
+        labels:\"edge.0,sid.7839\"\n\
+        };\n\
+        <\/script>\n\
+        <script type=\"text/javascript\" src=\"http://edge.quantserve.com/quant.js\"><\/script>\n\
+        <noscript>\n\
+        <img src=\"http://pixel.quantserve.com/pixel/p-effSsmMYCbAck.gif\" style=\"display: none;\" border=\"0\" height=\"1\" width=\"1\" alt=\"Quantcast\"/>\n\
+        </noscript>\n\
+        <!-- End Quantcast tag --><script type=\"text/javascript\" src=\"https://q.adrta.com/aa.js?cb=0.589178130108543#udm;paid=udm;avid=1093;caid=7985;plid=39350;siteId=7839;kv5=display;kv2=insidethehall.com;kv12=7839_4\"><\/script>");
