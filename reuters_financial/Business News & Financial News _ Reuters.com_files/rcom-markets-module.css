@@ -1,0 +1,67 @@
+#markets-module, #markets-module .module {
+	position:relative;
+	height: 1%;
+	}
+#markets-module .module,
+#markets-module .module .moduleHeader,
+#markets-module .module .moduleBody,
+#markets-module .module ul {
+	float:none; 
+	width: auto;
+	box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+	margin: 0;
+	}
+	
+#markets-module {margin-bottom: 20px;	box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+#markets-module #mm-header {background-color: #016e97;}
+#markets-module #mm-header .module {background-color: #016e97; border:none; width: 100%;}
+#markets-module #mm-header .module .moduleHeader {background: none; border: none; margin:0; padding:0; background-color: #016e97; }
+#markets-module #mm-header .module .moduleHeader h3 {color: #FFFFFF; background: none; border: none; text-transform: uppercase; text-align:left; font-size: 18px; padding:8px;}
+
+#markets-module #mm-tabs {background-color: #016e97; margin-top:-1px; position:relative;}
+#markets-module .tabs {background-color: #016e97; background-image: none; float:none; width: auto; overflow:auto; height: 1%;}
+#markets-module .tabs ul {padding: 0 0 0 8px; overflow:auto;}
+#markets-module .tabs ul li{background-color: #005271; border:none; margin:0 2px 0 0; height:26px;}
+#markets-module .tabs ul li span.hrefClone{color:#FFFFFF; margin:0; padding:6px 10px;}
+#markets-module .tabs ul li.current{background-color: #edf5f9;}
+#markets-module .tabs ul li.current span.hrefClone{color: #006E97;}
+
+#markets-module #tab1 .linebreak, #markets-module #tab2 .linebreak, #markets-module #tab3 .linebreak, #markets-module #tab4 .linebreak, #markets-module #tab5 .linebreak {background-color: #ecf6f8;}
+
+#markets-module .module  {border-left: 1px solid #cce2ea; border-right: 1px solid #cce2ea; background-color: #f0f6f9; margin:0;}
+#markets-module .module .moduleHeader {border-top: 1px solid #cce2ea; background: #e4eff4 url(http://s3.reutersmedia.net/resources_v2/images/bg_header_mm.gif) repeat-x scroll left bottom; margin:0; padding:0;}
+#markets-module .module .moduleHeader h3{text-transform: none; text-align:left; font-size: 14px; color: #000000; padding: 8px; margin:0;}
+#markets-module .module .moduleHeader h3 a{color: #000000;}
+#markets-module .module .moduleBody ul {margin:0; padding: 0; float:none; clear:both; width:100%; min-width:298px;}
+#markets-module .module .moduleBody ul li{margin: 0 8px; padding: 8px 0; background: transparent url(http://s2.reutersmedia.net/resources_v2/images/dotsHorizontalBlue.gif) repeat-x scroll left bottom;}
+#markets-module .module .moduleBody ul li:last-child{background: none;}
+
+#markets-module table.dataTable {margin: 0; border-collapse: collapse; border-spacing: 0;}
+#markets-module table.dataTable tr, #markets-module table.dataTable tr td{background-color: #FFFFFF;}
+#markets-module table.dataTable tr.stripe, #markets-module table.dataTable tr.stripe td{background-color: #ecf6f8;}
+#markets-module table.dataTable td {padding:10px 5px; vertical-align: middle;}
+#markets-module .mm-currencies table.dataTable td, #markets-module .mm-commodities table.dataTable td {padding:7px 5px;}
+#markets-module table.dataTable td a{font-size:11px; text-transform: uppercase;}
+#markets-module table.dataTable td.data{font-size:12px; font-weight:bold;}
+#markets-module table.dataTable .dataUp, #markets-module table.dataTable .changeUp{color: #458D37; font-weight: normal;}
+#markets-module table.dataTable .dataDown, #markets-module table.dataTable .changeDown{color: #DC0A0A; font-weight: normal;}
+#markets-module table.dataTable td.sectorPercentage {font-size:15px;}
+#markets-module .module .moreLink {position: absolute; top: 5px; text-align: right; right: 5px; width: auto;}
+#markets-module .module .moreLink a{padding-right: 5px; color: #006E97; font-weight: normal;}
+
+#markets-module .module.investingControlsContainer {background-color: #ffffff; background-image: none; border: none; padding: 0 0 8px 0; margin: 0;}
+#markets-module .module.investingControlsContainer .investingControls {width:auto;}
+#markets-module .module.investingControlsContainer .investingControls .stockSearchContainer {padding: 0;}
+#markets-module .module.investingControlsContainer .searchInput {display:none;}
+#markets-module .module.investingControlsContainer .searchInput2 {padding: 0;}
+#markets-module .module.investingControlsContainer .searchbox {width: auto; margin: 8px 8px 0 8px;}
+#markets-module .module.investingControlsContainer .searchbox input.searchfield {width: 198px;}
+
+
+#markets-module #mm-footer {background-color: #016e97;}
+#markets-module #mm-footer .module{background-color: #016e97; border:none; width: 100%;}
+#markets-module #mm-footer ul {padding: 7px 0; overflow: auto; height: 1%; background-color: #016e97;}
+#markets-module #mm-footer ul li { float:left; line-height:11px; padding:2px 8px; margin: 0; border-right: 1px solid #FFF; background: none;}
+#markets-module #mm-footer ul li.last {border-right: none;}
+#markets-module #mm-footer ul li a {color: #FFFFFF; font-weight: bold; font-size: 11px; display: block;}
+#markets-module #mm-footer ul li a:visited {color: #FFFFFF !important}

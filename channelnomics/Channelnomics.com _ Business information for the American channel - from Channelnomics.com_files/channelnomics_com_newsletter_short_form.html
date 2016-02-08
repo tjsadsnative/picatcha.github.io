@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://email.channelnomics.com/k/Incisive-Media/channelnomics_com_newsletter_short_form -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link type="text/css" rel="stylesheet" media="screen" href="cn-com.css">
+	<style>.container {
+	max-width:450px;
+	background:#F5F5F5;
+	color: #555;
+	border-radius:5px;
+	border:2px solid #1B3A70;
+	padding:15px;
+	min-height:110px;
+	}
+    .amf-el p {
+	font-size:0.9em
+	}
+	.amf-el label{
+	height: 20px;
+	line-height: 32px;
+	font-weight: bold;
+	margin-left:0px;
+	}
+	.amf-el-inner input.text{
+	width:64%!important;
+	float:left;
+	padding:0.36em 0 0.36em 1%;
+	}
+	.submit input.button{
+	width:34%!important;
+	background-color: #1b3a70;
+	padding:0!important;
+	}
+	.submit input.button:hover {
+	background-color:#c00;
+	border:1px solid #c00;
+	}
+	.amf-error-message{
+	font-size:0.75em;
+	margin-top:34px;
+	position:absolute;
+	color: #db391e;
+	font-style: italic;
+	}
+	h4 {color:#555;}</style>
+</head>
+<body>
+	<div class="container">
+		<form action="channelnomics_com_newsletter_short_form.html" method="post" accept-charset="UTF-8"><div class="amf-el amf-type-textblock Signup" id="amf-el-info_16539"><div class="text-block" name="info_16539" id="amf-text-block-info_16539"><p>Sign up for the Channelnomics.com DAILY newsletter.</p></div></div><div class="amf-el amf-type-email" id="amf-el-email_address__16540"><label for="amf-input-email_address__16540">Email address *</label><div class="amf-el-inner"><input type="text" class="text" name="email_address__16540" id="amf-input-email_address__16540" value="" maxlength="255" onkeyup="if (this.length&gt;255) this.value=this.value.substr(0, 255)" onblur="this.value=this.value.substr(0, 255)"></div></div><div class="amf-el amf-type-button submit" id="amf-el-submit_button_16677"><input type="submit" class="button" name="submit" id="submit" value="Subscribe"></div><script type="text/javascript" id="0.0292798693476399">
+	(function(){
+		var script			= document.getElementById('0.0292798693476399');
+		var form			= script.parentNode;
+		var inputs			= form.getElementsByTagName('INPUT');
+		var submit_count	= 0;
+
+		var enable_double_submit = false;
+
+		for (var i=0; i<inputs.length; i++) {
+			var my_input = inputs[i];
+			if ( my_input.type === 'submit' ) {
+				var container = my_input.parentNode;
+				if (container.className.match(/enable-double-submit/)) {
+					enable_double_submit = true;
+				}
+			}
+		}
+
+		form.addEventListener('submit', function( evt ){
+			if (submit_count >= 1 && !enable_double_submit) {
+				evt.preventDefault();
+			}
+			submit_count++;
+		});
+
+	})();
+</script>
+</form>
+	</div>
+	
+
+</body></html>

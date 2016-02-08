@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://s0.2mdn.net/2992003/1443207209170/728x90/728x90.html -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+    <meta charset="UTF-8">
+    <meta name="ad.size" content="width=728,height=90">
+    <title></title>
+    <link href="css" rel="stylesheet" type="text/css">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            font-size: 33px;
+            color:#fff;
+        	}
+
+        #container {
+	        background-color: #fff;
+            width: 728px;
+            height: 90px;
+            position: relative;
+            border: 1px solid #000;
+            overflow: hidden;
+            cursor: pointer;
+        	}
+
+        #container > div, #container > img {
+            position: absolute;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+        	}
+
+        #background {
+            xleft: 0;
+            background-color: #154995;
+            width: 728px;
+            height: 60px;
+            bottom: 0;
+            -webkit-animation-name:colors;
+            animation-name:colors;
+             -webkit-animation-duration: 6.5s;
+            animation-duration: 6.5s;
+            -webkit-animation-delay: .8s;
+            animation-delay: .8s;
+        	}
+        	
+        #box {
+            xleft: 0;
+            width: 728px;
+            height: 60px;
+            bottom: 0;
+        	}
+        
+        #box:hover{
+	        -webkit-animation-name:colors;
+            animation-name:colors;
+             -webkit-animation-duration: 6s;
+            animation-duration: 6s;
+	        }
+	    
+	    @keyframes colors {
+			0% {background-color:#154995;}
+			25% {background-color:purple;} 
+			50% {background-color:red;} 
+			75% {background-color:#f3d253;} 
+			100% {background-color:#154995;}
+			} 
+
+		@-webkit-keyframes colors { 
+			0% {background-color:#154995;}
+			25% {background-color:purple;} 
+			50% {background-color:red;} 
+			75% {background-color:#f3d253;} 
+			100% {background-color:#154995;}
+			} 
+	
+        #logo {
+	        right:1%;
+            top:-55px;;
+            width: 19%;
+        	}
+		
+		#text_top {
+           	bottom:13px;
+			left:2%;
+            text-align: center;
+            -webkit-animation-name:slideInUp;
+            animation-name:slideInUp;
+             -webkit-animation-duration:1.5s;
+            animation-duration: 1.5s;
+            animation-delay: .5s;
+            -webkit-animation-delay: .5s;
+            }
+        
+        #text_middle {
+            bottom:13px;
+			left:31%;
+            text-align: center;
+            -webkit-animation-name:slideInUp;
+            animation-name:slideInUp;
+             -webkit-animation-duration:1.5s;
+            animation-duration: 1.5s;
+            animation-delay: 2s;
+            -webkit-animation-delay: 2s;
+            }
+        
+        #text_bottom {
+            bottom:13px;
+			left:51%;
+            text-align: center;
+            -webkit-animation-name:slideInUp;
+            animation-name:slideInUp;
+             -webkit-animation-duration:1.5s;
+            animation-duration: 1.5s;
+            animation-delay: 3.5s;
+            -webkit-animation-delay: 3.5s;
+            }
+               
+		#cta {
+            right:2%;
+            bottom:14px;
+            -webkit-animation:slideInUp 1.5s 5s;
+            animation: slideInUp 1.5s 5s;
+            font-family: 'Lato', sans-serif;
+            background: #e6f3ae;
+			background-image: -webkit-linear-gradient(top, #e6f3ae, #a0dd48);
+			background-image: -moz-linear-gradient(top, #e6f3ae, #a0dd48);
+			background-image: -ms-linear-gradient(top, #e6f3ae, #a0dd48);
+			background-image: -o-linear-gradient(top, #e6f3ae, #a0dd48);
+			background-image: linear-gradient(to bottom, #e6f3ae, #a0dd48);
+			-webkit-border-radius: 5;
+			-moz-border-radius: 5;
+			border-radius: 5px;
+			color: #000;
+			font-size: 16px;
+			text-align: center;
+			padding: 6px 10px 6px 10px;
+			border: solid #9fdd48 3px;
+			text-decoration: none;
+        	}
+        
+        
+                
+/* Keyframes 
+==================================================== */
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 1350%, 0);
+    transform: translate3d(0, 1350%, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 1350%, 0);
+    transform: translate3d(0, 1350%, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+    </style>
+    <script type="text/javascript">
+        var clickTag = "https://www.geico.com";
+    </script>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="background"><div id="box"></div></div>
+	
+	<img id="logo" src="GEICO-blue.svg">
+	    
+	<div id="text_top">Saving money</div>
+	
+	<div id="text_middle">brightens</div>
+	
+	<div id="text_bottom">your day :)</div>
+	
+	<div id="cta">Begin a Quote</div>
+</div>
+
+<script>
+    document.getElementById('container').addEventListener('click', clickHandler, false);
+    function clickHandler(event) {
+        window.open(window.clickTag);
+    }
+</script>
+
+
+</body></html>

@@ -1,0 +1,12 @@
+var PMC_GA_Event={viewed:{},current_category:'',track:function(category,action,label,nonInteractive,value){if(typeof _gaq==='undefined'){return;}
+var event=['_trackEvent',category||PMC_GA_Event.current_category,action,label];if(typeof nonInteractive!=='undefined'){event.push(typeof value!=='undefined'?value:1);event.push(nonInteractive);}else if(typeof value!=='undefined'){event.push(value);}
+try{_gaq.push(event);}catch(err){}
+try{if(typeof pmc_ga_event_callback==='function'){pmc_ga_event_callback(event);}}catch(er){}},monitor_view_scroll:function(category,list){if(typeof jQuery.fn.waypoint!=='function'){return;}
+jQuery.each(list,function(key,value){if(value.action==='*'&&typeof value.element==='undefined'&&typeof value.action_attr!=='undefined'){value.element='['+value.action_attr+']';}
+jQuery(value.element).waypoint(function(){var label=value.label||'view',action,id;if(value.action==='*'&&typeof(value.action_attr)!=='undefined'){action=jQuery(this).attr(value.action_attr);}else{action=value.action;}
+id=category+action+label;if(!PMC_GA_Event.viewed[id]){PMC_GA_Event.viewed[id]=true;PMC_GA_Event.track(category,action,label,true);}},{offset:'100%'});});},init:function(){this.attach_events();this.ajax_success();},attach_events:function(){var self=this;jQuery("[data-event-tracking]").each(function(index){var this_element=this;try{var data=jQuery(this).data('event-tracking');jQuery(data.split("|")).each(function(idx,data){var args=data.split(',');if(4==args.length){var type=args[0];var category=args[1];var action=args[2];var label=args[3];var idx=type.indexOf(':');var selector='';if(idx>-1){selector=type.substring(0,idx);type=type.substring(idx+1);}
+if('view'===type){if(typeof jQuery.fn.waypoint!=='function'){return;}
+var my_element=this_element;if(selector!=''){my_element=jQuery(this_element).find(selector);}
+jQuery(my_element).waypoint(function(){var id=category+action+label;if(!PMC_GA_Event.viewed[id]){PMC_GA_Event.viewed[id]=true;PMC_GA_Event.track(category,action,label,1);}},{triggerOnce:true,offset:'100%'});}
+else{var my_element=this_element;if(selector!=''){my_element=jQuery(this_element).find(selector);}
+jQuery(my_element).on(type,function(){if(!jQuery(this).hasClass('disabled')){self.track(category,action,label,0);}});}}});jQuery(this).removeAttr('data-event-tracking');}catch(err){}});},ajax_success:function(){var self=this;jQuery(document).ajaxSuccess(function(event,xhr,settings){self.attach_events();});}};jQuery(document).ready(function(){PMC_GA_Event.init();});

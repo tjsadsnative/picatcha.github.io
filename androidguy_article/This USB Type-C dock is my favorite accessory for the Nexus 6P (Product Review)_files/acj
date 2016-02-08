@@ -1,0 +1,28 @@
+OX_9142392360({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?bi=c3187930-01b4-4c86-b490-1241b9625e15&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"537226741",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"728",
+            "height":"90",
+            "html":"<script type='text/javascript' src='http://c.amazon-adsystem.com/aax2/amzn_ads.js'></script>\n<script type='text/javascript'>\n  try {\n    /* Slot size: 728x90 */ \n    amznads.getAdForSlot('3137', 'd3950aad-a03e-4459-93ce-4e45bb3f0b1a');\n  } catch(e) { /*ignore*/}\n</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD1hOTQ1M2VhNi1jN2M1LTQ1ZDUtYTljMi0wYjVlZTAzMjBkYzJ8cnQ9MTQ1MzUwNjIwN3xhdWlkPTUzNzIyNjc0MXxhdW09RE1JRC5XRUJ8c2lkPTUzNzEzOTY4NHxwdWI9NzY0NTZ8cGM9VVNEfHh0PWNvbnRyb2wsZGlzX3N1cF9leHB8cmFpZD0yMjVkMWIxMS0wZTBlLTQ2NjctYTllNy1kNjcwZDYzOTI1MTF8dXI9VU5QU2JCcnNNZQ",
+            "type":"html",
+            "ad_url":"<script type='text/javascript' src='http://c.amazon-adsystem.com/aax2/amzn_ads.js'></script>\n<script type='text/javascript'>\n  try {\n    /* Slot size: 728x90 */ \n    amznads.getAdForSlot('3137', 'd3950aad-a03e-4459-93ce-4e45bb3f0b1a');\n  } catch(e) { /*ignore*/}\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    padding:0px;
+    margin:0px; 
+}
+
+#canvas{
+    background-color:#ffffff;
+    cursor:pointer;
+    padding:0px;
+    margin:0px;    
+}
+
+#TNC {
+    position: absolute;
+    text-decoration:underline;
+    font-family: Helvetica, Arial, sans-serif;
+    color:#000;
+    font-size: x-small;
+    cursor: pointer;
+    opacity:0;
+    -webkit-transform: translateZ(0px);
+
+}
+
+#legalPopUp {
+    position: absolute; 
+    font-family: Helvetica, Arial, sans-serif;
+    color:#000;
+    font-size: x-small;
+    line-height:12px;
+    background-color: #fff;
+    border-style:solid;
+    border-color:#000;
+    border-width:1px;
+    padding: 3px;
+    margin: 0px;
+    cursor: pointer;
+    display: none;
+    text-align: center;
+    -webkit-transform: translateZ(0px);
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://now.ehow.com/xdomain.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script src="xdomain.min.js"></script>
+
+<script>
+	//xdomain.debug = true;
+
+	var subdomain = document.location.hash.replace('#',''); // remove #
+	var masters = {
+		"https://www.ehow.com": "*",
+		"http://www.ehow.com": "*",
+		"https://www.ehowstage.com": "*",
+		"http://www.ehowstage.com": "*"
+	};
+
+	masters["http://"+subdomain+".ehowdev.com"] = "*";
+	masters["http://"+subdomain+".ehowstage.com"] = "*";
+
+	xdomain.masters(masters);
+</script></head><body></body></html>

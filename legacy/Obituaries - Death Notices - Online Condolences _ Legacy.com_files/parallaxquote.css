@@ -1,0 +1,238 @@
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.ParallaxQuote {
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  margin: 20px auto;
+  display: none; }
+  @media screen and (min-width: 40em) {
+    .ParallaxQuote {
+      display: block; } }
+
+.align-right {
+  text-align: right; }
+  @media (min-width: 768px) {
+    .align-right {
+      float: right;
+      text-align: right; } }
+
+.align-center {
+  text-align: center; }
+
+.align-left {
+  text-align: left; }
+  @media (min-width: 768px) {
+    .align-left {
+      float: left;
+      text-align: left; } }
+
+.ParallaxQuote_Text {
+  position: absolute;
+  font-family: 'MrsEavesItalic';
+  color: #fff;
+  line-height: .8;
+  padding: 20px 20px 20px 20px;
+  filter: dropshadow(color=#000000, offx=2, offy=2);
+  text-shadow: 4px 4px 8px #000;
+  z-index: 99;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  @media screen and (min-width: 40em) {
+    .ParallaxQuote_Text {
+      text-align: center;
+      width: 100%;
+      max-width: 768px;
+      left: 0;
+      right: 0;
+      margin: 0 auto; } }
+  @media (min-width: 768px) {
+    .ParallaxQuote_Text {
+      width: 768px; } }
+
+@media screen and (min-width: 768px) {
+  .ParallaxQuote_Text.align-left {
+    text-align: left; } }
+
+@media screen and (min-width: 768px) {
+  .ParallaxQuote_Text.align-right {
+    text-align: right; } }
+
+.no-csstransforms .ParallaxQuote_Text {
+  top: 0; }
+
+.ParallaxQuote_Text--Quote {
+  display: block;
+  line-height: 48px;
+  line-height: 3rem;
+  font-size: 45px;
+  font-size: 2.8125rem;
+  max-size: 144px;
+  max-size: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 640px; }
+
+.ParallaxQuote_Text--Author {
+  font-size: 2.4em;
+  display: block; }
+
+.align-right .ParallaxQuote_Text--Quote {
+  float: right; }
+.align-right .ParallaxQuote_Text--Author {
+  float: right; }
+
+.align-left .ParallaxQuote_Text--Quote {
+  float: left; }
+.align-left .ParallaxQuote_Text--Author {
+  float: left; }
+
+.align-center .ParallaxQuote_Text--Quote {
+  left: 0;
+  right: 0;
+  margin: auto; }
+.align-center .ParallaxQuote_Text--Author {
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.ParallaxQuote_Image {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  @media screen and (min-width: 80em) {
+    .ParallaxQuote_Image {
+      width: 1280px;
+      height: 100%;
+      margin: auto;
+      position: relative; } }
+
+.ParallaxQuote_Image.style-stretched {
+  width: 100%; }
+
+.ParallaxQuote_Disclaimer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 10px 10px;
+  color: #999;
+  font-family: "Open Sans";
+  font-size: 0.625em;
+  text-transform: uppercase;
+  z-index: 41; }
+
+.ParallaxQuote_Gradient--Left {
+  display: none; }
+  @media screen and (min-width: 80em) {
+    .ParallaxQuote_Gradient--Left {
+      display: block;
+      height: 300px;
+      width: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 40; } }
+
+.ParallaxQuote_Gradient--Right {
+  display: none; }
+  @media screen and (min-width: 80em) {
+    .ParallaxQuote_Gradient--Right {
+      display: block;
+      height: 300px;
+      width: 100px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 40; } }
+
+.style-stretched > .ParallaxQuote_Gradient--Left, .style-stretched > .ParallaxQuote_Gradient--Right {
+  display: none; }
+
+.ParallaxQuote_Image--Mobile {
+  display: block;
+  width: 768px;
+  height: 300px; }
+  @media screen and (min-width: 40em) {
+    .ParallaxQuote_Image--Mobile {
+      width: 768px;
+      height: 100%;
+      position: absolute;
+      margin: auto;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%); } }
+  @media (min-width: 768px) {
+    .ParallaxQuote_Image--Mobile {
+      display: none; } }
+
+.ParallaxQuote_Image--Desktop {
+  display: none;
+  width: 1280px;
+  height: 300px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%); }
+  @media screen and (min-width: 768px) {
+    .ParallaxQuote_Image--Desktop {
+      display: block;
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 1280px;
+      height: 300px; } }
+  @media screen and (min-width: 80em) {
+    .ParallaxQuote_Image--Desktop {
+      display: block; } }
+
+.no-csstransforms .ParallaxQuote_Image {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; }
+  .no-csstransforms .ParallaxQuote_Image img {
+    display: inline;
+    position: relative;
+    left: 0; }
+
+@media screen and (min-width: 80em) {
+  .style-stretched > .ParallaxQuote_Image--Desktop {
+    display: block;
+    width: 100%;
+    left: 0;
+    transform: none; } }
+
+@media screen and (min-width: 80em) {
+  .style-fixed > .ParallaxQuote_Image--Desktop {
+    display: block;
+    width: 1280px;
+    position: relative;
+    margin: auto auto; } }
+
+/*# sourceMappingURL=parallaxquote.css.map */

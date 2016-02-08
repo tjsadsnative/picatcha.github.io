@@ -1,0 +1,40 @@
+var __wsconf = window.__wsconf = window.__wsconf || {};
+__wsconf.section = '2770';
+__wsconf.appId = '1896';
+__wsconf.znl = {"322972":{"conf":{"sizes":[{"width":320,"height":50,"doNotRotate":false}],"Source":"googlesyndication.com","Selector":"google_ads_iframe_/?49944529"},"type":"allocation"},"322973":{"conf":{"sizes":[{"width":160,"height":600,"doNotRotate":false}],"Source":"googlesyndication.com","Selector":"google_ads_iframe_/?49944529"},"type":"allocation"},"322969":{"conf":{"sizes":[{"width":300,"height":250,"doNotRotate":false}],"Source":"googlesyndication.com","Selector":"google_ads_iframe_/?49944529"},"type":"allocation"},"322970":{"conf":{"sizes":[{"width":728,"height":90,"doNotRotate":false}],"Source":"googlesyndication.com","Selector":"google_ads_iframe_/?49944529"},"type":"allocation"},"322971":{"conf":{"sizes":[{"width":300,"height":600,"doNotRotate":false}],"Source":"googlesyndication.com","Selector":"google_ads_iframe_/?49944529"},"type":"allocation"}};
+__wsconf.rootPath = '//wsc3.webspectator.com';
+__wsconf.sessionId = 'F69692DA91E739E7';
+__wsconf.contextId = '9C43';
+__wsconf.cid = 'AF53C8E4';
+__wsconf.vtm = 'TFPC';
+__wsconf.g_country = 'US';
+__wsconf.g_region = 'CA';
+__wsconf.g_city = 'San Francisco';
+__wsconf.dads = 0;
+__wsconf.lts = 1454620691891;
+__wsconf.adBlckMsg = false;
+__wsconf.adBlckMsgTxt = '';
+__wsconf.frt= "25";
+__wsconf.mui= "99";
+__wsconf.ortc= {"url":"window.location.protocol + \u0027//ortc-prd.realtime.co/server\u0027 + (window.location.protocol \u003d\u003d \u0027https:\u0027 ? \u0027/ssl/\u0027 : \u0027/\u0027) + \u00272.1/\u0027","apk":"R60tcQ","aut":"ws.client"};
+__wsconf.smc= {"disconnectTimer":120.0,"idleTimer":15.0};
+
+
+var s0 = document.createElement('script');
+s0.type = 'text/javascript';
+s0.async = true;
+s0.src = "//wfpscripts.webspectator.com/ortc-2.1.24.js";
+document.getElementsByTagName('HEAD')[0].appendChild(s0);
+
+var s1 = document.createElement('script');
+s1.type = 'text/javascript';
+s1.async = true;
+s1.src = "//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js";
+document.getElementsByTagName('HEAD')[0].appendChild(s1);
+
+var s2 = document.createElement('script');
+s2.type = 'text/javascript';
+s2.async = true;
+s2.src = "//wfpscripts.webspectator.com/ws-4.4.10i_cc.js";
+document.getElementsByTagName('HEAD')[0].appendChild(s2);
+

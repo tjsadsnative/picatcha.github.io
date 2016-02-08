@@ -1,0 +1,169 @@
+div {
+	cursor: pointer;
+}
+.bkgrnd {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 728px;
+	height: 90px;
+	background-color: #fff;
+}
+
+
+#text1 {
+	position: absolute;
+	left: 100px;
+	top: 25px;
+	opacity: 0;
+}
+#text2a {
+	position: absolute;
+	left: 100px;
+	top: 25px;
+	opacity: 0;
+}
+#text2b {
+	position: absolute;
+	left: 100px;
+	top: 48px;
+	opacity: 0;
+}
+#text3a {
+	position: absolute;
+	left: 100px;
+	top: 10px;
+	opacity: 0;
+}
+#text3b {
+	position: absolute;
+	left: 100px;
+	top: 33px;
+	opacity: 0;
+}
+
+
+#tag {
+	position: absolute;
+	width: 180px;
+	height: 90px;
+	left: 200px;
+	top: 0px;
+}
+#tag_text {
+	position: relative;
+	left: 32px;
+	top: 9px;
+}
+
+#frame {
+	position: absolute;
+	left: 190px;
+	top: 70px;
+	width: 200px;
+	height: 200px;
+	overflow: visible;
+}
+#mistletoe {
+	position: absolute;
+	left: 60px;
+	top: -20px;
+}
+#person {
+	position: absolute;
+	width: 124px;
+	height: 104px;
+	left: 38px;
+	top: 96px;
+}
+
+#photos {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 728px;
+	height: 90px;
+}
+.photo {
+	position: absolute;
+	left: -60px;
+	top: 45px;
+}
+.photo_shadow {
+	-webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);
+	box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);
+}
+
+
+#product {
+	position: absolute;
+	left: 480px;
+	top: 6px;
+	opacity: 0;
+}
+
+
+.cta {
+	position: absolute;
+	top: 53px;
+	left: 100px;
+	width: 150px;
+	height: 28px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	text-align: center;
+	font-size: 11px;
+	line-height: 24px;
+	opacity: 0;
+}
+.cta_out {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid #fff;
+	color: #fff;
+}
+.cta_over {
+	color: #cb000b;
+	background-color: #fff;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid #fff;
+}
+
+
+#legal {
+	position: absolute;
+	bottom: 2px;
+	right: 0px;
+	width: 162px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	text-align: center;
+	font-size: 8px;
+	line-height: 8px;
+	color: rgba(255,255,255,.8);
+	opacity: 0;
+}
+
+
+.flipL {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.flipR {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}

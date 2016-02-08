@@ -1,0 +1,1339 @@
+@font-face {
+    font-family: 'icomoon';
+    src:url('../../resources/font/icons/icomoon.eot?-ik8mrn');
+    src:url('../../resources/font/icons/icomoon.eot?#iefix-ik8mrn') format('embedded-opentype'),
+        url('../../resources/font/icons/icomoon.woff?-ik8mrn') format('woff'),
+        url('../../resources/font/icons/icomoon.ttf?-ik8mrn') format('truetype'),
+        url('../../resources/font/icons/icomoon.svg?-ik8mrn#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+    content: "\e600";
+}
+.icon-mobile:before {
+    content: "\e601";
+}
+.icon-mouse:before {
+    content: "\e602";
+}
+.icon-directions:before {
+    content: "\e603";
+}
+.icon-mail:before {
+    content: "\e604";
+}
+.icon-paperplane:before {
+    content: "\e605";
+}
+.icon-pencil:before {
+    content: "\e606";
+}
+.icon-feather:before {
+    content: "\e607";
+}
+.icon-paperclip:before {
+    content: "\e608";
+}
+.icon-drawer:before {
+    content: "\e609";
+}
+.icon-reply:before {
+    content: "\e60a";
+}
+.icon-reply-all:before {
+    content: "\e60b";
+}
+.icon-forward:before {
+    content: "\e60c";
+}
+.icon-user:before {
+    content: "\e60d";
+}
+.icon-users:before {
+    content: "\e60e";
+}
+.icon-user-add:before {
+    content: "\e60f";
+}
+.icon-vcard:before {
+    content: "\e610";
+}
+.icon-export:before {
+    content: "\e611";
+}
+.icon-location:before {
+    content: "\e612";
+}
+.icon-map:before {
+    content: "\e613";
+}
+.icon-compass:before {
+    content: "\e614";
+}
+.icon-location2:before {
+    content: "\e615";
+}
+.icon-target:before {
+    content: "\e616";
+}
+.icon-share:before {
+    content: "\e617";
+}
+.icon-sharable:before {
+    content: "\e618";
+}
+.icon-heart:before {
+    content: "\e619";
+}
+.icon-heart2:before {
+    content: "\e61a";
+}
+.icon-star:before {
+    content: "\e61b";
+}
+.icon-star2:before {
+    content: "\e61c";
+}
+.icon-thumbs-up:before {
+    content: "\e61d";
+}
+.icon-thumbs-down:before {
+    content: "\e61e";
+}
+.icon-chat:before {
+    content: "\e61f";
+}
+.icon-comment:before {
+    content: "\e620";
+}
+.icon-quote:before {
+    content: "\e621";
+}
+.icon-house:before {
+    content: "\e622";
+}
+.icon-popup:before {
+    content: "\e623";
+}
+.icon-search:before {
+    content: "\e624";
+}
+.icon-flashlight:before {
+    content: "\e625";
+}
+.icon-printer:before {
+    content: "\e626";
+}
+.icon-bell:before {
+    content: "\e627";
+}
+.icon-link:before {
+    content: "\e628";
+}
+.icon-flag:before {
+    content: "\e629";
+}
+.icon-cog:before {
+    content: "\e62a";
+}
+.icon-tools:before {
+    content: "\e62b";
+}
+.icon-trophy:before {
+    content: "\e62c";
+}
+.icon-tag:before {
+    content: "\e62d";
+}
+.icon-camera:before {
+    content: "\e62e";
+}
+.icon-megaphone:before {
+    content: "\e62f";
+}
+.icon-moon:before {
+    content: "\e630";
+}
+.icon-palette:before {
+    content: "\e631";
+}
+.icon-leaf:before {
+    content: "\e632";
+}
+.icon-music:before {
+    content: "\e633";
+}
+.icon-music2:before {
+    content: "\e634";
+}
+.icon-new:before {
+    content: "\e635";
+}
+.icon-graduation:before {
+    content: "\e636";
+}
+.icon-book:before {
+    content: "\e637";
+}
+.icon-newspaper:before {
+    content: "\e638";
+}
+.icon-bag:before {
+    content: "\e639";
+}
+.icon-airplane:before {
+    content: "\e63a";
+}
+.icon-lifebuoy:before {
+    content: "\e63b";
+}
+.icon-eye:before {
+    content: "\e63c";
+}
+.icon-clock:before {
+    content: "\e63d";
+}
+.icon-microphone:before {
+    content: "\e63e";
+}
+.icon-calendar:before {
+    content: "\e63f";
+}
+.icon-bolt:before {
+    content: "\e640";
+}
+.icon-thunder:before {
+    content: "\e641";
+}
+.icon-droplet:before {
+    content: "\e642";
+}
+.icon-cd:before {
+    content: "\e643";
+}
+.icon-briefcase:before {
+    content: "\e644";
+}
+.icon-air:before {
+    content: "\e645";
+}
+.icon-hourglass:before {
+    content: "\e646";
+}
+.icon-gauge:before {
+    content: "\e647";
+}
+.icon-language:before {
+    content: "\e648";
+}
+.icon-network:before {
+    content: "\e649";
+}
+.icon-key:before {
+    content: "\e64a";
+}
+.icon-battery:before {
+    content: "\e64b";
+}
+.icon-bucket:before {
+    content: "\e64c";
+}
+.icon-magnet:before {
+    content: "\e64d";
+}
+.icon-drive:before {
+    content: "\e64e";
+}
+.icon-cup:before {
+    content: "\e64f";
+}
+.icon-rocket:before {
+    content: "\e650";
+}
+.icon-brush:before {
+    content: "\e651";
+}
+.icon-suitcase:before {
+    content: "\e652";
+}
+.icon-cone:before {
+    content: "\e653";
+}
+.icon-earth:before {
+    content: "\e654";
+}
+.icon-keyboard:before {
+    content: "\e655";
+}
+.icon-browser:before {
+    content: "\e656";
+}
+.icon-publish:before {
+    content: "\e657";
+}
+.icon-progress-3:before {
+    content: "\e658";
+}
+.icon-progress-2:before {
+    content: "\e659";
+}
+.icon-brogress-1:before {
+    content: "\e65a";
+}
+.icon-progress-0:before {
+    content: "\e65b";
+}
+.icon-sun:before {
+    content: "\e65c";
+}
+.icon-sun2:before {
+    content: "\e65d";
+}
+.icon-adjust:before {
+    content: "\e65e";
+}
+.icon-code:before {
+    content: "\e65f";
+}
+.icon-screen:before {
+    content: "\e660";
+}
+.icon-infinity:before {
+    content: "\e661";
+}
+.icon-light-bulb:before {
+    content: "\e662";
+}
+.icon-credit-card:before {
+    content: "\e663";
+}
+.icon-database:before {
+    content: "\e664";
+}
+.icon-voicemail:before {
+    content: "\e665";
+}
+.icon-clipboard:before {
+    content: "\e666";
+}
+.icon-cart:before {
+    content: "\e667";
+}
+.icon-box:before {
+    content: "\e668";
+}
+.icon-ticket:before {
+    content: "\e669";
+}
+.icon-rss:before {
+    content: "\e66a";
+}
+.icon-signal:before {
+    content: "\e66b";
+}
+.icon-thermometer:before {
+    content: "\e66c";
+}
+.icon-droplets:before {
+    content: "\e66d";
+}
+.icon-uniE66E:before {
+    content: "\e66e";
+}
+.icon-statistics:before {
+    content: "\e66f";
+}
+.icon-pie:before {
+    content: "\e670";
+}
+.icon-bars:before {
+    content: "\e671";
+}
+.icon-graph:before {
+    content: "\e672";
+}
+.icon-lock:before {
+    content: "\e673";
+}
+.icon-lock-open:before {
+    content: "\e674";
+}
+.icon-logout:before {
+    content: "\e675";
+}
+.icon-login:before {
+    content: "\e676";
+}
+.icon-checkmark:before {
+    content: "\e677";
+}
+.icon-cross:before {
+    content: "\e678";
+}
+.icon-minus:before {
+    content: "\e679";
+}
+.icon-plus:before {
+    content: "\e67a";
+}
+.icon-cross2:before {
+    content: "\e67b";
+}
+.icon-minus2:before {
+    content: "\e67c";
+}
+.icon-plus2:before {
+    content: "\e67d";
+}
+.icon-cross3:before {
+    content: "\e67e";
+}
+.icon-minus3:before {
+    content: "\e67f";
+}
+.icon-plus3:before {
+    content: "\e680";
+}
+.icon-erase:before {
+    content: "\e681";
+}
+.icon-blocked:before {
+    content: "\e682";
+}
+.icon-info:before {
+    content: "\e683";
+}
+.icon-info2:before {
+    content: "\e684";
+}
+.icon-question:before {
+    content: "\e685";
+}
+.icon-help:before {
+    content: "\e686";
+}
+.icon-warning:before {
+    content: "\e687";
+}
+.icon-cycle:before {
+    content: "\e688";
+}
+.icon-cw:before {
+    content: "\e689";
+}
+.icon-ccw:before {
+    content: "\e68a";
+}
+.icon-shuffle:before {
+    content: "\e68b";
+}
+.icon-arrow:before {
+    content: "\e68c";
+}
+.icon-arrow2:before {
+    content: "\e68d";
+}
+.icon-retweet:before {
+    content: "\e68e";
+}
+.icon-loop:before {
+    content: "\e68f";
+}
+.icon-history:before {
+    content: "\e690";
+}
+.icon-back:before {
+    content: "\e691";
+}
+.icon-switch:before {
+    content: "\e692";
+}
+.icon-list:before {
+    content: "\e693";
+}
+.icon-add-to-list:before {
+    content: "\e694";
+}
+.icon-layout:before {
+    content: "\e695";
+}
+.icon-list2:before {
+    content: "\e696";
+}
+.icon-text:before {
+    content: "\e697";
+}
+.icon-text2:before {
+    content: "\e698";
+}
+.icon-document:before {
+    content: "\e699";
+}
+.icon-docs:before {
+    content: "\e69a";
+}
+.icon-landscape:before {
+    content: "\e69b";
+}
+.icon-pictures:before {
+    content: "\e69c";
+}
+.icon-video:before {
+    content: "\e69d";
+}
+.icon-music3:before {
+    content: "\e69e";
+}
+.icon-folder:before {
+    content: "\e69f";
+}
+.icon-archive:before {
+    content: "\e6a0";
+}
+.icon-trash:before {
+    content: "\e6a1";
+}
+.icon-upload:before {
+    content: "\e6a2";
+}
+.icon-download:before {
+    content: "\e6a3";
+}
+.icon-disk:before {
+    content: "\e6a4";
+}
+.icon-install:before {
+    content: "\e6a5";
+}
+.icon-cloud:before {
+    content: "\e6a6";
+}
+.icon-upload2:before {
+    content: "\e6a7";
+}
+.icon-bookmark:before {
+    content: "\e6a8";
+}
+.icon-bookmarks:before {
+    content: "\e6a9";
+}
+.icon-book2:before {
+    content: "\e6aa";
+}
+.icon-play:before {
+    content: "\e6ab";
+}
+.icon-pause:before {
+    content: "\e6ac";
+}
+.icon-record:before {
+    content: "\e6ad";
+}
+.icon-stop:before {
+    content: "\e6ae";
+}
+.icon-next:before {
+    content: "\e6af";
+}
+.icon-previous:before {
+    content: "\e6b0";
+}
+.icon-first:before {
+    content: "\e6b1";
+}
+.icon-last:before {
+    content: "\e6b2";
+}
+.icon-resize-enlarge:before {
+    content: "\e6b3";
+}
+.icon-resize-shrink:before {
+    content: "\e6b4";
+}
+.icon-volume:before {
+    content: "\e6b5";
+}
+.icon-sound:before {
+    content: "\e6b6";
+}
+.icon-mute:before {
+    content: "\e6b7";
+}
+.icon-flow-cascade:before {
+    content: "\e6b8";
+}
+.icon-flow-branch:before {
+    content: "\e6b9";
+}
+.icon-flow-tree:before {
+    content: "\e6ba";
+}
+.icon-flow-line:before {
+    content: "\e6bb";
+}
+.icon-flow-parallel:before {
+    content: "\e6bc";
+}
+.icon-arrow-left:before {
+    content: "\e6bd";
+}
+.icon-arrow-down:before {
+    content: "\e6be";
+}
+.icon-arrow-up--upload:before {
+    content: "\e6bf";
+}
+.icon-arrow-right:before {
+    content: "\e6c0";
+}
+.icon-arrow-left2:before {
+    content: "\e6c1";
+}
+.icon-arrow-down2:before {
+    content: "\e6c2";
+}
+.icon-arrow-up:before {
+    content: "\e6c3";
+}
+.icon-arrow-right2:before {
+    content: "\e6c4";
+}
+.icon-arrow-left3:before {
+    content: "\e6c5";
+}
+.icon-arrow-down3:before {
+    content: "\e6c6";
+}
+.icon-arrow-up2:before {
+    content: "\e6c7";
+}
+.icon-arrow-right3:before {
+    content: "\e6c8";
+}
+.icon-arrow-left4:before {
+    content: "\e6c9";
+}
+.icon-arrow-down4:before {
+    content: "\e6ca";
+}
+.icon-arrow-up3:before {
+    content: "\e6cb";
+}
+.icon-arrow-right4:before {
+    content: "\e6cc";
+}
+.icon-arrow-left5:before {
+    content: "\e6cd";
+}
+.icon-arrow-down5:before {
+    content: "\e6ce";
+}
+.icon-arrow-up4:before {
+    content: "\e6cf";
+}
+.icon-arrow-right5:before {
+    content: "\e6d0";
+}
+.icon-arrow-left6:before {
+    content: "\e6d1";
+}
+.icon-arrow-down6:before {
+    content: "\e6d2";
+}
+.icon-arrow-up5:before {
+    content: "\e6d3";
+}
+.icon-arrow-right6:before {
+    content: "\e6d4";
+}
+.icon-arrow-left7:before {
+    content: "\e6d5";
+}
+.icon-arrow-down7:before {
+    content: "\e6d6";
+}
+.icon-arrow-up6:before {
+    content: "\e6d7";
+}
+.icon-uniE6D8:before {
+    content: "\e6d8";
+}
+.icon-arrow-left8:before {
+    content: "\e6d9";
+}
+.icon-arrow-down8:before {
+    content: "\e6da";
+}
+.icon-arrow-up7:before {
+    content: "\e6db";
+}
+.icon-arrow-right7:before {
+    content: "\e6dc";
+}
+.icon-menu:before {
+    content: "\e6dd";
+}
+.icon-ellipsis:before {
+    content: "\e6de";
+}
+.icon-dots:before {
+    content: "\e6df";
+}
+.icon-dot:before {
+    content: "\e6e0";
+}
+.icon-cc:before {
+    content: "\e6e1";
+}
+.icon-cc-by:before {
+    content: "\e6e2";
+}
+.icon-cc-nc:before {
+    content: "\e6e3";
+}
+.icon-cc-nc-eu:before {
+    content: "\e6e4";
+}
+.icon-cc-nc-jp:before {
+    content: "\e6e5";
+}
+.icon-cc-sa:before {
+    content: "\e6e6";
+}
+.icon-cc-nd:before {
+    content: "\e6e7";
+}
+.icon-cc-pd:before {
+    content: "\e6e8";
+}
+.icon-cc-zero:before {
+    content: "\e6e9";
+}
+.icon-cc-share:before {
+    content: "\e6ea";
+}
+.icon-cc-share2:before {
+    content: "\e6eb";
+}
+.icon-reddit:before {
+    content: "\e6ec";
+}
+.icon-skype:before {
+    content: "\e6ed";
+}
+.icon-windows8:before {
+    content: "\e6ee";
+}
+.icon-windows:before {
+    content: "\e6ef";
+}
+.icon-finder:before {
+    content: "\e6f0";
+}
+.icon-android:before {
+    content: "\e6f1";
+}
+.icon-apple:before {
+    content: "\e6f2";
+}
+.icon-tux:before {
+    content: "\e6f3";
+}
+.icon-chrome:before {
+    content: "\e6f4";
+}
+.icon-firefox:before {
+    content: "\e6f5";
+}
+.icon-IE:before {
+    content: "\e6f6";
+}
+.icon-opera:before {
+    content: "\e6f7";
+}
+.icon-safari:before {
+    content: "\e6f8";
+}
+.icon-html5:before {
+    content: "\e6f9";
+}
+.icon-css3:before {
+    content: "\e6fa";
+}
+.icon-pinterest:before {
+    content: "\e6fb";
+}
+.icon-pinterest2:before {
+    content: "\e6fc";
+}
+.icon-paypal:before {
+    content: "\e6fd";
+}
+.icon-paypal2:before {
+    content: "\e6fe";
+}
+.icon-paypal3:before {
+    content: "\e6ff";
+}
+.icon-youtube:before {
+    content: "\e700";
+}
+.icon-youtube2:before {
+    content: "\e701";
+}
+.icon-vimeo:before {
+    content: "\e702";
+}
+.icon-vimeo2:before {
+    content: "\e703";
+}
+.icon-google:before {
+    content: "\e704";
+}
+.icon-google-plus:before {
+    content: "\e705";
+}
+.icon-share2:before {
+    content: "\e706";
+}
+.icon-mail2:before {
+    content: "\e707";
+}
+.icon-mail3:before {
+    content: "\e708";
+}
+.icon-mail4:before {
+    content: "\e709";
+}
+.icon-mail5:before {
+    content: "\e70a";
+}
+.icon-facebook:before {
+    content: "\e70b";
+}
+.icon-facebook2:before {
+    content: "\e70c";
+}
+.icon-instagram:before {
+    content: "\e70d";
+}
+.icon-twitter:before {
+    content: "\e70e";
+}
+.icon-twitter2:before {
+    content: "\e70f";
+}
+.icon-feed:before {
+    content: "\e710";
+}
+.icon-feed2:before {
+    content: "\e711";
+}
+.icon-steam:before {
+    content: "\e712";
+}
+.icon-wordpress:before {
+    content: "\e713";
+}
+.icon-github:before {
+    content: "\e714";
+}
+.icon-tumblr:before {
+    content: "\e715";
+}
+.icon-tumblr2:before {
+    content: "\e716";
+}
+.icon-linkedin:before {
+    content: "\e717";
+}
+.icon-stumbleupon:before {
+    content: "\e718";
+}
+.icon-delicious:before {
+    content: "\e719";
+}
+.icon-stumbleupon2:before {
+    content: "\e71a";
+}
+.icon-stackoverflow:before {
+    content: "\e71b";
+}
+.icon-foursquare:before {
+    content: "\e71c";
+}
+.icon-foursquare2:before {
+    content: "\e71d";
+}
+; 
+ 
+/* v1.0.5 */
+/* Core RS CSS file. 95% of time you shouldn't change anything here. */
+.royalSlider {
+	width: 600px;
+	height: 400px;
+	position: relative;
+	direction: ltr;
+}
+.royalSlider > * {
+	float: left;
+}
+
+.rsWebkit3d .rsSlide {
+	-webkit-transform: translateZ(0);
+}
+
+
+.rsWebkit3d .rsSlide,
+.rsWebkit3d .rsContainer,
+.rsWebkit3d .rsThumbs,
+.rsWebkit3d .rsPreloader,
+.rsWebkit3d img,
+.rsWebkit3d .rsOverflow,
+.rsWebkit3d .rsBtnCenterer,
+.rsWebkit3d .rsAbsoluteEl,
+.rsWebkit3d .rsABlock,
+.rsWebkit3d .rsLink {
+	-webkit-backface-visibility: hidden;
+}
+.rsFade.rsWebkit3d .rsSlide,
+.rsFade.rsWebkit3d img,
+.rsFade.rsWebkit3d .rsContainer {
+    -webkit-transform: none;
+}
+.rsOverflow {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.rsVisibleNearbyWrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.rsVisibleNearbyWrap .rsOverflow {
+	position: absolute;
+	left: 0;
+	top: 0;
+
+}
+.rsContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.rsArrow,
+.rsThumbsArrow {
+	cursor: pointer;
+}
+
+.rsThumb {
+	float: left;
+	position: relative;
+}
+
+
+.rsArrow,
+.rsNav,
+.rsThumbsArrow {
+	opacity: 1;
+	-webkit-transition:opacity 0.3s linear;
+	-moz-transition:opacity 0.3s linear;
+	-o-transition:opacity 0.3s linear;
+	transition:opacity 0.3s linear;
+}
+.rsHidden {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+	-moz-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+	-o-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+	transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+}
+
+
+.rsGCaption {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+/* Fullscreen options, very important ^^ */
+.royalSlider.rsFullscreen {
+	position: fixed !important;
+	height: auto !important;
+	width: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	z-index: 2147483647 !important;
+	top: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+}
+
+.royalSlider .rsSlide.rsFakePreloader {
+	opacity: 1 !important;
+	-webkit-transition: 0s;
+	-moz-transition: 0s;
+	-o-transition:  0s;
+	transition:  0s;
+	display: none;
+}
+
+.rsSlide {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	overflow: hidden;
+	
+	height: 100%;
+	width: 100%;
+}
+
+.royalSlider.rsAutoHeight,
+.rsAutoHeight .rsSlide {
+	height: auto;
+}
+
+.rsContent {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.rsPreloader {
+	position:absolute;
+	z-index: 0;	
+}
+
+.rsNav {
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.rsNavItem {
+	-webkit-tap-highlight-color:rgba(0,0,0,0.25);
+}
+
+.rsThumbs {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	z-index: 22;
+}
+.rsTabs {
+	float: left;
+	background: none !important;
+}
+.rsTabs,
+.rsThumbs {
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+
+.rsVideoContainer {
+	/*left: 0;
+	top: 0;
+	position: absolute;*/
+	/*width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	float: left;*/
+	width: auto;
+	height: auto;
+	line-height: 0;
+	position: relative;
+}
+.rsVideoFrameHolder {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #141414;
+	opacity: 0;
+	-webkit-transition: .3s;
+}
+.rsVideoFrameHolder.rsVideoActive {
+	opacity: 1;
+}
+.rsVideoContainer iframe,
+.rsVideoContainer video,
+.rsVideoContainer embed,
+.rsVideoContainer .rsVideoObj {
+	position: absolute;
+	z-index: 50;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+/* ios controls over video bug, shifting video */
+.rsVideoContainer.rsIOSVideo iframe,
+.rsVideoContainer.rsIOSVideo video,
+.rsVideoContainer.rsIOSVideo embed {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-right: 44px;
+}
+
+.rsABlock {
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 15;
+	
+}
+
+img.rsImg {
+	max-width: none;
+}
+
+.grab-cursor {
+	cursor:url(grab.png) 8 8, move; 
+}
+
+.grabbing-cursor{ 
+	cursor:url(grabbing.png) 8 8, move;
+}
+
+.rsNoDrag {
+	cursor: auto;
+}
+
+.rsLink {
+	left:0;
+	top:0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	display:block;	
+	z-index: 20;
+	background: url(blank.gif);
+}
+; 
+ 
+/******************************
+*
+* RoyalSlider Minimal White Skin (.rsMinW)
+*s
+* 1. Arrows 
+* 2. Bullets
+* 3. Thumbnails
+* 4. Tabs
+* 5. Fullscreen button
+* 6. Play/close video button
+* 7. Preloader
+* 
+* Sprite:'rs-minimal-white.png'
+* Feel free to edit anything
+* If you don't some part - just delete it
+* 
+******************************/
+/* Background */
+.rsOverflow,
+.rsSlide,
+.rsVideoFrameHolder,
+.rsThumbs{overflow:hidden !important;}
+.rsOverflow{}
+.rsThumbs{background-color:#000;}
+
+/***************
+*
+* 2. Bullets
+*
+****************/
+.rsBullets{position:absolute;z-index:35;bottom:18px;right:13px;width:auto;height:auto;text-align:left;overflow:hidden;line-height:5px;}
+.rsBullet{width:5px;height:5px;display:inline-block;margin:0 5px;border-radius:50%;background:#aaa;background:rgba(200,200,200,0.6);*display:inline;*zoom:1;}
+.rsBullet.rsNavSelected{background:#28a0ff;}
+/***************
+*
+* 3. Thumbnails
+*
+****************/
+.rsThumbs{background-color:#000;}
+.rsThumbsHor{padding-bottom:5px;padding-top:5px;width:100%;height:72px;margin-bottom:1.5em;}
+.rsThumbsVer{padding-right:4px;width:96px;height:100%;position:absolute;top:0;right:0;}
+.rsWithThumbsHor .rsThumbsContainer{position:relative;height:100%;}
+.rsWithThumbsVer .rsThumbsContainer{position:relative;width:100%;}
+.rsThumb{float:left;overflow:hidden;width:96px;height:72px;color:#555;}
+.rsThumb:hover{color:#000;}
+.rsThumb img{width:100%;height:auto;}
+.rsThumb.rsNavSelected img{}
+.rsTmb{display:block;}
+/* Thumbnails arrow icons */
+.rsThumbsArrow{height:100%;width:20px;position:absolute;display:block;cursor:pointer;z-index:21;background:#000;opacity:0.6;}
+.rsThumbsArrow:hover{opacity:0.9;}
+.rsWithThumbsVer .rsThumbsArrow{height:0;width:0;}
+.rsWithThumbsVer .rsThumbsArrowLeft{top:0;left:0;}
+.rsWithThumbsVer .rsThumbsArrowRight{bottom:0;left:0;}
+.rsWithThumbsHor .rsThumbsArrowLeft{left:0;top:0;}
+.rsWithThumbsHor .rsThumbsArrowRight{right:0;top:0;}
+.rsThumbsArrowIcn{width:0px;height:0px;top:35px;position:absolute;cursor:pointer;border:7px solid transparent;}
+.rsThumbsArrowIcn:after{content:'';display:block;width:0px;height:0px;position:absolute;top:-7px;border:7px solid transparent;}
+.rsWithThumbsHor .rsThumbsArrowLeft .rsThumbsArrowIcn{border-right-color:#fff;right:6px}
+.rsWithThumbsHor .rsThumbsArrowLeft .rsThumbsArrowIcn:after{border-right-color:#000;right:-8px;}
+.rsWithThumbsHor .rsThumbsArrowRight .rsThumbsArrowIcn{border-left-color:#fff;left:6px;}
+.rsWithThumbsHor .rsThumbsArrowRight .rsThumbsArrowIcn:after{border-left-color:#000;left:-8px;}
+
+.rsWithThumbsVer .rsThumbsArrowLeft .rsThumbsArrowIcn{background-position:-144px -32px;}
+.rsWithThumbsVer .rsThumbsArrowRight .rsThumbsArrowIcn{background-position:-144px -48px;}
+.rsThumbsArrowDisabled{display:none !important;}
+/* Thumbnails resizing on smaller screens */
+/***************
+*
+* 4. Tabs
+*
+****************/
+.rsTabs{width:100%;height:auto;margin:0 auto;text-align:center;overflow:hidden;padding-top:12px;position:relative;}
+.rsTab{display:inline-block;cursor:pointer;text-align:center;height:auto;width:auto;color:#333;padding:5px 13px 6px;min-width:96px;border:1px solid #D9D9DD;border-right:1px solid #f5f5f5;text-decoration:none;background-color:#FFF;background-image:-webkit-linear-gradient(top,#fefefe,#f4f4f4);background-image:-moz-linear-gradient(top,#fefefe,#f4f4f4);background-image:linear-gradient(to bottom,#fefefe,#f4f4f4);-webkit-box-shadow:inset 1px 0 0 #fff;box-shadow:inset 1px 0 0 #fff;*display:inline;*zoom:1;}
+.rsTab:first-child{-webkit-border-top-left-radius:4px;border-top-left-radius:4px;-webkit-border-bottom-left-radius:4px;border-bottom-left-radius:4px;}
+.rsTab:last-child{-webkit-border-top-right-radius:4px;border-top-right-radius:4px;-webkit-border-bottom-right-radius:4px;border-bottom-right-radius:4px;border-right:1px solid #cfcfcf;}
+.rsTab:active{border:1px solid #D9D9DD;background-color:#f4f4f4;-webkit-box-shadow:0 1px 4px rgba(0,0,0,0.2) inset;box-shadow:0 1px 4px rgba(0,0,0,0.2) inset;}
+.rsTab.rsNavSelected{color:white;border:1px solid #999;text-shadow:1px 1px #838383;-webkit-box-shadow:0 1px 9px rgba(102,102,102,0.65) inset;box-shadow:0 1px 9px rgba(102,102,102,0.65) inset;background:#ACACAC;background-image:-webkit-linear-gradient(top,#ACACAC,#BBB);background-image:-moz-llinear-gradient(top,#ACACAC,#BBB);background-image:linear-gradient(to bottom,#ACACAC,#BBB);}
+/***************
+*
+* 5. Fullscreen button
+*
+****************/
+.rsFullscreenBtn{right:0;top:0;width:44px;height:44px;z-index:22;display:block;position:absolute;cursor:pointer;}
+.rsFullscreenIcn{display:block;margin:6px;width:32px;height:32px;background:url('rs-minimal-white.png') 0 0;background-color:#fff;background-color:rgba(255,255,255,0.75);border-radius:2px;}
+.rsFullscreenIcn:hover{background-color:#fff;}
+.rsFullscreen .rsFullscreenIcn{background-position:-32px 0;}
+/***************
+*
+* 6. Play/close video button
+*
+****************/
+.rsPlayBtn{-webkit-tap-highlight-color:rgba(0,0,0,0.3);width:64px;height:64px;margin-left:-32px;margin-top:-32px;cursor:pointer;}
+.rsPlayBtn:hover .rsPlayBtnIcon{background-color:#d5d5d5;}
+.rsBtnCenterer{position:absolute;left:50%;top:50%;width:20px;height:20px;}
+.rsCloseVideoBtn{right:0;top:0;width:44px;height:44px;z-index:23;position:absolute;cursor:pointer;}
+.rsDefault .rsCloseVideoBtn.rsiOSBtn{top:-38px;right:-6px;/*top:-6px;right:-38px;*/}
+.rsCloseVideoIcn{margin:6px;width:32px;height:32px;background:url('rs-minimal-white.png') -64px 0;background-color:#eee;background-color:rgba(238,238,238,0.75);}
+.rsCloseVideoIcn:hover{background-color:#d5d5d5;}
+; 
+ 
+/* Make clicks pass-through */
+#nprogress-wrapper {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+}
+
+#nprogress {
+  pointer-events: none;
+  -webkit-pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #28a0FF;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #28a0FF, 0 0 5px #28a0FF;
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -moz-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  -o-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  top: 65px;
+  right: 15px;
+}
+
+.admin-bar #nprogress .spinner {
+  top: 93px;
+}
+
+#nprogress .spinner-icon {
+  width: 14px;
+  height: 14px;
+
+  border:  solid 2px transparent;
+  border-top-color:  #28a0FF;
+  border-left-color: #28a0FF;
+  border-radius: 10px;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  -moz-animation:    nprogress-spinner 400ms linear infinite;
+  -ms-animation:     nprogress-spinner 400ms linear infinite;
+  -o-animation:      nprogress-spinner 400ms linear infinite;
+  animation:         nprogress-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes nprogress-spinner {
+  0%   { -moz-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes nprogress-spinner {
+  0%   { -o-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes nprogress-spinner {
+  0%   { -ms-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}

@@ -1,0 +1,3 @@
+var kid='f0da62b689b1f7ad3ba9a86501e73f9e';document.write('<div id="kmn_tag_'+kid+'" class="kmn-div">');
+kmn_sa.spark(kid,{codes:'t79,t67,t80,t81,t70,h',srv:'a3'});kmn_data[kid]={chain:'N2',codes:['t79','t67','t80','t81','t70','h'],full_index:1,order:'97t',w:300,h:250,s2sCodes:['j','d'],s2sBaseUrl:'//s2s.komoona.com/'};kmn_sa.write_js('//tag.contextweb.com/TagPublish/getjs.aspx?action=VIEWAD&cwrun=200&cwadformat=300X250&cwpid=558098&cwwidth=300&cwheight=250&cwpnet=1&cwtagid=253019');
+document.write('</div>');

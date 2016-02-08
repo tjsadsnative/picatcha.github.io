@@ -1,0 +1,1 @@
+document.write("<scr"+"ipt type='text/javascript' src='http://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().definePassback('12906217/jtvnet.passback/pg_tier5', [[300,250]]).display();</scr"+"ipt>");

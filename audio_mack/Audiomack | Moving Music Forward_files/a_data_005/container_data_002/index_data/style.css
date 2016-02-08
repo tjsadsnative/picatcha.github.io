@@ -1,0 +1,257 @@
+/* ---- 300x250 ----*/
+
+/*elements appear from left side - make left border*/
+.textOnPanel {
+	border-left: 50px solid #000;
+	left: -50px !important;
+}
+
+#graphic_1_1 {
+	position: absolute;
+	background-position: 0 -142px;
+	width: 300px;
+	height: 250px;
+	left: 0px;
+	top: 0px;
+}
+
+#line_1_1 {
+	position: absolute;
+	background-position: 0 -406px;
+	width: 155px;
+	height: 31px;
+	left: 0px;
+	top: 26px;
+}
+#line_1_2 {
+	position: absolute;
+	background-position: 0 -442px;
+	width: 158px;
+	height: 31px;
+	left: 0px;
+	top: 62px;
+}
+/*#line_1_3 {
+	position: absolute;
+	background-position: 
+	left: px;
+	top: px;
+}*/
+
+#bg_2 {
+	background-color: #000;
+}
+
+#gradient {
+	position: absolute;
+	background-position: 0 -635px;
+	width: 300px;
+	height: 17px;
+	left: 0px;
+	top: 170px;
+}
+
+#line_2_1 {
+	position: absolute;
+	background-position: 0 -478px;
+	width: 300px;
+	height: 30px;
+	left: 0px;
+	top: 18px;
+}
+/*#line_2_2 {
+	position: absolute;
+	background-position: 
+	left: px;
+	top: px;
+}*/
+/*#line_2_3 {
+	position: absolute;
+	background-position: 
+	left: px;
+	top: px;
+}*/
+
+#graphic_2_1 {
+	position: absolute;
+	background-position: 0 -513px;
+	width: 300px;
+	height: 117px;
+	left: 0px;
+	top: 53px;
+}
+
+#bg_3 { background-color: black; }
+
+
+#line_3_1 {
+	position: absolute;
+	background-position: 0 -660px;
+	width: 300px;
+	height: 25px;
+	left: 0px;
+	top: 20px;
+}
+#line_3_2 {
+	position: absolute;
+	background-position: 0 -687px;
+	width: 300px;
+	height: 26px;
+	left: 0px;
+	top: 45px;
+}
+#line_3_3 {
+	position: absolute;
+	background-position: 0 -715px;
+	width: 300px;
+	height: 26px;
+	left: 0px;
+	top: 71px;
+}
+
+#graphic_3_1 {
+	position: absolute;
+	background-position: -159px -401px;
+	width: 75px;
+	height: 36px;
+	left: 15px;
+	top: 136px;
+}
+#graphic_3_2 {
+	position: absolute;
+	background-position: -236px -401px;
+	width: 75px;
+	height: 36px;
+	left: 90px;
+	top: 136px;
+}
+#graphic_3_3 {
+	position: absolute;
+	background-position: -232px -439px;
+	width: 70px;
+	height: 36px;
+	left: 165px;
+	top: 136px;
+}
+/*#graphic_3_4 {
+	position: absolute;
+	background-position: 
+	left: px;
+	top: px;
+}*/
+
+/*--------- END EDITABLES ---------*/
+
+.bg {
+	position: absolute;
+	width: 300px;
+	height: 250px;
+}
+
+.sprite {
+	display: inline-block;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-image: url(images/300x250_sprites_crushed.png);
+}
+
+.logo {
+	position: absolute;
+	background-position: -1px -1px;
+	width: 120px;
+	height: 64px;
+
+	/*bottom padding for elastic ease*/
+	border-bottom: 50px solid black;
+}
+
+.cta {
+	position: absolute;
+	background-position: -132px -1px;
+	width: 180px;
+	height: 64px;
+}
+
+.cta_over {
+	position: absolute;
+	background-position: -132px -71px;
+	width: 180px;
+	height: 64px;
+}
+
+#loading			,
+#text_shell			,
+#cta				,
+#cta_default		,
+#cta_default_shell	,
+#cta_over			,
+#logo
+{
+	position:absolute;
+}
+
+#loading{
+	z-index: 1000;
+}
+
+#text_shell	{
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+#loading			,
+#text_shell			,
+#cta				,
+#cta_default		,
+#cta_default_shell	,
+#cta_over			,
+#logo
+{
+	position:absolute;
+}
+
+#loading{
+	z-index: 1000;
+}
+
+#text_shell	{
+	width: 100%;
+	height: 100%;
+	z-index:10;
+}
+
+#logo {
+	top: 187px;
+}
+
+/* -------------------------------------------------------- cta */
+#cta {
+	width: 380px;
+	height: 90px;
+	left: 120px;
+	top: 187px;
+	overflow:hidden;
+
+	border-bottom: 50px solid #14ABE0;
+}
+#cta_default,
+#cta_over,
+#cta_default_shell {
+	width: 100%;
+	height: 100%;
+}
+#cta_default_shell{
+	height: 63px;
+	z-index: 20;
+	overflow: hidden;
+	border-bottom: 50px solid #14ABE0;
+}
+#cta_default {
+	height: 63px;
+
+}
+#cta-over {
+	height: 63px;
+	z-index: 10;
+}

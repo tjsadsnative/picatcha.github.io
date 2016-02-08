@@ -1,0 +1,25 @@
+OX_5956915746({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ee=res&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"506729",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "width":"160",
+            "height":"600",
+            "html":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-9914992914910847\";\n/* ROTL - Netshelter - 160x600 - ADEX */\ngoogle_ad_slot = \"9373789401\";\ngoogle_ad_width = 160;\ngoogle_ad_height = 600;\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD02OWM0YzgyYy1iMzgxLTRkMWEtYThiNi1lMzk5MGM1NTEyYjh8cnQ9MTQzODEyMzg3M3xhdWlkPTUwNjcyOXxhdW09RE1JRC5XRUJ8c2lkPTEwOTkwNXxwdWI9NjAxNDF8cGM9VVNEfHh0PXJlc3xyYWlkPTIzOWM2ZWM0LWJlYTctNDllZi1hYmY0LTdlODJkNzM0YjAxNnx1cj1LcVVWVHhORXBW",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-9914992914910847\";\n/* ROTL - Netshelter - 160x600 - ADEX */\ngoogle_ad_slot = \"9373789401\";\ngoogle_ad_width = 160;\ngoogle_ad_height = 600;\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+
+.zone {
+	position: relative;
+    width: 628px;
+    height: 198px;
+    overflow: hidden;
+    border: solid 1px #fff;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica;
+	font-size: 12px;
+    background-color: transparent;
+}
+
+.zone h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: #2e538f;
+    text-transform: uppercase;
+}
+
+.zone a {
+	text-decoration: none
+}
+
+.zone ul {
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+	padding: 4px 0;
+}
+
+.zone ul li.pos_2, .zone ul li.pos_2 .ad {
+    background-color: #ccc;
+}
+
+.zone ul li, .zone .ad {
+	width: 628px;
+    height: 57px;
+	margin: 0;
+    padding: 0;
+	float: left;
+	overflow: hidden;
+}
+
+.zone .ad {
+	height: auto;
+	border-collapse: collapse;
+}
+
+.zone .ad tr, .zone .ad tr td {
+	padding: 0;
+	margin: 0;
+}
+
+.zone .ad td.text {
+    width: 50%;
+    height: 57px;
+}
+
+.zone .ad td.text a.title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #01a;
+    display: block;
+    float: left;
+    width: 48%;
+}
+
+.zone .ad td.text a.more {
+    font-size: 12px;
+    padding-left: 20px;
+    text-decoration: underline;
+}
+
+.zone .ad td.text a.description {
+    font-size: 12px;
+}
+
+.zone .advlabel {
+	position: absolute;
+	top: 3px;
+	right: 4px;
+	font-size: 10px;
+	height: 10px;
+	text-transform: uppercase;
+}
+
+.zone .advlabel a {
+	color: #aaa;
+}
+
+.zone .advlabel a:hover {
+	text-decoration: underline;
+}

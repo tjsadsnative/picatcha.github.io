@@ -1,0 +1,64 @@
+/* Echo */
+#trending-container .moduleHeader h3 { background: url(http://s1.reutersmedia.net/resources_v2/images/sprite-core2.gif) no-repeat 0 -762px;padding: 0px 0px 0px 23px; }
+.module #echo-trending { padding: 0; width: 300px; }
+.focus .module #echo-trending { padding:0; width: 270px; }
+#echo-trending .echo-item-content {border-bottom: 1px solid #efefef;}
+#echo-trending .echo-item-content .echo-item-container {padding: 6px 0 5px;}
+#echo-trending .echo-item-body h1 { font-size: 12px; margin: 0px; }
+#echo-trending .echo-item-body br { line-height: 5px; }
+#echo-trending .echo-item-body img, .echo-item-from, .echo-item-via,.echo-item-authorName, .echo-item-avatar-wrapper, .echo-item-sourceIcon, .echo-stream-header { display: none; }
+#echo-trending .echo-item-body {padding: 0;}
+#echo-trending .echo-item-body span {display: block; height: 32px; overflow:hidden}
+#echo-trending .echo-item-body span br {line-height: 200px;}
+#echo-trending .echo-item-body .article_teaser {display: none;}
+#echo-trending .echo-application-message { border: none; }
+#echo-trending .echo-item-subwrapper { margin-left: 0px; }
+#echo-trending .echo-item-wrapper .echo-clear {clear:none;}
+.module #echo-trending .echo-item-data { width: 240px; float: left; }
+.focus .module #echo-trending .echo-item-data { width: 210px; }
+#echo-trending .echo-item-data .metadata_title{font-weight: bold;}
+#echo-trending .echo-item-accumulatorContainer, #trendingTickers .echo-item-accumulatorContainer { float: none; text-align: center; margin-right: 0px; margin-top: 7px; font-weight: bold; font-size: 14px; }
+#echo-trending .echo-item-accumulatorContainerLabel, #trendingTickers .echo-item-accumulatorContainerLabel { text-align: center; font-size: 10px; color: #999999; display: none; }
+#echo-trending .echo-item-accumulatorContainerWrap, #trendingTickers .echo-item-accumulatorContainerWrap  { float: right; width: 41px; height: 36px; background: url(http://s1.reutersmedia.net/resources_v2/images/sprite-core2.gif) no-repeat 0 -1036px; }
+#echo-trending .echo-item-container-root {}
+.module #echo-trending .echo-item-content .echo-secondaryColor .echo-item-date {color: #999999; line-height: normal; width: 240px;}
+.focus .module #echo-trending .echo-item-content .echo-secondaryColor .echo-item-date {width: 210px;}
+#echo-trending .echo-stream-more { background: #016E99; border-color: #016E99; }
+#echo-trending .echo-stream-more span { color: #FFFFFF; }
+#echo-trending .metadata_description {display:none;}
+#echo-trending .echo-stream-more { height: 0; margin: 0; padding: 0; visibility: hidden;}
+.trending-container .follow-link {display: none;}
+
+/* Stocktwits */
+#trendingTickers .moduleHeader h3 { background: url(http://s1.reutersmedia.net/resources_v2/images/sprite-core2.gif) no-repeat 0 -788px;padding-left: 23px; }
+#trendingTickers .moduleBody .columnLeft { width: 300px; }
+.focus #trendingTickers .moduleBody .columnLeft { width: 270px; }
+#trendingTickers h4 { font-size: 12px; margin: 0px !important; }
+#trendingTickers .trending-item { margin: 8px 0 8px 0; }
+.focus #trendingTickers .trending-item { margin: 0 0 15px 0; }
+#trendingTickers .timestamp {font-size: 11px !important; }
+#trendingTickers .ricData { font-size: 11px; font-weight: bold; }
+#trendingTickers .quotePending { font-size: 10px; font-weight: normal; }
+#trendingTickers .ricData .price { margin: 0 5px 0 0; }
+#trendingTickers #stocktwits-attribution {float:right;}
+.focus #trendingTickers #stocktwits-attribution a{
+background: url(http://s1.reutersmedia.net/resources_v2/images/sprite-core2.gif) no-repeat 0px -814px;width:200px; height:22px;display:block;
+*width:185px;}
+/* follow reuters */
+#followReuters .moduleBody .columnLeft { width: 125px; margin-right: 20px; }
+#followReuters .moduleBody .columnRight { width: 125px; }
+#followReuters #socialMediaFollow li {width:100%; padding-bottom:3px;}
+#followReuters #socialMediaFollow div{width: 25px; height:28px; margin: 0 5px 0 0; padding: 0;}
+#followReuters #socialMediaFollow div.facebook,#followReuters #socialMediaFollow div.twitter,#followReuters #socialMediaFollow div.linkedin,#followReuters #socialMediaFollow div.youtube,#followReuters #socialMediaFollow div.rssfeed{background: url(http://s1.reutersmedia.net/resources_v2/images/sprite-core2.gif) no-repeat 0 0;}
+#followReuters #socialMediaFollow div.facebook {background-position: 0 -626px;float:left;}
+#followReuters #socialMediaFollow div.twitter {background-position: 0 -660px;float:left;}
+#followReuters #socialMediaFollow div.linkedin{background-position: 0 -694px;float:left;}
+#followReuters #socialMediaFollow div.youtube {background-position: 0 -728px;float:left;}
+#followReuters #socialMediaFollow div.rssfeed {background-position: 0 -1218px;float:left;}
+#followReuters #socialMediaFollow .fans {font-size:10px;font-weight:normal;}
+#followReuters #socialMediaFollow .fans  a{font-size:11px;color:#000000 !important;font-weight:bold;}
+#followReuters #moreFeeds {padding-top:0;margin-top:0;}
+#followReuters #moreFeeds li {line-height:15px; margin: 0 0 6px;}
+#followReuters #moreFeeds li a,#moreFeeds li a:visited {font-weight:normal;font-size:11px;}
+#followReuters  h2 {font-size:11px;font-weight:bold; margin: 1px 0 6px 0; padding: 0;}
+#followReuters  h3 {margin: 0 0 8px 0;}

@@ -1,0 +1,7 @@
+(function(w,d){'use strict';var s1=d.getElementsByTagName('script')[0],s=d.createElement('script'),onReady;s.src='//tru.am/scripts/ta-pagesocial-sdk.js';onReady=function(){var l=document.location,h=l.hostname.toLowerCase(),cid,el=d.querySelector('.article-header .article-section');if(h.indexOf('uk.reuters.com')>-1||h.indexOf('reuters.co.uk')>-1){cid='609';}else if(h.indexOf('jp.reuters.com')>-1){cid='656';}else if(h.indexOf('in.reuters.com')>-1){cid='657';}else if(h.indexOf('reuters.com')>-1){if(/world/i.test(el.textContent)){cid=['614','553'];}else if(/tech/i.test(el.textContent)){cid=['607','553'];}
+else if(/health/i.test(el.textContent)){cid=['612','553'];}
+else if(/politics/i.test(el.textContent)){cid=['610','553'];}
+else if((/business/i.test(el.textContent))||(/deals/i.test(el.textContent))||(/markets/i.test(el.textContent))){cid=['606','553'];}
+else if(/US/.test(el.textContent)){cid=['611','553'];}else{w.TRUE_ANTHEM.configure('553');}}
+if(cid){w.TRUE_ANTHEM.configure(cid);}};if(s.addEventListener){s.addEventListener('load',onReady,false);}else{s.onreadystatechange=function(){if(s.readyState in{loaded:1,complete:1}){s.onreadystatechange=null;onReady();}};}
+s1.parentNode.insertBefore(s,s1);}(window,document));

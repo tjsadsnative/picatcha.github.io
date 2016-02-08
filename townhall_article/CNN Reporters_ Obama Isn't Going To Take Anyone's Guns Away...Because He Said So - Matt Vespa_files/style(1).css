@@ -1,0 +1,342 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*@font-face {
+    font-family: 'brandon_grotesquebold';
+    src: url('brandongrotesque-bold-webfont.eot');
+    src: url('brandongrotesque-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('brandongrotesque-bold-webfont.woff2') format('woff2'),
+         url('brandongrotesque-bold-webfont.woff') format('woff'),
+         url('brandongrotesque-bold-webfont.ttf') format('truetype'),
+         url('brandongrotesque-bold-webfont.svg#brandon_grotesquebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+/* Default style, feel free to remove if not needed. */
+body, body * {
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	font-family: Arial !important;
+	font-size: 18px;
+	color:#0073cf;
+	font-weight: bold;
+}
+
+/* Div layer for the entire banner. */
+#container_dc {
+	position: absolute;
+	width: 298px;
+	height: 248px;
+	border: 1px solid #A7A7A7;
+	top: 0px;
+	left: 0px;
+	background: #0056B8;
+	margin: auto;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#content_dc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+	background-image: url(polite.jpg);
+	background-repeat:no-repeat;
+	display: none;
+}
+
+#content_dc img{ position: absolute; }
+
+/* Invisible button for background clickthrough. */
+#background_exit_dc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 400;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+#guide
+{
+	opacity: 1;
+	position: absolute;
+	width: 300px;
+	height:250px;
+	top:0px;
+	left:0px;
+	z-index: -1;
+}
+
+
+#frame1
+{
+	position: absolute;
+	text-align: center;
+	width: 275px;
+	height: 132px;
+	top: 12px;
+	left: 300px;
+}
+
+#img1
+{
+	position: absolute;
+	left: 300px;
+}
+
+
+#hf1
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 34px;
+	color: #FFF;
+	line-height: 37px;
+	display: table-cell;
+	vertical-align: middle;
+	height: inherit;
+}
+
+
+#frame2
+{
+	position: absolute;
+	text-align: center;
+	width: 275px;
+	height: 132px;
+	top: 12px;
+	left: 300px;
+}
+
+#hf2
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 34px;
+	color: #FFF;
+	line-height: 37px;
+	display: table-cell;
+	vertical-align: middle;
+	height: inherit;
+}
+
+#borders
+{
+	position: absolute;
+	width: 275px;
+	height: 132px;
+	top: 12px;
+	left: 300px;
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+}
+
+
+#hEnd
+{
+	position: absolute;
+	text-align: center;
+	border: 1px solid #FFF;
+	width: 274px;
+	height: 35px;
+	font-size: 21px;
+	line-height: 35px;
+	color: #FFF;
+	top: 13px;
+	left: 300px;
+}
+
+#shEnd
+{
+	position: absolute;
+	text-align: center;
+	width: 300px;
+	height: 35px;
+	font-size: 16px;
+	color: #FFF;
+	top: 56px;
+	left: 300px;
+}
+
+#WhiteBorder 
+{
+	width: 274px;
+	height: 135px;
+	display: block;
+	top: 49px;
+	left: 12px;
+	position: absolute;
+	border: 1px solid #FFF;
+	opacity: 0;
+	
+}
+
+#endOffer {
+    position: absolute;
+	overflow: hidden;
+	height: 206px;
+	width: 92%;
+	left: 300px;
+	text-align: center;
+	top: 10px;
+	
+}
+
+#priceIntro
+{
+	text-transform: uppercase;
+	/*width: 144px;*/
+	font-size: 13px;
+	color: #FBAB13;
+	display: inline;
+	position: relative;
+	left: 3px
+
+}
+
+#currency
+{
+	display: inline;
+	font-size: 30px;
+	color: #FBAB13;
+	position: relative;
+	left: 1px;
+	top: 11px;
+}
+
+#price
+{
+	display: inline;
+	font-size: 95px;
+	color: #FBAB13;
+	position: relative;
+	top: 55px;
+	left: -4px;
+}
+
+#leftContent
+{
+	display: inline-block;
+	height: 68px;
+	position: relative;
+	width: 32px;
+	left: -9px;
+	top: 47px;
+}
+
+#cents
+{
+	display: block;
+	font-size: 35px;
+	color: #FBAB13;
+	position: absolute;
+}
+
+#priceFreq
+{
+	display: block;
+	font-size: 10px;
+	color: #FBAB13;
+	height: 35px;
+	width: 46px;
+	top: 34px;
+	position: absolute;
+	text-align: left;
+	left: 4px;
+	line-height: 12px;
+}
+
+#lastmsg
+{
+	position: absolute;
+	text-align: center;
+	width: 276px;
+	font-size: 14px;
+	color: #FFF;
+	top: 164px;
+	left: 11px;
+	opacity: 0;
+}
+
+
+#phoneN
+{
+	position: absolute;
+	text-align: center;
+	width: 122px;
+	font-size: 16px;
+	color: #FFF;
+	top: 223px;
+	left: 11px;
+}
+
+#ctaContainer
+{
+	position: absolute;
+	width: 123px;
+	height: 22px;
+	background-color: #ffb500;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+	top: 196px;
+	left: 11px;
+	overflow: hidden;
+}
+
+#ctaBtnOver {
+	position: absolute;
+	top: 1px;
+	left: -10px;
+    width: 64px;
+    height: 21px;
+    background : url('shimmer.png') no-repeat;
+	z-index: 3;
+	overflow: hidden;
+	opacity: 0;
+}
+
+#ctaDate
+{
+	position: absolute;
+	text-align: center;
+	width: 123px;
+	font-size: 11px;
+	color: #000;
+	top: 5px;
+}
+
+#ctaCopy
+{
+	position: absolute;
+	text-align: center;
+	width: 123px;
+	font-size: 12px;
+	color: #000;
+	top: 5px;
+	opacity: 0;
+}
+
+#logo {
+    position: absolute;
+	top: 197px;
+	left: 158px;
+	background: transparent url("logo.png") no-repeat scroll 0px 0px;
+	width: 132px;
+	height: 41px;
+}
+
+
+

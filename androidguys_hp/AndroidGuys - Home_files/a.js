@@ -1,0 +1,7 @@
+(function(){
+  document.write('<div id="adsatlas-3771838626" style="position:relative;width:728px;height:90px;overflow:hidden">');
+  document.write('<iframe src=\"https://ad.atdmt.com/as/direct;p=11022203196449;as=0;a=11022203251801;crs=11022203251687;cr=11022203251691;i.ts=1453490612;csp=1/ad_728x90.html?click=http://www.googleadservices.com/pagead/aclk%3Fsa%3DL%26ai%3DCKXh2pWuiVo-mO4aqlAKfrbjIDvLN7rsHstDsppUCwI23ARABILmMmwxgyfb4hsijoBmgAcP8mfQDyAEJqAMBqgSIAU_QTeTeyzfiS2N3VzsAMw4vQaSJwQFBAdFV6Kut4qaukQL1W63kGsegm3X_yd1brOo-7qbSmLQct7U70v3eqfbvfXiu8wS4saEuIeP_OJglnX0wJusIar5fSlZPBm6iBfe45t8j6OZfn6-vTYEKpYhKG9PVC6aerRiR5OUJXRk4HOVJR-RA6caIBgGgBhGAB8qu5yGoB6a-G9gHANgTAw%26num%3D1%26cid%3D5Gi4BY_cBIwjsfMXyXbH4Mg1%26sig%3DAOD64_3PZqd8RszkszdEVUOWHjV0H7PIPQ%26client%3Dca-pub-8523547931208430%26adurl%3D\" width=\"728\" height=\"90\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" topmargin=\"0\" leftmargin=\"0\" allowtransparency=\"true\"></iframe>');
+  document.write('</div>');
+  document.write('<script src=\"https://c.betrad.com/durly.js\?;ad_w=728;ad_h=90;coid=329;nid=51743;\"></script><script src=\"https://cdn.doubleverify.com/dvtp_src.js\?ctx=607671&cmp=11022203196389&sid=11182200495580&plc=11022203196449&num=&adid=&advid=11022200790603&adsrv=2&region=30&btreg=11022203196449&btadsrv=atdmt&crt=11022203251801&crtname=&chnl=&unit=&pid=&uid=&dvtagver=6.1.src\" async></script>');
+  document.close();
+})();

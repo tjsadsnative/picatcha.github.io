@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://live-ssl.cdn.spongecell.com/studio/assets/605110/original/index.html?b9rqg4wp -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+			body{
+				margin:0;
+				top:0;
+				left:0;
+			}
+			#wrapper{
+				width:728px;
+				height:90px;
+				display:block;
+				cursor:pointer;
+				position:relative;
+
+				font-size:20px;
+				font-family:Verdana, Arial, sans-serif;
+			}
+			.slide{
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				overflow:hidden;
+				transition:width 0.5s ease-out;
+			}
+			.slide .slideBacking{
+				z-index:0;
+				position:absolute;
+				top:-128px;
+				right: 0px;
+				
+				/*Change timing for background here*/
+				transition:top 5s linear;
+			}
+
+		#vline {
+				width:1px; 
+				height:75px; 
+				left:131px;
+				top:9px;
+				background: black;
+				display: block;
+				position: absolute;
+			}
+
+			#logos{
+				position:absolute;
+				width:100%;
+				text-align:left;
+				height:100%;
+				z-index:50;
+			}
+			#logos .ikea{
+				width:100%;
+				position:absolute;
+				margin-top:30px;
+			}
+			#logos .ikea img{
+				margin-left:25.38px;
+			}
+			#logos .legal{
+				position:absolute;
+				bottom:0px;
+				width:100%;
+				left:0;
+				text-align:right;
+			}
+			#logos .legal p{
+				font-size:6.5px;
+				font-weight:500;
+				margin:2px 5px;
+				color:black;
+				letter-spacing:0px;
+			}
+			.textCenter{
+/*				display:table-cell;
+*/				vertical-align:top;
+				position:absolute;
+				left:143.80px;
+				top:9px;
+			}
+			.textWrap{
+				position:absolute;
+				width:100%;
+				display:table;
+				height:100%;
+				z-index:1;
+				
+				/*Change timing/starting position of text here*/
+				transition:left 0.75s ease-out;
+				/*left:135px;
+				top:10px;*/
+			}
+			.textWrap p{
+				text-align:left;
+				color:#000;
+				font-size:17px;
+				font-weight:500;
+				position:relative;
+				line-height:1em;
+				letter-spacing:-0.03em;
+
+				/*Change position and glow of text here*/
+				margin:10px 0 0;
+			}
+
+		br {
+			display: block;
+			margin: 1px 0;
+			content: " ";
+			}
+
+		</style>
+    </head>
+    <body>
+		<div id="wrapper">
+			<div id="logos">
+				<div class="ikea">
+					<img src="ikeaLogo.png">
+				</div>
+				<div class="legal">
+					<p>© Inter IKEA Systems B.V. 2015.</p>
+				</div>
+			</div>
+			<div id="vline"></div>
+			<div class="slide" id="s1">
+				<div class="textWrap" id="st1">
+					<div class="textCenter">
+						<p><strong>Last year's stuff,</strong><br>this year's<br>storage deals</p>
+					</div>
+				</div>
+				<div class="slideBacking" id="sb1" style="top: -8px;">
+					<img src="bg2.jpg">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			
+			//Set end point of image here
+			var panLength = 8
+			
+			//Text slide
+			function slideText(elem){
+				elem.style.left = '90px';
+			}		
+			
+			//Background pan, 0 is from the left/top, 1 is from the right/bottom
+			function slideBG(elem, dir){
+				if(dir == 0){
+					elem.style.top = -panLength+'px';
+				}
+				else{
+					elem.style.top = panLength+'px';
+				}
+			}
+			
+			//Getting assets that will animate
+			var slide1 = document.getElementById('sb1');
+			var slide1Text = document.getElementById('st1');
+
+			//Delay for background
+			setTimeout(function(){
+				slideBG(slide1, 0);
+			},0);
+			
+			//Delay for text
+			setTimeout(function(){
+				//slideText(slide1Text);
+			}, 900);
+
+		</script>
+    
+
+</body></html>

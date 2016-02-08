@@ -1,0 +1,13 @@
+document.write('<!--*\n');
+document.write('var aolAdId=\"2155699\";\n');
+document.write('var aolSize=\"300|250\";\n');
+document.write('var aolFormat=\"MobileWebIBVendor\";\n');
+document.write('*-->\n');
+document.write('<ins class=\'dcmads\' style=\'display:inline-block;width:300px;height:250px\'\n');
+document.write('data-dcm-placement=\'N6921.1885636ADVERTISING.COMNPP1\/B5746730.124755343\'\n');
+document.write('data-dcm-impression-exchange-id=\'aolN2155699\'\n');
+document.write('data-dcm-click-tracker=\'http://imp.bid.ace.advertising.com\/click\/site=935083\/mnum=2155699\/cstr=83301284=_568c92ce_0292872459_935083*2155699*1244*0_1_\/xsxdata=$xsxdata\/imptid=AS4033484a874f4b6db037b18876e4715d\/bnum=83301284\/optn=64?trg=\'\n');
+document.write('data-dcm-rendering-mode=\'script\'>\n');
+document.write('<scr'+'ipt src=\'\/\/www.googletagservices.com\/dcm\/dcmads.js\'><\/script>\n');
+document.write('<\/ins>\n');
+document.write("<scr"+"ipt src='http://js.moatads.com/advertisingdotcom370674952587/moatad.js#moatClientLevel1=2155699&moatClientLevel2=363504&zMoatMediaWidth=300&zMoatMediaHeight=250&zMoatSegmentID=1244&zMoatImpressionID=AS4033484a874f4b6db037b18876e4715d&moatClientSlicer1=935083&moatClientSlicer2=0&zMoatSiteDomain=www.insidethehall.com&zMoatDevice=personalcomputer' type='text/javascript'></scr"+"ipt>");

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)http://epxkb8zz4ssdv7b.global.ssl.fastly.net/next/c260927/videoPlayer/assets/html/criteo.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+  <script type="text/javascript" src="rta.js" async=""></script></head>
+  <body>
+    <script type="text/javascript">
+	var crtg_nid = '4582';
+	var crtg_cookiename = 'crtg_rta';
+	var crtg_varname = 'crtg_content';
+	function crtg_getCookie(c_name){ var i,x,y,ARRCookies=document.cookie.split(";");for(i=0;i<ARRCookies.length;i++){x=ARRCookies[i].substr(0,ARRCookies[i].indexOf("="));y=ARRCookies[i].substr(ARRCookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);} }return'';}
+	var crtg_content = crtg_getCookie(crtg_cookiename);
+	var crtg_rnd=Math.floor(Math.random()*99999999999);
+	(function(){
+	var crtg_url=location.protocol+'//rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);
+	crtg_url +='&cookieName='+escape(crtg_cookiename);
+	crtg_url +='&rnd='+crtg_rnd;
+	crtg_url +='&varName=' + escape(crtg_varname);
+	var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;
+	// modified code here
+	// wait for script to be loaded and check presence of window.disqus flag
+	var loaded = false;
+	var parent = window.opener || window.parent;
+	crtg_script.onload = crtg_script.onreadystatechange = function () {
+		var state = crtg_script.readyState;
+
+        if (!loaded && (!state || /loaded|complete/.test(state))) {
+            loaded = true;
+            // crtg_content=empty string or string without disqus means negative response
+            // ideally they would set crtg_content="disqus=1" but sometimes they would modify the string by adding some characters
+            parent.postMessage({
+            	eventName: 'criteo_demand',
+            	hasAd: window.crtg_content && window.crtg_content.indexOf('disqus') > -1
+            }, '*');
+        }
+	};
+	// end modified code here
+	if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);
+	else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script);
+	})();
+	</script>
+  
+
+</body></html>

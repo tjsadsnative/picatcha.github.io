@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+.promo-container * {
+	box-sizing: border-box;
+}
+.promo-container {
+	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
+	width: 100%;
+}
+.promo-container a, .promo-container a {
+	color: #4e133b;
+	text-decoration: none;
+}
+.promo-container a:hover, .promo-container a:hover {
+	text-decoration: underline;
+}
+.promo-logo h2 {
+	border-top: 1px solid #4e133b;
+	font-family: Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0;
+	padding: 5px 0 10px 0;
+	text-align: center;
+}
+.promo-logo img {
+	display: block;
+	margin: 0 auto 16px auto;
+	width: 60%;
+}
+
+.promo-section {
+	background: #F7F1EC;
+	border-right: 7px solid #FFF;
+	border-bottom: 7px solid #FFF;
+	float: left;
+	list-style: none;
+	width: 50%;
+	max-width: 190px;
+	height: 225px;
+}
+
+
+p {
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 0;
+	padding: 3px 6px 6px 6px;
+}
+.promo-section p {
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 0;
+	padding: 3px 6px 6px 6px;
+}
+.promo-section img {
+	width: 100%;
+}
+
+.promo-units {
+	margin: 16px auto;
+	max-width: 394px;
+	overflow: hidden;
+	border-left: 7px solid #FFF;
+	padding: 0;
+}
+
+
+@media all and (max-width: 560px) {
+	.promo-section {
+		max-width: 197px;
+	}
+}

@@ -1,0 +1,25 @@
+OX_808826256({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"537355076",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "width":"300",
+            "height":"250",
+            "html":"<!-- Begin Rubicon Project Tag -->\n<!-- Site: The Seattle Times Zone: Right 2-7 Size: Medium Rectangle -->\n<script language=\"JavaScript\" type=\"text/javascript\">\nrp_account = '10472';\nrp_site = '22618';\nrp_zonesize = '230362-15';\nrp_adtype = 'js';\nrp_smartfile = '[SMART FILE URL]';\n</script>\n<script type=\"text/javascript\" src=\"http://ads.rubiconproject.com/ad/10472.js\"></script>\n<!-- End Rubicon Project Tag -->",
+            "target":"_blank",
+            "ts":"1fHJpZD1iYzQxOWNiNi1iNWVjLTQwY2MtODM5Yi04NzFkM2Q2ZGQyZjB8cnQ9MTQzNzA3MzE5NHxhdWlkPTUzNzM1NTA3NnxhdW09RE1JRC5XRUJ8c2lkPTUzNzE4MzAzMHxwdWI9Nzg4Njd8cGM9VVNEfHh0PWNvbnRyb2wscmVzfHJhaWQ9NDRkMzZlYmUtOTdlMC00Njk5LTkzMzQtYjhmMzE3OWZlNzQyfHVyPVlrSlIyU3lWdVU",
+            "type":"html",
+            "ad_url":"<!-- Begin Rubicon Project Tag -->\n<!-- Site: The Seattle Times Zone: Right 2-7 Size: Medium Rectangle -->\n<script language=\"JavaScript\" type=\"text/javascript\">\nrp_account = '10472';\nrp_site = '22618';\nrp_zonesize = '230362-15';\nrp_adtype = 'js';\nrp_smartfile = '[SMART FILE URL]';\n</script>\n<script type=\"text/javascript\" src=\"http://ads.rubiconproject.com/ad/10472.js\"></script>\n<!-- End Rubicon Project Tag -->"
+          }
+        ]
+      }
+    ]
+  }
+});
