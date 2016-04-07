@@ -1,0 +1,19 @@
+
+var ftGUID_1553576="2911926BB52FE5";
+var ftConfID_1553576="2672817";
+var ftParams_1553576="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ft_section=FMX&ftOBA=1&ft_referrer=http%3A%2F%2Fwww.petplace.com%2Farticle%2Fcats%2Fbehavior-training%2Fnormal-behavior%2Fwhy-do-cats-carry-food-from-their-bowls&cachebuster=204529.88357283175";
+var ftKeyword_1553576="";
+var ftCustom_1553576="";
+var ftSection_1553576="FMX";
+var ftSegment_1553576="";
+var ftSegmentList_1553576=[];
+var ftRuleMatch_1553576="0";
+var ftTimestamp_1553576="1451435897";
+var ftImp1553576 = {};
+ftImp1553576.privacy = "x";
+ftImp1553576.guidAge = "9";
+ftImp1553576.impID = "292091B0CF80A9";
+
+
+document.write('<scr'+'ipt src="https://secure.flashtalking.com/xre/155/1553576/1209491/js/j-1553576-1209491.js" id="ftscript_m1553576" name="ftscript_m1553576"></scr'+'ipt>');
+                    

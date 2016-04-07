@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://s1.2mdn.net/4382661/1444678194822/MPS_US_Chop_Citi_Display_HTML5_300x250/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script><title>MasterPass_Citi_US_Cut_HTML5_300x250</title><style>*{margin:0;padding:0}#adBox{width:300px;height:250px;overflow:hidden;position:relative;visibility:hidden;background-color:#000}#border{width:298px;height:248px;border:1px solid #000;position:absolute;z-index:998}#bgExit{background-color:rgba(255,255,255,0);cursor:pointer;width:100%;height:100%;position:absolute;top:0;left:0;z-index:999}#finger{-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}#fingerShadow{-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}#button_shadow{position:absolute;display:block;background-color:#000;opacity:.2;top:78px;left:200px;width:138px;height:36px}#cta{overflow:hidden}#gleam{position:absolute;width:104px;height:25px;left:-140px;top:180px;background-image:url(gleam.png);background-repeat:no-repeat;opacity:1}</style></head><body><div id="adBox" style="visibility: visible;"><div id="border"></div><div id="bgExit"></div><div id="copy1" style="position: absolute; left: 0px; top: 0px; z-index: 5; transition: opacity 0.4s ease-in-out 0s; opacity: 0;"><img src="copy1.png"></div><div id="copy2" style="position: absolute; left: 0px; top: 0px; opacity: 1; z-index: 6; transition: opacity 0.8s ease-in-out 0.4s;"><img src="copy2.png"></div><div id="cta" style="position: absolute; left: 16px; top: 87px; opacity: 1; z-index: 7; transition: opacity 0.4s ease-in-out 2.4s;"><div id="gleam" style="transition: none; left: -140px; top: 0px;"></div><img src="cta.png"></div><div id="cta_arrow" style="position: absolute; left: 25px; top: 88px; opacity: 1; z-index: 7; transition: opacity 0.4s ease-in-out 2.4s;"><img src="arrow.png"></div><div id="logo1" style="position: absolute; left: 0px; top: 0px; opacity: 1; z-index: 4; transition: opacity 0.6s ease-in-out 1.4s;"><img src="logo.png"></div><div id="bg1" style="position: absolute; left: 0px; top: 0px; opacity: 1; z-index: 1;"><img src="bg1.jpg"></div><div id="bg2" style="position: absolute; left: 0px; top: 0px; opacity: 0; z-index: 1;"><img src="bg2.jpg"></div><div id="bg3" style="position: absolute; left: 0px; top: 0px; opacity: 0; z-index: 1; transition: opacity 0.4s ease-in-out 0s;"><img src="bg3.jpg"></div><div id="finger" style="position: absolute; left: 0px; top: 30px; opacity: 1; z-index: 5; transition: all 0.4s ease-in-out 0s; transform: scale(1.5);"><img src="finger.png"></div><div id="button_shadow" style="position: absolute; left: 79px; top: 202px; opacity: 0.01; z-index: 3; transition: opacity 0.1s ease-in-out 0s;"></div></div><script>var CRAFTWW=CRAFTWW||{};!function(){CRAFTWW.startAd=function(){function t(t,e,s,i,n){t.style.position="absolute",t.style.left=s+"px",t.style.top=i+"px",t.style.opacity="hidden"===e?0:e,t.style.zIndex=n}function e(){clearInterval(T),0===g&&(T=setInterval(e,2e3)),1===g&&(n.style.transition="opacity .4s ease-in-out 0s",n.style.webkitTransition="opacity .4s ease-in-out 0s",n.style.opacity=0,y.style.transition="opacity .4s ease-in-out 0s",y.style.webkitTransition="opacity .4s ease-in-out 0s",y.style.opacity=0,c.style.transition="opacity .4s ease-in-out 0s",c.style.webkitTransition="opacity .4s ease-in-out 0s",c.style.opacity=0,r.style.transition="opacity .4s ease-in-out .5s",r.style.webkitTransition="opacity .4s ease-in-out .5s",r.style.opacity=1,p.style.transition="all .4s ease-in-out 1.5s",p.style.webkitTransition="all .4s ease-in-out 1.5s",p.style.top="0px",p.style.transform="scale(1)",p.style.webkitTransform="scale(1)",d.style.transition="opacity .1s ease-in-out 1.8s",d.style.opacity=.2,T=setInterval(e,2e3)),2===g&&(p.style.transition="all .4s ease-in-out 0s",p.style.webkitTransition="all .4s ease-in-out 0s",p.style.top="30px",p.style.transform="scale(1.5)",p.style.webkitTransform="scale(1.5)",d.style.transition="opacity .1s ease-in-out 0s",d.style.opacity=.01,T=setInterval(e,200)),3===g&&(u.style.transition="opacity 1s ease-in-out 0s",u.style.webkitTransition="opacity 1s ease-in-out 0s",u.style.opacity=1,T=setInterval(e,2e3)),4===g&&(r.style.transition=null,r.style.webkitTransition=null,r.style.opacity=0,c.style.transition=null,c.style.webkitTransition=null,c.style.opacity=1,u.style.transition="opacity .4s ease-in-out 0s",u.style.webkitTransition="opacity .4s ease-in-out 0s",u.style.opacity=0,o.style.transition="opacity .8s ease-in-out 0.4s",o.style.webkitTransition="opacity .8s ease-in-out 0.4s",o.style.opacity=1,y.style.transition="opacity .6s ease-in-out 1.4s",y.style.webkitTransition="opacity .6s ease-in-out 1.4s",y.style.opacity=1,a.style.transition="opacity .4s ease-in-out 2.4s",a.style.webkitTransition="opacity .4s ease-in-out 2.4s",a.style.opacity=1,l.style.transition="opacity .4s ease-in-out 2.4s",l.style.webkitTransition="opacity .4s ease-in-out 2.4s",l.style.opacity=1,T=setInterval(e,2900)),5===g&&(s(),i.onmouseover=function(){l.style.transition="left .2s ease-in-out 0s",l.style.webkitTransition="left .2s ease-in-out 0s",l.style.left="30px",s()},i.onmouseout=function(){l.style.transition="left .2s ease-in-out 0s",l.style.webkitTransition="left .2s ease-in-out 0s",l.style.left="25px"}),g++}function s(){k||(k=!0,m.style.transition="left .8s linear 0s",m.style.webkitTransition="left .8s linear 0s",m.style.left="140px",m.style.top="0px",setTimeout(function(){m.style.transition="none",m.style.webkitTransition="none",m.style.left="-140px",k=!1},800))}var i=document.getElementById("adBox"),n=document.getElementById("copy1"),o=document.getElementById("copy2"),a=document.getElementById("cta"),l=document.getElementById("cta_arrow"),y=document.getElementById("logo1"),c=document.getElementById("bg1"),r=document.getElementById("bg2"),u=document.getElementById("bg3"),p=document.getElementById("finger"),d=document.getElementById("button_shadow"),m=document.getElementById("gleam"),b=document.getElementById("bgExit"),w=null,f=!(null==window.mozInnerScreenX);t(c,1,0,0,1),t(r,"hidden",0,0,1),t(u,"hidden",0,0,1),t(y,1,0,0,4),t(n,"visible",0,0,5),t(o,"hidden",0,0,6),t(a,"hidden",16,87,7),t(l,"hidden",25,88,7),t(p,1,0,40,5),t(d,"hidden",79,202,3),f&&(-1!=navigator.userAgent.indexOf("Mac OS X")?w=!0:t(l,"hidden",25,86,7)),i.style.visibility="visible";var T=setInterval(e,200),g=0,k=!1;b.onclick=function(){window.open(window.clickTag)}}}();</script><script>var CRAFTWW=CRAFTWW||{};!function(){CRAFTWW.checkFallback=function(){function e(){var e=-1,n=navigator.userAgent,t=new RegExp("MSIE ([0-9]{1,}[.0-9]{0,})");return null!=t.exec(n)&&(e=parseFloat(RegExp.$1)),e>0&&9>=e?!0:!1}if(e()){for(var n=document.body;n.firstChild;)n.removeChild(n.firstChild);var t=document.createElement("a");t.href="#",t.onclick=function(){return window.open(window.clickTag),!1};var r=new Image;r.src="./static.jpg",t.appendChild(r),document.body.appendChild(t)}else this.startAd()}}();</script><script type="text/javascript">var clickTag = "%c";
+	
+		window.onload = function() {
+			CRAFTWW.checkFallback();
+		};</script></body></html>

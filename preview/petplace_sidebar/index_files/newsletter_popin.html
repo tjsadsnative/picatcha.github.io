@@ -1,0 +1,153 @@
+
+<!-- saved from url=(0066)http://petplace.mkt6213.com/email-preference/newsletter_popin.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">         <script src="jquery.min(1).js"></script>          <link type="text/css" rel="stylesheet" href="css">  <style type="text/css">
+	body {
+		color: #343434;
+		font-family: 'Open Sans', 'sans-serif';
+		font-size: 10px;
+		text-align: center;
+	}
+
+	@media screen and (min-width: 860px) {
+		body {
+			font-size: 16px;
+		}
+	}
+
+	p {
+		line-height: 1em;
+		margin: .2em;
+		padding: 0px;
+	}
+	.gothic {
+		font-family: 'Pathway Gothic One', sans-serif;
+	}
+	.uppercase { text-transform: uppercase; }
+	.lightgray { color: #aaa; }
+	strong { font-weight: 600;}
+	label { margin: 0px; padding: 0px;}
+	hr { margin: 20px; border: 0px; border-top: 1px solid #aaa;}
+
+	input[type=text] {
+		background-color: #e5e5e5;
+		font-size: 2em;
+		border: none;
+		padding: 10px;
+		width: 100%;
+		text-align: center;
+		font-family: 'Open Sans', 'sans-serif';
+		margin-bottom: 5px;
+	}
+
+	input[type=submit] {
+		background-color: rgb(24, 174, 189);
+		color: #fff;
+		border: none;
+		font-family: 'Pathway Gothic One', sans-serif;
+		font-size: 2em;
+		padding: 20px 10px;
+		width: 100%;
+	}
+
+</style>     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="robots" content="NOINDEX, NOFOLLOW"></head>     <body><p style="font-size: 1.5em;" class="uppercase gothic">Want to keep your pet happy &amp; healthy?</p>         <p style="font-size: 1.5em;" class="lightgray">Enter Your Email To Receive</p>         <p style="font-size: 3.5em;" class="uppercase"><strong>PetPlace's Newsletter</strong></p>         <p style="font-size: 2.0em;" class="uppercase"><strong>&amp; Access 10,000+ Vet Approved Articles</strong></p>         <p style="font-size: 1.65em;">From Our Expert Veterinarians</p>         <hr>         <form id="newsletter-form" method="post" action="http://petplace.mkt6213.com/email-preference/newsletter_popin.html?vs=Njk3YTE4YTctMTdiYi03YzYxLWUxNTUtMzlkNDgzN2JlOTlhOzsS1"><input type="hidden" value="" id="nl_Country" name="Country"> <input type="hidden" value="PetPlacePopin" id="Source" name="Source"> <input type="hidden" value="" id="nl_State" name="State">  <input type="checkbox" style="zoom: 175%;" value="1" name="DogNewsletter" id="nl_DogNewsletter"><span style="font-size: 2em;">Dog</span> <input type="checkbox" style="zoom: 175%;" value="1" name="CatNewsLetter" id="nl_CatNewsletter"><span style="font-size: 2em;">Cat</span> <br>             <br>             <div style="width: 60%; min-width: 250px; text-align: center; margin: auto;"><input type="text" placeholder="Enter Your Email" name="Email" id="nl_Email" value=""> <input type="submit" value="Access Exclusive Articles" name="submit" id="saveForm"></div></form>         <script>
+	$("#newsletter-form").submit(function(event) {
+
+	  // Gather values
+	  email = $("#nl_Email").val();
+	  //firstName = $("#nl_FirstName").val();
+	  if ($('#nl_DogNewsletter').is(':checked')) { dog = true; } else { dog = false; }
+	  if ($('#nl_CatNewsletter').is(':checked')) { cat = true; } else { cat = false; }
+
+	  // Validate data
+	  emailValid = validateEmail(email);
+	  //nameValid = validateName(firstName);
+	  petValid = validatePets(dog, cat);
+
+	  //if (emailValid && nameValid && petValid) {
+	  if (emailValid && petValid) {
+	  	// Get country geo data
+	  	var userCountry = getCountryLocation(getIP());
+		        $("#nl_Country").val(userCountry);
+		var userState = getStateLocation();
+		        $("#nl_State").val(userState);
+		
+	  	// submit
+	  	return;
+	  }
+	  else {
+	  	event.preventDefault();
+	  	// Display errors
+	  	var errorMessage;
+	  	errorMessage = 'Newsletter signup failed because: \n\n';
+	  	if (!emailValid) {
+	  		errorMessage += 'Email address is not valid\n';
+	  	}
+	  	/*
+	  	if (!nameValid) {
+	  		errorMessage += 'You must provide your first name\n';
+	  	}
+	  	*/
+	  	if (!petValid) {
+	  		errorMessage += 'You must select either dog, cat, or both\n';
+	  	}
+	  	alert(errorMessage);
+	  }
+	});
+
+	function validateName(firstName) {
+		if(firstName == '') { 
+			return false; 
+		} 
+		else { 
+			return true;
+		}
+	}
+
+	function validateEmail(email){
+		var emailReg = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+		var valid = emailReg.test(email);
+		if (!valid) { return false; } else { return true; }
+
+	}
+
+	function validatePets(dog, cat) {
+		if (dog == false && cat == false) {
+			return false; 
+		}
+		else {
+			return true;
+		}
+	}
+
+	function getIP() {
+	    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+	    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+	    xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+	    xmlhttp.send();
+
+	    hostipInfo = xmlhttp.responseText.split("\n");
+
+	    for (i=0; hostipInfo.length >= i; i++) {
+	        ipAddress = hostipInfo[i].split(":");
+	        if ( ipAddress[0] == "IP" ) return ipAddress[1];
+	    }
+
+	    return false;
+	}
+
+	function getCountryLocation(clientIpAddress) {
+	    apiQuery = 'http://api.netimpact.com/qv1.php?key=d3cB717zfyf29n9Y&qt=geoip&d=json&q=' +clientIpAddress.trim();
+	    console.log(apiQuery);
+	    xmlhttp.open("GET",apiQuery,false);
+	    xmlhttp.send();
+	    //alert(xmlhttp.responseText);
+	    responseObj = JSON.parse(xmlhttp.responseText);
+	    return responseObj[0][2];
+	}
+
+	function getStateLocation() {
+	   return responseObj[0][1];
+	}
+
+</script></body></html>

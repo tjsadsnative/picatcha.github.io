@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"and","comments":{"zero":"0","multiple":"{num}","one":"1"}},"counts":[{"id":"http:\/\/www.insidethehall.com\/2016\/01\/05\/video-indiana-players-react-to-win-over-wisconsin\/","comments":0},{"id":"http:\/\/www.insidethehall.com\/2016\/01\/05\/photo-gallery-indiana-vs-wisconsin-4\/","comments":0},{"id":"http:\/\/www.insidethehall.com\/2016\/01\/05\/video-greg-gard-wisconsin-players-react-to-loss-at-indiana\/","comments":0},{"id":"http:\/\/www.insidethehall.com\/2016\/01\/05\/video-1976-indiana-national-championship-team-reflects-on-unbeaten-season\/","comments":1},{"id":"http:\/\/www.insidethehall.com\/2016\/01\/05\/the-minute-after-wisconsin-11\/","comments":14},{"id":"http:\/\/www.insidethehall.com\/2016\/01\/05\/at-the-buzzer-indiana-59-wisconsin-58\/","comments":28},{"id":"http:\/\/www.insidethehall.com\/2016\/01\/05\/video-tom-crean-reacts-to-win-over-wisconsin\/","comments":0}]});
+}

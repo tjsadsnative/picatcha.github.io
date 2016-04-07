@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- saved from url=(0166)https://s0.2mdn.net/2917862/1449601021170/BUS_BDL_ENG_Movers1000000359_GETSTARTED_3490TP_HTML_300x250/BUS_BDL_ENG_Movers1000000359_GETSTARTED_3490TP_HTML_300x250.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="TweenMax.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="code.js"></script>
+    <script type="text/javascript">
+        var clickTag = "http://www.comcast.com";
+
+        function checkGreensockReady() {
+            if (window.TimelineMax) {
+                //console.log('greensockready');
+                startAd();
+            } else {
+                setTimeout(checkGreensockReady, 50);
+            }
+        }
+        window.onload = checkGreensockReady;
+    </script>
+    <title>BUS_BDL_ENG_Movers1000000359_GETSTARTED_3490TP_HTML_300x250</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="ad" onclick="window.open(window.clickTag)">
+            <div id="banner" style="visibility: visible;">
+
+
+                <div id="bar_logo"></div>
+                <div id="m" style="opacity: 0; left: 45px;"></div>
+                <div id="m1" style="opacity: 0; left: 45px;"></div>
+                <div id="m2" style="opacity: 0; left: 45px;"></div>
+                <div id="m3" style="opacity: 0; left: 45px;"></div>
+                <div id="m4" style="opacity: 0; left: 10px; top: 17px; transform: matrix(-0.69, 0, 0, -0.69, 0, 0);"></div>
+                <div id="txt1_line1_a" style="opacity: 0; left: 76px;"></div>
+                <div id="txt1_line1_b" style="opacity: 0; left: 180px;"></div>
+                <div id="y_word" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 270);"></div>
+                <div id="txt1_line2" style="opacity: 1; left: 700px;"></div>
+                <div id="txt1_line3" style="opacity: 1; left: 700px;"></div>
+                <div id="txt2_a" style="opacity: 0; left: 19px; top: 18px; transform: matrix(0.7, 0, 0, 0.7, 0, 0);"></div>
+                <div id="txt2_b" style="opacity: 0; left: 105px; top: 18px; transform: matrix(0.7, 0, 0, 0.7, 0, 0);"></div>
+                <div id="txt_check1" style="opacity: 0; left: 16px;"></div>
+                <div id="txt_check2" style="opacity: 0; left: 13px;"></div>
+                <div id="txt_check3" style="opacity: 0; left: 12px;"></div>
+                <div id="check1" style="opacity: 0;"></div>
+                <div id="check1T" style="opacity: 0;"></div>
+                <div id="check2" style="opacity: 0;"></div>
+                <div id="check2T" style="opacity: 0;"></div>
+                <div id="check3" style="opacity: 0;"></div>
+                <div id="check3T" style="opacity: 0;"></div>
+                <div id="yellow_note" style="opacity: 1; left: 0px; top: 0px; transform: matrix(2, 0, 0, 2, 0, 0);"></div>
+                <div id="txt3" style="opacity: 1; left: 0px;"></div>
+                <div id="ms" style="opacity: 1; top: -20px; left: 243px; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+
+                <div id="cta" style="opacity: 1; left: 10px; top: 188px;">
+                    <div id="shine" style="left: -142px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div></body></html>

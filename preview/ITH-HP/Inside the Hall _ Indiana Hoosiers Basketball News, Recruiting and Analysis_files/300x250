@@ -1,0 +1,5 @@
+var CasaleArgs = new Object();
+CasaleArgs.version = 2;
+CasaleArgs.adUnits = "4";
+CasaleArgs.casaleID = 159325;
+document.write('<scr'+'ipt type="text/javascript" src="http://js.casalemedia.com/casaleJTag.js"></scr'+'ipt>');

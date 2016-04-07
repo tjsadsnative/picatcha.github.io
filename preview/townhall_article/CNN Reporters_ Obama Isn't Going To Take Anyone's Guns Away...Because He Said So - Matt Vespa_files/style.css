@@ -1,0 +1,318 @@
+body {
+	margin: 0px;
+}
+
+#container {
+	top: 0px;
+	left: 0px;
+	width: 300px;
+	height: 250px;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	border: 1px solid black;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	overflow: hidden;
+    /*background: url('bg.jpg');*/
+    /*background: url('f5.jpg') no-repeat 0px 0px;*/
+    opacity: 1;
+}
+
+
+#bar_logo{
+    position: absolute;
+    width: 300px;
+	height: 70px;
+    left: 0px;
+    top: 181px;
+    background: url('sprite.png') no-repeat 0px -447px;
+    z-index: 2;
+}
+
+
+#m{
+    position: absolute;
+    width: 35px;
+		height: 30px;
+    left: 300px;
+    top: 31px;
+    background: url('m.svg') no-repeat 0px 0px;
+    z-index: 1;
+}
+
+#m1{
+    position: absolute;
+    width: 35px;
+		height: 30px;
+    left: 300px;
+    top: 31px;
+    background: url('m.svg') no-repeat 0px 0px;
+		-moz-transform: rotate(45deg); /* Firefox */
+		-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Safari */
+		transform: rotate(45deg);
+    z-index: 1;
+}
+
+#m2{
+    position: absolute;
+    width: 35px;
+		height: 30px;
+    left: 300px;
+    top: 31px;
+    background: url('m.svg') no-repeat 0px 0px;
+		-moz-transform: rotate(90deg); /* Firefox */
+		-ms-transform: rotate(90deg); /* IE 9 */
+		-webkit-transform: rotate(90deg); /* Safari */
+		transform: rotate(90deg);
+    z-index: 1;
+}
+
+#m3{
+    position: absolute;
+    width: 35px;
+		height: 30px;
+    left: 300px;
+    top: 31px;
+    background: url('m.svg') no-repeat 0px 0px;
+		-moz-transform: rotate(120deg); /* Firefox */
+		-ms-transform: rotate(120deg); /* IE 9 */
+		-webkit-transform: rotate(120deg); /* Safari */
+		transform: rotate(120deg);
+    z-index: 1;
+}
+
+#m4{
+    position: absolute;
+    width: 35px;
+		height: 30px;
+    left: 300px;
+    top: 31px;
+    background: url('m.svg') no-repeat 0px 0px;
+		-moz-transform: rotate(180deg); /* Firefox */
+		-ms-transform: rotate(180deg); /* IE 9 */
+		-webkit-transform: rotate(180deg); /* Safari */
+		transform: rotate(180deg);
+    z-index: 1;
+}
+
+#y_word{
+    position: absolute;
+    width: 25px;
+		height: 40px;
+    left: 156px;
+    top: 23px;
+    background: url('sprite.png') no-repeat -135px 0px;
+    z-index: 1;
+
+}
+
+#txt1_line1_a{
+    position: absolute;
+    width: 75px;
+		height: 40px;
+    left: 280px;
+    top: 23px;
+    background: url('sprite.png') no-repeat -55px 0px;
+    z-index: 1;
+
+}
+
+#txt1_line1_b{
+    position: absolute;
+    width: 155px;
+		height: 40px;
+    left: 200px;
+    top: 23px;
+    background: url('sprite.png') no-repeat -160px 0px;
+    z-index: 1;
+
+}
+
+
+#txt1_line2{
+    position: absolute;
+    width: 167px;
+	height: 40px;
+    left: 280px;
+    top: 65px;
+    background: url('sprite.png') no-repeat -50px -41px;
+    z-index: 1;
+
+}
+
+#txt1_line3{
+    position: absolute;
+    width: 222px;
+	height: 40px;
+    left: 280px;
+    top: 105px;
+    background: url('sprite.png') no-repeat -20px -81px;
+    z-index: 1;
+
+}
+
+#txt2_a{
+    position: absolute;
+    width: 150px;
+		height: 27px;
+    left: 300px;
+    top: 33px;
+    background: url('chek.svg') no-repeat -35px -1px;
+    z-index: 1;
+}
+
+#txt2_b{
+    position: absolute;
+    width: 296px;
+		height: 27px;
+    left: 300px;
+    top: 33px;
+    background: url('chek.svg') no-repeat -185px -1px;
+    z-index: 1;
+}
+
+#txt_check1{
+    position: absolute;
+    width: 255px;
+	height: 45px;
+    left: 280px;
+    top: 66px;
+    background: url('sprite.png') no-repeat 0px -170px;
+    z-index: 1;
+}
+
+#txt_check2{
+    position: absolute;
+    width: 255px;
+	height: 45px;
+    left: 280px;
+    top: 86px;
+    background: url('sprite.png') no-repeat 0px -210px;
+    z-index: 1;
+}
+
+#txt_check3{
+    position: absolute;
+    width: 255px;
+	height: 45px;
+    left: 280px;
+    top: 117px;
+    background: url('sprite.png') no-repeat 0px -260px;
+    z-index: 1;
+}
+
+#check1{
+    position: absolute;
+    width: 16px;
+    height: 32px;
+    left: 28px;
+    top: 80px;
+    background: url('sprite.png') no-repeat -260px -50px;
+    z-index: 2;
+}
+
+#check1T{
+    position: absolute;
+    width: 43px;
+    height: 32px;
+    left: 28px;
+    top: 80px;
+    background: url('sprite.png') no-repeat -260px -50px;
+    z-index: 2;
+}
+
+
+#check2{
+    position: absolute;
+    width: 16px;
+    height: 32px;
+    left: 30px;
+    top: 110px;
+    background: url('sprite.png') no-repeat -260px -50px;
+    z-index: 2;
+}
+
+#check2T{
+    position: absolute;
+    width: 43px;
+    height: 32px;
+    left: 30px;
+    top: 110px;
+    background: url('sprite.png') no-repeat -260px -50px;
+    z-index: 2;
+}
+
+#check3{
+    position: absolute;
+    width: 16px;
+    height: 32px;
+    left: 35px;
+    top: 138px;
+    background: url('sprite.png') no-repeat -260px -50px;
+    z-index: 2;
+}
+
+
+#check3T{
+    position: absolute;
+    width: 43px;
+    height: 32px;
+    left: 35px;
+    top: 138px;
+    background: url('sprite.png') no-repeat -260px -50px;
+    z-index: 2;
+}
+
+#yellow_note{
+    position: absolute;
+    width: 300px;
+	height: 137px;
+    left: 0px;
+    top: 44px;
+    background: url('sprite.png') no-repeat 0px -310px;
+    z-index: 0;
+}
+
+#txt3{
+    position: absolute;
+    width: 240px;
+    height: 137px;
+    left: 0px;
+    top: 21px;
+    background: url('sprite.png') no-repeat 0px -596px;
+    z-index: 1;
+}
+
+#ms{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 242px;
+    top: 0px;
+    background: url('sprite.png') no-repeat -243px -553px;
+    z-index: 1;
+}
+
+#cta{
+    position: absolute;
+    overflow: hidden;
+    width: 129px;
+		height: 23px;
+    background: url('sprite.png') no-repeat -7px -520px;
+		overflow: hidden;
+    z-index: 20;
+}
+
+#shine{
+    position: absolute;
+		background: url('sprite.png') no-repeat -202px -520px;
+		width: 54px;
+		height: 22px;
+    left: -142px;
+    top: 0px;
+		overflow: hidden;
+    z-index: 3;
+}

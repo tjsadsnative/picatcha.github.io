@@ -1,0 +1,15 @@
+OX_8219590137({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://ox-d.medianet.servedbyopenx.com/{medium}/1.0/{rtype}?bi=ac20bcd1-5c33-45f0-b26a-606aabc89043&ts={txn_state}",
+    "adunits" : [
+      {
+        "auid":"538170216",
+        "chain_revenue":"",
+        "size":"300x250",
+        "chain":[
+        ]
+      }
+    ]
+  }
+});

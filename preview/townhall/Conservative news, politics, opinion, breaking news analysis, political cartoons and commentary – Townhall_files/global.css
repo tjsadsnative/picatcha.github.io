@@ -1,0 +1,3161 @@
+/*#region fonts */
+@font-face {
+    font-family: 'SourceSansProSemibold';
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/SourceSansPro-Semibold-webfont2.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansProBold';
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/SourceSansPro-Bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SourceSansProRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("http://media.townhall.com/_townhall/resources/css/fonts/SourceSansPro-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SourceSansProItalic";
+    src: url("http://media.townhall.com/_townhall/resources/css/fonts/SourceSansPro-It-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/icomoon.eot?-a9uvjrwjm');
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/icomoon.eot?#iefix-a9uvjrwjm') format('embedded-opentype'), url('http://media.townhall.com/_townhall/resources/css/fonts/icomoon.woff?lolwjm') format('woff'), url('http://media.townhall.com/_townhall/resources/css/fonts/icomoon.ttf?-a9uvjrwjm') format('truetype'), url('http://media.townhall.com/_townhall/resources/css/fonts/icomoon.svg?-a9uvjrwjm#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "StateFaceRegular";
+    src: url("http://media.townhall.com/_townhall/resources/css/fonts/stateface-regular-webfont.eot");
+    src: url("http://media.townhall.com/_townhall/resources/css/fonts/stateface-regular-webfont.eot?#iefix") format("embedded-opentype"), url("http://media.townhall.com/_townhall/resources/css/fonts/stateface-regular-webfont.woff") format("woff"), url("http://media.townhall.com/_townhall/resources/css/fonts/stateface-regular-webfont.ttf") format("truetype"), url("http://media.townhall.com/_townhall/resources/css/fonts/stateface-regular-webfont.svg#StateFaceRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SourceSansProLightItalic";
+    src: url("http://media.townhall.com/_townhall/resources/css/fonts/SourceSansPro-LightIt-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SourceSansProBoldItalic";
+    src: url("http://media.townhall.com/_townhall/resources/css/fonts/SourceSansPro-BoldIt-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_slab500';
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/Museo_Slab_500_2-webfont.eot');
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo_Slab_500_2-webfont.woff') format('woff'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo_Slab_500_2-webfont.ttf') format('truetype'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo_Slab_500_2-webfont.svg#museo_slab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo700Regular';
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/Museo700-Regular-webfont.eot');
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/Museo700-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo700-Regular-webfont.woff?id=1123') format('woff'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo700-Regular-webfont.ttf') format('truetype'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo700-Regular-webfont.svg#Museo700Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo500Regular';
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/Museo500-Regular-webfont.eot');
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo500-Regular-webfont.woff?id=1123') format('woff'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo500-Regular-webfont.ttf') format('truetype'), url('http://media.townhall.com/_townhall/resources/css/fonts/Museo500-Regular-webfont.svg#Museo700Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="fa-"], [class*=" fa-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-pad {
+    padding: 4px;
+}
+
+.fa-star:before {
+    content: "\e625";
+}
+
+.fa-sad:before {
+    content: "\e626";
+}
+
+.fa-shocked:before {
+    content: "\e600";
+}
+
+.fa-checkmark:before {
+    content: "\e601";
+}
+
+.fa-forward:before {
+    content: "\e602";
+}
+
+.fa-export:before {
+    content: "\e603";
+}
+
+.fa-heart:before {
+    content: "\e627";
+}
+
+.fa-star2:before {
+    content: "\e604";
+}
+
+.fa-thumbsup:before {
+    content: "\e605";
+}
+
+.fa-flag:before {
+    content: "\e606";
+}
+
+.fa-statistics:before {
+    content: "\e607";
+}
+
+.fa-pie:before {
+    content: "\e608";
+}
+
+.fa-bars:before {
+    content: "\e609";
+}
+
+.fa-graph:before {
+    content: "\e60a";
+}
+
+.fa-checkmark2:before {
+    content: "\e60b";
+}
+
+.fa-cross:before {
+    content: "\e60c";
+}
+
+.fa-plus:before {
+    content: "\e60d";
+}
+
+.fa-cross2:before {
+    content: "\e60e";
+}
+
+.fa-minus:before {
+    content: "\e60f";
+}
+
+.fa-plus2:before {
+    content: "\e610";
+}
+
+.fa-info:before {
+    content: "\e611";
+}
+
+.fa-list:before {
+    content: "\e612";
+}
+
+.fa-list2:before {
+    content: "\e613";
+}
+
+.fa-cloud:before {
+    content: "\e614";
+}
+
+.fa-bookmark:before {
+    content: "\e615";
+}
+
+.fa-arrow-left:before {
+    content: "\e616";
+}
+
+.fa-arrow-down:before {
+    content: "\e617";
+}
+
+.fa-arrow-up:before {
+    content: "\e618";
+}
+
+.fa-arrow-right:before {
+    content: "\e619";
+}
+
+.fa-arrow-left2:before {
+    content: "\e61a";
+}
+
+.fa-arrow-down2:before {
+    content: "\e61b";
+}
+
+.fa-arrow-up2:before {
+    content: "\e61c";
+}
+
+.fa-arrow-right2:before {
+    content: "\e61d";
+}
+
+.fa-twitter:before {
+    content: "\e61e";
+}
+
+.fa-facebook:before {
+    content: "\e61f";
+}
+
+.fa-facebook2:before {
+    content: "\e620";
+}
+
+.fa-googleplus:before {
+    content: "\e624";
+}
+
+.fa-googleplus2:before {
+    content: "\e621";
+}
+
+.fa-pinterest:before {
+    content: "\e622";
+}
+
+.fa-pinterest2:before {
+    content: "\e623";
+}
+
+/*#endregion */
+/*#region thmfonts */
+@font-face {
+    font-family: 'thmfonts';
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/thmfonts.eot?uhluzp');
+    src: url('http://media.townhall.com/_townhall/resources/css/fonts/thmfonts.eot?#iefixuhluzp') format('embedded-opentype'), url('http://media.townhall.com/_townhall/resources/css/fonts/thmfonts.woff?uhluzp') format('woff'), url('http://media.townhall.com/_townhall/resources/css/fonts/thmfonts.ttf?uhluzp') format('truetype'), url('http://media.townhall.com/_townhall/resources/css/fonts/thmfonts.svg?uhluzp#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="thmicon-"], [class*=" thmicon-"] {
+    font-family: 'thmfonts';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.thmicon-home:before {
+    content: "\e900";
+}
+
+.thmicon-home3:before {
+    content: "\e902";
+}
+
+.thmicon-image:before {
+    content: "\e90d";
+}
+
+.thmicon-images:before {
+    content: "\e90e";
+}
+
+.thmicon-camera:before {
+    content: "\e90f";
+}
+
+.thmicon-play:before {
+    content: "\e912";
+}
+
+.thmicon-mic:before {
+    content: "\e91e";
+}
+
+.thmicon-file-empty:before {
+    content: "\e924";
+}
+
+.thmicon-folder:before {
+    content: "\e92f";
+}
+
+.thmicon-barcode:before {
+    content: "\e937";
+}
+
+.thmicon-cart:before {
+    content: "\e93a";
+}
+
+.thmicon-credit-card:before {
+    content: "\e93f";
+}
+
+.thmicon-envelop:before {
+    content: "\e945";
+}
+
+.thmicon-location2:before {
+    content: "\e948";
+}
+
+.thmicon-printer:before {
+    content: "\e954";
+}
+
+.thmicon-undo2:before {
+    content: "\e967";
+}
+
+.thmicon-redo2:before {
+    content: "\e968";
+}
+
+.thmicon-forward:before {
+    content: "\e969";
+}
+
+.thmicon-reply:before {
+    content: "\e96a";
+}
+
+.thmicon-bubbles:before {
+    content: "\e96c";
+}
+
+.thmicon-bubbles2:before {
+    content: "\e96d";
+}
+
+.thmicon-user:before {
+    content: "\e971";
+}
+
+.thmicon-users:before {
+    content: "\e972";
+}
+
+.thmicon-user-plus:before {
+    content: "\e973";
+}
+
+.thmicon-user-minus:before {
+    content: "\e974";
+}
+
+.thmicon-cog:before {
+    content: "\e994";
+}
+
+.thmicon-fire:before {
+    content: "\e9a9";
+}
+
+.thmicon-power:before {
+    content: "\e9b5";
+}
+
+.thmicon-switch:before {
+    content: "\e9b6";
+}
+
+.thmicon-menu:before {
+    content: "\e9bd";
+}
+
+.thmicon-download3:before {
+    content: "\e9c7";
+}
+
+.thmicon-star-full:before {
+    content: "\e9d9";
+}
+
+.thmicon-heart:before {
+    content: "\e9da";
+}
+
+.thmicon-cross:before {
+    content: "\ea0f";
+}
+
+.thmicon-checkmark:before {
+    content: "\ea10";
+}
+
+.thmicon-checkmark2:before {
+    content: "\ea11";
+}
+
+.thmicon-play2:before {
+    content: "\ea15";
+}
+
+.thmicon-pause:before {
+    content: "\ea16";
+}
+
+.thmicon-stop:before {
+    content: "\ea17";
+}
+
+.thmicon-previous:before {
+    content: "\ea18";
+}
+
+.thmicon-next:before {
+    content: "\ea19";
+}
+
+.thmicon-backward:before {
+    content: "\ea1a";
+}
+
+.thmicon-circle-up:before {
+    content: "\ea41";
+}
+
+.thmicon-circle-right:before {
+    content: "\ea42";
+}
+
+.thmicon-circle-down:before {
+    content: "\ea43";
+}
+
+.thmicon-circle-left:before {
+    content: "\ea44";
+}
+
+.thmicon-checkbox-checked:before {
+    content: "\ea52";
+}
+
+.thmicon-share:before {
+    content: "\ea7d";
+}
+
+.thmicon-terminal:before {
+    content: "\ea81";
+}
+
+.thmicon-mail:before {
+    content: "\ea83";
+}
+
+.thmicon-mail4:before {
+    content: "\ea86";
+}
+
+
+/*#endregion */
+/*#region Global */
+.alert {
+    margin: 8px 0;
+}
+
+form {
+    margin: 0;
+}
+
+hr {
+    margin: 5px 0;
+}
+
+h1 {
+    margin: 6px 0;
+}
+
+.loading {
+    width: auto;
+    text-align: center;
+}
+
+.override-font {
+    font-family: SourceSansProSemibold, Arial, 'sans-serif';
+}
+
+a {
+    color: #333;
+    font-weight: bold;
+}
+
+    a:hover {
+        color: #CD2626;
+        text-decoration: none;
+    }
+
+.wrapper {
+    box-shadow: 1px 1px 15px rgba(0,0,0, 0.4);
+    width: 980px;
+    margin: auto;
+    background-color: #fff;
+}
+
+blockquote {
+    padding: 5px 5px 5px 10px;
+    margin: 0 25px 10px 25px;
+    border-left: 5px solid #c8c8c8;
+    background-color: #E9E9E9;
+    overflow: hidden;
+    line-height: 24px;
+}
+
+    blockquote p {
+        margin-bottom: 10px;
+        font-size: 17px;
+        font-weight: normal;
+        line-height: 24px;
+    }
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 940px;
+}
+
+/*#endregion */
+
+/*#region Modal */
+
+.th-modal-forgot, .th-modal-signup-pre {
+    cursor: pointer;
+}
+
+.modal-header h3 {
+    color: #29271E;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin: 0 0 3px;
+    text-align: left;
+}
+
+    .modal-header h3 span {
+        color: #6699CC;
+        font-weight: normal;
+    }
+
+.modal-body a {
+    font-size: 12px;
+}
+
+.model-body h4 {
+    padding: 0;
+    margin: 0;
+}
+
+.modal-divide {
+    border-color: #C0C0C0;
+    border-style: none none none dotted;
+    border-width: 1px;
+    padding-left: 10px;
+}
+
+/*#endregion */
+
+/*#region Header*/
+
+.header .th-logo {
+    margin: 5px;
+    background: url("http://media.townhall.com/_townhall/resources/images/homepage/th1.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 82px;
+    width: 285px;
+    float: left;
+}
+
+.header .th-logo20 {
+    margin: 5px 0 5px 12px;
+    background: url("http://media.townhall.com/_townhall/resources/images/homepage/th_20years2.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 93px;
+    width: 282px;
+    float: left;
+}
+
+/*#region Nav */
+.header .nav {
+    background-color: #B22020;
+    height: 30px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #B9B9B9;
+    width: 100%;
+}
+
+    .header .nav ul {
+        display: table;
+        width: 100%;
+    }
+
+    .header .nav li {
+        display: table-cell;
+        height: 30px;
+        position: relative;
+    }
+
+        .header .nav li.divide {
+            display: block;
+            height: 30px;
+            width: 1px;
+            padding: 0;
+            background-color: #a80e0e;
+        }
+
+    .header .nav a {
+        height: 30px;
+        line-height: 30px;
+        color: #FFFFFF;
+        display: block;
+        text-align: center;
+    }
+
+        .header .nav a:hover {
+            background-color: #cd2626;
+            text-decoration: none;
+        }
+/*#endregion */
+
+.header-middle {
+    display: table;
+    margin-top: 10px;
+    width: 660px;
+}
+
+.header .social-buttons {
+    display: table-cell;
+    padding-top: 6px;
+    vertical-align: middle;
+    width: 190px;
+}
+
+    .header .social-buttons li {
+        padding-left: 0;
+    }
+
+.header .facebook-like {
+    padding: 8px 0;
+    height: 20px;
+}
+
+.header .login a {
+    height: auto !important;
+    width: auto !important;
+}
+
+.header .login {
+    margin: 0;
+    float: right;
+    font-size: 12px;
+    top: 12px;
+    position: relative;
+    right: 19px;
+}
+
+    .header .login ul {
+        text-align: center;
+    }
+
+        .header .login ul li {
+            padding: 0 1px;
+        }
+
+
+.header .search {
+    height: 32px;
+    margin: 0;
+    /* padding-top: 5px; */
+    top: 6px;
+    right: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 230px;
+    float: right;
+}
+
+.header .th-search {
+    width: 215px;
+    border: 2px solid #CBCBCB;
+}
+
+.header .th-search-button {
+    background: url("http://media.townhall.com/_townhall/resources/images/search.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    display: none;
+    height: 16px;
+    padding: 0;
+    position: relative;
+    right: 26px;
+    top: -4px;
+    width: 16px;
+}
+
+.adSpot {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ad-header, .ad-footer {
+    margin: 0 auto;
+    padding: 0 5px;
+    text-align: center !important;
+    min-height: 90px;
+    display: table;
+}
+
+    .ad-header hr {
+        border-style: none none solid none;
+        border-width: 1px;
+        border-color: #CCCCCC;
+        text-align: center;
+    }
+
+    .ad-header > div > div > img {
+        display: none;
+    }
+/*#endregion Header*/
+
+/*#region Breadcrumb */
+
+.breadcrumb {
+    margin: 3px 0 10px 0;
+    padding: 0;
+    background-color: #FFF;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    color: #999999;
+}
+
+    .breadcrumb a {
+        font-weight: normal;
+        color: #999999;
+    }
+
+        .breadcrumb a:hover {
+            color: #CA0002;
+        }
+
+        .breadcrumb a.rss-img {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url("http://media.townhall.com/_townhall/resources/images/controls_16x16.png") no-repeat scroll 0 -32px transparent;
+            margin-left: 5px;
+            margin-top: 2px;
+        }
+
+/*#endregion */
+
+/*#region article*/
+
+.article {
+    float: left;
+    font-size: 17px;
+    line-height: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 620px;
+    width: 620px;
+}
+
+    .article img {
+        max-width: 620px;
+    }
+
+.article-main-image {
+    margin: 0 0 10px 0;
+    width: 610px;
+}
+
+.article-author h2,
+.article-author h1 {
+    margin: 0;
+    font-family: SourceSansProSemibold, Arial, 'sans-serif';
+    font-size: 46px;
+}
+
+.article-author img {
+    margin: 0 8px 0 0;
+    width: 65px;
+}
+
+.article-author span {
+    font-size: 12px;
+}
+
+.article-author {
+    color: #333333;
+}
+
+.article-full {
+    position: relative;
+    left: 23px;
+    font-size: 12px;
+}
+
+.article-divider {
+    margin: 15px 0 15px 0;
+    border-top: 3px solid #dedede;
+}
+
+.article a, .paging-teaser a, .slideshow-index-group-container .description a, .slideshow-description a, .slide-description a, .ss-description a {
+    color: #0088CC;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+a.topic {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    color: #999999 !important;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 13px;
+    margin: 3px 3px 0 0;
+    padding: 5px 5px;
+    text-transform: uppercase;
+}
+
+.paging-teaser a {
+    font-weight: bold;
+}
+
+    .paging-teaser a:visited {
+        color: #0088CC;
+        text-decoration: underline;
+        font-weight: normal;
+    }
+
+    .article a:hover, .paging-teaser a:hover {
+        color: #ff0000;
+    }
+
+.article-topics li {
+    padding: 0;
+    margin: 5px 0 4px 4px;
+    display: inline;
+    float: left;
+}
+
+/*#region ShareCounts */
+
+.article-actions {
+    margin: 10px 0 10px 0;
+    float: left;
+    width: 100%;
+}
+
+    .article-actions .th-sharecounts {
+        margin: 0;
+        padding-top: 3px;
+    }
+
+        .article-actions .th-sharecounts li {
+            padding: 0;
+            float: left;
+            display: inline;
+            margin-right: 6px;
+        }
+
+        .article-actions .th-sharecounts a.comment-count {
+            background: url("http://media.townhall.com/_townhall/resources/images/comment-bubble.png") no-repeat scroll 0 0 transparent;
+            width: 43px;
+            height: 24px;
+            position: relative;
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            font-variant: normal;
+            text-align: center;
+            color: #525252;
+            text-shadow: 0 1px 0 #FFFFFF;
+        }
+
+            .article-actions .th-sharecounts a.comment-count:hover {
+                background-position: 0 -24px;
+            }
+
+        .article-actions .th-sharecounts a.mail {
+            width: 24px;
+            height: 24px;
+            display: block;
+            background: url("http://media.townhall.com/_townhall/resources/images/controls_24x24.png") no-repeat scroll 0 -24px transparent;
+        }
+
+        .article-actions .th-sharecounts a.print {
+            width: 24px;
+            height: 24px;
+            display: block;
+            background: url("http://media.townhall.com/_townhall/resources/images/controls_24x24.png") no-repeat scroll 0 0 transparent;
+        }
+
+        .article-actions .th-sharecounts .sc-counts {
+            border-left: 2px solid #DEDEDE;
+            float: left;
+            display: inline;
+            font-size: 20px;
+            letter-spacing: -1px;
+            font-weight: normal;
+            line-height: 27px;
+            padding: 10px 6px;
+        }
+
+            .article-actions .th-sharecounts .sc-counts span {
+                color: #b22020;
+                letter-spacing: -1px;
+            }
+
+        .article-actions .th-sharecounts a.sc-fb-count {
+            background-color: #d7d7d7;
+            display: block;
+            float: right;
+            font-size: 18px;
+            font-weight: normal;
+            height: 27px;
+            line-height: 27px;
+            position: relative;
+            vertical-align: middle;
+            padding: 10px;
+        }
+
+        .article-actions .th-sharecounts a.s {
+            color: #FFFFFF;
+            float: left;
+            font-size: 24px;
+            font-weight: normal;
+            height: 27px;
+            line-height: 27px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+    .article-actions .sc-fb-count .fa-arrow-left {
+        color: #D7D7D7;
+        left: -12px;
+        position: absolute;
+        top: 15px;
+    }
+
+    .article-actions .th-sharecounts a.sc-tw {
+        background-color: #55acee;
+    }
+
+        .article-actions .th-sharecounts a.sc-tw:hover {
+            background-color: #3e85bb;
+        }
+
+    .article-actions .th-sharecounts a.sc-forward {
+        background-color: #6699CC;
+    }
+
+        .article-actions .th-sharecounts a.sc-forward:hover {
+            background-color: #447bb2;
+        }
+
+    .article-actions .th-sharecounts a.sc-gplus {
+        background-color: #df4a32;
+    }
+
+        .article-actions .th-sharecounts a.sc-gplus:hover {
+            background-color: #b93c28;
+        }
+
+    .article-actions .th-sharecounts a.sc-fb {
+        background-color: #4862a3;
+        font-size: 18px;
+    }
+
+        .article-actions .th-sharecounts a.sc-fb:hover {
+            background-color: #324880;
+        }
+
+        .article-actions .th-sharecounts a.sc-fb .fb-icon {
+            font-size: 27px;
+            float: left;
+            margin-right: 5px;
+            position: relative;
+        }
+
+
+
+/*#endregion */
+
+.sc-count .fa-arrow-left {
+    color: #D7D7D7;
+    left: -12px;
+    position: absolute;
+    top: 15px;
+}
+
+.article-campaign {
+    margin: auto;
+    text-align: center;
+}
+
+.article-shirttail {
+    margin: 15px 0 0 0;
+    border: 1px solid #e1e1e1;
+    background-color: #e1e1e1;
+    position: relative;
+    float: left;
+    left: -35px;
+    width: 655px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-size: 12px;
+}
+
+    .article-shirttail a {
+        font-weight: normal !important;
+    }
+
+    .article-shirttail h4 {
+        margin: 10px 0 5px 0;
+    }
+
+    .article-shirttail .a1 {
+        float: left;
+        margin: 0 0 0 35px;
+    }
+
+    .article-shirttail .a2 {
+        margin: 0 0 0 5px;
+        float: left;
+        width: 500px;
+        line-height: 17px;
+    }
+
+a.shirttail-rss {
+    background: url("http://media.townhall.com/_townhall/resources/images/controls_16x16.png") no-repeat scroll 0 -32px transparent;
+}
+
+a.shirttail-print {
+    background: url("http://media.townhall.com/_townhall/resources/images/controls_16x16.png") no-repeat scroll 0 -16px transparent;
+}
+
+a.shirttail-mail {
+    background: url("http://media.townhall.com/_townhall/resources/images/controls_16x16.png") no-repeat scroll 0 0 transparent;
+}
+
+.shirttail-rss, .shirttail-mail, .shirttail-print {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.article-shirttail .author {
+    float: left;
+    margin: 10px 0 10px 0;
+}
+
+.article-shirttail .links {
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+    .article-shirttail .links li {
+        margin: 0 5px 6px 0;
+    }
+
+.article-shirttail-cap {
+    background: url("http://media.townhall.com/_townhall/resources/images/Author_box_ribbon_shadow.png") no-repeat scroll 0 0 transparent;
+    width: 16px;
+    height: 11px;
+    position: relative;
+    float: left;
+    top: 0;
+    left: -36px;
+}
+
+.article-ad-pull-left {
+    margin: 25px 15px 15px 0;
+}
+
+.article-ad-pull-right {
+    margin: 25px 0 15px 15px;
+}
+
+/*#endregion*/
+
+/*#region Feelings */
+
+.feelings-widget {
+    margin: 0 0 15px 0;
+    width: 655px;
+}
+
+.feelings-thankyou {
+    background-color: #DFF0D8;
+    border: 1px solid #D6E9C6;
+    border-radius: 4px 4px 4px 4px;
+    color: #468847;
+    display: none;
+    float: left;
+    top: -12px;
+    left: -34px;
+    padding: 4px;
+    width: 150px;
+    position: relative;
+}
+
+.feelings-widget .title {
+    background-color: #b22020;
+    position: relative;
+    height: 28px;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    border-top-left-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    width: 275px;
+    left: -36px;
+    float: left;
+    margin: 0;
+    color: #FFFFFF;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-align: right;
+}
+
+    .feelings-widget .title span {
+        margin: 4px 29px 0 0;
+        display: block;
+    }
+
+.feelings-widget .end-arrow {
+    background: url("http://media.townhall.com/_townhall/resources/images/Widget_Pointer.png") no-repeat scroll 0 0 transparent;
+    width: 14px;
+    height: 30px;
+    position: relative;
+    float: left;
+    left: -36px;
+    top: -1px;
+}
+
+.feelings-widget .cap {
+    background: url("http://media.townhall.com/_townhall/resources/images/Townhall_ReadersSay_Ribbon_Shadow.png") no-repeat scroll 0 0 transparent;
+    width: 16px;
+    height: 11px;
+    position: relative;
+    top: 28px;
+    left: -36px;
+}
+
+.feelings-widget .arrow-cap {
+    background: url("http://media.townhall.com/_townhall/resources/images/Townhall_ReadersSay_Bubble_Triangle.png") no-repeat scroll 0 0 transparent;
+    position: relative;
+    width: 7px;
+    height: 6px;
+    left: 40px;
+}
+
+.counts li a {
+    border: 1px solid #e1e1e1;
+    margin: 0 3px 0 0;
+    background-color: #FFF;
+    font-size: 12px;
+    font-weight: bold;
+    color: #505050;
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 73px;
+    display: block;
+    text-align: center;
+}
+
+.feelings, .counts {
+    margin: 5px 0 0 0;
+    float: left;
+}
+
+    .feelings li, .counts li {
+        float: left;
+        display: inline;
+    }
+
+        .feelings li a {
+            margin: 0 3px 0 0;
+            background-color: #f0f0f0;
+            font-size: 12px;
+            font-weight: bold;
+            color: #000000;
+            padding: 6px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            width: 73px;
+            display: block;
+            text-align: center;
+        }
+
+            .feelings li a:hover, .feelings li a.active {
+                background-color: #B22020;
+                color: #FFF;
+            }
+
+/*#endregion */
+
+/*#region Footer */
+.footer-links {
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 10px;
+}
+
+    .footer-links a {
+        font-weight: normal;
+    }
+
+.footer {
+    padding: 15px 0 0 0;
+    color: #333 !important;
+}
+
+    .footer h4 {
+        color: #333;
+        font-weight: normal;
+    }
+
+    .footer a {
+        font-weight: normal !important;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+
+
+p.copyright {
+    text-align: left;
+    font-style: italic;
+    font-size: 12px;
+    margin-top: 19px;
+}
+
+/*#endregion */
+/*#region Under footer */
+
+.under-footer {
+    color: #333;
+    min-height: 50px;
+    opacity: 0.95;
+    padding: 0 20px;
+}
+
+/*#endregion */
+
+/*#region Social Bar */
+
+
+.social-bar li {
+    margin: 0 8px 0 0;
+    float: left;
+    display: inline;
+}
+
+.sb {
+    background: url("http://media.townhall.com/_townhall/resources/images/social-sprite.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 31px;
+    overflow: hidden;
+    text-indent: -99px;
+    width: 35px;
+}
+
+.sb-fb {
+    background-position: 0 -78px;
+}
+
+    .sb-fb:hover {
+        background-position: 0 -117px;
+    }
+
+.sb-twitter {
+    background-position: 0 -156px;
+}
+
+    .sb-twitter:hover {
+        background-position: 0 -195px;
+    }
+
+.sb-gplus {
+    background-position: 0 -234px;
+}
+
+    .sb-gplus:hover {
+        background-position: 0 -273px;
+    }
+
+.sb-rss {
+    background-position: 0 -312px;
+}
+
+    .sb-rss:hover {
+        background-position: 0 -352px;
+    }
+
+.sb-youtube {
+    background-position: 0 -641px;
+}
+
+    .sb-youtube:hover {
+        background-position: 0 -683px;
+    }
+
+/*.sb-mobile {
+    background-position: 0 -391px;
+}
+
+.sb-mobile:hover {
+    background-position: 0 -430px;
+}*/
+
+.social-bar-mobile li {
+    margin: 10px 0 0 0;
+}
+
+.sb-mobile {
+    background: url("http://media.townhall.com/_townhall/resources/images/social-sprite.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 51px;
+    width: 155px;
+}
+
+.sb-ios {
+    background-position: 100% 0;
+}
+
+.sb-android {
+    background-position: 100% -71px;
+}
+
+.sb-blackberry {
+    background-position: 100% -145px;
+    height: 42px;
+}
+
+/*#endregion */
+
+/*#region box */
+
+.facebook-likebox {
+    margin-bottom: 10px;
+}
+
+.th-fblikebox-header {
+    background: none repeat scroll 0 0 #356AA0;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 0;
+    position: relative;
+    text-align: center;
+    width: 295px;
+}
+
+.box {
+    margin: 5px 0 10px 0;
+    position: relative;
+}
+
+.box-widget .box-header {
+    width: 300px;
+}
+
+.box-header {
+    background-color: #b22020;
+    position: relative;
+    height: 28px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    overflow: hidden;
+    width: 332px;
+    text-transform: uppercase;
+}
+
+    .box-header a {
+        padding: 4px 0 0 8px;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+        letter-spacing: 0;
+    }
+
+    .box-header .navspan {
+        float: left;
+    }
+
+        .box-header .navspan a {
+            float: left;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline;
+            letter-spacing: 0;
+        }
+
+
+
+.box .tipsheet-widget-header {
+    background: url("http://media.townhall.com/_townhall/resources/images/Tipsheet_Widget_Header.png") no-repeat scroll 0 0 transparent;
+    width: 300px;
+    height: 47px;
+    position: relative;
+    background-color: #F0F0F0;
+}
+
+.box-hot-on {
+    background: url("http://media.townhall.com/_townhall/resources/images/HotonTownhall_People_Header.png") no-repeat scroll 0 0 transparent;
+    width: 71px;
+    height: 38px;
+    position: relative;
+    left: 10px;
+}
+
+.box-arrow-cap {
+    background: url("http://media.townhall.com/_townhall/resources/images/Widget_Pointer_left.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 30px;
+    left: 108px;
+    position: absolute;
+    top: -1px;
+    width: 14px;
+}
+
+.box-adjustment {
+    left: 122px;
+    width: 210px;
+    position: relative;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius-topleft: 0;
+    border-top-left-radius: 0;
+}
+
+.box-hotair {
+    background: url("http://media.townhall.com/_townhall/resources/images/hotair.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 40px;
+    left: 8px;
+    position: absolute;
+    top: -15px;
+    width: 72px;
+}
+
+.box-pulse {
+    background: url("http://media.townhall.com/_townhall/resources/images/pulse.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 33px;
+    left: 8px;
+    position: absolute;
+    top: -6px;
+    width: 93px;
+}
+
+.box-body {
+    margin: 5px 0 0 0;
+    background-color: #f0f0f0;
+    position: relative;
+    font-size: 14px;
+}
+
+.box-body-pulse {
+    margin: 5px 0 0 0;
+    padding: 8px 18px 8px 18px;
+    border-bottom-width: 0;
+}
+
+    .box-body-pulse form {
+        margin: 0;
+    }
+
+    .box-body-pulse .bar span {
+        padding: 1px 3px 0 5px;
+        display: block;
+        position: relative;
+        text-align: left;
+    }
+
+.dark span {
+    color: #333333 !important;
+    left: 15px;
+}
+
+.box-cap {
+    position: relative;
+    background: url("http://media.townhall.com/_townhall/resources/images/Widget_Ribbon_Shadow.png") no-repeat scroll 0 0 transparent;
+    width: 11px;
+    height: 11px;
+    float: right;
+    right: -32px;
+}
+
+.ec-cap {
+    background: url("http://media.townhall.com/_townhall/resources/images/ribbon-cap-ec.png") no-repeat scroll 0 0 transparent;
+}
+
+.box-column {
+    margin: 5px 0 0 0;
+    float: left;
+    width: 143px;
+}
+
+.box-column-divider {
+    border-style: none solid none none;
+    border-width: 3px;
+    border-color: #FFFFFF;
+}
+
+.box-column ul {
+    margin: 0 0 0 10px;
+}
+
+.box-column li {
+    padding: 0 0 5px 0;
+    line-height: 18px;
+}
+
+    .box-column li a {
+        text-transform: uppercase;
+    }
+
+.links .box-row a {
+    margin: 8px 3px 8px 10px;
+    display: block;
+}
+
+.box-row a { /*font-size: 16px;*/
+}
+
+    .box-row a img {
+        margin: 3px 5px 5px 5px;
+        float: left;
+    }
+
+    .box-row a span.nostyle {
+        color: #000;
+        font-style: italic;
+        font-variant: normal;
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+.box-row p {
+    margin: 0 5px 5px 5px;
+    padding: 0;
+}
+
+.box-row {
+    border-style: none none solid none;
+    border-width: 4px;
+    border-color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.box-footer {
+    background-color: #F0F0F0;
+    position: relative;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 03px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 03px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 03px;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*#endregion */
+
+/*#region comments */
+
+.comments {
+    margin: 10px 0 30px 0;
+}
+
+.comment-thread {
+    margin: 10px 0 20px 0;
+}
+
+.comment-post {
+    margin: 10px 0 20px 0;
+}
+
+.comment-post-header {
+    font-size: 30.5px;
+}
+
+.comment-post-count {
+    font-size: 17.5px;
+}
+
+.comment-post-header, .comment-post-count {
+    margin: 0 0 15px 0;
+    color: #29271E;
+    font-weight: bold;
+}
+
+    .comment-post-header span, .comment-post-count span {
+        color: #6699CC;
+        font-weight: normal;
+    }
+
+.media-body p {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #C0C0C0;
+}
+
+/*#endregion */
+
+/*#region Columnists */
+
+.c-archives ul {
+    margin: 5px 0 5px 10px;
+    font-size: 16px;
+}
+
+.c-archives li {
+    line-height: 25px;
+}
+
+.c-img {
+    margin: 0 8px 0 0;
+}
+
+.c-author {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+
+.c-pad {
+    margin-bottom: 10px;
+}
+
+.c-list {
+    font-size: 12px;
+}
+
+    .c-list h6 {
+        margin: 0 0 2px 0;
+        font-size: 12px;
+    }
+
+ul.authors {
+    margin: 0;
+    display: inline;
+    float: left;
+    padding: 0 0 0 5px;
+    width: 190px;
+}
+
+    ul.authors li {
+        padding: 3px 0 3px 0;
+        /*border-style: none none solid none;
+    border-width: 1px;
+    border-color: #DDD;*/
+        list-style: none outside none;
+    }
+
+/*#endregion */
+
+/*#region Tipsheet blog ticker */
+
+.b-image {
+    margin: 0 10px 0 0;
+    float: left;
+}
+
+.b-author {
+    font-size: 13px;
+}
+
+.b-header {
+    margin: 0 0 3px 0;
+    font-size: 21px;
+}
+
+.around-the-web-header {
+    color: #001346;
+    font-weight: bold;
+}
+
+.b-body {
+    margin: 10px 0 0 0;
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 24px;
+}
+
+    .b-body a {
+        color: #0088CC;
+        text-decoration: underline;
+        font-weight: normal;
+    }
+
+        .b-body a:hover {
+            color: #ff0000;
+        }
+
+.b-divider {
+    margin: 10px 0 15px 0;
+    border-bottom: 1px solid #D2D2D2;
+    border-top: 1px solid #FFFFFF;
+    padding: 0;
+    border-top-color: #FFFFFF;
+    border-bottom-color: #808080;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.a-date {
+    font-weight: normal;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/*#endregion */
+
+/*#region breaking news Carousel */
+
+
+.carousel-indicators {
+    position: absolute;
+    z-index: 5;
+    margin: 0;
+    list-style: none;
+}
+
+    .carousel-indicators li {
+        display: block;
+        float: left;
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+        text-indent: -999px;
+        background-color: #FFF;
+        border-radius: 5px;
+    }
+
+    .carousel-indicators .active {
+        background-color: #B22020;
+    }
+
+.breaking-news-carousel {
+    margin: 0 0 5px 0;
+    border-style: none none solid none;
+    border-width: 3px;
+    border-color: #C0C0C0;
+    padding: 0 6px 0 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+    .breaking-news-carousel .item {
+        margin: 0 0 5px 0;
+        float: left;
+    }
+
+    .breaking-news-carousel .inner {
+        overflow: hidden;
+        position: relative;
+        float: left;
+    }
+
+    .breaking-news-carousel .carousel-left {
+        -webkit-border-top-left-radius: 3px;
+        -webkit-border-bottom-left-radius: 3px;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-bottomleft: 3px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .breaking-news-carousel .carousel-right {
+        margin: 0 0 0 10px;
+        -webkit-border-top-right-radius: 3px;
+        -webkit-border-bottom-right-radius: 3px;
+        -moz-border-radius-topright: 3px;
+        -moz-border-radius-bottomright: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .breaking-news-carousel .carousel-left,
+    .breaking-news-carousel .carousel-right {
+        display: block;
+        width: 40px;
+        height: 120px;
+        position: absolute;
+        background-color: #B22020;
+        top: 0;
+        right: 60px;
+    }
+
+    .breaking-news-carousel .carousel-right {
+        right: 12px;
+    }
+
+.carousel-left:hover,
+.carousel-right:hover {
+    background-color: #e64453;
+}
+
+.carousel-left span {
+    background: url("http://media.townhall.com/_townhall/resources/images/arrows2.png") no-repeat scroll 0 0 transparent;
+}
+
+.carousel-right span {
+    background: url("http://media.townhall.com/_townhall/resources/images/arrows2.png") no-repeat scroll -14px 0 transparent;
+}
+
+.carousel-right span,
+.carousel-left span {
+    width: 14px;
+    height: 16px;
+    display: block;
+    position: relative;
+    left: 13px;
+    top: 51px;
+}
+
+.breaking-news-carousel .carousel-nav {
+    float: left;
+    margin-left: 5px;
+}
+
+.carousel-a {
+    float: left;
+    display: block;
+    margin-right: 5px;
+    position: relative;
+}
+
+/*.carousel-a:hover > span {
+    display: block;
+}
+
+.carousel-a:hover > .carousel-label-first {
+    height: auto;
+}*/
+
+.carousel-label {
+    bottom: 0;
+    cursor: pointer;
+    display: none;
+    left: 0;
+    overflow: hidden;
+    padding: 5px;
+    position: absolute;
+    color: #ffffff;
+    background-color: #000000;
+    width: 202px;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.carousel-label-first {
+    height: 12px;
+    display: block;
+}
+
+.carousel-a img {
+    height: 120px;
+    width: 212px;
+}
+
+/*#endregion */
+
+/*#region videowidget*/
+
+.video-main-image {
+    display: block;
+    width: 287px;
+    padding: 0 6px;
+    overflow: hidden;
+}
+
+    .video-main-image .video-large-label {
+        bottom: 0;
+        cursor: pointer;
+        /*display: none;*/
+        left: 5px;
+        overflow: hidden;
+        padding: 5px;
+        position: absolute;
+        color: #ffffff;
+        background-color: #000000;
+        width: 117px;
+        font-size: 11px;
+    }
+
+.video-carousel {
+    margin: 0;
+    padding: 0 6px 0 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+    .video-carousel .item {
+        margin: 0 0 5px 0;
+        float: left;
+    }
+
+    .video-carousel .carousel-button {
+        background: none repeat scroll 0 0 #222222;
+        border: 3px solid #FFFFFF;
+        border-radius: 10px 10px 10px 10px;
+        color: #FFFFFF;
+        font-size: 26px;
+        font-weight: 100;
+        height: 18px;
+        left: 15px;
+        line-height: 13px;
+        margin-top: -11px;
+        opacity: 0.8;
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        width: 18px;
+    }
+
+    .video-carousel .right {
+        left: auto;
+        right: 15px;
+    }
+
+    .video-carousel .carousel-button:hover {
+        color: #FFFFFF;
+        opacity: 0.9;
+        text-decoration: none;
+    }
+
+    .video-carousel img {
+        height: 95px;
+        width: 134px;
+    }
+
+    .video-carousel .inner {
+        overflow: hidden;
+        position: relative;
+        float: left;
+    }
+
+    .video-carousel .carousel-a {
+        position: relative;
+        float: left;
+        margin-right: 0;
+    }
+
+
+    .video-carousel .carousel-label {
+        bottom: 0;
+        cursor: pointer;
+        display: none;
+        left: 5px;
+        overflow: hidden;
+        padding: 5px;
+        position: absolute;
+        color: #ffffff;
+        background-color: #000000;
+        width: 127px;
+        font-size: 11px;
+    }
+
+
+    .video-carousel .carousel-left span {
+        float: left;
+    }
+
+    .video-carousel .carousel-right span {
+        float: right;
+    }
+
+
+/*#endregion*/
+
+/*#region Errors */
+
+.validation-summary-valid {
+    display: none;
+}
+
+.field-validation-error {
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #CA0002 !important;
+}
+
+/*#endregion */
+
+/*#region Author */
+
+.alpha-list {
+    margin: 0 0 10px 0;
+    float: left;
+}
+
+    .alpha-list li {
+        display: inline;
+        float: left;
+        background-position: left 10px;
+        padding: 0 5px 0 8px;
+        font-size: 15px;
+    }
+
+        .alpha-list li.first {
+            background: none repeat scroll 0 0 transparent !important;
+        }
+
+.alpha {
+    margin: 7px 25px 5px 20px;
+    float: left;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #b7b7b7;
+}
+
+.nonbullet-list {
+    margin: 10px 0 10px 0;
+    float: left;
+    line-height: 25px;
+    font-size: 16px;
+    width: 230px;
+}
+
+    .nonbullet-list li {
+        list-style: none outside none;
+        line-height: 25px;
+    }
+
+/*#endregion */
+
+/*#region sticky ad*/
+
+.sticky-ad {
+    position: relative;
+    top: 0x;
+}
+
+
+/*#endregion */
+
+/*#region Carousel */
+
+
+.carousel {
+    margin-bottom: 0;
+    line-height: 20px;
+}
+
+/*#endregion */
+
+/*#region Columnist Homepage widget*/
+
+.box-cap-c-home {
+    background: url("http://media.townhall.com/_townhall/resources/images/Townhall_ReadersSay_Ribbon_Shadow.png") no-repeat scroll 0 0 transparent;
+    height: 11px;
+    left: -36px;
+    position: relative;
+    top: 0;
+    width: 16px;
+}
+
+.box-header-c-home {
+    left: -36px;
+    width: 336px;
+}
+
+    .box-header-c-home a {
+        padding-left: 37px;
+    }
+
+.columnists-more {
+    border: 1px solid #DDDDDD;
+    padding: 3px;
+    margin: 0;
+    font-size: 12px;
+}
+
+    .columnists-more a {
+        text-decoration: underline;
+    }
+
+    .columnists-more .none {
+        text-decoration: none;
+    }
+
+/*#endregion */
+
+/*#region box shadow */
+
+
+.box-shadow {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    margin: 50px auto 0 auto;
+    width: 300px;
+    background-color: #FFF;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0 0 15px rgba(50, 50, 50, 0.20);
+    -moz-box-shadow: 0 0 15px rgba(50, 50, 50, 0.20);
+    box-shadow: 0 0 15px rgba(50, 50, 50, 0.20);
+}
+
+    .box-shadow .header {
+        padding: 3px 0 10px 0;
+        margin-top: 0;
+        margin-bottom: 10px;
+        border-top: 1px solid #E5E5E5;
+        border-style: none none solid none;
+        border-width: 1px;
+        border-color: #E5E5E5;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+/*#endregion */
+
+/*#region Breaking news */
+
+.breaking-news {
+    background-image: url("http://media.townhall.com/_townhall/resources/images/breaking-news5.png");
+    background-repeat: no-repeat;
+    height: 35px;
+    margin: 0 0 8px 0;
+}
+
+    .breaking-news .breaking-message a {
+        color: red;
+    }
+
+    .breaking-news .breaking-message {
+        margin: 5px 0 0 0;
+        font-weight: bold;
+        padding-left: 162px;
+        padding-top: 7px;
+    }
+
+/*#endregion */
+
+/*#region Alert bar */
+
+.campaign-message {
+    border-style: solid solid solid none;
+    border-width: 1px;
+    border-color: #83b1e2;
+    background-color: #dceefe;
+    padding: 5px;
+}
+
+.campaign-title {
+    background-color: #0a527f;
+    color: #ffffff;
+}
+
+.campaign-divider {
+    background: url("http://media.townhall.com/_townhall/resources/images/alert-bar-cp.png") no-repeat scroll 0 0 transparent;
+}
+
+.breaking-message {
+    border-style: solid solid solid none;
+    border-width: 2px;
+    border-color: #cccbcb;
+    background-color: #f0f0f0;
+    padding: 4px;
+}
+
+.breaking-divider {
+    background: url("http://media.townhall.com/_townhall/resources/images/alert-bar-cp.png") no-repeat scroll 0 -30px transparent;
+}
+
+.breaking-title {
+    background-color: #ff8a00;
+    color: #ffffff;
+}
+
+#alert-bar {
+    width: 980px;
+}
+
+.alert-padding {
+}
+
+.alert-bar-message {
+    float: left;
+    position: relative;
+    height: 18px;
+    line-height: 17px;
+}
+
+.alert-bar-divider {
+    width: 24px;
+    height: 30px;
+    float: left;
+    position: relative;
+}
+
+.alert-bar-title {
+    float: left;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px;
+}
+
+.site-breaking-news {
+    background-color: #e9f0f5;
+    height: 42px;
+    margin-top: -5px;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+    .site-breaking-news .sbn-title, .site-breaking-news .sbn-separator {
+        font-family: "Museo700Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+        color: #3C5166;
+        text-transform: uppercase;
+        display: inline-block;
+        float: left;
+        margin-top: 11px;
+        margin-left: 20px;
+        letter-spacing: .02em;
+    }
+
+    .site-breaking-news .sbn-separator {
+        margin-left: 2px;
+        margin-right: 3px;
+        font-weight: bold;
+    }
+
+    .site-breaking-news .sbn-headline {
+        font-family: SourceSansProBold,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        color: #c20716;
+        text-transform: uppercase;
+        display: inline-block;
+        float: left;
+        margin-top: 12px;
+        margin-left: 4px;
+        letter-spacing: .02em;
+    }
+
+    .site-breaking-news .fa-twitter, .site-breaking-news .fa-facebook {
+        color: #fff;
+        display: table-cell;
+        height: 23px;
+        text-align: center;
+        vertical-align: middle;
+        width: 23px;
+        font-size: 10px;
+    }
+
+    .site-breaking-news .sbn-social {
+        display: inline-block;
+        float: right;
+        margin-right: 20px;
+        margin-top: 8px;
+    }
+
+    .site-breaking-news .circle {
+        height: 24px;
+        width: 24px;
+        margin-right: 0;
+        margin-left: 6px;
+    }
+
+    .site-breaking-news a, .site-breaking-news a:hover {
+        color: #c20716;
+    }
+/*#endregion */
+
+/*#region watchdog widgets */
+
+.wd-fb {
+    background: url("http://media.townhall.com/_townhall/resources/images/fb-circle16.png") no-repeat scroll 0 0 transparent;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 4px;
+    display: inline-block;
+}
+
+.wd-widget-image {
+    max-width: 137px;
+    width: 137px;
+}
+/*#endregion */
+
+/*#region outbrain */
+
+
+.outbrain_column {
+    margin: 10px 0 10px 0;
+    width: 305px !important;
+    font-size: 12px;
+}
+
+td {
+    padding: 0;
+}
+
+.outbrain_column h2 {
+    color: #001346;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/*#endregion */
+
+#float-actions-bar {
+    height: 70px;
+    position: relative;
+}
+
+    /*#float-actions-bar-wrapper {
+    z-index: 50;
+}*/
+
+    #float-actions-bar.affix {
+        position: fixed;
+        top: 0;
+        width: 622px;
+        z-index: 1020;
+        background-color: #ffffff;
+        box-shadow: -4px 12px 8px -9px rgba(0, 0, 0, 0.41);
+    }
+/*#region slideshows */
+/*townhall.com/slideshows/. townhall.com/mservices/slideshow has a separate css file*/
+.slideshow-index-group-container {
+    width: 622px;
+    font-family: SourceSansProSemibold, Arial,'sans-serif';
+    color: #767676;
+    font-size: 13px;
+    margin-left: 19px;
+}
+
+    .slideshow-index-group-container .major-group-large-tile {
+        width: 410px;
+        height: 420px;
+        display: inline-block;
+        float: left;
+        background-color: #ebebeb;
+    }
+
+    .slideshow-index-group-container .major-group-main-side {
+        width: 203px;
+        display: inline-block;
+        float: left;
+        margin-left: 7px;
+    }
+
+    .slideshow-index-group-container .major-group-row, .slideshow-index-group-container .minor-group-row {
+        display: block;
+        height: inherit;
+        clear: both;
+    }
+
+    .slideshow-index-group-container .medium-tile {
+        width: 618px;
+        height: 210px;
+        margin-bottom: 6px;
+        background-color: #ebebeb;
+    }
+
+        .slideshow-index-group-container .medium-tile .medium-tile-image {
+            display: inline-block;
+            float: left;
+            width: 410px;
+        }
+
+        .slideshow-index-group-container .medium-tile .medium-tile-info {
+            display: inline-block;
+            float: left;
+            width: 208px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+    .slideshow-index-group-container .small-tile {
+        background-color: #ebebeb;
+        height: 206px;
+        width: 202px;
+        display: inline-block;
+        float: left;
+        margin: 0 6px 7px 0;
+    }
+
+    .slideshow-index-group-container .major-group-row.small-tiles .small-tile:last-child {
+        margin-right: 0;
+    }
+
+    .slideshow-index-group-container .large-title {
+        font-size: 32px;
+        line-height: 32px;
+        margin: 12px 6px 0 10px;
+    }
+
+    .slideshow-index-group-container .medium-title {
+        font-size: 18px;
+        margin: 8px 6px 0 10px;
+    }
+
+    .slideshow-index-group-container .minor-group-row.small-tiles .small-tile:last-child {
+        margin-right: 0;
+    }
+
+    .slideshow-index-group-container .pub-date {
+        font-family: SourceSansProRegular, Arial,'sans-serif';
+        font-size: 13px;
+        line-height: 16px;
+        margin: 5px 0 0 11px;
+    }
+
+    .slideshow-index-group-container .small-tile .pub-date {
+        margin: 3px 0 0 11px;
+    }
+
+    .slideshow-index-group-container .description {
+        font-family: SourceSansProRegular, Arial,'sans-serif';
+        font-size: 12px;
+        line-height: 16px;
+        margin: 7px 10px 8px 11px;
+    }
+
+    .slideshow-index-group-container .major-group-large-tile .description {
+        height: 93px;
+        overflow: hidden;
+        position: relative;
+    }
+
+.slideshow-divider {
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 2px solid #ffffff;
+    margin: 10px 0 15px;
+    padding: 0;
+    clear: both;
+}
+
+    .slideshow-divider.bottom-margin {
+        margin-bottom: 26px;
+    }
+
+    .slideshow-divider.shw {
+        margin-bottom: 16px;
+    }
+
+.slideshow-title {
+    margin-bottom: 14px;
+}
+
+    .slideshow-title h1 {
+        font-family: SourceSansProSemibold, Arial, 'sans-serif';
+        font-size: 46px;
+        margin: 0 0 4px -2px;
+    }
+
+    .slideshow-title span {
+        font-family: SourceSansProRegular, Arial,'sans-serif';
+        font-size: 13px;
+    }
+
+.slideshow-description {
+    margin-bottom: 12px;
+}
+
+.slideshow-icons {
+    margin: 0 0 16px 20px;
+}
+
+    .slideshow-icons.shw {
+        margin: 0;
+        padding-top: 4px;
+    }
+
+    .slideshow-icons.bottom {
+        margin-bottom: 26px;
+    }
+
+    .slideshow-icons .ss-show, .slideshow-icons .ss-list {
+        display: inline-block;
+        float: left;
+        background-image: url("http://media.townhall.com/_townhall/resources/images/sprites/slideshow-icons-sprite.png");
+        background-repeat: no-repeat;
+        height: 16px;
+    }
+
+        .slideshow-icons .ss-show a, .slideshow-icons .ss-list a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+    .slideshow-icons .ss-show {
+        background-position: -17px 0;
+        margin-right: 8px;
+        width: 20px;
+    }
+
+    .slideshow-icons .ss-list {
+        background-position: 1px 0;
+        margin-right: 8px;
+        margin-top: 2px;
+        width: 15px;
+    }
+
+    .slideshow-icons a.slideshow-red-heading {
+        color: #b22020;
+        font-family: SourceSansProSemibold, Arial,'sans-serif';
+        font-size: 16px;
+        line-height: 16px;
+        margin-top: 3px;
+    }
+
+    .slideshow-icons s.slideshow-red-heading:hover {
+        color: #b22020;
+    }
+
+.slide-description {
+    margin-top: 2px;
+    padding-top: 6px;
+    margin-bottom: 18px;
+    font-family: SourceSansProRegular, Arial,'sans-serif';
+    background-color: #fff;
+}
+
+    .slide-description .ss-source {
+        display: inline-block;
+        font-family: SourceSansProItalic, Arial,'sans-serif';
+        font-size: 15px;
+    }
+
+    .slide-description .ss-share-icons {
+        display: inline-block;
+        float: right;
+        margin-right: 1px;
+        cursor: pointer;
+    }
+
+    .slide-description .ss-fb, .slide-description .ss-tw, .slide-description .ss-gp {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        float: left;
+        background-image: url("http://media.townhall.com/_townhall/resources/images/sprites/slideshow-social-sprite.png");
+        background-repeat: no-repeat;
+    }
+
+    .slide-description .ss-fb {
+        background-position: 0 0;
+        margin-right: 6px;
+    }
+
+    .slide-description .ss-tw {
+        background-position: -31px 0;
+        margin-right: 6px;
+    }
+
+    .slide-description .ss-gp {
+        background-position: -60px 0;
+    }
+
+    .slide-description .ss-description {
+        font-size: 14px;
+        margin: 0 2px 6px 2px;
+        line-height: 17px;
+    }
+
+.slide-description-header {
+    padding: 2px 0 12px 0;
+}
+
+.slideshow-container * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+.cycle-1 {
+    background-color: #000000;
+}
+
+    .cycle-1 div {
+        width: 100%;
+    }
+
+.cycle-2 {
+    height: 62px;
+}
+
+    .cycle-2 .cycle-slide {
+        border: 4px solid #000;
+        cursor: pointer;
+        margin-left: 4px;
+    }
+
+        .cycle-2 .cycle-slide:first-child {
+            margin-left: 0;
+        }
+
+        .cycle-2 .cycle-slide:last-child {
+            margin-left: 6px;
+        }
+
+    .cycle-2 .cycle-slide-active {
+        border: 4px solid #b22020;
+    }
+
+    .cycle-2 .cycle-slide img {
+        max-height: 50px;
+        max-width: 64px;
+    }
+
+.slideshow-large-top {
+    max-width: 610px;
+    margin: auto;
+    padding-bottom: 6px;
+    padding-top: 2px;
+}
+
+.slideshow-thumbs {
+    max-width: 610px;
+    margin: 0 auto;
+    position: relative;
+}
+
+    .slideshow-thumbs .ss-pager {
+        position: absolute;
+        top: 20px;
+        margin: 0 4px 0 4px;
+        height: 22px;
+        width: 22px;
+        background-color: #b22020;
+        cursor: pointer;
+    }
+
+        .slideshow-thumbs .ss-pager.cycle-next {
+            right: -4px;
+        }
+
+        .slideshow-thumbs .ss-pager.cycle-prev {
+            left: -4px;
+        }
+
+.slideshow-container .cycle-slideshow img {
+    display: block;
+    max-height: 280px;
+    max-width: 610px;
+}
+
+/*overriding an inline style that gets injected
+default width is 77px*/
+.cycle-carousel-wrap .cycle-slide {
+    width: 72px !important;
+}
+
+.slideshow-container {
+    width: 620px;
+    font-family: SourceSansProSemibold, Arial,'sans-serif';
+    background-color: #000;
+}
+
+.slideshow-header {
+    height: 28px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-bottom: 4px;
+    background-color: #fff;
+}
+
+    .slideshow-header.show-view {
+        margin-bottom: 4px;
+    }
+
+    .slideshow-header div {
+        display: inline;
+    }
+
+    .slideshow-header .ss-title {
+        font-size: 17px;
+        margin: 2px 0 0 4px;
+        float: left;
+    }
+
+    .slideshow-header .ss-count {
+        font-family: SourceSansProItalic, Arial,'sans-serif';
+        font-size: 13px;
+        margin: 5px;
+        float: right;
+    }
+
+    .slideshow-header .ss-pager, .slideshow-pager .ss-pager {
+        float: right;
+        margin: 0 4px 0 4px;
+        height: 22px;
+        width: 22px;
+        background-color: #b22020;
+        cursor: pointer;
+    }
+
+.slideshow-container [class^="icon-"], .slideshow-container [class*=" icon-"] {
+    background-image: url("http://media.townhall.com/_townhall/resources/images/bootstrap/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 22px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 22px;
+}
+
+.slideshow-container .icon-chevron-right {
+    background-position: -452px -70px;
+}
+
+.slideshow-container .icon-chevron-left {
+    background-position: -428px -70px;
+}
+
+.slideshow-container .icon-white {
+    background-image: url("http://media.townhall.com/_townhall/resources/images/bootstrap/glyphicons-halflings-white.png");
+}
+
+.slideshow-thumbs-container {
+    width: 620px;
+}
+/*#endregion */
+
+/*#region key races */
+
+/*#CountDown Widget*/
+.CountDown-EventTitle {
+    padding-top: 3px;
+    padding-left: 5px;
+    font-size: 25px;
+}
+
+.CountDown-EventDate {
+    padding-left: 8px;
+    font-size: 15px;
+    padding-top: 16px;
+}
+
+.CountDown-Time {
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+    .CountDown-Time .Days {
+        font-size: 80px;
+        line-height: 80px;
+    }
+
+    .CountDown-Time .DayText {
+        font-size: 29px;
+        ;
+        position: relative;
+        top: -18px;
+        vertical-align: top;
+    }
+
+    .CountDown-Time .Hours-Mins {
+        margin-top: 5px;
+        padding-left: 5px;
+        font-size: 25px;
+    }
+
+    .CountDown-Time .HourMinText {
+        font-size: 15px;
+        position: relative;
+        top: -10px;
+    }
+
+
+
+/*#endregion */
+/*key races election widget*/
+
+.key-races-widget {
+    width: 300px;
+    margin-top: 4px;
+    margin: 10px 0 16px 0;
+    font-family: SourceSansProRegular,Helvetica,Arial,sans-serif;
+}
+
+.no-key-races {
+    width: 100%;
+    margin-top: 12px;
+}
+
+    .no-key-races .no-office-container {
+        width: 300px;
+        display: inline-block;
+    }
+
+        .no-key-races .no-office-container.left-margin {
+        }
+
+.key-races-widget .kr-title-row {
+    background-color: #ebebeb;
+    border-top: 1px solid #d7d7d7;
+    padding: 6px 8px 6px 6px;
+}
+
+    .key-races-widget .kr-title-row div {
+        display: inline-block;
+    }
+
+.key-races-widget .kr-title {
+    font-family: Museo500Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #3c5166;
+    font-size: 24px;
+}
+
+.key-races-widget .kr-race-row {
+    padding: 9px 0;
+    height: 17px;
+}
+
+.key-races-widget .kr-race a {
+    font-family: SourceSansProRegular,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    color: #c20716;
+    display: inline-block;
+    float: left;
+    font-weight: normal;
+}
+
+.key-races-widget .kr-race-count {
+    font-family: SourceSansProItalic,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    color: #000;
+    display: inline-block;
+    float: right;
+}
+
+.key-races-widget .kr-state-row {
+    padding-bottom: 4px;
+    border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.key-races-widget .kr-runoff {
+    font-size: 12px;
+    margin-left: 11px;
+}
+
+.key-races-widget .kr-state-header {
+    padding: 10px 7px;
+}
+
+    .key-races-widget .kr-state-header .kr-st-title {
+        font-family: SourceSansProBold,Helvetica,Arial,sans-serif;
+        font-size: 18px;
+        text-transform: uppercase;
+        padding-left: 4px;
+    }
+
+    .key-races-widget .kr-state-header .kr-stateface {
+        font-size: 16px;
+    }
+
+    .key-races-widget .kr-state-header .kr-state {
+        display: inline-block;
+        margin-left: 2px;
+        float: left;
+    }
+
+    .key-races-widget .kr-state-header .kr-precincts-rptg {
+        font-size: 12px;
+    }
+
+    .key-races-widget .kr-state-header .kr-social {
+        display: inline-block;
+        float: right;
+        margin-right: 4px;
+        font-size: 12px;
+    }
+
+        .key-races-widget .kr-state-header .kr-social div {
+            display: inline-block;
+        }
+
+            .key-races-widget .kr-state-header .kr-social div:last-child {
+                margin-left: 12px;
+            }
+
+.key-races-widget .kr-candidate-row, .key-races-widget .kr-initiative-answer-row {
+    font-family: SourceSansProRegular,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    padding: 2px 0 6px 0;
+    margin-left: 6px;
+}
+
+.key-races-widget .kr-initiative-answer-row {
+    padding-left: 10px;
+}
+
+    .key-races-widget .kr-candidate-row .fa-pad, .key-races-widget .kr-initiative-answer-row .fa-pad {
+        padding: 2px;
+    }
+
+.key-races-widget .kr-candidate-row .kr-candidate {
+    width: 116px;
+    overflow: hidden;
+}
+
+.key-races-widget .kr-candidate-row .kr-candidate-pct {
+    width: 38px;
+    text-align: right;
+}
+
+.key-races-widget .kr-candidate-row .circle {
+    margin-top: 4px;
+}
+
+.key-races-widget .kr-initiative-answer-row .fa-checkmark2, .kr-initiative-answer-row .fa-cross {
+    margin-top: 2px;
+    margin-right: 4px;
+}
+
+.key-races-widget .kr-candidate-row div, .key-races-widget .kr-initiative-answer-row div {
+    display: inline-block;
+    float: left;
+}
+
+.key-races-widget .kr-candidate-row .kr-candidate-graph, .key-races-widget .kr-initiative-answer-row .kr-candidate-graph {
+    height: 4px;
+    margin: 8px;
+    width: 0;
+}
+
+.key-races-widget .kr-initiative-answer-row .kr-candidate {
+    width: 50px;
+}
+
+.key-races-widget .kr-initiative {
+    font-size: 16px;
+    overflow: hidden;
+    margin-left: 8px;
+    padding-bottom: 4px;
+}
+
+.key-races-widget .kr-gray-bg {
+    background-color: #ebebeb;
+}
+
+.key-races-widget .lt-grn-f {
+    color: #40cc75;
+}
+
+.key-races-widget .lt-red-f {
+    color: #ee6e6f;
+}
+
+.key-races-widget .lt-grn {
+    background-color: #40cc75;
+}
+
+.key-races-widget .lt-red {
+    background-color: #ee6e6f;
+}
+/*#endregion */
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+}
+
+.sharerer {
+    cursor: pointer;
+}
+
+.twitter-list-widget {
+    margin-top: 12px;
+}
+
+.dark-blue {
+    background-color: #3C5166;
+}
+
+    .dark-blue:hover {
+        background-color: #1f2d3a;
+        cursor: pointer;
+    }
+
+.sidebar {
+    padding-top: 10px;
+}
+
+.ndn_embed {
+    margin: 5px 0;
+}
+/*#region thmdfp */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.close-overlay {
+    position: absolute;
+    right: 9px;
+    top: 6px;
+    opacity: 1 !important;
+    font-size: 23px;
+    z-index: 1100;
+    color: #E7E4ED !important;
+    text-shadow: none !important;
+}
+
+.so {
+    width: 398px;
+    height: 330px;
+    padding: 0;
+}
+
+.slideout {
+    right: 0 !important;
+    display: block;
+}
+
+.slideoutbox {
+    position: fixed;
+    bottom: 0;
+    right: -500px;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    /*border-top: 4px solid #B22020;*/
+    background: none repeat scroll 0 0 #FFF;
+    box-shadow: 0 4px 10px #666;
+    z-index: 1000;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -moz-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+}
+
+    .slideoutbox iframe {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        -moz-transition-delay: 1s;
+        -o-transition-delay: 1s;
+        -webkit-transition-delay: 1s;
+        transition-delay: 1s;
+    }
+
+@-webkit-keyframes slideoutbox {
+    100% {
+        right: 0;
+    }
+}
+
+@-moz-keyframes slideoutbox {
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes slideoutbox {
+    100% {
+        right: 0;
+    }
+}
+
+
+/*#endregion */
+
+#virool{
+
+}

@@ -1,0 +1,1592 @@
+@charset "UTF-8";
+
+/* --- Gritter.css --- */
+
+#gritter-notice-wrapper {
+	position:fixed;
+	top:20px;
+	right:20px;
+	width:301px;
+	z-index:9999;
+}
+
+#gritter-notice-wrapper-preview {
+	width:301px;
+}
+
+#gritter-notice-wrapper.top-left {
+    left: 20px;
+    right: auto;
+}
+#gritter-notice-wrapper.bottom-right {
+    top: auto;
+    left: auto;
+    bottom: 20px;
+    right: 20px;
+}
+#gritter-notice-wrapper.bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 20px;
+    left: 20px;
+}
+.gritter-item-wrapper {
+
+}
+.gritter-top {
+	height:10px;
+}
+.hover .gritter-top {
+}
+.gritter-bottom {
+	height:8px;
+	margin:0;
+}
+.hover .gritter-bottom {
+}
+.gritter-item
+{
+	display:block;
+	color:#eee;
+	padding: 15px 11px;
+	font-size: 11px;
+	font-family: "Verdana", "Tahoma", "Arial", sans-serif;
+	position:relative;
+	margin:0 0 10px 0;
+	background:url(rgba.php?r=0&g=0&b=0&a=218); background:rgba(0,0,0,0.855); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#DA000000,endColorstr=#DA000000);
+	border: 0px;
+	-webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; border-radius: 10px;
+}
+
+.gritter-item a{
+	color: white;
+	text-decoration: underline;
+}
+
+.gritter-item p {
+	padding:0;
+	margin:0;
+	margin-bottom: 8px;
+	word-wrap:break-word;
+}
+.gritter-close {
+	position:absolute;
+	top:-10px;
+	right:-11px;
+	background:url(styles/gritter/close.png) no-repeat left top;
+	cursor:pointer;
+	width:30px;
+	height:30px;
+}
+
+.gritter-dismiss {
+	position: absolute;
+	font-size: 8px;
+	bottom: 1px;
+	right: 10px;
+}
+
+.gritter-title {
+	font-size:14px;
+	font-weight:bold;
+	padding:0 0 7px 0;
+	display:block;
+}
+.gritter-image {
+	width:48px;
+	height:48px;
+	float:left;
+}
+.gritter-with-image,
+.gritter-without-image {
+	padding:0;
+}
+.gritter-with-image {
+	width:220px;
+	float:right;
+}
+
+.gritter-item strong,
+.gritter-item b{
+font-weight: bold;
+}
+
+.gritter-light .gritter-item {
+	color: #222;
+	background:url(rgba.php?r=255&g=255&b=255&a=218); background:rgba(255,255,255,0.855); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#DAFFFFFF,endColorstr=#DAFFFFFF);
+}
+
+.gritter-light .gritter-item a{
+	color: black;
+	text-decoration: underline;
+}
+
+/* --- GritterEXTRA.css --- */
+
+/*
+// Customise this CSS to make more custom notification styles available.
+// Copy and paste the below. Change the class names accordingly.
+// Finally change the text color, link colour and notification background.
+// When adding or editing a notification, choose custom and type the class name. e.g. gritter-red
+*/
+
+.gritter-red .gritter-item {
+    color: #222;
+    background:url(rgba.php?r=255&g=0&b=0&a=218); background:rgba(255,0,0,0.855); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#DAFF0000,endColorstr=#DAFF0000);
+}
+
+.gritter-red .gritter-item a{
+    color: black;
+    text-decoration: underline;
+}
+
+/* Put your customisations below */
+
+/* GritterContainer */
+.GritterContainer-CMG-UIX {
+    padding: 8px;
+    border: 1px solid #CCCCCC;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.GritterContainer-CMG-UIX .gritter-top {
+    height: 0;
+}
+.GritterContainer-CMG-UIX .gritter-item {
+    background: #697e0b;
+    -webkit-border-radius: 0 0 0 0; -moz-border-radius: 0 0 0 0; -khtml-border-radius: 0 0 0 0; border-radius: 0 0 0 0;
+    border: 1px solid #a2b71c;
+    font-size: 14px;
+    margin: 0;
+}
+.GritterContainer-CMG-UIX .gritter-bottom {
+    height: 0;
+}
+.GritterContainer-CMG-UIX .gritter-title {
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.GritterContainer-CMG-UIX .gritter-close {
+    top: 3px;
+    right: 3px;
+    background: #a2b71c;
+    border: 4px solid #829434;
+    -webkit-border-radius: 20px; -moz-border-radius: 20px; -khtml-border-radius: 20px; border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    color: #000000;
+}
+.GritterContainer-CMG-UIX .gritter-close:hover {
+    background: #FFFFFF;
+}
+.GritterContainer-CMG-UIX .gritter-close::after {
+    content: "x";
+    left: 6px;
+    position: relative;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.GritterContainer-CMG-UIX .gritter-item .hello-name-CMG {
+    font-size: 20px;
+    margin: -80px 0 60px 0;
+    clear: both;
+    color: #000000;
+    font-weight: bolder;
+}
+.GritterContainer-CMG-UIX .gritter-item .button-CMG {
+    color: #333333;
+    background: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    float: left;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+.GritterContainer-CMG-UIX .gritter-item .button-CMG:hover {
+    background: #333333;
+    color: #ffcc00;
+}
+
+
+/* CMG custom */
+.align-right-CMG {
+    clear: both;
+    text-align: right;
+}
+.align-center-CMG {
+    text-align: center;
+}
+
+
+/* --- discussion_list.css --- */
+
+.discussionList
+{
+	position: relative;
+	zoom: 1;
+}
+
+/** column style and width **/
+
+.discussionList .sectionHeaders,
+.discussionListItem
+{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	word-wrap: normal;
+}
+
+	.discussionList .sectionHeaders dt,
+	.discussionList .sectionHeaders dd,
+	.discussionListItem .listBlock
+	{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+		.discussionList .posterAvatar
+		{
+			width: 46px;
+		}
+		
+		.discussionList .main
+		{
+			width: auto;
+		}
+
+			.discussionList .sectionHeaders .main .postDate
+			{
+				text-align: right;
+			}
+		
+		.discussionList .stats
+		{
+			width: 140px;
+		}
+			
+			.discussionList .sectionHeaders .stats .minor
+			{
+				text-align: right;
+			}
+		
+		.discussionList .lastPost
+		{
+			width: 180px;
+			text-align: right;
+			overflow: hidden;
+		}
+		
+		.discussionList .statsLastPost /* combined last two columns */
+		{
+			width: 320px;
+		}
+	
+
+/* column headers */
+
+.discussionList .sectionHeaders
+{	
+	font-size: 16px;
+color: rgb(205, 205, 205);
+text-decoration: none;
+background-color: rgb(70, 102, 124);
+padding: 8px 10px;
+margin: 3px auto 0;
+border-width: 0;
+
+	
+	padding: 0;
+}
+
+	.discussionList .sectionHeaders dt span
+	{
+		display: none !important;
+	}
+		
+	.discussionList .sectionHeaders a
+	{
+		display: block;
+		color: rgb(205, 205, 205);
+		outline: none;
+	}
+	
+	.discussionList .sectionHeaders a:hover
+	{
+		text-decoration: none;
+	}
+			
+	.discussionList .sectionHeaders dd a[href]:hover
+	{
+		color: rgb(248,251,253);
+text-decoration: none;
+background-color: rgb(70, 102, 124);
+
+	}
+		
+	.discussionList .sectionHeaders .main a,
+	.discussionList .sectionHeaders .stats a
+	{
+		float: left;
+		width: 50%;
+		white-space: nowrap;
+	}
+	
+		.discussionList .sectionHeaders a span
+		{
+			padding: 8px 10px;
+			display: block;
+		}
+		
+/** IE <8 **/
+.discussionList .sectionHeaders,
+.discussionListItem                { *display: block; _vertical-align: bottom; }
+.discussionList .sectionHeaders dt,
+.discussionList .sectionHeaders dd,
+.discussionListItem .listBlock     { *display: block; *float: left; }
+.discussionListItem .listBlock     { _height: 52px; *min-height: 52px; } /* todo: should be calculation */
+.discussionList .posterAvatar      { *width: 6.98%; }
+.discussionListItem .posterAvatar  { *font-size: 0; }	
+.discussionList .main              { *width: 56.98%; }
+.discussionList .stats             { *width: 15.97%; }	
+.discussionList .lastPost          { *width: 19.97%; }
+.discussionList .statsLastPost     { *width: 35.97%; }
+.discussionList .sectionHeaders dt,
+.discussionList .sectionHeaders dd { *padding: 5px 0; }
+.discussionList .sectionHeaders a,
+.discussionList .sectionHeaders a span { *display: inline !important; *float: none !important; }
+
+/* items in thread list */
+
+.discussionListItems
+{
+}
+
+
+
+	
+/* individual thread list item */
+	
+/** main **/
+
+.discussionListItem
+{
+	background-color: #FFFFFF;
+	
+	
+}
+
+
+
+
+
+	/* sections, section widths */
+	
+		.discussionListItem .posterAvatar,		
+		.discussionListItem .stats
+		{
+			background-color: #FFFFFF;
+		}
+		
+		.discussionListItem .main,
+		.discussionListItem .lastPost
+		{
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	/* avatar section */
+	
+	.discussionListItem .posterAvatar .avatarContainer
+	{
+		display: block;
+		position: relative;
+	}
+	
+	.discussionListItem .posterAvatar .avatar
+	{
+		padding: 5px;
+display: block;
+width: 36px;
+height: 36px;
+
+		
+		width: auto;
+		height: auto;
+	}
+	
+		.discussionListItem .posterAvatar .avatar img
+		{
+			width: 36px;
+			height: 36px;
+			display: block;
+		}
+		
+		.discussionListItem .posterAvatar .miniMe
+		{
+			padding: 0;
+position: absolute;
+bottom: 1px;
+left: 29px;
+z-index: 10;
+
+		}
+		
+			.discussionListItem .posterAvatar .miniMe img
+			{
+				padding: 1px;
+border: 1px none black;
+-webkit-border-radius: 2px; -moz-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;
+-webkit-box-shadow: 1px 1px 5px rgba(0,0,0, 0.5); -moz-box-shadow: 1px 1px 5px rgba(0,0,0, 0.5); -khtml-box-shadow: 1px 1px 5px rgba(0,0,0, 0.5); box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
+width: 20px;
+height: 20px;
+				
+			}		
+		
+		
+	/* title, poster section */
+	
+	.discussionListItem .titleText
+	{
+		padding: 5px;
+		overflow: hidden; zoom: 1;
+		position: relative;
+	}
+	
+		/* unread indicator */
+		
+		.LoggedIn .discussionListItem .titleText
+		{			
+			padding-left: 20px;
+		}
+		
+		.LoggedIn .discussionListItem .unreadLink,
+		.LoggedIn .discussionListItem .ReadToggle
+		{
+			display: block;
+			width: 10px;
+			height: 10px;
+			
+			position: absolute;
+			left: 5px;
+			top: 10px;
+			
+			background: url('styles/uix/xenforo/xenforo-ui-sprite.png') no-repeat 10000px 0;
+			
+			white-space: nowrap;
+			overflow: hidden;
+			text-indent: 9999px;
+		}
+		
+			.LoggedIn .discussionListItem .unreadLink,
+			.LoggedIn .discussionListItem.unread .ReadToggle
+			{
+				background-position: -5px -42px;
+			}
+		
+			.LoggedIn .discussionListItem .ReadToggle:hover
+			{
+				background-position: -25px -42px;
+			}
+	
+		/* first row */
+	
+		.discussionListItem .title
+		{
+			font-size: 11pt;
+line-height: 1.5;
+
+			max-width: 100%;
+			word-wrap: break-word;
+		}
+		
+			.discussionListItems .unread .title a
+			{
+				font-weight: bold;
+color: rgb(137, 166, 51);
+/*padding-right: 18px;
+				background: transparent url('styles/uix/xenforo/widgets/discussion-new.png') no-repeat right center;*/
+
+			}
+			
+		
+		.discussionListItem .iconKey span
+		{
+			margin-left: 5px;
+text-indent: -10000em;
+float: right;
+background: transparent url('styles/uix/xenforo/xenforo-ui-sprite.png') no-repeat 10000px 0;
+width: 16px;
+height: 16px;
+
+		}
+			
+			.discussionListItem .iconKey .sticky    { background-position:   0px -16px; }
+			.discussionListItem .iconKey .starred   { background-position: -90px -32px; width: 18px; height: 18px; }
+			.discussionListItem .iconKey .watched   { background-position: -144px -16px; width: 16px; height: 16px; }
+			.discussionListItem .iconKey .locked    { background-position: -16px -16px; }
+			.discussionListItem .iconKey .moderated { background-position: -32px -16px; }
+			.discussionListItem .iconKey .redirect  { background-position: -48px -16px; }
+			.discussionListItem .iconKey .new       { background-position: -64px -16px; }
+		
+		/* second row */
+		
+		.discussionListItem .secondRow
+		{
+			font-size: 12px;
+
+			clear: both;
+		}
+		
+			.discussionListItem .secondRow .controls
+			{
+				float: right;
+				padding-left: 20px;
+			}
+				
+				.discussionListItem.AjaxProgress .controls
+				{
+					background: transparent url('styles/uix/xenforo/widgets/ajaxload.info_B4B4DC_facebook.gif') no-repeat left center;
+				}
+			
+			.discussionListItem .posterDate
+			{
+				float: left;
+			}
+			
+			
+			
+	/* stats section */
+	
+	.discussionListItem .stats dl
+	{
+		padding: 0 10px;
+		border-left: 1px solid rgb(250, 250, 250);
+		border-right: 1px solid rgb(250, 250, 250);
+	}
+		.discussionListItem .stats .major
+		{
+			font-size: 11pt;
+line-height: 1.5;
+
+			
+			margin-top: 5px;
+		}
+			
+		.discussionListItem .stats .minor
+		{
+			font-size: 12px;
+
+			
+			margin-bottom: 5px;
+		}
+			
+	/* last post section */
+	
+	.discussionListItem .lastPostInfo
+	{
+		padding: 5px;
+	}
+	
+		.discussionListItem .lastPostInfo .username
+		{
+			font-size: 11pt;
+line-height: 1.5;
+
+		}
+		
+	
+			.discussionListItems .unread .lastPostInfo .username
+			{
+				font-weight: bold;
+color: rgb(137, 166, 51);
+/*padding-right: 18px;
+				background: transparent url('styles/uix/xenforo/widgets/discussion-new.png') no-repeat right center;*/
+
+			}
+		
+		.discussionListItem .lastPostInfo .dateTime
+		{
+			font-size: 12px;
+
+		}
+
+
+/* extra note row */
+
+.discussionListItem .noteRow
+{
+	background-color: #FFFFFF;
+	padding: 5px;
+	text-align: center;
+	font-size: 11px;
+	color: #aaa;
+}
+
+	.discussionListItem .noteRow.secondary
+	{
+		background-color: #FFFFFF;
+	}
+
+
+
+
+/* deleted item */
+
+.discussionList .discussionListItem.deleted
+{
+}
+
+	.discussionList .discussionListItem.deleted .avatar img
+	{
+		opacity: 0.5;
+		filter: alpha(opacity='50');
+	}
+		
+	.discussionList .discussionListItem.deleted .deletionNote
+	{
+		float: left;
+		color: rgb(150,0,0);
+	}
+		
+/* moderated item */
+
+.discussionList .discussionListItem.moderated .listBlock
+{
+	background-color: #FFFFFF;
+}
+
+		
+		
+		
+		
+		
+			
+/* inline mod selected/checked classes */
+
+.discussionListItem.InlineModChecked,
+.discussionListItem.InlineModChecked .posterAvatar,
+.discussionListItem.InlineModChecked .main,
+.discussionListItem.InlineModChecked .stats,
+.discussionListItem.InlineModChecked .lastPost,
+.discussionListItem.deleted.InlineModChecked,
+.discussionListItem.moderated.InlineModChecked
+{
+	background-color: rgb(204, 241, 252);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+/** bottom summary **/
+
+.discussionList .sectionFooter
+{
+	overflow: hidden; zoom: 1;
+}
+
+	.discussionList .sectionFooter .contentSummary
+	{
+		float: left;
+		display: block;
+	}
+
+		
+/** thread list options **/
+
+.DiscussionListOptions
+{
+	margin: 8px auto;
+border: 1px solid rgb(240, 240, 240);
+-webkit-border-radius: 0; -moz-border-radius: 0; -khtml-border-radius: 0; border-radius: 0;
+line-height: 30px;
+overflow: hidden;
+zoom: 1;
+
+}
+
+.hasJs .DiscussionListOptions
+{
+	display: none;
+}
+
+	.DiscussionListOptions dl,
+	.DiscussionListOptions .controlGroup
+	{
+		float: left;
+		margin-right: 10px;
+		
+		overflow: hidden; zoom: 1;
+	}
+	
+		.DiscussionListOptions dt
+		{
+			float: left;
+		}
+		
+		.DiscussionListOptions dd
+		{
+			margin-left: 120px;
+		}
+		
+	.DiscussionListOptions .buttonGroup
+	{
+		float: right;
+	}
+	
+		.DiscussionListOptions .buttonGroup input
+		{
+			min-width: 75px;
+		}
+	
+#DiscussionListOptionsHandle
+{
+	position: absolute;
+bottom: -29px;
+line-height: 28px;
+text-align: center;
+right: 50%;
+white-space: nowrap;
+height: auto !important;
+height: 28px;
+
+}
+	
+	#DiscussionListOptionsHandle a
+	{
+		font-size: 12px;
+color: rgb(187, 187, 187);
+background-color: rgb(250, 250, 250);
+padding: 0 16px;
+margin: 0 auto;
+border: 1px solid rgb(231, 226, 224);
+border-top: 1px none black;
+-webkit-border-bottom-right-radius: 0; -moz-border-radius-bottomright: 0; -khtml-border-bottom-right-radius: 0; border-bottom-right-radius: 0;
+-webkit-border-bottom-left-radius: 0; -moz-border-radius-bottomleft: 0; -khtml-border-bottom-left-radius: 0; border-bottom-left-radius: 0;
+display: inline-block;
+outline: 0;
+position: relative;
+right: -50%;
+
+	}
+	
+.afterDiscussionListHandle
+{
+	margin-top: 20px;
+}
+	
+/** item page nav **/
+
+.discussionListItem .itemPageNav
+{
+	visibility: hidden;
+}
+
+.discussionListItem:hover .itemPageNav,
+.Touch .discussionListItem .itemPageNav
+{
+	visibility: visible;
+}
+
+	.itemPageNav a,
+	.itemPageNav span
+	{
+		color: rgb(70, 102, 124);
+background-color: rgb(255,255,255);
+padding: 0 3px;
+border: 1px solid rgb(247, 249, 239);
+-webkit-border-radius: 0; -moz-border-radius: 0; -khtml-border-radius: 0; border-radius: 0;
+display: inline-block;
+text-align: center;
+
+	}
+	
+	body .itemPageNav a
+	{
+		color: rgb(70, 102, 124);
+background-color: rgb(255,255,255);
+border: 1px solid rgb(247, 249, 239);
+-webkit-border-radius: 0; -moz-border-radius: 0; -khtml-border-radius: 0; border-radius: 0;
+
+	}
+	
+	body .itemPageNav a:hover
+	{
+		color: rgb(137, 166, 51);
+text-decoration: none;
+background-color: rgb(248,251,253);
+border-color: rgb(247, 249, 239);
+
+	}
+
+/** filters **/
+		
+.discussionListFilters
+{
+	font-size: 11px;
+	overflow: hidden; zoom: 1;
+}
+
+	.discussionListFilters .filtersHeading
+	{
+		float: left;
+		margin-right: 5px;
+		color: rgb(226, 226, 226);
+		font-weight: bold;
+	}
+	
+	.discussionListFilters .removeFilter,
+	.discussionListFilters .removeAllFilters
+	{
+		color: #aaa;
+		background: rgb(250, 250, 250) url('styles/uix/xenforo/gradients/form-button-white-25px.png') repeat-x top;
+		border: 1px solid rgb(250, 250, 250);
+		-webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px;
+		padding: 2px 10px;
+	}
+	
+		.discussionListFilters .gadget
+		{
+			color: rgb(226, 226, 226);
+			font-weight: bold;
+			margin-left: 3px;
+		}
+
+	
+		.discussionListFilters .removeFilter:hover,
+		.discussionListFilters .removeAllFilters:hover
+		{
+			background-color: #FFFFFF;
+			text-decoration: none;
+			color: rgb(118, 118, 118);
+			-webkit-box-shadow: 1px 1px 5px rgba(0,0,0, 0.15); -moz-box-shadow: 1px 1px 5px rgba(0,0,0, 0.15); -khtml-box-shadow: 1px 1px 5px rgba(0,0,0, 0.15); box-shadow: 1px 1px 5px rgba(0,0,0, 0.15);
+		}
+		
+	.discussionListFilters .pairsInline dt
+	{
+		display: none;
+	}
+	
+	.discussionListFilters .filterPairs
+	{
+		float: left;
+	}
+	
+	.discussionListFilters .removeAll
+	{
+		float: right;
+	}
+	
+		.discussionListFilters .removeAllFilters
+		{
+			padding: 2px 6px;
+		}
+
+
+@media (max-width:610px)
+{
+	.Responsive .discussionList .sectionHeaders .stats
+	{
+		display: none;
+	}
+	
+	.Responsive .discussionList .sectionHeaders .main .title
+	{
+		float: none;
+		width: auto;
+	}
+	
+	.Responsive .discussionList .sectionHeaders .main .postDate
+	{
+		display: none;
+	}
+	
+	.Responsive .discussionList .statsLastPost
+	{
+		display: none;
+	}
+
+	.Responsive .discussionListItem .listBlock.main,
+	.Responsive .discussionListItem .listBlock.stats,
+	.Responsive .discussionListItem .listBlock.lastPost
+	{
+		display: block;
+	}
+	
+	.Responsive .discussionListItem .listBlock.stats
+	{
+		float: left;
+		width: auto;
+		margin-top: -5px;
+		border: none;
+		background: none;
+		padding-left: 5px;
+	}
+	
+		.Responsive.LoggedIn .discussionListItem .listBlock.stats
+		{			
+			padding-left: 20px;
+		}
+	
+		.Responsive .discussionListItem .listBlock.stats dl
+		{
+			border: none;
+			padding: 0;
+		}
+		
+		.Responsive .discussionListItem .listBlock.stats dd,
+		.Responsive .discussionListItem .listBlock.stats dt
+		{
+			float: none;
+			display: inline;
+		}
+	
+		.Responsive .discussionListItem .listBlock.stats .minor
+		{
+			display: none;
+		}
+		
+		.Responsive .discussionListItem .listBlock.stats .major
+		{
+			font-size: 11px;
+			margin-top: 0;
+		}
+	
+	.Responsive .discussionListItem .listBlock.lastPost
+	{
+		float: right;
+		width: auto;
+		margin-top: -5px;
+	}
+		.Responsive .discussionListItem .listBlock.lastPost .lastPostInfo
+		{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	
+		.Responsive .discussionListItem .listBlock.lastPost dt
+		{
+			display: none;
+		}
+}
+
+@media (max-width:800px)
+{
+	.Responsive .discussionList .sectionHeaders .lastPost,
+	.Responsive .discussionList .lastPost
+	{
+		width: 125px;
+	}
+}
+
+@media (max-width:480px)
+{
+	.Responsive .discussionListItem .secondRow .startDate,
+	.Responsive .discussionListItem .secondRow .EditControl
+	{
+		display: none;
+	}
+}
+
+
+/* --- facebook.css --- */
+
+a.fbLogin,
+#loginBar a.fbLogin
+{
+	display: inline-block;
+	width: 200px;
+	height: 22px;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;
+	cursor: pointer;
+	
+	background: #29447e url('//b.s-static.ak.facebook.com/images/connect_sprite.png');
+	background-repeat: no-repeat;
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+	background-position: left -188px;
+	padding: 0px 0px 0px 1px;
+	outline: none;
+	
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+a.fbLogin:active,
+#loginBar a.fbLogin:active
+{
+	background-position: left -210px;
+}
+
+a.fbLogin:hover,
+#loginBar a.fbLogin:hover
+{
+	text-decoration: none;
+}
+
+	a.fbLogin span
+	{
+		background: #5f78ab url('//b.s-static.ak.facebook.com/images/connect_sprite.png');
+		border-top: solid 1px #879ac0;
+		border-bottom: solid 1px #1a356e;
+		display: block;
+		padding: 2px 4px 3px;
+		margin: 1px 1px 0px 21px;
+		text-shadow: none;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	a.fbLogin:active span
+	{
+		border-bottom: solid 1px #29447e;
+		border-top: solid 1px #45619d;
+		background: #4f6aa3;
+		text-shadow: none;
+	}
+
+/* --- google.css --- */
+
+.googleLogin,
+#loginBar .googleLogin
+{
+	display: inline-block;
+	width: 200px;
+	height: 22px;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;
+	cursor: pointer;
+	
+	background-color: #dd4b39;
+	border: #be3e2e solid 1px;
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+	padding-left: 2px;
+	
+	color: white;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+	.googleLogin span
+	{
+		display: block;
+		background: url('styles/uix/xenforo/gplus.png') no-repeat;
+		background-position: left 0;
+		padding: 3px;
+		padding-left: 23px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+.googleLogin:active,
+#loginBar .googleLogin:active
+{
+	background-color: #be3e2e;
+}
+
+/* --- login_bar.css --- */
+
+/** Login bar basics **/
+
+#loginBar .pageContent 
+{
+	color: rgb(250, 250, 250);
+background-color: rgb(255, 51, 51);
+
+}
+
+	
+
+	#loginBar .pageContent
+	{
+		padding-top: 0;
+		position: relative;
+		_height: 0px;
+	}
+
+	#loginBar a
+	{
+		color: rgba(255,255,255,.8);
+
+	}
+
+	#loginBar form
+	{
+		padding: 16px 0;
+margin: 0 auto;
+display: none;
+line-height: 20px;
+position: relative;
+
+	}
+	
+		#loginBar .xenForm .ctrlUnit,		
+		#loginBar .xenForm .ctrlUnit > dt label
+		{
+			margin: 0;
+			border: none;
+		}
+	
+		#loginBar .xenForm .ctrlUnit > dd
+		{
+			position: relative;
+		}
+	
+	#loginBar .lostPassword,
+	#loginBar .lostPasswordLogin
+	{
+		font-size: 11px;
+	}
+	
+	#loginBar .rememberPassword
+	{
+		font-size: 11px;
+	}
+
+	#loginBar .textCtrl
+	{
+		color: #FFFFFF;
+background: url(rgba.php?r=0&g=0&b=0&a=38); background: rgba(0, 0, 0, 0.15); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#26000000,endColorstr=#26000000);
+border-color:  rgb(0, 0, 0); border-color:  rgba(0, 0, 0, 0.15); _border-color:  rgb(0, 0, 0);
+
+	}
+	
+	#loginBar .textCtrl[type=text]
+	{
+		font-weight: bold;
+
+	}
+
+	#loginBar .textCtrl:-webkit-autofill /* http://code.google.com/p/chromium/issues/detail?id=1334#c35 */
+	{
+		background: url(rgba.php?r=0&g=0&b=0&a=38) !important; background: rgba(0, 0, 0, 0.15) !important; _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#26000000,endColorstr=#26000000);
+		color: #FFFFFF;
+	}
+
+	#loginBar .textCtrl:focus
+	{
+		background: url(rgba.php?r=0&g=0&b=0&a=76) none; background: rgba(0, 0, 0, 0.3) none; _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+
+	}
+	
+	#loginBar input.textCtrl.disabled
+	{
+		color: rgb(118, 118, 118);
+background-color: #000;
+border-style: dashed;
+
+	}
+	
+	#loginBar .button
+	{
+		min-width: 85px;
+		*width: 85px;
+	}
+	
+		#loginBar .button.primary
+		{
+			font-weight: bold;
+		}
+		
+/** changes when eAuth is present **/
+
+#loginBar form.eAuth
+{
+	-x-max-width: 720px; /* normal width + 170px */
+}
+
+	#loginBar form.eAuth .ctrlWrapper
+	{
+		border-right:  1px dotted rgb(250, 250, 250); border-right:  1px dotted rgba(250, 250, 250, .5); _border-right:  1px dotted rgb(250, 250, 250);
+		margin-right: 220px;
+		-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;
+	}
+
+	#loginBar form.eAuth #eAuthUnit
+	{
+		position: absolute;
+		top: 0px;
+		right: 0;
+		width: 200px;
+	}
+
+		#eAuthUnit li
+		{
+			margin-top: 10px;
+			line-height: 0;
+		}
+	
+/** handle **/
+
+#loginBar #loginBarHandle label 
+{
+	font-weight: bold;
+font-size: 16px;
+color: #FFF;
+background-color: rgb(255, 51, 51);
+padding: 0 8px;
+-webkit-border-top-left-radius: 0; -moz-border-radius-topleft: 0; -khtml-border-top-left-radius: 0; border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0; -moz-border-radius-topright: 0; -khtml-border-top-right-radius: 0; border-top-right-radius: 0;
+-webkit-border-bottom-right-radius: 0; -moz-border-radius-bottomright: 0; -khtml-border-bottom-right-radius: 0; border-bottom-right-radius: 0;
+-webkit-border-bottom-left-radius: 0; -moz-border-radius-bottomleft: 0; -khtml-border-bottom-left-radius: 0; border-bottom-left-radius: 0;
+position: absolute;
+right: 0;
+display: inline-block;
+text-align: center;
+z-index: 1;
+line-height: 30px;
+height: 30px;
+
+}
+
+
+@media (max-width:800px)
+{
+	.Responsive #loginBar form.eAuth .ctrlWrapper
+	{
+		border-right: none;
+		margin-right: 0;
+		padding-top: 16px;
+	}
+
+	.Responsive #loginBar form.eAuth #eAuthUnit
+	{
+		position: static;
+		width: 200px;
+		margin: 0 auto;
+	}
+}
+@media (max-width:610px)
+{
+	.Responsive #loginBar .xenForm .ctrlUnit > dd {padding-left: 0; padding-right: 0;}
+	.Responsive #loginBar form.eAuth #eAuthUnit {width: auto; margin-left: 16px; margin-right: 16px;}
+}
+
+
+
+/* --- moderator_bar.css --- */
+
+#moderatorBar
+{
+	background-color: rgb(73, 64, 57);
+	border-bottom: 1px solid rgb(187, 187, 187);	
+	font-size: 11px;
+}
+
+/*#moderatorBar
+{
+	-webkit-box-shadow: 0 0 5px #aaa; -moz-box-shadow: 0 0 5px #aaa; -khtml-box-shadow: 0 0 5px #aaa; box-shadow: 0 0 5px #aaa;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+}
+
+body
+{
+	padding-top: 25px;
+}*/
+
+/* clearfix */ #moderatorBar { zoom: 1; } #moderatorBar:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
+
+#moderatorBar .pageContent
+{
+	padding: 2px 0;
+	overflow: auto;
+}
+
+#moderatorBar a
+{
+	display: inline-block;
+	padding: 2px 10px;
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+}
+
+#moderatorBar a,
+#moderatorBar .itemCount
+{
+	color: rgb(240, 240, 240);
+}
+
+	#moderatorBar a:hover
+	{
+		text-decoration: none;
+		background-color: rgb(58, 51, 46);
+		color: rgb(250, 250, 250);
+	}
+
+/* TODO: maybe sort out the vertical alignment of the counters so they they are properly centered */
+
+#moderatorBar .itemLabel,
+#moderatorBar .itemCount
+{
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+}
+
+#moderatorBar .itemCount
+{	
+	background: rgb(58, 51, 46);
+	padding-left: 6px;
+	padding-right: 6px;
+	
+	text-align: center;
+	
+	font-weight: bold;
+	
+	-webkit-border-radius: 2px; -moz-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;
+	text-shadow: none;
+}
+
+	#moderatorBar .itemCount.alert
+	{
+		background: #e03030;
+		color: white;
+		-webkit-box-shadow: 2px 2px 5px rgba(0,0,0, 0.25); -moz-box-shadow: 2px 2px 5px rgba(0,0,0, 0.25); -khtml-box-shadow: 2px 2px 5px rgba(0,0,0, 0.25); box-shadow: 2px 2px 5px rgba(0,0,0, 0.25);
+	}
+	
+#moderatorBar .adminLink
+{
+	float: right;
+}
+
+#moderatorBar .permissionTest,
+#moderatorBar .permissionTest:hover
+{
+	background: #e03030;
+	color: white;
+	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0, 0.25); -moz-box-shadow: 2px 2px 5px rgba(0,0,0, 0.25); -khtml-box-shadow: 2px 2px 5px rgba(0,0,0, 0.25); box-shadow: 2px 2px 5px rgba(0,0,0, 0.25);
+	font-weight: bold;
+}
+
+/* --- twitter.css --- */
+
+a.twitterLogin,
+#loginBar a.twitterLogin
+{
+	display: inline-block;
+	width: 200px;
+	height: 22px;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;
+	cursor: pointer;
+	
+	background-color: #eee;
+	background-image: -webkit-linear-gradient(#fff, #dedede);
+	background-image: linear-gradient(#fff, #dedede);
+	border: #ccc solid 1px;
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+	padding: 3px;
+	
+	color: #333 !important;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+	a.twitterLogin span
+	{
+		display: block;
+		background: url('styles/uix/xenforo/twitter-bird.png') no-repeat;
+		background-position: left 0;
+		padding-left: 22px;
+		text-shadow: 0 1px 0 rgba(255,255,255,.5);
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	
+a.twitterLogin:hover,
+#loginBar a.twitterLogin:hover,
+a.twitterLogin:active,
+#loginBar a.twitterLogin:active
+{
+	border-color: #d9d9d9;
+	background-image: -webkit-linear-gradient(#f8f8f8, #d9d9d9);
+	background-image: linear-gradient(#f8f8f8, #d9d9d9);
+	text-decoration: none;
+}
+
+/* --- uix_extendedFooter.css --- */
+
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+	#uix_footer_columns .pageContent 
+	{
+		color: rgb(187, 187, 187);
+background-color: rgb(73, 64, 57);
+margin-top: 16px;
+margin-bottom: 16px;
+-webkit-border-radius: 0; -moz-border-radius: 0; -khtml-border-radius: 0; border-radius: 0;
+clear: both;
+
+		
+	}
+	
+	#uix_footer_columns .uix_footer_columns_container {
+		
+	}
+	
+	.hasFlexbox #uix_footer_columns .uix_footer_columns_container {	
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		
+		-ms-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	
+	#uix_footer_columns .uix_footer_columns_container > li {
+	
+		vertical-align: top;
+		-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;
+		
+		padding: 16px;
+border-color:  rgb(255, 255, 255); border-color:  rgba(255, 255, 255, .1); _border-color:  rgb(255, 255, 255);
+line-height: 180%;
+
+	}
+	.hasFlexbox #uix_footer_columns .uix_footer_columns_container > li {
+		-ms-flex: 1 1 290px;
+		-webkit-flex: 1 1 290px;
+		flex: 1 1 290px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+	#uix_footer_columns h3,
+	#uix_footer_columns h3 a
+	{
+		font-weight: bold;
+font-size: 20px;
+font-family: 'PT Sans Narrow', Helvetica, sans-serif;
+color: #FFFFFF;
+padding-top: 8px;
+padding-bottom: 8px;
+;
+	}
+	#uix_footer_columns .uix_footer_columns_container > li h3 > i
+	{
+		color: rgb(58, 51, 46);
+margin-right: 8px;
+display: inline-block;
+
+	}
+	#uix_footer_columns .uix_footer_columns_container > li a 
+	{
+		color: #FFFFFF;
+text-decoration: none;
+
+	}
+	#uix_footer_columns .uix_footer_columns_container > li a:hover 
+	{
+		color: rgb(137, 166, 51);
+
+	}
+	#uix_footer_columns .uix_footer_columns_container > li ul.footerMenu 
+	{
+		margin-bottom: 8px;
+	}
+	#uix_footer_columns .uix_footer_columns_container > li ul.footerMenu > li > a 
+	{
+		padding: 8px 0;
+border-bottom:  1px solid rgb(255,255,255); border-bottom:  1px solid rgba(255,255,255, .1); _border-bottom:  1px solid rgb(255,255,255);
+display: block;
+
+	}
+	#uix_footer_columns .widget-container 
+	{
+		 background: none;
+		 padding: 0;
+		 margin: 0;
+		 border: none;
+		 -webkit-border-radius: 0; -moz-border-radius: 0; -khtml-border-radius: 0; border-radius: 0;
+	}
+	
+	
+	
+	@media (max-width: 480px)
+	{
+		.Responsive #uix_footer_columns .uix_footer_columns_container > li h3 {text-align: center;}
+		.Responsive #uix_footer_columns .uix_footer_columns_container > li h3 > i {
+			display: block;
+			font-size: 48px;
+			margin: 0;
+			margin-bottom: 16px;
+		}
+		.Responsive #uix_footer_columns .uix_footer_columns_container {text-align: center;}
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- xengallery_tab_links.css --- */
+
+.navTabs .navTab.selected .xengalleryTabLinks .xengallery li .Popup a:hover,
+.navTabs .navTab.selected .xengalleryTabLinks .xengallery li .Popup a:focus
+{
+	color: rgb(137, 166, 51);
+text-decoration: none;
+background-color: transparent;
+outline: 0;
+
+}

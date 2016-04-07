@@ -1,0 +1,35 @@
+
+        var ADGLARE = ADGLARE || {};
+        var _adglareloaded_269954 = false;
+        function _adglarestartloading_269954() {
+            if(_adglareloaded_269954) return;
+            _adglareloaded_269954 = true;
+            
+            var adzone_refresh_n_660387594=0;
+            function adzone_refresh_660387594() {
+    
+                var o = document.getElementById('zone660387594');
+                if(!o) {if(adzone_refresh_n_660387594>1200)return; window.setTimeout(function(){adzone_refresh_n_660387594++;adzone_refresh_660387594();},50); return;}
+                if(o.nodeName!='SPAN') return;
+                
+                var params = '', writeplaceholder = true;                
+                ADGLARE.zone660387594 = ADGLARE.zone660387594 || {};
+                if(ADGLARE.zone660387594.lastcID !== undefined) {
+                    params += '&lastcID='+ADGLARE.zone660387594.lastcID;
+                    writeplaceholder = false;
+                }
+                
+                if(writeplaceholder) o.innerHTML = "<span style='padding:0px; margin:0px; opacity:1; visibility:visible; display:inline-block; width:300px; height:250px;'></span>";
+                
+                var s = document.createElement('script');
+                s.type = 'text/javascript'; s.async = true;
+                s.src = '//thegailygrind.engine.adglare.net/?660387594&t=1&rnd='+(Math.floor(Math.random()*1000000)+params+'&l='+encodeURIComponent(document.location.href));
+                document.body.insertBefore(s, document.body.firstChild);
+        
+            }
+            window.setTimeout(function(){adzone_refresh_660387594();},1);
+    
+        }
+    
+        _adglarestartloading_269954();
+            

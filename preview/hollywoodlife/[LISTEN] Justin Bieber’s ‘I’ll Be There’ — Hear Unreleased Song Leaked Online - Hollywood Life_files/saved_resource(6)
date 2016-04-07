@@ -1,0 +1,203 @@
+(function($) {
+	function do_all_client_side_twitter_oembed() {	
+		if( typeof twttr === undefined ) {
+			$.getScript('//platform.twitter.com/widgets.js', function() { $( '.pending-tweet' ).each( do_client_side_twitter_oembed ); } );
+		}
+	}
+
+	// handle failed tweets or tweets that haven't been fetched yet
+	function do_client_side_twitter_oembed() {
+		var $this = $(this),
+			text,
+			url = 'https://api.twitter.com/1/statuses/oembed.json?omit_script=true&callback=?&';
+
+		// Handle instances where make_clickable gets too friendly and linkifies our Twitter URL 
+		if ( $this.has( 'a' ).length ) {
+			text = $this.find( 'a' ).first().attr( 'href' );
+		} else {
+			text = $this.text();
+		}
+			
+		// If we find an exact match, we want to fetch its content from the oembed endpoint and display it
+		if ( text.match( /^http(s|):\/\/twitter\.com(\/\#\!\/|\/)([a-zA-Z0-9_]{1,20})\/status(es)*\/(\d+)$/ ) ) {
+			url += 'url=' + encodeURIComponent( text );
+		} else if ( text.match( /^(\d+)$/ ) ) {
+			url += 'id=' + text;
+		} else {
+			return;
+		}
+
+		// Need to make a JSONP call to avoid CORS issues
+		$.getJSON( url, function( data ) {
+			if ( data.html ) {
+				$this.html( data.html );
+				$this.show();
+				twttr.widgets.load();
+			}
+		} );
+	}
+
+	$( document ).ready( do_all_client_side_twitter_oembed );
+	$( document.body ).on('post-load', do_all_client_side_twitter_oembed );
+})(jQuery);
+;
+jQuery( document.body ).on( 'post-load', function() {
+	if ( typeof twttr == 'object' && twttr.widgets && twttr.widgets.load )
+		twttr.widgets.load();
+});;
+var pmc_krux_gallery_view_triggered = pmc_krux_gallery_view_triggered || [];
+
+/**
+ * Fire Krux pixel once every 5th slide
+ * @Jira: PPT-4256
+ */
+jQuery( document ).on( 'pmc-gallery-image-rendered', function (event) {
+    var curr_img_pos = event.current == 0 ? 1 : event.current;
+    if ( 1 == curr_img_pos || 0 == ( curr_img_pos % 5) || pmc_krux_gallery_view_triggered.length == 0 ) {
+        if ( pmc_krux_gallery_view_triggered.indexOf( curr_img_pos ) < 0 ) {
+            if ( typeof krux_event_pixels != 'undefined' && typeof krux_event_pixels.gallery_slide_view != 'undefined' ) {
+                /* krux_event_pixels.gallery_slide_view is already escaped in php using esc_url_raw() */
+                ( new Image() ).src = krux_event_pixels.gallery_slide_view;
+				pmc_krux_gallery_view_triggered.push( curr_img_pos );
+            }
+        }
+    }
+});
+
+;
+function hl_resize_zuus_player() {
+    if (jQuery('iframe.hl_zuus_player')) {
+        jQuery('iframe.hl_zuus_player').each(function (zuus_ifram_index, zuus_iframe_obj) {
+            var zuus_player_width = zuus_iframe_obj.scrollWidth;
+            var zuus_player_height = zuus_player_width * 9 / 16;
+            zuus_iframe_obj.style.height = zuus_player_height + 'px';
+        });
+    }
+}
+
+jQuery(window).resize(function () {
+    hl_resize_zuus_player();
+});
+
+jQuery(document).ready(function () {
+
+    window.setTimeout(function () {
+        hl_resize_zuus_player();
+    }, 2000);
+});;
+var eSalon = {
+	options: {
+		trigger_params: [{name: 'utm_source', value: 'advertorial'}],
+		include_params: ['utm_medium','utm_source', 'utm_campaign'],
+		alink_patterns: 'esalon.com',
+		enclose_selector: 'body'
+	},
+
+	match_triggered: function() {
+		if ( typeof this._triggered !== 'undefined' ) {
+			return this._triggered;
+		}
+		this._triggered = true;
+		for( var i = 0; i < this.options.trigger_params.length; i++ ) {
+			var param = this.options.trigger_params[i];
+			if ( pmc.tracking.get_property(param.name) !== param.value ) {
+				this._triggered = false;
+				return false;
+			}
+		}
+		return this._triggered;
+	},
+
+	append_querystring: function( link ) {
+		if ( typeof this._querystring === 'undefined' ) {
+			this._querystring = this.options.include_params.map(function($name){
+				$value = pmc.tracking.get_property( $name, '' );
+				return $name +'='+$value;
+			}).join('&');
+		}
+		if ( link.indexOf(this._querystring) !== -1 ) {
+			return link;
+		}
+		return link + ( /\?/.test( link ) ? '&' : '?' ) + this._querystring;
+	},
+
+	process: function() {
+		if ( typeof pmc === 'undefined' || ! this.match_triggered() ) {
+			return;
+		}
+		
+		jQuery(this.options.enclose_selector)
+			.find('a[href*="'+ this.options.alink_patterns +'"]')
+			.each( function() {
+				var href = jQuery(this).attr('href');
+				jQuery(this).attr( 'href', eSalon.append_querystring(href) );
+			});
+
+	},
+
+	init: function() {
+
+		jQuery(function(){
+			// execute to process tag within post content before ads code run.
+			// User might click on the link before ads show up so we need to capture that first.
+			eSalon.process();
+
+			// fire after all document ready events had been fired to capture ads events
+			jQuery(window).ready(function(){
+				// this call to process tag to capture ads html that are dynamically generate that wasn't capture from the first event such as Taboola might contains link to esalon.com as well.
+				eSalon.process();
+			});
+
+		});
+		
+	} // initialize
+};
+
+eSalon.init();
+
+;
+var addComment={moveForm:function(a,b,c,d){var e,f,g,h,i=this,j=i.I(a),k=i.I(c),l=i.I("cancel-comment-reply-link"),m=i.I("comment_parent"),n=i.I("comment_post_ID"),o=k.getElementsByTagName("form")[0];if(j&&k&&l&&m&&o){i.respondId=c,d=d||!1,i.I("wp-temp-form-div")||(e=document.createElement("div"),e.id="wp-temp-form-div",e.style.display="none",k.parentNode.insertBefore(e,k)),j.parentNode.insertBefore(k,j.nextSibling),n&&d&&(n.value=d),m.value=b,l.style.display="",l.onclick=function(){var a=addComment,b=a.I("wp-temp-form-div"),c=a.I(a.respondId);if(b&&c)return a.I("comment_parent").value="0",b.parentNode.insertBefore(c,b),b.parentNode.removeChild(b),this.style.display="none",this.onclick=null,!1};try{for(var p=0;p<o.elements.length;p++)if(f=o.elements[p],h=!1,"getComputedStyle"in window?g=window.getComputedStyle(f):document.documentElement.currentStyle&&(g=f.currentStyle),(f.offsetWidth<=0&&f.offsetHeight<=0||"hidden"===g.visibility)&&(h=!0),"hidden"!==f.type&&!f.disabled&&!h){f.focus();break}}catch(q){}return!1}},I:function(a){return document.getElementById(a)}};;
+/**
+ * File to Handle common JS Functions
+ *
+ * @author Vicky Biswas
+ * @since 2013-11-18
+ */
+
+//Related Posts AJAX code
+jQuery(document).ready(function() {
+	related_page = 1;
+	jQuery('.more-related-article > strong > a').click(function(){
+		var current_element = jQuery(this);
+		if (current_element.text() == 'More Stories') {
+			current_element.html( '<img src="' + pmc_common_urls.current_theme_uri + 'images/loading.gif" />' )
+			.addClass('ajax-link')
+			.removeClass('action-link');
+			jQuery.ajax({
+				url: hollywood_related_posts.ajax_url,
+				type: 'GET',
+				data: "action=fetch_more_related_posts&page=" + related_page + "&postid=" + hollywood_related_posts.post_id,
+				context: current_element,
+				success: function(dropdown) {
+					if (dropdown != 0) {
+						jQuery('.related-articles').append(dropdown);
+					}
+
+					if (dropdown == "") {
+						jQuery('.more-related-article').hide();
+					}
+
+					related_page += 1;
+					jQuery(this).text('More Stories')
+					.removeClass('ajax-link')
+					.addClass('action-link');
+				}
+			});
+		}
+
+		return false;
+	});
+});
+
+;
+!function(a){a.fn.hoverIntent=function(b,c,d){var e={interval:100,sensitivity:6,timeout:0};e="object"==typeof b?a.extend(e,b):a.isFunction(c)?a.extend(e,{over:b,out:c,selector:d}):a.extend(e,{over:b,out:b,selector:c});var f,g,h,i,j=function(a){f=a.pageX,g=a.pageY},k=function(b,c){return c.hoverIntent_t=clearTimeout(c.hoverIntent_t),Math.sqrt((h-f)*(h-f)+(i-g)*(i-g))<e.sensitivity?(a(c).off("mousemove.hoverIntent",j),c.hoverIntent_s=!0,e.over.apply(c,[b])):(h=f,i=g,c.hoverIntent_t=setTimeout(function(){k(b,c)},e.interval),void 0)},l=function(a,b){return b.hoverIntent_t=clearTimeout(b.hoverIntent_t),b.hoverIntent_s=!1,e.out.apply(b,[a])},m=function(b){var c=a.extend({},b),d=this;d.hoverIntent_t&&(d.hoverIntent_t=clearTimeout(d.hoverIntent_t)),"mouseenter"===b.type?(h=c.pageX,i=c.pageY,a(d).on("mousemove.hoverIntent",j),d.hoverIntent_s||(d.hoverIntent_t=setTimeout(function(){k(c,d)},e.interval))):(a(d).off("mousemove.hoverIntent",j),d.hoverIntent_s&&(d.hoverIntent_t=setTimeout(function(){l(c,d)},e.timeout)))};return this.on({"mouseenter.hoverIntent":m,"mouseleave.hoverIntent":m},e.selector)}}(jQuery);;

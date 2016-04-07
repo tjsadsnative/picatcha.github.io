@@ -1,0 +1,254 @@
+/* --
+CSS Reseter
+CSSLab © 2010 by Jorge Epuñan
+http://www.csslab.cl/2010/06/01/css-reseter-v2/
+-- */
+a,abbr,acronym,address,applet,article,aside,audio,big,blockquote,body,caption,cite,code,dd,del,dfn,dialog,div,dl,dt,em,fieldset,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,s,samp,section,small,span,strike,sub,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,ul,var,video{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%}article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block}legend{display:none}:focus{outline:0}table{border-collapse:collapse;border-spacing:0}caption,td,th{text-align:left;font-weight:400}a img,iframe{border:none}ul{list-style:none}button,input,select,textarea{font-size:100%;font-family:inherit}input,select{vertical-align:middle}select{margin:inherit}button{border:0;padding:0;background:0 0;cursor:pointer}ol{margin-left:2em}.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}* html .clearfix{height:1%}.clearfix{display:block}
+
+p {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner {
+    position: absolute;
+    width: 726px;
+    height: 88px;
+    border: 1px solid #D9D9D9;
+    background: #fff;
+    overflow: hidden;
+}
+
+#loading_dc{
+    width: 726px;
+    height: 90px;
+    background-color: white;
+    position: absolute;
+    z-index: 20;
+}
+
+#loading_image_dc{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20px;
+    position: absolute; 
+    text-align: center;
+}
+
+/* DevFrame */
+.frames {
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    width: 716px;
+    height: 78px;
+    position: absolute;
+    overflow: hidden;
+    top: 4px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.v {
+    display: block;
+}
+
+.nv {
+    display: none;
+}
+
+/* Exits */
+#clickTag{
+    left:0;
+    top: 0;
+    width: 728px;
+    height: 90px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 4;
+}
+
+/* cast */
+#bg_vineta {
+    position: absolute;
+    left: 0;
+    width: 380px;
+    height: 90px;
+    opacity: .5;
+    background:url(bg_vineta.jpg) no-repeat;
+}
+#bg_grad {
+    position: absolute;
+    right: 0px;
+    bottom: -1px;
+    width: 341px;
+    height: 80px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background:url(bg_grad.png) repeat-x;
+}
+
+#logo { 
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 20px;
+    background: url(logo.svg) no-repeat;
+    background-size: cover;
+}
+
+
+#card { 
+    position: absolute;
+    bottom: 5px;
+    left: 86px;
+    right: 0px;
+    margin: 0px auto;
+    width: 105px;
+    height: 65px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: url(card.png) no-repeat;
+    background-size: cover;
+}
+
+#card_reflection { 
+    position: absolute;
+    bottom: -19px;
+    left: 3px;
+    right: 0px;
+    margin: 0px auto;
+    width: 153px;
+    height: 20px;
+    background: url(card_reflect.png) no-repeat;
+    background-size: cover;
+    opacity: .15;
+}
+
+/* cta */
+#cta {
+    overflow: hidden;
+    position: absolute;
+    width: 87px;
+    height: 24px;
+    bottom: 15px;
+    right: 6px;
+    background: url(cta_grad.png) repeat-x;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#cta_container {
+    position: absolute;
+    width: 89px;
+    height: 24px;
+    bottom: 15px;
+    right: 6px;
+}
+
+#cta_copy {
+    position: absolute;
+    width: 49px;
+    height: 7px;
+    bottom: 9px;
+    right: 25px;
+    background: url(cta_copy.png) no-repeat;
+    background-size: cover;
+}
+#cta_arrow {
+    position: absolute;
+    width: 7px;
+    height: 8px;
+    bottom: 8px;
+    right: 12px;
+    background: url(cta_arrow.png) no-repeat;
+    background-size: cover;
+}
+
+/* Copies */
+#copy1 {
+    position: absolute;
+    top: 31px;
+    left: -462px;
+    width: 175px;
+    height: 20px;
+    background:url(728x90_copy1.png) no-repeat;
+}
+
+#copy2 {
+    position: absolute;
+    top: 31px;
+    left: -609px;
+    width: 203px;
+    height: 20px;
+    background:url(728x90_copy2.png) no-repeat;
+}
+
+#copy3 {
+    position: absolute;
+    top: 31px;
+    left: -486px;
+    width: 205px;
+    height: 16px;
+    background:url(728x90_copy3.png) no-repeat;
+}
+
+#copy4 {
+    position: absolute;
+    top: 20px;
+    left: -475px;
+    width: 302px;
+    height: 42px;
+    background:url(728x90_copy4.png) no-repeat;
+}
+
+#copy5 {
+    position: absolute;
+    bottom: 30px;
+    right: 121px;
+    width: 133px;
+    height: 12px;
+    background:url(728x90_copy5.png) no-repeat;
+}
+
+#copy1_blur {
+    position: absolute;
+    top: 31px;
+    left: -462px;
+    width: 185px;
+    height: 20px;
+    background:url(728x90_copy1_blur.png) no-repeat;
+}
+
+#copy2_blur {
+    position: absolute;
+    top: 31px;
+    left: -609px;
+    width: 213px;
+    height: 20px;
+    background:url(728x90_copy2_blur.png) no-repeat;
+}
+
+#copy3_blur {
+    position: absolute;
+    top: 31px;
+    left: -486px;
+    width: 215px;
+    height: 16px;
+    background:url(728x90_copy3_blur.png) no-repeat;
+}
+
+#copy4_blur {
+    position: absolute;
+    top: 20px;
+    left: -475px;
+    width: 312px;
+    height: 42px;
+    background:url(728x90_copy4_blur.png) no-repeat;
+}
+

@@ -1,0 +1,1 @@
+window.parent.googletag.impl.pubads.setCookieInfo({"_cookies_":[{"_value_":"ID=8cfac9b9f3507d90:T=1452712378:S=ALNI_MblSyzjkaP9vfEkcoeape8AQlfSWg","_expires_":1515784378,"_path_":"/","_domain_":"twitchy.com"}]});
