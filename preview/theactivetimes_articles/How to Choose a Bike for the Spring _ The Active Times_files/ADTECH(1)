@@ -1,0 +1,5 @@
+
+var dkcb = Math.random();
+document.write('<script type="text/javascript" language="javascript" src="http://optimized-by.rubiconproject.com/a/dk.js?defaulting_ad=x38f164.js&account_id=8947&site_id=14925&size_id=15&size=300x250&cb=' + dkcb +'"><\/scr' + 'ipt>');
+
+
