@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	
+	display: block;
+}
+body {
+	
+	line-height: 1;
+}
+ol, ul {
+	
+	list-style: none;
+}
+blockquote, q {
+	
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*---------------*/
+
+#container {
+	top: 0px;
+	left: 0px;
+	width: 300px;
+	height: 250px;
+	display: block;
+	position: relative;
+	cursor: pointer;
+	border: 1px solid #A7A7A7;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	overflow: hidden;
+}
+
+#banner {
+	top: 0px;
+	left: 0px;
+	width: 300px;
+	height: 250px;
+	display: block;
+	overflow: hidden;
+	background: #0056B8;
+}
+
+
+#clicktag {
+    position: absolute;
+    top: 0px;
+	left: 0px;
+    width: 300px;
+    height: 250px;
+	opacity: 0;
+    z-index: 100;
+}
+
+
+#brand {
+	position: absolute;
+	bottom: 11px;
+	right: 9px;
+	z-index: 1;
+}
+
+.text {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+#copy1 {
+	top:12px;
+	right: -300px;
+	position: absolute;
+
+}
+
+#copy1b {
+	background: url('sprite.png') no-repeat 0 0;
+	position: absolute;
+	width: 276px;
+	height: 38px;
+	top:12px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+}
+
+#copy2 {
+	top:57px;
+	right: -500px;
+
+}
+
+#copy2b {
+	background: url('sprite.png') no-repeat -4px -119px;
+	width: 170px;
+	height: 12px;
+	position: absolute;
+	top:57px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+
+}
+
+
+#copy3 {
+	top: 78px;
+	right: -600px;
+
+}
+
+#copy3b {
+	background: url('sprite.png') no-repeat -4px -40px;
+	width: 220px;
+	height: 76px;
+	top: 78px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1;
+	opacity: 0;
+
+}
+
+#WhiteBorder {
+	width: 274px;
+	height: 135px;
+	display: block;
+	top: 49px;
+	position: absolute;
+	border: 1px solid #FFFFFF;
+	opacity: 0;
+	
+}
+
+#PhoneNumber {
+	display: block;
+	position: absolute;
+	bottom: 9px;
+	left: 15px;
+	
+}
+
+
+#CTA {
+	position: absolute;
+	left: 10px;
+	bottom: 31px;
+	z-index: 2;
+	cursor: pointer;
+	overflow:hidden;
+}
+
+#ctaBtnOver {
+	position: absolute;
+	top: 1px;
+	left: -10px;
+    width: 64px;
+    height: 21px;
+    background : url('shimmer.png') no-repeat;
+	z-index: 3;
+	overflow: hidden;
+	opacity: 0;
+}
+
+
+
+.CTACopy1, .CTACopy2 .CTA, .logo, .copy1, .copy2, .copy3, .PhoneNumber {
+  background-image: url('sprite.png');
+  background-repeat: no-repeat;
+  position:absolute;
+}
+
+
+.PhoneNumber {
+	background: url('sprite.png') no-repeat -138px -163px;
+	width: 119px;
+	height: 16px;
+}
+
+.CTA {
+	background: url('sprite.png') no-repeat -138px -138px;
+	width: 123px;
+	height: 23px;
+}
+
+.logo {
+	background: url('sprite.png') no-repeat -4px -135px;
+	width: 132px;
+	height: 41px;
+}
+
+.copy1 {
+	background: url('sprite.png') no-repeat 0 0;
+	width: 276px;
+	height: 38px;
+}
+
+.copy2 {
+	background: url('sprite.png') no-repeat -4px -119px;
+	width: 170px;
+	height: 12px;
+}
+
+.copy3 {
+	background: url('sprite.png') no-repeat -4px -40px;
+	width: 204px;
+	height: 76px;
+}
+
+#CTACopy1 {
+	background: url('sprite.png') no-repeat -175px -116px;
+	width: 86px;
+	height: 9px;
+}
+
+#CTACopy2 {
+	background: url('sprite.png') no-repeat -176px -128px;
+	width: 62px;
+	height: 9px;
+	opacity: 0;
+}
+
+.CTACopys {
+	position: absolute;
+	top: 7px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}

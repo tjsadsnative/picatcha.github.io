@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://s0.2mdn.net/2992003/1455652853248/300x250/300x250.html -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+    
+    <meta name="ad.size" content="width=300,height=250">
+    <title></title>
+    <link href="./css(2)" rel="stylesheet" type="text/css">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            font-size: 26px;
+            color:#fff;
+        	}
+
+        #container {
+            width: 300px;
+            height: 250px;
+            position: relative;
+            border: 1px solid #000;
+            overflow: hidden;
+            cursor: pointer;
+        	}
+
+        #container > div, #container > img {
+            position: absolute;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+        	}
+
+        #background {
+            left: 0;
+            background-color: #81cee5;
+            width: 300px;
+            height: 250px;
+        	}
+
+        #logo {
+            bottom: -90%;
+            right: 0;
+            width: 50%;
+            -webkit-animation-name:logoInBottom;
+            animation-name:logoInBottom;
+             -webkit-animation-duration: .9s;
+            animation-duration: .9s;
+            animation-delay: 6.6s;
+            -webkit-animation-delay: 6.6s;
+
+        	}
+		
+		#text {
+            top: 9px;
+			left:19%;
+            text-align: center;
+            -webkit-animation:fadeIn;
+            animation:fadeIn;
+             -webkit-animation-duration:.6s;
+            animation-duration: .6s;
+            animation-delay: .2s;
+            -webkit-animation-delay: .2s;
+            }
+        
+        #lizard-bottom {
+	        bottom:-90%;
+	        width:42%;
+	        left:2%;
+            -webkit-animation-name:lizardInBottom;
+            animation-name:lizardInBottom;
+            -webkit-animation-duration: .8s;
+            animation-duration: .8s;
+            -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        	}
+                
+        #sm-cloud{
+            bottom: 88px;
+            left:66px;
+            -webkit-animation: fadeIn 1.4s 2s, pulse 3s infinite;
+            animation: fadeIn 1.4s 2s, pulse 3s infinite;
+            }
+
+        #yep-bubble {
+            bottom: 92px;
+            left:76px;
+			-webkit-animation: fadeInOut 2s 2.4s;
+            animation: fadeInOut 2s 2.4s;
+            }
+            
+        #save-bubble{
+	        bottom: 92px;
+            left:76px;
+            -webkit-animation: fadeIn 2s 4.8s, pulse 3s 1s 4;
+            animation: fadeIn 2s 4.8s, pulse 3s 1s 4;
+	        }
+
+		#cta {
+            bottom: 40px;
+            right:-90%;
+            -webkit-animation:ctaInRight .8s 5.6s;
+            animation:ctaInRight .8s 5.6s;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        	}
+
+                
+/* Keyframes 
+==================================================== */
+	   		
+/* ===== textInLeft ===== */
+		
+		@-webkit-keyframes textInLeft {
+		  100% {
+		    left: 50px;
+		  }
+		}
+		
+		@keyframes slideInLeft {
+		   100% {
+		    left: 50px;
+		  }		
+		
+		}
+
+/* ===== lizardInBottom ===== */
+		
+		@-webkit-keyframes lizardInBottom {
+            
+            100% {
+                bottom: 0%;
+              }
+
+            
+
+		}
+		
+		@keyframes lizardInBottom {
+            
+            
+		   100% {
+		    bottom: 0%;
+		  }		
+		
+		}
+		
+/* ===== logoInBottom ===== */
+		
+		@-webkit-keyframes logoInBottom {
+		  100% {
+		    bottom: -54px;
+		  }
+		}
+		
+		@keyframes logoInBottom {
+		   100% {
+		    bottom: -54px;
+		  }		
+		
+		}
+
+/* ===== ctaInRight ===== */
+		
+		@-webkit-keyframes ctaInRight {
+		  100% {
+		    right: 11px;
+		  }
+		}
+		
+		@keyframes ctaInRight {
+		   100% {
+		    right: 11px;
+		  }		
+		
+		}
+		
+		
+/* ===== yep ===== */
+
+		@-webkit-keyframes yep {
+			0% {opacity: 0;}
+			40%,
+			80% {opacity: 1;}
+			100% {opacity: 0;}
+		}
+		
+		@keyframes yep {
+			0% {opacity: 0;}
+			40%,
+			80% {opacity: 1;}
+			100% {opacity: 0;}
+		}
+
+
+
+/* ===== cloud ===== */
+
+		@-webkit-keyframes cloud {
+			0% {opacity: 0;}
+			50% {opacity:1}
+			90% {opacity: .1;}
+			100% {}
+		}
+		
+		@keyframes cloud {
+			0% {opacity: 0;}
+			50% {opacity:1}
+			90% {opacity: .1;}
+			100% {}
+		}
+
+		
+/* ===== pulse ===== */
+		
+		@keyframes pulse {
+		  0% {
+		    
+		    transform: scale3d(1, 1, 1);
+		  }
+		
+		  50% {
+		    
+		    transform: scale3d(1.05, 1.05, 1.05);
+		  }
+		
+		  100% {
+		    
+		    transform: scale3d(1, 1, 1);
+		  }
+		}
+        
+        @-webkit-keyframes pulse {
+		  0% {
+		    -webkit-transform: scale3d(1, 1, 1);
+		   
+		  }
+		
+		  50% {
+		    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+		    
+		  }
+		
+		  100% {
+		    -webkit-transform: scale3d(1, 1, 1);
+		    
+		  }
+		}
+		
+		.pulse {
+		  -webkit-animation-name: pulse;
+		  animation-name: pulse;
+		}
+
+/* ===== fadeIn ===== */
+			@-webkit-keyframes fadeIn {
+			 0%,
+			 10% {opacity: 0;}
+			
+			  100% {opacity: 1;}
+				}
+			
+			@keyframes fadeIn {
+			  0%,
+			  10% {opacity: 0;}
+			
+			  100% {opacity: 1;}
+				}
+			
+	/* ===== fadeInOut ===== */
+			@-webkit-keyframes fadeInOut {
+			  	0% {opacity:0;}
+			 	30%,
+			 	70% {opacity: 1;}
+			 	100% {opacity: 0;}
+			}
+			
+			@keyframes fadeInOut {
+			 	0% {opacity:0;}
+			 	30%,
+			 	70% {opacity: 1;}
+			 	100% {opacity: 0;}
+			}
+
+    </style>
+    <script type="text/javascript">
+        var clickTag = "https://www.geico.com";
+    </script>
+</head>
+<body>
+
+<div id="container">
+
+    <div id="background"></div>
+
+    <img id="lizard-bottom" src="./gecko.png">
+    
+    <img id="sm-cloud" src="./small_clouds.png">
+    
+    <div id="text">Already checked<br>your inbox?</div>
+    
+    <img id="yep-bubble" src="./sm_yep_bubble.png">
+    
+    <img id="save-bubble" src="./sm_save_bubble.png">
+        
+    <img id="logo" src="./GEICO-blue.svg">
+    
+    <img id="cta" src="./btn.png">
+
+
+</div>
+
+<script>
+    document.getElementById('container').addEventListener('click', clickHandler, false);
+    function clickHandler(event) {
+        window.open(window.clickTag);
+    }
+    
+
+</script>
+
+
+</body></html>

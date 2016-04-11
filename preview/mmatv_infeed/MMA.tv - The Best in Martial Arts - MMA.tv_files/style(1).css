@@ -1,0 +1,309 @@
+/* ==================================================================
+CSS BASE RESET
+===================================================================*/
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*Universal box sizing with inheritance */
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body,
+body * {
+    vertical-align: baseline;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ==================================================================
+BANNER STYLES
+===================================================================*/
+#blue-band,
+#box,
+#black-bar,
+#band1, 
+#band2, 
+#band3,
+#band-txt1,
+#band-txt2, 
+#band-txt3, 
+#legal1,
+#legal2,
+#legal3,
+#box-txt,
+#tv1,
+#tv1-txt,
+#black-bar,
+#tv2,
+#tablet,
+#phone,
+#laptop,
+#remote,
+#phone,
+#arrow,
+#logo,
+#savings-logo,
+#txt1,
+#txt2,
+#txt3,
+#txt4,
+#txt5,
+#endframe-txt1,
+#endframe-txt2,
+#endframe-legal,
+#cta,
+#pos {
+    position: absolute;
+}
+
+
+/*
+#content div{
+position:absolute;
+}*/
+
+#banner {
+    width: 300px;
+    height: 250px;
+    border: 1px solid black;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: rgba(210, 211, 213, 1);
+    background: -moz-linear-gradient(top, rgba(195, 195, 195, 1)  0%, rgba(255, 255, 255, 1) 30%, rgba(202, 202, 202, 1) 64%, rgba(163, 163, 163, 1) 81%,  rgba(120, 120, 120, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(195, 195, 195, 1)), color-stop(30%, gba(255, 255, 255, 1)), color-stop(64%, rgba(202, 202, 202, 1)),color-stop(81%, rgba(163, 163, 163, 1)),  color-stop(100%, rgba(120, 120, 120, 1)));
+    background: -webkit-linear-gradient(top, rgba(195, 195, 195, 1)  0%, rgba(255, 255, 255, 1) 30%, rgba(202, 202, 202, 1) 64%, rgba(163, 163, 163, 1) 81%,  rgba(120, 120, 120, 1) 100%);
+    background: -o-linear-gradient(top, rgba(195, 195, 195, 1)  0%, rgba(255, 255, 255, 1) 30%, rgba(202, 202, 202, 1) 64%, rgba(163, 163, 163, 1) 81%,  rgba(120, 120, 120, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(195, 195, 195, 1)  0%, rgba(255, 255, 255, 1) 30%, rgba(202, 202, 202, 1) 64%, rgba(163, 163, 163, 1) 81%,  rgba(120, 120, 120, 1) 100%);
+    background: linear-gradient(to bottom, rgba(195, 195, 195, 1)  0%, rgba(255, 255, 255, 1) 30%, rgba(202, 202, 202, 1) 64%, rgba(163, 163, 163, 1) 81%,  rgba(120, 120, 120, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#787878', endColorstr='#787878', GradientType=1);
+}
+
+#logo {
+    top: 8px;
+    right: 5px;
+    background: url('sprite.png') no-repeat -314px -8px;
+    width: 76px;
+    height: 25px
+    
+}
+
+
+#cta {
+    bottom: -2px;
+    left: 0px;
+    width: 300px;
+    height: 41px;
+    background: #515252;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgba(204, 204, 204, 0), rgba(204, 204, 204, 0.5), rgba(204, 204, 204, 0));
+    background-position: -200px 0;
+}
+
+#cta_arrow {
+    background: url('sprite.png') no-repeat -381px -252px;
+    width: 5px;
+    height: 9px;
+    left: 283px;
+    margin: auto;
+    top: 17px;
+    position: absolute;
+}
+
+#cta_txt {
+    background: url('sprite.png') no-repeat -191px -278px;
+    width: 195px;
+    height: 16px;
+    left: 82px;
+    margin: auto;
+    top: 8px;
+    position: absolute;
+}
+
+#cta_legal {
+    background: url('sprite.png') no-repeat -193px -252px;
+    width: 163px;
+    height: 9px;
+    left: 116px;
+    margin: auto;
+    top: 25px;
+    position: absolute;
+}
+
+#txt1 {
+    background: url('sprite.png') no-repeat -2px -15px;
+    width: 269px;
+    height: 49px;
+    left:15px;
+    top:102px;
+    position: absolute;
+}
+
+#x1_content {
+    width: 165px;
+    height: 150px;
+    left:61px;
+    top:54px;
+    position: absolute;
+}
+
+#x1_copy1 {
+    background: url('sprite.png') no-repeat -3px -90px;
+    width: 130px;
+    height: 18px;
+    left:16px;
+    top:0px;
+    position: relative;
+}
+
+#x1 {
+    background: url('sprite.png') no-repeat -7px -176px;
+    width: 129px;
+    height: 94px;
+    left:16px;
+    top:-87px;
+    position: relative;
+}
+
+#x1glow {
+    background: url('sprite.png') no-repeat -14px -287px;
+    width: 126px;
+    height: 95px;
+    left:19px;
+    top:11px;
+    position: relative;
+}
+
+#x1_copy2 {
+    background: url('sprite.png') no-repeat -2px -127px;
+    width: 164px;
+    height: 18px;
+    left:-1px;
+    top:-79px;
+    position: relative;
+}
+
+#txt2 {
+    background: url('sprite.png') no-repeat -14px -533px;
+    width: 227px;
+    height: 47px;
+    left:37px;
+    top:42px;
+    position: absolute;
+}
+
+
+#tv {
+    background: url('sprite.png') no-repeat -10px -400px;
+    width: 167px;
+    height: 115px;
+    left:57px;
+    top:97px;
+    position: absolute;
+}
+
+
+#phone {
+    background: url('sprite.png') no-repeat -192px -451px;
+    width: 34px;
+    height: 65px;
+    left:223px;
+    top:142px;
+    position: absolute;
+}
+
+#txt3 {
+    background: url('sprite.png') no-repeat -16px -595px;
+    width: 244px;
+    height: 33px;
+    left:29px;
+    top:109px;
+    position: absolute;
+}
+
+#ef_hl {
+    background: url('sprite.png') no-repeat -14px -649px;
+    width: 258px;
+    height: 47px;
+    left:20px;
+    top:43px;
+    position: absolute;
+}
+
+#ef_subh {
+    background: url('sprite.png') no-repeat -207px -83px;
+    width: 85px;
+    height: 34px;
+    left:178px;
+    top:128px;
+    position: absolute;
+}
+
+
+#price_line1 {
+    background-color: #2ea0dd;
+    width: 120px;
+    height: 1px;
+    left:30px;
+    top:102px;
+    position: absolute;
+}
+
+
+#price_line2 {
+    background-color: #2ea0dd;
+    width: 120px;
+    height: 1px;
+    left:30px;
+    top:174px;
+    position: absolute;
+}
+
+#price_hl {
+    background: url('sprite.png') no-repeat -206px -135px;
+    width: 65px;
+    height: 10px;
+    left:54px;
+    top:110px;
+    position: absolute;
+}
+
+#price {
+    background: url('sprite.png') no-repeat -203px -155px;
+    width: 122px;
+	height: 33px;
+    left:30px;
+    top:124px;
+    position: absolute;
+}
+
+#price_lgl {
+    background: url('sprite.png') no-repeat -193px -223px;
+    width: 100px;
+    height: 9px;
+    left:41px;
+    top:179px;
+    position: absolute;
+}
+
+#clicktag {
+    top:0;
+    width: 300px;
+    height: 250px;
+    cursor: pointer;
+    position: absolute;   
+}
+
+

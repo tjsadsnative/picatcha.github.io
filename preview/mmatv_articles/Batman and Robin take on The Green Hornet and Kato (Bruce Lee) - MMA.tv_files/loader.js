@@ -1,0 +1,1 @@
+var a=(window.top||window.parent||window).document.getElementsByTagName("head")[0],b=document.createElement("script");b.type="text/javascript";b.async=!0;b.src="http://player.mediabong.net/syncroll/656/load.js?rnd=1460151801&sid=16_570825f9cd74d3.55663099&imp=";a.appendChild(b);
