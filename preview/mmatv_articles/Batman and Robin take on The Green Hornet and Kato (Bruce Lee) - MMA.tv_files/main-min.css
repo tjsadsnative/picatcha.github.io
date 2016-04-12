@@ -1,0 +1,891 @@
+@charset "UTF-8";
+/* Modified Poor Man’s Reset
+ * -------------------------------------------------------
+ */
+html, body {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+html {
+  font-size: 1em; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+a img, :link img, :visited img {
+  border: 0; }
+
+/* Utilities
+ * -------------------------------------------------------
+ */
+.alpha-0 {
+  opacity: 0; }
+
+.gpu {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
+
+.abs-center {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+/* Variables
+ * -------------------------------------------------------
+ */
+/* Ad content
+ * -------------------------------------------------------
+ */
+#ad_content {
+  background: #0f133c;
+  border: 1px solid black;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  width: 300px;
+  height: 600px; }
+
+#goose {
+  position: absolute;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  width: 700px;
+  height: 250px;
+  left: -110px;
+  top: 430px; }
+
+#egg {
+  position: absolute;
+  left: 220px;
+  top: 494px; }
+
+#text1 {
+  position: absolute;
+  left: 30px;
+  top: 127px;
+  -webkit-transform: scale(1.34);
+          transform: scale(1.34);
+  -webkit-transform-origin: top left;
+          transform-origin: top left; }
+
+#text2 {
+  position: absolute;
+  left: 30px;
+  top: 254px;
+  -webkit-transform: scale(1.34);
+          transform: scale(1.34);
+  -webkit-transform-origin: top left;
+          transform-origin: top left; }
+
+#text3 {
+  position: absolute;
+  left: 22px;
+  top: 161px; }
+
+#text4 {
+  position: absolute;
+  left: 47px;
+  top: 318px; }
+
+#text-days {
+  position: absolute;
+  top: 34px; }
+
+.displayinline {
+  display: inline-block;
+  margin-right: 0; }
+
+#daysleft {
+  position: absolute;
+  left: 30px;
+  top: 160px;
+  width: 200px;
+  height: 70px;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transform-origin: top left;
+          transform-origin: top left; }
+
+#countdown {
+  position: absolute;
+  top: 181px;
+  left: 1px; }
+
+.timerbox {
+  width: 67px;
+  height: 50px;
+  background-color: #0b0f2e; }
+
+.timerholder {
+  position: relative;
+  top: 5px;
+  width: 97px;
+  left: -15px;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transform: scale(0.69);
+          transform: scale(0.69); }
+
+.timerpos {
+  margin: 0 auto; }
+
+.timertransform {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6); }
+
+.categorybox {
+  width: 67px;
+  height: 22px;
+  background-color: #0b0f2e; }
+
+#timerbox1 {
+  position: absolute;
+  left: 9px;
+  top: 40px; }
+
+#timerbox2 {
+  position: absolute;
+  left: 79px;
+  top: 40px; }
+
+#timerbox3 {
+  position: absolute;
+  left: 149px;
+  top: 40px; }
+
+#timerbox4 {
+  position: absolute;
+  left: 219px;
+  top: 40px; }
+
+#categorybox1 {
+  position: absolute;
+  left: 9px;
+  top: 93px; }
+
+#categorybox2 {
+  position: absolute;
+  left: 79px;
+  top: 93px; }
+
+#categorybox3 {
+  position: absolute;
+  left: 149px;
+  top: 93px; }
+
+#categorybox4 {
+  position: absolute;
+  left: 219px;
+  top: 93px; }
+
+#cta {
+  position: absolute;
+  left: 51px;
+  top: 446px;
+  width: 190px;
+  height: 38px; }
+
+#cta_bg {
+  position: absolute;
+  left: 0;
+  top: -2px; }
+
+#logo {
+  position: absolute;
+  left: 52px;
+  top: 499px;
+  -webkit-transform: scale(1.185);
+          transform: scale(1.185);
+  -webkit-transform-origin: top left;
+          transform-origin: top left; }
+
+#legal {
+  position: absolute;
+  left: 3px;
+  bottom: 3px; }
+
+#legal2 {
+  position: absolute;
+  right: 3px;
+  bottom: 3px; }
+
+#frame2 {
+  position: absolute;
+  width: 300px;
+  height: 600px; }
+
+.back-up {
+  background: url("backup.png") 0 0 no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 600px; }
+
+.svg-cta-bg {
+	background: url("svgsprite.svg") 0 98.4573748308525% no-repeat;
+	width: 194px;
+	height: 42px;
+}
+
+.svg-egg {
+	background: url("svgsprite.svg") 4.635603345280765% 98.13865659562988% no-repeat;
+	width: 39px;
+	height: 30px;
+}
+
+.svg-goose0 {
+	background: url("svgsprite.svg") 40% 72.92563881711169% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose1 {
+	background: url("svgsprite.svg") 20% 0 no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose10 {
+	background: url("svgsprite.svg") 20% 7.292563881711168% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose11 {
+	background: url("svgsprite.svg") 0 14.585127763422337% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose12 {
+	background: url("svgsprite.svg") 20% 14.585127763422337% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose13 {
+	background: url("svgsprite.svg") 0 21.877691645133506% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose14 {
+	background: url("svgsprite.svg") 20% 21.877691645133506% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose15 {
+	background: url("svgsprite.svg") 0 29.170255526844674% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose16 {
+	background: url("svgsprite.svg") 20% 29.170255526844674% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose17 {
+	background: url("svgsprite.svg") 40% 0 no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose18 {
+	background: url("svgsprite.svg") 40% 7.292563881711168% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose19 {
+	background: url("svgsprite.svg") 40% 14.585127763422337% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose2 {
+	background: url("svgsprite.svg") 40% 21.877691645133506% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose20 {
+	background: url("svgsprite.svg") 40% 29.170255526844674% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose21 {
+	background: url("svgsprite.svg") 0 36.462819408555845% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose22 {
+	background: url("svgsprite.svg") 20% 36.462819408555845% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose23 {
+	background: url("svgsprite.svg") 40% 36.462819408555845% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose24 {
+	background: url("svgsprite.svg") 0 43.75538329026701% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose25 {
+	background: url("svgsprite.svg") 20% 43.75538329026701% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose26 {
+	background: url("svgsprite.svg") 40% 43.75538329026701% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose27 {
+	background: url("svgsprite.svg") 0 51.04794717197818% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose28 {
+	background: url("svgsprite.svg") 20% 51.04794717197818% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose29 {
+	background: url("svgsprite.svg") 40% 51.04794717197818% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose3 {
+	background: url("svgsprite.svg") 60% 0 no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose30 {
+	background: url("svgsprite.svg") 60% 7.292563881711168% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose31 {
+	background: url("svgsprite.svg") 60% 14.585127763422337% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose32 {
+	background: url("svgsprite.svg") 60% 21.877691645133506% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose33 {
+	background: url("svgsprite.svg") 60% 29.170255526844674% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose34 {
+	background: url("svgsprite.svg") 60% 36.462819408555845% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose35 {
+	background: url("svgsprite.svg") 60% 43.75538329026701% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose36 {
+	background: url("svgsprite.svg") 60% 51.04794717197818% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose37 {
+	background: url("svgsprite.svg") 0 58.34051105368935% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose38 {
+	background: url("svgsprite.svg") 20% 58.34051105368935% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose39 {
+	background: url("svgsprite.svg") 40% 58.34051105368935% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose4 {
+	background: url("svgsprite.svg") 60% 58.34051105368935% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose40 {
+	background: url("svgsprite.svg") 0 65.63307493540051% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose41 {
+	background: url("svgsprite.svg") 20% 65.63307493540051% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose42 {
+	background: url("svgsprite.svg") 40% 65.63307493540051% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose43 {
+	background: url("svgsprite.svg") 60% 65.63307493540051% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose44 {
+	background: url("svgsprite.svg") 0 72.92563881711169% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose45 {
+	background: url("svgsprite.svg") 20% 72.92563881711169% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose46 {
+	background: url("svgsprite.svg") 0 0 no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose47 {
+	background: url("svgsprite.svg") 60% 72.92563881711169% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose48 {
+	background: url("svgsprite.svg") 80% 0 no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose49 {
+	background: url("svgsprite.svg") 80% 7.292563881711168% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose5 {
+	background: url("svgsprite.svg") 80% 14.585127763422337% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose50 {
+	background: url("svgsprite.svg") 80% 21.877691645133506% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose51 {
+	background: url("svgsprite.svg") 80% 29.170255526844674% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose52 {
+	background: url("svgsprite.svg") 80% 36.462819408555845% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose53 {
+	background: url("svgsprite.svg") 80% 43.75538329026701% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose54 {
+	background: url("svgsprite.svg") 80% 51.04794717197818% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose55 {
+	background: url("svgsprite.svg") 80% 58.34051105368935% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose56 {
+	background: url("svgsprite.svg") 0 7.292563881711168% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose57 {
+	background: url("svgsprite.svg") 80% 72.92563881711169% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose58 {
+	background: url("svgsprite.svg") 0 80.21820269882285% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose59 {
+	background: url("svgsprite.svg") 20% 80.21820269882285% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose6 {
+	background: url("svgsprite.svg") 40% 80.21820269882285% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose60 {
+	background: url("svgsprite.svg") 60% 80.21820269882285% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose61 {
+	background: url("svgsprite.svg") 80% 80.21820269882285% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose62 {
+	background: url("svgsprite.svg") 0 87.51076658053402% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose63 {
+	background: url("svgsprite.svg") 20% 87.51076658053402% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose64 {
+	background: url("svgsprite.svg") 40% 87.51076658053402% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose65 {
+	background: url("svgsprite.svg") 60% 87.51076658053402% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose66 {
+	background: url("svgsprite.svg") 80% 87.51076658053402% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose67 {
+	background: url("svgsprite.svg") 100% 0 no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose68 {
+	background: url("svgsprite.svg") 100% 7.292563881711168% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose69 {
+	background: url("svgsprite.svg") 100% 14.585127763422337% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose7 {
+	background: url("svgsprite.svg") 100% 21.877691645133506% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose70 {
+	background: url("svgsprite.svg") 100% 29.170255526844674% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose71 {
+	background: url("svgsprite.svg") 100% 36.462819408555845% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose72 {
+	background: url("svgsprite.svg") 100% 43.75538329026701% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose73 {
+	background: url("svgsprite.svg") 100% 51.04794717197818% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose74 {
+	background: url("svgsprite.svg") 100% 58.34051105368935% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose75 {
+	background: url("svgsprite.svg") 100% 65.63307493540051% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose76 {
+	background: url("svgsprite.svg") 100% 72.92563881711169% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose77 {
+	background: url("svgsprite.svg") 100% 80.21820269882285% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose78 {
+	background: url("svgsprite.svg") 100% 87.51076658053402% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose79 {
+	background: url("svgsprite.svg") 0 94.80333046224519% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose8 {
+	background: url("svgsprite.svg") 20% 94.80333046224519% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose80 {
+	background: url("svgsprite.svg") 40% 94.80333046224519% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose81 {
+	background: url("svgsprite.svg") 60% 94.80333046224519% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose82 {
+	background: url("svgsprite.svg") 80% 94.80333046224519% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose83 {
+	background: url("svgsprite.svg") 80% 65.63307493540051% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-goose9 {
+	background: url("svgsprite.svg") 100% 94.80333046224519% no-repeat;
+	width: 704px;
+	height: 254px;
+}
+
+.svg-legal {
+	background: url("svgsprite.svg") 20.00004828072344% 95.39112776670486% no-repeat;
+	width: 81.56px;
+	height: 9.19px;
+}
+
+.svg-legal2 {
+	background: url("svgsprite.svg") 17.498402454995396% 95.40136448633234% no-repeat;
+	width: 108.31px;
+	height: 9.59px;
+}
+
+.svg-logo {
+	background: url("svgsprite.svg") 6.3068965517241375% 96.13409029467424% no-repeat;
+	width: 164px;
+	height: 38px;
+}
+
+.svg-number0 {
+	background: url("svgsprite.svg") 9.71873129862358% 99.9972826825358% no-repeat;
+	width: 46.5px;
+	height: 56.9px;
+}
+
+.svg-number1 {
+	background: url("svgsprite.svg") 7.648183556405353% 100% no-repeat;
+	width: 40px;
+	height: 57px;
+}
+
+.svg-number2 {
+	background: url("svgsprite.svg") 3.2551460028721877% 100% no-repeat;
+	width: 46px;
+	height: 57px;
+}
+
+.svg-number3 {
+	background: url("svgsprite.svg") 0 100% no-repeat;
+	width: 46px;
+	height: 57px;
+}
+
+.svg-number4 {
+	background: url("svgsprite.svg") 6.55816179990426% 100% no-repeat;
+	width: 46px;
+	height: 57px;
+}
+
+.svg-number5 {
+	background: url("svgsprite.svg") 5.457156534226903% 100% no-repeat;
+	width: 46px;
+	height: 57px;
+}
+
+.svg-number6 {
+	background: url("svgsprite.svg") 1.1010052656773577% 100% no-repeat;
+	width: 46px;
+	height: 57px;
+}
+
+.svg-number7 {
+	background: url("svgsprite.svg") 2.200956937799043% 100% no-repeat;
+	width: 44px;
+	height: 57px;
+}
+
+.svg-number8 {
+	background: url("svgsprite.svg") 4.356151268549545% 100% no-repeat;
+	width: 46px;
+	height: 57px;
+}
+
+.svg-number9 {
+	background: url("svgsprite.svg") 8.61656294877932% 99.9972826825358% no-repeat;
+	width: 46px;
+	height: 56.9px;
+}
+
+.svg-text-category-days {
+	background: url("svgsprite.svg") 6.21530093040708% 96.63801650227975% no-repeat;
+	width: 39.81px;
+	height: 15.09px;
+}
+
+.svg-text-category-hrs {
+	background: url("svgsprite.svg") 7.155094249582438% 96.63801650227975% no-repeat;
+	width: 33px;
+	height: 15.09px;
+}
+
+.svg-text-category-min {
+	background: url("svgsprite.svg") 15.247272076799236% 95.8971713801376% no-repeat;
+	width: 31.25px;
+	height: 14.69px;
+}
+
+.svg-text-category-sec {
+	background: url("svgsprite.svg") 7.941131564131192% 96.63801650227975% no-repeat;
+	width: 32.28px;
+	height: 15.09px;
+}
+
+.svg-text-cta {
+	background: url("svgsprite.svg") 14.079309067992163% 95.50385265119877% no-repeat;
+	width: 146.03px;
+	height: 13.59px;
+}
+
+.svg-text-days {
+	background: url("svgsprite.svg") 4.845191056656857% 96.97360226258617% no-repeat;
+	width: 58.22px;
+	height: 27.97px;
+}
+
+.svg-text1 {
+	background: url("svgsprite.svg") 13.805432725716361% 95.90283953370283% no-repeat;
+	width: 65.13px;
+	height: 14.91px;
+}
+
+.svg-text2 {
+	background: url("svgsprite.svg") 10.321112751879035% 96.0836976551903% no-repeat;
+	width: 154.09px;
+	height: 36.06px;
+}
+
+.svg-text3 {
+	background: url("svgsprite.svg") 0 96.20639464101163% no-repeat;
+	width: 256.06px;
+	height: 40.78px;
+}
+
+.svg-text4 {
+	background: url("svgsprite.svg") 0 97.32126912316208% no-repeat;
+	width: 201.84px;
+	height: 41.22px;
+}
+
