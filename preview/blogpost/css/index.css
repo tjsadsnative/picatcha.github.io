@@ -26,20 +26,32 @@ header {
     border: solid 1px #b3b3b4;
 }
 .adsnative-ad .indicator {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    font-size: 11px;
-    color: #606061;
+    padding: 5px 10px;
+}
+@media (min-width: 750px) {
+    .adsnative-ad .indicator {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 11px;
+        color: #606061;
+        padding: 0;
+    }
 }
 .adsnative-ad figure {
     margin: 0;
-    float: left;
+}
+@media (min-width: 750px) {
+    .adsnative-ad figure {
+        float: left;
+        width: 30%;
+    }
 }
 .adsnative-ad figure > a,
 .adsnative-ad figure a > img {
     border: none;
     display: block;
+    width: 100%;
 }
 .adsnative-ad .title {
     font-size: 1.5em;
