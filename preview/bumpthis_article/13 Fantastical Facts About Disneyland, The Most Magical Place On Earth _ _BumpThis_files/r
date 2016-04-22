@@ -1,0 +1,10 @@
+document.write("<ins class='dcmads' style='display:inline-block;width:300px;height:250px'\n");
+document.write("    data-dcm-placement='N46002.151350QUANTCAST7/B9574716.130012510'\n");
+document.write("data-dcm-click-tracker='https%3A//adserver.adtechus.com/adlink%2F5399%2F3769051%2F0%2F170%2FAdId%3D8168688%3BBnId%3D1%3Bitime%3D355022167%3Bkvp36%3Dp36%2D15e7yk29n0l43j9w%3Bkva%3Dp%2D11hqad84gytxu%3Bkr14135%3D2361380%3Bkvc%3D845148%3Bkvi%3Dvxqbwqadhlykauskbwblma%3Bkr11092%3D2367488%3Bkvl%3D203774%3Bkvs%3D300x250%3Bkp%3D1077079%3Blink%3Dhttps%3A%2F%2Fadclick%2Eg%2Edoubleclick%2Enet%2Faclk%3Fsa%3Dl%26ai%3DCDD7EWYEaV7a5DIqWBZjLm%5FgG%5FtOZtwaO4fuWrwHAjbcBEAEgAGDJ9viGyKOgGYIBF2NhLXB1Yi0wMTE4MDkxODAwMjQyNjc4oAHQlMDzA8gBCagDAaoEvQFP0CieOey5wIZ%5FJT7xNG5KpKHVf7oy64et%5FG83EQ%2DWClufg%2D3HLIdi9xtqMI825xfK6BfnLLKqJJp28RsW50VQ8fvBkHOWjoldqUT%2D5CnZa%5FlMN%2DLQ0Z%2Da2pZ%2DacEKUmbtkbZpZAbrR2E3Cxhh5UVbhpVtuIamcCWDTzWip%2DnvtOmBcVrOXR3EG3WKKNCbXK%5Fd6O0GbYMbbBFbCmjPGiq380p53tnoNVglu1%2DLSEsTkkoXsnS5x%2DMuXQGt1FSABuDghsHY15qyrAGgBiGoB6a%2DG9gHAA%26num%3D1%26sig%3DAOD64%5F3PLBVNFNCbjftPRkfgH7I8lyA%5FIQ%26client%3Dca%2Dpub%2D0118091800242678%26adurl%3Dhttp%3A%2F%2Fexch%2Equantserve%2Ecom%2Fr%3Fa%3Dp%2D11HQAd84GYTxU%3Blabels%3D%5Fqc%2Eclk%2C%5Fclick%2Eadserver%2Ertb%2C%5Fclick%2Erand%2E65848%3Brtbip%3D192%2E184%2E68%2E11%3Brtbdata2%3DEAAaIEJldHRlcm1lbnRfRnVuZGVkQWNjb3VudHNRMl8yMDE2IOC3GSj%2Dtwww3MozOiNodHRwOi8vR0ROLnVua25vd24uYW5vbnltb3VzLmdvb2dsZVooWXg0dEltOU5MU2Q3SGlwd01Fb3hKalFRS1NCN0dIOXdaVXZXUGFnVHURLeZCgAGQptG2B6ABAagBgOfVAroBHUNBRVNFTlJySk11U3U0RFRkTlA2Zi1BMXI0WToxwAG2%5F0LIAdWJpfzDKtoBFlZ4cUJXUUFESExZS0FVc0tid2JsbUHlAWH6ITzoAWSYApK0DagCBqgCBbACCLoCBMC4RAvAAgLIAgDQAuDo29OMmNPtmQHgAgA%3Bredirecturl2%3D'\n");
+document.write("    data-dcm-rendering-mode='iframe'\n");
+document.write("    data-dcm-https-only\n");
+document.write("    data-dcm-resettable-device-id=''>\n");
+document.write("<scr"+"ipt src='https://www.googletagservices.com/dcm/dcmads.js'></scr"+"ipt>\n");
+document.write("</ins>\n");
+
+
