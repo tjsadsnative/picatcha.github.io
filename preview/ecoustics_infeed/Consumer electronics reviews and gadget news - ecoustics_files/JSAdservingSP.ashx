@@ -1,0 +1,4 @@
+Admeta.AdChoices.init(1, 3, 'http://s.atemda.com/AdChoices/OBA_60.png', 'http://s.atemda.com/AdChoices/OBA_DEFAULT_60.png', 19, 72, 15, 'http://www.youronlinechoices.com');
+Admeta.init('http://p307.atemda.com/scrollintoview.ashx',0,1461876924340);
+Admeta.unsold('78582092:1:499948','%3Cscript%20src%3D%22http%3A//tag.contextweb.com/TagPublish/getjs.aspx%3Faction%3DVIEWAD%26cwrun%3D200%26cwadformat%3D728X90%26cwpid%3D558314%26cwwidth%3D728%26cwheight%3D90%26cwpnet%3D1%26cwtagid%3D376962%22%3E%3C/script%3E',1,undefined,undefined,0,'',728,90);Admeta.noAdAvailable('78582092:1:499948',1,0,'',728,90);Admeta.Script.loaded();
+Admeta.loadScript(unescape('https%3A//pixel.yabidos.com/fltiu.js%3Fqid%3D836373f5137373f5131353%26cid%3D511%26p%3D307%26s%3Dhttp%253a%252f%252fwww.ecoustics.com%252f%26x%3Dadmeta%26nci%3D%26adtg%3D974390%26nai%3D'),0,0,0);
