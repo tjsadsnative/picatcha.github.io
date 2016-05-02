@@ -1,0 +1,28 @@
+OX_2638719058({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"538369735",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"970",
+            "height":"90",
+            "html":"<script src=\"//www.googletagservices.com/tag/js/gpt.js\">googletag.pubads().definePassback(\"/134702932/0076-ecoustics.com//pb\", [[728, 90], [970, 90], [970, 250]]).setTargeting('position', ['dsk-banner-pb-a-2']).setTargeting('page_url', ['%%PATTERN:url%%']).display();</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD0yYmNkOWFkZC0yY2EzLTQ0YWEtYjFmYi1mYWRkM2I1OWU2NDN8cnQ9MTQ2MTg3Njk0OXxhdWlkPTUzODM2OTczNXxhdW09RE1JRC5XRUJ8c2lkPTUzNzI1Njc2M3xwdWI9MTIxMDg3fHBjPVVTRHxyYWlkPTVkN2U1ZTk1LWQzMzYtNDdhZC05ZjhkLTI0N2QwYzRkZjNjY3x1cj14ZmUyZkk5SzBM",
+            "type":"html",
+            "ad_url":"<script src=\"//www.googletagservices.com/tag/js/gpt.js\">googletag.pubads().definePassback(\"/134702932/0076-ecoustics.com//pb\", [[728, 90], [970, 90], [970, 250]]).setTargeting('position', ['dsk-banner-pb-a-2']).setTargeting('page_url', ['%%PATTERN:url%%']).display();</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

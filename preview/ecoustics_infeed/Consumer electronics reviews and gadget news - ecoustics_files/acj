@@ -1,0 +1,28 @@
+OX_1225770784({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"538388834",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"728",
+            "height":"90",
+            "html":"\n<!-- START WOPD Placement Holder Web site: 'Ecoustics.com', Web page 'Ecoustics.com', Format: '728x90 (728x90)' Priority: 1 START -->\n<script type='text/javascript'>\n  var ADM_PL = {tp:'sp', wId:2890348, pId:78582092, rank:1, width:728, height:90, pbId:307, clk:'[External click-tracking goes here (NOT URL-encoded)]'};\n</script>\n<script type='text/javascript' src='//s.atemda.com/Admeta.js'></script>\n<noscript>\n  <iframe src='//p307.atemda.com/nojsadserving.ashx?wId=2890348&pId=78582092&rank=1&clk=[URL-encoded external clicktracking link goes here]' width='728' height='90' frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>\n</noscript>\n<!-- END End of WOPD Placement Holder '728x90 (728x90)' (1) END -->",
+            "target":"_blank",
+            "ts":"1fHJpZD1hNGEzZmEyOC1lZTYwLTQzYzgtYWExMi05NTg5ZmU5NzZiMjR8cnQ9MTQ2MTg3Njk0OHxhdWlkPTUzODM4ODgzNHxhdW09RE1JRC5XRUJ8c2lkPTUzNzI2MDA4NHxwdWI9NTM3MDc5MzQ4fHBjPVVTRHxyYWlkPTI2Mjk3ZTNhLTNjYTEtNGQ0Yy1hMDgyLTRkMmUyZWE2NDA2OXx1cj1JQ1Fzc09oaFFk",
+            "type":"html",
+            "ad_url":"\n<!-- START WOPD Placement Holder Web site: 'Ecoustics.com', Web page 'Ecoustics.com', Format: '728x90 (728x90)' Priority: 1 START -->\n<script type='text/javascript'>\n  var ADM_PL = {tp:'sp', wId:2890348, pId:78582092, rank:1, width:728, height:90, pbId:307, clk:'[External click-tracking goes here (NOT URL-encoded)]'};\n</script>\n<script type='text/javascript' src='//s.atemda.com/Admeta.js'></script>\n<noscript>\n  <iframe src='//p307.atemda.com/nojsadserving.ashx?wId=2890348&pId=78582092&rank=1&clk=[URL-encoded external clicktracking link goes here]' width='728' height='90' frameborder='0' marginheight='0' marginwidth='0' scrolling='no'></iframe>\n</noscript>\n<!-- END End of WOPD Placement Holder '728x90 (728x90)' (1) END -->"
+          }
+        ]
+      }
+    ]
+  }
+});
