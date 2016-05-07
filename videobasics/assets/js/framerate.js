@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var canvas = document.createElement('canvas');
   var screen = canvas.getContext('2d');
   var text = 'Can you read this text?';
-  document.getElementById('frameRateTitle').parentNode.insertBefore(canvas, document.getElementById('frameRateTitle'));
+  document.getElementById('frameRateInput').parentNode.insertBefore(canvas, document.getElementById('frameRateInput'));
   canvas.width = document.body.offsetWidth;
-  canvas.height = 400;
+  canvas.height = 300;
   
   window.onresize = function() {    
     canvas.width = document.body.offsetWidth;
@@ -20,17 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
       bodies.push(new Ball(canvas, {
           x: canvas.width/2,
           y: canvas.height/3,
-          radius: 30
+          radius: 20
         }));
       bodies.push(new Ball(canvas, {
           x: canvas.width/3,
           y: canvas.height/3,
-          radius: 50
+          radius: 40
         }));
       bodies.push(new Ball(canvas, {
           x: canvas.width/1.5,
           y: canvas.height/3,
-          radius: 80
+          radius: 60
         }));
   
   var tick = function() {

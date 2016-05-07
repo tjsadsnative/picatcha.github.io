@@ -3064,63 +3064,6 @@
 
 	}
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
-
-.pixel {
-  display:block;
-  line-height:0;
-  margin:0 auto;
-  width:64px;
-  background:#111; 
-  border-radius:5px;
-  animation:zoom 1.4s ease-out backwards;
-}
-
-@keyframes zoom {
-  0%{ opacity:0; transform:scale(0.001) rotate(.1turn); }
-    /* I see some weird stuff happening if I  set scale() to zero */
-  100%{ opacity:1; transform:scale(1); }
-}
-
-.pixel span {
-  border-radius:3px;
-  height:52px;
-  width:16px;
-  content:"";
-  display:inline-block;
-  margin:4px 2px;
-  animation:flicker 1s steps(1,end) infinite;
-}
-
-span.r { background:red; }
-span.g { background:lime; animation-delay:.4s; }
-span.b { background:blue; animation-delay:.8s; }
-
-@keyframes flicker {
-  0%,100%{ opacity:1; }
-  50%{ opacity:.4; }
-}
-
-
-h1 { display:inline; }
-
-.p:after { color:#000; content:"one million."; }
-
-
-@media only screen and (min-device-width:320px) and (min-device-height:480px) { .p:after { content:"one hundred and fifty thousand"; } }
-@media only screen and (min-device-width:480px) and (min-device-height:800px) { .p:after { content:"three hundred and eighty thousand"; } }
-@media only screen and (min-device-width:640px) and (min-device-height:960px) { .p:after { content:"six hundred and fourteen thousand"; } }
-@media only screen and (min-device-width:1024px) and (min-device-height:600px) { .p:after { content:"six hundred and fourteen thousand"; } }
-@media only screen and (min-device-width:64opx) and (min-device-height:1136px) { .p:after { content:"seven hundred and twenty thousand"; } }
-@media only screen and (min-device-width:768px) and (min-device-height:1024px) { .p:after { content:"seven hundred and eighty thousand"; } }
-@media only screen and (min-device-width:720px) and (min-device-height:1280px) { .p:after { content:"nine hundred and twenty one thousand"; } }
-@media only screen and (min-device-width:1280px) and (min-device-height:800px) { .p:after { content:"one million"; } }
-@media only screen and (min-device-width:1366px) and (min-device-height:768px) { .p:after { content:"one million"; } }
-@media only screen and (min-device-width:1440px) and (min-device-height:900px) { .p:after { content:"one million two hundred and ninety thousand"; } }
-@media only screen and (min-device-width:1080px) and (min-device-height:1920px) { .p:after { content:"two million"; } }
-@media only screen and (min-device-width:1536px) and (min-device-height:2048px) { .p:after { content:"three million one hundred and twenty thousand"; } }
-@media only screen and (min-device-width:2560px) and (min-device-height:1440px) { .p:after { content:"three million six hundred and eighty thousand"; } }
-@media only screen and (min-device-width:2880px) and (min-device-height:1800px) { .p:after { content:"five million one hundred and eighty thousand"; } }
 
 /* Framerate bouncing animation */
 canvas {
