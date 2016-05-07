@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var canvas = document.createElement('canvas');
-  var screen = canvas.getContext('2d');
-  var text = 'Can you read this text?';
+
+  var canvas = document.createElement('canvas'),
+    screen = canvas.getContext('2d'),
+    text = 'Can you read this text?';
+
   document.getElementById('frameRateInput').parentNode.insertBefore(canvas, document.getElementById('frameRateInput'));
   canvas.width = document.body.offsetWidth;
   canvas.height = 300;
@@ -54,9 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }    
     
     setTimeout(tick, 1000/frameRate);
-
-    // Update aspectratio
-    updateAspectRatio();
   };
   tick();
   
@@ -66,26 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     time = new Date();
     frameRate = parseInt(e.target.value);
   });
-  
-  document.getElementById('aspectWidthInput').value = aspectWidth;
-  document.getElementById('aspectHeightInput').value = aspectHeight;
-  function updateAspectRatio() {
-    document.getElementById('aspectWidthInput').addEventListener('change', function(e) {
-      aspectWidth = parseInt(e.target.value),
-      aspectHeight = document.getElementById('aspectHeightInput').value;
-
-      var aspectRatio = 'padding-top : '+((aspectHeight / aspectWidth) * 100)+'%';
-      document.styleSheets[0].addRule('.sixteen-nine:before', aspectRatio);
-    });
-    document.getElementById('aspectHeightInput').addEventListener('change', function(e) {
-      aspectHeight = parseInt(e.target.value),
-      aspectWidth = document.getElementById('aspectWidthInput').value;
-
-      var aspectRatio = 'padding-top : '+((aspectHeight / aspectWidth) * 100)+'%';
-      document.styleSheets[0].addRule('.sixteen-nine:before', aspectRatio);
-
-    });
-  }
 });
 
 function Ball(canvas, options) {
