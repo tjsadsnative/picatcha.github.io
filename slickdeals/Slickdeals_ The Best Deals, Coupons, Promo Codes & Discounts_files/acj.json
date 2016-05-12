@@ -1,0 +1,53 @@
+OX_9064496669({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://ox-d.slickdeals.servedbyopenx.com/{medium}/1.0/{rtype}?ef=db&bi=27043c03-9dc0-489b-bdb0-4c5469bd2c4d&ts={txn_state}",
+    "adunits" : [
+      {
+        "auid":"538016689",
+        "chain_timeout":"",
+        "chain_revenue":"945",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"537652977",
+            "adv_acct_id":"537105482",
+            "is_ng":1,
+            "adv_id":":537105482",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"3028",
+            "width":"300",
+            "height":"250",
+            "html":"<!-- SlickDeals RON 300x250T-->\n<script type=\"text/javascript\">\n  var ord = window.ord || Math.floor(Math.random() * 1e16);\n  document.write('<script type=\"text/javascript\" src=\"http://ad.doubleclick.net/N4911/adj/SlickDeals;loc=showcase;sz=300x250;ord=' + ord + '?\"><\\/script>');\n</script>\n<noscript>\n<a href=\"http://ad.doubleclick.net/N4911/jump/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\">\n<img src=\"http://ad.doubleclick.net/N4911/ad/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\" width=\"300\" height=\"250\" />\n</a>\n</noscript>",
+            "target":"_blank",
+            "ts":"1fHU9MXxyaWQ9ZWQyNWI5MWYtZTJlMi00MTA3LThlMTktNDFmNmJhZjVlOGUzfHJ0PTE0NTU5MDY3MTN8YXVpZD01MzgwMTY2ODl8YXVtPURNSUQuV0VCfHNzaWQ9NTM3MDY0MzUyfHNpZD01MzcwNzQxNjB8cHViPTUzNzA3NTI3MXxwYz1VU0R8cmFpZD00MDQ5YzE3Ny00ZWZhLTQzYTktYjNlYy04YTU5M2RiMDA0ZWR8Y2w9MnxhaWQ9NTM3NjUyOTc3fHQ9NHxhcz0zMDB4MjUwfGxpZD01Mzc0MTI1MzB8b2lkPTUzNzI1MjU0M3xwPTMwMjh8cHI9MzAyOHxhdGI9MzAyOHxhZHY9NTM3MTA1NDgyfGFjPVVTRHxwbT1QUklDSU5HLkNQTXxibT1CVVlJTkcuTk9OR1VBUkFOVEVFRHxsYz0yfGx3PTE0NDB8Y2k9MXx1cj1KNExsU2xCU1d6",
+            "type":"html",
+            "ad_url":"<!-- SlickDeals RON 300x250T-->\n<script type=\"text/javascript\">\n  var ord = window.ord || Math.floor(Math.random() * 1e16);\n  document.write('<script type=\"text/javascript\" src=\"http://ad.doubleclick.net/N4911/adj/SlickDeals;loc=showcase;sz=300x250;ord=' + ord + '?\"><\\/script>');\n</script>\n<noscript>\n<a href=\"http://ad.doubleclick.net/N4911/jump/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\">\n<img src=\"http://ad.doubleclick.net/N4911/ad/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\" width=\"300\" height=\"250\" />\n</a>\n</noscript>"
+          },
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"538069110",
+            "adv_acct_id":"537073143",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537073143",
+            "brand_id":"3341",
+            "cpipc":945,
+            "auct_win_is_deal":0,
+            "pub_rev":"945",
+            "width":"300",
+            "height":"250",
+            "html":"<SCRIPT TYPE='text/javascript'>var ACE_HOST = 'http://imp.bid.ace.advertising.com';var ACE_AR = { Site: '924855', CallType: 'IFRAME', Region: '1', Size: '300250', rclk: 'http://ox-d.slickdeals.servedbyopenx.com/w/1.0/rc?ef=db&bi=27043c03-9dc0-489b-bdb0-4c5469bd2c4d&ts=1fHU9MXxyaWQ9ZWQyNWI5MWYtZTJlMi00MTA3LThlMTktNDFmNmJhZjVlOGUzfHJ0PTE0NTU5MDY3MTN8YXVpZD01MzgwMTY2ODl8YXVtPURNSUQuV0VCfHNzaWQ9NTM3MDY0MzUyfHNpZD01MzcwNzQxNjB8cHViPTUzNzA3NTI3MXxwYz1VU0R8cmFpZD00MDQ5YzE3Ny00ZWZhLTQzYTktYjNlYy04YTU5M2RiMDA0ZWR8Y2w9MnxhaWQ9NTM4MDY5MTEwfHQ9MTJ8YXM9MzAweDI1MHxsaWQ9NTM3NjA2MDgzfG9pZD01MzcxMDIwNTh8cD05NTB8cHI9OTQ1fGF0Yj0xMDAwfGFkdj01MzcwNzMxNDN8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfG09MXxhaT0xNTJkMDdiMS1kYTQxLTRjNDAtYWQxOC1mZTc0YzI2OTUzNGF8bWM9VVNEfG1yPTV8cGk9OTQ1fG11aT1mMzIyM2RkNi1iNzM0LTQ5MjctZWViOS1hNGU0ZWY3NjhjOTN8bXc9MTQ0MHxtYT00ZmZiNDBjYS01ZDY3LTQwMjQtYjQyYy0xMzA0OWRiZDZiODl8bXJ0PTE0NTU5MDY3MTN8bXJjPVNSVF9XT058bXdhPTUzNzA3MzE0M3xjaz0xfG13Ymk9MzM0MXxtd2I9MTAwMHxtYXA9OTUwfGVsZz0xfG1vYz1VU0R8bW9yPTV8bXBjPVVTRHxtcHI9OTQ1fG1wZj05NDV8bW1mPTk0NXxtcG5mPTk0NXxtbW5mPTk0NXxwY3Y9MjF8bW89T1h8ZWM9MjIwNDU5MnxtcHU9OTQ1fG1jcD05NTB8YXF0PXJ0Ynxtd2M9NTM3MTAyMDU4fG13cD01Mzc2MDYwODN8bXdjcj01MzgwNjkxMTB8bXdpcz0xfG13cHQ9b3BlbnJ0Yl9qc29ufGNpPTJ8dXI9SjRMbFNsQlNXenxsZD1wYXlwYWwuY29t&r=', Extra: 'oxprice=AAABUvrNcg97KXq3OR1wlYLwmZjcDYXd20WtaA/rip=ChR0Zjc3MDAxNDI3MzI1MTIzMDAyNBIiQVM0MDQ0MTg2Y2Y3NGQ0ZTZhODlkNGUzMTg3Yjc1YmQ1NRgKIgExKgQxMDA5Mg5zbGlja2RlYWxzLm5ldDiwx4YBQJ8JSABQ_YhCWAFlAAAAAG0AAIA_cAB9bxKDOoABAIgBAZUBAACAP50BbxKDOqUBfR-OPK0BwgIOOrUBAAAAAL0BbxKDOsUBwgIOOs0BwgIOOtUBAACAP90BwgIOOugBAfIBB3Vua25vd279AW8SgzqwAj-9AgAAgD_FAgAAAADKAgcgLGZhbHNl0gIHICxmYWxzZQ/rc=B0852A94C0BFBA326E1B0C135AF8C30B/bidid=4ffb40ca-5d67-4024-b42c-13049dbd6b89/pid=1009' };</SCRIPT><SCRIPT TYPE='text/javascript' SRC='http://uac.advertising.com/wrapper/aceUAC.js'></SCRIPT>",
+            "target":"_blank",
+            "ts":"1fHU9MXxyaWQ9ZWQyNWI5MWYtZTJlMi00MTA3LThlMTktNDFmNmJhZjVlOGUzfHJ0PTE0NTU5MDY3MTN8YXVpZD01MzgwMTY2ODl8YXVtPURNSUQuV0VCfHNzaWQ9NTM3MDY0MzUyfHNpZD01MzcwNzQxNjB8cHViPTUzNzA3NTI3MXxwYz1VU0R8cmFpZD00MDQ5YzE3Ny00ZWZhLTQzYTktYjNlYy04YTU5M2RiMDA0ZWR8Y2w9MnxhaWQ9NTM4MDY5MTEwfHQ9MTJ8YXM9MzAweDI1MHxsaWQ9NTM3NjA2MDgzfG9pZD01MzcxMDIwNTh8cD05NTB8cHI9OTQ1fGF0Yj0xMDAwfGFkdj01MzcwNzMxNDN8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfG09MXxhaT0xNTJkMDdiMS1kYTQxLTRjNDAtYWQxOC1mZTc0YzI2OTUzNGF8bWM9VVNEfG1yPTV8cGk9OTQ1fG11aT1mMzIyM2RkNi1iNzM0LTQ5MjctZWViOS1hNGU0ZWY3NjhjOTN8bXc9MTQ0MHxtYT00ZmZiNDBjYS01ZDY3LTQwMjQtYjQyYy0xMzA0OWRiZDZiODl8bXJ0PTE0NTU5MDY3MTN8bXJjPVNSVF9XT058bXdhPTUzNzA3MzE0M3xjaz0xfG13Ymk9MzM0MXxtd2I9MTAwMHxtYXA9OTUwfGVsZz0xfG1vYz1VU0R8bW9yPTV8bXBjPVVTRHxtcHI9OTQ1fG1wZj05NDV8bW1mPTk0NXxtcG5mPTk0NXxtbW5mPTk0NXxwY3Y9MjF8bW89T1h8ZWM9MjIwNDU5MnxtcHU9OTQ1fG1jcD05NTB8YXF0PXJ0Ynxtd2M9NTM3MTAyMDU4fG13cD01Mzc2MDYwODN8bXdjcj01MzgwNjkxMTB8bXdpcz0xfG13cHQ9b3BlbnJ0Yl9qc29ufGNpPTJ8dXI9SjRMbFNsQlNXenxsZD1wYXlwYWwuY29t",
+            "type":"html",
+            "ad_url":"<SCRIPT TYPE='text/javascript'>var ACE_HOST = 'http://imp.bid.ace.advertising.com';var ACE_AR = { Site: '924855', CallType: 'IFRAME', Region: '1', Size: '300250', rclk: 'http://ox-d.slickdeals.servedbyopenx.com/w/1.0/rc?ef=db&bi=27043c03-9dc0-489b-bdb0-4c5469bd2c4d&ts=1fHU9MXxyaWQ9ZWQyNWI5MWYtZTJlMi00MTA3LThlMTktNDFmNmJhZjVlOGUzfHJ0PTE0NTU5MDY3MTN8YXVpZD01MzgwMTY2ODl8YXVtPURNSUQuV0VCfHNzaWQ9NTM3MDY0MzUyfHNpZD01MzcwNzQxNjB8cHViPTUzNzA3NTI3MXxwYz1VU0R8cmFpZD00MDQ5YzE3Ny00ZWZhLTQzYTktYjNlYy04YTU5M2RiMDA0ZWR8Y2w9MnxhaWQ9NTM4MDY5MTEwfHQ9MTJ8YXM9MzAweDI1MHxsaWQ9NTM3NjA2MDgzfG9pZD01MzcxMDIwNTh8cD05NTB8cHI9OTQ1fGF0Yj0xMDAwfGFkdj01MzcwNzMxNDN8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfG09MXxhaT0xNTJkMDdiMS1kYTQxLTRjNDAtYWQxOC1mZTc0YzI2OTUzNGF8bWM9VVNEfG1yPTV8cGk9OTQ1fG11aT1mMzIyM2RkNi1iNzM0LTQ5MjctZWViOS1hNGU0ZWY3NjhjOTN8bXc9MTQ0MHxtYT00ZmZiNDBjYS01ZDY3LTQwMjQtYjQyYy0xMzA0OWRiZDZiODl8bXJ0PTE0NTU5MDY3MTN8bXJjPVNSVF9XT058bXdhPTUzNzA3MzE0M3xjaz0xfG13Ymk9MzM0MXxtd2I9MTAwMHxtYXA9OTUwfGVsZz0xfG1vYz1VU0R8bW9yPTV8bXBjPVVTRHxtcHI9OTQ1fG1wZj05NDV8bW1mPTk0NXxtcG5mPTk0NXxtbW5mPTk0NXxwY3Y9MjF8bW89T1h8ZWM9MjIwNDU5MnxtcHU9OTQ1fG1jcD05NTB8YXF0PXJ0Ynxtd2M9NTM3MTAyMDU4fG13cD01Mzc2MDYwODN8bXdjcj01MzgwNjkxMTB8bXdpcz0xfG13cHQ9b3BlbnJ0Yl9qc29ufGNpPTJ8dXI9SjRMbFNsQlNXenxsZD1wYXlwYWwuY29t&r=', Extra: 'oxprice=AAABUvrNcg97KXq3OR1wlYLwmZjcDYXd20WtaA/rip=ChR0Zjc3MDAxNDI3MzI1MTIzMDAyNBIiQVM0MDQ0MTg2Y2Y3NGQ0ZTZhODlkNGUzMTg3Yjc1YmQ1NRgKIgExKgQxMDA5Mg5zbGlja2RlYWxzLm5ldDiwx4YBQJ8JSABQ_YhCWAFlAAAAAG0AAIA_cAB9bxKDOoABAIgBAZUBAACAP50BbxKDOqUBfR-OPK0BwgIOOrUBAAAAAL0BbxKDOsUBwgIOOs0BwgIOOtUBAACAP90BwgIOOugBAfIBB3Vua25vd279AW8SgzqwAj-9AgAAgD_FAgAAAADKAgcgLGZhbHNl0gIHICxmYWxzZQ/rc=B0852A94C0BFBA326E1B0C135AF8C30B/bidid=4ffb40ca-5d67-4024-b42c-13049dbd6b89/pid=1009' };</SCRIPT><SCRIPT TYPE='text/javascript' SRC='http://uac.advertising.com/wrapper/aceUAC.js'></SCRIPT>"
+          }
+        ]
+      }
+    ]
+  }
+});

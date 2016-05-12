@@ -1,0 +1,245 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#border{
+  position: absolute;
+  margin:   0;
+  width:    158px;
+  height:   598px;
+  border:   1px solid black;
+  z-index: 100;
+  pointer-events: none;
+}
+#wrapper{
+    position: relative;
+   
+    width: 160px;
+    height: 600px;
+   
+    outline:	solid 2px #000000;
+    outline-offset: -1px;
+    cursor: pointer;
+    background-color: #006700;
+}
+#header{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 160px;
+    height: 88px;
+    background-color: #000000;
+}
+#logo{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#weatherText{
+    position: absolute;
+    top: 88px;
+    width: 160px;
+    height: 97px;
+}
+#weatherImage{
+    position: absolute;
+    top: 185px;
+    width: 160px;
+    height: 373px;
+}
+#footer{
+    position: absolute;
+    top: 533px;
+    width: 160px;
+    height: 67px;
+}
+#day{
+    position: absolute;
+    left: 31px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: 18px;
+    width: 100px;
+    height: 41px;
+    top: 62px;
+}
+#date{
+    position: absolute;
+    left: 68px;
+    top: 62px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: 18px;
+    width: 100px;
+    height: 27px;
+    opacity:.5;
+}
+#num{
+    position: absolute;
+    left: 103px;
+    top: 62px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: 18px;
+    width: 100px;
+    height: 27px;
+    opacity:1;
+}
+#highTemp{
+    position: absolute;
+    left: 9px;
+    top: 7px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: 45px;
+    width: 77px;
+    height: 68px;
+}
+#lowTemp{
+    position: absolute;
+    left: 70px;
+    top: 32px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-size: 21px;
+    width: 44px;
+    height: 60px;
+    opacity: .5;
+}
+#weatherIcon{
+    position: absolute;
+    left: 110px;
+    top: 12px;
+}
+
+.arrow{
+    top: 309px;
+    width: 30px;
+    height: 30px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    cursor: pointer;
+}
+#arrowL{
+    position: absolute;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border-right:10px solid white;
+}
+#arrowR{
+    position: absolute;
+    left: 148px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid white;
+}
+#theArt{
+    position: absolute;
+    width: 160px;
+    height: 200px;
+    margin: 0px;
+    padding: 0px;
+    top: 199px;
+    left: 0px;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+}
+#CTA{
+    position: absolute;
+    left: 20px;
+    top: 450px;
+}
+
+#store{
+    position: absolute;
+    left: 32px;
+    top: 492px;
+}
+.img {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+}
+
+.outLeft {
+    -webkit-animation-duration: .6s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: outLeft;
+    
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-name: outLeft;
+    
+    
+}
+.outRight {
+    -webkit-animation-duration: .6s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: outRight;
+    
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-name: outRight;
+}
+.inLeft {
+    -webkit-animation-duration: .6s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: inLeft;
+    
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-name: inLeft;
+}
+.inRight {
+    -webkit-animation-duration: .6s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: inRight;
+    
+   animation-duration: .6s;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+   animation-name: inRight;
+}
+
+@-webkit-keyframes outLeft {
+    0% {left: 0;}
+    100% {left: -160;}
+}
+@keyframes outLeft {
+    0% {left: 0;}
+    100% {left: -160;}
+}
+@-webkit-keyframes outRight {
+    0% {left: 0;}
+    100% {left: 160;}
+}
+@keyframes outRight {
+    0% {left: 0;}
+    100% {left: 160;}
+}
+@-webkit-keyframes inLeft {
+    0% {left: 160;}
+    100% {left: 0;}
+}
+@keyframes inLeft {
+    0% {left: 160;}
+    100% {left: 0;}
+}
+@-webkit-keyframes inRight {
+    0% {left: -160;}
+    100% {left: 0;}
+}
+@keyframes inRight {
+    0% {left: -160;}
+    100% {left: 0;}
+}

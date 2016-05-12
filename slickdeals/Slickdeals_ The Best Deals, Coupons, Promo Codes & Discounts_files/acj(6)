@@ -1,0 +1,91 @@
+OX_8030195389({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://ox-d.slickdeals.servedbyopenx.com/{medium}/1.0/{rtype}?ef=db&bi=36db92f2-0bd8-4f55-9e62-2c415ae790b7&ts={txn_state}",
+    "adunits" : [
+      {
+        "auid":"538016698",
+        "chain_timeout":"",
+        "chain_revenue":"536",
+        "chain":[
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"538006738",
+            "adv_acct_id":"537112996",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537112996",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"930",
+            "width":"728",
+            "height":"90",
+            "html":"\t\n<!--JavaScript General Redirect Tag // Tag for network 10083: Marketplace: OpenX // Website: Slickdeals  // Page: Slickdeals  // Placement: Slickdeals 728x90 BTF (3753786) // created at: Nov 17, 2015 11:24:44 AM-->\n<script language=\"javascript1.1\" src=\"http://adserver.adtechus.com/addyn|3.0|10083.1|3753786|0|225|ADTECH;loc=100;target=_blank;misc=[TIMESTAMP];rdclick=\"></script>\n<!-- End of JavaScript Tag -->",
+            "target":"_blank",
+            "ts":"1fHJpZD0xZTBmOWM5MS1kYThmLTQ5ODgtODMzOC0wYzk3YWEzMDc1NmJ8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5OHxhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTJhYjRlODc3LTA5MzgtNDgzYy04MmUyLTBmMTNjZmU1ODM4NHxjbD00fGFpZD01MzgwMDY3Mzh8dD00fGFzPTcyOHg5MHxsaWQ9NTM3NTc4NjkyfG9pZD01MzcyOTU3MDd8cD05MzB8cHI9OTMwfGF0Yj05MzB8YWR2PTUzNzExMjk5NnxhYz1VU0R8cG09UFJJQ0lORy5DUE18bj0xfGFpPTE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YXxibT18bXc9MTQ0MHxtdWk9M2E5MjVjOWQtZmQxZC00ZTZjLTA2ZGMtYmMyNzU5ZDJkNjJkfGNpPTF8dXI9Y1UyVndpcEtjbA",
+            "type":"html",
+            "ad_url":"\t\n<!--JavaScript General Redirect Tag // Tag for network 10083: Marketplace: OpenX // Website: Slickdeals  // Page: Slickdeals  // Placement: Slickdeals 728x90 BTF (3753786) // created at: Nov 17, 2015 11:24:44 AM-->\n<script language=\"javascript1.1\" src=\"http://adserver.adtechus.com/addyn|3.0|10083.1|3753786|0|225|ADTECH;loc=100;target=_blank;misc=[TIMESTAMP];rdclick=\"></script>\n<!-- End of JavaScript Tag -->"
+          },
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"537323497",
+            "adv_acct_id":"537073642",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537073642",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"777",
+            "width":"728",
+            "height":"90",
+            "html":"<!-- Conversant Media 728x90 LEADERBOARD CODE for SlickDeals - BTF -->\n<script type=\"text/javascript\">var vclk_options = {sid:92478,media_type:5,version:\"1.4\"};</script><script class=\"vclk_pub_code\" type=\"text/javascript\" src=\"http://cdn.fastclick.net/js/adcodes/pubcode.min.js?sid=92478&media_type=5&version=1.4&exc=1\"></script><noscript><a href=\"http://media.fastclick.net/w/click.here?sid=92478&m=1&c=1\" target=\"_blank\"><img src=\"http://media.fastclick.net/w/get.media?sid=92478&tp=5&d=s&c=1&vcm_acv=1.4\" width=\"728\" height=\"90\" border=\"1\"></a></noscript>\n<!-- Conversant Media 728x90 LEADERBOARD CODE for SlickDeals - BTF -->",
+            "target":"_blank",
+            "ts":"1fHJpZD0xZTBmOWM5MS1kYThmLTQ5ODgtODMzOC0wYzk3YWEzMDc1NmJ8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5OHxhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTJhYjRlODc3LTA5MzgtNDgzYy04MmUyLTBmMTNjZmU1ODM4NHxjbD00fGFpZD01MzczMjM0OTd8dD00fGFzPTcyOHg5MHxsaWQ9NTM3MjIzNDMwfG9pZD01MzcxNjE4NzR8cD03Nzd8cHI9Nzc3fGF0Yj03Nzd8YWR2PTUzNzA3MzY0MnxhYz1VU0R8cG09UFJJQ0lORy5DUE18bj0xfGFpPTE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YXxibT18bXc9MTQ0MHxtdWk9M2E5MjVjOWQtZmQxZC00ZTZjLTA2ZGMtYmMyNzU5ZDJkNjJkfGNpPTJ8dXI9Y1UyVndpcEtjbA",
+            "type":"html",
+            "ad_url":"<!-- Conversant Media 728x90 LEADERBOARD CODE for SlickDeals - BTF -->\n<script type=\"text/javascript\">var vclk_options = {sid:92478,media_type:5,version:\"1.4\"};</script><script class=\"vclk_pub_code\" type=\"text/javascript\" src=\"http://cdn.fastclick.net/js/adcodes/pubcode.min.js?sid=92478&media_type=5&version=1.4&exc=1\"></script><noscript><a href=\"http://media.fastclick.net/w/click.here?sid=92478&m=1&c=1\" target=\"_blank\"><img src=\"http://media.fastclick.net/w/get.media?sid=92478&tp=5&d=s&c=1&vcm_acv=1.4\" width=\"728\" height=\"90\" border=\"1\"></a></noscript>\n<!-- Conversant Media 728x90 LEADERBOARD CODE for SlickDeals - BTF -->"
+          },
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"537794027",
+            "adv_acct_id":"537074041",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537074041",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"353",
+            "width":"728",
+            "height":"90",
+            "html":"<!-- BEGIN TECHNORATI MEDIA TAG FOR Passback_LiftDNA_SlickDeals_BTF_2_728x90, Ad Size: Leaderboard (728x90) -->\n<script type='text/javascript'>\n   document.write('<scri' + 'pt type=\"text/javascript\" src=\"'\n   + (document.location.protocol == 'https:' ? 'https://uat-secure.technoratimedia.com' : 'http://ad-cdn.technoratimedia.com')\n   + '/00/21/20/uat_42021.js?ad_size=728x90\"></scri' + 'pt>');\n</script>\n<!-- END TECHNORATI MEDIA TAG FOR Passback_LiftDNA_SlickDeals_BTF_2_728x90, Ad Size: Leaderboard (728x90) -->",
+            "target":"_blank",
+            "ts":"1fHJpZD0xZTBmOWM5MS1kYThmLTQ5ODgtODMzOC0wYzk3YWEzMDc1NmJ8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5OHxhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTJhYjRlODc3LTA5MzgtNDgzYy04MmUyLTBmMTNjZmU1ODM4NHxjbD00fGFpZD01Mzc3OTQwMjd8dD00fGFzPTcyOHg5MHxsaWQ9NTM3NDc4OTM4fG9pZD01MzcyNzAyNTh8cD0zNTN8cHI9MzUzfGF0Yj0zNTN8YWR2PTUzNzA3NDA0MXxhYz1VU0R8cG09UFJJQ0lORy5DUE18bj0xfGFpPTE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YXxibT18bXc9MTQ0MHxtdWk9M2E5MjVjOWQtZmQxZC00ZTZjLTA2ZGMtYmMyNzU5ZDJkNjJkfGNpPTN8dXI9Y1UyVndpcEtjbA",
+            "type":"html",
+            "ad_url":"<!-- BEGIN TECHNORATI MEDIA TAG FOR Passback_LiftDNA_SlickDeals_BTF_2_728x90, Ad Size: Leaderboard (728x90) -->\n<script type='text/javascript'>\n   document.write('<scri' + 'pt type=\"text/javascript\" src=\"'\n   + (document.location.protocol == 'https:' ? 'https://uat-secure.technoratimedia.com' : 'http://ad-cdn.technoratimedia.com')\n   + '/00/21/20/uat_42021.js?ad_size=728x90\"></scri' + 'pt>');\n</script>\n<!-- END TECHNORATI MEDIA TAG FOR Passback_LiftDNA_SlickDeals_BTF_2_728x90, Ad Size: Leaderboard (728x90) -->"
+          },
+          {
+            "is_fallback":0,
+            "ad_id":"537425531",
+            "adv_acct_id":"537096390",
+            "is_ng":1,
+            "adv_id":":537096390",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"139",
+            "width":"728",
+            "height":"90",
+            "html":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-7882965302669036\";\n/* SlickDeals Catch All 728 BTF */\ngoogle_ad_slot = \"7114451656\";\ngoogle_ad_width = 728;\ngoogle_ad_height = 90;\ngoogle_page_url = \"slickdeals.net\";\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD0xZTBmOWM5MS1kYThmLTQ5ODgtODMzOC0wYzk3YWEzMDc1NmJ8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5OHxhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTJhYjRlODc3LTA5MzgtNDgzYy04MmUyLTBmMTNjZmU1ODM4NHxjbD00fGFpZD01Mzc0MjU1MzF8dD00fGFzPTcyOHg5MHxsaWQ9NTM3MjgzNzc3fG9pZD01MzcxOTE5MzV8cD0xMzl8cHI9MTM5fGF0Yj0xMzl8YWR2PTUzNzA5NjM5MHxhYz1VU0R8cG09UFJJQ0lORy5DUE18Ym09QlVZSU5HLk5PTkdVQVJBTlRFRUR8Y2k9NHx1cj1jVTJWd2lwS2Ns",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-7882965302669036\";\n/* SlickDeals Catch All 728 BTF */\ngoogle_ad_slot = \"7114451656\";\ngoogle_ad_width = 728;\ngoogle_ad_height = 90;\ngoogle_page_url = \"slickdeals.net\";\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});
