@@ -1,0 +1,201 @@
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.KeywordSearch {
+  display: block;
+  background-color: #333;
+  border-radius: 3px;
+  padding: 10px;
+  position: relative;
+  float: left;
+  margin: 20px auto; }
+  .KeywordSearch:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media screen and (max-width: 640px) {
+    .KeywordSearch {
+      width: 100%; } }
+
+.KeywordSearch_Title {
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 1.0em;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 10px;
+  text-transform: uppercase; }
+
+@media screen and (max-width: 48rem) {
+  .KeywordSearch_SmallTitle {
+    display: none; } }
+@media screen and (min-width: 48.0625rem) {
+  .KeywordSearch_SmallTitle {
+    display: inline-block; } }
+
+@media screen and (max-width: 767px) {
+  .KeywordSearch_Top {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    display: block; }
+    .KeywordSearch_Top:last-child {
+      margin-right: 0; } }
+@media screen and (min-width: 768px) {
+  .KeywordSearch_Top {
+    display: none; } }
+
+.KeywordSearch_Bottom {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .KeywordSearch_Bottom:last-child {
+    margin-right: 0; }
+
+.KeywordSearch_TextBox {
+  padding: 6px 12px;
+  font-size: 1.5em;
+  height: 50px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background-color: #fff;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .KeywordSearch_TextBox:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 29.9375rem) {
+    .KeywordSearch_TextBox {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .KeywordSearch_TextBox:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 30rem) and (max-width: 39.9375rem) {
+    .KeywordSearch_TextBox {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .KeywordSearch_TextBox:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 40rem) {
+    .KeywordSearch_TextBox {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .KeywordSearch_TextBox:last-child {
+        margin-right: 0; } }
+
+.no-touch .KeywordSearch_Submit:hover {
+  background-color: #ffdb0e;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFDB0E', endColorstr='#FFF28F1E');
+  background-color: #f8971d;
+  background-image: -webkit-linear-gradient(-270deg, #f8971d, #ffcd46);
+  background-image: linear-gradient(0deg,#f8971d, #ffcd46);
+  outline: 0;
+  border: 0; }
+
+.no-touch .KeywordSearch_Submit:active, .touch .KeywordSearch_Submit:active {
+  background-color: #F28F1E;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFF28F1E', endColorstr='#FFFFDB0E');
+  background-color: #ffbd0e;
+  background-image: -webkit-linear-gradient(-270deg, #ffbd0e, #d97f1b);
+  background-image: linear-gradient(0deg,#ffbd0e, #d97f1b);
+  outline: 0;
+  border: 0; }
+
+.KeywordSearch_Submit {
+  outline: 0;
+  height: 50px;
+  padding: 6px 12px;
+  font-family: "Open Sans";
+  font-size: 1.4em;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #ffdb0e;
+  color: #fff;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFDB0E', endColorstr='#FFF28F1E');
+  background-color: #ffdb0e;
+  background-image: -webkit-linear-gradient(-450deg, #ffdb0e, #f28f1e);
+  background-image: linear-gradient(180deg,#ffdb0e, #f28f1e);
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .KeywordSearch_Submit:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 29.9375rem) {
+    .KeywordSearch_Submit {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .KeywordSearch_Submit:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 30rem) and (max-width: 39.9375rem) {
+    .KeywordSearch_Submit {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .KeywordSearch_Submit:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 40rem) {
+    .KeywordSearch_Submit {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .KeywordSearch_Submit:last-child {
+        margin-right: 0; } }
+
+.KeywordSearch > a {
+  text-decoration: none;
+  color: #f7941e;
+  float: left;
+  padding-top: 10px;
+  font-size: .7em; }
+
+.no-touch .KeywordSearch > a:hover {
+  color: #ffcd46; }
+
+.placeHolder {
+  color: #aaa; }
+

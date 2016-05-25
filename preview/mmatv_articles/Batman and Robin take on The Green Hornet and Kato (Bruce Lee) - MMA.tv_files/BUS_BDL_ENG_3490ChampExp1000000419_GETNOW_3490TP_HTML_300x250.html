@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(0170)https://s1.2mdn.net/2917862/1458247920451/BUS_BDL_ENG_3490ChampExp1000000419_GETNOW_3490TP_HTML_300x250/BUS_BDL_ENG_3490ChampExp1000000419_GETNOW_3490TP_HTML_300x250.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./style(1).css">
+</head>
+<body>
+	<div id="container">
+		<div id="ad" onclick="window.open(window.clickTag)">
+        	<div id="banner" style="visibility: visible;">
+				<div id="brand" class="logo"></div>
+				<div id="copy1" class="copy1"></div>
+               <div id="copy1b" style="left: 0px; visibility: inherit; opacity: 1;"></div>
+
+				<span id="copy2" class="text copy2"></span>
+               <div id="copy2b" style="left: 0px; visibility: inherit; opacity: 1;"></div>
+               <div id="WhiteBorder" class="text" style="visibility: inherit; opacity: 1;"></div>
+				<span id="copy3" class="text copy3"></span>
+                <div id="copy3b" style="left: 0px; visibility: inherit; opacity: 1;"></div>
+                <div id="PhoneNumber" class="PhoneNumber"></div>
+            
+				<div id="CTA" class="CTA">
+              		<div id="ctaBtnOver" style="left: -10px; visibility: hidden; opacity: 0;"></div>
+					<span id="CTACopy1" class="CTACopys" style="visibility: hidden; opacity: 0;"></span>
+                  <span id="CTACopy2" class="CTACopys" style="visibility: inherit; opacity: 1;"></span>
+				</div>
+			</div>
+		</div>	
+	</div>
+<script src="./TweenMax.min.js"></script>
+<script type="text/javascript" src="./banner.js"></script>
+<script type="text/javascript">
+var clickTag = "http://business.comcast.com/landingpage/3490-tp";
+
+function checkGreensockReady(){
+			if ( window.TimelineMax ){
+				startAd();
+			}else{
+			setTimeout( checkGreensockReady, 50 );
+			}
+			}
+window.onload = checkGreensockReady;
+ 
+</script>
+
+</body></html>

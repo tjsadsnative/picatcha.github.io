@@ -1,0 +1,265 @@
+
+/*
+ * This script is written to emulate jwplayer object to intercept and override the option width & height specified
+ * where mobile version of browser does not display properly due to width & height are defined with desktop size.
+ */
+pmcjwplayer = function ( id ) {
+	this.id = id;
+	this.setup = function ( option ) {
+		try {
+			// determine device screen size and width base on device orientation
+			if (typeof window.orientation == 'undefined' || window.orientation == 0 || window.orientation == 180 ) {
+				this.width = window.screen.width;
+			}
+			else {
+				this.width = window.screen.height;
+			}
+			// Some device such as Android have a default viewport width set to 320, while its physical screen width is 480.
+			// We need to adjust the width accordingly to current viewport width.
+			if ( typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 1.0 ) {
+				this.width = this.width / window.devicePixelRatio;
+				if ( this.width < 300 ) {
+					this.width = 300;	// set minimal width to 300
+				}
+			}
+			if (typeof option['width'] != 'undefine') {
+				// we need to override and ajust video width
+				if ( this.width < option['width'] ) {
+					// get the scaling ratio to ajust video height if needed
+					this.ratio = this.width/option['width'];
+					if ( typeof option['height'] != 'undefined' ) {
+						// adjusting video height according to scale ratio
+						option['height'] = Math.floor( option['height'] * this.ratio );
+					}
+					option['width'] = this.width;
+				}
+			}
+		} catch (e) {}
+		// setup jwplayer with modified option
+		try {
+			if ('undefined' !== typeof option['advertising']['tag']) {
+				var tag_url = option['advertising']['tag'];
+				var rand = Math.random() * 1000000000000000;
+				tag_url = tag_url.replace('[rand]', rand);
+				option['advertising']['tag'] = tag_url;
+			}
+		} catch (e) {
+		}
+		jwplayer(this.id).setup(option);
+	};
+	return this;
+};
+;
+jQuery(document).ready(function()
+{
+	var $ = jQuery; // Encapsulated
+	//$('.topper_mobile').fitText(1.5);
+	
+	// Main nav
+	$('#mobile_nav_more').click(function()
+	{
+		var el = $(this);
+		if(!el.hasClass('selected'))
+		{
+			el.addClass('selected');
+			//$('#main_nav').addClass('show');
+			$('#hb-nav').addClass('show');
+		}
+		else
+		{
+			el.removeClass('selected');
+			//$('#main_nav').removeClass('show');
+			$('#hb-nav').removeClass('show');
+		}
+	});
+
+
+});
+/* JS for Videos
+ * Since 25th Oct Vicky Biswas
+ */
+	var Apple = {};
+	Apple.UA = navigator.userAgent;
+	Apple.Terms = ["iPhone", "iPod", "iPad"];
+	Apple.Device = !!Apple.UA.match(new RegExp(Apple.Terms.join('|'),'gi'));
+	if (Apple.Device)
+		jQuery(document).ready(function() {
+			jQuery('.vvqbox').each(function(){
+				x=jQuery(this).html().match(/http\:\/\/www\.youtube\.com\/watch\?v\=(.+?)[<|&]/i); 
+				if(!(x && x[1]))
+					x=jQuery(this).html().match(/http\:\/\/youtu\.be\/(.+?)[&|<]/i); 
+				if(x && x[1])
+					jQuery(this).html('<iframe height="100%" frameborder="0" width="100%" allowfullscreen="" src="http://www.youtube.com/embed/'+x[1]+'"></iframe>');
+				else
+					if ((jQuery(this).html()).indexOf('<ifr'+'ame') == -1) jQuery(this).hide();
+			});
+		});
+
+/* for older Iframe Embeds 
+ * Since 3rd Nov Vicky Biswas
+ */
+	jQuery(document).ready(function() {
+		jQuery('iframe').each(function(){
+			if(iframe_is_video(jQuery(this).attr('src'))) jQuery(this).parent().addClass('vvqbox');
+		});
+	});
+	function iframe_is_video( src ){
+		var keys = new Array('player','youtu','discoverymedia');
+		for ( akey in keys) {
+		   if ( typeof src != "undefined" && src.indexOf(keys[akey])!=-1)
+			return true;
+		} 
+		return false;
+	}
+;
+/*
+ * Common/Misc JS for Hollywoodlife.com
+ *
+ * @package pmc-hollywoodlife
+ */
+
+jQuery( document ).ready( function( $ ) {
+
+	/*
+	 * Open social share links in a pop-up instead of a new tab
+	 */
+	$( '.share-comment .new-window a' ).on( 'click', function( e ) {
+		if ( pmc.popup( $( this ).attr( 'href' ) ) ) {
+			e.preventDefault();
+		}
+	} );
+
+    /**
+     * sticky right rail
+     */
+    if(  window.pmc_sticky_rightrail ){
+        var stickyrail_settings= {};
+        stickyrail_settings.rightrail= '.single #sidebar';
+        stickyrail_settings.content = '.single #main';
+        stickyrail_settings.leftrail = '.single #content';
+        window.pmc_sticky_rightrail.apply_sticky_rightrail( stickyrail_settings );
+    }
+
+} );
+
+
+//EOF
+;
+/*
+ * This contains the code to track click events of next & previous buttons
+ * on the left/right screen edges. This is only for articles & gallery pages
+ * where these buttons are in use.
+ *
+ * @author Amit Gupta
+ * @since 2013-03-13
+ */
+
+jQuery(document).ready(function($){
+
+	if( ! hl_tracker || ! hl_tracker.page_type ) {
+		var hl_tracker = {"page_type":"article"};
+	}
+
+	$('.btn-prev-article').on( 'click', function(){
+		_gaq.push(['_trackEvent', 'side-previous-button', 'click', hl_tracker.page_type, 0, true]);
+	} );
+
+	$('.btn-next-article').on( 'click', function(){
+		_gaq.push(['_trackEvent', 'side-next-button', 'click', hl_tracker.page_type, 0, true]);
+	} );
+
+});
+
+//EOF
+;
+window._socialite_settings = window._socialite_settings || {
+	facebook: {
+		lang: 'en_US',
+		appId: '210702705726465',
+		options: {
+			channelUrl: pmc_common_urls.fb_channel_uri,
+			status: true,
+			cookie: true,
+			xfbml: true,
+			oauth: true
+		},
+		onlike: function(href) {
+			_gaq.push(['_trackSocial', 'facebook', 'like', href ]);
+			_gaq.push(['pmc_ga_account._trackSocial', 'facebook', 'like', href ]);
+		},
+		onunlike: function(href) {
+			_gaq.push(['_trackSocial', 'facebook', 'unlike', href ]);
+			_gaq.push(['pmc_ga_account._trackSocial', 'facebook', 'unlike', href ]);
+		},
+		onsend: function(href) {
+			_gaq.push(['_trackSocial', 'facebook', 'share', href ]);
+			_gaq.push(['pmc_ga_account._trackSocial', 'facebook', 'share', href ]);
+		}
+	},
+
+	twitter: {
+		onclick: function(intent_event) {
+			try {
+				if (intent_event) {
+					var ev_action = intent_event.type + ((intent_event.type == 'click') ? '-' + intent_event.region : '');
+					_gaq.push(['_trackSocial', 'twitter', ev_action, intent_event.target.src]);
+					_gaq.push(['pmc_ga_account._trackSocial', 'twitter', ev_action, intent_event.target.src]);
+					_gaq.push(['_trackEvent', 'share-buttons', 'twitter', ev_action]);
+
+
+				}
+			} catch (e) {
+			}
+		},
+		ontweet: function(intent_event) {
+			try {
+				if (intent_event) {
+					var ev_action = intent_event.type + ((intent_event.type == 'click') ? '-' + intent_event.region : '');
+					_gaq.push(['_trackSocial', 'twitter', ev_action, intent_event.target.src]);
+					_gaq.push(['pmc_ga_account._trackSocial', 'twitter', ev_action, intent_event.target.src]);
+					_gaq.push(['_trackEvent', 'share-buttons', 'twitter', ev_action]);
+
+
+				}
+			} catch (e) {
+			}
+		}
+	},
+
+	googleplus: {
+		callback: function(el, e) {
+			try {
+				_gaq.push(['_trackEvent', 'share-buttons', 'g-plus', 'click']);
+			} catch (e) {
+			}
+		}
+	},
+
+	pinterest: {
+		onclick: function() {
+			if (typeof PMC_GA_Event !== 'undefined') {
+				PMC_GA_Event.track('share-buttons', 'pinterest', 'click');
+			} else if (typeof _gaq !== 'undefined') {
+				_gaq.push(['share-buttons', 'pinterest', 'click']);
+			}
+		}
+	}
+
+};
+;
+jQuery( document ).ready(function() {
+	var valid_krux_values = {
+		'beauty'	: 'JyE59bWQ',
+		'fashion' 	: 'JyE7lbF7',
+		'shoes' 	: 'JyE9Dkzi'
+	};
+
+	jQuery('a[data-hl-krux]').click(function() {
+		var krux_value = jQuery( this).attr('data-hl-krux');
+
+		if (typeof valid_krux_values[krux_value] !== typeof undefined && valid_krux_values[krux_value] !== false) {
+			Krux('admEvent', valid_krux_values[krux_value], {});
+		}
+
+	});
+});;

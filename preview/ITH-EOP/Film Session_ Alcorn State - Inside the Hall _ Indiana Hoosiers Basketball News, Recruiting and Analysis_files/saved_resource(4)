@@ -1,0 +1,30 @@
+
+var ftGUID_1519162="27506C5BC1A7FE";
+var ftConfID_1519162="1215599001";
+var ftParams_1519162="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_ifb=1&ft_domain=www.insidethehall.com&ft_referrer=http%3A%2F%2Fwww.insidethehall.com%2F2015%2F12%2F02%2Ffilm-session-alcorn-state%2F%3Fntv_tm%3Dtout&cachebuster=253633.0504808575";
+var ftKeyword_1519162="";
+var ftCustom_1519162="";
+var ftSection_1519162="";
+var ftSegment_1519162="g5m,eqq,g51,g5t,g6j,fh3,hqg,hks,hks97f2a73fe781485bb548744d172f230d_c84030d157194f8bbbf7ee15aae9150b,fe6,e0t,iba,hyq,trg,trgbaby,ge4";
+var ftSegmentList_1519162=[{s:'g5m'},{s:'eqq'},{s:'g51'},{s:'g5t'},{m:'dflt',s:'g6j'},{s:'fh3'},{s:'hqg'},{s:'hks',t:28290000},{m:'hks_v',s:'hks97f2a73fe781485bb548744d172f230d_c84030d157194f8bbbf7ee15aae9150b'},{s:'fe6'},{s:'e0t'},{s:'iba'},{s:'hyq'},{s:'trg',t:28780000},{m:'trg_v',s:'trgbaby',t:28780000},{s:'ge4'}];
+var ftRuleMatch_1519162="0";
+var ftTimestamp_1519162="1449253455";
+var ftGeoC2_1519162="us";
+var ftGeoState_1519162="ca";
+var ftGeoCity_1519162="richmond";
+var ftISP_1519162="comcast cable communications inc.";
+var ftSpeed_1519162="cable";
+var ftDMA_1519162="807";
+var ftLong_1519162="-122.355";
+var ftLat_1519162="37.9423";
+var ftPostal_1519162="94801";
+var ftTimeZone_1519162="-800";
+var ftMobileCarrier_1519162="";
+var ftImp1519162 = {};
+ftImp1519162.privacy = "x";
+ftImp1519162.guidAge = "144";
+ftImp1519162.impID = "28944499B42531";
+
+
+document.write('<scr'+'ipt src="https://secure.flashtalking.com/xre/151/1519162/1215599/js/j-1519162-1215599.js" id="ftscript_m1519162" name="ftscript_m1519162"></scr'+'ipt>');
+                    

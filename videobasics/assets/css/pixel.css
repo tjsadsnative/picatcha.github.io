@@ -1,0 +1,494 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600);
+@import url("font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+
+/* Reset */
+
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+
+  body {
+    line-height: 1;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  blockquote, q {
+    quotes: none;
+  }
+
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  body {
+    -webkit-text-size-adjust: none;
+  }
+
+/* Basic */
+
+  body {
+    background: #fff;
+  }
+
+  body, input, select, textarea {
+    color: #888;
+    font-family: "Lato", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    line-height: 1.75em;
+  }
+
+  a {
+    -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    border-bottom: solid 1px #e4e4e4;
+    color: inherit;
+    text-decoration: none;
+  }
+
+    a:hover {
+      border-bottom-color: transparent;
+      color: #4acaa8 !important;
+    }
+
+  strong, b {
+    color: #777;
+    font-weight: 700;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  p {
+    margin: 0 0 2.25em 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #777;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0 0 0.5625em 0;
+  }
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+      border: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+  h2 {
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    line-height: 1.5em;
+  }
+
+  h4 {
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
+
+  h5 {
+    font-size: 0.9em;
+    line-height: 1.5em;
+  }
+
+  h6 {
+    font-size: 0.7em;
+    line-height: 1.5em;
+  }
+
+  sub {
+    font-size: 0.8em;
+    position: relative;
+    top: 0.5em;
+  }
+
+  sup {
+    font-size: 0.8em;
+    position: relative;
+    top: -0.5em;
+  }
+
+  hr {
+    border: 0;
+    border-bottom: solid 2px #f4f4f4;
+    margin: 2.25em 0;
+  }
+
+    hr.major {
+      margin: 3.375em 0;
+    }
+
+  blockquote {
+    border-left: solid 8px #e4e4e4;
+    font-style: italic;
+    margin: 0 0 2.25em 0;
+    padding: 0.5em 0 0.5em 2em;
+  }
+
+  code {
+    background: #555;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.9em;
+    margin: 0 0.25em;
+    padding: 0.25em 0.65em;
+  }
+
+  pre {
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.9em;
+    margin: 0 0 2.25em 0;
+  }
+
+    pre code {
+      -webkit-overflow-scrolling: touch;
+      display: block;
+      line-height: 1.5em;
+      overflow-x: auto;
+      padding: 1em 1.5em;
+    }
+
+  .align-left {
+    text-align: left;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
+  .align-right {
+    text-align: right;
+  }
+
+/* Section/Article */
+
+  section.special, article.special {
+    text-align: center;
+  }
+
+  header p {
+    color: #aaa;
+    position: relative;
+    margin: 0 0 1.6875em 0;
+  }
+
+  header h2 + p {
+    font-size: 1.25em;
+    margin-top: -0.5em;
+    line-height: 1.5em;
+  }
+
+  header h3 + p {
+    font-size: 1.1em;
+    margin-top: -0.35em;
+    line-height: 1.5em;
+  }
+
+  header h4 + p,
+  header h5 + p,
+  header h6 + p {
+    font-size: 0.9em;
+    margin-top: -0.25em;
+    line-height: 1.5em;
+  }
+
+  header.major h2 {
+    color: #4acaa8;
+    font-size: 3.5em;
+  }
+
+    header.major h2 + p {
+      color: #777;
+      font-size: 1.75em;
+      font-weight: 700;
+      margin-top: -0.75em;
+    }
+
+/* Form */
+
+  form {
+    margin: 0 0 2.25em 0;
+  }
+
+  label {
+    color: #777;
+    display: block;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin: 0 0 1.125em 0;
+  }
+
+  input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  select,
+  textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    border: none;
+    border: solid 2px #e4e4e4;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0 1em;
+    text-decoration: none;
+    width: 100%;
+  }
+
+    input[type="text"]:invalid,
+    input[type="password"]:invalid,
+    input[type="email"]:invalid,
+    select:invalid,
+    textarea:invalid {
+      box-shadow: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4acaa8;
+    }
+
+  .select-wrapper {
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+
+    .select-wrapper:before {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: none !important;
+    }
+
+    .select-wrapper:before {
+      color: #e4e4e4;
+      content: '\f078';
+      display: block;
+      height: 2.75em;
+      line-height: 2.75em;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: 2.75em;
+    }
+
+    .select-wrapper select::-ms-expand {
+      display: none;
+    }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  select {
+    height: 2.75em;
+  }
+
+  textarea {
+    padding: 0.75em 1em;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    display: block;
+    float: left;
+    margin-right: -2em;
+    opacity: 0;
+    width: 1em;
+    z-index: -1;
+  }
+
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+      text-decoration: none;
+      color: #888;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1em;
+      font-weight: 400;
+      padding-left: 2.4em;
+      padding-right: 0.75em;
+      position: relative;
+    }
+
+      input[type="checkbox"] + label:before,
+      input[type="radio"] + label:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none !important;
+      }
+
+      input[type="checkbox"] + label:before,
+      input[type="radio"] + label:before {
+        background: #fafafa;
+        border-radius: 5px;
+        border: solid 2px #e4e4e4;
+        content: '';
+        display: inline-block;
+        height: 1.65em;
+        left: 0;
+        line-height: 1.58125em;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 1.65em;
+      }
+
+    input[type="checkbox"]:checked + label:before,
+    input[type="radio"]:checked + label:before {
+      background: #989898;
+      border-color: #989898;
+      color: #ffffff;
+      content: '\f00c';
+    }
+
+    input[type="checkbox"]:focus + label:before,
+    input[type="radio"]:focus + label:before {
+      border-color: #4acaa8;
+    }
+
+  input[type="checkbox"] + label:before {
+    border-radius: 5px;
+  }
+
+  input[type="radio"] + label:before {
+    border-radius: 100%;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #aaa !important;
+    font-style: italic;
+    opacity: 1.0;
+  }
+
+  :-moz-placeholder {
+    color: #aaa !important;
+    font-style: italic;
+    opacity: 1.0;
+  }
+
+  ::-moz-placeholder {
+    color: #aaa !important;
+    font-style: italic;
+    opacity: 1.0;
+  }
+
+  :-ms-input-placeholder {
+    color: #aaa !important;
+    font-style: italic;
+    opacity: 1.0;
+  }
+
+  .formerize-placeholder {
+    color: #aaa !important;
+    font-style: italic;
+    opacity: 1.0;
+  }
+
+/* pixel */
+
+.pixel {
+  display:block;
+  line-height:0;
+  margin:50px auto 0px auto;
+  width:64px;
+  background:#111; 
+  border-radius:5px;
+  animation:zoom 1.4s ease-out backwards;
+}
+
+@keyframes zoom {
+  0%{ opacity:0; transform:scale(0.001) rotate(.1turn); }
+    /* I see some weird stuff happening if I  set scale() to zero */
+  100%{ opacity:1; transform:scale(1); }
+}
+
+.pixel span {
+  border-radius:3px;
+  height:52px;
+  width:16px;
+  content:"";
+  display:inline-block;
+  margin:4px 2px;
+  animation:flicker 1s steps(1,end) infinite;
+}
+
+span.r { background:red; }
+span.g { background:lime; animation-delay:.4s; }
+span.b { background:blue; animation-delay:.8s; }
+
+@keyframes flicker {
+  0%,100%{ opacity:1; }
+  50%{ opacity:.4; }
+}
+
+
+h1 { display:inline; }
+
+.p:after { color:#000; content:"one million."; }
+
+
+@media only screen and (min-device-width:320px) and (min-device-height:480px) { .p:after { content:"one hundred and fifty thousand"; } }
+@media only screen and (min-device-width:480px) and (min-device-height:800px) { .p:after { content:"three hundred and eighty thousand"; } }
+@media only screen and (min-device-width:640px) and (min-device-height:960px) { .p:after { content:"six hundred and fourteen thousand"; } }
+@media only screen and (min-device-width:1024px) and (min-device-height:600px) { .p:after { content:"six hundred and fourteen thousand"; } }
+@media only screen and (min-device-width:64opx) and (min-device-height:1136px) { .p:after { content:"seven hundred and twenty thousand"; } }
+@media only screen and (min-device-width:768px) and (min-device-height:1024px) { .p:after { content:"seven hundred and eighty thousand"; } }
+@media only screen and (min-device-width:720px) and (min-device-height:1280px) { .p:after { content:"nine hundred and twenty one thousand"; } }
+@media only screen and (min-device-width:1280px) and (min-device-height:800px) { .p:after { content:"one million"; } }
+@media only screen and (min-device-width:1366px) and (min-device-height:768px) { .p:after { content:"one million"; } }
+@media only screen and (min-device-width:1440px) and (min-device-height:900px) { .p:after { content:"one million two hundred and ninety thousand"; } }
+@media only screen and (min-device-width:1080px) and (min-device-height:1920px) { .p:after { content:"two million"; } }
+@media only screen and (min-device-width:1536px) and (min-device-height:2048px) { .p:after { content:"three million one hundred and twenty thousand"; } }
+@media only screen and (min-device-width:2560px) and (min-device-height:1440px) { .p:after { content:"three million six hundred and eighty thousand"; } }
+@media only screen and (min-device-width:2880px) and (min-device-height:1800px) { .p:after { content:"five million one hundred and eighty thousand"; } }

@@ -1,0 +1,117 @@
+
+<!-- saved from url=(0093)http://www.goclickgenius.com/widget/widgetTable3.asp?height=200&Width=600&pid=P22515135470783 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        
+	<!--<base target="_blank">--><base href="." target="_blank">
+        <title>Untitled Document</title>
+	
+	
+	<link href="table-styles.css" rel="stylesheet" type="text/css" media="screen">
+	
+	<style type="text/css">
+        	.grey { background-color: #D3D3D3; }
+	</style>
+
+	
+			     <link href="table-styles.css" rel="stylesheet" type="text/css" media="screen">
+		
+   
+    </head>
+    <body>
+
+
+
+
+
+			<div class="section_mhx600">
+		            <div class="container_mhx">
+		                <table class="responsive-tab-cus" id="table">
+		                    <thead>
+		                        <tr class="header grey">
+		                            <th width="50">Company<div style="width: 61px;">Company</div></th>
+		                            <th width="150">Rate<div style="width: 56px;">Rate</div></th>
+		                            <th width="250">Coverage<div style="width: 79px;">Coverage</div></th>
+		                            <th width="250">Age Limits<div style="width: 86px;">Age Limits</div></th>
+		                            <th width="50">Rating<div style="width: 43px;">Rating</div></th>
+		                          <th align="center">Action<div style="width: 63px;">Action</div></th>
+		  
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		
+
+<tr class=""><td><span class="logoname"></span> <span class="com_logo"><img width="55" height="55" src="embrace4.jpg"></span></td><td>$13 - $99/mo</td><td>pays 70 - 90% of vet bill</td><td>More than 6 weeks</td><td>9.2</td><td><a href="http://www.goclickgenius.com/widget/CGout3.asp?pub=P22515135470783&amp;ad=A217140407030&amp;r=1&amp;l=L22515154670243&amp;z=&amp;b=2.9&amp;m="><img src="next.png"></a></td></tr><tr class=""><td><span class="logoname"></span> <span class="com_logo"><img width="55" height="55" src="petsBest.gif"></span></td><td>$6 - $90/mo</td><td>pays 70 - 100% of vet bill</td><td>8 weeks to 14 years</td><td>8.7</td><td><a href="http://www.goclickgenius.com/widget/CGout3.asp?pub=P22515135470783&amp;ad=A12812434196167&amp;r=2&amp;l=L22515233670600&amp;z=&amp;b=2.1&amp;m="><img src="next.png"></a></td></tr><tr class=""><td><span class="logoname"></span> <span class="com_logo"><img width="55" height="55" src="trup2.jpg"></span></td><td>$12 - $90/mo</td><td>pays 90% of vet bill</td><td>Older than 8 weeks</td><td>9.0</td><td><a href="http://www.goclickgenius.com/widget/CGout3.asp?pub=P22515135470783&amp;ad=A1300&amp;r=3&amp;l=L22515214370239&amp;z=&amp;b=1.9&amp;m="><img src="next.png"></a></td></tr><tr class="grey"><td><span class="logoname"></span> <span class="com_logo"><img width="55" height="55" src="pp_logo_US.jpg"></span></td><td>$8 - $70/mo</td><td>pays 80 - 100% of vet bill</td><td>Older than 6 weeks</td><td>9.2</td><td><a href="http://www.goclickgenius.com/widget/CGout3.asp?pub=P22515135470783&amp;ad=A1200&amp;r=4&amp;l=L22515195670913&amp;z=&amp;b=1.8&amp;m="><img src="next.png"></a></td></tr><tr class=""><td><span class="logoname"></span> <span class="com_logo"><img width="55" height="55" src="AKC3.png"></span></td><td>$5 - $90/mo</td><td>pays 80 - 90% of vet bill</td><td>More than 8 weeks</td><td>6.7</td><td><a href="http://www.goclickgenius.com/widget/CGout3.asp?pub=P22515135470783&amp;ad=A331125716111547&amp;r=5&amp;l=L42205818111435&amp;z=&amp;b=1.6&amp;m="><img src="next.png"></a></td></tr><tr class=""><td><span class="logoname"></span> <span class="com_logo"><img width="55" height="55" src="healthy-paws.jpg"></span></td><td>$15 - $90/mo</td><td>pays 70 - 90% of vet bill</td><td>8 weeks to 14 years</td><td>9.8</td><td><a href="http://www.goclickgenius.com/widget/CGout3.asp?pub=P22515135470783&amp;ad=A2200&amp;r=6&amp;l=L22515175570105&amp;z=&amp;b=1.5&amp;m="><img src="next.png"></a></td></tr>
+				
+		 
+		                    </tbody>
+		                </table>
+		            </div>
+		        </div>
+	
+		
+		
+
+
+        <script src="jquery.js"></script>
+
+        <script>
+
+        	var $table = $("#table");
+               	     
+            	var $rows = $table.find("tr");
+
+		var curIndex = $rows.filter('.grey').index();
+		var mouseHover = false;
+            	$(document).ready(function(){
+
+            	
+                $('.responsive-tab-cus thead tr th').each(function(){
+                    var w = $(this).width()-2;
+                    $(this).find('div').width(w)
+                });
+
+
+               $rows.eq(1).addClass('grey');
+
+               setInterval(codeAddress, 750); 
+               
+               $("#table").mouseover(function(){
+					mouseHover = true;
+               });
+
+               $("#table").mouseout(function(){
+					mouseHover = false;
+               });
+
+            });
+
+           
+
+            function  codeAddress() {
+        		if( !mouseHover ) {
+					var nextIndex ;
+            		if(curIndex == $rows.length-1){ nextIndex = 1 ; curIndex=0;}else{ nextIndex  = ++curIndex;};
+				    $rows.eq(nextIndex).addClass('grey').siblings().removeClass('grey');
+        		}
+             }  	
+
+        </script>
+
+        <script src="jquery.min(3).js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.responsive-tab-cus thead tr th').each(function(){
+                    var w = $(this).width()-2;
+                    $(this).find('div').width(w)
+                });
+            })
+        </script>
+
+
+
+
+
+
+
+
+</body></html>

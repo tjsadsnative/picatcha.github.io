@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://s0.2mdn.net/2438645/1444248923666/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script><meta name="ad.size" content="width=300, height=250"><script type="text/javascript">var clickTag="http://www.staples.com";</script><style>.banner,.footer{background:#FFF}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{vertical-align:baseline;margin:0;padding:0;font-size:100%;border:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}a{color:inherit}*,:after,:before{box-sizing:border-box}.banner{position:relative;margin:0 auto;width:300px;height:250px;color:#666;font-family:'Helvetica Neue',sans-serif;border:1px solid #000;overflow:hidden}.banner *{position:absolute;z-index:1;font-weight:100}.logo{top:12px;left:106px}.text-01,.text-02,.text-03,.text-04{z-index:4;opacity:0}.text-01{top:141px;left:80px;width:27px;height:8px}.text-02{top:154px;left:196px;width:26px;height:12px}.text-03{top:187px;left:79px;width:27px;height:9px}.text-04{top:191px;left:195px;width:27px;height:6px}.image-01{top:184px;left:91px;z-index:3;width:35px;height:14px;opacity:0}.image-02{top:139px;left:45px;z-index:2;width:17px;height:25px;opacity:0}.image-03{top:152px;left:162px;z-index:1;width:48px;height:19px;opacity:0}.text-05{top:79px;left:-300px}.text-06{top:78px;left:-300px;width:92px;height:66px}.shop-now{top:248px;left:24px}.footer{top:248px;left:0;width:298px;height:40px;border-top:1px solid #C00}.more{top:12px;left:76px}.clickthrough{top:0;left:0;right:0;bottom:0;z-index:999;background-color:rgba(255,255,255,0)}#replay{display:none;top:4px;left:4px;padding:0;z-index:9999;width:18px;height:18px;background:url(replay.png) no-repeat;border:none;cursor:pointer}</style></head><body><div class="banner"><img class="logo" src="logo(3).png"> <img class="text-01" src="text-01.png" style="top: -200px; left: -200px; width: 105px; height: 29px; opacity: 1; transform: rotate(-180deg);"> <img class="text-02" src="text-02.png" style="top: -200px; left: 600px; width: 102px; height: 46px; opacity: 1; transform: rotate(180deg);"> <img class="text-03" src="text-03.png" style="top: 600px; left: 200px; width: 103px; height: 36px; opacity: 1; transform: rotate(-180deg);"> <img class="text-04" src="text-04.png" style="top: 600px; left: -200px; width: 103px; height: 21px; opacity: 1; transform: rotate(180deg);"> <img class="image-01" src="image-01.png" style="top: 140px; left: 192px; width: 96px; height: 35px; opacity: 1;"> <img class="image-02" src="image-02.png" style="top: 95px; left: 178px; width: 47px; height: 69px; opacity: 1;"> <img class="image-03" src="image-03.png" style="top: 112px; left: 228px; width: 133px; height: 50px; opacity: 1;"> <img class="text-05" src="text-05.png" style="left: 300px;"> <img class="text-06" src="text-06.png" style="left: 33px;"> <img class="shop-now" src="shop-now(1).png" style="top: 156px;"><div class="footer" style="top: 208px;"><img class="more" src="more(1).png"></div><a class="clickthrough" href="javascript:window.open(window.clickTag); void(0)"></a> <button id="replay" title="Replay" style="display: inline-block;"></button></div><script src="jquery.min(1).js"></script><script>!function(t,e,a,i){"use strict";t(e).load(function(){var a=t(".text-01").clone(),i=t(".text-02").clone(),n=t(".text-03").clone(),o=t(".text-04").clone();(e.play=function(){t(".text-01").delay(300).animate({top:114,left:30,width:127,height:35,opacity:1},150).animate({top:119,left:40,width:105,height:29},50).delay(2e3).animate({deg:180,top:-200,left:-200},{duration:250,step:function(e,a){"deg"==a.prop&&t(".text-02").css({transform:"rotate("+e+"deg)"})}}),t(".text-02").delay(600).animate({top:110,left:147,width:124,height:56,opacity:1},150).animate({top:119,left:157,width:102,height:46},50).delay(1700).animate({deg:-180,top:-200,left:600},{duration:300,step:function(e,a){"deg"==a.prop&&t(".text-01").css({transform:"rotate("+e+"deg)"})}}),t(".text-03").delay(900).animate({top:153,left:30,width:125,height:44,opacity:1},150).animate({top:160,left:40,width:103,height:36},50).delay(1400).animate({deg:180,top:600,left:200},{duration:300,step:function(e,a){"deg"==a.prop&&t(".text-04").css({transform:"rotate("+e+"deg)"})}}),t(".text-04").delay(1200).animate({top:171,left:146,width:125,height:26,opacity:1},150).animate({top:175,left:156,width:103,height:21},50).delay(1100).animate({deg:-180,top:600,left:-200},{duration:300,step:function(e,a){"deg"==a.prop&&t(".text-03").css({transform:"rotate("+e+"deg)"})}}),t(".image-01").delay(2500).animate({top:160,left:26,width:165,height:60,opacity:1},150).animate({top:165,left:39,width:137,height:50},50).delay(1e3).animate({top:218},250,"swing").delay(2e3).animate({top:140,left:192,width:96,height:35},250,"swing"),t(".image-02").delay(2500).animate({top:92,left:13,width:81,height:119,opacity:1},150).animate({top:101,left:19,width:67,height:99},50).delay(1e3).animate({top:154},250,"swing").delay(2e3).animate({top:95,left:178,width:47,height:69},250,"swing"),t(".image-03").delay(2500).animate({top:118,left:71,width:228,height:87,opacity:1},150).animate({top:124,left:90,width:190,height:72},50).delay(1e3).animate({top:178},250,"swing").delay(2e3).animate({top:112,left:228,width:133,height:50},250,"swing"),t(".text-05").delay(3800).animate({left:92},250,"swing").animate({left:86},100,"swing").delay(1500).animate({left:80},100,"swing").animate({left:300},250,"swing"),t(".text-06").delay(5950).animate({left:39},250,"swing").animate({left:33},100,"swing"),t(".shop-now").delay(5950).animate({top:150},125,"swing").animate({top:156},50,"swing"),t(".footer").delay(6125).animate({top:208},125,"swing"),t("#replay").delay(6125).fadeIn(600)})(),t("#replay").click(function(){t("*","body").removeAttr("style"),t(".text-01").remove(),t(".text-02").remove(),t(".text-03").remove(),t(".text-04").remove(),a=a.insertAfter(".logo").clone(),i=i.insertAfter(".text-01").clone(),n=n.insertAfter(".text-02").clone(),o=o.insertAfter(".text-03").clone(),play()})})}(jQuery,window,document);</script></body></html>

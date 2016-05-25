@@ -1,0 +1,31 @@
+
+        var zonehtml = "<ins style='width:300px;height:auto;max-width:100%;max-height:250px;border:none;overflow:hidden;margin:0px;padding:0px;display:inline-block;visibility:visible;position:relative;opacity:1;background:transparent;background-color:transparent;vertical-align:middle;'><a id=adglare_a_660387594 href='//thegailygrind.engine.adglare.net/c?cID=679819024&crID=458209262&zID=660387594&cpos=1&u=aHR0cDovL20ub25lbGluay5tZS9kMjY2NDBiZg==' target='_blank' style='visibility:visible; opacity:1;'><img id=adglare_img_660387594 style='visibility:visible; opacity:1; width:300px; height:auto; max-width:100%; max-height:250px; vertical-align:middle;' src='//thegailygrind.cdn.adglare.net/img/dgm8x_m67k474694zav6u476ch_7f36ef3519ccb0acc10363ad6bca3949.png' alt='' title=''></a></ins>";
+        var o = document.getElementById('zone660387594');
+        if(o) {
+            o.innerHTML = zonehtml;
+            _adglaremouselistener('660387594');
+        }
+        ADGLARE.zone660387594 = ADGLARE.zone660387594 || {};
+        ADGLARE.zone660387594.lastcID = 679819024;
+    
+        function _adglaremouselistener(zID) {
+            if(!document.getElementById('adglare_a_'+zID)) return;
+            var wrapperdiv = document.getElementById('adglare_img_'+zID);
+            if(!wrapperdiv) return;
+            var t = document.getElementById('adglare_a_'+zID).href;
+            wrapperdiv.onmousemove = wrapperdiv.ontouchmove = function(e) {
+                try {
+                  //e.preventDefault();
+                  var x = e.layerX;
+                  var y = e.layerY;
+                  if(e.touches) {
+                      x = e.touches[0].pageX;
+                      y = e.touches[0].pageY;
+                  }
+                  x -= this.offsetLeft;
+                  y -= this.offsetTop;
+                  document.getElementById('adglare_a_'+zID).href = t+'&cx='+x+'&cy='+y;
+                } catch(e) {}
+            };
+        }
+    

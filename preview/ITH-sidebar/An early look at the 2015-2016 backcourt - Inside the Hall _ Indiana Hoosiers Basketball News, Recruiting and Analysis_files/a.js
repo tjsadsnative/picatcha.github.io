@@ -1,0 +1,7 @@
+(function(){
+  document.write('<div id="adsatlas-1144695603" style="position:relative;width:160px;height:600px;overflow:hidden">');
+  document.write('<a href="http://i.w55c.net/cl?t=1&btid=YmUwYzBhNTgtOWFmNS00MjA0LTllODItZDk5MDZlNTVjNmJhfEZGQnlUaFlabWl8MTQ1MjAzODk1NTc5M3wxfDBGU1JjOUx1Y2N8MFJsb3o3RUtyZXxLUW9BYUZKaTFBYjVXVzV8MjkwMDAwfHx8fDE3LjBQfFVTRA&ei=FMX&tpc=&rurl=https://ad.atdmt.com/c/go;p=11177200955542;as=0;a=11177200932861;crs=11177200932852;cr=11177200932855;i.ts=1452039241" target="_blank"><img border="0" src="https://cdn.atlassbx.com/FB/11177200932855/PAPlus_OliviaMunn_FSH_160x600.jpg"/></a>');
+  document.write('</div>');
+  document.write('<style>.atdmt-adchoices,.atdmt-adchoices-small:hover{background:no-repeat url(https://cdn.atlassbx.com/FB/11002203136624/adchoices.png);display:block;height:15px;line-height:15px;padding:0;position:absolute;right:0;top:0;width:77px}.atdmt-adchoices-small{background:no-repeat url(https://cdn.atlassbx.com/FB/11002203136625/adchoices-icon-only.png);width:19px}</style><script>!function(){var a=parseInt(\"160\",10)*parseInt(\"600\",10),e=11550>=a,t=document.createElement(\"a\");t.className=\"atdmt-adchoices\",e&&(t.className=t.className+\" atdmt-adchoices-small\"),t.href=\"https://atlassolutions.com/privacy-policy/why-am-i-seeing-this-ad/\",t.target=\"_blank\";var s=document.getElementById(\"adsatlas-1144695603\");s&&(s.style.position=\"relative\",s.appendChild(t))}();</script>');
+  document.close();
+})();

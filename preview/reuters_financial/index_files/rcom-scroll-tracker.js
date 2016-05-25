@@ -1,0 +1,2 @@
+function rcom_scrollTracker(f){var e=0,a=0;return function(){var b=$(document).height(),c=$(window).height(),d=b-c,c=$(this).scrollTop(),b=0;e>=0&&d>0&&(d=c/d,c>e&&d>=0.25&&(d>=0.5?d>=0.75?d>=0.98?a!=100&&(a=100,b=1):a!=75&&(a=75,b=1):a!=50&&(a=50,b=1):a!=25&&(a=25,b=1)));e=c;c=a+" percent scroll | "+f;b>0&&dcsMultiTrack("WT.z_event",c,"WT.dl","33")}}
+function inAppleMobileDevice(){return navigator&&navigator.userAgent&&navigator.userAgent!=null&&navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad)/)!=null?true:false};

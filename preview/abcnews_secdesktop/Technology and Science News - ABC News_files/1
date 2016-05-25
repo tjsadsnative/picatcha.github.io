@@ -1,0 +1,457 @@
+(function() {
+	var parseResponse = function(resp) {
+		if (window.console) console.log("RESPONSE %o", resp);
+		try {
+			if (!resp.ads || !resp.siteSection) return;
+			var crs = {};
+			var ads = resp.ads[0]._.ad;
+			for (var a=0; a<ads.length; a++) {
+				var ad = ads[a];
+				for (var c=0; c<ad._.creatives[0]._.creative.length; c++) {
+					var creative = ad._.creatives[0]._.creative[c];
+					for (var r=0; r<creative._.creativeRenditions[0]._.creativeRendition.length; r++) {
+						var creativeRendition = creative._.creativeRenditions[0]._.creativeRendition[r];
+						for (var s=0; s<creativeRendition._.asset.length; s++) {
+							try {
+								var asset = creativeRendition._.asset[s];
+								var content = asset._.content[0]._;
+								var contentType = asset.contentType;
+								crs['_' + ad.adId + '_'+creativeRendition.creativeRenditionId+'_'+creativeRendition.adReplicaId] = content;
+							} catch (e) {
+								if (window.console) console.log("invalid creative rendition asset %o", e);
+							}
+						}
+					}
+				}
+			}
+			if (window.console) console.log("RENDITIONS", crs);
+			var cnt=0;
+			for (var s=0; s<resp.siteSection[0]._.adSlots[0]._.adSlot.length; s++) {
+				var slot = resp.siteSection[0]._.adSlots[0]._.adSlot[s];
+				for (var a=0; a<slot._.selectedAds[0]._.adReference.length; a++) {
+					var adReference = slot._.selectedAds[0]._.adReference[a];
+					var cbURLs = [];
+					var cbs = adReference._.eventCallbacks[0]._.eventCallback;
+					for (var cb=0; cb<cbs.length; cb++) {
+						if (cbs[cb].name=='defaultImpression') {
+							cbURLs.push(cbs[cb].url);
+							if (cbs[cb]._ && cbs[cb]._.trackingURLs) {
+								if (cbs[cb]._.trackingURLs[0]._) {
+									var trackingURLs = cbs[cb]._.trackingURLs[0]._.url;
+									for (var index = 0; index < trackingURLs.length; ++index) {
+										cbURLs.push(trackingURLs[index].value);
+									}
+								}
+							}
+						}
+					}
+					dealSlot(slot.customId, crs['_' + adReference.adId + '_' + adReference.creativeRenditionId + '_' + adReference.replicaId], cbURLs);
+				}
+			}
+			var needRefresh = false;
+			var refreshInterval = 0;
+			if (resp.parameters) {
+				for (var p = 0; p < resp.parameters[0]._.parameter.length; p++) {
+					var param = resp.parameters[0]._.parameter[p];
+					if (param.name == "refreshType" && param._ == "time") needRefresh = true;
+					if (param.name == "refreshInterval") refreshInterval = parseInt(param._ , 10);
+				}
+			}
+			if (needRefresh && !isNaN(refreshInterval) && refreshInterval > 0 && window._fw_linktag_refresh) {
+				window._fw_linktag_refresh(refreshInterval);
+			}
+		} catch (e) {
+		    if (window.console) console.log("ERROR in parseResponse %o", e);
+		}
+	};
+	var dealSlot = function(slid, html, cbURLs) {
+		if (!slid || !html || !document.getElementById(slid)) return;
+		if (window.console) console.log("SLOT %s AD str(%i) ACK %o", slid, html.length, cbURLs);
+		//setTimeout(function(){
+			try {
+				fillSlot(slid, html);
+				for (var i = 0; i < cbURLs.length; ++i) {
+					if (cbURLs[i] && cbURLs[i].length) sendCallback(slid, cbURLs[i]);
+				}
+			} catch (e) {
+			    if (window.console) console.log("ERROR in dealing slot %o", e);
+			}
+		//}, Math.floor(Math.random()*10+1));
+	};
+	var fillSlot = function(safeId, innerHTML) {
+		var adContainer = document.getElementById('_fw_container_'+safeId);
+		if (!adContainer) return;
+		if (navigator.appVersion.match(/\bMSIE\b/)){ // IE8 innerHTMl setter bug
+			adContainer.innerHTML = '<img id="_fw_img_placeholder" border="0" width="0" height="0" style="display:none;border:0px;width:0px;height:0px;padding:0px;margin:0px;">' + innerHTML;
+			var p = adContainer.firstChild;
+			if (p.id == '_fw_img_placeholder') {
+				adContainer.removeChild(p);
+			}
+		} else {
+			adContainer.innerHTML = innerHTML;
+		}
+		var scripts = adContainer.getElementsByTagName('script');
+		var head = document.getElementsByTagName("head")[0];
+		for (var i=0;i<scripts.length;i++) {
+			var script = scripts[i];
+			if (script.src) {
+				var script2 = document.createElement("script");
+				if (script.charset) script2.charset = script.charset;
+				script2.src = script.src;
+				script2.onload = script2.onreadystatechange = function(){ 
+					if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+						head.removeChild( script2 );
+					}
+				};
+				head.appendChild(script2);
+			} else {
+				eval(script.innerHTML);
+			}
+		}
+		return 1;
+	};
+	var sendCallback = function(safeId, callbackURL) {
+		if (!callbackURL) return 0;
+		var img= (navigator.appVersion.match(/\bMSIE\b/)) ? new Image() : document.createElement('img');
+		img.id = '_fw_cb_' + safeId;
+		img.src= callbackURL;
+		img.border = "0";
+		img.width="0";
+		img.height="0";
+		img.style.border = "0";
+		img.style.height = "1px";
+		img.style.width = "1px";
+		img.style.position = "absolute";
+		img.style.top = "0";
+		img.style.left = "0";
+		img.style.zIndex = "999";
+		img.style.backgroundColor = "transparent";
+		img.style.backgroundImage = "none";
+		img.style.padding = "0";
+		img.style.margin = "0";
+		img.style.filter = "Alpha(Opacity=0)";
+		img.style.visibility = "hidden";
+		if (document.body) {
+			if (document.body.insertBefore && document.body.childNodes[0]) {
+				document.body.insertBefore(img, document.body.childNodes[0]);
+			} else {
+			  document.body.appendChild(img);
+		  }
+	  }
+		return 1;
+	};
+	parseResponse({
+  "errors":[
+  {_:{
+    "error":[
+    {id:"22", name:"ASSET_DURATION_NOT_AVAILABLE", severity:"WARN", _:{
+      "context":[
+      {_:"62067252"
+      }]}
+    },
+    {id:"28", name:"REQUEST_DURATION_NOT_AVAILABLE", severity:"WARN", _:{
+      "context":[
+      {_:"-1"
+      }]}
+    }]}
+  }],
+  "visitor":[
+  {_:null
+  }],
+  "ads":[
+  {_:{
+    "ad":[
+    {adId:"11501497", adUnit:"23447", _:{
+      "creatives":[
+      {_:{
+        "creative":[
+        {adUnit:"fixed-size-interactive", baseUnit:"fixed-size-interactive", creativeId:"1775412", duration:"15", _:{
+          "creativeRenditions":[
+          {_:{
+            "creativeRendition":[
+            {adReplicaId:"0", creativeApi:"None", creativeRenditionId:"4093821", height:"90", preference:"0", width:"728", _:{
+              "asset":[
+              {bytes:"3727", contentType:"text/html_lit_js_wc_nw", id:"4039129", mimeType:"text/html", name:"external url/tag for Default asset package of  - 1", _:{
+                "content":[
+                {_:"<span data-width=\"728\" data-height=\"90\" style=\"display:block; vertical-align:top; margin:0px 0px 0px 0px;\"><iframe id=\"_fw_frame_leaderboard\" width=\"728\" height=\"90\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" scrolling=\"no\" ALLOWTRANSPARENCY=\"true\"><\/iframe>\n<script language=\"javascript\" type=\"text/javascript\" id=\"_fw_container_js_leaderboard\">//<!-- \n  (function(){\n    var fw_scope_window = window;\n    var fw_scope = document;\n    var fw_content = \"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 4.01 Transitional//EN\\\" \\\"http://www.w3.org/TR/html4/loose.dtd\\\">\\n<html>\\n<head>\\n\\t<title>Advertisement<\/title>\\n\\t<scr\" + \"ipt type=\\\"text/javascr\" + \"ipt\\\">window._fw_page_url = \\\"\\\";<\/scr\" + \"ipt>\\n<\/head>\\n<body style=\\\"margin:0px;background-color:transparent;\\\"><scr\" + \"ipt src=\\\"https://ad.doubleclick.net/ddm/adj/N8340.272754ABC.COM1/B8799671.119011922;sz=728x90;click=http://2912a.v.fwmrm.net/ad/l/1?s=f050\\&n=168234%3B168234\\&t=1449873707779643004\\&f=\\&r=168234\\&adid=11501497\\&reid=4093821\\&arid=0\\&auid=\\&cn=defaultClick\\&et=c\\&_cc=\\&tpos=\\&sr=0\\&cr=;ord=1127052725?\\\" type=\\\"text/javascr\" + \"ipt\\\" language=\\\"javascr\" + \"ipt\\\"><\/scr\" + \"ipt>\\n<\/body>\\n<\/html>\";\n    var targetFrame = fw_scope.getElementById(\"_fw_frame_leaderboard\");\n    var targetFrameDoc = (targetFrame.contentWindow) ? targetFrame.contentWindow : (targetFrame.contentDocument.document) ? targetFrame.contentDocument.document : targetFrame.contentDocument;\n    var writeContent = function(doc, content) {\n      var timeout = 0;\n      if(navigator.userAgent.match(/MSIE/) || navigator.userAgent.match(/Opera/)){\n        timeout = 7500;\n      } else if(navigator.userAgent.match(/Gecko\\//)) {\n        timeout = 30000;\n      }\n      targetFrameDoc.document.open();\n      targetFrameDoc.document.write(fw_content);\n      if (timeout>0) { setTimeout(function(){if (!!targetFrameDoc.document) targetFrameDoc.document.close()}, timeout); }\n      else if (!timeout) { targetFrameDoc.document.close(); }\n    }\n    var hasNoSandbox = false;\n    if ('never' == \"never\"){\n    \thasNoSandbox = true;\n    }\n    else if ('never' == \"always\"){\n    \thasNoSandbox = false;\n    }\n    else{\n    \thasNoSandbox = fw_content.indexOf(\"<!-\"+\"-nosandbox-\"+\"->\") >= 0 || fw_content.indexOf(\"<!-\"+\"-noecho-\"+\"->\") >= 0 || !!'';\n    }\n    var slotContentKey = \"_fw_slot_content_leaderboard\";\n    var proxyHtml = window._fw_xd_proxy ? window._fw_xd_proxy : \"/_fw_xd_frame.html\";\n    if(hasNoSandbox) {\n      try {\n        if(!navigator.userAgent.match(/Gecko\\//)) { \n\t\t\t\t\twriteContent(targetFrameDoc, fw_content, 7500);\n\t\t\t\t} else if (targetFrameDoc.document.readyState == \"complete\" || targetFrameDoc.document.readyState == \"interactive\" ){\n          writeContent(targetFrameDoc, fw_content, 7500);\n        } else {\n\t\t\t\t\ttargetFrame.onload = function(){\n\t\t\t\t\t\twriteContent(targetFrameDoc, fw_content, 7500);\n\t\t\t\t\t};\n\t\t\t\t}\n      } catch (e) {\n        fw_scope_window[slotContentKey] = fw_content;\n        targetFrame.src = proxyHtml + \"?slid=leaderboard&domain=\" + document.domain;\n      }\n    } else {\n      fw_scope_window[slotContentKey] = fw_content;\n      try {\n        targetFrameDoc.document.write('<script> window.name = parent[\"' + slotContentKey + '\"] + \"<!--\" + Math.random() + \"-->\"; window.location.replace(\"http://m2.feiwei.tv/g/lib/template/sandbox.html\");<\\/script>');\n      } catch(e) {\n        if((/MSIE 6/i.test(navigator.userAgent) && document.domain == fw_scope_window.location.hostname) ||\n            navigator.userAgent.match(/Gecko\\//) || navigator.userAgent.match(/Safari\\//)) {\n        } else {\n          targetFrame.src = proxyHtml + \"?sandbox&slid=leaderboard&domain=\" + document.domain;\n        }\n      }\n    }\n  })();\n// --><\/script>\n<\/span>\n"
+                }]}
+              }]}
+            }]}
+          }],
+          "parameters":[
+          {_:{
+            "parameter":[
+            {name:"IAS", _:"7881;JOHNSON &   JOHNSON;leaderboard;Video;728x90;Johnson and Johnson - 2014/2015- Upfront"
+            },
+            {name:"_fw_advertiser_industries", _:"Pharmaceuticals|Pharmaceuticals|"
+            },
+            {name:"_fw_advertiser_name", _:"JOHNSON &   JOHNSON"
+            },
+            {name:"_fw_cr_primaryAssetlocation", _:"https://ad.doubleclick.net/ddm/adj/N8340.272754ABC.COM1/B8799671.119011922;sz=728x90;click=http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=11501497&reid=4093821&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&sr=0&cr=;ord=616442533?"
+            },
+            {name:"hulu_industry", _:"Health- Hospitals, Clinics, Medical Treatment:Health- Cough, Cold, Pain Relief, Allergy:"
+            },
+            {name:"moat", _:"168234;425596;8589837;11501495;1775412;;62067252;g193978;109554;sectionindex;11501041;{ad.adUnit.id};168234"
+            }]}
+          }]}
+        }]}
+      }]}
+    },
+    {adId:"6482283", adUnit:"23449", _:{
+      "creatives":[
+      {_:{
+        "creative":[
+        {adUnit:"fixed-size-interactive", baseUnit:"fixed-size-interactive", creativeId:"1390318", duration:"15", _:{
+          "creativeRenditions":[
+          {_:{
+            "creativeRendition":[
+            {adReplicaId:"0", creativeApi:"None", creativeRenditionId:"3043681", height:"600", preference:"0", width:"300", _:{
+              "asset":[
+              {bytes:"4527", contentType:"text/html_lit_js_wc_nw", id:"3000955", mimeType:"text/html", name:"asset for external ad", _:{
+                "content":[
+                {_:"<span data-width=\"300\" data-height=\"600\" style=\"display:block; vertical-align:top; margin:0px 0px 0px 0px;\"><iframe id=\"_fw_frame_rectangle\" width=\"300\" height=\"600\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" scrolling=\"no\" ALLOWTRANSPARENCY=\"true\"><\/iframe>\n<script language=\"javascript\" type=\"text/javascript\" id=\"_fw_container_js_rectangle\">//<!-- \n  (function(){\n    var fw_scope_window = window;\n    var fw_scope = document;\n    var fw_content = \"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 4.01 Transitional//EN\\\" \\\"http://www.w3.org/TR/html4/loose.dtd\\\">\\n<html>\\n<head>\\n\\t<title>Advertisement<\/title>\\n\\t<scr\" + \"ipt type=\\\"text/javascr\" + \"ipt\\\">window._fw_page_url = \\\"\\\";<\/scr\" + \"ipt>\\n<\/head>\\n<body style=\\\"margin:0px;background-color:transparent;\\\"><scr\" + \"ipt type=\\'text/javascr\" + \"ipt\\'>\\n   document.MAX_ct0 =\\'INSERT_CLICK_URL\\';\\n   var m3_u = (location.protocol==\\'https:\\'?\\'https://cas.criteo.com/delivery/ajs.php?\\':\\'http://cas.criteo.com/delivery/ajs.php?\\');\\n   var m3_r = Math.floor(Math.random()*99999999999);\\n   document.write (\\\"<scr\\\"+\\\"ipt type=\\'text/javascr\" + \"ipt\\' src=\\'\\\"+m3_u);\\n   document.write (\\\"zoneid=151833\\\");\\n   document.write (\\'\\&cb=\\' + m3_r);\\n   if (document.MAX_used != \\',\\') document.write (\\\"\\&exclude=\\\" + document.MAX_used);\\n   document.write (document.charset ? \\'\\&charset=\\'+document.charset : (document.characterSet ? \\'\\&charset=\\'+document.characterSet : \\'\\'));\\n   document.write (\\\"\\&loc=\\\" + escape(window.location));\\n   if (document.referrer) document.write (\\\"\\&referer=\\\" + escape(document.referrer));\\n   if (document.context) document.write (\\\"\\&context=\\\" + escape(document.context));\\n   if ((typeof(document.MAX_ct0) != \\'undefined\\') \\&\\& (document.MAX_ct0.substring(0,4) == \\'http\\')) {\\n       document.write (\\\"\\&ct0=\\\" + escape(document.MAX_ct0));\\n   }\\n   if (document.mmm_fo) document.write (\\\"\\&mmm_fo=1\\\");\\n   document.write (\\\"\\'><\/scr\\\"+\\\"ipt>\\\");\\n<\/scr\" + \"ipt><\/body>\\n<\/html>\";\n    var targetFrame = fw_scope.getElementById(\"_fw_frame_rectangle\");\n    var targetFrameDoc = (targetFrame.contentWindow) ? targetFrame.contentWindow : (targetFrame.contentDocument.document) ? targetFrame.contentDocument.document : targetFrame.contentDocument;\n    var writeContent = function(doc, content) {\n      var timeout = 0;\n      if(navigator.userAgent.match(/MSIE/) || navigator.userAgent.match(/Opera/)){\n        timeout = 7500;\n      } else if(navigator.userAgent.match(/Gecko\\//)) {\n        timeout = 30000;\n      }\n      targetFrameDoc.document.open();\n      targetFrameDoc.document.write(fw_content);\n      if (timeout>0) { setTimeout(function(){if (!!targetFrameDoc.document) targetFrameDoc.document.close()}, timeout); }\n      else if (!timeout) { targetFrameDoc.document.close(); }\n    }\n    var hasNoSandbox = false;\n    if ('never' == \"never\"){\n    \thasNoSandbox = true;\n    }\n    else if ('never' == \"always\"){\n    \thasNoSandbox = false;\n    }\n    else{\n    \thasNoSandbox = fw_content.indexOf(\"<!-\"+\"-nosandbox-\"+\"->\") >= 0 || fw_content.indexOf(\"<!-\"+\"-noecho-\"+\"->\") >= 0 || !!'';\n    }\n    var slotContentKey = \"_fw_slot_content_rectangle\";\n    var proxyHtml = window._fw_xd_proxy ? window._fw_xd_proxy : \"/_fw_xd_frame.html\";\n    if(hasNoSandbox) {\n      try {\n        if(!navigator.userAgent.match(/Gecko\\//)) { \n\t\t\t\t\twriteContent(targetFrameDoc, fw_content, 7500);\n\t\t\t\t} else if (targetFrameDoc.document.readyState == \"complete\" || targetFrameDoc.document.readyState == \"interactive\" ){\n          writeContent(targetFrameDoc, fw_content, 7500);\n        } else {\n\t\t\t\t\ttargetFrame.onload = function(){\n\t\t\t\t\t\twriteContent(targetFrameDoc, fw_content, 7500);\n\t\t\t\t\t};\n\t\t\t\t}\n      } catch (e) {\n        fw_scope_window[slotContentKey] = fw_content;\n        targetFrame.src = proxyHtml + \"?slid=rectangle&domain=\" + document.domain;\n      }\n    } else {\n      fw_scope_window[slotContentKey] = fw_content;\n      try {\n        targetFrameDoc.document.write('<script> window.name = parent[\"' + slotContentKey + '\"] + \"<!--\" + Math.random() + \"-->\"; window.location.replace(\"http://m2.feiwei.tv/g/lib/template/sandbox.html\");<\\/script>');\n      } catch(e) {\n        if((/MSIE 6/i.test(navigator.userAgent) && document.domain == fw_scope_window.location.hostname) ||\n            navigator.userAgent.match(/Gecko\\//) || navigator.userAgent.match(/Safari\\//)) {\n        } else {\n          targetFrame.src = proxyHtml + \"?sandbox&slid=rectangle&domain=\" + document.domain;\n        }\n      }\n    }\n  })();\n// --><\/script>\n<\/span>\n"
+                }]}
+              }]}
+            }]}
+          }],
+          "parameters":[
+          {_:{
+            "parameter":[
+            {name:"IAS", _:"7881;;rectangle;Video;300x250;"
+            },
+            {name:"_fw_advertiser_industries", _:""
+            },
+            {name:"_fw_advertiser_name", _:""
+            },
+            {name:"_fw_cr_primaryAssetlocation", _:""
+            },
+            {name:"hulu_industry", _:""
+            },
+            {name:"moat", _:"168234;;;10230324;1390318;;62067252;g193978;109554;sectionindex;;{ad.adUnit.id};168234"
+            }]}
+          }]}
+        }]}
+      }]}
+    },
+    {adId:"3748464", adUnit:"23457", _:{
+      "creatives":[
+      {_:{
+        "creative":[
+        {adUnit:"still-image", baseUnit:"still-image", creativeId:"1630240", duration:"15", _:{
+          "creativeRenditions":[
+          {_:{
+            "creativeRendition":[
+            {adReplicaId:"0", creativeApi:"None", creativeRenditionId:"3733433", height:"100", preference:"0", width:"300", _:{
+              "asset":[
+              {bytes:"1900", contentType:"text/html_lit_js_wc_nw", id:"3683225", mimeType:"text/html", name:"external url/tag for Default asset package of  - 1", _:{
+                "content":[
+                {_:"<span data-width=\"300\" data-height=\"100\" style=\"display:block; vertical-align:top; margin:0px 0px 0px 0px;\"><a href=\"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748464&reid=3733433&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&sr=0&cr=http%3A//abcnews.com/mobile\" target=\"_blank\" onclick=\"window._fw_admanager.pingCallback('click_footer1');\"><img src=\"http://a.abc.com/ad/marketing/abcnews-2015/xbox/ABC_News_on_xBOX_300x100.jpg\" width=\"300\" height=\"100\" border=\"0\" alt=\"\" style=\"display:block;\"><\/a><script type=\"text/javascript\">\nif (!window._fw_admanager) window._fw_admanager = {};\nif (!window._fw_admanager.pingCallback) window._fw_admanager.pingCallback = function(id) {\n\tvar u = window._fw_admanager.callback[id];\n\tif (!u || !u.length) return;\n\tfor (var i=0;i<u.length;i++) {\n\t\tif (u[i].name!=\"defaultClick\" || !u[i].trackingURLs || !u[i].trackingURLs.length) continue;\n\t\tfor (var j=0;j<u[i].trackingURLs.length;j++) {\n\t\t\tvar f = document.createElement('iframe');\nvar safeId = id+\"_\"+j;\n\t\t\tvar callbackURL = u[i].trackingURLs[j];\n\t\t\tf.name = '_fw_cb_' + safeId;\n\t\t\tif (navigator.appVersion.match(/\\bMSIE\\b/)) f = document.createElement('<iframe name=\"'+'_fw_cb_' + safeId+'\"><\/iframe>');\n\t\t\tf.id = '_fw_cb_' + safeId;\n\t\t\tf.width=\"0\";\n\t\t\tf.height=\"0\";\n\t\tf.scrolling=\"no\";\n\t\t\tf.frameborder=\"0\";\n\t\t\tf.style.position=\"absolute\";\n\t\t\tf.style.bottom=\"0\";\n\t\t\tf.style.right=\"0\";\n\t\t\tf.src = callbackURL;\n\t\t\tif (document.body) document.body.appendChild(f);\n\t\t}\n\t}\n}\nif (!window._fw_admanager.callback) window._fw_admanager.callback = {};\nwindow._fw_admanager.callback[\"click_footer1\"] = [{\"name\":\"defaultClick\",\"url\":\"http://2912a.v.fwmrm.net/ad/l/1?s=f050\\&n=168234%3B168234\\&t=1449873707779643004\\&f=\\&r=168234\\&adid=3748464\\&reid=3733433\\&arid=0\\&auid=\\&cn=defaultClick\\&et=c\\&_cc=\\&tpos=\\&sr=0\\&cr=http%3A//abcnews.com/mobile\"}];\n<\/script>\n<\/span>\n"
+                }]}
+              }]}
+            }]}
+          }],
+          "parameters":[
+          {_:{
+            "parameter":[
+            {name:"IAS", _:"7881;ABC House/ABC House;footer1;Video;300x100;ABC.com/ABCNews DATG Marketing - Display Ads / News OTT video backfill "
+            },
+            {name:"_fw_advertiser_industries", _:""
+            },
+            {name:"_fw_advertiser_name", _:"ABC House/ABC House"
+            },
+            {name:"_fw_cr_primaryAssetlocation", _:"http://a.abc.com/ad/marketing/abcnews-2015/xbox/ABC_News_on_xBOX_300x100.jpg"
+            },
+            {name:"hulu_industry", _:""
+            },
+            {name:"moat", _:"168234;291893;3747901;3748351;1630240;;62067252;g193978;109554;sectionindex;3748141;{ad.adUnit.id};168234"
+            }]}
+          }]}
+        }]}
+      }]}
+    },
+    {adId:"3748465", adUnit:"23458", _:{
+      "creatives":[
+      {_:{
+        "creative":[
+        {adUnit:"still-image", baseUnit:"still-image", creativeId:"1118825", duration:"15", _:{
+          "creativeRenditions":[
+          {_:{
+            "creativeRendition":[
+            {adReplicaId:"0", creativeApi:"None", creativeRenditionId:"2285674", height:"100", preference:"0", width:"300", _:{
+              "asset":[
+              {bytes:"1957", contentType:"text/html_lit_js_wc_nw", id:"2254192", mimeType:"text/html", name:"external url/tag for Default asset package of  - 1", _:{
+                "content":[
+                {_:"<span data-width=\"300\" data-height=\"100\" style=\"display:block; vertical-align:top; margin:0px 0px 0px 0px;\"><a href=\"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748465&reid=2285674&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&sr=0&cr=http%3A//abcnews.go.com/US/fullpage%3Fid%3D20686075\" target=\"_blank\" onclick=\"window._fw_admanager.pingCallback('click_footer2');\"><img src=\"http://a.abc.com/ad/marketing/abcnews-2013/APP/abc_news_new_iphone_app_ad_300x100.jpg\" width=\"300\" height=\"100\" border=\"0\" alt=\"\" style=\"display:block;\"><\/a><script type=\"text/javascript\">\nif (!window._fw_admanager) window._fw_admanager = {};\nif (!window._fw_admanager.pingCallback) window._fw_admanager.pingCallback = function(id) {\n\tvar u = window._fw_admanager.callback[id];\n\tif (!u || !u.length) return;\n\tfor (var i=0;i<u.length;i++) {\n\t\tif (u[i].name!=\"defaultClick\" || !u[i].trackingURLs || !u[i].trackingURLs.length) continue;\n\t\tfor (var j=0;j<u[i].trackingURLs.length;j++) {\n\t\t\tvar f = document.createElement('iframe');\nvar safeId = id+\"_\"+j;\n\t\t\tvar callbackURL = u[i].trackingURLs[j];\n\t\t\tf.name = '_fw_cb_' + safeId;\n\t\t\tif (navigator.appVersion.match(/\\bMSIE\\b/)) f = document.createElement('<iframe name=\"'+'_fw_cb_' + safeId+'\"><\/iframe>');\n\t\t\tf.id = '_fw_cb_' + safeId;\n\t\t\tf.width=\"0\";\n\t\t\tf.height=\"0\";\n\t\tf.scrolling=\"no\";\n\t\t\tf.frameborder=\"0\";\n\t\t\tf.style.position=\"absolute\";\n\t\t\tf.style.bottom=\"0\";\n\t\t\tf.style.right=\"0\";\n\t\t\tf.src = callbackURL;\n\t\t\tif (document.body) document.body.appendChild(f);\n\t\t}\n\t}\n}\nif (!window._fw_admanager.callback) window._fw_admanager.callback = {};\nwindow._fw_admanager.callback[\"click_footer2\"] = [{\"name\":\"defaultClick\",\"url\":\"http://2912a.v.fwmrm.net/ad/l/1?s=f050\\&n=168234%3B168234\\&t=1449873707779643004\\&f=\\&r=168234\\&adid=3748465\\&reid=2285674\\&arid=0\\&auid=\\&cn=defaultClick\\&et=c\\&_cc=\\&tpos=\\&sr=0\\&cr=http%3A//abcnews.go.com/US/fullpage%3Fid%3D20686075\"}];\n<\/script>\n<\/span>\n"
+                }]}
+              }]}
+            }]}
+          }],
+          "parameters":[
+          {_:{
+            "parameter":[
+            {name:"IAS", _:"7881;ABC House/ABC House;footer2;Video;300x100;ABC.com/ABCNews DATG Marketing - Display Ads / News OTT video backfill "
+            },
+            {name:"_fw_advertiser_industries", _:""
+            },
+            {name:"_fw_advertiser_name", _:"ABC House/ABC House"
+            },
+            {name:"_fw_cr_primaryAssetlocation", _:"http://a.abc.com/ad/marketing/abcnews-2013/APP/abc_news_new_iphone_app_ad_300x100.jpg"
+            },
+            {name:"hulu_industry", _:""
+            },
+            {name:"moat", _:"168234;291893;3747901;3748351;1118825;;62067252;g193978;109554;sectionindex;3748141;{ad.adUnit.id};168234"
+            }]}
+          }]}
+        }]}
+      }]}
+    },
+    {adId:"8088854", adUnit:"23455", _:{
+      "creatives":[
+      {_:{
+        "creative":[
+        {adUnit:"fixed-size-interactive", baseUnit:"fixed-size-interactive", creativeId:"1527790", duration:"15", _:{
+          "creativeRenditions":[
+          {_:{
+            "creativeRendition":[
+            {adReplicaId:"0", creativeApi:"None", creativeRenditionId:"3484577", height:"1", preference:"0", width:"1", _:{
+              "asset":[
+              {bytes:"214", contentType:"text/html_lit_js_wc_nw", id:"3437290", mimeType:"text/html", name:"asset for external ad", _:{
+                "content":[
+                {_:"<span data-width=\"1\" data-height=\"1\" style=\"display:block; vertical-align:top; margin:0px 0px 0px 0px;\"><script type=\"text/javascript\" src=\"//wfpscripts.webspectator.com/bootstrap/ws-92BBB444.js\"><\/script><\/span>\n\n"
+                }]}
+              }]}
+            }]}
+          }],
+          "parameters":[
+          {_:{
+            "parameter":[
+            {name:"IAS", _:"7881;;overpage;Video;1x1;"
+            },
+            {name:"_fw_advertiser_industries", _:""
+            },
+            {name:"_fw_advertiser_name", _:""
+            },
+            {name:"_fw_cr_primaryAssetlocation", _:""
+            },
+            {name:"hulu_industry", _:""
+            },
+            {name:"moat", _:"168234;;;10230713;1527790;;62067252;g193978;109554;sectionindex;;{ad.adUnit.id};168234"
+            }]}
+          }]}
+        }]}
+      }]}
+    }]}
+  }],
+  "siteSection":[
+  {customId:"nws_technology", id:"109554", pageViewRandom:"292444790-647387118", _:{
+    "videoPlayer":[
+    {_:{
+      "videoAsset":[
+      {customId:"Lifestyle/Technology", id:"62067252", _:{
+        "adSlots":[
+        {_:null
+        }]}
+      }]}
+    }],
+    "adSlots":[
+    {_:{
+      "adSlot":[
+      {customId:"leaderboard", height:"90", width:"728", _:{
+        "selectedAds":[
+        {_:{
+          "adReference":[
+          {adId:"11501497", creativeId:"1775412", creativeRenditionId:"4093821", replicaId:"0", _:{
+            "eventCallbacks":[
+            {_:{
+              "eventCallback":[
+              {type:"GENERIC", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=11501497&reid=4093821&arid=0", _:null
+              },
+              {name:"defaultImpression", type:"IMPRESSION", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=11501497&reid=4093821&arid=0&auid=&cn=defaultImpression&et=i&_cc=11501497,4093821,,13069.17719.20439.21467.22155.22158.22161.,1449873707,1&tpos=&init=1&cr=", _:null
+              },
+              {name:"defaultClick", showBrowser:"true", type:"CLICK", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=11501497&reid=4093821&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&cr=https%3A//ad.doubleclick.net/ddm/jump/N8340.272754ABC.COM1/B8799671.119011922%3Bsz%3D728x90%3Bord%3D393603798%3F", _:null
+              }]}
+            }]}
+          }]}
+        }]}
+      },
+      {compatibleDimensions:"300,600", customId:"rectangle", height:"250", width:"300", _:{
+        "selectedAds":[
+        {_:{
+          "adReference":[
+          {adId:"6482283", creativeId:"1390318", creativeRenditionId:"3043681", replicaId:"0", _:{
+            "eventCallbacks":[
+            {_:{
+              "eventCallback":[
+              {type:"GENERIC", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=6482283&reid=3043681&arid=0", _:null
+              },
+              {name:"defaultImpression", type:"IMPRESSION", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=6482283&reid=3043681&arid=0&auid=&cn=defaultImpression&et=i&_cc=6482283,3043681,20866.,13069.17717.17718.20866.20867.21467.22155.22158.22161.,1449873707,1&tpos=&init=1&asid=62067252&ssid=109554&cr=", _:null
+              },
+              {name:"defaultClick", type:"CLICK", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=6482283&reid=3043681&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&cr=", _:null
+              }]}
+            }]}
+          }]}
+        }]}
+      },
+      {customId:"footer1", height:"100", width:"300", _:{
+        "selectedAds":[
+        {_:{
+          "adReference":[
+          {adId:"3748464", creativeId:"1630240", creativeRenditionId:"3733433", replicaId:"0", _:{
+            "eventCallbacks":[
+            {_:{
+              "eventCallback":[
+              {type:"GENERIC", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748464&reid=3733433&arid=0", _:null
+              },
+              {name:"defaultImpression", type:"IMPRESSION", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748464&reid=3733433&arid=0&auid=&cn=defaultImpression&et=i&_cc=3748464,3733433,,13069.,1449873707,1&tpos=&init=1&cr=", _:null
+              },
+              {name:"defaultClick", showBrowser:"true", type:"CLICK", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748464&reid=3733433&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&cr=http%3A//abcnews.com/mobile", _:null
+              }]}
+            }]}
+          }]}
+        }]}
+      },
+      {customId:"footer2", height:"100", width:"300", _:{
+        "selectedAds":[
+        {_:{
+          "adReference":[
+          {adId:"3748465", creativeId:"1118825", creativeRenditionId:"2285674", replicaId:"0", _:{
+            "eventCallbacks":[
+            {_:{
+              "eventCallback":[
+              {type:"GENERIC", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748465&reid=2285674&arid=0", _:null
+              },
+              {name:"defaultImpression", type:"IMPRESSION", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748465&reid=2285674&arid=0&auid=&cn=defaultImpression&et=i&_cc=3748465,2285674,,13069.,1449873707,1&tpos=&init=1&cr=", _:null
+              },
+              {name:"defaultClick", showBrowser:"true", type:"CLICK", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=3748465&reid=2285674&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&cr=http%3A//abcnews.go.com/US/fullpage%3Fid%3D20686075", _:null
+              }]}
+            }]}
+          }]}
+        }]}
+      },
+      {customId:"overpage", height:"1", width:"1", _:{
+        "selectedAds":[
+        {_:{
+          "adReference":[
+          {adId:"8088854", creativeId:"1527790", creativeRenditionId:"3484577", replicaId:"0", _:{
+            "eventCallbacks":[
+            {_:{
+              "eventCallback":[
+              {type:"GENERIC", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=8088854&reid=3484577&arid=0", _:null
+              },
+              {name:"defaultImpression", type:"IMPRESSION", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=8088854&reid=3484577&arid=0&auid=&cn=defaultImpression&et=i&_cc=8088854,3484577,20429.,13069.18823.20429.,1449873707,1&tpos=&init=1&cr=", _:null
+              },
+              {name:"defaultClick", type:"CLICK", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004&f=&r=168234&adid=8088854&reid=3484577&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=&cr=", _:null
+              }]}
+            }]}
+          }]}
+        }]}
+      }]}
+    }]}
+  }],
+  "eventCallbacks":[
+  {_:{
+    "eventCallback":[
+    {type:"GENERIC", url:"http://2912a.v.fwmrm.net/ad/l/1?s=f050&n=168234%3B168234&t=1449873707779643004", _:null
+    }]}
+  }]});
+})();

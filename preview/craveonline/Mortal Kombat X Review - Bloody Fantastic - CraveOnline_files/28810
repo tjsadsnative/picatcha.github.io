@@ -1,0 +1,48 @@
+<!-- refer empty --><!-- get widget::28810:0:184::v2 --><!-- db --><!-- set widget::28810:0:184::v2 -->
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: '7', c2: '6036161', c3: '10570', c4: '28810' });
+    (function() {
+        var s = document.createElement('script'), el = document.getElementsByTagName('script')[0]; s.async = true;
+        s.src = (document.location.protocol == 'https:' ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js'; el.parentNode.insertBefore(s, el);
+    })();
+
+    function ci_click(ctr_link){
+
+
+        if (navigator.appName.toUpperCase().match(/MICROSOFT INTERNET EXPLORER/)){
+            var params  = 'resizeable=1,toolbar=1,menubar=1,scrollbars=1';
+            var target_window='ci_window';
+            var winW = 0, winH = 0;
+
+            if (document.body && document.body.offsetWidth) {
+                winW = document.body.offsetWidth;
+                winH = document.body.offsetHeight;
+            }
+
+            if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth ) {
+                winW = document.documentElement.offsetWidth;
+                winH = document.documentElement.offsetHeight;
+            }
+
+            if (window.innerWidth && window.innerHeight) {
+                winW = window.innerWidth;
+                winH = window.innerHeight;
+            }
+
+                                params +=',width=' + winW + ',height=' + winH;
+            
+
+            window.open('index.html', target_window, params);
+
+            var link=document.getElementById('ci_link_28810');
+            link.target=target_window;
+            link.href=ctr_link;
+            link.click();
+
+            return false;
+        }
+    }
+    var CITra = "<img src='http://cdn.crowdignite.com/img/i.gif?t=" +(new Date()).getTime()+"&r="+Math.floor((Math.random()*1000000)+1)+"' style='width:0px;height:0px;display:none;position:absolute' />";
+	document.getElementById("_CI_widget_1").innerHTML = "<style type='text/css'> #_ci_widget_div_28810, #_ci_widget_div_28810 div, #_ci_widget_div_28810 a, #_ci_widget_div_28810 abbr, #_ci_widget_div_28810 b, #_ci_widget_div_28810 canvas, #_ci_widget_div_28810 center, #_ci_widget_div_28810 code, #_ci_widget_div_28810 dd, #_ci_widget_div_28810 dl, #_ci_widget_div_28810 dt, #_ci_widget_div_28810 embed, #_ci_widget_div_28810 font, #_ci_widget_div_28810 form, #_ci_widget_div_28810 h1, #_ci_widget_div_28810 h2, #_ci_widget_div_28810 h3, #_ci_widget_div_28810 iframe, #_ci_widget_div_28810 img, #_ci_widget_div_28810 li, #_ci_widget_div_28810 ol, #_ci_widget_div_28810 p, #_ci_widget_div_28810 span, #_ci_widget_div_28810 strong, #_ci_widget_div_28810 table, #_ci_widget_div_28810 tbody, #_ci_widget_div_28810 td, #_ci_widget_div_28810 tfoot, #_ci_widget_div_28810 th, #_ci_widget_div_28810 thead, #_ci_widget_div_28810 tr, #_ci_widget_div_28810 ul { border:0; margin:0; padding:0; background:none; font-size:100%; line-height: 1.2em; } #_ci_widget_div_28810 b,strong { font-weight:bold; } #_ci_widget_div_28810 img { max-width:none!important; color: transparent; font-size: 0; vertical-align: middle; -ms-interpolation-mode: bicubic; width:auto!important; } #_ci_widget_div_28810 li { display: list-item; } #_ci_widget_div_28810 table { background: #ffffff; border-collapse: separate; border-spacing:4px; width:100%; } #_ci_widget_div_28810 th, #_ci_widget_div_28810 td, #_ci_widget_div_28810 caption { font-weight: normal; vertical-align: top; text-align: left; } #_ci_widget_div_28810 svg { overflow: hidden; } #_ci_widget_div_28810 { width: 634px; height: auto; } #widget_table_28810 td { text-align: center; } #widget_table_28810 a { font-family: Arial; } #widget_table_28810 img { border: medium solid #ffffff; } #widget_powered_div { background-color:#ffffff; text-align:center; font-family: Arial;width: 634px; } </style> <div id='_ci_widget_div_28810' style='' ><center><table class='widget_table' id='widget_table_28810' cellpadding='0' cellspacing='0' border='0'><a id='ci_link_28810' href='javascript:void(0)' style='display:none;'></a><tr><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/lord_of_the_rings_online_may_the_orcs_be_with_you' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/819930448/0/1/79749989?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=0&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/819930448/0/1/79749989?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=0&referp=0'\u0022><img nopin='nopin' alt='Lord of the Rings Online: May the Orcs Be with You' src='http://cdn1.crowdignite.com/img/upload/cache/28810/140x79_en_update16_ashesofosgiliath_554756869eb47.jpg?t=1430738567' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/lord_of_the_rings_online_may_the_orcs_be_with_you' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/819930448/0/1/79749989?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=0&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/819930448/0/1/79749989?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=0&referp=0'\u0022>Lord of the Rings Online: May the Orcs Be with...</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/magma_red_dualshock_4_to_be_available_in_the_us_soon' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/828041215/0/1/79769395?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=1&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/828041215/0/1/79769395?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=1&referp=0'\u0022><img nopin='nopin' alt='Magma Red DualShock 4 to Be Available in the US Soon' src='http://cdn1.crowdignite.com/img/upload/cache/28810/140x79_redds4_5554828b90ed5.jpg?t=1431601803' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/magma_red_dualshock_4_to_be_available_in_the_us_soon' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/828041215/0/1/79769395?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=1&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/828041215/0/1/79769395?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=1&referp=0'\u0022>Magma Red DualShock 4 to Be Available in the US...</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/design_trend_poll_will_amiibo_ruin_zelda_u' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/820042359/0/1/79081533?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=2&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/820042359/0/1/79081533?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=2&referp=0'\u0022><img nopin='nopin' alt='Design & Trend Poll: Will Amiibo Ruin Zelda U?' src='http://cdn1.crowdignite.com/img/upload/cache/28810/140x79_zelda_u_horse_banner_auto_cropping_55474cc97b1b4.jpg?t=1430736073' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/design_trend_poll_will_amiibo_ruin_zelda_u' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/820042359/0/1/79081533?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=2&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/820042359/0/1/79081533?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=2&referp=0'\u0022>Design & Trend Poll: Will Amiibo Ruin Zelda U?</a></div></td><td valign='top' align='center'><a href='http://crowdignite.craveonline.com/hotfix_for_destiny_adds_new_levels' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/741812047/0/1/59903387?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=3&referp=0\u0022);' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/741812047/0/1/59903387?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=3&referp=0'\u0022><img nopin='nopin' alt='Hotfix for Destiny Adds New Levels' src='http://cdn1.crowdignite.com/img/upload/cache/28810/140x79_destinyfive_548a3e2a7a3ad.jpg?t=1418346026' width='140' height='79' style='padding:5px' border='0' /></a><br/><div style='clear:both;margin-top:0px; display: inline-block; width:140px'><a href='http://crowdignite.craveonline.com/hotfix_for_destiny_adds_new_levels' onclick='return ci_click(\u0022http://crowdignite.craveonline.com/v/28810/741812047/0/1/59903387?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=3&referp=0\u0022);' style='font-size: 12px; color: #000000' target='_blank' onmousedown=\u0022this.href='http://crowdignite.craveonline.com/v/28810/741812047/0/1/59903387?ltype=0&wtype=0&user_id=1075679f2721299d6adc8462ac75a453&slot=3&referp=0'\u0022>Hotfix for Destiny Adds New Levels</a></div></td></tr></table></center></div>" + CITra;
+
+<!-- 0.1067s -->

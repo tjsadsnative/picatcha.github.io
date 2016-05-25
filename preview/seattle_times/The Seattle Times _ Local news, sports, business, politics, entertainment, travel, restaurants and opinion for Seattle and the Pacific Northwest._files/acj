@@ -1,0 +1,26 @@
+OX_4342844064({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ee=res&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"537355074",
+        "chain":[
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"537155521",
+            "width":"300",
+            "height":"250",
+            "html":"<iframe width=\"300\" height=\"250\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"http://cdn.w55c.net/i/0Ri672eapm_1744040892.html?&rtbhost=rtb02-c.us.dataxu.net&btid=MjI3NmI0ZDMtNTE4Mi00YjlhLWIzMTYtNmIwZjc1NDgwZjNhfE9GZXZtODdsak58MTQzNzA3MzE5MzA1NnwxfDBGWm03M2lSSWV8MFJpNjcyZWFwbXxkeWlTWjJaeEd4UzJyZFlGcEF5b29RckZXb1EwZUdkTXw3MzIwMDB8fHx8MTUuMFB8VVNE&ei=OPENX&wp_exchange=AAABTpg8unDIbbcA2l9-HusHgu4mGJ-L21pP6g&js=0&ob=0&ccw=SUFCMTIjMC4wfElBQjE3IzAuMjExNzQ4NTN8SUFCMjEjMC4wNzAzNDkxNg&ci=0Cfd6gUAev&fiu=MEZabTczaVJJZQ&sd=seattletimes.com&s=http%3A%2F%2Fwww.seattletimes.com%2F&ts=1437073193092&ai=0DMYjNpGhc&tpcee=&c=US&r=CA&m=807&pc=95122&rnd=3500621497869885&epid=T1g1MzcxODMwMzA&ct=b1cca87ae82e40c7b29b2c3e67e2cd5a&l=ZW58ZW58&v=0&euid=NTUwYjEzOTgtMDcxNi1jZWQwLTNhMTMtNWNhYTdhNTE5YTBh&refurl=aHR0cDovL3d3dy5zZWF0dGxldGltZXMuY29tLw\"> </iframe>",
+            "target":"_blank",
+            "ts":"1fHJpZD02MmEyZmQ0Ni02NWNkLTQyNGEtOWM2MS1hYzFkNmFmY2QwNTZ8cnQ9MTQzNzA3MzE5MnxhdWlkPTUzNzM1NTA3NHxhdW09RE1JRC5XRUJ8c2lkPTUzNzE4MzAzMHxwdWI9Nzg4Njd8cGM9VVNEfHh0PXJlc3xyYWlkPTdmOTU5YmYzLTUyY2MtNGRmYS1hM2FhLTI4MTU0MDI5NWJiNXxhaWQ9NTM3MTU1NTIxfHQ9MTJ8YXM9MzAweDI1MHxsaWQ9NTM3MTIzOTQwfG9pZD01MzcwOTYwNzR8cD03MTB8cHI9Njk5fGFkdj01MzcwNzMyNDF8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfG09MXxhaT0xNTJkMDdiMS1kYTQxLTRjNDAtYWQxOC1mZTc0YzI2OTUzNGF8bWM9VVNEfG1yPTExfHBpPTY5OXxtdWk9NTlmMWE2ZmQtMDcxNy00ODA5LTg2YjEtZDhmNWNkNmY5MzRkfG1hPWNkMGY2ZTBkLWZlNTctNGRmYy05YTc4LTc1ZDY4YzU4NWRhM3xtcnQ9MTQzNzA3MzE5MnxtcmM9U1JUX1dPTnxtd2E9NTM3MDczMjQxfG13Ymk9Mjk0MDN8bXdiPTczMHxtYXA9NzEwfGVsZz0xfG1vYz1VU0R8bW9yPTExfG1wYz1VU0R8bXByPTY5OXxtcGY9Njk5fG1tZj02OTl8bXBuZj02OTl8bW1uZj02OTl8cGN2PTI4fG1vPU9YfGVjPTBSaTY3MmVhcG18bXdzPTIyNzZiNGQzLTUxODItNGI5YS1iMzE2LTZiMGY3NTQ4MGYzYXxtcHU9Njk5fG1jcD03MTB8bXdjPTUzNzA5NjA3NHxtd3A9NTM3MTIzOTQwfG13Y3I9NTM3MTU1NTIxfG13aXM9MXxtd3B0PW94X3Byb3RvfHVyPUM5MVNvWG54Qlg",
+            "type":"html",
+            "ad_url":"<iframe width=\"300\" height=\"250\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" frameborder=\"0\" src=\"http://cdn.w55c.net/i/0Ri672eapm_1744040892.html?&rtbhost=rtb02-c.us.dataxu.net&btid=MjI3NmI0ZDMtNTE4Mi00YjlhLWIzMTYtNmIwZjc1NDgwZjNhfE9GZXZtODdsak58MTQzNzA3MzE5MzA1NnwxfDBGWm03M2lSSWV8MFJpNjcyZWFwbXxkeWlTWjJaeEd4UzJyZFlGcEF5b29RckZXb1EwZUdkTXw3MzIwMDB8fHx8MTUuMFB8VVNE&ei=OPENX&wp_exchange=AAABTpg8unDIbbcA2l9-HusHgu4mGJ-L21pP6g&js=0&ob=0&ccw=SUFCMTIjMC4wfElBQjE3IzAuMjExNzQ4NTN8SUFCMjEjMC4wNzAzNDkxNg&ci=0Cfd6gUAev&fiu=MEZabTczaVJJZQ&sd=seattletimes.com&s=http%3A%2F%2Fwww.seattletimes.com%2F&ts=1437073193092&ai=0DMYjNpGhc&tpcee=&c=US&r=CA&m=807&pc=95122&rnd=3500621497869885&epid=T1g1MzcxODMwMzA&ct=b1cca87ae82e40c7b29b2c3e67e2cd5a&l=ZW58ZW58&v=0&euid=NTUwYjEzOTgtMDcxNi1jZWQwLTNhMTMtNWNhYTdhNTE5YTBh&refurl=aHR0cDovL3d3dy5zZWF0dGxldGltZXMuY29tLw\"> </iframe>"
+          }
+        ]
+      }
+    ]
+  }
+});

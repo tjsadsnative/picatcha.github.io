@@ -1,0 +1,208 @@
+﻿/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.NotableDeath {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  position: relative;
+  max-width: 800px;
+  min-height: 335px;
+  min-height: 20.9375rem;
+  background-color: #fff;
+  margin: 0 0 40px 0;
+  padding: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 #999;
+  text-align: left;
+  overflow: hidden; }
+  .NotableDeath:last-child {
+    margin-right: 0; }
+
+.NotableDeath > .NotableDeath_ImageHolder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 768px;
+  height: 220px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0; }
+
+.NotableDeath > .NotableDeath_ImageHolder > .NotableDeath_ImageHolder_Image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 768px;
+  height: 220px;
+  -webkit-transition: top 350ms ease-in-out;
+  -moz-transition: top 350ms ease-in-out;
+  transition: top 350ms ease-in-out; }
+
+.NotableDeath > .NotableDeath_Gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: -webkit-linear-gradient(-450deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6) 100%);
+  background-image: linear-gradient(180deg,rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6) 100%);
+  background-repeat: no-repeat;
+  background-position: 0 200px; }
+
+.NotableDeath > .NotableDeath_Gradient.over {
+  background-position: 0 -30px;
+  -webkit-transition: background-position 350ms ease-out;
+  -moz-transition: background-position 350ms ease-out;
+  transition: background-position 350ms ease-out; }
+
+.NotableDeath > .NotableDeath_Gradient.off {
+  background-position: 0 200px;
+  -webkit-transition: background-position 350ms ease-in;
+  -moz-transition: background-position 350ms ease-in;
+  transition: background-position 350ms ease-in; }
+
+.NotableDeath > .NotableDeath_Content {
+  position: absolute;
+  width: 100%;
+  top: 220px;
+  -webkit-transition: top 350ms ease-in-out;
+  -moz-transition: top 350ms ease-in-out;
+  transition: top 350ms ease-in-out; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_PointHolder {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_PointHolder > .NotableDeath_Content_PointHolder_PointLeft, .NotableDeath > .NotableDeath_Content > .NotableDeath_Content_PointHolder > .NotableDeath_Content_PointHolder_PointRight {
+  position: relative;
+  width: 50%;
+  height: 10px;
+  background-color: #fff;
+  display: block; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_PointHolder > .NotableDeath_Content_PointHolder_PointLeft {
+  float: left;
+  border-top-right-radius: 2rem 1rem; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_PointHolder > .NotableDeath_Content_PointHolder_PointRight {
+  float: right;
+  border-top-left-radius: 2rem 1rem; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_PointHolder > .NotableDeath_Content_PointHolder_Point {
+  width: 56px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  float: left; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_PointHolder > .NotableDeath_Content_PointHolder_Point img {
+  width: 56px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  display: block; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text {
+  position: relative;
+  width: 100%;
+  padding: 5px 15px 15px 15px;
+  font-family: "Open Sans";
+  text-align: left;
+  background-color: #fff; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Title {
+  color: #333;
+  font-family: 'MrsEaves';
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  display: block; }
+  .NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Title a {
+    color: #333;
+    text-decoration: none; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Title > .NotableDeath_Content_Text_Title_LinkArrow {
+  margin: 0 0 0 5px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity: 0; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Title > .NotableDeath_Content_Text_Title_LinkArrow.open {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  opacity: 1; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Subtitle {
+  font-family: 'MrsEavesItalic';
+  color: #333;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 8px;
+  display: block; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Details {
+  position: relative;
+  display: block; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Details > .NotableDeath_Content_Text_Details_Summary, .NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Details > .NotableDeath_Content_Text_Details_Description {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #666;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 8px;
+  display: block;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  opacity: 1;
+  -webkit-transition: opacity 250ms linear;
+  -moz-transition: opacity 250ms linear;
+  transition: opacity 250ms linear; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Details > .NotableDeath_Content_Text_Details_Description {
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  font-style: normal;
+  line-height: 1.3;
+  font-weight: 400;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity: 0; }
+
+.NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Details > .NotableDeath_Content_Text_Details_Description a {
+  font-family: 'MrsEaves';
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.no-touch .NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Title a:hover {
+  color: #1077A0; }
+  .no-touch .NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Title a:hover + .NotableDeath_Content_Text_Title_LinkArrow.open {
+    color: #1077A0; }
+
+.no-touch .NotableDeath > .NotableDeath_Content > .NotableDeath_Content_Text > .NotableDeath_Content_Text_Details > .NotableDeath_Content_Text_Details_Description a:hover {
+  color: #1077A0; }
+
+/*# sourceMappingURL=NotableDeath.css.map */

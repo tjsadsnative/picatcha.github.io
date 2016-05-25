@@ -1,0 +1,1 @@
+crtg_content = ''; (function(){document.cookie = 'crtg_rta=' + escape(crtg_content) + '; path=/; expires=Fri, 05 Feb 2016 00:09:20 GMT; domain=fastly.net';})();
