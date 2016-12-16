@@ -1,0 +1,146 @@
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.ObitList {
+  margin: 20px auto;
+  padding: 0 3px;
+  font-weight: 400;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  display: block;
+  float: left; }
+
+.ObitList_Title {
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 5px;
+  float: left;
+  width: 100%; }
+
+.ObitList_Item {
+  display: block;
+  height: 70px;
+  float: left;
+  margin: 10px 0; }
+
+.ObitList_Item--Image {
+  height: 70px;
+  width: 70px;
+  float: left;
+  display: block;
+  clear: left;
+  margin-right: 5px; }
+
+.ObitList_Item--Text {
+  top: 50%;
+  position: relative;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: 95px;
+  overflow: hidden; }
+
+.no-csstransforms .ObitList_Item--Text {
+  top: 0; }
+
+.ObitList_Item--Name {
+  font-family: "MrsEaves";
+  display: block;
+  vertical-align: top;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #333;
+  text-transform: uppercase;
+  max-height: 2.4rem;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis; }
+
+.no-touch .ObitList_Item--Name:hover {
+  color: #1077A0; }
+
+.ObitList_Item--Description {
+  width: 100%;
+  font-family: "Open Sans";
+  display: block;
+  line-height: 1rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #999;
+  max-height: 3.125rem;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  padding-bottom: 0.125rem; }
+
+.ObitList_Footer {
+  float: left;
+  clear: left;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-top: 5px; }
+
+@media screen and (min-width: 18.75em) {
+  .ObitList {
+    width: 100%; }
+
+  .ObitList_Item {
+    width: 100%;
+    height: 90px; }
+
+  .ObitList_Item--Image {
+    width: 90px;
+    height: 90px; }
+
+  .ObitList_Item--Text {
+    margin-left: 75px; }
+
+  .ObitList_Item--Name {
+    font-size: 1.1rem;
+    line-height: 1; }
+
+  .ObitList_Item--Description {
+    font-size: 0.95rem; } }
+@media screen and (min-width: 40em) {
+  .ObitList_Item {
+    width: 50%;
+    height: 70px; }
+
+  .ObitList_Item--Image {
+    height: 70px;
+    width: 70px; } }
+@media screen and (min-width: 64em) {
+  .ObitList_Item {
+    width: 100%;
+    height: 90px; }
+
+  .ObitList_Item--Image {
+    height: 90px;
+    width: 90px; } }
+
+/*# sourceMappingURL=obitlist.css.map */

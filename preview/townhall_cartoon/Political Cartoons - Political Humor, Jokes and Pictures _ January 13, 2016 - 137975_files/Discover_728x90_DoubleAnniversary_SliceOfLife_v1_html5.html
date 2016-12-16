@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0156)https://s0.2mdn.net/3471476/1445960837546/Discover_728x90_DoubleAnniversary_SliceOfLife_v1_html5/Discover_728x90_DoubleAnniversary_SliceOfLife_v1_html5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="Discover_728x90_DoubleAnniversary_SliceOfLife_v1_html5_edge.js"></script><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Untitled</title>
+	<script type="text/javascript">
+					var clickTag = "https://www.google.com";
+			</script>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="edge.6.0.0.min.js"></script>
+    <style>
+        .edgeLoad-EDGE-39840268 { visibility:hidden; }
+    </style>
+<script>
+   AdobeEdge.loadComposition('Discover_728x90_DoubleAnniversary_SliceOfLife_v1_html5', 'EDGE-39840268', {
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "728px",
+    height: "90px"
+}, {"dom":{}}, {"dom":{}});
+</script>
+<!--Adobe Edge Runtime End-->
+
+</head>
+<body style="margin:0;padding:0;">
+	<a href="javascript:window.open(window.clickTag)">
+	<div id="Stage" class="EDGE-39840268" style="position: relative; height: 90px; width: 728px; z-index: 0; right: auto; bottom: auto; overflow: hidden; text-overflow: clip; background-color: rgb(255, 255, 255); background-size: 100% 100%;">
+	<div id="Stage_bg" class="Stage_bg_id" style="position: absolute; margin: 0px; width: 728px; height: 90px; left: 0px; top: 0px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); z-index: 0;"><div id="Stage_bg_bg" class="Stage_bg_bg_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 728px; height: 90px; right: auto; bottom: auto; border: 5px none rgb(255, 255, 255); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgb(255, 255, 255); background-size: 100% 100%;"></div></div><div id="Stage_vign1" class="Stage_vign1_id" style="position: absolute; margin: 0px; width: 728px; height: 90px; left: 0px; top: 0px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); z-index: 0;"><div id="Stage_vign1_vign_728x90" class="Stage_vign1_vign_728x90_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 728px; height: 90px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/vign_728x90.jpg&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div></div><div id="Stage_p1" class="Stage_p1_id" style="position: absolute; margin: 0px; left: 10px; top: -15px; width: 241px; height: 161px; right: auto; bottom: auto; transform-style: preserve-3d; transform: matrix(0.98769, -0.15643, 0.15643, 0.98769, 0, 0); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-image: url(&quot;images/p1_v2.jpg&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_txt1" class="Stage_txt1_id" style="position: absolute; margin: 0px; left: 275px; top: 29px; width: 371px; height: 34px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); opacity: 0; background-image: url(&quot;images/txt1_chrome_728x90.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_p2" class="Stage_p2_id" style="position: absolute; margin: 0px; left: 150px; top: -10px; width: 247px; height: 185px; right: auto; bottom: auto; transform-style: preserve-3d; transform: matrix(0.9703, 0.24192, -0.24192, 0.9703, 0, 0); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-image: url(&quot;images/p2_v2.jpg&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_txt2" class="Stage_txt2_id" style="position: absolute; margin: 0px; left: 429px; top: 29px; width: 258px; height: 34px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); opacity: 1; background-image: url(&quot;images/txt2_chrome_728x90.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_bg2" class="Stage_bg2_id" style="position: absolute; margin: 0px; width: 728px; height: 90px; opacity: 1; left: 0px; top: 0px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); z-index: 0;"><div id="Stage_bg2_bg" class="Stage_bg2_bg_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 728px; height: 90px; right: auto; bottom: auto; border: 5px none rgb(255, 255, 255); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgb(255, 255, 255); background-size: 100% 100%;"></div></div><div id="Stage_vign2" class="Stage_vign2_id" style="position: absolute; margin: 0px; width: 728px; height: 90px; left: 0px; top: 0px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); z-index: 0; opacity: 1;"><div id="Stage_vign2_vign_728x90" class="Stage_vign2_vign_728x90_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 728px; height: 90px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/vign_728x90.jpg&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div></div><div id="Stage_txt3" class="Stage_txt3_id" style="position: absolute; margin: 0px; left: 179px; top: 15px; width: 371px; height: 62px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); opacity: 0; background-image: url(&quot;images/txt3_chrome_728x90.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_txt4" class="Stage_txt4_id" style="position: absolute; margin: 0px; left: 182px; top: 28px; width: 365px; height: 33px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); opacity: 0; background-image: url(&quot;images/txt4_chrome_728x90.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_card_mc" class="Stage_card_mc_id" style="position: absolute; margin: 0px; left: 35px; top: 9px; width: 114px; height: 71px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); opacity: 1; background-image: url(&quot;images/card_chrome_728x90.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_txt5" class="Stage_txt5_id" style="position: absolute; margin: 0px; left: 214px; top: 11px; width: 252px; height: 69px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); opacity: 1; background-image: url(&quot;images/theGreys.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_cta_btn" class="Stage_cta_btn_id" style="position: absolute; margin: 0px; width: 137px; height: 27px; overflow: hidden; text-overflow: clip; left: 0px; top: 0px; right: auto; bottom: auto; transform-style: preserve-3d; transform: translate(553px, 23px) translateZ(0px) rotate(0deg) scale(1, 1); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0; opacity: 1;"><div id="Stage_cta_btn_cta_btn" class="Stage_cta_btn_cta_btn_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 137px; height: 27px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/cta_ThisMore.jpg&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_cta_btn_shine" class="Stage_cta_btn_shine_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 78px; height: 81px; right: auto; bottom: auto; border: 1px none rgb(153, 153, 153); transform-style: preserve-3d; transform: translate(-98px, -32px) translateZ(0px) rotate(0deg) skewX(-39deg) scale(1, 1); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.498039) 51%, rgba(255, 255, 255, 0) 100%); background-color: rgba(255, 255, 255, 0); background-size: 100% 100%;"></div></div><div id="Stage_txt6" class="Stage_txt6_id" style="position: absolute; margin: 0px; width: 138px; height: 10px; overflow: visible; left: 527px; top: 57px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); z-index: 0; opacity: 1;"><div id="Stage_txt6_mylines" class="Stage_txt6_mylines_id" style="position: absolute; margin: 0px; opacity: 1; left: 0px; top: 12px; width: 186px; height: 1px; right: auto; bottom: auto; border: 1px none rgb(153, 153, 153); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); display: none; background-color: rgb(109, 109, 109); background-size: 100% 100%;"></div><div id="Stage_txt6_terms_chrome" class="Stage_txt6_terms_chrome_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 186px; height: 10px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/terms_chrome.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div></div><div id="Stage_thick_border" class="Stage_thick_border_id" style="position: absolute; margin: 0px; left: 1px; top: 1px; width: 716px; height: 78px; right: auto; bottom: auto; border: 5px solid rgb(255, 255, 255); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgba(255, 255, 255, 0); background-size: 100% 100%;"></div><div id="Stage_border" class="Stage_border_id" style="position: absolute; margin: 0px; opacity: 1; left: 0px; top: 0px; width: 726px; height: 88px; right: auto; bottom: auto; border: 1px solid rgb(153, 153, 153); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgba(255, 255, 255, 0); background-size: 100% 100%;"></div><div id="Stage_hotspot" class="Stage_hotspot_id" style="position: absolute; margin: 0px; width: 728px; height: 90px; opacity: 0; left: 0px; top: 0px; right: auto; bottom: auto; cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); z-index: 0;"><div id="Stage_hotspot_bg" class="Stage_hotspot_bg_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 728px; height: 90px; right: auto; bottom: auto; border: 5px none rgb(255, 255, 255); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgb(255, 255, 255); background-size: 100% 100%;"></div></div></div>
+</a>
+	<script src="TweenMax.min.js"></script>
+
+
+</body></html>

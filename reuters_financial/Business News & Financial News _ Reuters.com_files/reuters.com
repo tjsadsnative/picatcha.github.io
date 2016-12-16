@@ -1,0 +1,1 @@
+PARSELY.pInit({"apikey":"reuters.com","settings":{"debug":false,"widget":false,"tracker":true},"customizations":null,"track_ip_addresses":true,"bundle":"/code/ptrack-v0.4.9.js","track_third_party_cookies":true,"uuid":"0dc0adc0-7554-4946-9320-4200ca459f92","network_uuid":"da84ce51-b5e5-401c-942e-6763939f4209","apikey_uuid":"0dc0adc0-7554-4946-9320-4200ca459f92"});

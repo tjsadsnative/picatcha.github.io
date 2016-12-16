@@ -1,0 +1,1 @@
+crtg_content = ''; (function(){document.cookie = 'crtg_rta=' + escape(crtg_content) + '; path=/; expires=Wed, 08 Jun 2016 21:17:45 GMT; domain=haberler.com';})();

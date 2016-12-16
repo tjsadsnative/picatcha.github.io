@@ -1,0 +1,85 @@
+/******************************************************************************
+ *
+ * Chase Campaign 728x90 Banner
+ *
+ *****************************************************************************/
+*, html {
+  box-sizing: border-box; }
+
+body{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.wrapper {
+  position: relative;
+  width: 728px;
+  height: 90px;
+  border: 1px solid #777777;
+  cursor: pointer;
+  overflow: hidden;
+  visibility: hidden; }
+
+#banner {
+  position: absolute;
+  width: 728px;
+  height: 90px;
+  background-color: #000;
+
+  }
+
+.bg {
+  background: url("bg.jpg") no-repeat;
+  width: 728px;
+  height: 90px;
+  background-size: cover;
+  }
+
+.text {
+  background: url("text.png") no-repeat;
+  background-size: 728px 270px;
+  position: absolute;
+  top: 0;
+  width: 728px;
+  height: 90px;
+}
+
+.text1 {
+  background-position: 0 0;
+  }
+
+.text2 {
+  background-position: 0 -90px;
+  }
+
+.text3 {
+  background-position: 0 -180px;
+  }
+
+.cta {
+  background: url("txt_learn-more.png") no-repeat 6px;
+  background-size: 76px 10px;
+  position: absolute;
+  left: 450px;
+  top: 30px;
+  width: 95px;
+  height: 30px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #0079c2; }
+
+.cta .over {
+  border-color: tomato;
+}
+
+.logo {
+  position: absolute;
+  background: url("logo.svg") no-repeat;
+  width: 111px;
+  height: 37px;
+  z-index: 10;
+  top: 26.5px;
+  left: 600px;
+  /*clip: rect(0, 162px, 17px, 0);*/
+}

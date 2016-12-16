@@ -1,0 +1,4 @@
+_AT.applyWhenReady([{"content":"<script>\nvar taq = taq || [];\ntaq.push('enableSearchSuggest');\n</script>","selector":"BODY > *:eq(0)","action":"customCode"}]);var mboxCurrent = mboxFactories.get('default').get('target-global-mbox',0);mboxCurrent.setOffer(new mboxOfferAjax('<!-- Offer Id: 148834  -->'));mboxCurrent.getOffer().setOnLoad(function() {
+/*T&T Metadata v3 ==>Response Plugin*/
+window.ttMETA=(typeof(window.ttMETA)!="undefined")?window.ttMETA:[];window.ttMETA.push({"CampaignName":"Autosuggest on Desktop Search V2 (Fixed) Copy","CampaignId":"120957","RecipeName":"Test","RecipeId":"1","OfferId":"150728","OfferName":"/autosuggest_on_desktopsearchv2fixedcopy/experiences/1/pages/0/0/1455325665202","MboxName":"target-global-mbox"});
+});mboxCurrent.loaded();mboxFactories.get('default').getPCId().forceId("1455832542599-916477.28_24");

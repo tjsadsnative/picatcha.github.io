@@ -1,0 +1,180 @@
+#wfb-games-today{
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+
+#wfb-games-today .wfb-headline {
+	font-size: 14px;
+	color: #333;
+	font-weight: bold;
+	font-family: "swiss", Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	height: 35px;
+}
+
+#wfb-games-today .wfb-red {
+	color: #dd0000;
+}
+
+#wfb-games-today a {
+	color: #000;
+	font-family: "swiss", Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+#wfb-games-today .wfb-sport-name {
+	color: #333;
+	padding-right: 5px;
+}
+
+#wfb-games-today .wfb-competition-name {
+	color: #777;
+	padding-right: 15px;
+}
+
+#wfb-games-today div.wfb-headline, div.wfb-competition-live {
+	text-transform: uppercase;
+	border-bottom: 1px solid #eaeaea;
+}
+
+#wfb-games-today .wfb-competition-live {
+	font-size: 13px;	
+	height: 33px;
+	padding-bottom: 8px;
+	position: relative;
+	float: left;
+	clear: both;
+	width: 100%;
+}
+
+#wfb-games-today .wfb-competition-live a {
+	display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	padding-top: 4px;
+	height: 100%;
+	font-size: 1.2rem;
+	display: block;
+}
+#wfb-games-today .wfb-competition-live a:after{
+	font-size: 20px;
+	color: #787878;
+	font-family: 'icomoon';
+	padding-right: 7px;
+	font-style: normal;
+	font-weight: normal;
+	position: absolute;
+	content: '\e609';
+	right: 0;
+	top: 4px;
+	display: block;
+	/* gegen den Uhrzeiger drehen , sonst guckt der kollege nach unten ;) */
+	/*-webkit-transform: rotate(-90deg);
+  	-moz-transform: rotate(-90deg);
+ 	transform: rotate(-90deg);*/
+}
+
+#wfb-games-today .wfb-competition-live:last-child {
+	border: none;
+}
+#wfb-games-today .module:nth-child(3){
+		border-top: 1px solid #ececec !important;
+}
+#wfb-games-today .module{
+	position: relative;
+	float: left;
+	width: 100%;
+	box-shadow: none;
+	border: none;
+}
+@media only screen and (min-width: 600px) {
+	#wfb-games-today .wfb-competition-live {
+		height: 35px;
+	}
+	#wfb-games-today .wfb-competition-live a span {
+		font-size: 22px;
+	}
+	#wfb-games-today .wfb-headline a, #wfb-games-today .wfb-headline a span {
+		font-size: 28px;
+	}
+}
+
+@media only screen and (max-width: 599px) {
+	#wfb-games-today .wfb-competition-live {
+		height: 33px;
+	}
+	#wfb-games-today .wfb-competition-live a{
+		height: 33px;
+	}
+
+	/* Von Huess*/
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	#wfb-games-today{
+		position: relative;
+		width: 100%;
+		float: left;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+	}
+	#wfb-games-today .module{
+		position: relative;
+		float: left;
+		width: 100%;
+		box-shadow: none;
+		border: none;
+	}
+
+	#wfb-games-today .module:nth-child(3){
+		border-top: 1px solid #ececec !important;
+	}
+	
+	#wfb-games-today .wfb-competition-name{
+		padding-right: 5px;
+	}
+	#wfb-games-today .wfb-competition-live{
+		height: auto;
+		min-height: 33px;
+		padding-bottom: 0;
+	}
+	#wfb-games-today .wfb-competition-live a{
+		display: block;
+		padding-right: 15px;
+		height: auto;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+	}
+	#wfb-games-today .wfb-competition-live a:after{
+		padding-right: 0px;
+		display: block;
+	}
+
+	#wfb-games-today .module-livecalender {
+		padding: 0px 6px;
+		position: relative;
+		float: left;
+		width: 100%;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+	}
+
+	#wfb-games-today .module-livecalender span{
+		position: relative;
+		float: left;
+		display: block;
+	}
+
+}
+
+

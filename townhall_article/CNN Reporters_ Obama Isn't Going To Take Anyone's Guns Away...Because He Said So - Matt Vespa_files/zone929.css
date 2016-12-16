@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+
+@import url('_common_dz.css');
+
+div.adblade-dyna.zone-929 div.zone div.ad {
+	width: 33%;
+}
+
+@media only screen and (max-width: 600px) {
+    div.adblade-dyna.zone-929 div.zone div.ad {
+	    width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1299px) {
+    div.adblade-dyna.zone-929 a.description {
+        height: 2.34em;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 999px) {
+    div.adblade-dyna.zone-929 a.description {
+        height: 3.51em;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 799px) {
+    div.adblade-dyna.zone-929 a.description {
+        height: 4.68em;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 599px) {
+    div.adblade-dyna.zone-929 a.description {
+        height: 3.51em;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 499px) {
+    div.adblade-dyna.zone-929 a.description {
+        height: 4.68em;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    div.adblade-dyna.zone-929 div.zone div.ad {
+	    width: 100%;
+    }
+
+    div.adblade-dyna.zone-929 a.description {
+        height: 3.51em;
+    }
+}

@@ -1,0 +1,14 @@
+/* sharekit test
+adding instapaper, whatsapp, pocket, tumblr
+    "desktop",
+    {"btn": {
+        "ctrl1": 0.25,
+        "ctrl2": 0.25,
+        "whts": 0.1, //Whatsapp on mobile
+        "pckt": 0.1, //Pocket on desktop & mobile
+        "ppr": 0.1, //Instapaper on desktop & mobile
+        "tmblr": 0.1, //Tumblr on desktop & mobile
+        "pin": 0.1, //Pinterest on desktop & mobile;
+    }
+}
+ */

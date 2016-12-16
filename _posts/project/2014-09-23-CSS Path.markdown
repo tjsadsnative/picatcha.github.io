@@ -1,0 +1,43 @@
+---
+layout: project
+title:  "YOUR PROJECT NAME"
+date:   2014-04-25 16:54:46
+author: Marcel Newman
+categories:
+- project
+img: portfolio_01.jpg
+carousel:
+- single01.jpg
+- single02.jpg
+- single03.jpg
+client: Wonder Corp.
+---
+#AdsNative CSS Path Documentation
+
+AdsNative follows it's own format to specify the CSS path to simplify and optimize native ad injection.
+
+One example is as follows:
+`#div-id > div.class:eq(0) > div.class2:eq(2)`
+
+Here are some basic rules to follow:
+  1. Start with listing outermost element from left to right.
+  2. AdsNative will insert the placement just before the element for which you configure the cssPath for, unless you have `:after` after the last element, in which case it will insert it after the element. For example, `#div-id > div.class:eq(0) > div.class2:eq(2):after` will output the placement after the given element.
+  3. Each div element relation is separated with  ` > ` (leaving a blank space before after is part of the syntax and cssPath follows the strict syntax).  ` > ` means 'child of'.
+  4. If you are specifying an element with its ID, specify it as `#element-id-string`. Do not specify the element name in this case.
+  5. If you are specifying an element by class name specify element name followed by `.`, class name, and nth index of the element as there can be multiple elements with given class name. Example `div.class:eq(0)`
+  6. If you want to specify just element name you can specify it as `element-name:eq(0)`
+
+A few examples of valid css paths:
+  1. `#content > ul.main:eq(0) > li:eq(0)`
+  2. `#content > ul.main:eq(0) > li:eq(10)`
+  3. `#content`
+  4. `#content:after`
+  5. `ul.main-content:eq(0) > li:eq(10)`
+
+A few examples of invalid css paths:
+  1. `#content>ul.main:eq(0) > li:eq(0)` (no spaces)
+  2. `#content:eq(0) > li.post:eq(0)` (:eq(0) for element name with ID)
+  3. `div#content > li:eq(10)` (div element name in css path)
+  4. `#content > ul.main > li:eq(10)` (no index specified for ul)
+
+One thing to keep in mind is to try to specify shortest css path whenever possible. Which basically means try to use nearest element with ID and then work downwards. Element name search takes the longest, then element with class name and element with div id is the fastest.

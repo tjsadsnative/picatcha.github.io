@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html><head><script src="BR075_RewardMulti_Numbers_300x250b_data/BR075_RewardMulti_Numbers_300x250b_edge.js"></script><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>BR0775_RewardMulti_Numbers_300x250_1Year</title>
+          <script type="text/javascript">
+            var clickTag = "https://www.google.com";
+        </script>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="BR075_RewardMulti_Numbers_300x250b_data/edge.js"></script>
+    <style>
+        .edgeLoad-EDGE-1112212 { visibility:hidden; }
+    </style>
+<script>
+   AdobeEdge.loadComposition('BR075_RewardMulti_Numbers_300x250b', 'EDGE-1112212', {
+    scaleToFit: "none",
+    centerStage: "both",
+    minW: "0px",
+    maxW: "undefined",
+    width: "300px",
+    height: "250px"
+}, {"dom":{}}, {"dom":{}});
+</script>
+<!--Adobe Edge Runtime End-->
+
+</head>
+<body style="margin:0;padding:0;">
+     <a href="javascript:window.open(window.clickTag)">
+    <div style="position: absolute; height: 250px; width: 300px; margin: auto; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; background-color: rgb(255, 255, 255); overflow: hidden; text-overflow: clip; background-size: 100% 100%;" id="Stage" class="EDGE-1112212">
+     <div class="Stage_bg_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/bg.jpg&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px;" id="Stage_bg"></div><div class="Stage_txt5_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt5.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 0;" id="Stage_txt5"></div><div class="Stage_endFrame_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/endFrame.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 100;" id="Stage_endFrame"></div><div class="Stage_dota_id" style="position: absolute; margin: 0px; left: 258px; top: 167px; width: 8px; height: 6px; right: auto; bottom: auto; background-image: url(&quot;images/dot.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; transform: matrix(200, 0, 0, 200, -200, 0); opacity: 0;" id="Stage_dota"></div><div class="Stage_bg1_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/bg1.jpg&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 600);" id="Stage_bg1"></div><div class="Stage_txt1_id" style="position: absolute; margin: 0px; left: 0px; top: 32px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt1.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 0; transform: matrix(1, 0, 0, 1, 0, -32);" id="Stage_txt1"></div><div class="Stage_txt2_id" style="position: absolute; margin: 0px; opacity: 0; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt2.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);" id="Stage_txt2"></div><div class="Stage_txt2a_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt2a.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 0);" id="Stage_txt2a"></div><div class="Stage_txt2b_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt2b.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 0);" id="Stage_txt2b"></div><div class="Stage_txt3_id" style="position: absolute; margin: 0px; left: 0px; top: 32px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt3.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 600);" id="Stage_txt3"></div><div class="Stage_txt4_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt4.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 600);" id="Stage_txt4"></div><div class="Stage_txt4a_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt4a.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 600);" id="Stage_txt4a"></div><div class="Stage_txt4b_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; background-image: url(&quot;images/txt4b.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 600);" id="Stage_txt4b"></div><div class="Stage_see_terms_id" style="position: absolute; margin: 0px; width: 180px; height: 30px; opacity: 100; left: 0px; top: 0px; right: auto; bottom: auto; transform: translate(56px, 209px) rotate(0deg) scale(1, 1); z-index: 0;" id="Stage_see_terms"><div class="Stage_see_terms_Text2_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: auto; height: auto; right: auto; bottom: auto; font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: 400; text-transform: none; color: rgb(47, 136, 186); text-decoration: none; font-style: normal; word-wrap: break-word; text-align: center; white-space: nowrap; transform: translate(0px, 6px) rotate(0deg) scale(1, 1);" id="Stage_see_terms_Text2"><p style="margin: 0px;">​<span style="font-size: 10px;">*See Terms. Only for new cardmembers.</span></p></div><div class="Stage_see_terms_myLine_id" style="position: absolute; margin: 0px; opacity: 0; left: 0px; top: 0px; width: 180px; height: 1px; right: auto; bottom: auto; background-color: rgb(36, 119, 171); background-size: 100% 100%; border-width: 1px; border-color: rgb(153, 153, 153); border-style: none; transform: translate(0px, 19px) rotate(0deg) scale(1, 1);" id="Stage_see_terms_myLine"></div></div><div class="Stage_cta_btn_id" style="position: absolute; margin: 0px; width: 180px; height: 26px; overflow: hidden; text-overflow: clip; left: 59px; top: 180px; right: auto; bottom: auto; z-index: 0; opacity: 1;" id="Stage_cta_btn"><div class="Stage_cta_btn_cta_btn22_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 180px; height: 26px; right: auto; bottom: auto; background-image: url(&quot;images/cta_btn.png&quot;); background-color: transparent; background-repeat: no-repeat; background-size: 100% 100%; background-position: 0px 0px;" id="Stage_cta_btn_cta_btn22"></div><div class="Stage_cta_btn_shine_id" style="position: absolute; margin: 0px; left: -59px; top: -26px; width: 54px; height: 81px; right: auto; bottom: auto; background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 51%, rgba(255, 255, 255, 0) 100%); background-color: rgba(255, 255, 255, 0); background-size: 100% 100%; border-width: 1px; border-color: rgb(153, 153, 153); border-style: none; transform: translate(0px, 0px) rotate(0deg) skewX(-39deg) scale(1, 1);" id="Stage_cta_btn_shine"></div></div><div class="Stage_Frame_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 290px; height: 240px; right: auto; bottom: auto; background-color: rgba(255, 255, 255, 0); background-size: 100% 100%; border-width: 5px; border-color: rgb(255, 255, 255); border-style: solid;" id="Stage_Frame"></div><div class="Stage_Stroke_id" style="position: absolute; margin: 0px; opacity: 1; left: 0px; top: 0px; width: 298px; height: 248px; right: auto; bottom: auto; background-color: rgba(255, 255, 255, 0); background-size: 100% 100%; border-width: 1px; border-color: rgb(153, 153, 153); border-style: solid;" id="Stage_Stroke"></div><div class="Stage_details_id" style="position: absolute; margin: 0px; opacity: 1; left: 59px; top: 210px; width: 180px; height: 24px; right: auto; bottom: auto; background-color: rgba(255, 255, 255, 0); background-size: 100% 100%; border-width: 1px; border-color: rgb(153, 153, 153); border-style: none; cursor: pointer;" id="Stage_details"></div></div>
+    </a>
+    <script src="BR075_RewardMulti_Numbers_300x250b_data/TweenMax.js"></script>
+
+
+</body></html>

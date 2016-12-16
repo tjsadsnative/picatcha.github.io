@@ -1,0 +1,531 @@
+@font-face {
+    font-family: 'GothamBlack';
+    src: url('../fonts/aGothamBlack_f_3049.eot');
+    src: url('../fonts/aGothamBlack_f_3049.eot') format('embedded-opentype'),
+         url('../fonts/aGothamBlack_f_3049.woff') format('woff'),
+         url('../fonts/aGothamBlack_f_3049.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url('../fonts/aGothamBook_f_3269.eot');
+    src: url('../fonts/aGothamBook_f_3269.eot') format('embedded-opentype'),
+         url('../fonts/aGothamBook_f_3269.woff') format('woff'),
+         url('../fonts/aGothamBook_f_3269.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EamesCenturyModONBold';
+    src: url('../fonts/aEamesCenturyModONBoldRejustificationjw4Bold_f_3037.eot');
+    src: url('../fonts/aEamesCenturyModONBoldRejustificationjw4Bold_f_3037.eot') format('embedded-opentype'),
+         url('../fonts/aEamesCenturyModONBoldRejustificationjw4Bold_f_3037.woff') format('woff'),
+         url('../fonts/aEamesCenturyModONBoldRejustificationjw4Bold_f_3037.ttf') format('truetype');
+    font-weight: normal;
+    font-style: bold;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'GothamBlack',Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;  
+}
+
+sup {
+   vertical-align: baseline;
+   position: relative;
+   top: -0.35em;
+   font-size: 66%;
+}
+
+sub {
+   vertical-align: baseline;
+   position: relative;
+   top: 0em;
+   left: -2em;
+   font-size: 20%;
+   font-family: 'GothamBlack',Arial, Helvetica, sans-serif;
+}
+
+.imgHolder {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+
+#frame2{
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;   
+    opacity: 0;
+    
+}
+
+#frame1{
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#frame1.fadeOutAnimate {
+  -webkit-animation: fadeOut 0.5s;
+  -moz-animation: fadeOut 0.5s;
+  -ms-animation: fadeOut 0.5s;
+  -o-animation: fadeOut 0.5s;
+  animation: fadeOut 0.5s;  
+  animation-fill-mode: forwards;  
+}
+
+#hitall {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;    
+    width: 300px;
+    height: 250px;    
+}
+
+#cta {
+    position: absolute;
+    display: block;
+    left: 175px;
+    top: 188px;    
+    width: 100px;
+    height: 21px;  
+    background-color: black;     
+    display: table; 
+    table-layout: fixed;
+    border: 1px solid black;
+}
+
+#cta_text {
+    display: table-cell; 
+    overflow: none;
+    color: white;
+    font-size: 11.8px;
+    letter-spacing: 1px;
+    vertical-align: middle; 
+    text-align: center; 
+    white-space: nowrap;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;
+}
+
+.smalltext{
+    color: black;
+    margin-left: 4px;
+    font-size: 8.9px;
+    width: 159px;
+    vertical-align: middle; 
+    text-align: center; 
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;   
+}
+
+.smalltext2{
+    color: black;
+    margin-left: 0px;
+    font-size: 8px;
+    width: 280px;
+    vertical-align: middle; 
+    text-align: center; 
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;    
+}
+
+#offer_location{
+    position: absolute;
+    display: block;
+    left: 141px;
+    top: 217.9px;   
+}
+
+#disclaimer{
+    position: absolute;
+    display: block;
+    left: 141px;
+    top: 230.1px;       
+}
+
+#offer_value{
+    position: absolute;
+    display: inline-block;
+    width:142px;
+    left: 150px;
+    padding-left: 4px;
+    padding-right: 4px;
+    top: 51px; 
+    font-size: 20px;
+    color: #ef4d33;
+    /*vertical-align: middle; */
+    text-align: center; 
+    letter-spacing: 0px;
+    line-height: 86%;
+    font-family: 'GothamBlack',Arial, Helvetica, sans-serif;    
+}
+
+#offer_preTxt {
+    position: absolute;
+    display: inline-block;
+    width:142px;
+    left: 150px;
+    padding-left: 14px;
+    padding-right: 4px;
+    top: 20px; 
+    font-size: 12px;
+    color: #000000;
+    text-align: left; 
+    letter-spacing: 0.4px;   
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;    
+}
+
+#offer_perentage {
+    position: absolute;
+    display: inline-block;
+    width:142px;
+    left: 160px;
+    top: 36px; 
+    font-size: 81.33px;
+    color: #ef4d33;    
+    font-family: 'EamesCenturyModONBold',Times, serif;   
+}
+
+#offer_subTxt1{
+    position: absolute;
+    display: block;
+    /*margin-top: 4px;*/
+    padding-left: 4px;
+    padding-right: 4px;
+    width:142px;
+    left: 150px;
+    top: 119px; 
+    font-size: 22px;
+    vertical-align: middle; 
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 0.8px;
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;         
+}
+
+#offer_subTxt2{
+    position: absolute;
+    display: inline-block;
+    /*margin-top: 4px;*/
+    padding-left: 4px;
+    padding-right: 4px;
+    width:142px;
+    left: 150px;
+    top: 115px; 
+    font-size: 18.6px;
+    vertical-align: middle; 
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 1.9px;
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;         
+}
+
+#timer {
+    
+    position: absolute;
+    display: block;
+    padding-left: 4px;
+    padding-right: 4px;    
+    width:142px;
+    left: 150px;
+    top: 134px; 
+    color: #ef4d33;
+    font-size: 12px;
+    vertical-align: middle; 
+    text-align: center; 
+    letter-spacing: 0.7px;
+    font-family: 'GothamBlack',Arial, Helvetica, sans-serif;   
+}
+
+#F1_offer_value{
+    position: relative;
+    display: inline-block;    
+    width:290px;
+    height: 100%;
+    left: 4px;
+    top: 10px;     
+    color: white; /*#f04a23;*/
+    text-align: center; 
+    letter-spacing: 0px;
+    font-size: 28px;
+    font-family: 'GothamBlack',Arial, Helvetica, sans-serif;  
+}
+
+#F1_offer_subTxt{
+    position: absolute;
+    display: inline-block;
+    color: white; 
+    width:290px;
+    left: 5px;
+    top: 136px; 
+    font-size: 33.6px;
+    vertical-align: middle; 
+    text-align: center;
+    letter-spacing: 0px;
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;         
+}
+
+#F1_offer_preTxt {
+    white-space:nowrap;
+    position: absolute;
+    display: inline-block;
+    width:142px;
+    padding-left: 8px;
+    padding-right: 4px;     
+    font-size: 18.31px;
+    color: #ffffff;
+    text-align: left; 
+    letter-spacing: 0.4px;
+    font-family: 'GothamBook',Arial, Helvetica, sans-serif;    
+}
+
+#F1_offer_perentage {
+    position: absolute;
+    display: inline-block;
+    width:142px;
+    left: 74px;
+    top: 43px; 
+    font-size: 94.67px;
+    color: #ffffff;        
+    font-family: 'EamesCenturyModONBold',Times, serif;   
+}
+
+#F1_timer {
+    display: inline-block;
+    margin: 0 auto;
+    margin-top:0px;
+    padding-top: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    height: 13px;
+    font-size: 10.1px;
+    vertical-align: middle; 
+    text-align: center; 
+    letter-spacing: 0.6px;
+    font-family: 'GothamBlack',Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+#carouselHolder{
+    position: absolute;
+    top: 51px;
+    left: 0px;
+    width:139px;
+    height:199px;
+    overflow: hidden;
+    /*border: 1px solid #eaeaea;
+    box-shadow: 3px 3px 2px #888888;*/
+}
+
+.itemImage {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    width: 141px;
+    height: 188.5px;
+}
+
+.carouselItem {    
+    -webkit-transition: opacity 0.5s ease-in;
+    -moz-transition: opacity 0.5s ease-in;
+    -ms-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;   
+}
+
+.itemDesc {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 250px;
+    opacity: 0;      
+}
+
+.itemDesc:hover {
+    opacity: 1; 
+}
+
+.itemDescBox {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top: 40px;
+    left: 0px;
+    width: 141px;
+    height: 83px;
+    display: table; 
+    background-color: rgba(255, 255, 255, 0.7);   
+}
+
+.itemDescBoxTxt {
+    position: relative;
+    padding: 8px;
+    font-size: 10px;    
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center; 
+    font-family: 'GothamBlack',Arial, Helvetica, sans-serif;    
+}
+
+#navHolder {
+    position: absolute;
+    top: 222px;
+    left: 0px;
+    height:28px;  
+    width: 140px;
+    background-color: rgba(255, 255, 255, 1);
+    overflow: none;
+}
+
+#nav {
+    display: table;
+    margin: 0 auto;
+}
+
+.navDots {
+    position: relative;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#e1e1e1;
+    margin-left:4px;
+    margin-top:9px;
+    /*border: 1.4px solid #134881;*/
+    /*box-shadow: 0 0 2px #888;*/
+    float: left;
+}
+
+.navDots:hover {
+    background: #134881;
+}    
+
+.navhitall {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;    
+    height:28px;  
+    width: 141px;
+}
+
+#centercopy {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    text-align: center; 
+
+}
+
+#centercopy2 {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 213px;
+    width:100%;
+    text-align: center; 
+
+}
+
+#RL_main {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 298px;
+    height: 248px;
+    overflow: hidden;
+    border: 1px solid #aaaaaa;
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+    animation-fill-mode: forwards;    
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

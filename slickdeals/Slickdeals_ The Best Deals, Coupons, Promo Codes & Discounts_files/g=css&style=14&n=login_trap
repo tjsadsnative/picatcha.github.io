@@ -1,0 +1,663 @@
+#reglogin_loginform tr .loginbox_container {
+    position: static;
+    margin: 0;
+    left: 0;
+    border: 1px solid #555;
+    box-shadow: 0 0 10px #333;
+}
+
+.loginbox_container .loginbox_box {
+}
+
+
+/* login popup */
+
+#loginbox_overlay,
+#dealalerts_subscribe_popup {
+    position: fixed;
+    background: url('http://static.slickdealscdn.com/images/overlay.png');
+    z-index: 100000;
+    top: 0;
+    width: 100%;
+    height: 300%;
+    display: none;
+    left: 0;
+}
+
+#dealalerts_subscribe_popup {
+    z-index: 99999;
+}
+
+.loginbox_container {
+    position: absolute;
+    left: 50%;
+    /*height: 420px;*/
+    width: 570px;
+    margin: 40px 0 0 -285px;
+    color: #000;
+    font-size: 12px;
+    background: #fff;
+    padding: 0;
+    border-radius: 10px;
+    background-position-x: 300px;
+    background-position-y: -75px;
+    background-repeat: no-repeat;
+}
+
+.loginbox_container .req_error {
+    color: red;
+}
+
+.loginbox_container.da {
+    position: absolute;
+    left: 50%;
+    height: 420px;
+    width: 570px;
+    margin: 40px 0 0 -285px;
+    color: #000;
+    font-size: 12px;
+    background: #fff;
+    padding: 0;
+    border-radius: 0px;
+    background-image: url('http://static.slickdealscdn.com/images/Bell_BG.png');
+    background-position-x: 300px;
+    background-position-y: -75px;
+    background-repeat: no-repeat;
+
+}
+
+tr .loginbox_container {
+    position: static;
+    margin: 0;
+    left: 0;
+    border: 1px solid #555;
+    box-shadow: 0 0 8px rgba(51, 51, 51, 0.5)
+}
+
+.loginbox_container .loginbox_head {
+    background: #555;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 10px 20px 10px;
+    margin-bottom: -10px;
+    position: relative;
+    top: 0;
+}
+
+.loginbox_container .loginbox_head span {
+    font-size: 16px;
+    color: #ffc106;
+}
+
+.loginbox_container .loginbox_head.da {
+    margin-top: -1px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffc106;
+}
+
+.loginbox_container .loginbox_head.da span {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.loginbox_container .loginbox_box {
+    border-radius: 10px;
+    background: #fff;
+    padding: 1px;
+    position: relative;
+    top: 0;
+}
+
+.loginbox_container .loginbox_title {
+    background: #e1f1ff;
+    padding: 10px 19px;
+    border-radius: 10px 10px 0 0;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset {
+    padding: 10px 19px 10px;
+    color: #999;
+}
+
+tr .loginbox_container .loginbox_socialmedia_btnset {
+    color: #555;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset .left {
+    float: left;
+    width: 255px;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset .right {
+    float: right;
+    width: 250px;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset a.lg_btn {
+    background: #ebebeb; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fafafa 0%, #e7e7e7 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#e7e7e7)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #fafafa 0%,#e7e7e7 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #fafafa 0%,#e7e7e7 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #fafafa 0%,#e7e7e7 100%); /* IE10+ */
+    background: linear-gradient(top,  #fafafa 0%,#e7e7e7 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
+
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 230px;
+    height: 30px;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #454a4b;
+    text-shadow: 1px 1px 0px #fff;
+    vertical-align: middle;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset a.lg_btn:hover {
+    background: #e0e0e0;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
+    box-shadow: inset 1px 1px 3px #ccc;
+    color: #000;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset a.lg_btn .btn_text {
+    margin-top: 4px;
+    display: block;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset a.lg_btn .lg_icon_google {
+    background: url(http://static.slickdealscdn.com/images/iconrepo/lg_google.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-indent: -9999px;
+    float: left;
+    margin-right: 10px;
+}
+
+.loginbox_container .loginbox_socialmedia_btnset a.lg_btn .lg_icon_fb {
+    background: url(http://static.slickdealscdn.com/images/iconrepo/lg_fb.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-indent: -9999px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+.loginbox_container .loginbox_form_container {
+    padding: 10px 19px;
+    margin: 20px 0;
+}
+
+.loginbox_container .loginbox_form_container.da {
+    padding: 10px 19px;
+    margin: 20px 0;
+
+}
+
+.loginbox_container  .loginbox_form_title {
+    background: #ebebeb;
+    padding: 10px 19px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.loginbox_form_container .loginbox_form  .left {
+    float: left;
+    width: 340px;
+}
+
+.loginbox_form_container .loginbox_form .meh {
+    color: #999;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.loginbox_form_container .da_field_row {
+    margin: 0 0 6px 0;
+}
+
+.loginbox_form_container .da_field_row .leftcell  {
+    float:left;
+    width: 160px;
+    margin: 0;
+    padding: 0;
+}
+
+.loginbox_form_container .da_field_row .rightcell  {
+    float:left;
+    width: 135px;
+    margin: 0;
+    padding: 0;
+}
+
+.loginbox_form_container .da_entry {
+    width: 366px;
+}
+
+.loginbox_form_container .da_entry .da_keywords {
+    padding: 10px;
+    font-style: italic;
+}
+
+.loginbox_form_container .da_entry .da_keywords span {
+    color: #dd0000;
+    font-weight: bold;
+}
+
+.loginbox_form_container .da_edit_entry {
+    width: 298px;
+    padding: 10px;
+}
+
+.loginbox_form_container .da_field_row .leftcell select.forumid,
+.loginbox_form_container .da_field_row .leftcell select.notifyby {
+    width: 150px;
+}
+
+.loginbox_form_container .da_field_row .rightcell select.min_rating,
+.loginbox_form_container .da_field_row .rightcell select.frequency {
+    width: 135px;
+}
+
+.loginbox_form_container .regform_row input  {
+    border: 1px solid #aaa;
+    font-size: 16px;
+    padding: 5px 5px 5px 30px;
+    margin-top: 4px;
+    font-weight: normal;
+    width: 283px;
+    box-shadow: 0px 0px 3px #ccc;
+}
+
+.loginbox_form_container .da_field_row input {
+    background: url('http://static.slickdealscdn.com/images/usercp_sprite.png') #fff 9px 9px no-repeat;
+    padding: 6px 0px 5px 35px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    font-style: italic;
+    width: 328px;
+    -moz-box-shadow: inset 2px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 2px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 2px 2px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.loginbox_form_container .da_field_row #keyword {
+    font-style: normal;
+    color: red;
+    background: url('http://static.slickdealscdn.com/images/usercp_sprite.png') #fff 9px -409px no-repeat;
+}
+
+.loginbox_form_container .da_keywords a {
+    font-style: normal;
+    color: #999;
+}
+
+.loginbox_form_container .da_field_row select {
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    padding: 5px;
+}
+
+.loginbox_form_container .da_edit_entry .da_field_row input {
+    width:284px;
+    background: #fff;
+    padding: 6px 0px 5px 10px;
+}
+
+.dealalerts_edit_popup .loginbox_form_container .da_edit_entry .da_field_row input {
+    width: 262px;
+    padding: 6px 0px 5px 32px;
+}
+
+.loginbox_form_container .da_field_row .subtext {
+    padding: 5px;
+    font-size: 11px;
+    color: #999;
+}
+
+.loginbox_form_container .da_field_row .alsosubscribe {
+    color: #ff9000;
+    font-style: italic;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.loginbox_form_container .regform_row #regform_username, .loginbox_form_container .regform_row #regform_choose_username{
+    background: url('http://static.slickdealscdn.com/images/iconrepo/user.png') 7px 7px no-repeat;
+}
+
+.loginbox_form_container .regform_row #regform_password{
+    background: url('http://static.slickdealscdn.com/images/iconrepo/lock.png') 7px 7px no-repeat;
+}
+
+
+.loginbox_form_container .regform_row_submit,
+.loginbox_form_container .da_options{
+    padding: 0;
+}
+
+.loginbox_form_container .da_options{
+    font-weight: bold;
+}
+
+.loginbox_form_container .da_options label {
+    margin-right: 22px;
+ }
+
+ .loginbox_form_container .regform_row_submit input {
+     margin: 2px 10px 10px 10px;
+     float: left;
+}
+
+.loginbox_form_container .regform_row_submit .rememberme {
+}
+
+.loginbox_form_container .regform_row_submit .rememberme span {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.loginbox_form_container #regform_submit {
+    background: #0082c5; /* Old browsers */
+    background: -moz-linear-gradient(top,  #0082c5 0%, #0062b3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0082c5), color-stop(100%,#0062b3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #0082c5 0%,#0062b3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #0082c5 0%,#0062b3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #0082c5 0%,#0062b3 100%); /* IE10+ */
+    background: linear-gradient(top,  #0082c5 0%,#0062b3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0082c5', endColorstr='#0062b3',GradientType=0 ); /* IE6-9 */
+    border-radius: 4px;
+    width: 160px;
+    color: #fff;
+    border: 0;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loginbox_form_container #regform_submit:hover {
+    background: #005194;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005194', endColorstr='#005194',GradientType=0 ); /* IE6-9 */
+    box-shadow: inset 1px 1px 3px #00294b;
+    color: #e7e7e7;
+}
+
+.loginbox_form_container .loginbox_form  .right {
+    float: right;
+    width: 190px;
+}
+
+.loginbox_form_container .loginbox_form  .bubble {
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 16px;
+    font-size: 11px;
+}
+
+.loginbox_form_container .loginbox_form  .bubble.green {
+    border: 1px solid #b0c5a5;
+    background: #ddedc6; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #ddedc6 0%, #b9d988 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ddedc6), color-stop(100%,#b9d988)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #ddedc6 0%,#b9d988 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #ddedc6 0%,#b9d988 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #ddedc6 0%,#b9d988 100%); /* IE10+ */
+    background: radial-gradient(center, ellipse cover,  #ddedc6 0%,#b9d988 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddedc6', endColorstr='#b9d988',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    box-shadow: 4px 4px 2px #e0e0e0;
+}
+
+.loginbox_form_container .loginbox_form  .bubble strong {
+    font-size: 12px;
+}
+
+.loginbox_container .loginbox_foot {
+    background: #fff7d3;
+    padding: 10px 19px;
+    border-radius: 0 0 10px 10px ;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.loginbox_container .loginbox_foot a {
+    color: #0072bc;
+}
+
+.loginbox_container .loginbox_foot a:hover,
+.loginbox_container .loginbox_completed_container a:hover {
+    text-decoration: none;
+}
+
+.loginbox_container .loginbox_completed_container {
+    padding: 10px 19px;
+    margin: 10px 0;
+}
+
+.loginbox_container .loginbox_completed_container a{
+    color: #0072bc;
+}
+
+.loginbox_container .loginbox_completed_container .completion_list {
+    border-radius: 4px;
+    border: 1px solid #78c1fb;
+    background: #e0f9ff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e0f9ff 0%, #b6f1ff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e0f9ff), color-stop(100%,#b6f1ff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e0f9ff 0%,#b6f1ff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e0f9ff 0%,#b6f1ff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e0f9ff 0%,#b6f1ff 100%); /* IE10+ */
+    background: linear-gradient(top,  #e0f9ff 0%,#b6f1ff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0f9ff', endColorstr='#b6f1ff',GradientType=0 ); /* IE6-9 */
+    padding: 10px;
+    line-height: 24px;
+}
+
+.loginbox_container .loginbox_completed_container ol {
+    margin: 0 0 0 18px;
+    padding: 0;
+}
+
+.loginbox_container .loginbox_completed_container .completion_list a {
+    color: #000;
+}
+
+.loginbox_container .loginbox_completed_container .completion_list ol a {
+    font-weight: bold;
+}
+
+.loginbox_container .loginbox_completed_container .continue {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.loginbox_container .loginbox_completed_container .continue a{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.completion_level .label{
+    float: left;
+}
+
+.completion_level .label span {
+    font-weight: bold;
+}
+
+.completion_level .label .yellow {
+    color: #d0c400;
+}
+
+.completion_level .label .orange {
+    color: #ff6d00;
+}
+
+.completion_level .label .red {
+    color: red;
+}
+
+.completion_level .label .green {
+    color: #00b000;
+}
+
+.completion_level .meter {
+    float: left;
+    height: 12px;
+    width: 100px;
+    position: relative;
+    margin: 0 0 0 5px;
+    background: #efefef;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.completion_level .meter > span {
+    display: block;
+    height: 100%;
+    border-radius: 6px;
+    background-color: #eee;
+    box-shadow: inset 0 0px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+@-webkit-keyframes move {
+    0% {
+        background-position: 0 0;
+  }
+  100% {
+      background-position: 50px 50px;
+  }
+}
+
+@-moz-keyframes move {
+    0% {
+        background-position: 0 0;
+  }
+  100% {
+      background-position: 50px 50px;
+  }
+}
+
+.completion_level .yellow > span {
+    background-color: #f1ef65;
+}
+
+.completion_level .orange > span {
+    background-color: #ff6d00;
+}
+
+.completion_level .red > span {
+    background-color: red;
+}
+
+.completion_level .green > span {
+    background-color: #2BC253;
+}
+
+#regform_btn {
+    padding: 10px 20px;
+}
+
+.loginbox_icon {
+	float: right;
+}
+
+.loginbox_headline {
+	font-size: 14px;
+	color: #454545;
+	font-weight: bold;
+	margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.loginbox_infotext {
+	line-height: 1.5;
+	width: 350px;
+	color: #545454;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.loginbox_input {
+    border: 1px dashed #cecece;
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    float: left;
+    padding-left: 10px;
+    color: #E5570F;
+    font-weight: bold;
+}
+
+.loginbox_input_edit {
+	background-color:#eeeeee;
+	border:1px dashed #cecece;
+	float: left;
+	cursor:pointer;
+	color:#BEBEBE;
+	font-size:11px;
+	height: 30px;
+	text-decoration:none;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.loginbox_input_email {
+    border: 1px solid #cecece;
+    background-image: url('http://static.slickdealscdn.com/images/iconrepo/email.png');
+    width: 300px;
+    background-position: 6px 11px;
+    background-repeat: no-repeat;
+    padding: 5px;
+    padding-left: 28px;
+    margin-top: 30px;
+    height: 26px;
+    width: 365px;
+}
+
+.loginbox_privacy {
+    color: #cecece;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+div.loginbox_buttons .add_alert_button {
+    background: #e65810;
+    color: #ffffff;
+    border: 1px solid;
+    cursor: pointer;
+    height: 40px;
+    text-decoration: none;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px;
+
+}
+
+.add_alert_icon {
+    padding-right: 5px;
+}
+
+.loginbox_buttons a {
+    text-decoration: none;
+    color: #cecece;
+    font-size: 11px;
+    padding-left: 7px;
+}
+
+.loginbox_buttons {
+    padding-top: 30px;
+}

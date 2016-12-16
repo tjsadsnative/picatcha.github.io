@@ -1,0 +1,17 @@
+document.write("<!-- MID 34369 -->\n\
+<!-- Site: YardBarker - Lifestyle  Partner: Underdog Media   Size: 160x600 -->\n\
+<script language=\"javascript\" type=\"text/javascript\">\n\
+  var dkcb = Math.random();\n\
+  document.write('<script type=\"text/javascript\" language=\"javascript\" src=\"http://optimized-by.rubiconproject.com/a/dk.js?defaulting_ad=i38333233302D317339.js&size_id=9&account_id=9392&site_id=16484&size=160x600&cb=' + dkcb +'\"><\\/scr' + 'ipt>');\n\
+<\/script><!-- Start Quantcast tag -->\n\
+        <script type=\"text/javascript\">\n\
+        _qoptions={\n\
+        qacct:\"p-effSsmMYCbAck\",\n\
+        labels:\"edge.0,sid.7839\"\n\
+        };\n\
+        <\/script>\n\
+        <script type=\"text/javascript\" src=\"http://edge.quantserve.com/quant.js\"><\/script>\n\
+        <noscript>\n\
+        <img src=\"http://pixel.quantserve.com/pixel/p-effSsmMYCbAck.gif\" style=\"display: none;\" border=\"0\" height=\"1\" width=\"1\" alt=\"Quantcast\"/>\n\
+        </noscript>\n\
+        <!-- End Quantcast tag -->");

@@ -1,0 +1,108 @@
+OX_5182451714({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://ox-d.slickdeals.servedbyopenx.com/{medium}/1.0/{rtype}?ef=db&bi=36db92f2-0bd8-4f55-9e62-2c415ae790b7&ts={txn_state}",
+    "adunits" : [
+      {
+        "auid":"538016697",
+        "chain_timeout":"",
+        "chain_revenue":"543",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"537652977",
+            "adv_acct_id":"537105482",
+            "is_ng":1,
+            "adv_id":":537105482",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"1837",
+            "width":"300",
+            "height":"250",
+            "html":"<!-- SlickDeals RON 300x250T-->\n<script type=\"text/javascript\">\n  var ord = window.ord || Math.floor(Math.random() * 1e16);\n  document.write('<script type=\"text/javascript\" src=\"http://ad.doubleclick.net/N4911/adj/SlickDeals;loc=showcase;sz=300x250;ord=' + ord + '?\"><\\/script>');\n</script>\n<noscript>\n<a href=\"http://ad.doubleclick.net/N4911/jump/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\">\n<img src=\"http://ad.doubleclick.net/N4911/ad/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\" width=\"300\" height=\"250\" />\n</a>\n</noscript>",
+            "target":"_blank",
+            "ts":"1fHJpZD1hMzRiMmI0Ni1mMTQ2LTQyNmQtOWQ1OS0wMzRlZWIzNjA3N2V8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5N3xhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTZlYmM5YjIxLWJiN2UtNDk1MS1iMDM4LTkwYjBkMmIyNDczZnxjbD01fGFpZD01Mzc2NTI5Nzd8dD00fGFzPTMwMHgyNTB8bGlkPTUzNzQxMjUzMHxvaWQ9NTM3MjUyNTQzfHA9MTgzN3xwcj0xODM3fGF0Yj0xODM3fGFkdj01MzcxMDU0ODJ8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5OT05HVUFSQU5URUVEfGxjPTJ8bHc9MTQ0MHxjaT0xfHVyPTRzNGxTTnhBemM",
+            "type":"html",
+            "ad_url":"<!-- SlickDeals RON 300x250T-->\n<script type=\"text/javascript\">\n  var ord = window.ord || Math.floor(Math.random() * 1e16);\n  document.write('<script type=\"text/javascript\" src=\"http://ad.doubleclick.net/N4911/adj/SlickDeals;loc=showcase;sz=300x250;ord=' + ord + '?\"><\\/script>');\n</script>\n<noscript>\n<a href=\"http://ad.doubleclick.net/N4911/jump/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\">\n<img src=\"http://ad.doubleclick.net/N4911/ad/SlickDeals;loc=showcase;sz=300x250;ord=[timestamp]?\" width=\"300\" height=\"250\" />\n</a>\n</noscript>"
+          },
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"538006737",
+            "adv_acct_id":"537112996",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537112996",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"906",
+            "width":"300",
+            "height":"250",
+            "html":"<!--JavaScript General Redirect Tag // Tag for network 10083: Marketplace: OpenX // Website: Slickdeals  // Page: Slickdeals  // Placement: Slickdeals 300x250 BTF (3753785) // created at: Nov 17, 2015 11:24:43 AM-->\n<script language=\"javascript1.1\" src=\"http://adserver.adtechus.com/addyn|3.0|10083.1|3753785|0|170|ADTECH;loc=100;target=_blank;misc=[TIMESTAMP];rdclick=\"></script>\n<!-- End of JavaScript Tag -->",
+            "target":"_blank",
+            "ts":"1fHJpZD1hMzRiMmI0Ni1mMTQ2LTQyNmQtOWQ1OS0wMzRlZWIzNjA3N2V8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5N3xhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTZlYmM5YjIxLWJiN2UtNDk1MS1iMDM4LTkwYjBkMmIyNDczZnxjbD01fGFpZD01MzgwMDY3Mzd8dD00fGFzPTMwMHgyNTB8bGlkPTUzNzU3ODY5MXxvaWQ9NTM3Mjk1NzA3fHA9OTA2fHByPTkwNnxhdGI9OTA2fGFkdj01MzcxMTI5OTZ8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfG49MXxhaT0xNTJkMDdiMS1kYTQxLTRjNDAtYWQxOC1mZTc0YzI2OTUzNGF8Ym09fG13PTE0NDB8bXVpPTNhOTI1YzlkLWZkMWQtNGU2Yy0wNmRjLWJjMjc1OWQyZDYyZHxjaT0yfHVyPTRzNGxTTnhBemM",
+            "type":"html",
+            "ad_url":"<!--JavaScript General Redirect Tag // Tag for network 10083: Marketplace: OpenX // Website: Slickdeals  // Page: Slickdeals  // Placement: Slickdeals 300x250 BTF (3753785) // created at: Nov 17, 2015 11:24:43 AM-->\n<script language=\"javascript1.1\" src=\"http://adserver.adtechus.com/addyn|3.0|10083.1|3753785|0|170|ADTECH;loc=100;target=_blank;misc=[TIMESTAMP];rdclick=\"></script>\n<!-- End of JavaScript Tag -->"
+          },
+          {
+            "is_fallback":0,
+            "ad_id":"537330205",
+            "adv_acct_id":"537088570",
+            "is_ng":1,
+            "adv_id":":537088570",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"805",
+            "width":"300",
+            "height":"250",
+            "html":"<!--  Begin Rubicon Project Tag -->\n<!--  Site: Slickdeals - RTB Only   Zone: ROS BTF T2   Size: Medium Rectangle  -->\n<script language=\"JavaScript\" type=\"text/javascript\">\nrp_account   = '10474';\nrp_site      = '22620';\nrp_zonesize  = '155988-15';\nrp_adtype    = 'js';\nrp_smartfile = '[SMART FILE URL]';\n</script>\n<script type=\"text/javascript\" src=\"http://ads.rubiconproject.com/ad/10474.js\"></script>\n<!--  End Rubicon Project Tag -->",
+            "target":"_blank",
+            "ts":"1fHJpZD1hMzRiMmI0Ni1mMTQ2LTQyNmQtOWQ1OS0wMzRlZWIzNjA3N2V8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5N3xhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTZlYmM5YjIxLWJiN2UtNDk1MS1iMDM4LTkwYjBkMmIyNDczZnxjbD01fGFpZD01MzczMzAyMDV8dD00fGFzPTMwMHgyNTB8bGlkPTUzNzIyNzI4NXxvaWQ9NTM3MTYzODI4fHA9ODA1fHByPTgwNXxhdGI9ODA1fGFkdj01MzcwODg1NzB8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5OT05HVUFSQU5URUVEfGxjPTJ8bHc9MTQ0MHxjaT0zfHVyPTRzNGxTTnhBemM",
+            "type":"html",
+            "ad_url":"<!--  Begin Rubicon Project Tag -->\n<!--  Site: Slickdeals - RTB Only   Zone: ROS BTF T2   Size: Medium Rectangle  -->\n<script language=\"JavaScript\" type=\"text/javascript\">\nrp_account   = '10474';\nrp_site      = '22620';\nrp_zonesize  = '155988-15';\nrp_adtype    = 'js';\nrp_smartfile = '[SMART FILE URL]';\n</script>\n<script type=\"text/javascript\" src=\"http://ads.rubiconproject.com/ad/10474.js\"></script>\n<!--  End Rubicon Project Tag -->"
+          },
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"537822581",
+            "adv_acct_id":"537110756",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537110756",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"754",
+            "width":"300",
+            "height":"250",
+            "html":"<div>\n<script src='http://www.googletagservices.com/tag/js/gpt.js'>\n    googletag.pubads().definePassback('/8095840/437.slickdeals.net_desktop_300x250', [300, 250]).display();\n</script>    \n</div>",
+            "target":"_blank",
+            "ts":"1fHJpZD1hMzRiMmI0Ni1mMTQ2LTQyNmQtOWQ1OS0wMzRlZWIzNjA3N2V8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5N3xhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTZlYmM5YjIxLWJiN2UtNDk1MS1iMDM4LTkwYjBkMmIyNDczZnxjbD01fGFpZD01Mzc4MjI1ODF8dD00fGFzPTMwMHgyNTB8bGlkPTUzNzQ5MjUwM3xvaWQ9NTM3MjczNjY2fHA9NzU0fHByPTc1NHxhdGI9NzU0fGFkdj01MzcxMTA3NTZ8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfG49MXxhaT0xNTJkMDdiMS1kYTQxLTRjNDAtYWQxOC1mZTc0YzI2OTUzNGF8Ym09fG13PTE0NDB8bXVpPTNhOTI1YzlkLWZkMWQtNGU2Yy0wNmRjLWJjMjc1OWQyZDYyZHxjaT00fHVyPTRzNGxTTnhBemM",
+            "type":"html",
+            "ad_url":"<div>\n<script src='http://www.googletagservices.com/tag/js/gpt.js'>\n    googletag.pubads().definePassback('/8095840/437.slickdeals.net_desktop_300x250', [300, 250]).display();\n</script>    \n</div>"
+          },
+          {
+            "is_fallback":0,
+            "ad_id":"537425529",
+            "adv_acct_id":"537096390",
+            "is_ng":1,
+            "adv_id":":537096390",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"172",
+            "width":"300",
+            "height":"250",
+            "html":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-7882965302669036\";\n/* SlickDeals Catch All 300 BTF */\ngoogle_ad_slot = \"4161035896\";\ngoogle_ad_width = 300;\ngoogle_ad_height = 250;\ngoogle_page_url = \"slickdeals.net\";\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD1hMzRiMmI0Ni1mMTQ2LTQyNmQtOWQ1OS0wMzRlZWIzNjA3N2V8cnQ9MTQ1NTgzNTMzM3xhdWlkPTUzODAxNjY5N3xhdW09RE1JRC5XRUJ8c3NpZD01MzcwNjQzNTN8c2lkPTUzNzA3NDE2MHxwdWI9NTM3MDc1MjcxfHBjPVVTRHxyYWlkPTZlYmM5YjIxLWJiN2UtNDk1MS1iMDM4LTkwYjBkMmIyNDczZnxjbD01fGFpZD01Mzc0MjU1Mjl8dD00fGFzPTMwMHgyNTB8bGlkPTUzNzI4Mzc3NXxvaWQ9NTM3MTkxOTM1fHA9MTcyfHByPTE3MnxhdGI9MTcyfGFkdj01MzcwOTYzOTB8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5OT05HVUFSQU5URUVEfGNpPTV8dXI9NHM0bFNOeEF6Yw",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-7882965302669036\";\n/* SlickDeals Catch All 300 BTF */\ngoogle_ad_slot = \"4161035896\";\ngoogle_ad_width = 300;\ngoogle_ad_height = 250;\ngoogle_page_url = \"slickdeals.net\";\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});

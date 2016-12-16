@@ -1,0 +1,28 @@
+OX_8974476201({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?bi=ac20bcd1-5c33-45f0-b26a-606aabc89043&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"327300",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"300",
+            "height":"250",
+            "html":"<script type=\"text/javascript\" src=\"//ap.lijit.com/www/delivery/pb.js\"></script>",
+            "target":"_blank",
+            "ts":"1fHJpZD1kZTRlYmNjNi1hOWY3LTRlNzAtOTU0ZC02ZDA5N2NmNTc5YWN8cnQ9MTQ1MTQzNTc2MXxhdWlkPTMyNzMwMHxhdW09RE1JRC5XRUJ8c2lkPTY5MzAyfHB1Yj04MzQ5OXxwYz1VU0R8cmFpZD1iN2I1OGI0MS04MGMwLTQyNGMtODUzZS02MWExNDUxNzYzMjN8dXI9RnZMZnNRTEpHUQ",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\" src=\"//ap.lijit.com/www/delivery/pb.js\"></script>"
+          }
+        ]
+      }
+    ]
+  }
+});

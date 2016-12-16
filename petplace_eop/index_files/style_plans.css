@@ -1,0 +1,216 @@
+/********************************* reset start */
+
+html, body, div, img, ol, ul, li, table, tr, th, td {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+ display: block;
+}
+
+body {
+ font-family: 'Sprint Sans Web', sans-serif;
+ font-weight: 500;
+ line-height: 1.2;
+}
+
+ol, ul {
+ list-style: none;
+}
+
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+
+/****************************************** reset end */
+
+#plans {
+ top: 0px;
+ left: 0px;
+ width: 300px;
+ height: 250px;
+ background-position: left top;
+ background-repeat: no-repeat;
+ overflow: hidden;
+ display: block;
+ position: relative;
+ cursor: pointer;
+ border: 1px solid #000;
+ box-sizing: border-box;
+ visibility: hidden;
+}
+
+#banner {
+ top: 0px;
+ left: 0px;
+ width: 100%;
+ height: 100%;
+ display: block;
+ overflow: hidden;
+ font-family: 'Sprint Sans Web', sans-serif;
+ font-weight: 500;
+}
+
+#primary_message {
+ position: absolute;
+ display: table;
+ width: 160px;
+ height: auto;
+ top: 70px;
+ left: 17px;
+ z-index: 13;
+ font-size: 30px;
+}
+
+#primary_copy {
+ width: inherit;
+ height: auto;
+ font-size: 20px;
+ font-weight: 700;
+}
+
+#supporting1_copy {
+ width: inherit;
+ font-size: 12px;
+ height: auto;
+}
+
+#image1 {
+ display: block;
+ position: absolute;
+ width: 154px;
+ height: 230px;
+ background-attachment: top left;
+ background-size: contain;
+ background-repeat: no-repeat;
+ top: 73px;
+ left: 145px;
+ z-index: 21;
+}
+
+#logo {
+ position: absolute;
+ background: url('Sprint_Stacked_Black_RMark.png') no-repeat top left;
+ background-size: contain;
+ background-repeat: no-repeat;
+ width: 86px;
+ height: 53px;
+ top: 10px;
+ left: 250px;
+ z-index: 98;
+ display: block;
+}
+
+#cta {
+ height: auto;
+ width: auto;
+ padding: 5px 10px;
+ border-radius: 12px;
+ position: absolute;
+ z-index: 200;
+ overflow: hidden;
+ background-color: #000;
+ top: 180px;
+ left: 16px;
+}
+
+#cta_copy {
+ width: auto;
+ height: auto;
+ text-align: center;
+ font-size: 12px;
+ white-space: nowrap;
+ color: #FFF;
+ min-width: 80px;
+ font-weight: 700;
+}
+
+#offer_message {
+ position: absolute;
+ display: table;
+ width: 160px;
+ top: 65px;
+ z-index: 30;
+ left: 17px;
+ height: auto;
+}
+
+#closing_headline {
+ width: inherit;
+ font-size: 20px;
+ font-weight: 700;
+}
+
+#summary_copy {
+ width: inherit;
+ font-size: 12px;
+ padding-top: 3px;
+}
+
+#urgency_message {
+ position: absolute;
+ width: 150px;
+ height: auto;
+ top: 155px;
+ left: 20px;
+ z-index: 31;
+ font-size: 15px;
+}
+
+#legal_rollover {
+ position: absolute;
+ width: auto;
+ height: 12px;
+ top: 225px;
+ left: 17px;
+ font-size: 9px;
+ z-index: 102;
+}
+
+#legal {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: #FFCE0A;
+ z-index: 99;
+ display: table;
+}
+
+#legal_copy {
+ position: absolute;
+ width: 80%;
+ height: auto;
+ font-size: 12px;
+ text-align: left;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ -webkit-transform: translate(-50%, -50%);
+}
+
+#background_color_bar {
+ position: absolute;
+ bottom: 0px;
+ left: 0px;
+ width: 100%;
+ height: 5px;
+ background-color: #FFCE0A;
+ z-index: 3;
+}
+
+#background_color {
+ position: absolute;
+ display: block;
+ bottom: 0px;
+ left: 0px;
+ width: 100%;
+ height: 100%;
+ background-color: #FFCE0A;
+ z-index: 2;
+}

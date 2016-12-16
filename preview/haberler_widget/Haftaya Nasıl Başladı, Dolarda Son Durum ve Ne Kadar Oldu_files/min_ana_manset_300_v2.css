@@ -1,0 +1,289 @@
+/*------------------Yeni Manþet---------------------*/
+	.headlinesYeni {
+		background: url(../images/miniSlider_bg_306.png) no-repeat 0 0;
+		height: 250px;
+		margin: 5px 0;
+		overflow: hidden;
+		position: relative;
+		width: 306px;
+	}
+	
+		.headlinesYeni  .itemsYeni {
+			height: 171px;
+			left: 2px;
+			position: absolute;
+			top: 2px;
+			width: 302px;
+			z-index: 1;
+		}
+		
+			.headlinesYeni  .itemsYeni li {
+				background: #333 top right;
+				height: 281px;
+				width: 302px;
+			}
+		
+			.headlinesYeni  .itemsYeni li, .headlinesYeni  .itemsYeni li a {
+				display: block;
+				float: left;
+				margin: 0;
+				padding: 0;
+			}
+		
+		.headlinesYeni  .title, .headlinesYeni .title:active, .headlinesYeni  .title:visited {
+			background: url(../images/black_70.png) repeat 0 0;
+			bottom: 39px;
+			color: #fff;
+			font-size: 18px;
+			font-weight: bold;
+			height: auto;
+			left: 5px;
+			line-height: 1.2em;
+			padding: 4px 15px 4px;
+			position: absolute;
+			width: 206px;
+			z-index: 2;
+		}
+		
+			.headlinesYeni .title:hover { color: #ff6; }
+	
+		.headlinesYeni .itemList {
+			height: 30px;
+			left: -1px !important;
+			position: absolute;
+			top: 211px;
+			width: 306px;
+		}
+		
+		
+		
+			.headlinesYeni .itemList a {
+				background: url(../images/mainSlider_bullets_bg.gif) no-repeat right -30px;
+				color: #575757;
+				display: block;
+				float: left;
+				font-size: 14px;
+				height: 29px;
+				/*letter-spacing: -1px;*/
+				line-height: 31px;
+				text-align: center;
+				width: 23px;
+			}
+			
+			.headlinesYeni .itemList a.first {
+				background-position: right 0;
+			}
+			
+			.headlinesYeni .itemList a.all {
+				background: url(../images/mainSlider_all.png) no-repeat right top;
+				overflow: hidden;
+				position: absolute;
+				right: 0;
+				text-indent: -999px;
+				top: 0;
+				width: 119px;
+			}
+			
+				.headlinesYeni .itemList a.all:hover { background-position: right -29px; }
+				
+			.headlinesYeni .itemList a.new {
+				background-position: left -60px;
+				color: #fff;
+			}
+			
+			.headlinesYeni .itemList a.flash {
+				background-position: right -60px;
+			}
+				
+				.headlinesYeni .itemList a:hover, .headlinesYeni .itemList a.current {
+					background-position: 0 -30px;
+					color: #fff;
+				}
+				
+				div.trans
+				{
+				position: absolute;
+				bottom:0;
+				width:296px;
+				height:auto;
+				padding:7px 15px;
+				line-height:28px;
+				background-color:#FFFFFF;
+				background: url(../images/black_70.png) repeat 0 0;
+				}
+				
+				.trans a {
+				font-size: 12px;
+				font-weight: bold;
+				font-family: Arial, sans-serif;
+				color:#fff;
+				margin:0;
+				text-decoration:none;
+				}
+				.trans a:hover
+				{
+					color:Yellow;
+				}
+
+div.trans2
+{
+	position: absolute;
+	bottom:0;
+	width:302px;
+	height:auto;
+}
+div.trans_opst {
+	width:302px;
+	height:5px;
+	background-color:#fff;
+	opacity:0.5; 
+}				
+
+
+div.trans_baslik2
+{
+	width:296px;
+	min-height: 26px;
+	padding:7px 6px 7px 9px;
+	background-color:#fedd16;
+}
+
+div.trans_baslik
+{
+	width:296px;
+	min-height: 24px;
+	padding:0px 4px;
+	background-color:#fedd16;
+    float:left;
+}
+.trans_baslik a {
+font-size: 18px;
+	font-weight: bold;
+	font-family: Calibri, Geneva, Arial;
+	color:#000000;
+	margin:0;
+	text-decoration:none;
+}
+.trans_baslik a:hover
+{
+	color:#000000;
+}
+.trans_baslik a:visited
+{
+	color:#000000;
+}
+
+div.trans_baslik1
+{
+	width:296px;
+	min-height: 27px;
+	padding:8px 4px;
+	background-color:#fedd16;
+}
+.trans_baslik1 a {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Calibri, Geneva, Arial;
+	color:#000000;
+	margin:0;
+	text-decoration:none;
+}
+.trans_baslik1 a:hover
+{
+	color:#000000;
+}
+.trans_baslik1 a:visited
+{
+	color:#000000;
+}
+
+div.trans_ozet
+{
+	width:296px;
+	height:auto;
+	padding:0 4px 4px 4px;
+	background-color:#fedd16;
+    float:left;
+}
+
+.trans_ozet a {
+	font-size: 12px;
+	font-family: Arial;
+	color:#000000;
+	margin:0;
+	text-decoration:none;
+	font-weight: normal!important;
+}
+.trans_ozet a:hover
+{
+	color:#000000;
+}
+.trans_ozet a:visited
+{
+	color:#000000;
+}
+
+				
+				.mansetResimAna
+				{
+				position:relative;
+				display: none; 
+				z-index: 2;
+				width:302px;
+				height:210px;
+				overflow: hidden;
+				}
+				.mansetResimAnaBlok
+				{
+				position:relative;
+				display: block; 
+				z-index: 2;
+				width:302px;
+				height:210px;
+				overflow: hidden;
+				}
+				.mansetResim
+				{
+				position: absolute; 
+				z-index: 0;
+				margin-left:-3px;
+				}
+/*-------------Yeni Manþet Bitiþ-------------------*/
+
+#touchCarousel-manset .touchCarousel {
+	position: relative;
+	overflow: hidden; 
+}
+#touchCarousel-manset .touchCarousel .touchcarousel-container {
+	position: relative;    
+    margin: 0;
+    padding: 0;
+    list-style: none;    
+	left: 0;
+}
+#touchCarousel-manset .touchCarousel .touchcarousel-wrapper {
+	position: relative;
+	overflow:hidden;
+	width: 100%;
+	height: 100%;
+}
+#touchCarousel-manset .touchCarousel .touchcarousel-item {
+	margin: 0 0 0 0;
+	padding: 0;	
+	float: left;
+	background-color:#FEDD16!important;
+	width:302px !important;
+	height:210px !important;
+}
+#touchCarousel-manset .touchCarousel .touchcarousel-item.last {margin-right: 0 !important;}
+#touchCarousel-manset .touchCarousel .arrow-holder {
+	height: 100%;
+	width: 45px;
+	position: absolute;
+	top: 0;
+	display: block;
+	cursor: pointer;	
+	z-index: 25;	
+}
+#touchCarousel-manset .touchCarousel .arrow-holder.left {left: 0;}
+#touchCarousel-manset .touchCarousel .arrow-holder.right {right: 0;}

@@ -1,0 +1,1 @@
+document.write("<noscript></noscript><scr"+"ipt> window.hiro = {trafficSrc: 'ku',allowCookies : 0};</scr"+"ipt><scr"+"ipt src='https://uppercutsec-a.akamaihd.net/JS_Syndiction/scripts/hiro_dynamic_player.js?consoleID=theuppercut&cms_co=theoceansociety&externalID=2146291&ref1=townhall.com&pc_s=0.00082901829976227&subExternalID=hg' type='text/javascript'></scr"+"ipt>")

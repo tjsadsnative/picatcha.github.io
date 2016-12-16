@@ -1,0 +1,34 @@
+OX_6229776203({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://ox-d.townhallmedia.servedbyopenx.com/{medium}/1.0/{rtype}?bi=458922b0-10c4-48d4-9d53-aa44c9d5df14&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=5&ph=69c6605f-75a3-4675-93fb-b6227ba36b1d",
+    "adunits" : [
+      {
+        "auid":"537998003",
+        "chain_revenue":"",
+        "chain":[
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"538021660",
+            "adv_acct_id":"537093460",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537093460",
+            "brand_id":"775",
+            "cpipc":186,
+            "auct_win_is_deal":0,
+            "pub_rev":"186",
+            "width":"300",
+            "height":"250",
+            "html":"<script src=\"http://data.rtbfy.com/rtb2?id=15586&publisher_id=4518&rtb=1&product_id=9&campaign_id=7737&bid=MC4wMDE=&ts=14527076346624&utm_campaign=7737&coord=3.0.00.3200.0.3&recrypt=3.0.0${AUCTION_PRICE}0.0.3&utm_medium=15586&country=us&city=san%20francisco&iabs=IAB12IAB11IAB11-4IAB11-5IAB12-1IAB12-2IAB12-3IAB13-3&posid=0&pubid=openxnat_188832366&uubid=28330255&domain=townhall.com&srcreferer=&bidder=WEST4&ip=199.116.74.234&fp=C7744AEA51EAB1F5&DVT=OTHER&DVOS=MAC%20OS&DVBW=CHROME&js=1&utm_source=http%3A%2F%2Ftownhall.com%2F%3Fpreview_mode%3Dtrue%26action%3Darticle%26advertiser%3DNRA-ILA%26brand_logo_url%3D%26custom_engagement_label%3DRead%20more%26custom_engagement_url%3Dhttps%253A%252F%252Fwww.nrailadonate.org%252F2015tag%252Fdefault.aspx%253Fek%253D1523B10090%26description%3DDo%20you%20support%20President%20Barack%20Obama%20%25E2%2580%2599%20s%20gun%20registration%20plan%253F%20Are%20you%20on%20board%20with%20anti-gun%20billionaire%20Michael%20Bloomberg%20and%20the%20national%20gun%20ban%20lobby%20%25E2%2580%2599%20s%20agenda%253F%20Incredibly%252C%26media_url%3Dhttps%253A%252F%252Fplatform-cdn.sharethrough.com%252Fcreatives%252Fd69db7f0%252Farticle_content%26share_url%3Dhttps%253A%252F%252Fwww.nrailadonate.org%252F2015tag%252Fdefault.aspx%253Fek%253D1523B10090%26thumbnail_url%3D%252F%252Fstatic.sharethrough.com%252Fm%252Fcreative_thumbnails%252F71723%252Fimages%252Fthumb_320%252FTAG-Poll-TownHall-Image-800pxl.jpg%26title%3DGun%20owners%20respond%20to%20Obama%25E2%2580%2599s%20lies\" type=\"text/javascript\"></script>",
+            "target":"_blank",
+            "ts":"1fHJpZD02YTU0NGRiOC1iY2NiLTQwOGYtYTY5YS1iNjA3Zjk4NjM0NDV8cnQ9MTQ1MjcwNzY0NHxhdWlkPTUzNzk5ODAwM3xhdW09RE1JRC5XRUJ8c2lkPTUzNzE5ODA0OXxwdWI9NTM3MTA5Njk3fHBjPVVTRHxyYWlkPWVhMzdlMmM1LWI0N2EtNDUwZS1hYmY4LTU2YzVjMWY1YTZiZHxhaWQ9NTM4MDIxNjYwfHQ9MTJ8YXM9MzAweDI1MHxsaWQ9NTM3NTg1Nzk0fG9pZD01MzcxNzg0ODZ8cD0yMzB8cHI9MTg2fGF0Yj0zMjB8YWR2PTUzNzA5MzQ2MHxhYz1VU0R8cG09UFJJQ0lORy5DUE18bT0xfGFpPTE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YXxtYz1VU0R8bXI9NDR8cGk9MTg2fG11aT0zYTkyNWM5ZC1mZDFkLTRlNmMtMDZkYy1iYzI3NTlkMmQ2MmR8bWE9OTg0MzQ2NWMtOWE3OS00MDRhLTkxNTktZDM4NTZmZTNlMjBhfG1ydD0xNDUyNzA3NjQ0fG1yYz1TUlRfV09OfG13YT01MzcwOTM0NjB8bXdiaT03NzV8bXdiPTMyMHxtYXA9MjMwfGVsZz0xfG1vYz1VU0R8bW9yPTQ0fG1wYz1VU0R8bXByPTE4NnxtcGY9NzV8bW1mPTc1fG1wbmY9MTQ5fG1tbmY9MTQ5fHBjdj0yOHxtbz1PWHxtd3M9ZjFiODE4MTctNDk0My00ZTlhLTlhYTEtYTc5ZGJmMDkzMDYzfG1wdT0xODZ8bWNwPTIzMHxtd2M9NTM3MTc4NDg2fG13cD01Mzc1ODU3OTR8bXdjcj01MzgwMjE2NjB8bXdpcz0xfG13cHQ9b3hfcHJvdG98dXI9dXZJZEV0VzZNZg",
+            "type":"html",
+            "ad_url":"<script src=\"http://data.rtbfy.com/rtb2?id=15586&publisher_id=4518&rtb=1&product_id=9&campaign_id=7737&bid=MC4wMDE=&ts=14527076346624&utm_campaign=7737&coord=3.0.00.3200.0.3&recrypt=3.0.0${AUCTION_PRICE}0.0.3&utm_medium=15586&country=us&city=san%20francisco&iabs=IAB12IAB11IAB11-4IAB11-5IAB12-1IAB12-2IAB12-3IAB13-3&posid=0&pubid=openxnat_188832366&uubid=28330255&domain=townhall.com&srcreferer=&bidder=WEST4&ip=199.116.74.234&fp=C7744AEA51EAB1F5&DVT=OTHER&DVOS=MAC%20OS&DVBW=CHROME&js=1&utm_source=http%3A%2F%2Ftownhall.com%2F%3Fpreview_mode%3Dtrue%26action%3Darticle%26advertiser%3DNRA-ILA%26brand_logo_url%3D%26custom_engagement_label%3DRead%20more%26custom_engagement_url%3Dhttps%253A%252F%252Fwww.nrailadonate.org%252F2015tag%252Fdefault.aspx%253Fek%253D1523B10090%26description%3DDo%20you%20support%20President%20Barack%20Obama%20%25E2%2580%2599%20s%20gun%20registration%20plan%253F%20Are%20you%20on%20board%20with%20anti-gun%20billionaire%20Michael%20Bloomberg%20and%20the%20national%20gun%20ban%20lobby%20%25E2%2580%2599%20s%20agenda%253F%20Incredibly%252C%26media_url%3Dhttps%253A%252F%252Fplatform-cdn.sharethrough.com%252Fcreatives%252Fd69db7f0%252Farticle_content%26share_url%3Dhttps%253A%252F%252Fwww.nrailadonate.org%252F2015tag%252Fdefault.aspx%253Fek%253D1523B10090%26thumbnail_url%3D%252F%252Fstatic.sharethrough.com%252Fm%252Fcreative_thumbnails%252F71723%252Fimages%252Fthumb_320%252FTAG-Poll-TownHall-Image-800pxl.jpg%26title%3DGun%20owners%20respond%20to%20Obama%25E2%2580%2599s%20lies\" type=\"text/javascript\"></script>"
+          }
+        ]
+      }
+    ]
+  }
+});

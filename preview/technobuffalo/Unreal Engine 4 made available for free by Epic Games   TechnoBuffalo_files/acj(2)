@@ -1,0 +1,75 @@
+OX_7808509004({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://ox-d.publisherdesk.servedbyopenx.com/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=5&ph=0e5037da-e3d7-4959-a342-e675169bd8b4",
+    "adunits" : [
+      {
+        "auid":"537187642",
+        "chain_timeout":"",
+        "chain_revenue":"500",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"537367585",
+            "adv_acct_id":"537092584",
+            "adv_acct_id":"537092584",
+            "is_ng":1,
+            "adv_id":":537092584",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"1250",
+            "width":"300",
+            "height":"250",
+            "html":"<!-- begin Partner: , Integration: THEPUBLISHERDESK-300X250-TECHNOBUFFALO, Size: 300x250-->\n<script type=\"text/javascript\">\ndocument.write('<script type=\"text/javascript\" src=\"http://ads.saymedia.com/ai01a51185601b970c01a511856080970c.js?ord=' + Math.random() + '\"></scr'+'ipt>');\n</script>\n<!-- end -->",
+            "target":"_blank",
+            "ts":"1fHJpZD04YzU3OWYwOS1mM2I4LTQ1ZjgtOWU1Mi1iYzdiOGVhZmFiODV8cnQ9MTQyNTQyOTA3MnxhdWlkPTUzNzE4NzY0MnxhdW09RE1JRC5XRUJ8c2lkPTUzNzEyMjMxOHxwdWI9NTM3MDkxNzE5fHBjPVVTRHxyYWlkPWVlZDk5YmEzLWFmNjktNDBmMC05ZjQxLTIxMTkwNmE4OGU1NHxjbD0zfGFpZD01MzczNjc1ODV8dD01fGFzPTMwMHgyNTB8bGlkPTUzNzI0OTkwMXxvaWQ9NTM3MTc1MzA0fHA9MTI1MHxwcj0xMjUwfGFkdj01MzcwOTI1ODR8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5OT05HVUFSQU5URUVEfGxjPTJ8bHc9MTQ0MHxjaT0xfHVyPWlMWjhIeEJXaXk",
+            "type":"thirdparty",
+            "ad_url":"<!-- begin Partner: , Integration: THEPUBLISHERDESK-300X250-TECHNOBUFFALO, Size: 300x250-->\n<script type=\"text/javascript\">\ndocument.write('<script type=\"text/javascript\" src=\"http://ads.saymedia.com/ai01a51185601b970c01a511856080970c.js?ord=' + Math.random() + '\"></scr'+'ipt>');\n</script>\n<!-- end -->"
+          },
+          {
+            "is_fallback":0,
+            "ad_id":"537370637",
+            "adv_acct_id":"537092871",
+            "adv_acct_id":"537092871",
+            "is_ng":1,
+            "adv_id":":537092871",
+            "brand_id":"",
+            "cpipc":0,
+            "auct_win_is_deal":0,
+            "pub_rev":"750",
+            "width":"300",
+            "height":"250",
+            "html":"<!-- begin Undertone Ad Tag for INT2960 - Medium Rectangle 300x250 - ROS-->\n\n<script type='text/javascript'>\n   var ut_ju = 'http://ads.undertone.com/aj';\n   ut=new Object();\n   ut.zoneid=74381;\n</script>\n<script type=\"text/javascript\" src=\"http://cdn.undertone.com/js/ajs.js\"></script>\n\n<!-- end Undertone Ad Tag for INT2960 - Medium Rectangle 300x250 - ROS-->",
+            "target":"_blank",
+            "ts":"1fHJpZD04YzU3OWYwOS1mM2I4LTQ1ZjgtOWU1Mi1iYzdiOGVhZmFiODV8cnQ9MTQyNTQyOTA3MnxhdWlkPTUzNzE4NzY0MnxhdW09RE1JRC5XRUJ8c2lkPTUzNzEyMjMxOHxwdWI9NTM3MDkxNzE5fHBjPVVTRHxyYWlkPWVlZDk5YmEzLWFmNjktNDBmMC05ZjQxLTIxMTkwNmE4OGU1NHxjbD0zfGFpZD01MzczNzA2Mzd8dD01fGFzPTMwMHgyNTB8bGlkPTUzNzI1MTk3M3xvaWQ9NTM3MTc2NjI5fHA9NzUwfHByPTc1MHxhZHY9NTM3MDkyODcxfGFjPVVTRHxwbT1QUklDSU5HLkNQTXxibT1CVVlJTkcuTk9OR1VBUkFOVEVFRHxsYz0yfGx3PTE0NDB8Y2k9Mnx1cj1pTFo4SHhCV2l5",
+            "type":"thirdparty",
+            "ad_url":"<!-- begin Undertone Ad Tag for INT2960 - Medium Rectangle 300x250 - ROS-->\n\n<script type='text/javascript'>\n   var ut_ju = 'http://ads.undertone.com/aj';\n   ut=new Object();\n   ut.zoneid=74381;\n</script>\n<script type=\"text/javascript\" src=\"http://cdn.undertone.com/js/ajs.js\"></script>\n\n<!-- end Undertone Ad Tag for INT2960 - Medium Rectangle 300x250 - ROS-->"
+          },
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"537150422",
+            "adv_acct_id":"537073292",
+            "adv_acct_id":"537073292",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537073292",
+            "brand_id":"5445",
+            "cpipc":500,
+            "auct_win_is_deal":0,
+            "pub_rev":"500",
+            "width":"300",
+            "height":"250",
+            "html":"<img src=\"http://uswfb.adsrvr.org/bid/feedback/openx?iid=47a7d86e-8b27-4186-8512-ad2ce193811b&aid=5874e12f-0162-494d-9d95-ea3172bc3c2f&wp=AAABS-IxjV0kDXYXMD4Mr2-fM3EYaMGNi39KHA&sfe=72dd250&puid=f3146e3b-a8e8-71fe-7489-2b7d442beca9&tdid=32194bb2-cf0c-4b5c-a22b-f21bf8366603&pid=evto46r&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&svbttd=1&dt=PC&osf=Windows&os=Windows7&br=Chrome&rlangs=en&mlang=&svpid=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ==&crrelr=\" width=\"1\" height=\"1\" style=\"display: none;\"/><IFRAME SRC=\"https://ad.doubleclick.net/adi/N9360.284566THETRADEDESK/B8356022.115269711;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\" WIDTH=300 HEIGHT=250 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR='#000000'>\n<SCRIPT language='JavaScript1.1' SRC=\"https://ad.doubleclick.net/adj/N9360.284566THETRADEDESK/B8356022.115269711;abr=!ie;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\">\n</SCRIPT>\n<NOSCRIPT>\n<A HREF=\"http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=https://ad.doubleclick.net/jump/N9360.284566THETRADEDESK/B8356022.115269711;abr=!ie4;abr=!ie5;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\">\n<IMG SRC=\"https://ad.doubleclick.net/ad/N9360.284566THETRADEDESK/B8356022.115269711;abr=!ie4;abr=!ie5;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\" BORDER=0 WIDTH=300 HEIGHT=250 ALT=\"Advertisement\"></A>\n</NOSCRIPT>\n</IFRAME><span id=\"te-clearads-js-tradedesk01cont1\"><script type=\"text/javascript\" src=\"https://choices.truste.com/ca?pid=tradedesk01&aid=tradedesk01&cid=0511td300x250&c=tradedesk01cont1&w=300&h=250&plc=tr\"></script></span>",
+            "target":"_blank",
+            "ts":"1fHJpZD04YzU3OWYwOS1mM2I4LTQ1ZjgtOWU1Mi1iYzdiOGVhZmFiODV8cnQ9MTQyNTQyOTA3MnxhdWlkPTUzNzE4NzY0MnxhdW09RE1JRC5XRUJ8c2lkPTUzNzEyMjMxOHxwdWI9NTM3MDkxNzE5fHBjPVVTRHxyYWlkPWVlZDk5YmEzLWFmNjktNDBmMC05ZjQxLTIxMTkwNmE4OGU1NHxjbD0zfGFpZD01MzcxNTA0MjJ8dD0xMnxhcz0zMDB4MjUwfGxpZD01MzcxMjEwMjN8b2lkPTUzNzA5NjI4M3xwPTYxMHxwcj01MDB8YWR2PTUzNzA3MzI5MnxhYz1VU0R8cG09UFJJQ0lORy5DUE18bT0xfGFpPTE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YXxtYz1VU0R8bXI9MTEwfHBpPTUwMHxtdWk9MjBiODUxNjItMDE2Zi00ZTA5LTJlNWYtZTM5NTIwMGNkZjU0fG1hPWM2MTkwMDJlLWMyOGMtNGIzYi1hMDg5LTYxODFkOWJiY2RlNXxtcnQ9MTQyNTQyOTA3MnxtcmM9U1JUX1dPTnxtd2E9NTM3MDczMjkyfG13Ymk9NTQ0NXxtd2I9NjQwfG1hcD02MTB8ZWxnPTF8bW9jPVVTRHxtb3I9MTEwfG1wYz1VU0R8bXByPTUwMHxtcGY9NTAwfG1tZj01MDB8bXBuZj01MDB8bW1uZj01MDB8cGN2PTEyfG1vPU9YfGVjPW05aDZvcHlzfG1wdT01MDB8bWNwPTYxMHxhcXQ9cnRifGxkPXd5bm5sYXN2ZWdhcy5jb218bXdjPTUzNzA5NjI4M3xtd3A9NTM3MTIxMDIzfG13Y3I9NTM3MTUwNDIyfG13aXM9MXxtd3B0PW94X3Byb3RvfGNpPTN8dXI9aUxaOEh4QldpeQ",
+            "type":"html",
+            "ad_url":"<img src=\"http://uswfb.adsrvr.org/bid/feedback/openx?iid=47a7d86e-8b27-4186-8512-ad2ce193811b&aid=5874e12f-0162-494d-9d95-ea3172bc3c2f&wp=AAABS-IxjV0kDXYXMD4Mr2-fM3EYaMGNi39KHA&sfe=72dd250&puid=f3146e3b-a8e8-71fe-7489-2b7d442beca9&tdid=32194bb2-cf0c-4b5c-a22b-f21bf8366603&pid=evto46r&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&svbttd=1&dt=PC&osf=Windows&os=Windows7&br=Chrome&rlangs=en&mlang=&svpid=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ==&crrelr=\" width=\"1\" height=\"1\" style=\"display: none;\"/><IFRAME SRC=\"https://ad.doubleclick.net/adi/N9360.284566THETRADEDESK/B8356022.115269711;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\" WIDTH=300 HEIGHT=250 MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR='#000000'>\n<SCRIPT language='JavaScript1.1' SRC=\"https://ad.doubleclick.net/adj/N9360.284566THETRADEDESK/B8356022.115269711;abr=!ie;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\">\n</SCRIPT>\n<NOSCRIPT>\n<A HREF=\"http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=https://ad.doubleclick.net/jump/N9360.284566THETRADEDESK/B8356022.115269711;abr=!ie4;abr=!ie5;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\">\n<IMG SRC=\"https://ad.doubleclick.net/ad/N9360.284566THETRADEDESK/B8356022.115269711;abr=!ie4;abr=!ie5;sz=300x250;click0=http://insight.adsrvr.org/track/clk?imp=47a7d86e-8b27-4186-8512-ad2ce193811b&ag=tfeb5ru&crid=m9h6opys&fq=0&td_s=www.technobuffalo.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=pqxxjsb&sv=openx&uhow=64&agsa=0x8D092684&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&dt=PC&osf=Windows&os=Windows7&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=&dur=Cj0KBzd2ZG9scmcQrIsBIg4I9aOZARIHemRrYm5raSIOCIyzmQESB3pka2Jua2kiDgijyJkBEgd6ZGtibmtpEKyLAQ%3D%3D&crrelr=&r=;ord=274628?\" BORDER=0 WIDTH=300 HEIGHT=250 ALT=\"Advertisement\"></A>\n</NOSCRIPT>\n</IFRAME><span id=\"te-clearads-js-tradedesk01cont1\"><script type=\"text/javascript\" src=\"https://choices.truste.com/ca?pid=tradedesk01&aid=tradedesk01&cid=0511td300x250&c=tradedesk01cont1&w=300&h=250&plc=tr\"></script></span>"
+          }
+        ]
+      }
+    ]
+  }
+});

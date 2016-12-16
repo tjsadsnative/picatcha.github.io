@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<style>body{margin: 0; padding: 0;}ft-richload, richload{display:block;position:relative;margin:0;padding:0;border:0;}.ft-video, .ft-video *{-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}.ft-video{display:inline-block;}.ft-video img,.ft-video video,.ft-video iframe,.ft-video canvas{width:inherit;height:inherit;max-width:inherit;max-height:inherit;min-width:100%;min-height:100%;}@font-face{font-family:"ftglyphs";src:url("https://cdn.flashtalking.com/frameworks/js/fonts/ftglyphs.eot");src:url("https://cdn.flashtalking.com/frameworks/js/fonts/ftglyphs.eot?") format("eot"), url("https://cdn.flashtalking.com/frameworks/js/fonts/ftglyphs.woff") format("woff"), url("https://cdn.flashtalking.com/frameworks/js/fonts/ftglyphs.svg") format("svg");}[class^="ft-icon-"]{font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;padding:0 3px;height:20px;min-width:24px;line-height:20px;cursor:default;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.ft-video{position:relative;display:inline-block;}.ft-video iframe{border:none;}.ft-video-controls{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;color:#fff;speak:none;font-family:ftglyphs;box-sizing:border-box;background-color:rgba(0, 0, 0, 0.7);font-size:18px;display:table;position:absolute;bottom:10px;left:2%;width:96%;height:26px;margin:0 auto;padding:0 2px;border-radius:4px;transition:all 200ms;text-align:center;-webkit-transition:all 200ms;-moz-transition:all 200ms;}.ft-video-controls *{font-family:ftglyphs;}.ft-video-controls.hidden{opacity:0;bottom:0;}[class^="ft-icon-"], .ft-video-progress-container, .ft-time-display{display:table-cell;vertical-align:middle;width:24px;padding:5px 2px;}.ft-video-progress-container{width:100%;}.ft-video-progress-bar{overflow:hidden;display:block;position:relative;box-sizing:border-box;border:2px solid white;border-radius:8px;width:100%;height:12px;}.ft-video-progress-bar::after{position: absolute;top:0;left:0;right:0;bottom:0;box-shadow:inset 0 0 4px black;border-radius:8px;content:"";}.ft-video-progress,.ft-video-buffer{position:absolute;top:0px;bottom:0px;left:0px;background-color:#fff;}.ft-video-buffer{background-color:rgba(255, 255, 255, 0.4);}.ft-time-display{line-height:1.7em;font-size:0.7em;width:50px;padding:5px 5px;}[class^="ft-share-"]{font-family:ftglyphs;size:20px;}[class^="ft-share-twitter"]{color:#55acee;}[class^="ft-share-facebook"]{color:#3b579d;}.ft-share-twitter:before{content: "Z";}.ft-share-twitter-square:before{content: "Y";}.ft-share-facebook:before{content: "X";}.ft-share-facebook-square:before{content: "W";}</style><style>
+			body{
+				margin: 0px;
+				padding: 0px;
+			}
+
+			#container{
+				width: 300px;
+				height: 250px;
+				position: relative;
+			    background-color: white;
+			    overflow: hidden;			    
+			    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+			       -moz-animation: fadein 1s; /* Firefox < 16 */
+			        -ms-animation: fadein 1s; /* Internet Explorer */
+			         -o-animation: fadein 1s; /* Opera < 12.1 */
+			            animation: fadein 1s;
+			    animation-fill-mode: forwards;    
+			}
+
+			#iRichload1 {
+			    width: 100%;
+			    height: 100%;
+			    position: absolute;
+			    left: 0;
+			    top: 0;
+			}
+
+			@keyframes fadein {
+			    from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			/* Firefox < 16 */
+			@-moz-keyframes fadein {
+			    from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			/* Safari, Chrome and Opera > 12.1 */
+			@-webkit-keyframes fadein {
+			    from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			/* Internet Explorer */
+			@-ms-keyframes fadein {
+			    from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+
+			/* Opera < 12.1 */
+			@-o-keyframes fadein {
+			    from { opacity: 0; }
+			    to   { opacity: 1; }
+			}
+		</style>
+	</head>
+
+	<!--content-->
+
+	<body>
+		<div id="container" class="container">
+		    <div id="iRichload1"><iframe src="main_data/index.html" name="iRichload1" webkitallowfullscreen="" allowfullscreen="" allowtransparency="true" margin="0" scrolling="no" style="width: 100%; height: 100%;" frameborder="0"></iframe></div>
+		    <!--<ft-richload id="iRichload1"></ft-richload>-->
+		</div>
+
+		<!--scripts-->
+		<script src="main_data/html5API.js"></script>
+		<!--<script src="/feeds/frameworks/js/api/20/FTFeed.min.js"></script>-->
+		<script src="main_data/FTFeed.js"></script>
+		<script type="text/javascript">
+			// init FT objects
+			var myFT = new FT(),
+			richload1 = FT.query("#iRichload1"); 
+
+			//declarations
+			var slideArray = {};
+			var slideTimer = 3500;
+			var autoCount = 0;	
+			var serverHeader;		
+
+			// populate instantAd components
+			myFT.addEventListener("instantads", function(){
+
+				//New feed using template for segments.
+                var feedParams = new FTFeedParams();
+                feedParams.ftCustomProductIdNodeName = myFT.instantAds.productIdSegment;
+                //feedParams.segmentId = myFT.instantAds.productIdSegment;
+
+                var ftFeed = new FTFeed(myFT, feedParams);
+                ftFeed.getFeed(feedLoaded, feedLoadError);	
+
+                checkServer();	
+
+				//Setup external JS for names of countdown
+				var element = document.createElement("script");
+				try {
+					if (myFT.instantAds.countDownCodes.match(/https?:/g) == null) {
+						element.src = serverHeader + "/46748/assets/countdown.js";
+					} else {
+						element.src = myFT.instantAds.countDownCodes;
+					}
+				}
+				catch(err) {
+					console.log(err)
+					element.src = "countdown.js";	
+				}				
+
+				document.body.appendChild(element);  
+
+			});
+
+            function feedLoaded(feedItems, feedURL) {
+                slideArray = feedItems;
+
+				myFT.insertRichLoad ({ 
+					parent: richload1, 
+					richLoad: "iRichload1" 
+				}); 
+
+				myFT.addEventListener('richload', function() { 
+					//console.log("TRACK: RL Event Loaded");
+					myFT.richloads.iRichload1.frame.contentWindow.initRichload(slideArray);
+				})              
+            }
+			
+			//if feed load error use the default feed json
+			function feedLoadError(errorMsg) {
+                console.log(errorMsg);
+
+				//Setup external JS for failsafe
+				var element = document.createElement("script");
+				try {
+					element.src = serverHeader + "/47145/assets/failsafe.js";					
+				}
+				catch(err) {
+					console.log("No Feeds.");
+				}			
+				document.body.appendChild(element);  
+            }
+
+
+            function checkServer() {
+				serverHeader = "" == this.myFT.get("serveDom") ? "http://cdn.flashtalking.com" : this.myFT.get("serveDom");
+				//console.log("TRACK: "+ serverHeader);
+				/* "[%PROTOCOL%]": -1 < f.indexOf("https://") ? "https://" : "http://";			        
+			       "[%SERVE_DOM%]": f; */
+            }
+
+			function richLoad1Callback(theCaller){
+
+			}          
+			
+		</script>
+	
+
+<script src="main_data/countdown.js"></script></body></html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html><head lang="en">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Standard Video Player</title>
+<link href="inline-video_data/complex-skin.css" rel="stylesheet">
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+<style>
+html, body{
+	margin: 0;
+	padding: 0;
+}
+html, body, #videoPlayerWrapper, #videoPlayer {
+	width: 100%;
+	height: 100%;
+}
+#iconsHolder {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	z-index: 500;
+	width: 45%;
+	min-height: 30px;
+	max-height: 80px;
+	min-width: 90px;
+	max-width: 200px;
+}
+.customIcon	{
+	float:left;
+	width:40%;
+	margin-left: 5px;
+	height: auto;
+	max-width: 40px;
+	min-width: 30px;
+	cursor:pointer;
+	z-index: 500;
+	zoom: 1;
+	opacity: 0.6;
+	-webkit-transition: opacity .25s ease-out;;
+	transition: opacity .25s ease-out;
+}
+.customIcon:hover {
+	opacity: 1;
+}
+
+.customIcon img {
+	height: auto;
+	width: 100%;
+	max-width: 80px;
+	max-height: 80px;
+}
+#videoScreenShot {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+	z-index: 1; /* make sure the controlbar is over screenshot in case the thumbnail does not have play icon on it, so that it still looks like a video */
+}
+#videoPlayButton {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate3D(-50%, -50%, 0);
+	-webkit-transform: translate3D(-50%, -50%, 0);
+	width: 30%;
+	height: auto;
+	z-index: 999999;
+}
+#mobileVideoPlayHotspot {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width:100%;
+	height: 100%;
+	z-index:1000000;
+}
+#mobileCloseVideoButton {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 28px;
+	height: 28px;
+	z-index:10000000000;
+}
+/*make sure there is no 1px gap on odd iframe sizes*/
+.vjs-poster { background-size: cover; }
+
+.vjs-control-bar {
+	z-index: 2; /* make sure the controlbar is over the screenshot */
+}
+.vjs-live-controls {
+	display: none; /* hide livestream icon to make room for mute icon. Inline unit's video may be small so this will make sure there is enough room for all important icons */
+}
+
+</style>
+<script src="analytics.js" async=""></script><script type="application/javascript">
+//ADD EVENT LISTENERS
+window.forceAutostart = false;
+window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event) {
+	//PLAY
+	if (event.data == "play") {
+		//IF VIDEO PLAYER IS ALREADY SET UP THEN START PLAYING VIDEO
+		if (typeof window.videoPlayer != 'undefined') {
+			window.initializePlayback();
+		}
+		//OTHERWISE JUST SET A FLAG
+		else {
+			window.forceAutostart = true;
+		}
+	}
+}
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		vars[key] = value;
+	});
+	return vars;
+}
+var percent_c 	= getUrlVars()["percent_c"];
+</script>
+</head>
+<body>
+<div id="videoPlayerWrapper">
+	<div style="width: 100%; height: 100%;" class="video-js vjs-complex-skin vjs-paused vjs-controls-enabled vjs-user-inactive" id="videoPlayer"><video src="inline-video_data/green-label-640-30.mp4" preload="none" muted="muted" id="videoPlayer_html5_api" class="vjs-tech">
+		<p class="vjs-no-js">
+			To view this video please enable JavaScript, and consider upgrading to a web browser
+			that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+		</p>
+	</video><div></div><div style="background-image: url(&quot;http://media.complex.com/campaigns/2016-q1/green-label/video.jpg&quot;);" tabindex="-1" class="vjs-poster"></div><div class="vjs-loading-spinner"></div><div class="vjs-text-track-display"></div><div aria-label="play video" tabindex="0" aria-live="polite" role="button" class="vjs-big-play-button vjs-hidden"><span aria-hidden="true"></span></div><div class="vjs-control-bar"><div tabindex="0" aria-live="polite" role="button" class="vjs-play-control vjs-control "><div class="vjs-control-content"><span class="vjs-control-text">Play</span></div></div><div class="vjs-current-time vjs-time-controls vjs-control"><div aria-live="off" class="vjs-current-time-display"><span class="vjs-control-text">Current Time </span>0:00</div></div><div class="vjs-time-divider"><div><span>/</span></div></div><div class="vjs-duration vjs-time-controls vjs-control"><div aria-live="off" class="vjs-duration-display"><span class="vjs-control-text">Duration Time</span> 0:00</div></div><div class="vjs-remaining-time vjs-time-controls vjs-control"><div aria-live="off" class="vjs-remaining-time-display"><span class="vjs-control-text">Remaining Time</span> -0:00</div></div><div class="vjs-live-controls vjs-control"><div aria-live="off" class="vjs-live-display"><span class="vjs-control-text">Stream Type</span>LIVE</div></div><div class="vjs-progress-control vjs-control"><div aria-valuetext="0:00" aria-label="video progress bar" class="vjs-progress-holder vjs-slider" tabindex="0" aria-valuemax="100" aria-valuemin="0" aria-valuenow="NaN" role="slider"><div class="vjs-load-progress"><span class="vjs-control-text"><span>Loaded</span>: 0%</span></div><div class="vjs-play-progress"><span class="vjs-control-text"><span>Progress</span>: 0%</span></div><div aria-live="off" class="vjs-seek-handle vjs-slider-handle"><span class="vjs-control-text">00:00</span></div></div></div><div tabindex="0" aria-live="polite" role="button" class="vjs-fullscreen-control vjs-control "><div class="vjs-control-content"><span class="vjs-control-text">Fullscreen</span></div></div><div class="vjs-volume-control vjs-control"><div aria-valuetext="0%" aria-label="volume level" class="vjs-volume-bar vjs-slider" tabindex="0" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="slider"><div style="width: 5%;" class="vjs-volume-level"><span class="vjs-control-text"></span></div><div style="left: 0%;" class="vjs-volume-handle vjs-slider-handle"><span class="vjs-control-text">00:00</span></div></div></div><div tabindex="0" aria-live="polite" role="button" class="vjs-mute-control vjs-control vjs-vol-0"><div><span class="vjs-control-text">Unmute</span></div></div><div aria-haspopup="true" tabindex="0" aria-live="polite" role="button" class="vjs-playback-rate vjs-menu-button vjs-control  vjs-hidden"><div class="vjs-control-content"><span class="vjs-control-text">Playback Rate</span><div class="vjs-menu"><ul class="vjs-menu-content"></ul></div></div><div class="vjs-playback-rate-value">1</div></div><div aria-label="Subtitles Menu" aria-haspopup="true" tabindex="0" aria-live="polite" role="button" class="vjs-subtitles-button vjs-menu-button vjs-control  vjs-hidden"><div class="vjs-control-content"><span class="vjs-control-text">Subtitles</span><div class="vjs-menu"><ul class="vjs-menu-content"><li aria-selected="true" tabindex="0" aria-live="polite" role="button" class="vjs-menu-item vjs-selected">subtitles off</li></ul></div></div></div><div aria-label="Captions Menu" aria-haspopup="true" tabindex="0" aria-live="polite" role="button" class="vjs-captions-button vjs-menu-button vjs-control  vjs-hidden"><div class="vjs-control-content"><span class="vjs-control-text">Captions</span><div class="vjs-menu"><ul class="vjs-menu-content"><li aria-selected="false" tabindex="0" aria-live="polite" role="button" class="vjs-menu-item vjs-texttrack-settings">captions settings</li><li aria-selected="true" tabindex="0" aria-live="polite" role="button" class="vjs-menu-item vjs-selected">captions off</li></ul></div></div></div><div aria-label="Chapters Menu" aria-haspopup="true" tabindex="0" aria-live="polite" role="button" class="vjs-chapters-button vjs-menu-button vjs-control  vjs-hidden"><div class="vjs-control-content"><span class="vjs-control-text">Chapters</span><div class="vjs-menu"><ul class="vjs-menu-content"><li class="vjs-menu-title">Chapters</li></ul></div></div></div></div><div class="vjs-error-display"><div></div></div><div class="vjs-caption-settings vjs-modal-overlay vjs-hidden"><div class="vjs-tracksettings"><div class="vjs-tracksettings-colors"><div class="vjs-fg-color vjs-tracksetting"><label class="vjs-label">Foreground</label><select><option selected="selected" value="">---</option><option value="#FFF">White</option><option value="#000">Black</option><option value="#F00">Red</option><option value="#0F0">Green</option><option value="#00F">Blue</option><option value="#FF0">Yellow</option><option value="#F0F">Magenta</option><option value="#0FF">Cyan</option></select><span class="vjs-text-opacity vjs-opacity"><select><option selected="selected" value="">---</option><option value="1">Opaque</option><option value="0.5">Semi-Opaque</option></select></span></div><div class="vjs-bg-color vjs-tracksetting"><label class="vjs-label">Background</label><select><option selected="selected" value="">---</option><option value="#FFF">White</option><option value="#000">Black</option><option value="#F00">Red</option><option value="#0F0">Green</option><option value="#00F">Blue</option><option value="#FF0">Yellow</option><option value="#F0F">Magenta</option><option value="#0FF">Cyan</option></select><span class="vjs-bg-opacity vjs-opacity"><select><option selected="selected" value="">---</option><option value="1">Opaque</option><option value="0.5">Semi-Transparent</option><option value="0">Transparent</option></select></span></div><div class="window-color vjs-tracksetting"><label class="vjs-label">Window</label><select><option selected="selected" value="">---</option><option value="#FFF">White</option><option value="#000">Black</option><option value="#F00">Red</option><option value="#0F0">Green</option><option value="#00F">Blue</option><option value="#FF0">Yellow</option><option value="#F0F">Magenta</option><option value="#0FF">Cyan</option></select><span class="vjs-window-opacity vjs-opacity"><select><option selected="selected" value="">---</option><option value="1">Opaque</option><option value="0.5">Semi-Transparent</option><option value="0">Transparent</option></select></span></div></div><div class="vjs-tracksettings-font"><div class="vjs-font-percent vjs-tracksetting"><label class="vjs-label">Font Size</label><select><option value="0.50">50%</option><option value="0.75">75%</option><option value="1.00" selected="selected">100%</option><option value="1.25">125%</option><option value="1.50">150%</option><option value="1.75">175%</option><option value="2.00">200%</option><option value="3.00">300%</option><option value="4.00">400%</option></select></div><div class="vjs-edge-style vjs-tracksetting"><label class="vjs-label">Text Edge Style</label><select><option selected="selected" value="none">None</option><option value="raised">Raised</option><option value="depressed">Depressed</option><option value="uniform">Uniform</option><option value="dropshadow">Dropshadow</option></select></div><div class="vjs-font-family vjs-tracksetting"><label class="vjs-label">Font Family</label><select><option selected="selected" value="">Default</option><option value="monospaceSerif">Monospace Serif</option><option value="proportionalSerif">Proportional Serif</option><option value="monospaceSansSerif">Monospace Sans-Serif</option><option value="proportionalSansSerif">Proportional Sans-Serif</option><option value="casual">Casual</option><option value="script">Script</option><option value="small-caps">Small Caps</option></select></div></div></div><div class="vjs-tracksettings-controls"><button class="vjs-default-button">Defaults</button><button class="vjs-done-button">Done</button></div></div></div>
+	<div id="iconsHolder"><div class="customIcon" id="sound"><img src="inline-video_data/soundoff-icon.png"></div></div>
+<img id="videoScreenShot" src="inline-video_data/video.jpg" onmouseover="window.initializePlayback();"></div>
+<script type="text/javascript">
+/**
+ * we need to set 57 account to be default because JW6 tracking utilizes that default account
+ * we will use t60 to track all interactions
+ */
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-30251-57', 'auto');  // Replace with your property ID.
+ga('create', 'UA-30251-60', 'auto', {'name': 't60'});
+ga('t60.send', 'pageview');
+</script>
+<script src="inline-video_data/video-includes.js"></script>
+<script type="text/javascript">
+(function(playerId) {
+	var videofilecontainer	= CMN_VIDEO_INFO_CONFIG.fileContainer;	//THIS COMES FROM GLOBAL CONFIG. Similar to: "http://media.complex.com/videos/"
+	var isMobile 			= CMN_VIDEO_INFO_CONFIG.isMobile;		//THIS COMES FROM GLOBAL CONFIG. It is either "true" or "false"
+	var controls 			= CMN_VIDEO_INFO_CONFIG.controls 		|| 'true';
+	var autostart 			= CMN_VIDEO_INFO_CONFIG.autostart 		|| 'true';
+	var mute				= CMN_VIDEO_INFO_CONFIG.mute			|| 'true';
+	var primary             = CMN_VIDEO_INFO_CONFIG.primary     	|| 'html5';
+	var debug               = CMN_VIDEO_INFO_CONFIG.debug       	|| 'false';
+	var settings            = CMN_VIDEO_INFO_CONFIG.videoSettings 	|| {};
+	var noScroll			= getUrlVars()["noScroll"] 				|| 'false';
+	var videoPlaying		= false; // flag used for video tracking
+	var restartedOnce 	    = false;
+	var videofilepath		= "";
+	var isPreview			= isMobile === 'false' && getUrlVars()['mobile'] === 'true' // Mobile unit previewed on desktop
+
+
+
+
+	/*
+	[][][][][][][][][][][][][][][][][][]
+	SETUP START >>>>>>>>>>>>>>>>>>>>>>>
+	[][][][][][][][][][][][][][][][][][]
+	*/
+
+	
+
+	//SETUP THESE PATHS AND VIDEO FILE NAME
+	var videofilefolder		= "2016-q1/green-label";
+	
+	var videofilename		= "green-label-640-30.mp4";
+	var thumbnail 			= "http://media.complex.com/campaigns/"+videofilefolder+"/video.jpg"; //video screen shot
+	
+
+	
+
+	
+
+	//CAMPAIGN SETUP
+	var campaignname 	= CMN_VIDEO_INFO_CONFIG.campaignName 	|| "green-label-02-2016";
+	var unitType 		= CMN_VIDEO_INFO_CONFIG.unitType 		|| "FWBB"; //type of unit. It can be passed via query string or hardcoded to: ROS, TO, FWBB, TOOLBAR etc
+	var unitname 		= campaignname + "-" + unitType;
+
+
+	/*
+	[][][][][][][][][][][][][][][][][][]
+	SETUP END <<<<<<<<<<<<<<<<<<<<<<<<<
+	[][][][][][][][][][][][][][][][][][]
+	*/
+
+	/*
+	[][][][][][][][][][][][][][][][][][]
+	NO NEED FOR CHANGES BELOW THIS LINE
+	[][][][][][][][][][][][][][][][][][]
+	*/
+
+	videofilepath = videofilecontainer + videofilefolder + '/' + videofilename;
+	videofilepath += "?unit=" + unitname;
+
+	/* ========================================================================
+	 THIS IS RELATED TO VIDEO PLAYBACK ON MOBILE
+	*/
+
+	if (isPreview) {
+		isMobile = 'true'; // spoof mobile behavior for previews
+	}
+
+	window.MOBILE_HELPERS = {};
+
+	MOBILE_HELPERS.showMobileVideoCloseBtn = function() {
+		if (document.getElementById('mobileCloseVideoButton')) {
+			document.getElementById('mobileCloseVideoButton').style.display = 'block';
+		}
+	};
+
+	MOBILE_HELPERS.hideMobileVideoCloseBtn = function() {
+		document.getElementById('mobileCloseVideoButton').style.display = 'none';
+	};
+
+	MOBILE_HELPERS.showMobileVideoPlayButtonAndHotspot = function() {
+		if (document.getElementById('videoPlayButton')) {
+			document.getElementById('videoPlayButton').style.display = 'block';
+		}
+		if (document.getElementById('mobileVideoPlayHotspot')) {
+			document.getElementById('mobileVideoPlayHotspot').style.display = 'block';
+		}
+	};
+
+	MOBILE_HELPERS.hideMobileVideoPlayButtonAndHotspot = function() {
+		if (document.getElementById('videoPlayButton')) {
+			document.getElementById('videoPlayButton').style.display = 'none';
+		}
+		if (document.getElementById('mobileVideoPlayHotspot')) {
+			document.getElementById('mobileVideoPlayHotspot').style.display = 'none';
+		}
+	};
+
+	MOBILE_HELPERS.createMobileVideoPlayButtonAndHotspot = function() {
+		var additionalMobileControls = [
+			'<img id="videoPlayButton"			src="http://media.complex.com/common/images/video/play-white-shadow.png" />',
+			'<img id="mobileVideoPlayHotspot" 	src="http://media.complex.com/common/images/spacer.gif" 			onclick="MOBILE_HELPERS.initializeMobilePlayback();" />',
+	'<img id="mobileCloseVideoButton" 	src="http://media.complex.com/common/videoplayer/icon-close.png" 	onclick="videoPlayer.exitFullscreen();" />'
+	].join('');
+	document.getElementById('videoPlayerWrapper').innerHTML += additionalMobileControls;
+	};
+
+	MOBILE_HELPERS.initializeMobilePlayback = function() {
+		videoPlayer.play();
+		if (!isPreview) {
+			videoPlayer.requestFullscreen();
+		}
+	};
+
+	MOBILE_HELPERS.fullScreenHandler = function() {
+		if (document.webkitIsFullScreen === true || document.mozFullScreen === true || document.msFullscreenElement === true || MOBILE_HELPERS.el.webkitDisplayingFullscreen)	{
+			MOBILE_HELPERS.showMobileVideoCloseBtn();
+			MOBILE_HELPERS.hideMobileVideoPlayButtonAndHotspot();
+			document.getElementById('videoPlayer').classList.remove('vjs-complex-exit-fullscreen');
+		} else {
+			document.getElementById('videoPlayer').classList.add('vjs-complex-exit-fullscreen');
+			MOBILE_HELPERS.showMobileVideoPlayButtonAndHotspot();
+
+			// could not find alternative to hide native play button on iOS7
+			if (/OS 7_\d(_\d)? like Mac OS X/i.test(navigator.userAgent) && document.getElementById('videoPlayButton') && MOBILE_HELPERS.videoPlaying) {
+				document.getElementById('videoPlayButton').style.display = 'none';
+			}
+
+			MOBILE_HELPERS.hideMobileVideoCloseBtn();
+			videoPlayer.pause();
+		}
+	};
+
+	if(isMobile === 'true') {
+		//remove controls when not in full screen
+		window.mobstyle = [
+			'video::-webkit-media-controls {display: none !important}',
+			'.vjs-complex-skin.vjs-paused .vjs-control-bar { display: none; }',
+			'.vjs-complex-skin.vjs-has-started .vjs-control-bar { display: block; }',
+			'.vjs-complex-skin.vjs-ended .vjs-control-bar { display: none; }',
+			'.vjs-complex-skin.vjs-complex-exit-fullscreen .vjs-control-bar { display: none; }',
+			'.vjs-complex-skin.vjs-paused.vjs-fullscreen .vjs-control-bar { display: block !important; }',
+		].join('');
+
+		if (isPreview) {
+			mobstyle += '.vjs-fullscreen-control { visibility:hidden !important; }';
+		}
+
+		document.write('<style type="text/css">'+mobstyle+'</style>');
+
+		MOBILE_HELPERS.createMobileVideoPlayButtonAndHotspot();
+		controls = 'true';
+
+		document.addEventListener('webkitfullscreenchange', MOBILE_HELPERS.fullScreenHandler, false);
+		document.addEventListener('mozfullscreenchange', MOBILE_HELPERS.fullScreenHandler, false);
+		document.addEventListener('fullscreenchange', MOBILE_HELPERS.fullScreenHandler, false);
+		document.addEventListener('MSFullscreenChange', MOBILE_HELPERS.fullScreenHandler, false);
+
+		document.addEventListener('DOMContentLoaded', function() {
+		document.getElementById("iconsHolder").style.display = 'none';
+
+		// prevent touch events on the video from scrolling the parent window
+		// KNOWN ISSUE: Does not fix the problem in iOS7
+		if (noScroll === 'true') {
+			document.addEventListener('touchmove', function(e) {
+			e.preventDefault();
+		}, false);
+		}
+	});
+	}
+
+	/* ===================================================================================
+	END OF SECION FOR MOBILE PLAYBACK
+	*/
+
+	//checks autoplay and ismobile all at once
+	if((autostart == 'false' || autostart == false) && isMobile !== 'true') {
+		var screenShotHTML = '<img id="videoScreenShot" src="'+thumbnail+'" onmouseover="window.initializePlayback();" />';
+		document.getElementById('videoPlayerWrapper').innerHTML += screenShotHTML;
+	}
+
+	if (window.forceAutostart == true) {
+		autostart = true;
+	}
+
+	var sound = new switchImgBtn('sound',
+		'iconsHolder',
+		'http://media.complex.com/common/images/video/soundon-icon.png',
+		'http://media.complex.com/common/images/video/soundoff-icon.png',
+		function() {
+			var isMute = player.muted();
+			var volume = player.volume();
+			player.muted(!(isMute || volume == 0));
+			if(volume == 0 ||  isMute == true) {
+				player.volume(0.55);
+			}
+		}
+	);
+
+	var play = new switchImgBtn('play',
+		'iconsHolder',
+		'http://media.complex.com/common/images/video/play-icon.png',
+		'http://media.complex.com/common/images/video/pause-icon.png',
+		function() {
+			player.paused()? player.play(): player.pause();
+		},
+		true
+	);
+
+	var replay = new switchImgBtn('replay',
+		'iconsHolder',
+		'http://media.complex.com/common/images/video/replay-icon.png', null,
+		function() {
+			player.play();
+		}
+	);
+
+	function iconsHolderInitial(player) {
+		replay.remove();
+
+		var isMute = (mute === 'true' || player.volume() == 0);
+		sound.setFlip(!isMute);
+		sound.add();
+		if(isMute) {
+			player.volume(0);
+		}
+		else {
+			player.volume(0.55);
+		}
+		if(controls === 'custom') {
+			play.add();
+			if(autostart === 'true')
+				play.setFlip(false);
+
+		}
+	}
+
+	window.initializePlayback = function() {
+		if((autostart == 'false' || autostart == false) && isMobile !== 'true') {
+			if (document.getElementById("videoScreenShot")) {
+				document.getElementById("videoScreenShot").style.display = 'none';
+			}
+		}
+		player.play();
+	};
+
+	function getPlayerVersion(player){
+		return (player.techName === "Html5")? "html5": "flash";
+	}
+
+	if(primary === 'flash') {
+		videojs.options.techOrder = ['flash', 'html5'];
+	}
+
+	settings = videojs.util.mergeOptions({
+		"autoplay": convertBool(autostart),
+		"preload": "none", /* this fixes chrome bug that stops displaying inlines when there are already 5 on a page */
+		"poster": thumbnail,
+		"muted": convertBool(mute),
+		"controls": convertBool(controls),
+		"plugins": {
+			ga:{
+				event: ['start', 'end', 'resume', 'paused', 'replay', 'audioOn', 'audioOff', 'percentsPlayed'],
+				videofilepath: videofilepath,
+				video:{
+					campaignName: campaignname,
+					unitName: unitname,
+					videoPaused: "Video"  + "-Paused",
+					videoReplay: "Video" + "-Replay",
+					videoResumePlay: "Video"  + "-Resume-Play",
+					audioOn: "Video" + "-AudioOn",
+					audioOff: "Video" + "-AudioOff",
+					muted: convertBool(mute)
+				},
+				interactions: 't60',
+				percentsPlayed:{
+					percentage: [25, 50, 75]
+				}
+			}
+		}
+	}, settings);
+
+var player = videojs(playerId, settings,
+	function () {
+		var player = this;
+
+		if (isMobile) {
+			MOBILE_HELPERS.el = document.getElementsByTagName('video')[0];
+
+			MOBILE_HELPERS.el.addEventListener('webkitbeginfullscreen', MOBILE_HELPERS.fullScreenHandler, false);
+			MOBILE_HELPERS.el.addEventListener('webkitendfullscreen', MOBILE_HELPERS.fullScreenHandler, false);
+		}
+
+		player.muted(convertBool(mute));
+		player.src({src: videofilepath, type: "video/mp4"});
+		iconsHolderInitial(player);
+
+		//always hide big play button in standard template
+		player.bigPlayButton.hide();
+
+		if(convertBool(autostart)){
+			player.play();
+		}
+
+		player.on("play", function () {
+			player.posterImage.hide();
+			if (!videoPlaying) {
+				videoPlaying = true;
+				MOBILE_HELPERS.videoPlaying = true;
+
+				//make sure to hide the screenshot in case user clicks play from controlbar
+				window.initializePlayback();
+				//enable sound on mobile devices because they are click to play
+				if (isMobile === 'true') {
+					MOBILE_HELPERS.hideMobileVideoPlayButtonAndHotspot();
+					player.muted(false);
+					player.volume(1);
+				}
+				//reset replay icon
+				if (replay.isShow()){
+					if(player.muted()) {
+						player.muted(false);
+						if(player.volume() == 0) {
+							player.volume(0.55);
+						}
+						sound.switch();
+					}
+					player.el_.dispatchEvent(replayEvent);
+					iconsHolderInitial(player);
+				}
+			}
+		});
+		player.on("ended", function () {
+			videoPlaying = false;
+			MOBILE_HELPERS.videoPlaying = false;
+			play.remove();
+			sound.remove();
+			replay.add();
+			player.posterImage.show();
+			player.exitFullscreen();
+
+			if (isMobile === 'true') {
+				MOBILE_HELPERS.showMobileVideoPlayButtonAndHotspot();
+			}
+		});
+		var firstTimeVolumeChange = true;//fix flash version mute icon not working initially.
+		var muteByVolumeZero = false;//fix user slider down volume to zero and click unmute icon again not working issue
+		player.on("volumechange", function () {
+			var ismute = player.muted();
+			var volume = player.volume();
+			if((firstTimeVolumeChange ||  (mute === 'true' && ismute)) && getPlayerVersion(player) === 'flash'){
+				firstTimeVolumeChange = false;
+				ismute = !ismute;
+			}
+			if (!sound.flip && !ismute || muteByVolumeZero || sound.flip && ismute || volume == 0 && sound.flip) {
+				if (!sound.flip && !ismute || muteByVolumeZero) {
+					if (volume == 0) {
+						player.volume(.55);
+						player.muted(false);
+						return;
+					}
+					if(!restartedOnce){
+						player.currentTime(0);
+						restartedOnce = true;
+						player.el_.dispatchEvent(replayEvent);
+					}
+					mute = 'false';
+					muteByVolumeZero = false;
+				}
+				if (sound.flip && ismute || volume == 0 && sound.flip) {
+					mute = 'true';
+				}
+				sound.switch();
+			}
+		});
+
+		if (!convertBool(controls)) {
+			player.on("click", function () {
+				player.paused() ? player.play() : player.pause();
+				play.switch();
+			});
+		}
+	}
+);
+
+	window.videoPlayer = player;
+
+	var replayEvent = document.createEvent("Event");
+	replayEvent.initEvent("replay",true,true);
+
+})('videoPlayer');
+</script>
+
+</body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<body>
+    <script type="text/javascript" src="http://aka-cdn.adtechus.com/dt/common/DAC.js"></script>
+    <script>
+    var anManager = {
+        aolReady: false,
+        adContainerId: '728x90atf',
+        debugMode: false,
+        healthyCPM: 0.1
+    };
+    function bidResponseHandler(response) {
+    	anLog('Bid response received. Alias : ', response.alias);
+    	anLog('Bid CPM : ', response.cpm);
+
+    	if(response.cpm === null || response.cpm < anManager.healthyCPM) {
+    		if(window && window._an_adNoFill) {
+    			anLog('Bid '+response.cpm+' did not clear healthyCPM of '+anManager.healthyCPM);
+    			window._an_adNoFill('aol_marketplace');
+    		}
+    	} else {
+    		anLog('Bid '+response.cpm+' clears healthyCPM '+anManager.healthyCPM);
+	        var adtech_alias = response.alias;
+	        (function(c) {
+	        	if(typeof window.ADTECH === 'undefined') {
+		            for (var a = window.parent, b = 0; a && 5 > b;) {
+		            	console.log('a : ', a);
+		            	console.log('b : ', b);
+		            	console.log('c : ', c);
+		            	a = a.parent, b++;
+		            }
+		        } else {
+	            	a = window;
+	            }
+
+	            a.postMessage("adtech_pub_page::" + c, "*")
+	        })(adtech_alias);
+
+    		setTimeout(function() {
+    			if(window && window._an_adFill) {
+    				anLog('Ad Fill callback invoked');
+    				window._an_adFill('aol_marketplace');
+    			}
+    		}, 3000);
+	    }
+    }
+    function allBidsResponseHandler() {
+        anManager.aolReady = true;
+        checkAllBidPartnersReady();
+    }
+    function loadPubTagLib() {
+        // AOL DAC
+        var d = document,
+            node = document.getElementsByTagName('script')[0];
+        pubad = d.createElement("script");
+        pubad.src = 'http://iqtestsites.adtech.de/marcio/0_3_0rc/pubtaglib.src.js';
+        pubad.type = 'text/javascript';
+        pubad.async = 'async';
+        pubad.onload = pubad.onreadystatechange = function() {
+            var rdyState = pubad.readyState;
+            if (!rdyState || /complete/loaded / i.test(rdyState)) {
+                anLog('pubtaglib loaded');
+                if(ADTECH && ADTECH.loadPubAd) {
+                	ADTECH.loadPubAd(dacBidRequestConfigs[0].alias);
+                }
+            }
+        };
+        node.parentNode.insertBefore(pubad, node);
+    }
+    function getParameterByName(name) {
+        var url = (top !== self || parent !== window) ? document.referrer : window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    anManager.debugMode = (getParameterByName('debugan') == 'true') ? true : false;
+    function anLog(msg, data) {
+        if (console && console.log && anManager.debugMode) {
+            console.log("[AN] " + msg, data);
+        }
+    }
+    bidRequestConfig = {
+        server: 'adserver.adtechus.com',
+        network: '9599.1',
+        bidKey: 'aolbid',
+        onBidResponse: bidResponseHandler,
+        onAllBidsResponses: allBidsResponseHandler,
+        bidResponseTimeout: 500,
+        adjustment: 0,
+        formatCpmToDecimal: true,
+        roundingConfig: [{
+            from: 0,
+            to: 999,
+            roundFunction: 'tenCentsRound'
+        }, {
+            from: 1000,
+            to: -1,
+            roundValue: 1000
+        }]
+    },
+    dacBidRequestConfigs = [{
+        placement: 3675022,
+        alias: '728x90atf',
+        adContainerId: anManager.adContainerId,
+        bidfloor: '0.1'
+    }];
+
+    anLog('Async Loading pubtaglib.js');
+    loadPubTagLib();
+    </script>
+    <div id="728x90atf"></div>
+</body>
+
+</html>

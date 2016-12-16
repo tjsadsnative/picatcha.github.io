@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0145)https://s0.2mdn.net/ads/richmedia/studio/pv2/38528953/20151209115122917/index.html?e=69&renderingType=2&leftOffset=0&topOffset=0&c=LPguwJ9dNw&t=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script type="text/javascript" src="Enabler_01_93.js"></script>
+  <script type="text/javascript">
+  if (Enabler.isInitialized()) {
+    init();
+  } else {
+    Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+  }
+
+  function init() {
+
+    var googleFonts = document.createElement('link');
+    googleFonts.setAttribute('rel', 'stylesheet');
+    googleFonts.setAttribute('type', 'text/css');
+    googleFonts.setAttribute('href', Enabler.getUrl('https://fonts.googleapis.com/css?family=Sprint+Sans+Web:500,700&key=HMJVmbm9bHsUV1p1'));
+    document.getElementsByTagName('head')[0].appendChild(googleFonts);
+
+    var dynamic = document.createElement('script');
+    dynamic.setAttribute('type', 'text/javascript');
+    dynamic.setAttribute('src', Enabler.getUrl('dynamic.js'));
+    document.getElementsByTagName('head')[0].appendChild(dynamic);
+
+    dynamic.onload = dynamic.onreadystatechange = function() {
+      if (String(dynamicContent.Sprint_2015_HTML5_ZMOT_Dynamic_Feed__Sheet1[0].Template).toLowerCase() == "devices") {
+        css_path = "style_devices.css";
+        polite_path = "polite_devices.js";
+      } else {
+        css_path = "style_plans.css";
+        polite_path = "polite_plans.js";
+      }
+
+      var css = document.createElement('link');
+      css.setAttribute('rel', 'stylesheet');
+      css.setAttribute('type', 'text/css');
+      css.setAttribute('href', Enabler.getUrl(css_path));
+      document.getElementsByTagName('head')[0].appendChild(css);
+
+      var polite = document.createElement('script');
+      polite.setAttribute('type', 'text/javascript');
+      polite.setAttribute('src', Enabler.getUrl(polite_path));
+      document.getElementsByTagName('head')[0].appendChild(polite);
+      polite.onload = polite.onreadystatechange = function() {
+
+        var extLibJavascript = document.createElement('script');
+        extLibJavascript.setAttribute('type', 'text/javascript');
+        extLibJavascript.setAttribute('src', Enabler.getUrl('TweenMax.min.js'));
+        document.getElementsByTagName('head')[0].appendChild(extLibJavascript);
+      }
+    }
+
+    if (Enabler.isPageLoaded()) {
+      checkGreensockReady();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, checkGreensockReady);
+    }
+  }
+
+  function checkGreensockReady() {
+    if (window.TimelineMax) {
+
+
+      startLoading();
+    } else {
+      setTimeout(checkGreensockReady, 100);
+    }
+  }
+
+  </script>
+  <title>Sprint</title>
+<link rel="stylesheet" type="text/css" href="css(2)"><script type="text/javascript" src="dynamic.js"></script><link rel="stylesheet" type="text/css" href="style_plans.css"><script type="text/javascript" src="polite_plans.js"></script><script type="text/javascript" src="TweenMax.min.js"></script></head>
+
+<body>
+  <div id="plans" style="visibility: visible;">
+    <div id="banner">
+      <div id="legal" style="opacity: 0; background-color: rgb(255, 206, 10);">
+        <div id="legal_copy">When you switch to Sprint and bring your number. Requires new-line activation on non-discounted phone.</div>
+      </div>
+      <div id="legal_rollover" style="visibility: inherit; opacity: 1;"><u>Restrictions apply</u></div>
+      <div id="logo"></div>
+      <div id="image1" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); background-image: url(&quot;https://s0.2mdn.net/ads/richmedia/studio/40314874/4541_20151204134403102_GLOW_img-cyr_holiday-2.png&quot;);"></div>
+      <div id="cta" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+        <div id="cta_copy">Switch now</div>
+      </div>
+      <div id="urgency_message" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+      <div id="offer_message">
+        <ul>
+          <li>
+            <div id="closing_headline" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Our best family plan  </div>
+          </li>
+          <li>
+            <div id="summary_copy" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">40GB of data to share for only $120/mo.</div>
+          </li>
+        </ul>
+      </div>
+      <div id="primary_message">
+        <ul>
+          <li>
+            <div id="primary_copy" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 50);">40 GB of data to share </div>
+          </li>
+          <li>
+            <div id="supporting1_copy" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 50);">For only $120/mo. </div>
+          </li>
+        </ul>
+      </div>
+      <div id="background_color_bar"></div>
+      <div id="background_color" style="background-color: rgb(255, 206, 10);"></div>
+    </div>
+  </div>
+  
+
+
+
+</body></html>

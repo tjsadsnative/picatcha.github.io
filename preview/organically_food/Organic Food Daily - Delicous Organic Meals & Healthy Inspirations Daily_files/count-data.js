@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"and","comments":{"zero":"0 Comments","multiple":"{num} Comments","one":"1 Comment"}},"counts":[{"id":"940 http:\/\/organicfooddaily.com\/?p=940","comments":2},{"id":"1020 http:\/\/organicfooddaily.com\/?p=1020","comments":1},{"id":"1053 http:\/\/organicfooddaily.com\/?p=1053","comments":1},{"id":"1040 http:\/\/organicfooddaily.com\/?p=1040","comments":0},{"id":"443 http:\/\/66.147.244.207\/~organkl5\/2014422happy-earth-day\/","comments":8},{"id":"881 http:\/\/organicfooddaily.com\/?p=881","comments":0},{"id":"287 http:\/\/66.147.244.207\/~organkl5\/201474foodies-n-fireworks\/","comments":8},{"id":"1030 http:\/\/organicfooddaily.com\/?p=1030","comments":1},{"id":"947 http:\/\/organicfooddaily.com\/?p=947","comments":1},{"id":"300 http:\/\/66.147.244.207\/~organkl5\/2014627got-milk\/","comments":9}]});
+}

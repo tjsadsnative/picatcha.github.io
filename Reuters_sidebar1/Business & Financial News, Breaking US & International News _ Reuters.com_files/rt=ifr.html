@@ -1,0 +1,33 @@
+
+<!-- saved from url=(0842)http://bcp.crwdcntrl.net/5/c=4263/rand=503406868/pv=y/int=%23OpR%2339124%23Total%20Site%20Traffic%20%3A%20Reuters/int=%23OpR%2339152%23Reuters%20%3A%20Site%20Section%20%3A%20www/int=%23OpR%2344928%23Reuters%20%3A%20Site%20Section%20%3A%20www/seg=%23OpR%2340291%23Referral%20Site%20%3A%20/adv=%23OpR%2339682%23Reuters%20%3A%20WT.cg_n%20%3A%20Home%20-%20Landing/adv=%23OpR%2339683%23Reuters%20%3A%20WT.cg_s%20%3A%20Home/adv=%23OpR%2339684%23Reuters%20%3A%20DCSext.DartZone%20%3A%20us.reuters%2Fhome%2Cus.reuters%2Fhome/adv=%23OpR%2339685%23Reuters%20%3A%20Meta%20Keyword%20%3A%20Breaking%20News%2C%20World%20News%2C%20Video%20news%2C%20Investing%2C%20financial%20information%2C%20Business%20News%2C%20Rueters%2C%20Roiters/adv=%23OpR%2340540%23Reuters%20-%20WT%20%3A%20Category%20%3A%20Home%20-%20Landing%20%3A%20Sub-Category%20%3A%20Home/rt=ifr -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="background-color:transparent; width: 100%; text-align: center;">
+<div><img src="tpc=na_id" height="1" width="1"><img src="usync" height="1" width="1"><script>
+function processTargusData(json)
+{
+   if (json != null) {
+       if (json.targus != null) {
+            u = "";
+            v = "map";
+            if (json.targus.sk != null && json.targus.sk != "") {
+                u += "/tp=TARG/tpid=" + json.targus.sk;
+            }
+            if (json.targus.age != null && json.targus.age != "") {
+                u += "/genp=" + (new Date().getFullYear() - json.targus.age);
+                v = "5";
+            }
+            if (json.targus.gender != null && json.targus.gender != "") {
+                u += "/genp=gender%20-%20" + json.targus.gender;
+                v = "5";
+            }
+            if (u != "") {
+              var img = new Image();
+              img.src = "http://bcp.crwdcntrl.net/" + v + "/c=368" + u;
+              document.body.appendChild(img);
+            }
+        }
+   }
+}
+</script>
+<script src="g.json"></script><img src="saved_resource(12)" height="1" width="1"><img src="tokens" height="1" width="1"><img src="match" width="1" height="1"><img src="c8db0b56015ef99d88653b267b10157a" height="1" width="1"><img src="pixel" height="1" width="1"><img src="5907" width="1" height="1"><iframe src="px.html" frameborder="0" height="0" width="0" scrolling="no"></iframe></div><img src="genp=gender - F">
+
+</body></html>

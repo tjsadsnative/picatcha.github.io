@@ -1,0 +1,377 @@
+.HeroSearch {
+  background-color: black;
+  position: relative;
+  height: 350px;
+  width: 100%;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+  font-family: 'MrsEaves'; }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .HeroSearch {
+      padding-left: 10px;
+      height: 200px; } }
+
+.HeroSearch_Headline {
+  float: right;
+  height: 100%;
+  width: 100%; }
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%; }
+
+.HeroSearch_Left {
+  width: 45%;
+  max-width: 512px;
+  position: relative;
+  float: right;
+  right: 50%;
+  display: none;
+  font-size: 2.3em;
+  color: #fff;
+  text-shadow: 4px 4px 8px #000;
+  z-index: 70;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+  @media screen and (min-width: 768px) {
+    .HeroSearch_Left {
+      display: block; } }
+
+.no-csstransforms .HeroSearch_Left {
+  top: 0; }
+
+.HeroSearch_Search, .HeroSearch_Search--SubmitButton, .HeroSearch_Disclaimer {
+  font-family: "Open Sans"; }
+
+.HeroSearch_Search {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 0 5px 0 #999;
+  -webkit-box-shadow: 0 0 5px 0 #999;
+  box-shadow: 0 0 5px 0 #999;
+  font-size: 50%;
+  font-weight: 600;
+  float: left;
+  text-shadow: none;
+  margin-top: 15px; }
+
+.HeroSearch_Search--TextBox {
+  border: 1px #979797 solid;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  width: 100%;
+  height: 2em;
+  padding: 3px 5px;
+  margin-bottom: 10px;
+  font-size: 1.35em;
+  text-transform: capitalize; }
+  .HeroSearch_Search--TextBox::-webkit-input-placeholder {
+    color: #777;
+    opacity: 1; }
+  .HeroSearch_Search--TextBox::-moz-placeholder {
+    color: #777;
+    opacity: 1; }
+  .HeroSearch_Search--TextBox:-moz-placeholder {
+    color: #777;
+    opacity: 1; }
+  .HeroSearch_Search--TextBox:-ms-input-placeholder {
+    color: #777;
+    opacity: 1; }
+
+.HeroSearch_Search--TextBox:focus {
+  border-color: #2479CE;
+  color: #2479CE;
+  outline: 0; }
+  .HeroSearch_Search--TextBox:focus::-webkit-input-placeholder {
+    border-color: #2479CE;
+    color: #2479CE;
+    outline: 0; }
+  .HeroSearch_Search--TextBox:focus::-moz-placeholder {
+    border-color: #2479CE;
+    color: #2479CE;
+    outline: 0; }
+  .HeroSearch_Search--TextBox:focus:-moz-placeholder {
+    border-color: #2479CE;
+    color: #2479CE;
+    outline: 0; }
+  .HeroSearch_Search--TextBox:focus:-ms-input-placeholder {
+    border-color: #2479CE;
+    color: #2479CE;
+    outline: 0; }
+
+.no-touch .HeroSearch_Search--SubmitButton:hover {
+  background-color: #ffdb0e;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFDB0E', endColorstr='#FFF28F1E');
+  background-color: #f8971d;
+  background-image: -webkit-linear-gradient(-270deg, #f8971d, #ffcd46);
+  background-image: linear-gradient(0deg,#f8971d, #ffcd46);
+  outline: 0;
+  border: 0; }
+
+.no-touch .HeroSearch_Search--SubmitButton:active, .touch .HeroSearch_Search--SubmitButton:active {
+  background-color: #F28F1E;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFF28F1E', endColorstr='#FFFFDB0E');
+  background-color: #FFBD0E;
+  background-image: -webkit-linear-gradient(-270deg, #FFBD0E, #D97F1B);
+  background-image: linear-gradient(0deg,#FFBD0E, #D97F1B);
+  outline: 0;
+  border: 0; }
+
+.HeroSearch_Search--SubmitButton {
+  float: right;
+  width: 6.8em;
+  height: 1.8em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #FFDB0E;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFDB0E', endColorstr='#FFF28F1E');
+  background-color: #FFDB0E;
+  background-image: -webkit-linear-gradient(-450deg, #FFDB0E, #F28F1E);
+  background-image: linear-gradient(180deg,#FFDB0E, #F28F1E);
+  outline: 0; }
+
+.HeroSearch_Search--MoreOptions {
+  float: left;
+  margin-top: 19px;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none; }
+
+.HeroSearch_Search--MoreOptions:hover {
+  color: #1077A0; }
+
+.HeroSearch_Disclaimer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 10px 10px;
+  color: #999;
+  font-size: 0.625em;
+  text-transform: uppercase;
+  z-index: 41; }
+
+.HeroSearch_Media, .HeroSearch_Media--ImageMobile {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+.no-csstransforms .HeroSearch_Media {
+  left: 0;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  .no-csstransforms .HeroSearch_Media .HeroSearch_Media--VideoFallback {
+    display: inline;
+    position: relative;
+    left: 0; }
+
+.HeroSearch_Media {
+  width: 1280px;
+  height: 100%; }
+
+.HeroSearch_Media--Video {
+  position: absolute;
+  z-index: 20; }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .HeroSearch_Media--Video {
+      display: none; } }
+
+.ios .HeroSearch_Media--Video {
+  display: none; }
+
+.HeroSearch_Media--ImageMobile {
+  z-index: 5;
+  visibility: visible;
+  /*@media (min-width: 1280px)*/ }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .HeroSearch_Media--ImageMobile {
+      visibility: hidden; } }
+  @media screen and (min-width: 1024px) {
+    .HeroSearch_Media--ImageMobile {
+      visibility: hidden; } }
+
+.HeroSearch_Media--VideoFallback {
+  background-color: black;
+  width: 1280px;
+  height: 100%;
+  z-index: 30; }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .HeroSearch_Media--VideoFallback {
+      display: none; } }
+
+.HeroSearch_Media--ImageDesktop {
+  background-color: black;
+  width: 1280px;
+  height: 100%;
+  z-index: 30;
+  display: none; }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .HeroSearch_Media--ImageDesktop {
+      display: none !important; } }
+
+.ios .HeroSearch_Media--ImageMobile,
+.ios .HeroSearch_Media--ImageDesktop {
+  display: block; }
+
+.HeroSearch_Right {
+  position: absolute;
+  right: 50%;
+  -webkit-transform: translateX(640px);
+  -moz-transform: translateX(640px);
+  -ms-transform: translateX(640px);
+  -o-transform: translateX(640px);
+  transform: translateX(640px);
+  width: 50%;
+  max-width: 640px;
+  height: 100%;
+  margin: 0;
+  z-index: 42;
+  /*@media (min-width: 1280px)*/ }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .HeroSearch_Right {
+      max-width: 100%; } }
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    .HeroSearch_Right {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .HeroSearch_Right {
+      width: 50%;
+      right: -10px;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+      top: 0;
+      margin-left: 10px;
+      position: absolute; } }
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .HeroSearch_Right {
+      width: 50%;
+      right: 0;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none; } }
+
+.no-csstransforms .HeroSearch_Right {
+  right: 0; }
+
+.HeroSearch_Headline--Details {
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  color: #fff;
+  font-size: 1.9em;
+  line-height: 1;
+  margin: 0 8px 20px 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  z-index: 42; }
+
+.HeroSearch_Headline--Text {
+  text-align: right;
+  width: 95%;
+  display: inline-block;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  padding-bottom: 0.125em; }
+
+.HeroSearch_Headline--Arrow {
+  position: absolute;
+  bottom: 5px;
+  float: right;
+  display: inline-block;
+  color: #fff;
+  line-height: 1;
+  z-index: 42;
+  width: 5%;
+  padding-bottom: 0.125em;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; }
+
+.HeroSearch_Headline:hover .HeroSearch_Headline--Arrow {
+  -webkit-transform: translateX(5px);
+  -moz-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  -o-transform: translateX(5px);
+  transform: translateX(5px); }
+
+.HeroSearch_Gradient--Bottom {
+  width: 100%;
+  height: 115px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  z-index: 40;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#00000000', endColorstr='#FF000000');
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(-450deg, transparent 33%, rgba(0, 0, 0, 0.9) 100%);
+  background-image: linear-gradient(180deg,transparent 33%, rgba(0, 0, 0, 0.9) 100%); }
+
+.HeroSearch_Gradient--Left {
+  height: 100%;
+  width: 100px;
+  position: absolute;
+  left: -5px;
+  top: 0;
+  z-index: 40;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#FF000000', endColorstr='#00000000');
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(-540deg, transparent 0, black 100%);
+  background-image: linear-gradient(270deg,transparent 0, black 100%); }
+
+.HeroSearch_Gradient--Right {
+  height: 100%;
+  width: 100px;
+  position: absolute;
+  right: -5px;
+  top: 0;
+  z-index: 40;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#00000000', endColorstr='#FF000000');
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(-360deg, transparent 0, black 100%);
+  background-image: linear-gradient(90deg,transparent 0, black 100%); }
+
+/*# sourceMappingURL=herosearch.css.map */

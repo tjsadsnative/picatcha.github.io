@@ -1,0 +1,13 @@
+document.write("<!-- Creative 35031675 served by Member 229 via AppNexus. -->");var apn_geo = {
+  "DE" : {click_url: "http://www.dkms.de/?utm_source=AppNexus&utm_medium=banner&utm_campaign=cotton", img_url : "https://a248.e.akamai.net/appnexus.download.akamai.com/89298/adnexus-prod/p/9c/8e/4c/37/9c8e4c37245b74c0bc98e6d9e735c9b4.jpg"},
+    "FR" : {click_url: "http://www4.smartadserver.com/call/cliccommand/10656433/286342", img_url : "https://a248.e.akamai.net/appnexus.download.akamai.com/89298/adnexus-prod/p/b7/c1/e1/22/b7c1e122d28b2ddbe73d7088bb19704d.JPG"},
+    "US" : {click_url: "http://www.ampleharvest.org/DHealthyFood-AN.php", img_url : "https://a248.e.akamai.net/appnexus.download.akamai.com/89298/adnexus-prod/p/6b/8d/2d/cd/6b8d2dcdddf8acd2cf9f767438ac9956.jpg"}
+}
+if ("US" in apn_geo) {
+document.write("<a target=\"_blank\" href=https://secure-lax.adnxs.com/click?AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPA_AAAAAAAAAAAAAAAAAAAAAOQc7KprTHJBKT2-S7BRhCdJXIxWAAAAAK81XABKBgAA5QAAAAIAAAB7ihYC90gNAAAAAQAAAAAAVVNEAKAAWAJT2gAAAAAAAgEAAQAAAKYAcBJ2hgAAAAA./referrer=http%3A%2F%2Fwww.insidethehall.com%2F2015%2F09%2F08%2Fan-early-look-at-the-2015-2016-backcourt%2F%3Fntv_a%3DVesBAAAAAACroMA%26prx_ro%3Ds/clickenc=" + apn_geo["US"].click_url
+ + "><img src=" + apn_geo["US"].img_url + "></a>");  
+}else {
+  img_url = "https://a248.e.akamai.net/appnexus.download.akamai.com/89298/adnexus-prod/p/21/4e/3c/1f/214e3c1f259472360493ca0ca8fe1f34.jpg";
+  click_url = "http://www.adoptuskids.org";
+  document.write("<a target=\"_blank\" href=https://secure-lax.adnxs.com/click?AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPA_AAAAAAAAAAAAAAAAAAAAAOQc7KprTHJBKT2-S7BRhCdJXIxWAAAAAK81XABKBgAA5QAAAAIAAAB7ihYC90gNAAAAAQAAAAAAVVNEAKAAWAJT2gAAAAAAAgEAAQAAAKYAcBJ2hgAAAAA./referrer=http%3A%2F%2Fwww.insidethehall.com%2F2015%2F09%2F08%2Fan-early-look-at-the-2015-2016-backcourt%2F%3Fntv_a%3DVesBAAAAAACroMA%26prx_ro%3Ds/clickenc=" + click_url + "><img src=" + img_url + "></a>");
+}

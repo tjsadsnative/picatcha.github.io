@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://s0.2mdn.net/4331293/1455146962577/SFY_Time_GAQ_2016_728x90/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+<meta charset="UTF-8">
+<title>SFY_Time_GAQ_2016_728x90</title>
+<script src="easeljs-0.8.1.min.js"></script>
+<script src="tweenjs-0.6.1.min.js"></script>
+<script src="movieclip-0.8.1.min.js"></script>
+<script src="preloadjs-0.6.1.min.js"></script>
+<script src="SFY_Time_GAQ_2016_728x90.js"></script>
+<meta name="ad.size" content="width=728,height=90">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">
+	var clickTag = "http://www.statefarm.com/";
+</script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+	ss = ss||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadFile({src:"./SFY_Time_GAQ_2016_728x90_atlas_.json", type:"spritesheet", id:"SFY_Time_GAQ_2016_728x90_atlas_"}, true);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt) {
+	var queue = evt.target;
+	ss["SFY_Time_GAQ_2016_728x90_atlas_"] = queue.getResult("SFY_Time_GAQ_2016_728x90_atlas_");
+	exportRoot = new lib.SFY_Time_GAQ_2016_728x90();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+	stage.enableMouseOver();
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+<body onload="init();" style="background-color:#D4D4D4">
+	<canvas id="canvas" width="728" height="90" style="background-color:#C50A0A;position:absolute;top:0;left:0"></canvas>
+
+
+</body></html>

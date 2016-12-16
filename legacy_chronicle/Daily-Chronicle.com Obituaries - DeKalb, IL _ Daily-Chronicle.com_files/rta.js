@@ -1,0 +1,1 @@
+crtg_content = ''; (function(){document.cookie = 'cto_legacy=' + escape(crtg_content) + '; path=/; expires=Sun, 20 Sep 2015 21:00:24 GMT; domain=legacy.com';})();

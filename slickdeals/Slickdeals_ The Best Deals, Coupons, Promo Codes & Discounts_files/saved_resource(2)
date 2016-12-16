@@ -1,0 +1,19 @@
+
+var ftGUID_1660518="2911926BB52FE5";
+var ftConfID_1660518="0";
+var ftParams_1660518="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_ifb=1&ft_domain=slickdeals.net&ft_referrer=http%3A%2F%2Fslickdeals.net%2F&cachebuster=680578.7601042539";
+var ftKeyword_1660518="";
+var ftCustom_1660518="";
+var ftSection_1660518="";
+var ftSegment_1660518="fe4,f5t,fe6,igk,io9,ign,g5m,i65,hks,hks78d4805257db42e08ec613fb83279cbd,jni";
+var ftSegmentList_1660518=[{s:'fe4'},{s:'f5t'},{s:'fe6'},{s:'igk'},{s:'io9'},{s:'ign'},{s:'g5m'},{s:'i65'},{s:'hks',t:29690000},{m:'hks_v',s:'hks78d4805257db42e08ec613fb83279cbd'},{s:'jni'}];
+var ftRuleMatch_1660518="0";
+var ftTimestamp_1660518="1455835337";
+var ftImp1660518 = {};
+ftImp1660518.privacy = "x";
+ftImp1660518.guidAge = "59";
+ftImp1660518.impID = "2970AAB6A72EF3";
+
+
+document.write('<scr'+'ipt src="https://secure.flashtalking.com/xre/166/1660518/1294378/js/j-1660518-1294378.js" id="ftscript_m1660518" name="ftscript_m1660518"></scr'+'ipt>');
+                    

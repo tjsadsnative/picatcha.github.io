@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://s0.2mdn.net/844392/1444842300838/web/IRA-Contribution_300x250.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="IRA-Contribution_300x250_edge.js"></script><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Untitled</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="edge.6.0.0.min.js"></script>
+    <style>
+        .edgeLoad-EDGE-42735230 { visibility:hidden; }
+    </style>
+<script>
+   AdobeEdge.loadComposition('IRA-Contribution_300x250', 'EDGE-42735230', {
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "300px",
+    height: "250px"
+}, {"dom":{}}, {"dom":{}});
+</script>
+<!--Adobe Edge Runtime End-->
+<script type="text/javascript">
+var clickTag = "https://www.google.com"; </script>
+<script type="text/javascript">
+var clickTag1 = "https://www.google.com"; </script>
+</head>
+<body style="margin:0;padding:0;">
+	<div id="Stage" class="EDGE-42735230" style="position: relative; height: 250px; width: 300px; z-index: 0; right: auto; bottom: auto; overflow: hidden; text-overflow: clip; background-color: rgb(255, 255, 255); background-size: 100% 100%;">
+	<div id="Stage_sandwhichImg-1-1" class="Stage_sandwhichImg-1-1_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 433px; height: 250px; right: auto; bottom: auto; transform-style: preserve-3d; transform: translate(0px, 0px) translateZ(0px) rotate(0deg) scale(1, 1); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-image: url(&quot;images/sandwhichImg-1-1.jpg&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_Rectangle2" class="Stage_Rectangle2_id" style="position: absolute; margin: 0px; opacity: 0.65; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; border: 0px none rgb(0, 0, 0); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgb(0, 0, 0); background-size: 100% 100%;"></div><div id="Stage_copy1" class="Stage_copy1_id" style="position: absolute; margin: 0px; opacity: 1; left: 10px; top: 52px; width: 283px; height: 27px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/copy1.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_copy2" class="Stage_copy2_id" style="position: absolute; margin: 0px; opacity: 1; left: 0px; top: 80px; width: 300px; height: 24px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/copy2.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_bg" class="Stage_bg_id" style="position: absolute; margin: 0px; opacity: 1; left: 0px; top: 0px; width: 300px; height: 250px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/bg.jpg&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_copy3" class="Stage_copy3_id" style="position: absolute; margin: 0px; opacity: 1; left: 0px; top: 52px; width: 300px; height: 56px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/copy3.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_logo" class="Stage_logo_id" style="position: absolute; margin: 0px; left: 0px; top: 169px; width: 300px; height: 81px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/logo.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_legal" class="Stage_legal_id" style="position: absolute; margin: 0px; opacity: 1; left: 4px; top: 179px; width: 127px; height: 43px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/legal.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_Rectangle" class="Stage_Rectangle_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 298px; height: 248px; right: auto; bottom: auto; border: 1px solid rgb(165, 161, 150); cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgba(192, 192, 192, 0); background-size: 100% 100%;"></div><div id="Stage_obtain" class="Stage_obtain_id" style="position: absolute; margin: 0px; left: 11px; top: 210px; width: 66px; height: 14px; right: auto; bottom: auto; border: 1px none rgb(0, 0, 0); cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-color: rgba(192, 192, 192, 0); background-size: 100% 100%;"></div><div id="Stage_cta" class="Stage_cta_id" style="position: absolute; margin: 0px; width: 191px; height: 20px; opacity: 1; left: 130px; top: 131px; right: auto; bottom: auto; cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); z-index: 0;"><div id="Stage_cta_Rectangle2" class="Stage_cta_Rectangle2_id" style="position: absolute; margin: 0px; opacity: 1; left: 0px; top: 0px; width: 151px; height: 29px; right: auto; bottom: auto; border: 0px none rgb(0, 0, 0); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: linear-gradient(rgb(126, 32, 38) 0%, rgb(108, 28, 36) 100%); background-color: rgb(248, 0, 0); background-size: 100% 100%;"><div id="Stage_cta_cta1" class="Stage_cta_cta1_id" style="position: absolute; margin: 0px; opacity: 0; left: -1px; top: -1px; width: 151px; height: 30px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/cta1.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_cta_cta" class="Stage_cta_cta_id" style="position: absolute; margin: 0px; opacity: 1; left: -1px; top: -1px; width: 151px; height: 30px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translateZ(0px); background-image: url(&quot;images/cta.png&quot;); background-color: rgba(0, 0, 0, 0); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div></div></div></div>
+
+</body></html>

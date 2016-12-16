@@ -1,0 +1,1 @@
+moatOcrSample({'adLookup':'AOLVPAID1|petplace.com','viewableSampleRate':1,'viewableCampaignId':'VID_AOLVPAID10','viewablePlacementId':'b-petplace.com-petplace.com','viewablePixelFire':'http://secure-gl.imrworldwide.com/cgi-bin/m?ci=nlsnapi29032&am=4&ep=1&at=view&rt=banner&st=image&ca=VID_AOLVPAID10&cr=crv872760&pc=PLACEMENT&r=TIMESTAMP','domain':'petplace.com'});

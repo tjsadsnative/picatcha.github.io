@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <style type="text/css">
+    	body {
+    			background: linear-gradient(to bottom, #052443, #062946, #094154, #0f706f, #1abc9c) !important;
+    		}
+    </style>
+    <body>
+
+    <div id="background-grid"></div>
+	<div id="background-overlay"></div>
+    	{{ content }}
+    	{% include js.html %}
+    </body>
+</html>

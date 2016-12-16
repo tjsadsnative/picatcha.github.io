@@ -1,0 +1,2920 @@
+(function(c,d){$window=c(d);c.fn.lazyload=function(b){var a={threshold:0,failure_limit:0,event:"scroll",effect:"show",container:d,data_attribute:"original",skip_invisible:!0,appear:null,load:null};b&&(void 0!==b.failurelimit&&(b.failure_limit=b.failurelimit,delete b.failurelimit),void 0!==b.effectspeed&&(b.effect_speed=b.effectspeed,delete b.effectspeed),c.extend(a,b));var e=this;0==a.event.indexOf("scroll")&&c(a.container).bind(a.event,function(b){var d=0;e.each(function(){$this=c(this);if((!a.skip_invisible||
+$this.is(":visible"))&&!c.abovethetop(this,a)&&!c.leftofbegin(this,a))if(!c.belowthefold(this,a)&&!c.rightoffold(this,a))$this.trigger("appear");else if(++d>a.failure_limit)return!1})});this.each(function(){var b=this,d=c(b);b.loaded=!1;d.one("appear",function(){this.loaded||(a.appear&&a.appear.call(b,e.length,a),c("<img />").bind("load",function(){d.hide().attr("src",d.data(a.data_attribute))[a.effect](a.effect_speed);b.loaded=!0;var f=c.grep(e,function(a){return!a.loaded});e=c(f);a.load&&a.load.call(b,
+e.length,a)}).attr("src",d.data(a.data_attribute)))});0!=a.event.indexOf("scroll")&&d.bind(a.event,function(a){b.loaded||d.trigger("appear")})});c(a.container).data("jquery_lazyload_registered_"+a.event)||(c(a.container).data("jquery_lazyload_registered_"+a.event,!0),$window.bind("resize",function(b){c(a.container).trigger(a.event)}));c(a.container).trigger(a.event);return this};c.belowthefold=function(b,a){return(void 0===a.container||a.container===d?$window.height()+$window.scrollTop():c(a.container).offset().top+
+c(a.container).height())<=c(b).offset().top-a.threshold};c.rightoffold=function(b,a){return(void 0===a.container||a.container===d?$window.width()+$window.scrollLeft():c(a.container).offset().left+c(a.container).width())<=c(b).offset().left-a.threshold};c.abovethetop=function(b,a){return(void 0===a.container||a.container===d?$window.scrollTop():c(a.container).offset().top)>=c(b).offset().top+a.threshold+c(b).height()};c.leftofbegin=function(b,a){return(void 0===a.container||a.container===d?$window.scrollLeft():
+c(a.container).offset().left)>=c(b).offset().left+a.threshold+c(b).width()};c.inviewport=function(b,a){return!c.rightofscreen(b,a)&&!c.leftofscreen(b,a)&&!c.belowthefold(b,a)&&!c.abovethetop(b,a)};c.extend(c.expr[":"],{"below-the-fold":function(b){return c.belowthefold(b,{threshold:0,container:d})},"above-the-top":function(b){return!c.belowthefold(b,{threshold:0,container:d})},"right-of-screen":function(b){return c.rightoffold(b,{threshold:0,container:d})},"left-of-screen":function(b){return!c.rightoffold(b,
+{threshold:0,container:d})},"in-viewport":function(b){return!c.inviewport(b,{threshold:0,container:d})},"above-the-fold":function(b){return!c.belowthefold(b,{threshold:0,container:d})},"right-of-fold":function(b){return c.rightoffold(b,{threshold:0,container:d})},"left-of-fold":function(b){return!c.rightoffold(b,{threshold:0,container:d})}})})(jQuery,window);
+
+;var prefsLoaded = false;
+
+var defFontSize = 1;
+var minFontSize = 0.8;
+var maxFontSize = 1.8;
+
+var varWidth = "98";
+var fixWidth = "975";
+var defWidth = varWidth;
+
+var currentWidth = defWidth;
+var currentFontSize = defFontSize;
+
+var cookie_suffix = "3";
+if (location.href.match("/forums/") || location.href.match("/f/"))
+{
+    cookie_suffix += "f";
+}
+
+function createCookie(name, value, daysorsec, secs)
+{
+    var expires;
+    if (daysorsec || secs)
+    {
+        var date = new Date();
+        if (secs > 0)
+        {
+            date.setTime(date.getTime() + (secs * 1000));
+        }
+        else if (daysorsec > 365)
+        {
+            date.setTime(date.getTime() + (daysorsec * 1000));
+        }
+        else
+        {
+            date.setTime(date.getTime() + (daysorsec * 24 * 60 * 60 * 1000));
+        }
+        expires = "; expires=" + date.toGMTString();
+    }
+    else
+    {
+        expires = "";
+    }
+
+    document.cookie = name + "=" + value + expires + "; path=/" + (typeof $vb_cookie_domain != "undefined" ? "; domain=" + $vb_cookie_domain : "");
+}
+
+function readCookie(name)
+{
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i=0; i < ca.length; i++)
+    {
+        var c = ca[i];
+        while (c.charAt(0) === ' ')
+        {
+            c = c.substring(1, c.length);
+        }
+        if (c.indexOf(nameEQ) === 0)
+        {
+            return c.substring(nameEQ.length, c.length);
+        }
+    }
+    return null;
+}
+
+function setFontSize(fontSize)
+{
+    $("#topwrapper").css('font-size', fontSize.toString().substr(0,3) + 'em');
+}
+
+function saveSettings()
+{
+    createCookie("pageWidth" + cookie_suffix, currentWidth, 365);
+    createCookie("fontSize" + cookie_suffix, currentFontSize.toString().substr(0,3), 365);
+}
+
+function changeFontSize(sizeDifference)
+{
+    currentFontSize = parseFloat(currentFontSize, 10) + parseFloat(sizeDifference, 10);
+
+    if(currentFontSize > maxFontSize)
+    {
+        currentFontSize = maxFontSize;
+    }
+    else if(currentFontSize < minFontSize)
+    {
+        currentFontSize = minFontSize;
+    }
+    setFontSize(currentFontSize);
+    saveSettings();
+}
+
+function gridResize()
+{
+    if ($("#deal_list").hasClass("grid"))
+    {
+        $("#deal_list").css("width", "100%");
+        var deals_width = $("#deal_list").width();
+        var columns = Math.floor(deals_width / 150);
+        var col_width = Math.floor(deals_width / columns) - 2;
+        $("#deal_list").css("width", deals_width);
+        $("#deal_list .dealitem").css("width", col_width);
+
+        var offsets = [];
+        var $list = $("#deal_list").find(".dealitem:visible");
+
+        $list.each(function () {
+            offsets.push($(this).offset().top);
+        });
+
+        $.each(offsets, function (i, v) {
+            if (v < offsets[i+1] || typeof offsets[i+1] == "undefined")
+            {
+                $list.eq(i).css('border-right', '1px dotted #999');
+            }
+            else
+            {
+                $list.eq(i).css('border-right', 'none');
+            }
+        });
+    }
+}
+function toggleExpired()
+{
+    el = $("#fp_style_hide_expired");
+
+    if(el.is(':checked'))
+    {
+        gridResize();
+        $('.expiredbutton').nextUntil('.deal_header_date').hide();
+        $('.expiredbutton').show();
+        $('.expiredbutton').addClass('expiredbutton_active');
+    }
+    else
+    {
+        $('.expiredbutton').nextUntil('.deal_header_date').filter('a').css('display', 'block');
+        $('.expiredbutton').hide();
+        $('.expiredbutton').removeClass('expiredbutton_active');
+    }
+
+    $('.expiredbutton').each(function(){
+        var el = $(this);
+
+        $(el).nextUntil('.deal_header_date').removeClass('deal_header_even');
+
+        var indexType = $(el).hasClass('deal_header_even') ? 'even' : 'odd';
+        $(el).nextUntil('.deal_header_date').filter(':' + indexType).addClass('deal_header_even');
+    });
+
+    if (parseInt(readCookie('fpshowexpired'), 10) > 0) {
+        createCookie("fpshowexpired", 0, 365);
+    }
+    else {
+        createCookie("fpshowexpired", 1, 365);
+    }
+    $(".fpsubmenu a").blur();
+}
+
+function toggleExpiredButton(el, group_num)
+{
+    group_num = group_num || 0;
+    if (group_num > 0)
+    {
+        $(el).find(".dealblockimg").addClass("ajaxlarge");
+
+        var params = $.deparam.querystring(location.href);
+        params['ajax'] = 1;
+        params['group_num'] = group_num,
+        $.get('/', params, function (data)
+        {
+            $(el).after(data);
+            $(el).parent().find(".dealitem.expired .lazyimg").lazyload();
+
+            var x = 1;
+            $('.dealitem, .deal_body').each(function () {
+                if (((x % 6) == 0) || ($(this).next().hasClass('deal_header_date') || $(this).next('div').length == 0))
+                {
+                    if ($(this).hasClass('expired'))
+                    {
+                        $(this).css('border-right', '1px dotted rgb(153, 153, 153)');
+                    }
+                    x = 0;
+                }
+                x++;
+            });
+
+            from = 'expand';
+            to = 'collapse';
+            var text = $(el).find('.dealblocktext .store').html().replace(from, to);
+            $(el).find('.dealblocktext .store').html(text);
+            $(el).nextUntil('.deal_header_date').filter('.deal_body').show();
+            $('div.expired').css('display', 'block');
+            $(el).prevUntil('.deal_header_date').filter('div.dealitem').not('.populardeals,:visible').css('display', 'block');
+            $(el).hide();
+            gridResize();
+            // redo zebra
+            redoZebraFpDeals();
+        });
+    }
+    else
+    {
+        $(el).nextUntil('.deal_header_date').filter('div.expired').css('display', 'block');
+        $(el).prevUntil('.deal_header_date').filter('div.dealitem').not('.populardeals,:visible').css('display', 'block');
+
+        from = 'expand';
+        to = 'collapse';
+
+        // redo zebra
+        redoZebraFpDeals();
+
+        var text = $(el).find('.dealblocktext .store').html().replace(from, to);
+
+        $(el).find('.dealblocktext .store').html(text);
+        $(el).hide();
+        $(el).nextUntil('.deal_header_date').filter('.deal_body').show();
+    }
+
+    return false;
+}
+
+function redoZebraFpDeals()
+{
+    $('.deal_header_date').each(function(){
+       var el = $(this);
+
+       el.nextUntil('.deal_header_date').filter(':not(".expiredbutton")').removeClass('deal_header_even');
+       el.nextUntil('.deal_header_date').filter(':not(".expiredbutton")').filter('a:odd').addClass('deal_header_even');
+    });
+}
+
+function showStyleHelp()
+{
+    var tipcontent = "<a class='notice_close' style='position:absolute;top:-1px;right:-3px;cursor:pointer;' ";
+    tipcontent += "onclick='hideStyleHelp()'></a>Try out the new display options!";
+    $("#fp_style_list").bt(tipcontent, {
+        fill: "#FDF4B5",
+        positions: ['top'],
+        trigger: 'none',
+        clickAnywhereToClose: false,
+        cssStyles: {
+            "font-size": "13px",
+            "font-weight": "bold",
+            "text-align": "center",
+            "cursor": "default",
+            "color": "black",
+            "background": "url(http://static.slickdealscdn.com/images/slickdeals/gradients/white_up.png) repeat-x bottom left"
+        },
+        shrinkToFit: false,
+        strokeStyle: "#FDD33C",
+        shadow: true,
+        width: "130px"
+    }).btOn();
+}
+
+function hideStyleHelp()
+{
+    if ($(".bt-content .notice_close").is(":visible"))
+    {
+        $("#fp_style_list").btOff();
+        createCookie("hidestylehelp", 1, 365);
+    }
+}
+
+function setWidth(width)
+{
+    if (width == fixWidth)
+    {
+        $("#topwrapper").width(fixWidth+"px");
+        $("body").removeClass("varwidth").addClass("fixwidth");
+    }
+    else if (width == varWidth)
+    {
+        $("#topwrapper").width(varWidth+"%");
+        $("body").removeClass("fixwidth").addClass("varwidth");
+    }
+    currentWidth = width;
+    saveSettings();
+    if (typeof gridResize != "undefined") { gridResize(); }
+    if (typeof storepageResize != "undefined") { storepageResize(); }
+    if(typeof bffeaturedeal_resize == 'function')
+    {
+        bffeaturedeal_resize();
+    }
+    if ('update_width_dynamic' in window)
+    {
+        update_width_dynamic();
+    }
+}
+
+function revertStyles()
+{
+    currentWidth = defWidth;
+    setWidth(defWidth);
+
+    currentFontSize = defFontSize;
+    changeFontSize(0);
+}
+
+$(document).ready(function() {
+    gridResize();
+    $(window).resize(gridResize);
+    if ($("#topwrapper").width() == fixWidth)
+    {
+        $("body").removeClass("varwidth").addClass("fixwidth");
+    }
+    else
+    {
+        $("body").removeClass("fixwidth").addClass("varwidth");
+    }
+});
+
+function toggleWidth()
+{
+    if (currentWidth == fixWidth)
+    {
+        currentWidth = varWidth;
+    }
+    else
+    {
+        currentWidth = fixWidth;
+    }
+    setWidth(currentWidth);
+
+    if (typeof update_width_dynamic == "function")
+    {
+        update_width_dynamic();
+    }
+}
+
+function setUserOptions()
+{
+    if(!prefsLoaded)
+    {
+        var cookie = readCookie("pageWidth"+cookie_suffix);
+        currentWidth = cookie ? cookie : defWidth;
+
+        cookie = readCookie("fontSize"+cookie_suffix);
+        currentFontSize = cookie ? cookie : defFontSize;
+
+        //setWidth(currentWidth);
+        //setFontSize(currentFontSize);
+        prefsLoaded = true;
+    }
+}
+
+$(document).ready(function () {
+    // hides the addpricetracker_form as soon as the DOM is ready
+    // $('#fp_prefs_contain').hide();
+    // toggles the addpricetracker_form on clicking the noted link
+    if(typeof(toggleFrontpagePreference) == 'function')
+    {
+        $('#fp_style_preferences').click(toggleFrontpagePreference);
+    }
+    if(typeof(toggleExpired) == 'function')
+    {
+        $('#fp_style_hide_expired').live('click', toggleExpired);
+    }
+    if(typeof(toggleexpandall) == 'function')
+    {
+        $('#fp_style_expandall').live('click', toggleexpandall);
+    }
+    if(typeof(toggleFireDeals) == 'function')
+    {
+        $('#fp_style_firedeals').live('click', toggleFireDeals);
+    }
+    if(typeof(toggleFrontpageRatings) == 'function')
+    {
+        $('#fp_style_ratings').live('click', toggleFrontpageRatings);
+    }
+});
+
+function toggleFrontpagePreference(ev)
+{
+    ev.preventDefault();
+
+    var el = $('#fp_prefs_contain');
+    if(el.is(':visible'))
+    {
+        $('#fp_style_preferences').removeClass('active');
+        $('#fp_style_preferences .submenu_black_icon_up').removeClass('submenu_black_icon_up').addClass('submenu_black_icon');
+    }
+    else
+    {
+        $('#fp_style_preferences').addClass('active');
+        $('#fp_style_preferences .submenu_black_icon').removeClass('submenu_black_icon').addClass('submenu_black_icon_up');
+    }
+
+    if(el.length > 0)
+    {
+        // just show it, toggle
+        el.toggle();
+        return false;
+    }
+
+    getpopulardeals = (((typeof(frontpage_preferences_like) == 'undefined') || (frontpage_preferences_like.length == 0)) && !$.browser.msie) ? 1 : 0;
+
+    // need to fetch it
+    args = {
+      'do' : 'getformhtml',
+      'ajax' : 1,
+      't' : (new Date).getTime(),
+      'getpopulardeals' :  getpopulardeals
+    };
+
+    $.getJSON('/frontpagefilters.php', args, function(data){
+        if(data.status == 'success')
+        {
+            $('#deal_list').before(data.html);
+            // overwrite to skip save the first time
+            frontpage_preference_skip_save = true;
+            frontpage_preferences();
+            if((data.populardeals.length > 0) && ($('#deal_list .populardeals').length == 0))
+            {
+                frontpage_populardeals_process(data.populardeals);
+                // $("#deal_list a.dealitem").filter('.populardeals').add("#deal_list a.populardeals .quickview").click(deal_list_item_click);
+            }
+        }
+        else
+        {
+            // error
+            alert('error fetching data');
+        }
+    });
+}
+
+function toggleFireDeals(ev)
+{
+    el = $('#fp_style_firedeals');
+
+    if(el.is(':checked'))
+    {
+        createCookie('fphidefiredeal', 0);
+    }
+    else
+    {
+        createCookie('fphidefiredeal', 1);
+    }
+    frontpage_preferences_update_categories();
+    // frontpage_preferences_update_check();
+}
+
+function toggleFrontpageRatings(ev)
+{
+    el = $('#fp_style_ratings');
+
+    if(el.is(':checked'))
+    {
+        $('.fp_votebar').show();
+        createCookie('fphideratings', 0);
+    }
+    else
+    {
+        $('.fp_votebar').hide();
+        createCookie('fphideratings', 1);
+    }
+}
+
+;/*
+ * jQuery truncate plugin, version 3.0 [2015-02-04]
+ * Copyright 2015, Perfect Sense Digital LLC
+ * Author: Brendan Brelsford [brendanb@gmail.com]
+ * Licensed under the MIT license [http://opensource.org/licenses/MIT]
+ *
+ * Usage:
+ *
+ *     Invocation
+ *
+ *     $('.selector').truncate(options);
+ *
+ *     Event Binding (after invocation)
+ *
+ *     $('.selector').truncate('bind', 'show', function(){ // do something when full text is shown});
+ *
+ * Events:
+ *
+ *     Events are triggered on the following state changes of the selected element.  No events are triggered
+ *     on the initial invocation of the truncate plugin.
+ *
+ *     "show" - Triggered when full text is shown.  If options.animate is specified to be true, then this event will fire
+ *                  after the animation has completed.
+ *
+ *     "hide" - Triggered when full text is truncated.  If options.animate is specified to be true, then this event will fire
+ *                  after the animation has completed.
+ *
+ *     "toggle" - Triggered both when full text is shown and truncated.  If options.animate is specified to be true, then this
+ *                  event will fire after the animation has completed.
+ *
+ * Options:
+ *
+ *     Options are passed as a flat javascript object with the following allowed keys:
+ *
+ *     "maxLines" - The maximum number of lines to display when the element is truncated.
+ *                  Allowed Values: integer > 0
+ *                  Default Value: 1
+ *
+ *     "lineHeight" - The line-height value that should be used to calculate the vertical truncation point.  If unspecified,
+ *                  it will be calculated using the CSS value from each selected element.
+ *                  Allowed Values: integer > 0
+ *                  Default Value: null
+ *
+ *     "truncateString" - Suffix to append to truncated text. e.g. &nbsp;&#8230; (non-breaking space followed by an ellipsis).
+ *                  Allowed Values: any string
+ *                  Default Value: ''
+ *
+ *     "truncateAfterLinks" - Indicates whether options.truncateString should be appended after anchor tags when the truncation
+ *                  point occurs inside an anchor tag.  Since the truncateString is not part of the original anchor text, it is
+ *                  desirable to exclude it from the anchor tag.  In cases where anchor tags display as block, however, this can
+ *                  cause the truncateString to display on a line below the anchor tag.
+ *                  Allowed Values: true / false
+ *                  Default Value: true
+ *
+ *     "showText" - If specified, will be shown as a hyperlink appended to the truncated text.  When clicked, this link
+ *                  will toggle the truncated element to its full-text state. e.g. ("more")
+ *                  Allowed Values: any string
+ *                  Default Value: ''
+ *
+ *     "hideText" - If specified, will be shown as a hyperlink appended to the full text.  When clicked, this link will
+ *                  toggle the full-text element to its truncated state.  e.g. ("less")
+ *                  Allowed Values: any string
+ *                  Default Value: ''
+ *
+ *     "showClass" - CSS class to be used when generating and selecting the clickable link to show the full text.
+ *                  Allowed Values: any string
+ *                  Default Value: 'show'
+ *
+ *     "hideClass" - CSS class to be used when generating and selecting the clickable link to hide the full text.
+ *                  Allowed Values: any string
+ *                  Default Value: 'hide'
+ *
+ *     "collapsed" - Indicates whether the truncated element should be initially displayed in a full-text or truncated state.
+ *                  Allowed Values: true / false
+ *                  Default Value: true
+ *
+ *     "debug" - Indicates whether messages should be written to console.log including the truncation execution time and
+ *                  number of binomal search steps used to truncate the full text.  The usage of console.log in this plugin
+ *                  is always safe for inclusion in IE.
+ *                  Allowed Values: true / false
+ *                  Default Value: false
+ *
+ *     "contextParent" - A parent DOM element to use as the cloned element for measuring height of the cloned text.  This is necessary
+ *                  when the text node can have its text displaced by floated elements inside a common parent.
+ *                  Allowed Values: jQuery object
+ *                  Default Value: null
+ *
+ *     "tooltip" - Indicates whether the original TEXT content should be set in a title attribute on the truncated element.  This will
+ *                  strip all HTML for compatibility with HTML attribute syntax.
+ *                  Allowed Values: true / false
+ *                  Default Value: false
+ *
+ *     "animate" - Indicates whether the user-initiated transitions between truncated and full text should animate the height.  
+ *                  Allowed Values: true / false
+ *                  Default Value: false
+ *
+ *     "animateOptions" - If specified, will be passed into jQuery's $.fn.animate options parameter.
+ *                  Allowed Values: object
+ *                  Default Value: empty object
+ *
+ * Methods:
+ *
+ *      Methods are invoked via $('.selector').truncate(methodName, arguments...)
+ *
+ *      "options" - Pass an object argument to reset the options.  This does not immediately trigger an updated truncation.
+ *
+ *      "update" - Takes an optional second argument to pass new HTML.  With or without the argument, the original truncated
+ *                 element will be re-truncated.  This is useful to hook into a callback when the truncated element can be
+ *                 subject to re-sizing (i.e. responsive design).  If no HTML is passed, but the contents of the truncated text
+ *                 have been modified, the modified text will be used in place of the original.
+ *
+ * Examples:
+ *
+ *     Truncate to 3 lines with a trailing ellipsis, "Read More" text when collapsed, and no hide text.
+ *
+ *     $('.selector').truncate({
+ *         'maxLines': 3,
+ *         'truncateString': '&nbsp;&#8230;',
+ *         'showText': 'Read More'
+ *     });
+ *
+ *     Truncate to 3 lines with a trailing ellipsis, relative to a context parent that includes a floated image.
+ *
+ *     var $el = $('.selector');
+ *     var $contextParent = $el.closest('.parent-selector');
+ *
+ *     $('.selector').truncate({
+ *         'maxLines': 3,
+ *         'truncateString': '&nbsp;&#8230;',
+ *         'contextParent': $contextParent
+ *     });
+ *
+ * Known Issues:
+ *
+ *     - Truncating HTML without consideration for the timing of web font loading will produce incorrectly truncated text.
+ *         In cases where web fonts are used, either delay truncation until after the web fonts are loaded or call the
+ *         "update" method after the web fonts have loaded.  A good plugin for detecting when a web font has been loaded is:
+ *
+ *         https://github.com/patrickmarabeas/jQuery-FontSpy.js
+ *
+ *         Which is based on Remy Sharp's usage of Comic Sans for determining whether a named font is loaded:
+ *
+ *         https://remysharp.com/2008/07/08/how-to-detect-if-a-font-is-installed-only-using-javascript
+ *
+ *     - The "update" method with 0 parameters will fail to recognize a change in the truncated HTML if the HTML length is
+ *         the same as before the change was made.
+ */
+
+
+if (typeof jQuery !== 'undefined') {
+    (function($) {
+        var cumulativeExecutionTime = 0;
+
+        // matching expression to determine the last word in a string.
+        var lastWordPattern = /(?:^|\W*)\w*$/;
+        // first word MUST be suffixed by non-alpha, since usage of this regexp occurs in a spliced segment of the original string
+        var firstWordPattern = /(?:\w+)(?=\W+|$)/;
+
+        // define "setNodeText" differently for Internet Explorer
+        var setNodeText = /msie/i.exec(navigator.userAgent) !== null ? function(node, text) {
+            node.nodeValue = text;
+        } : function(node, text) {
+            node.textContent = text;
+        };
+		
+		var browserFloorsLineHeight = false;
+		var browserRoundsBoxHeight = false;
+		
+		var calculateHeight = function(maxLines, lineHeight) {
+			
+			var rawHeight = maxLines * (browserFloorsLineHeight === true ? Math.floor(lineHeight) : lineHeight);
+			
+			return browserRoundsBoxHeight === true ? Math.round(rawHeight) : rawHeight;
+		};
+		
+		var calculateMaxHeight = function(maxLines, lineHeight) {
+			
+			var rawHeight = (maxLines + 1) * (browserFloorsLineHeight === true ? Math.floor(lineHeight) : lineHeight) - 1;
+			
+			return browserRoundsBoxHeight === true ? Math.round(rawHeight) : rawHeight;
+		};
+		
+		var setCustomBrowserBehavior = function() {
+			
+			var LINE_ROUND_UP_HEIGHT = 1.43125;
+			
+			var $detector = $('<div />', {
+				'id': 'truncate-detect-height-method',
+				'text': '. . . .' // two lines of text
+			});
+			
+			$detector.css({
+				'line-height': LINE_ROUND_UP_HEIGHT,
+				'font-size': '16px',
+				'font-family': 'sans-serif',
+				'width': 0,
+				'position': 'absolute',
+				'top': 0,
+				'left': 0,
+				'visibility': 'hidden'
+			});
+			
+			$('body').append($detector);
+			
+			var calculatedLineHeight = parseFloat($detector.css('line-height'));
+			
+			var delta = Math.abs(calculatedLineHeight * 4 - $detector.height());
+			
+			if(delta === 0) {
+				return;
+			}
+			
+			if(delta < 1) {
+				browserRoundsBoxHeight = true;
+			} else if(delta > 1) {
+				browserFloorsLineHeight = true;
+			}
+			
+			setCustomBrowserBehavior = function() { };
+		};
+
+        // defines a utility function to splice HTML at a text offset
+        var getHtmlUntilTextOffset = function(html, offset, truncateString, truncateAfterLinks) {
+
+            var queue = [];
+            var $html = $('<div/>');
+            $html.html(html);
+            var textLen = 0;
+
+            // testing var to prevent infinite loops
+            var count = 0;
+
+            // remove child nodes from this node and push all onto the queue in reverse order (this implements depth-first search).
+            var rootChildren = $html.contents().detach();
+            var n = 0;
+            for(n = rootChildren.size() - 1; n >= 0; n -= 1) {
+
+                queue.push({$parent: $html, node: rootChildren.get(n)});
+            }
+			
+			var queueItem, node, $node, nodeTextLen, nodeText, $nodeParent, match, lastWordOffset, children, i;
+
+            while((queue.length > 0) && (textLen < offset) && (count < 100)) {
+
+                queueItem = queue.pop();
+                node = queueItem.node;
+                $node = $(node);
+                nodeTextLen = 0;
+
+                // process text nodes distinctly from other node types
+                if(node.nodeType === 3) {
+
+                    $nodeParent = queueItem.$parent;
+
+                    // append $node to $html with children.  if children were detached above, then this is an empty node
+                    $nodeParent.append($node);
+
+                    nodeText = $node.text();
+                    nodeTextLen = nodeText.length;
+
+                    // if the text node's contents would put textLen above offset, perform truncation
+                    if (nodeTextLen > offset - textLen) {
+
+                        match = lastWordPattern.exec(nodeText.substring(0, offset - textLen));
+                        lastWordOffset = match.index + match[0].length;
+                        setNodeText(node, nodeText.substring(0, lastWordOffset));
+
+                        if(truncateString !== undefined) {
+                            if(!($nodeParent.is('a')) || truncateAfterLinks === false) {
+                                $nodeParent.append(truncateString);
+                            } else {
+                                $nodeParent.parent().append(truncateString);
+                            }
+                        }
+
+                        // stop processing nodes.  the last word that will not exceed the offset has been found.
+                        textLen += lastWordOffset;
+                        break;
+
+                    }
+					
+                    textLen += nodeTextLen;
+
+                } else {
+
+                    nodeText = $node.text();
+                    nodeTextLen = nodeText.length;
+
+                    // if the text content of this node and its children is greater than the gap between the accumulated text length and offset
+                    if(nodeTextLen > offset - textLen) {
+
+                        // remove child nodes from this node and push all onto the queue in reverse order (this implements depth-first search).
+                        children = $node.contents().detach();
+                        i = 0;
+                        for(i = children.size() - 1; i >= 0; i -= 1) {
+
+                            queue.push({$parent: $node, node: children.get(i)});
+                        }
+                    } else {
+
+                        textLen += nodeTextLen;
+                    }
+
+                    // append $node to $html with children.  if children were detached above, then this is an empty node
+                    queueItem.$parent.append($node);
+                }
+
+                if(textLen === offset) {
+                    queueItem.$parent.append(truncateString);
+                }
+            }
+
+            return $html.html();
+        };
+
+        var closestBlockLevelAncestor = function($el) {
+            var $parent = $el.parent();
+            while($parent !== undefined && $parent.size() > 0) {
+                if('inline' !== $parent.css('display')) {
+                    return $parent;
+                }
+                $parent = $parent.parent();
+            }
+            return null;
+        };
+
+        // define main workhorse method, "truncate" to be used both on the initial call and on subsequent invocations of the "update" method
+        var truncate = function($el, options, html) {
+
+            // declare variable to store response value - the char offset at which truncation occurred
+            var truncationPoint = null;
+
+            // define DEBUG function specific to each instance
+            var DEBUG = function() {
+
+                var isDebug = window.location.hash.indexOf("_debugTruncate") !== -1;
+                if((isDebug || options.debug === true) && window.console !== undefined) {
+                    if(/msie/i.exec(navigator.userAgent) !== null) {
+                        var output = "";
+                        var i;
+                        for(i = 0; i < arguments.length; i+= 1) {
+                            if(output.length > 0) {
+                                output += ", ";
+                            }
+                            if(typeof arguments[i] === 'function') {
+                                output += "[function]";
+                            } else if(typeof arguments[i] === 'object' && typeof JSON === 'object' && typeof JSON.stringify === 'function') {
+                                output += JSON.stringify(arguments[i]);
+                            } else {
+                                output += arguments[i].toString();
+                            }
+                        }
+                        console.log(output);
+                    } else {
+                        try {
+                            console.log.apply(null, arguments);
+                        } catch(e) {
+                            console.log(arguments);
+                        }
+                    }
+                }
+            };
+			
+			setCustomBrowserBehavior();
+
+            // options-based variables
+            var showLinkHtml = options.showText !== '' ? ' <a class="' + options.showClass + '" href="#">' + options.showText + '</a>' : '';
+            var hideLinkHtml = options.hideText !== '' ? ' <a class="' + options.hideClass + '" href="#">' + options.hideText + '</a>' : '';
+            var maxHeight = calculateHeight(options.maxLines, options.lineHeight);
+            var realMaxHeight = calculateMaxHeight(options.maxLines, options.lineHeight);
+
+            // used to debug the execution time
+            var startTime = new Date();
+
+            // this variable is used to hold the un-truncated HTML, since $el may already contain truncated HTML
+            var $html = $('<div/>');
+            $html.html(html);
+
+            // proceed if the element has already been truncated, or if its height is larger than the real max height
+            if ($el.data('truncatePlugin') !== undefined || $el.height() > realMaxHeight) {
+
+                // check whether a $parent element was specified for a larger DOM context
+                var $contextParent = (options.contextParent === null || options.contextParent === $el) ? $el : $(options.contextParent);
+
+                // clone of the selected element
+                var $doppleText;
+                // clone of the options.contextParent, for use when contextParent is specified
+                var $doppleParent;
+
+                // If the contextParent contains the selected element, then they are ancestor-descendent.
+                // If not, then set the contextParent to the element itself.
+                if($contextParent.find($el).size() > 0) {
+
+                    // If a contextParent was specified, then the cloned element itself must be found
+                    // by navigating the original HTML structure and mirroring the navigation in the
+                    // cloned HTML structure.
+                    var childOffsets = [];
+                    var $node = $el;
+                    var $closestParent = $node.parent();
+                    while($closestParent.size() !== 0 && !($closestParent.find($contextParent).size() > 0)) {
+
+                        childOffsets.unshift($node.index());
+                        $node = $closestParent;
+                        $closestParent = $closestParent.parent();
+                    }
+
+                    // The array of childOffsets stores the offset of the cloned element's ancestor at each
+                    // level of the DOM heirarchy, relative to the cloned parent.  By iteratively navigating
+                    // to the specified child index, the cloned element can be found.
+                    $doppleParent = $contextParent.clone();
+                    $doppleText = $doppleParent;
+                    var i, offset;
+                    for(i = 0; i < childOffsets.length; i += 1) {
+                        offset = childOffsets[i];
+                        $doppleText = $doppleText.children().eq(offset);
+                    }
+
+                    // Always reset the html of the clone, because this function is used both for initial and repeat
+                    // truncations.  In the latter case, $el.html() is already truncated, so the clone must use the original
+                    // html, passed as a parameter to this method.
+                    $doppleText.html(html);
+                } else {
+
+                    $doppleText = $el.clone();
+                    // Always reset the html of the clone (see directly above)
+                    $doppleText.html(html);
+                    $doppleParent = $doppleText;
+                }
+
+                var width;
+                if($contextParent.css('-moz-box-sizing') === 'border-box'
+                    || $contextParent.css('-webkit-box-sizing') === 'border-box'
+                    || $contextParent.css('box-sizing') === 'border-box') {
+                    width = $contextParent.outerWidth();
+                } else {
+                    width = $contextParent.width();
+                }
+
+                // Position the clone outside the page but still visibile, so that the browser can accurately detect
+                // its height during the binary search.
+                $doppleParent.css({
+                    'position': 'absolute',
+                    'left': '0',
+                    'top': '0',
+                    'visibility': 'hidden',
+                    'max-width': width // set max-width instead of width, because setting width directly can result in small display deviations
+                });
+                // Enforce the 'line-height' style to ensure that the calculation is correct.
+                $doppleText.css({
+                    'line-height': options.lineHeight + 'px',
+                    'height': 'auto'
+                });
+
+                $contextParent.after($doppleParent);
+
+                // Determine the un-truncated HTML height by measuring the cloned element.  This will work both for initial and
+                // repeat calls to "truncate".
+                var originalHeight = $doppleText.height();
+
+                // This second check is for elements that have already been truncated before, because the true "originalHeight"
+                // can only be determined in these cases after the $doppleText has been appended to the DOM
+                if(originalHeight > realMaxHeight) {
+
+                    var textString = $html.text();
+                    var near = 0;
+                    var far = textString.length;
+                    var mid = far;
+                    var truncatedHtml;
+
+                    var count = 0;
+					var avg, nextWord, nextWordAt;
+
+                    // Iterate either until the binary search has ended or options.maxSteps has been reached
+                    // Three markers are used to implement the binary search: near, mid, and far.
+                    do {
+                        if($doppleText.height() > realMaxHeight) {
+                            // If the text is too long, bring in the "far" marker
+                            far = mid;
+                        } else {
+                            // If the text is too short, push out the "near" marker
+                            near = mid;
+                        }
+
+                        // re-calculate the new mid to be the closest word boundary before the numerical midpoint of near & far
+                        avg = Math.floor((far + near) / 2);
+                        mid = lastWordPattern.exec(textString.substring(0, avg)).index;
+
+                        // if this puts mid equal to near, try the first word pattern after the numerical midpoint of near & far
+                        if(mid === near) {
+                            nextWord = firstWordPattern.exec(textString.substring(avg, far));
+                            if(nextWord !== null) {
+                                nextWordAt = avg + nextWord.index + nextWord[0].length;
+                                if(nextWordAt !== far) {
+                                    mid = nextWordAt;
+                                }
+                            }
+                        }
+
+                        // Re-truncate the original HTML up to "mid" and put it into the cloned element
+                        truncatedHtml = getHtmlUntilTextOffset(html, mid, options.truncateString, options.truncateAfterLinks);
+                        $doppleText.html(truncatedHtml + showLinkHtml);
+                        count += 1;
+                    } while((count < options.maxSteps) && (mid > near) && (mid < far));
+
+                    // truncatedHtml is already stored, so remove the cloned element
+                    $doppleParent.remove();
+
+                    // Append the either html + hideLinkHtml or truncatedHTML + showLinkHtml based on options.collapsed
+                    if(options.collapsed === false) {
+                        $el.html(html + hideLinkHtml);
+                    } else {
+                        $el.html(truncatedHtml + showLinkHtml);
+                    }
+
+                    // Enforce block display and the specified line-height on the truncated element
+                    $el.css({
+                        'display': 'block',
+                        'line-height': options.lineHeight + 'px'
+                    });
+
+                    $el.undelegate('truncate');
+                    // Delegate handlers to ".show" and ".hide" that swap the original / truncated HTML on click
+                    $el.delegate('.' + options.showClass, 'click.truncate', function(event) {
+
+                        event.preventDefault();
+
+                        // fix the height before swapping in full content
+
+                        $el.css({'height': maxHeight + 'px'});
+                        $el.html(html + hideLinkHtml);
+                        var $animateDfd = new $.Deferred();
+                        $animateDfd.then(function() {
+
+                            $el.css({'height': 'auto'});
+                            $el.trigger('show');
+                            $el.trigger('toggle');
+                            if(options.tooltip === true) {
+                                $el.removeAttr('title');
+                            }
+                        });
+
+                        if(options.animate === true) {
+                            var oldAnimateComplete = options.animateOptions.complete;
+                            var animateOptions = $.extend(true, { }, options.animateOptions, {
+                                'complete': function() {
+                                    $animateDfd.resolve();
+                                    oldAnimateComplete.apply(this, Array.prototype.slice.call(arguments, 1));
+                                }
+                            });
+                            $el.animate({
+                                'height': originalHeight + 'px'
+                            }, animateOptions);
+                        } else {
+                            $animateDfd.resolve();
+                        }
+                    });
+
+                    $el.delegate('.' + options.hideClass, 'click.truncate', function(event) {
+
+                        event.preventDefault();
+
+                        var $animateDfd = new $.Deferred();
+                        $animateDfd.then(function() {
+                            $el.html(truncatedHtml + showLinkHtml);
+                            $el.trigger('hide');
+                            $el.trigger('toggle');
+                            if(options.tooltip === true) {
+                                $el.attr('title', textString);
+                            }
+                        });
+
+                        if(options.animate === true) {
+                            var oldAnimateComplete = options.animateOptions.complete;
+                            var animateOptions = $.extend(true, { }, options.animateOptions, {
+                                'complete': function() {
+                                    $animateDfd.resolve();
+                                    oldAnimateComplete.apply(this, Array.prototype.slice.call(arguments, 1));
+                                }
+                            });
+                            $el.animate({
+                                'height': maxHeight + 'px'
+                            }, animateOptions);
+                        } else {
+                            $animateDfd.resolve();
+                        }
+                    });
+
+                    if(options.tooltip === true) {
+                        $el.attr('title', textString);
+                    }
+                    DEBUG("truncate.js: truncated element with height " + originalHeight + "px > " + realMaxHeight + "px in " + count + " steps.");
+                    truncationPoint = mid;
+
+                } else {
+                    $doppleParent.remove();
+                    $el.html(html);
+                    if(options.tooltip === true) {
+                        $el.removeAttr('title');
+                    }
+                    truncationPoint = html.length;
+                }
+            } else {
+                DEBUG("truncate.js: skipped processing element with height " + $el.height() + "px < " + realMaxHeight + "px");
+                truncationPoint = html.length;
+            }
+
+            var endTime = new Date();
+
+            cumulativeExecutionTime += (endTime - startTime);
+            DEBUG("truncate.js: took " + (endTime - startTime) + "  ms to execute.");
+            DEBUG("truncate.js: ", $el);
+            DEBUG("truncate.js: cumulative execution time " + cumulativeExecutionTime + " ms");
+            return truncationPoint;
+        };
+
+        function Truncate(el, options) {
+
+            // --- Defaults ---
+            this.defaults = {
+                'maxLines': 1,
+                'lineHeight': null,
+                'truncateString': '',
+                'truncateAfterLinks': true,
+                'showText': '',
+                'hideText': '',
+				'showClass': 'show',
+				'hideClass': 'hide',
+                'collapsed': true,
+                'debug': false,
+                'contextParent': null,
+                'maxSteps': 100,
+                'tooltip': false,
+                'animate': false,
+                'animateOptions': {
+                    'complete': function() { }
+                }
+            };
+
+            // extend the default config with specified options
+            this.config = $.extend(true, { }, this.defaults, options);
+
+            // store a reference to the jQuery object
+            this.$el = $(el);
+
+            if(this.config.lineHeight === null) {
+                var empiricalLineHeight = NaN;
+                if("normal" === this.$el.css('line-height')) {
+
+                    // Translate "normal" to a numeric pixel line-height: http://stackoverflow.com/questions/3614323/jquery-css-line-height-of-normal-px
+                    empiricalLineHeight = 1.14 * parseFloat(this.$el.css('font-size'));
+                }
+                else if (this.$el.css('line-height').indexOf('px') === -1) {
+                    empiricalLineHeight = this.$el.css('line-height') * parseFloat(this.$el.css('font-size'));
+                } else {
+                    empiricalLineHeight = parseFloat(this.$el.css('line-height'));
+                }
+
+                if(!isNaN(empiricalLineHeight)) {
+                    this.config.lineHeight = empiricalLineHeight;
+                } else {
+                    throw new Error("No \"lineHeight\" parameter was specified and none could be calculated.");
+                }
+            }
+
+            if('inline' === this.$el.css('display')) {
+                if(this.config.contextParent === null) {
+                    this.config.contextParent = closestBlockLevelAncestor(this.$el);
+                } else if('inline' === this.config.contextParent.css('display')) {
+                    this.config.contextParent = closestBlockLevelAncestor(this.config.contextParent);
+                }
+            }
+
+            this.html = this.$el.html();
+            this.lastTruncationPoint = null;
+        }
+
+        Truncate.prototype = {
+
+            options: function(options) {
+                if(typeof options === 'object') {
+                    this.config = $.extend(true, { }, this.config, options);
+                    return;
+                }
+                return this.config;
+            },
+
+            update: function(updatedHtml) {
+
+                if(updatedHtml === undefined) {
+                    var elementHtml = this.$el.html();
+                    if(this.lastHtmlLength !== undefined && elementHtml.length !== this.lastHtmlLength) {
+                        updatedHtml = elementHtml.substring(0,this.lastTruncationPoint) + this.html.substring(this.lastTruncationPoint);
+                        this.html = updatedHtml;
+                    }
+                } else {
+                    this.html = updatedHtml;
+                }
+                this.lastTruncationPoint = truncate(this.$el, this.config, this.html);
+                this.lastHtmlLength = this.$el.html().length;
+            },
+
+            'getOriginalHtml': function() {
+                return this.html;
+            }
+        };
+
+        $.fn.truncate = function(methodName) {
+
+            var $el = $(this);
+
+            if(methodName === undefined || methodName === null || typeof methodName === 'object') {
+
+                $el.each(function() {
+                    var $this = $(this);
+                    var plugin = new Truncate($this, methodName);
+                    $this.data('truncatePlugin', plugin);
+                    plugin.lastTruncationPoint = truncate($this, plugin.config, plugin.html);
+                    plugin.lastHtmlLength = $this.html().length;
+                });
+            }
+
+            var result;
+            var methodArgs = arguments;
+
+            if(typeof methodName === 'string') {
+                $el.each(function() {
+                    var plugin = $(this).data('truncatePlugin');
+                    if(typeof plugin[methodName] === 'function') {
+                        var newResult = plugin[methodName].apply(plugin, Array.prototype.slice.call(methodArgs, 1));
+                        if(result === undefined) {
+                            result = newResult;
+                        }
+                    }
+                });
+            }
+
+            return result !== undefined ? result : this;
+        };
+    }(jQuery));
+}
+
+;/**
+ *
+ * @param {jQuery} $content jquery element
+ * @property {number} count     Static, keeps track of how many Modal instances are showing
+ * @constructor
+ *
+ */
+
+function Modal($content)
+{
+    this.content = $content;
+    Modal.count = 0;
+}
+
+Modal.prototype.show = function ()
+{
+    this.content.show();
+    this.content.addClass('modaled');
+    Modal.count = Modal.count + 1;
+    Overlay.show();
+};
+
+Modal.prototype.hide = function ()
+{
+    this.content.hide();
+    this.content.removeClass('modaled');
+    Modal.count = Modal.count - 1;
+    Overlay.hide();
+};
+
+/**
+ * @type {Overlay} "singleton" Object that handles showing and hiding of overlay element
+ * Open when the first instance of a Modal object is shown
+ * If there are multiple modals, only hide the overlay after the last one closes
+ */
+var Overlay = {
+    show   : function ()
+    {
+        if (Modal.count == 1)
+        {
+            $(".modalOverlay").show();
+        }
+    },
+    hide   : function ()
+    {
+        if (Modal.count < 1)
+        {
+            $(".modalOverlay").hide();
+        }
+    },
+    hideAll: function ()
+    {
+        if (Modal.count > 0)
+        {
+            $('.modaled').hide().removeClass('modaled');
+            Modal.count = 0;
+            Overlay.hide();
+        }
+    }
+};
+
+
+/**
+ *  these will be Modal instances
+ */
+var dealAlertModal, resendValidationModal;
+
+$(document).ready(function () {
+
+    $(".price.truncate").truncate({
+        'maxLines': 3,
+        'truncateString': '&#8230;'
+    });
+
+    $(window).resize(function() {
+        $('.price.truncate').truncate('update');
+    });
+
+    if ($("#deleteAlert").length)
+    {
+        dealAlertModal = new Modal($("#deleteAlert"));
+    }
+
+    if ($("#resendValidation").length)
+    {
+        resendValidationModal = new Modal($("#resendValidation"));
+    }
+
+    if ($(".modalOverlay").length)
+    {
+        $(".modalOverlay").click(function () {
+            Overlay.hideAll();
+        });
+    }
+
+    $(".aboutInfo").on("click", function() {
+        var $aboutInfoDropdown = $(".aboutInfoDropdown");
+        var $darkOverlay = $(".darkOverlay");
+        $aboutInfoDropdown.toggle();
+        $darkOverlay.toggle();
+        var topHeight = $aboutInfoDropdown.offset().top + $aboutInfoDropdown.outerHeight();
+        $darkOverlay.css("top", topHeight);
+    });
+
+    if (window.devicePixelRatio && devicePixelRatio >= 2)
+    {
+        var $testElm = $('<div style="border: 0.5px solid transparent;"></div>');
+        $('body').append($testElm);
+        if ($testElm.get(0).offsetHeight == 1)
+        {
+            $('body').addClass('hairlines');
+        }
+    }
+
+    $('.navigation a').on('click', function () {
+        if ($('.navigation').is(':visible'))
+        {
+            $('.navigation').hide();
+            $(".nav-icon").removeClass("menu-hover");
+        }
+    });
+
+    $(".nav-icon").click(function (e) {
+        var $this = $(this);
+        if ($(".pageWrapper.floating").length > 0)
+        {
+            resizeNavigation();
+        }
+        $(this).toggleClass("menu-hover");
+        $(".navigation").toggle(0, function () {
+            $this.find('.messageCount').toggle(!$(this).is(':visible'));
+            if(!$(this).is(':visible') && location.pathname == "/coupons/")
+            {
+                $(".search").show();
+            }
+        });
+        e.preventDefault();
+    });
+
+    $(".current-page select").on("change", function (e) {
+        location = $(this).val();
+    });
+
+    $(".coupon-share").on('click', function () {
+        $(".modal").toggle();
+        $(".modalOverlay").toggle();
+    });
+
+    $(".deal-share").on('click', function () {
+        $(".modal").toggle();
+        $(".modalOverlay").toggle();
+    });
+
+    $(".modal .close").on('click', function () {
+        $(".modal").toggle();
+        $(".modalOverlay").toggle();
+    });
+
+    $(".coupon-info div a, .mobile-coupon-icon a .checkHref").not('.shareCoupon').on('click', function (e) {
+        e.stopPropagation();
+        checkHref($(this), e);
+    });
+
+    $(".coupon-wrapper a.checkHref").on('click', function(e) {
+        e.stopPropagation();
+        checkHref($(this), e);
+    });
+
+    //Prevent clicks to 'More' from bubbling up
+    $('a.couponDescText').on('click','.show', function(e) {
+        e.stopPropagation();
+    });
+
+    $("#updateDealAlert").on('click', function (e) {
+        e.preventDefault();
+        $.post("/forums/sddealalerts_ajax.php", $(e.target).closest('form').serialize(), function (data) {
+            if (data.success === false)
+            {
+                $("#errorMsg").html(data.error);
+            }
+            else
+            {
+                location = "/deal-alerts/";
+            }
+        }, "json");
+    });
+
+    $("#deleteDA").on('click', function (e) {
+        e.preventDefault();
+        if (typeof dealAlertModal != 'undefined')
+        {
+            dealAlertModal.show();
+        }
+    });
+
+    $("#deleteAlert .deleteBtn").on('click', function (e) {
+        e.preventDefault();
+        $.post("/forums/sddealalerts_ajax.php", {
+            'do': "delete", 'dealalertid': $("#deleteDA").data('sddealalertid')
+        }, function (data) {
+            if (data.success === false)
+            {
+                if (typeof dealAlertModal != 'undefined')
+                {
+                    dealAlertModal.hide();
+                }
+                $("#errorMsg").html(data.error);
+            }
+            else
+            {
+                location = "/deal-alerts/";
+            }
+        }, "json");
+    });
+
+    $("#deleteAlert .cancelBtn").on('click', function (e) {
+        e.preventDefault();
+        if (typeof dealAlertModal != 'undefined')
+        {
+            dealAlertModal.hide();
+        }
+    });
+
+    $("#resendValidation .resendValidationBtn").on('click', function (e) {
+        e.preventDefault();
+        $.resendValidation({
+            success : function (message) {
+                if (typeof resendValidationModal != 'undefined')
+                {
+                    resendValidationModal.hide();
+                }
+                alert(message);
+            }, error: function (errorMessage) {
+                if (typeof resendValidationModal != 'undefined')
+                {
+                    resendValidationModal.hide();
+                }
+                alert(errorMessage);
+            }
+        });
+    });
+
+    $("#resendValidation .cancelBtn").on('click', function (e) {
+        e.preventDefault();
+        if (typeof resendValidationModal != 'undefined')
+        {
+            resendValidationModal.hide();
+        }
+    });
+
+    if (typeof $.deparam != "undefined")
+    {
+        var params;
+        if ((location.pathname == "/newsearch.php") || (location.pathname == "/storelist.php"))
+        {
+            params = $.deparam.querystring(location.href);
+            if (params.q)
+            {
+                toggleSearch();
+            }
+        }
+
+        if (location.pathname == "/forums/sddealalerts_ajax.php")
+        {
+            params = $.deparam.querystring(location.href);
+            if (params['do'] == "get-edit")
+            {
+                toggleOptions();
+            }
+        }
+
+        if (location.pathname.indexOf("/coupons/") >= 0)
+        {
+            params = $.deparam.querystring(location.href);
+            if (params.couponid)
+            {
+                $("body").addClass("whiteBg");
+            }
+        }
+    }
+
+
+    function checkHref($el, e)
+    {
+        e.preventDefault();
+        window.open($el.attr('href'));
+        if ($el.data('href2'))
+        {
+            location.href = $el.data('href2');
+        }
+    }
+});
+
+function setHistoryState(strToAdd, strToRemove)
+{
+    var getSections = location.search.split("&");
+    getSections[0] = getSections[0].indexOf('?') === 0 ? getSections[0].substr(1) : getSections[0];
+    if (strToAdd && location.search.indexOf(strToAdd) === -1)
+    {
+        getSections.push(strToAdd);
+    }
+
+    getSections = getSections.reduce(function (prev, curr) {
+        if (curr !== strToRemove && curr.length > 0)
+        {
+            prev.push(curr);
+        }
+        return prev;
+    }, []);
+    history.replaceState({}, '', getSections.length > 0 ? "?" + getSections.join("&") : location.pathname);
+}
+
+function toggleSearch()
+{
+    if ($(".pageWrapper.floating").length > 0)
+    {
+        resizeNavigation();
+    }
+    $(".nav-icon").removeClass("menu-hover");
+    $(".navigation").hide();
+}
+
+function hideItem(className)
+{
+    var elements = document.getElementsByClassName(className), length = elements.length;
+    for (var i = 0; i < length; i++)
+    {
+        elements[i].style.display = 'none';
+    }
+
+    return length;
+}
+
+function showItem(className)
+{
+    var elements = document.getElementsByClassName(className), length = elements.length;
+    for (var i = 0; i < length; i++)
+    {
+        elements[i].style.display = 'block';
+    }
+
+    return length;
+}
+
+function moreContent(adTag, adWidth, adHeight, adSlotName, adSlotNum, instant, customSegments)
+{
+    // Recommended - probably not.  But really easy way to see if an array is actually an array.
+    Array.prototype.sdIsArray = true;
+
+    instant = instant || false;
+    customSegments = customSegments || {};
+
+    function moreContentCb() {
+        window.adMap = window.adMap || {};
+        var tagName = adTag, dimArr = [];
+        if (typeof adSlotNum != 'undefined')
+        {
+            tagName = tagName.replace('%p%', "p" + adSlotNum);
+        }
+        googletag.cmd.push(function () {
+            if (typeof adMap[adSlotName] == 'undefined')
+            {
+                if (adWidth.sdIsArray || adHeight.sdIsArray)
+                {
+                    if (adWidth.sdIsArray && adHeight.sdIsArray && adWidth.length === adHeight.length)
+                    {
+                        dimArr = adWidth.map(function (val, i) {
+                            return [val, adHeight[i]];
+
+                        });
+
+                        adMap[adSlotName] = googletag.defineSlot('/1006041/' + tagName, dimArr, adSlotName);
+                    }
+                    else
+                    {
+                        throw "adWidth and Height must both be Arrays and be of equal length.";
+                    }
+                }
+                else
+                {
+                    adMap[adSlotName] = googletag.defineSlot('/1006041/' + tagName, [adWidth, adHeight], adSlotName);
+                }
+                adMap[adSlotName].addService(googletag.pubads());
+                for (var segment in customSegments)
+                {
+                    adMap[adSlotName].setTargeting(segment, customSegments[segment]);
+                }
+            }
+            googletag.display(adSlotName);
+        });
+    }
+
+    if (instant)
+    {
+        moreContentCb();
+    }
+    else
+    {
+        $(window).load(moreContentCb);
+    }
+}
+var sd_mcaq = sd_mcaq || [];
+for (var i = 0; i < sd_mcaq.length; i++)
+{
+    moreContent.apply(window, sd_mcaq[i]);
+}
+sd_mcaq = [];
+sd_mcaq.push = function () {
+    for (var i = 0; i < arguments.length; i++)
+    {
+        moreContent.apply(window, arguments[i]);
+    }
+};
+
+function toggleOptions()
+{
+    if ($(".moreOptionsBlock").css('display') == 'none')
+    {
+        $(".moreOptionsBlock").show();
+        $("#moreOptions").text('Fewer Options');
+    }
+    else
+    {
+        $(".moreOptionsBlock").hide();
+        $("#moreOptions").text('More Options');
+    }
+}
+
+$(window).load(function () {
+    $(".lazyAvatar").lazyload({
+        'effect': 'show',
+        'event': 'sporty',
+        'skip_invisible': false
+    }).trigger("sporty");
+
+    $(".lazyDealImage").lazyload({
+        'effect': 'show',
+        'event': 'sporty',
+        'skip_invisible': false
+    }).trigger("sporty");
+
+    if (isiOS())
+    {
+        $('.pageWrapper').addClass('ios');
+    }
+
+    $('#resend_validation').click(function (event) {
+        event.preventDefault();
+        $.resendValidation({
+            success : function (message) {
+                alert(message);
+            }, error: function (errorMessage) {
+                alert(errorMessage);
+            }
+        });
+    });
+});
+
+window.addEventListener("resize", resizeNavigation, false);
+window.addEventListener('orientationchange', resizeNavigation, false);
+
+function isiOS()
+{
+    return /iPad|iPhone|iPod/.test(navigator.userAgent);
+}
+
+function resizeNavigation()
+{
+    if ($('#navigation').length)
+    {
+        if (Math.abs(window.orientation) == 90)
+        {
+            $('#navigation').css('height', '280px');
+        }
+        else
+        {
+            $('#navigation').css('height', $(window).height() - 55);
+        }
+    }
+}
+
+;/*!
+ * jQuery Cookie Plugin v1.4.1
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2006, 2014 Klaus Hartl
+ * Released under the MIT license
+ */
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['jquery'], factory);
+	} else if (typeof exports === 'object') {
+		// CommonJS
+		factory(require('jquery'));
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}(function ($) {
+
+	var pluses = /\+/g;
+
+	function encode(s) {
+		return config.raw ? s : encodeURIComponent(s);
+	}
+
+	function decode(s) {
+		return config.raw ? s : decodeURIComponent(s);
+	}
+
+	function stringifyCookieValue(value) {
+		return encode(config.json ? JSON.stringify(value) : String(value));
+	}
+
+	function parseCookieValue(s) {
+		if (s.indexOf('"') === 0) {
+			// This is a quoted cookie as according to RFC2068, unescape...
+			s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+		}
+
+		try {
+			// Replace server-side written pluses with spaces.
+			// If we can't decode the cookie, ignore it, it's unusable.
+			// If we can't parse the cookie, ignore it, it's unusable.
+			s = decodeURIComponent(s.replace(pluses, ' '));
+			return config.json ? JSON.parse(s) : s;
+		} catch(e) {}
+	}
+
+	function read(s, converter) {
+		var value = config.raw ? s : parseCookieValue(s);
+		return $.isFunction(converter) ? converter(value) : value;
+	}
+
+	var config = $.cookie = function (key, value, options) {
+
+		// Write
+
+		if (arguments.length > 1 && !$.isFunction(value)) {
+			options = $.extend({}, config.defaults, options);
+
+			if (typeof options.expires === 'number') {
+				var days = options.expires, t = options.expires = new Date();
+				t.setTime(+t + days * 864e+5);
+			}
+
+			return (document.cookie = [
+				encode(key), '=', stringifyCookieValue(value),
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.path    ? '; path=' + options.path : '',
+				options.domain  ? '; domain=' + options.domain : '',
+				options.secure  ? '; secure' : ''
+			].join(''));
+		}
+
+		// Read
+
+		var result = key ? undefined : {};
+
+		// To prevent the for loop in the first place assign an empty array
+		// in case there are no cookies at all. Also prevents odd result when
+		// calling $.cookie().
+		var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+		for (var i = 0, l = cookies.length; i < l; i++) {
+			var parts = cookies[i].split('=');
+			var name = decode(parts.shift());
+			var cookie = parts.join('=');
+
+			if (key && key === name) {
+				// If second argument (value) is a function it's a converter...
+				result = read(cookie, value);
+				break;
+			}
+
+			// Prevent storing a cookie that we couldn't decode.
+			if (!key && (cookie = read(cookie)) !== undefined) {
+				result[name] = cookie;
+			}
+		}
+
+		return result;
+	};
+
+	config.defaults = {};
+
+	$.removeCookie = function (key, options) {
+		if ($.cookie(key) === undefined) {
+			return false;
+		}
+
+		// Must not alter options, thus extending a fresh object...
+		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
+		return !$.cookie(key);
+	};
+
+}));
+
+;if (typeof(window.SD) === "undefined")
+{
+    window.SD = {};
+}
+(function (SD)
+{
+    var decodeCombinedCookie = function (cookieData)
+    {
+        if (!cookieData)
+        {
+            return {};
+        }
+        var keyValuePairs = cookieData.split("&");
+
+        var cookieMap = {};
+        $.each(keyValuePairs, function (index, keyValuePair)
+        {
+            var arr = keyValuePair.split("=");
+            cookieMap[arr[0]] = decodeURIComponent(arr[1]);
+        });
+
+        return cookieMap;
+    };
+
+    var encodeCombinedCookie = function (cookieMap)
+    {
+        var keyValuePairs = [];
+        $.each(cookieMap, function (key, value)
+        {
+            keyValuePairs.push(key + "=" + encodeURIComponent(value));
+        });
+        return keyValuePairs.join("&");
+    };
+
+    var CombinedCookie = function (containerName, currentCookieData, cookieOptions, cookieDefinitions)
+    {
+        this.containerName = containerName;
+        this.decodedCookie = decodeCombinedCookie(currentCookieData);
+        this.cookieOptions = cookieOptions;
+        this.cookieDefinitions = cookieDefinitions || {};
+    };
+
+    CombinedCookie.prototype.getCookie = function (cookieName)
+    {
+        var value = this.decodedCookie[cookieName];
+        if (this.cookieDefinitions[cookieName])
+        {
+            value = this.cookieDefinitions[cookieName].deserialize(value);
+        }
+        return value;
+    };
+
+    CombinedCookie.prototype.setCookie = function (cookieName, value)
+    {
+        if (value === null)
+        {
+            delete this.decodedCookie[cookieName];
+        }
+        else
+        {
+            if (this.cookieDefinitions[cookieName])
+            {
+                value = this.cookieDefinitions[cookieName].serialize(value);
+            }
+            this.decodedCookie[cookieName] = value;
+        }
+        var oldRaw = $.cookie.raw;
+        var oldJson = $.cookie.json;
+        $.cookie.raw = true;
+        $.cookie.json = false;
+        $.cookie(this.containerName, encodeCombinedCookie(this.decodedCookie), this.cookieOptions);
+        $.cookie.raw = oldRaw;
+        $.cookie.json = oldJson;
+    };
+
+    var oldRaw = $.cookie.raw;
+    var oldJson = $.cookie.json;
+    $.cookie.raw = true;
+    $.cookie.json = false;
+
+    var callQueue = [];
+    if (SD.CookieService && SD.CookieService.callQueue)
+    {
+        callQueue = SD.CookieService.callQueue;
+    }
+
+    SD.CookieService = {
+        persistent: new CombinedCookie('sd_p', $.cookie("sd_p"), {
+            expires: 365,
+            path: '/',
+            domain: "." + window.location.hostname
+        }),
+        session: new CombinedCookie(
+                'sd_s',
+                $.cookie("sd_s"),
+                {
+                    path: '/',
+                    domain: "." + window.location.hostname
+                },
+                {
+                    funnel: (function ()
+                    {
+                        var FunnelTypes = function (cookieObj)
+                        {
+                            var funnelData = {};
+                            $.each(cookieObj, function (key, value)
+                            {
+                                var state = value.substr(0, 1);
+                                var entryData = value.substr(1).split(',');
+                                var entryPoint = decodeURIComponent(entryData.shift());
+                                var startPage = entryData.join(',');
+                                funnelData[key] = {state: state, entryPoint: entryPoint, startPage: startPage};
+                            });
+
+                            this.funnelData = funnelData;
+                        };
+                        FunnelTypes.prototype.getType = function (type)
+                        {
+                            return this.funnelData[type];
+                        };
+                        FunnelTypes.prototype.setType = function (type, state, entryPoint, startPage)
+                        {
+                            this.funnelData[type] = {state: state, entryPoint: entryPoint, startPage: startPage};
+                        };
+                        FunnelTypes.prototype.getSerializedType = function (type)
+                        {
+                            var typeData = this.funnelData[type];
+                            return typeData.state + typeData.entryPoint.replace(/[,%]/g, encodeURIComponent) + ',' + typeData.startPage;
+                        };
+                        return {
+                            serialize: function (json)
+                            {
+                                var serializedArray = [];
+                                $.each(json.funnelData, function (k, v)
+                                {
+                                    var value = v.state + v.entryPoint;
+                                    serializedArray.push(
+                                            k.replace(/[&=;%]/g, encodeURIComponent)
+                                            + '='
+                                            + json.getSerializedType(k).replace(/[&;%]/g, encodeURIComponent)
+                                    );
+                                });
+
+                                return serializedArray.join('&');
+                            },
+                            deserialize: function (serialized)
+                            {
+                                if (!serialized)
+                                {
+                                    return new FunnelTypes({});
+                                }
+                                var json = {}, serializedArray = serialized.split('&');
+                                $.each(serializedArray, function (index, keyValuePair)
+                                {
+                                    var arr = keyValuePair.split("=");
+                                    json[decodeURIComponent(arr.shift())] = decodeURIComponent(arr.join('='));
+                                });
+
+                                return new FunnelTypes(json);
+                            }
+                        };
+                    })()
+                }
+        )
+    };
+    $.each(callQueue, function (index, callback)
+    {
+        callback();
+    });
+    SD.CookieService.callQueue = {
+        push: function (callback)
+        {
+            callback();
+        }
+    };
+    $.cookie.raw = oldRaw;
+    $.cookie.json = oldJson;
+})(window.SD);
+;(function (window)
+{
+    var parseQueryString = function (queryString)
+    {
+        if (!queryString.length) return {};
+        var queryStringKVPairs = queryString.split('&'),
+                queryMap = {};
+
+
+        for (var i = 0; i < queryStringKVPairs.length; i++)
+        {
+            var kv = queryStringKVPairs[i].split('=');
+            queryMap[decodeURIComponent(kv.shift())] = decodeURIComponent(kv.join('='));
+        }
+
+        return queryMap;
+    };
+
+    var parseGacSessionData = function (cookieString)
+    {
+        var gaqCookie = cookieString.match(/__utmz=(?:[0-9]+\.)+([^;]+)/);
+
+        if (!gaqCookie) return {};
+        var parameters = ("|" + gaqCookie[1]).match(/\|utmc[a-z]{2}=.*?(?=\|utm|$)/g);
+        var campaign = {};
+        for (var i = 0; i < parameters.length; i++)
+        {
+            var kv = parameters[i].substr(1).split('=');
+            var k = kv.shift();
+            var v = decodeURIComponent(kv.join('='));
+
+            if (k == 'utmcsr') campaign.source = v;
+            if (k == 'utmccn') campaign.campaign = v;
+            if (k == 'utmcmd') campaign.medium = v;
+            if (k == 'utmctr') campaign.term = v;
+            if (k == 'utmcct') campaign.content = v;
+        }
+
+        return campaign;
+    };
+
+    var hasGacActiveCookie = function (cookieString)
+    {
+        return !!cookieString.match(/__utmb=[^;]+/);
+    };
+
+    var cleanValue = function (v)
+    {
+        if (typeof(v) == "undefined" || v == null || v == '(not set)' || v == '(direct)' || v == '(none)')
+        {
+            return '';
+        }
+        return v;
+    };
+
+    var compareCampaigns = function (c1, c2)
+    {
+        if (cleanValue(c1.source) != cleanValue(c2.source)) return false;
+        if (cleanValue(c1.campaign) != cleanValue(c2.campaign)) return false;
+        if (cleanValue(c1.medium) != cleanValue(c2.medium)) return false;
+        if (cleanValue(c1.term) != cleanValue(c2.term)) return false;
+        return cleanValue(c1.content) == cleanValue(c2.content);
+    };
+
+    var jct = function (queryMap, previousCampaign, referrerHost, referrerPath, currentHost, isNew)
+    {
+        this.queryMap = queryMap;
+        this.previousCampaign = previousCampaign;
+        this.referrerHost = referrerHost;
+        this.referrerPath = referrerPath;
+        this.currentHost = currentHost;
+        this.overrideCampaign = {};
+        this.isNew = isNew;
+    };
+
+    jct.prototype.getCampaignData = function ()
+    {
+        var campaign = {};
+
+        if (this.queryMap.gclid || this.queryMap.gclsrc)
+        {
+            campaign.source = 'google';
+            campaign.medium = 'cpc';
+            campaign.campaign = this.queryMap.utm_campaign;
+            campaign.term = this.queryMap.utm_term;
+            campaign.content = this.queryMap.utm_content;
+        }
+        else if (this.overrideCampaign.source)
+        {
+            campaign.source = this.overrideCampaign.source;
+            campaign.medium = this.overrideCampaign.medium || '(not set)';
+            campaign.campaign = this.overrideCampaign.campaign || '(not set)';
+            campaign.term = this.overrideCampaign.term;
+            campaign.content = this.overrideCampaign.content;
+        }
+        else if (this.queryMap.utm_source)
+        {
+            campaign.source = this.queryMap.utm_source;
+            campaign.medium = this.queryMap.utm_medium || '(not set)';
+            campaign.campaign = this.queryMap.utm_campaign || '(not set)';
+            campaign.term = this.queryMap.utm_term;
+            campaign.content = this.queryMap.utm_content;
+        }
+        else
+        {
+            if (this.referrerHost && this.referrerHost != this.currentHost)
+            {
+                campaign.source = this.referrerHost;
+                campaign.medium = 'referral';
+                campaign.campaign = '(referral)';
+                campaign.content = this.referrerPath;
+            }
+            else
+            {
+                campaign.source = this.previousCampaign.source || '(direct)';
+                campaign.medium = this.previousCampaign.medium || '(not set)';
+                campaign.campaign = this.previousCampaign.campaign || '(not set)';
+                campaign.term = this.previousCampaign.term;
+                campaign.content = this.previousCampaign.content;
+            }
+        }
+        campaign.isNew = this.isNew || !compareCampaigns(campaign, this.previousCampaign);
+        return campaign;
+    };
+
+    jct.track = function (campaign)
+    {
+        var referrerData = document.referrer.match(/^https?:\/\/([^/]+)(\/.*)$/);
+        var rHost = referrerData ? referrerData[1] : null;
+        var rPath = referrerData ? referrerData[2] : null;
+
+        var tracker = new jct(parseQueryString(window.location.search.substr(1)), parseGacSessionData(window.document.cookie), rHost, rPath, window.location.hostname, !hasGacActiveCookie(window.document.cookie));
+        if (campaign) tracker.overrideCampaign = campaign;
+        return tracker.getCampaignData();
+    };
+
+    window.jct = jct;
+})(window);
+;if (typeof(window.SD) === "undefined")
+{
+    window.SD = {};
+}
+
+SD.Analytics = {
+    socialFollow: function (socialNetwork)
+    {
+        "use strict";
+
+        if (typeof(dataLayer.social) === "undefined")
+        {
+            dataLayer.social = {
+                platform: ""
+            };
+        }
+
+        if (socialNetwork !== "")
+        {
+            dataLayer.social.platform = socialNetwork;
+        }
+
+        this.satelliteTrack('social-media-follow');
+
+        return true;
+    },
+    socialShare: function (shareType)
+    {
+        "use strict";
+
+        if (typeof(dataLayer.social) === "undefined")
+        {
+            dataLayer.social = {
+                platform: ""
+            };
+        }
+
+        if (shareType !== "")
+        {
+            dataLayer.social.platform = shareType;
+        }
+
+        this.satelliteTrack('social-media-share');
+
+        return true;
+    },
+    loginTrack: function(trackType)
+    {
+        if (!trackType)
+        {
+            return false;
+        }
+
+        this.satelliteTrack('login-' + trackType);
+        return true;
+    },
+    signUpTrack: function(trackType)
+    {
+        if (!trackType)
+        {
+            return false;
+        }
+
+        this.satelliteTrack('sign-up-' + trackType);
+        return true;
+    },
+    newsletterTrack: function(trackType)
+    {
+        if (!trackType)
+        {
+            return false;
+        }
+
+        this.satelliteTrack('newsletter-' + trackType);
+        return true;
+    },
+    satelliteTrack: function(item) {
+        "use strict";
+
+        if (typeof(_satellite) === "object")
+        {
+            _satellite.track(item);
+
+            return true;
+        }
+
+        return false;
+    },
+    /**
+     * Process click event, provided target element has data-product-products as an attribute.
+     *
+     * @param   {Object}    ev
+     * @param   {Boolean}   skipNav - prevents navigation if true.
+     *
+     * @return  {Boolean}
+     */
+    processClickEvent: function (ev, skipNav)
+    {
+        "use strict";
+
+        var target, found = false, depth = 3, link, newWindow, linkResult, clickButton = SD.Analytics.util.getMouseButton(ev);
+
+        for (target = ev.target; depth > -1; depth--)
+        {
+            if (target !== null && !!target.hasAttribute && target.hasAttribute('data-product-products'))
+            {
+                found = true;
+                depth = -1;
+            }
+            else if (!found && target !== null)
+            {
+                target = target.parentNode;
+            }
+        }
+
+        if (!found)
+        {
+            return true;
+        }
+
+        // Descending checks:
+        if (target.hasAttribute('data-href'))
+        {
+            link = target.getAttribute('data-href');
+        }
+        else
+        {
+            link = target.href;
+        }
+
+        linkResult = SD.Analytics.util.rewriteUrl(link);
+
+        newWindow = target.hasAttribute("target") && target.target === "_blank";
+
+        // Hammer time!
+        window.dataLayer.product = {};
+        window.dataLayer.outclick = {};
+
+        if (clickButton !== "right")
+        {
+            dataLayer.product.products = ';' + target.getAttribute('data-product-products');
+            dataLayer.product.forum = target.getAttribute('data-product-forum');
+            dataLayer.product.exitWebsite = target.getAttribute('data-product-exitwebsite');
+            dataLayer.outclick.typeOfOutclick = target.getAttribute('data-outclick-typeofoutclick');
+            dataLayer.outclick.identifier = linkResult[1];
+            link = linkResult[0];
+
+            SD.Analytics.satelliteTrack('out-click');
+
+            if (!skipNav)
+            {
+                switch(clickButton)
+                {
+                    case "middle":
+                    case "override:touchstart":
+                        // Adjustment to revert link after short delay.
+                        if (target.hasAttribute("href"))
+                        {
+                            if (!!Function.prototype.bind)
+                            {
+                                // Bind permits restoration of original href.  1st arg is ref, 2nd is argument and does not change with subsequent assignment.
+                                setTimeout(function (url)
+                                {
+                                    this.href = url;
+                                }.bind(target, target.href), 100);
+                            }
+                            target.href = link;
+                        }
+                        return true;
+                    default:
+                        ev.preventDefault();
+
+                        if (newWindow)
+                        {
+                            if ($(target).attr('rel') && $(target).attr('rel').search(/noreferrer/) != -1)
+                            {
+                                var site = window.open("");
+                                site.document.open();
+                                site.document.writeln('<a id="block-referrer" style="display:none" href="' + link + '" rel="noreferrer">clickme</a><script>document.getElementById("block-referrer").click()</script>');
+                                site.document.close();
+                            }
+                            else
+                            {
+                                window.open(link);
+                            }
+                        }
+                        else
+                        {
+                            window.location.href = link;
+                        }
+                        break;
+                }
+            }
+        }
+    },
+    util: {
+        /**
+         * Things likely to be regretted.  ie: the code started
+         * with behaves well for cases like left/middle clicks on
+         * links, but not right click and open in new tab.
+         *
+         * @param   Object  e
+         * @return  String
+         **/
+        getMouseButton: function(e)
+        {
+            "use strict";
+
+            var btn = "unknown";
+
+            e = e || window.event;
+
+            /**
+             * Technically a left click, but I assume iOS/Android users
+             * want the power to open in new tab/copy link at times.
+             **/
+            if (e.type === "touchstart")
+            {
+                return "override:touchstart";
+            }
+
+            if (e.which === null)
+            {
+                btn = (e.button < 2)
+                    ? "left"
+                    : (
+                        (e.button === 4)
+                            ? "middle"
+                            : "right"
+                    );
+            }
+            else
+            {
+                btn = (e.which < 2)
+                    ? "left"
+                    : (
+                        (e.which === 2)
+                            ? "middle"
+                            : "right"
+                    );
+            }
+
+            return btn;
+        },
+        /**
+         * Yank current view SID and increment it for subsequent clicks
+         *
+         * @return  String
+         */
+        getAndIncrementSid: function()
+        {
+            "use strict";
+
+            var sid, counter;
+
+            if (!window.hasOwnProperty('\u200BviewSid'))
+            {
+                return '';
+            }
+
+            sid = window['\u200BviewSid'];
+
+            counter = parseInt(sid.substring(32) , 16);
+            counter += 1;
+
+            window['\u200BviewSid'] = sid.substring(0, 32) + ('0000' + counter.toString(16)).substr(-4);
+
+            return sid;
+        },
+        /**
+         * Rewrites given url to include SID.  Won't double-rewrite.
+         *
+         * @param   String  url
+         * @return  String|Array
+         **/
+        rewriteUrl: function(url)
+        {
+            "use strict";
+
+            var linkCheck = new RegExp("(pno|lno|u2|u1|u3|sid|sn|cno|ccid|ddid|bfid)="), uSplode = new RegExp("u(\\d+)="), delim, uuid = SD.Analytics.util.getAndIncrementSid();
+
+            if (url.indexOf(window['\u200BviewSid'].substring(0, 32)) === -1 && url.indexOf('adobeRef=') > -1)
+            {
+                // Strip out invalid adobeRef
+                url = url.substring(0, url.indexOf('adobeRef=') - 1) + url.substring(url.indexOf('adobeRef=') + 36)
+            }
+
+            if (url.indexOf("adobeRef=") > -1 || !linkCheck.test(url))
+            {
+                return [url];
+            }
+
+            if (uSplode.test(url))
+            {
+                delim = uSplode.exec(url);
+                delim = ["u", delim[1], "="].join("");
+
+                url = url.split(delim);
+                url[0] = url[0] + "adobeRef=" + uuid + "&";
+                url = url.join(delim);
+            }
+            else
+            {
+                url = url.indexOf("?") > 0
+                    ? (url + "&adobeRef=" + uuid)
+                    : (url + "?adobeRef=" + uuid);
+            }
+
+            return [url, uuid];
+        }
+    },
+    trackThreadVote: function(vote) {
+        if (vote > 0)
+        {
+            SD.Analytics.satelliteTrack('thread-voteup')
+        }
+        else if (vote < 0)
+        {
+            SD.Analytics.satelliteTrack('thread-votedown')
+        }
+    },
+    addDataLayerProductTitle: function(title)
+    {
+        if (typeof(dataLayer.product) === "undefined")
+        {
+            dataLayer.product = {
+                title: title
+            };
+        }
+        else
+        {
+            dataLayer.product.title = title;
+        }
+    },
+    addDataLayerProductId: function(threadId)
+    {
+        if (typeof(dataLayer.product) === "undefined")
+        {
+            dataLayer.product = {
+                products: ';' + threadId
+            };
+        }
+        else
+        {
+            dataLayer.product.products = ';' + threadId;
+        }
+    },
+    addDataLayerCouponIdentifier: function(couponId)
+    {
+        "use strict";
+
+        if (typeof(dataLayer.coupon) === "undefined")
+        {
+            dataLayer.coupon = {
+                identifier: couponId
+            };
+        }
+        else
+        {
+            dataLayer.coupon.identifier = couponId;
+        }
+    },
+    ajaxThreadTracking: function(threadids)
+    {
+        var threadString = "";
+        for (var i = 0; i < threadids.length; i++)
+        {
+            threadString += ";" + threadids[i] + ","
+        }
+        threadString = threadString.substring(0, (threadString.length - 1));
+        dataLayer.product.products = threadString;
+        this.satelliteTrack('product-impression');
+    },
+    addDataLayerProductTileNumber: function(tilePosition)
+    {
+        if (typeof(dataLayer.product) === "undefined")
+        {
+            dataLayer.product = {
+                tileNumber: tilePosition
+            };
+        }
+        else
+        {
+            dataLayer.product.tileNumber = tilePosition;
+        }
+    },
+    addDataLayerProductFireSign: function(fireSignEnabled)
+    {
+        var fireSignOn = fireSignEnabled ? 'yes' : 'no';
+
+        if (typeof(dataLayer.product) === "undefined")
+        {
+            dataLayer.product = {
+                fireSign: fireSignOn
+            };
+        }
+        else
+        {
+            dataLayer.product.fireSign = fireSignOn;
+        }
+    },
+    addDataLayerProductModule: function(moduleName)
+    {
+        if (typeof(dataLayer.product) === "undefined")
+        {
+            dataLayer.product = {
+                module: moduleName
+            };
+        }
+        else
+        {
+            dataLayer.product.module = moduleName;
+        }
+    },
+    trackDealClick: function(threadId, position, fireSign, module)
+    {
+        SD.Analytics.addDataLayerProductId(threadId);
+        SD.Analytics.addDataLayerProductTileNumber(position);
+        SD.Analytics.addDataLayerProductFireSign(fireSign);
+        SD.Analytics.addDataLayerProductModule(module);
+        SD.Analytics.satelliteTrack('product-selection');
+    },
+    getGridTilePosition: function(tileIndex)
+    {
+        var windowWidth =  $(window).width();
+        var tilesPerRow = 7;
+
+        if (windowWidth < 1099)
+        {
+            tilesPerRow = 4;
+        }
+        else if (windowWidth < 1372)
+        {
+            tilesPerRow = 5;
+        }
+        else if (windowWidth < 1540)
+        {
+            tilesPerRow = 6;
+        }
+
+        var row = Math.ceil(tileIndex / tilesPerRow);
+        var col = tileIndex % tilesPerRow == 0 ? tilesPerRow : tileIndex % tilesPerRow;
+
+        return row + ':' + col;
+    },
+    getClassicGridTilePosition: function(tileIndex)
+    {
+        var windowWidth =  $(window).width();
+        var tilesPerRow = 6;
+
+        if (windowWidth < 1117)
+        {
+            tilesPerRow = 4;
+        }
+        else if (windowWidth < 1270)
+        {
+            tilesPerRow = 5;
+        }
+
+        var row = Math.ceil(tileIndex / tilesPerRow);
+        var col = tileIndex % tilesPerRow == 0 ? tilesPerRow : tileIndex % tilesPerRow;
+
+        return row + ':' + col;
+    },
+    getClassicCategoryTilePosition: function(tileIndex)
+    {
+        var windowWidth =  $(window).width();
+        var tilesPerRow = 3;
+
+        if (windowWidth < 1344)
+        {
+            tilesPerRow = 2;
+        }
+
+        var row = Math.ceil(tileIndex / tilesPerRow);
+        var col = tileIndex % tilesPerRow == 0 ? tilesPerRow : tileIndex % tilesPerRow;
+
+        return row + ':' + col;
+    },
+    handleFpDealLink: function(linkElement, view)
+    {
+        var parentElement, headingElement, position;
+
+        if (view == 'redesign')
+        {
+            parentElement = linkElement.closest('.fpGridBox');
+            headingElement = linkElement.closest('.gridCategory').find('.headingLeft');
+
+            if (parentElement.hasClass('grid'))
+            {
+                position = SD.Analytics.getGridTilePosition(parentElement.first().index());
+            }
+            else
+            {
+                position = parentElement.first().index() + 1 + ':1';
+            }
+        }
+        else if (view == 'classic')
+        {
+            parentElement = linkElement.closest('.dealitem');
+            headingElement = parentElement.prevAll('.deal_header_date:first').find('.deal_header_date_link');
+
+            if ($("#deal_list").hasClass("grid"))
+            {
+                position = SD.Analytics.getClassicGridTilePosition(parentElement.data('position'));
+            }
+            else
+            {
+                position = parentElement.data('position') + ':1';
+            }
+        }
+        else if (view == 'mobile')
+        {
+            parentElement = linkElement.closest('.coupon-content');
+            headingElement = linkElement.closest('.wrapper').prev().find('.date');
+            position = parentElement.data('position') + ':1';
+        }
+
+        var threadId = parentElement.data('threadid');
+        var fireDeal = parentElement.hasClass('firedeal');
+        var heading = headingElement.data('deal-list-heading') || headingElement.text().trim();
+
+        SD.Analytics.trackDealClick(threadId, position, fireDeal, heading);
+    },
+    handleClassicFpDetailsLink: function(linkElement)
+    {
+        var parentElement = linkElement.closest('.deal_body');
+
+        var threadId = parentElement.prev().data('threadid');
+        var fireDeal = parentElement.prev().hasClass('firedeal');
+        var position = parentElement.prev().data('position') + ':1';
+        var heading = parentElement.prevAll('.deal_header_date:first').find('.deal_header_date_link').text().trim();
+
+        SD.Analytics.trackDealClick(threadId, position, fireDeal, heading);
+    },
+    handlePopularDealLink: function(linkElement, view)
+    {
+        var parentElement, heading;
+
+        if (view == 'mobile')
+        {
+            parentElement = linkElement.closest('.coupon-content');
+            heading = linkElement.closest('.wrapper').prev().find('.date').text().trim();
+        }
+        else
+        {
+            parentElement = linkElement.closest('.dealRow');
+            heading = $('.popularDealsPageTitle').data('heading');
+        }
+
+        var threadId = parentElement.data('threadid');
+        var fireDeal = parentElement.hasClass('firedeal');
+        var position = parentElement.data('position') + ':1';
+
+        SD.Analytics.trackDealClick(threadId, position, fireDeal, heading);
+    },
+    handleStoreDealLink: function(linkElement, view)
+    {
+        var parentElement, position, headingElement;
+
+        if (view == 'classic')
+        {
+            parentElement = linkElement.closest('.deal_block');
+            headingElement = '.fpcontent.store.deals';
+
+            position = SD.Analytics.getClassicCategoryTilePosition(parentElement.data('position'));
+        }
+        else if (view == 'redesign')
+        {
+            parentElement = linkElement.closest('.item');
+            position = parentElement.data('bestorder') + ':1';
+            headingElement = '#storeTop';
+        }
+        else if (view == 'mobile')
+        {
+            parentElement = linkElement.closest('.coupon-content');
+            position = parentElement.data('position') + ':1';
+            headingElement = '#dealWrapper';
+        }
+
+        var threadId = parentElement.data('threadid');
+        var fireDeal = parentElement.hasClass('firedeal');
+        var heading = $(headingElement).data('heading');
+
+        SD.Analytics.trackDealClick(threadId, position, fireDeal, heading);
+    },
+    addDataLayerFrontpageLayout: function(layoutType)
+    {
+        if (typeof(dataLayer.frontpage) === "undefined")
+        {
+            dataLayer.frontpage = {
+                layout: layoutType
+            };
+        }
+        else
+        {
+            dataLayer.frontpage.layout = layoutType;
+        }
+    },
+    trackNewThreadCreated: function()
+    {
+        this.satelliteTrack('newthread-successful');
+    },
+    updateFormFunnel: function (type, entryPoint, entryPage, status)
+    {
+        dataLayer.formFunnel = {
+            type: type,
+            entryPoint: entryPoint,
+            status: status,
+            startPage: entryPage
+        };
+    },
+    handleClick: function (selector, callback)
+    {
+        this.clickHandlers.push({selector: selector, callback: callback});
+    },
+    clickHandlers: [],
+    processGlobalClick: function (ev)
+    {
+        var sendClickEvent = false;
+        $.each(SD.Analytics.clickHandlers, function (i, handler)
+        {
+            var matches = $(ev.target).closest(handler.selector);
+            if (matches.length)
+            {
+                sendClickEvent = handler.callback(matches) || sendClickEvent;
+            }
+        });
+
+        if (sendClickEvent)
+        {
+            SD.Analytics.satelliteTrack('process-click');
+        }
+    }
+};
+
+window.dataLayer.gaCampaign = jct.track();
+
+$(window).load(function()
+{
+    "use strict";
+
+    if (!!window['\u200BsdAnalytics'] === false)
+    {
+        window['\u200BsdAnalytics'] = true;
+    }
+    else
+    {
+        return false;
+    }
+
+    //Adobe social sharing analytics tracking
+    $('.social-follow').on('click', function()
+    {
+        SD.Analytics.socialFollow($(this).data('platform'));
+        return true;
+    });
+
+    $('.social-share').on('click', function()
+    {
+        SD.Analytics.socialShare($(this).data('platform'));
+        return true;
+    });
+
+    $(window).on('click', SD.Analytics.processClickEvent);
+
+    $(window).on('click', SD.Analytics.processGlobalClick);
+
+    SD.Analytics.handleClick("[data-funnel-entry][data-funnel-type]", function (target)
+    {
+        SD.Analytics.updateFormFunnel(target.data('funnel-type'), target.data('funnel-entry'), dataLayer.page.pageName, 'started');
+        var funnelCookie = SD.CookieService.session.getCookie('funnel');
+        funnelCookie.setType(target.data('funnel-type'), 1, target.data('funnel-entry'), dataLayer.page.pageName);
+        SD.CookieService.session.setCookie('funnel', funnelCookie);
+        return true;
+    });
+
+    var formInteracted = false;
+    var funnelForms = $("form[data-funnel-type]");
+    funnelForms.each(function ()
+    {
+        var type = $(this).closest("form").data('funnel-type');
+        var funnels = SD.CookieService.session.getCookie('funnel');
+        var funnelTypeData = funnels.getType(type);
+        var entry, statuses;
+        if (!funnelTypeData)
+        {
+            entry = '(none specified)';
+            statuses = 'started';
+
+            SD.Analytics.updateFormFunnel(type, entry, entry, statuses);
+            funnels.setType(type, 1, entry, entry);
+            SD.CookieService.session.setCookie('funnel', funnels);
+            SD.Analytics.satelliteTrack('form-funnel-updated');
+        }
+
+    });
+    funnelForms.find("input,select,textarea").click(function ()
+    {
+        if (!formInteracted)
+        {
+            var type = $(this).closest("form").data('funnel-type');
+            var funnels = SD.CookieService.session.getCookie('funnel');
+            var funnelData = funnels.getType(type);
+            var state, entry, startPage, statuses;
+            if (funnelData)
+            {
+                state = funnelData.state;
+                entry = funnelData.entryPoint;
+                startPage = funnelData.startPage;
+                statuses = 'interacted';
+            }
+            else
+            {
+                state = 1;
+                startPage = entry = '(none specified)';
+                statuses = 'interacted';
+            }
+
+            if (state == 1)
+            {
+                SD.Analytics.updateFormFunnel(type, entry, startPage, statuses);
+                funnels.setType(type, 2, entry, startPage);
+                SD.CookieService.session.setCookie('funnel', funnels);
+                SD.Analytics.satelliteTrack('form-funnel-updated');
+            }
+        }
+    });
+
+    // Sign-up, Login, Newsletter Tracking
+    if (window.location.href.indexOf('login=1') >= 0)
+    {
+        SD.Analytics.loginTrack('successful');
+    }
+
+    $('.track-sign-up').on('click', function(ev) {
+        SD.Analytics.signUpTrack('start');
+        return true;
+    });
+
+    $('.track-login').on('click', function(ev) {
+        SD.Analytics.loginTrack('start');
+        return true;
+    });
+
+    $('.track-newsletter-checkbox').on('click', function(ev)
+    {
+        if (this.checked)
+        {
+            SD.Analytics.newsletterTrack('start');
+            return true;
+        }
+    });
+
+    $('.track-fpDealLink').on('click', function(ev) {
+        SD.Analytics.handleFpDealLink($(ev.target), 'redesign');
+        return true;
+    });
+
+    $(document).on('click', '.track-fpDealDetailLink', function(ev) {
+        SD.Analytics.handleFpDealLink($(this), 'redesign');
+        return true;
+    });
+
+    $(document).on('click', '.track-classicFpDetailsLink', function(ev) {
+        SD.Analytics.handleClassicFpDetailsLink($(this));
+        return true;
+    });
+
+    $('.track-popularDealLink').on('click', function(ev) {
+        SD.Analytics.handlePopularDealLink($(this));
+        return true;
+    });
+
+    $('.track-storeDealLink').on('click', function(ev) {
+        SD.Analytics.handleStoreDealLink($(this), 'redesign');
+        return true;
+    });
+
+    $('.track-classicStoreDealLink').on('click', function(ev) {
+        SD.Analytics.handleStoreDealLink($(this), 'classic');
+        return true;
+    });
+
+    $(document).on('click', '#dealWrapper .coupon-content a', function(ev) {
+        SD.Analytics.handleStoreDealLink($(this), 'mobile');
+        return true;
+    });
+
+    $(document).on('click', '.coupon-wrapper.onFrontPage a', function(ev) {
+        SD.Analytics.handleFpDealLink($(this), 'mobile');
+        return true;
+    });
+
+    $(document).on('click', '.coupon-wrapper.onPopularDeals a', function(ev) {
+        SD.Analytics.handlePopularDealLink($(this), 'mobile');
+        return true;
+    });
+});

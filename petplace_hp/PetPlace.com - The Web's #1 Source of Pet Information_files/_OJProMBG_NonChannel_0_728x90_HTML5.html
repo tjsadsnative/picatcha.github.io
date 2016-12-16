@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- saved from url=(0164)https://s0.2mdn.net/2309962/1449072418376/_OJProMBG_NonChannel_0_728x90_HTML5.html/_OJProMBG_NonChannel_0_728x90_HTML5.html/_OJProMBG_NonChannel_0_728x90_HTML5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style></style><script src="jquery.min(1).js"></script><script src="edge.4.0.1.min.js"></script><script src="HPIWWDP13748_OJProBanner_728x90_MBG_Chan_v2_edge.js"></script><script src="HPIWWDP13748_OJProBanner_728x90_MBG_Chan_v2_edgeActions.js"></script><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Untitled</title>
+<!--Adobe Edge Runtime-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script type="text/javascript" charset="utf-8" src="HPIWWDP13748_OJProBanner_728x90_MBG_Chan_v2_edgePreload.js"></script>
+    <style>
+        .edgeLoad-EDGE-101073891 { visibility:hidden; }
+    </style>
+<!--Adobe Edge Runtime End-->
+<meta name="ad.size" content="width=728,height=90">
+<script type="text/javascript">
+var clickTag = ""; </script>
+</head>
+<body style="margin: 0px; padding: 0px;">
+	<div style="width:728px; height:90px;"><a href="javascript:window.open(window.clickTag)"><div id="Stage" class="EDGE-101073891" style="position: relative; transform: translateZ(0px); overflow: hidden; height: 90px; width: 728px; background-color: rgb(255, 255, 255);">
+	<div id="Stage_half" class="Stage_half_id" style="position: absolute; margin: 0px; left: 201px; top: 28px; width: 142px; height: 23px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; background-image: url(&quot;half.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_teartop" class="Stage_teartop_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 541px; height: 150px; right: auto; bottom: auto; transform-origin: 50% 50% 0px; transform: translate(-117px, -171px) translateZ(0px) rotate(0deg) scale(1, 1); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); clip: rect(0px 541px 150px 2.95264px); transform-style: preserve-3d; background-image: url(&quot;teartop.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_tearbotm" class="Stage_tearbotm_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 911px; height: 208px; right: auto; bottom: auto; transform-origin: 50% 50% 0px; transform: translate(-623px, 102px) translateZ(0px) rotate(0deg) scale(1, 1); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform-style: preserve-3d; background-image: url(&quot;tearbotm.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage__728logo" class="Stage__728logo_id" style="position: absolute; margin: 0px; left: 659px; top: 24px; width: 47px; height: 47px; right: auto; bottom: auto; opacity: 1; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-image: url(&quot;728logo.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage__728_copy_header" class="Stage__728_copy_header_id" style="position: absolute; margin: 0px; left: 108px; top: 15px; width: 340px; height: 17px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; background-image: url(&quot;728_copy_header.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage__728_cta" class="Stage__728_cta_id" style="position: absolute; margin: 0px; left: 108px; top: 38px; width: 58px; height: 24px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; background-image: url(&quot;728_cta.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage__728_copy_details" class="Stage__728_copy_details_id" style="position: absolute; margin: 0px; left: 178px; top: 50px; width: 34px; height: 12px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; background-image: url(&quot;728_copy_details.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage__728_ef_printer" class="Stage__728_ef_printer_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 463px; height: 84px; right: auto; bottom: auto; transform-origin: 50% 50% 0px; transform: translate(13px, 6px) translateZ(0px) rotate(0deg) scale(1, 1); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform-style: preserve-3d; background-image: url(&quot;728_ef_printer.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_loveit" class="Stage_loveit_id" style="position: absolute; margin: 0px; left: 108px; top: 28px; width: 310px; height: 28px; right: auto; bottom: auto; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0; background-image: url(&quot;loveit.png&quot;); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;"></div><div id="Stage_Rectangle2" class="Stage_Rectangle2_id" style="position: absolute; margin: 0px; left: 0px; top: 0px; width: 726px; height: 88px; right: auto; bottom: auto; cursor: pointer; border: 1px solid rgb(0, 0, 0); -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgba(192, 192, 192, 0);"></div></div></a></div>
+
+</body></html>

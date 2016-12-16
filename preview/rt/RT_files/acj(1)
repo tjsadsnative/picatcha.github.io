@@ -1,0 +1,25 @@
+OX_6049002238({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"https://uk-ads.openx.net/{medium}/1.0/{rtype}?bi=abe7cbaf-b94d-46db-9038-322d5693794a&ts={txn_state}",
+    "pixels":"https://eu-u.openx.net/w/1.0/pd?plm=5&ph=50ab0170-10fc-4aec-b816-8e01043433e7",
+    "adunits" : [
+      {
+        "auid":"538039542",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "width":"300",
+            "height":"250",
+            "html":"<!-- Beginning PassBack for Ad unit ENG_Passback_300x250 ### size: [[300,250]] -->\n\t<script type='text/javascript' src='//www.googletagservices.com/tag/js/gpt.js'>\n\t\tgoogletag.pubads().definePassback('144751494/ENG_Passback_300x250', [[300,250]]).display();\n\t</script>\n<!-- End Passback -->",
+            "target":"_blank",
+            "ts":"1fHJpZD04OTg3NzI4OC0yNzllLTQxYjMtOWM4Yi05ZjY4MDUxZTVmMDd8cnQ9MTQ1MzIyODg1MXxhdWlkPTUzODAzOTU0MnxhdW09RE1JRC5XRUJ8c2lkPTUzNzIwNTM1MHxwdWI9NTM3MTA4MzQ1fHBjPUVVUnxyYWlkPWUyZjkwMzUxLTIzNDItNGVlZS1hNDFiLWQxNDRiZjEwZjg0NHx1cj02ZWNBYVhaZk84",
+            "type":"html",
+            "ad_url":"<!-- Beginning PassBack for Ad unit ENG_Passback_300x250 ### size: [[300,250]] -->\n\t<script type='text/javascript' src='//www.googletagservices.com/tag/js/gpt.js'>\n\t\tgoogletag.pubads().definePassback('144751494/ENG_Passback_300x250', [[300,250]]).display();\n\t</script>\n<!-- End Passback -->"
+          }
+        ]
+      }
+    ]
+  }
+});

@@ -1,0 +1,29 @@
+
+var ftGUID_1639531="2911926BB52FE5";
+var ftConfID_1639531="2902727";
+var ftParams_1639531="ftx=&fty=&ftadz=&ftscw=&ft_custom=4171540841294888226&ft_section=24a65678-5022-4c00-a0dc-c139512ee944&ft_keyword=&ftOBA=1&ft_referrer=https%3A%2F%2Fwww.gtplanet.net%2F&cachebuster=402771.84965088964";
+var ftKeyword_1639531="";
+var ftCustom_1639531="4171540841294888226";
+var ftSection_1639531="24a65678-5022-4c00-a0dc-c139512ee944";
+var ftSegment_1639531="fe4,f5t,fe6,igk,io9";
+var ftSegmentList_1639531=[{s:'fe4'},{s:'f5t'},{s:'fe6'},{s:'igk'},{s:'io9'}];
+var ftRuleMatch_1639531="0";
+var ftTimestamp_1639531="1453832434";
+var ftGeoC2_1639531="us";
+var ftGeoState_1639531="ca";
+var ftGeoCity_1639531="san francisco";
+var ftISP_1639531="monkey brains";
+var ftSpeed_1639531="broadband";
+var ftDMA_1639531="807";
+var ftLong_1639531="-122.416";
+var ftLat_1639531="37.7482";
+var ftPostal_1639531="94110";
+var ftTimeZone_1639531="-800";
+var ftMobileCarrier_1639531="";
+var ftImp1639531 = {};
+ftImp1639531.privacy = "x";
+ftImp1639531.guidAge = "36";
+ftImp1639531.impID = "2947C9A4E75B29";
+
+document.write('<scr'+'ipt src="https://secure.flashtalking.com/xre/163/1639531/1159782/js/j-1639531-1159782.js" id="ftscript_m1639531" name="ftscript_m1639531"></scr'+'ipt>');
+                    

@@ -1,0 +1,19 @@
+
+var ftGUID_1661215="2911926BB52FE5";
+var ftConfID_1661215="0";
+var ftParams_1661215="ftx=&fty=&ftadz=&ftscw=&ft_custom=990017______www.bustle.com&ftOBA=1&ft_ifb=1&ft_domain=www.bustle.com&ft_referrer=http%3A%2F%2Fwww.bustle.com%2Farticles%2F139646-the-one-hairstyle-all-the-celebs-are-freaking-out-over-is-literally-the-easiest-hairdo-ever&cachebuster=739374.4287546724";
+var ftKeyword_1661215="";
+var ftCustom_1661215="990017______www.bustle.com";
+var ftSection_1661215="";
+var ftSegment_1661215="fe4,f5t,fe6,igk,io9,ign,g5m,i65";
+var ftSegmentList_1661215=[{s:'fe4'},{s:'f5t'},{s:'fe6'},{s:'igk'},{s:'io9'},{s:'ign'},{s:'g5m'},{s:'i65'}];
+var ftRuleMatch_1661215="0";
+var ftTimestamp_1661215="1454626921";
+var ftImp1661215 = {};
+ftImp1661215.privacy = "x";
+ftImp1661215.guidAge = "45";
+ftImp1661215.impID = "295612D29B43BA";
+
+
+document.write('<scr'+'ipt src="https://secure.flashtalking.com/xre/166/1661215/1244605/js/j-1661215-1244605.js" id="ftscript_m1661215" name="ftscript_m1661215"></scr'+'ipt>');
+                    

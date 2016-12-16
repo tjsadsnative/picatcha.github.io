@@ -1,0 +1,201 @@
+@font-face {
+	font-family: 'Apester-Font';
+	src:url('https://s3.amazonaws.com/icomoon.io/53139/Apester/Apester-Font.eot?plrt82');
+	src:url('https://s3.amazonaws.com/icomoon.io/53139/Apester/Apester-Font.eot?plrt82#iefix') format('embedded-opentype'),
+		url('https://s3.amazonaws.com/icomoon.io/53139/Apester/Apester-Font.woff2?plrt82') format('woff2'),
+		url('https://s3.amazonaws.com/icomoon.io/53139/Apester/Apester-Font.ttf?plrt82') format('truetype'),
+		url('https://s3.amazonaws.com/icomoon.io/53139/Apester/Apester-Font.woff?plrt82') format('woff'),
+		url('https://s3.amazonaws.com/icomoon.io/53139/Apester/Apester-Font.svg?plrt82#Apester-Font') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ic {
+	font-family: 'Apester-Font';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-image-layout:before {
+	content: "\e800";
+}
+.icon-text-layout:before {
+	content: "\e801";
+}
+.icon-archive:before {
+	content: "\e62a";
+}
+.icon-pencil:before {
+	content: "\e62b";
+}
+.icon-restart:before {
+	content: "\e629";
+}
+.icon-feedback-check:before {
+	content: "\e626";
+}
+.icon-feedback-plus:before {
+	content: "\e627";
+}
+.icon-huff:before {
+	content: "\e625";
+}
+.icon-generate:before {
+	content: "\e624";
+}
+.icon-search:before {
+	content: "\e623";
+}
+.icon-key:before {
+	content: "\e622";
+}
+.icon-pen:before {
+	content: "\e61e";
+}
+.icon-unarchive:before {
+	content: "\e620";
+}
+.icon-views:before {
+	content: "\e621";
+}
+.icon-drag-dots:before {
+	content: "\e61b";
+}
+.icon-check:before {
+	content: "\f00c";
+}
+.icon-copy-link:before {
+	content: "\e617";
+}
+.icon-iframe:before {
+	content: "\e616";
+}
+.icon-html5:before {
+	content: "\eadf";
+}
+.icon-wordpress:before {
+	content: "\f19a";
+}
+.icon-background:before {
+	content: "\e610";
+}
+.icon-grid:before {
+	content: "\e611";
+}
+.icon-video-round:before {
+	content: "\e628";
+}
+.icon-personality-round:before {
+	content: "\e61a";
+}
+.icon-quiz-round:before {
+	content: "\e619";
+}
+.icon-poll-round:before {
+	content: "\e613";
+}
+.icon-apester-round:before {
+	content: "\e607";
+}
+.icon-trash-2:before {
+	content: "\e61f";
+}
+.icon-trash:before {
+	content: "\e614";
+}
+.icon-duplicate:before {
+	content: "\e612";
+}
+.icon-circle-cross:before {
+	content: "\e043";
+}
+.icon-circle-check:before {
+	content: "\e042";
+}
+.icon-duration:before {
+	content: "\f017";
+}
+.icon-tag:before {
+	content: "\e60d";
+}
+.icon-thumbnail:before {
+	content: "\e60e";
+}
+.icon-reorder:before {
+	content: "\e60f";
+}
+.icon-arrow-left:before {
+	content: "\e61c";
+}
+.icon-arrow-down:before {
+	content: "\e615";
+}
+.icon-arrow-up:before {
+	content: "\e618";
+}
+.icon-arrow-right:before {
+	content: "\e61d";
+}
+.icon-more-dots:before {
+	content: "\e600";
+}
+.icon-plus:before {
+	content: "\e114";
+}
+.icon-cross:before {
+	content: "\e117";
+}
+.icon-video:before {
+	content: "\e609";
+}
+.icon-personality:before {
+	content: "\e60a";
+}
+.icon-quiz:before {
+	content: "\e60b";
+}
+.icon-poll:before {
+	content: "\e60c";
+}
+.icon-layers:before {
+	content: "\e604";
+}
+.icon-explore:before {
+	content: "\e601";
+}
+.icon-inventory:before {
+	content: "\e603";
+}
+.icon-layouts:before {
+	content: "\e605";
+}
+.icon-engines:before {
+	content: "\e602";
+}
+.icon-tumblr:before {
+	content: "\e4c2";
+}
+.icon-facebook:before {
+	content: "\f09a";
+}
+.icon-twitter:before {
+	content: "\e49d";
+}
+.icon-pinterest:before {
+	content: "\e4d6";
+}
+.icon-whatsapp:before {
+	content: "\e608";
+}
+.icon-apester-a:before {
+	content: "\e606";
+}
+

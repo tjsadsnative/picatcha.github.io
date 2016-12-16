@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://s0.2mdn.net/2387004/1441722464807/CHA_SMB_128133_Mouse_728x90_HTML5/main.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+        <meta charset="UTF-8">
+        <!-- main banner styles -->
+        <link rel="stylesheet" href="styles.css">
+        <title>Chase Campaign Banner - 728x90</title>
+    </head>
+    <body>
+        <div class="wrapper" style="visibility: inherit; opacity: 1;">
+            <div id="banner">
+                <div class="bg" style="transform-origin: 50% 100% 0px; transform: matrix(0.99999, 0.00017, -0.00017, 0.99999, 0, 0);"></div>
+                <div class="text text1" style="visibility: hidden; opacity: 0;"></div>
+                <div class="text text2" style="visibility: hidden; opacity: 0;"></div>
+                <div class="text text3" style="visibility: inherit; opacity: 1;"></div>
+                <div class="cta" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); background-color: rgba(255, 255, 255, 0);"></div>
+                <div class="logo" style="visibility: inherit; opacity: 1;"></div>
+            </div>
+        </div>
+
+    <!-- Greensock -->
+    <script src="TweenLite.min.js"></script>
+    <script src="TimelineLite.min.js"></script>
+    <script src="CSSPlugin.min.js"></script>
+    <script src="EasePack.min.js"></script>
+
+    <script src="main.js"></script>
+    <script>
+
+        // banner scripts here
+        /******************************************************************************
+        *
+        * Click handler
+        *
+        *****************************************************************************/
+        var clickTag = "https://google.com";
+        var banner = document.getElementById("banner");//target the banner div element
+
+        //add event listener to the banner div element and run the click tag in the function
+        banner.addEventListener("click",
+            function(){
+                window.open(window.clickTag);//when the window opens, run the click tag variable
+            });
+
+        //call the initializing function in main.js to begin the animation when the window loads
+        window.onload = function() {
+            init();
+        };
+        </script>
+    
+
+</body></html>

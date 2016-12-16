@@ -1,0 +1,1 @@
+Krux.ns.carbon.kxjsonp_userdata({"status":"200","body":{"code":"no_segments","kuid":"JucpD8lj","kuid_long":"pf4ig59dh","geo":{"country":"us","dma":"807","zip":"94102","longitude":"-122.418","latitude":"37.7808","domain":"monkeybrains.net","region":"ca"},"technographics":{"browser":"Firefox 4","manufacturer":"Apple Inc.","device":"Computer","os":"Mac OS X"}}});

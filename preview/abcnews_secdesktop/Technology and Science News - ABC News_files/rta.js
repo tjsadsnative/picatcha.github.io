@@ -1,0 +1,1 @@
+crtg_content = 'abc160x600=1;abc300x250=1;abc300x600=1;abc728x90=1;abc300x250gallery=1;'; (function(){document.cookie = 'crtg_abc=' + escape(crtg_content) + '; path=/; expires=Sun, 10 Jan 2016 22:37:38 GMT; domain=go.com';})();

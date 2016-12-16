@@ -1,0 +1,29 @@
+OX_7479625033({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ee=dis_sup_exp&bi=c3187930-01b4-4c86-b490-1241b9625e15&ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=6&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "adunits" : [
+      {
+        "auid":"538019818",
+        "chain_timeout":"1000",
+        "chain":[
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"537150426",
+            "adv_acct_id":"537073292",
+            "width":"728",
+            "height":"90",
+            "html":"<img src=\"http://uswfb.adsrvr.org/bid/feedback/openx?iid=277594b9-3057-424c-9919-021c5f8ab290&aid=6aa42c2f-cef7-4a78-be0e-fe2e3e24cdaa&wp=AAABUmu4pgYvpIsj61ZtywtZ5AeDfjO5SL168A&wpc=USD&sfe=8da3ea0&puid=e93e63c4-549a-719b-5c0a-74cf3df5e5d0&tdid=5ae5c973-17e3-42c1-a674-5f694e299551&pid=21fcmvd&ag=wh2j6fu&crid=4b271svy&fq=3&td_s=www.androidguys.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=18z29neclv&uhow=135&agsa=&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&rgz=94107&svbttd=1&dt=PC&osf=OSX&os=Other&br=Chrome&rlangs=en&mlang=&svpid=&did=&rcxt=Other&lat=37.749001&lon=-122.416000&tmpc=15.36&daid=&vp=0&osi=&osv=&bp=2.6928&dur=ChkKB3M5ZXFqajgQ0FoiCwjJyawBEgRub25lCjYKHWNoYXJnZS1hbGxJbnRlZ3JhbEJyYW5kU2FmZXR5IhUI+f//////////ARIIaW50ZWdyYWwQ0Fo=&crrelr=\" width=\"1\" height=\"1\" style=\"display: none;\"/><a target=\"_blank\" href=\"http://insight.adsrvr.org/track/clk?imp=277594b9-3057-424c-9919-021c5f8ab290&ag=wh2j6fu&crid=4b271svy&fq=3&td_s=www.androidguys.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=18z29neclv&sv=openx&uhow=135&agsa=&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&rgz=94107&dt=PC&osf=OSX&os=Other&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=Other&tmpc=15.36&vrtd=&osi=&osv=&daid=&dnr=0&dur=ChkKB3M5ZXFqajgQ0FoiCwjJyawBEgRub25lCjYKHWNoYXJnZS1hbGxJbnRlZ3JhbEJyYW5kU2FmZXR5IhUI%2Bf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARIIaW50ZWdyYWwQ0Fo%3D&crrelr=&r=http://admissions.brandman.edu/q-about-us.aspx\" alt=\"Click Me\"><img src=\"http://ad.adsrvr.org/21fcmvd/pe8ryol/4b271svy_728x90.jpg?cb=410464\" border=\"0\" /></a><span id=\"te-clearads-js-tradedesk01cont3\"><script type=\"text/javascript\" src=\"https://choices.truste.com/ca?pid=tradedesk01&aid=tradedesk01&cid=0511td728x90&c=tradedesk01cont3&w=728&h=90&plc=tr\"></script></span><script type=\"text/javascript\" src=\"https://pixel.adsafeprotected.com/jload?anId=8924&advId=pe8ryol&campId=qk5m97k&pubId=openx&chanId=wh2j6fu&placementId=728x90&adsafe_par&bidurl=www.androidguys.com\"></script>",
+            "target":"_blank",
+            "ts":"1fHJpZD02YjU2NGRhZi00MTYwLTRlMDktYTU5YS1jZmQyN2NjOWRjZjB8cnQ9MTQ1MzUwNjIwOHxhdWlkPTUzODAxOTgxOHxhdW09RE1JRC5XRUJ8c2lkPTUzNzEzOTY4NHxwdWI9NzY0NTZ8cGM9VVNEfHh0PWRpc19zdXBfZXhwfHJhaWQ9NjczZDZhY2ItMDRhNC00NjM5LWFlYWQtZDMyNjViYTYwYWQyfGNsPTF8YWlkPTUzNzE1MDQyNnx0PTEyfGFzPTcyOHg5MHxsaWQ9NTM3MTIxMDIzfG9pZD01MzcwOTYyODN8cD0yNjMwfHByPTE4MDB8YXRiPTI2OTJ8YWR2PTUzNzA3MzI5MnxhYz1VU0R8cG09UFJJQ0lORy5DUE18bT0xfGFpPTE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YXxtYz1VU0R8bXI9ODMwfHBpPTE4MDB8bXVpPTNhOTI1YzlkLWZkMWQtNGU2Yy0wNmRjLWJjMjc1OWQyZDYyZHxtYT01YWVjZjMxNS1iYTg3LTRjMTctOWUzYS05OGI0NTAwYTM1NWV8bXJ0PTE0NTM1MDYyMDh8bXJjPVNSVF9XT058bXdhPTUzNzA3MzI5Mnxtd2JpPTIyNjc0fG13Yj0yNjkyfG1hcD0yNjMwfGVsZz0xfG1vYz1VU0R8bW9yPTgzMHxtcGM9VVNEfG1wcj0xODAwfG1wZj0xODAwfG1tZj0xODAwfG1wbmY9MjAwMHxtbW5mPTIwMDB8cGN2PTEyMTB8bW89T1h8ZWM9NGIyNzFzdnl8bXB1PTE4MDB8bWNwPTI2MzB8YXF0PXJ0Ynxtd2M9NTM3MDk2MjgzfG13cD01MzcxMjEwMjN8bXdjcj01MzcxNTA0MjZ8bXdpcz0xfG13cHQ9b3hfcHJvdG98Y2k9MXx1cj1mcDRKSkZCZ1NqfGxkPWJyYW5kbWFuLmVkdQ",
+            "type":"html",
+            "ad_url":"<img src=\"http://uswfb.adsrvr.org/bid/feedback/openx?iid=277594b9-3057-424c-9919-021c5f8ab290&aid=6aa42c2f-cef7-4a78-be0e-fe2e3e24cdaa&wp=AAABUmu4pgYvpIsj61ZtywtZ5AeDfjO5SL168A&wpc=USD&sfe=8da3ea0&puid=e93e63c4-549a-719b-5c0a-74cf3df5e5d0&tdid=5ae5c973-17e3-42c1-a674-5f694e299551&pid=21fcmvd&ag=wh2j6fu&crid=4b271svy&fq=3&td_s=www.androidguys.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=18z29neclv&uhow=135&agsa=&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&rgz=94107&svbttd=1&dt=PC&osf=OSX&os=Other&br=Chrome&rlangs=en&mlang=&svpid=&did=&rcxt=Other&lat=37.749001&lon=-122.416000&tmpc=15.36&daid=&vp=0&osi=&osv=&bp=2.6928&dur=ChkKB3M5ZXFqajgQ0FoiCwjJyawBEgRub25lCjYKHWNoYXJnZS1hbGxJbnRlZ3JhbEJyYW5kU2FmZXR5IhUI+f//////////ARIIaW50ZWdyYWwQ0Fo=&crrelr=\" width=\"1\" height=\"1\" style=\"display: none;\"/><a target=\"_blank\" href=\"http://insight.adsrvr.org/track/clk?imp=277594b9-3057-424c-9919-021c5f8ab290&ag=wh2j6fu&crid=4b271svy&fq=3&td_s=www.androidguys.com&rcats=jba,hq4,aad&mcat=aad&mste=&mfld=4&mssi=kk5v5qd&mfsi=18z29neclv&sv=openx&uhow=135&agsa=&rgco=United%20States&rgre=California&rgme=807&rgci=San%20Francisco&rgz=94107&dt=PC&osf=OSX&os=Other&br=Chrome&svpid=&rlangs=en&mlang=&did=&rcxt=Other&tmpc=15.36&vrtd=&osi=&osv=&daid=&dnr=0&dur=ChkKB3M5ZXFqajgQ0FoiCwjJyawBEgRub25lCjYKHWNoYXJnZS1hbGxJbnRlZ3JhbEJyYW5kU2FmZXR5IhUI%2Bf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARIIaW50ZWdyYWwQ0Fo%3D&crrelr=&r=http://admissions.brandman.edu/q-about-us.aspx\" alt=\"Click Me\"><img src=\"http://ad.adsrvr.org/21fcmvd/pe8ryol/4b271svy_728x90.jpg?cb=410464\" border=\"0\" /></a><span id=\"te-clearads-js-tradedesk01cont3\"><script type=\"text/javascript\" src=\"https://choices.truste.com/ca?pid=tradedesk01&aid=tradedesk01&cid=0511td728x90&c=tradedesk01cont3&w=728&h=90&plc=tr\"></script></span><script type=\"text/javascript\" src=\"https://pixel.adsafeprotected.com/jload?anId=8924&advId=pe8ryol&campId=qk5m97k&pubId=openx&chanId=wh2j6fu&placementId=728x90&adsafe_par&bidurl=www.androidguys.com\"></script>"
+          }
+        ]
+      }
+    ]
+  }
+});

@@ -1,0 +1,1 @@
+crtg_content = ''; (function(){document.cookie = 'crtg_rta=' + escape(crtg_content) + '; path=/; expires=Sun, 20 Mar 2016 18:31:06 GMT; domain=slickdeals.net';})();

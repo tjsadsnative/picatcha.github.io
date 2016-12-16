@@ -1,0 +1,7 @@
+(function(){
+  document.write('<div id="adsatlas-2311519336" style="position:relative;width:728px;height:90px;overflow:hidden">');
+  document.write('<iframe src=\"https://ad.atdmt.com/as/direct;p=11042209007748;as=0;a=11042209002920;crs=11042208055555;cr=11042208055643;i.ts=1453228851/Simplicity_728x90.html?click=https://ad-l.media6degrees.com/adserv/clk?tId=7175627906868519|cId=76521|exId=22|bst=2|bms=66953|dos=2|srcAppVersion=5.3.12|secId=396|adType=iframe|price=0.430000007|invId=19098|pubId=13421|spsid=204426|dIds=ChEIFhINMWpicTd4a2thbnRmZA|sp=0.49|ec=1|cb=1453228803|mobileAdLocation=|notifyServer=ala153.la.pl.pvt|notifyPort=8080|advId=590|fps=1|spId=248451|tId=7175627906868519|bdie=1jbq7xkkantfd|envType=WEB|sps=1|tpInvId=66953|bid=0.49|dc=1|ctrack=\" width=\"728\" height=\"90\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" topmargin=\"0\" leftmargin=\"0\" allowtransparency=\"true\"></iframe>');
+  document.write('</div>');
+  document.write('<script src=\"https://c.betrad.com/durly.js\?;ad_w=728;ad_h=90;coid=343;nid=51904;\"></script><script src=\"https://cdn.doubleverify.com/dvtp_src.js\?ctx=2821932&cmp=11042208891951&sid=11182200774529&plc=11042209007748&num=&adid=&advid=11042201430398&adsrv=2&region=30&btreg=11042209007748&btadsrv=atdmt&crt=11042209002920&crtname=&chnl=&unit=&pid=&uid=&dvtagver=6.1.src\" async></script>');
+  document.close();
+})();

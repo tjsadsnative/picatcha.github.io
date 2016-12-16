@@ -1,0 +1,1 @@
+document.write("<iframe id='PaspIframe' width='728' height='90' src='http://www.legacy.com/obituaries/legacycomad.axd?size=728x90&adFrame=true&misc=0' noresize scrolling='no' frameborder='0' hspace='0' vspace='0' marginheight='0' marginwidth='0' allowTransparency='true' ></iframe>");

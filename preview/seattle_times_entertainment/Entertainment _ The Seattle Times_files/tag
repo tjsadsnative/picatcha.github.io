@@ -1,0 +1,2 @@
+BrightTag.instance.store([{name:'btpdb.dcKDAzq.dGZjLjE3MDg4NDA', value:'UkVRVUVTVFMuMTg', expires:1469146566873}]);
+BrightTag.instance.appendContent('\x3cimg src\x3d\x22//insight.adsrvr.org/track/evnt/?adv\x3d93hf6lv\x26ct\x3d0:rpb7xk3w\x26fmt\x3d3\x22 height\x3d\x221\x22 width\x3d\x221\x22 style\x3d\x22border-style:none;\x22 alt\x3d\x22\x22/\x3e',{tagId:1708840});

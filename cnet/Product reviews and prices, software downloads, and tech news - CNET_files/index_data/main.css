@@ -1,0 +1,19 @@
+/* CSS Document */
+body{ padding:0px; margin:0px; -webkit-overflow-scrolling: none;}
+
+#container{ position:absolute; width:100%; height:558px; -webkit-overflow-scrolling: none;}
+#expanded{ position:absolute; width:100%; height:558px; overflow:hidden;}
+
+
+.tag{ position:absolute; width:100%; height:100%;}
+.contImage{ position:absolute;}
+.expImage{ position:absolute; }
+.frameShell{ position:absolute; width:100%; height:100%; }
+.maskShell{position:absolute; overflow:hidden}
+.contShell{position:absolute; width:320px; height:50px; }
+.expShell{position:absolute; width:100%; height:100%; display:none}
+.expThrough{position:absolute; width:0px; height:0px}
+.spinShell{position:absolute; width:465px; height:100%; display:none; overflow:hidden}
+.expOrientation{ position:absolute; width:100%; height:100%; display:none; background-color:#000000; opacity:.8}
+.expLegal{ position:absolute; width:100%; height:115px; bottom:-115px; display:none}
+.expBubble{ position:absolute; width:100%; height:258px; bottom:0px; overflow:hidden}

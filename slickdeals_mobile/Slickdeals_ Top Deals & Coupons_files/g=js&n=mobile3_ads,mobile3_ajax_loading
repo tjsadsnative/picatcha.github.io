@@ -1,0 +1,230 @@
+function loadAds(adSpots, instant)
+{
+    var name, width, height, pos, customSegments;
+
+    instant = instant ? "true" : "false";
+
+    for (var i in adSpots)
+    {
+        if (typeof adSpots[i] === 'object')
+        {
+            name = adSpots[i].name;
+            width = adSpots[i].width;
+            height = adSpots[i].height;
+            pos = adSpots[i].pos;
+            customSegments = adSpots[i].segments
+        }
+        else
+        {
+            name = dynamicAdSlot;
+            width = 320;
+            height = 50;
+            pos = adSpots[i];
+            customSegments = {};
+        }
+
+        if (!window.adMap["adSlot"+i])
+        {
+            $(".coupon-wrapper:visible:eq("+pos+")").after('<div class="mobileAd" id="adSlot' + i + '"><script type="text/javascript">moreContent("' + name + '", '+ width +', ' + height + ', "adSlot' + i + '", ' + (i - 1) + ', ' + instant + ',' + customSegments +');</scr' + 'ipt></div>');
+        }
+    }
+}
+
+(function ()
+{
+    window.loadAdsQueue = window.loadAdsQueue || [];
+
+    for (var i = 0; i < window.loadAdsQueue.length; i++)
+    {
+        var call = window.loadAdsQueue[i];
+
+        call();
+    }
+
+    window.loadAdsQueue.push = function (callback)
+    {
+        callback();
+    };
+})();
+
+
+;var MAX_FP_DEAL_LOADS = 6;
+var MAX_PD_DEAL_LOADS = 6;
+var MAX_FORUM_ITEM_LOADS = 9999;
+var MAX_ITEMS = null;
+
+var counter = 1;
+var loaded = true;
+var $element = null;
+var forum;
+var post_data = {};
+var request_type = "POST";
+var done = [];
+var $scroller = (isiOS && isiOS()) ? $('.pageWrapper') : $(window);
+
+$(window).scroll(function () {
+    var key;
+    var start;
+    if (loaded)
+    {
+        if ($(window).scrollTop() / ($(document).height() - $(window).height()) >= 0.70)
+        {
+            if ($('.featuredLoadMore').length)
+            {
+                MAX_ITEMS = MAX_FP_DEAL_LOADS;
+                $element = $('.featuredLoadMore');
+                key = 'featured';
+            }
+            if ($('.frontpageLoadMore').length)
+            {
+                MAX_ITEMS = MAX_FP_DEAL_LOADS;
+                $element = $('.frontpageLoadMore');
+                post_data = {
+                    lastDealDate: $(".title-bar:last").data("date")
+                };
+                key = 'frontpage';
+            }
+            else if ($('.popularDealsLoadMore').length)
+            {
+                MAX_ITEMS = MAX_PD_DEAL_LOADS;
+                $element = $('.popularDealsLoadMore');
+                post_data = {
+                    lastDealDate: $(".title-bar:last").data("date")
+                };
+                key = 'popular';
+            }
+            else if ($('.forumLoadMore').length)
+            {
+                request_type = "GET";
+                MAX_ITEMS = MAX_FORUM_ITEM_LOADS;
+                $element = $('.forumLoadMore');
+                key = 'forum';
+            }
+            else if ($('.profileLoadMore').length)
+            {
+                request_type = "GET";
+                MAX_ITEMS = MAX_FORUM_ITEM_LOADS;
+                $element = $('.profileLoadMore');
+                key = location.hash.replace('#', '');
+                if(!key)
+                {
+                    key = 'activity';
+                }
+                last = $('#profile_tabcontent_' + key).attr('data-last');
+                post_data = {
+                    streamUpdateLast: last, streamUpdateType: key
+                };
+            }
+
+            if (done.indexOf(key) == -1)
+            {
+                done.push(key);
+            }
+
+            if (MAX_ITEMS != null && $element != null && !done[key])
+            {
+                if (counter <= MAX_ITEMS)
+                {
+                    ajaxLoadDeals(post_data, request_type, key, window.adSpots);
+                    counter++;
+                }
+                else
+                {
+                    $element.hide();
+                    if (typeof window.footerAdCallback == 'function')
+                    {
+                        window.footerAdCallback();
+                        //prevent multiple calls
+                        window.footerAdCallback = null;
+                    }
+                    $('.mobileAdBottom').show();
+                }
+            }
+
+        }
+    }
+});
+
+function ajaxLoadDeals(post_data, request_type, key, adSpots) {
+    loaded = false;
+
+    var target = $('.infiniteLoader');
+    var requestingUrl = target.attr("href");
+
+    target.addClass("loading");
+
+    $.ajax({
+        url     : requestingUrl,
+        type    : request_type,
+        data    : post_data,
+        dataType: 'json',
+        timeout : 10000,
+        cache   : false,
+        success : function (data) {
+            if (typeof _gaq != "undefined")
+            {
+                _gaq.push(['_trackPageview', requestingUrl]);
+            }
+
+            if (data.threadids)
+            {
+                SD.Analytics.ajaxThreadTracking(data.threadids);
+            }
+
+            if (data.html)
+            {
+                if (data.lastDealId)
+                {
+                    target.attr("href", "/?pg_fpid=" + data.lastDealId);
+                }
+                else if (data.nextPageUrl)
+                {
+                    target.attr("href", data.nextPageUrl);
+                }
+
+                if (data.urlParams)
+                {
+                    var params = jQuery.param(data.urlParams);
+                    target.attr("href", '/forums/forumdisplay.php?' + params);
+                }
+
+                var $items = $(data.html);
+                if (data.stream == true)
+                {
+                    var last = (key != 'activity') ? (parseInt(post_data.streamUpdateLast) + parseInt(data.last)) : data.last;
+                    $('#profile_tabcontent_' + key).append($items);
+                    $('#profile_tabcontent_' + key).attr('data-last', last);
+                }
+                else
+                {
+                    $(".wrapper:last").after($items);
+                }
+
+            }
+
+            if (typeof loadAds == "function")
+            {
+                loadAds(adSpots, true);
+            }
+            target.removeClass("loading");
+            loaded = true;
+
+            if (data.done == true)
+            {
+                if (!data.stream)
+                {
+                    $('.mobileAdBottom').show();
+                }
+                done[key] = true;
+            }
+
+            $(window).trigger('sd:ajaxLoadDeals');
+
+        },
+        error   : function (jqXHR, textStatus) {
+            target.removeClass("loading");
+            alert("An error occurred: " + textStatus + ". If this continues, please report it to info@slickdeals.net");
+            loaded = true;
+        }
+    });
+}

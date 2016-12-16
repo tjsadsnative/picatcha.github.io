@@ -1,0 +1,23 @@
+$(document).ready(function () {
+
+    if ( !$.isFunction($.cookie) )
+    {
+        $.getScript( "/scripts/306/jquery.cookie.js", function( data, textStatus, jqxhr ) {});
+    }
+
+    $(".appSmartBanner a").click(function(ev){
+        var banner = $('.appSmartBanner');
+
+        $.cookie(banner.attr('id') + 'Hidden', 1, { expires : 30, path : '/'});
+        banner.hide().addClass('closed');
+        return true;
+    });
+
+    $(".appSmartBanner .closeAnnouncementBar").click(function (ev) {
+        var banner = $('.appSmartBanner');
+
+        $.cookie(banner.attr('id') + 'Hidden', 1, { expires : 30, path : '/'});
+        banner.hide().addClass('closed');
+        return false;
+    });
+});

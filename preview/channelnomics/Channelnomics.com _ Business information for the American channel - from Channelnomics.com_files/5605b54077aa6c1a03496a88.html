@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://renderer.qmerce.com/interaction/5605b54077aa6c1a03496a88 -->
+<html data-ng-app="qmerceApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <title>Apester Interactive Content</title>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
+    <link rel="stylesheet" href="45bd9d44.main.css">
+
+    <link href="font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" crossorigin="anonymous">
+
+    <!-- BEGIN TRACKJS -->
+    <script type="text/javascript" id="www-widgetapi-script" src="www-widgetapi.js" async=""></script><script type="text/javascript" async="" src="mixpanel-2.2.min.js"></script><script async="" src="analytics.js"></script><script id="facebook-jssdk" src="sdk.js"></script><script async="" src="beacon.js"></script><script type="text/javascript">
+        var date = new Date();
+        var seconds = date.getSeconds();
+
+        // Call trackjs only 1/60 of the times.
+        if (seconds == 0) {
+            var trackjs = document.createElement('script');
+            trackjs.src = '//d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js';
+            trackjs.type = 'text/javascript';
+            trackjs.async = true;
+            document.getElementsByTagName('head')[0].appendChild(trackjs);
+        }
+    </script>
+
+    <script type="text/javascript">
+        window._trackJs = {
+            token: '1c77631bb3dd43a596dd11c36bed395c',
+            application: 'renderer',
+            onError: function (payload, error) {
+                // Don't send error to trackjs.
+                if (error.match(/404.*apester-interactions.*/) > -1) {
+                    return false;
+                }
+                // Send to track js.
+                return true;
+            }
+        };
+    </script>
+    <!-- END TRACKJS -->
+
+    <!-- BEGIN NEWRELIC BROWSER -->
+    <script type="text/javascript">
+        var date = new Date();
+        var seconds = date.getSeconds();
+
+        // Call newrelic only 1/60 of the times.
+        if (seconds == 30) {
+            window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:22,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:9,2:8,3:6,4:10,5:3,6:23,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:9,2:8,3:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],6:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:23,2:24,ee:"QJf3ax",gos:"7eSDFh"}],7:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:24,2:23,ee:"QJf3ax"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:24,2:23,ee:"QJf3ax"}],9:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:24,2:23,ee:"QJf3ax"}],10:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:6,2:24,ee:"QJf3ax"}],11:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:12,3:10,4:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],12:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],13:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:22,2:23,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:22,2:13,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],22:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],23:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],24:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:23,ee:"QJf3ax"}]},{},["G9z0Bl",4,11,5]);
+            ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"47c8053c6d",applicationID:"6144068",sa:1,agent:"js-agent.newrelic.com/nr-632.min.js"}
+        }
+    </script>
+    <!-- END NEWRELIC BROWSER -->
+
+    <!-- Begin comScore Tag -->
+    <script>
+        var _comscore = _comscore || [];
+        _comscore.push({ c1: "2", c2: "19113387" });
+        (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+        })();
+    </script>
+    <noscript>
+        &lt;img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=19113387&amp;cv=2.0&amp;cj=1" /&gt;
+    </noscript>
+    <!-- End comScore Tag -->
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1511127292441041',
+                xfbml      : true,
+                version    : 'v2.0'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-37159059-5', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+        (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+            for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("7f6b5caff303fead919dc7196b634523");
+    </script>
+    <!-- end Mixpanel -->
+
+    <!-- start AWS -->
+    <script src="aws-sdk-2.1.12.js"></script>
+    <!-- end AWS -->
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow-x:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body class="ltr">
+<!--[if lte IE 9]>
+<script src="//cdn.rawgit.com/jpillora/xdomain/gh-pages/dist/0.6/xdomain.min.js" crossorigin="anonymous"></script>
+<script>
+    xdomain.slaves({
+        "http://interaction.qmerce.com": "/proxy/index.html"
+    });
+</script>
+<![endif]-->
+
+<!-- uiView:  --><div data-ui-view="" class="ng-scope"><div class="background ng-scope" ng-style="{height: interaction.data.size.height || 338}" style="height: 498px;">
+  <div class="poll animateRight interaction-wrapper" ng-class="{&#39;animateRight&#39;: animate === &#39;right&#39;, &#39;animateLeft&#39;: animate === &#39;left&#39;, &#39;interaction-wrapper&#39;: version === 2, interactions: version === 1}" ng-style="{height: (interaction.data.size.height || 378) - 40}" interaction-sub-directive="multi-poll-two" interaction-offset="-300" style="height: 458px;">
+
+  <!-- ngIf: version === 2 && States.inState('cover') -->
+
+  <!-- ngRepeat: slide in slides --><!-- ngIf: States.inState('slides') && States.inSlide($index) --><div class="canvas animate" ng-repeat="slide in slides" ng-if="States.inState(&#39;slides&#39;) &amp;&amp; States.inSlide($index)">
+  <!-- ngIf: version === 2 --><div class="fix-height ng-scope" ng-if="version === 2">
+    <span class="nav-button backward ng-hide" ng-show="States.finished &amp;&amp; States.canMovePreviousSlide()" ng-click="previousSlide()">
+      <i class="ic icon-arrow-left"></i>
+    </span>
+    <span class="nav-button forward ng-hide" ng-show="States.finished &amp;&amp; States.canMoveNextSlide()" ng-click="nextSlide()">
+      <i class="ic icon-arrow-right"></i>
+    </span>
+    <background data="slide.image" offsetx="interaction.interactionOffset" ver="2" ng-class="{&#39;videoFallBack&#39;:isVideo }" class="ng-isolate-scope"><div class="bg-image" ng-style="getBackgroundStyle()" style="top: -2.84217e-14px; left: 300px; margin-left: -300px;">
+  <!-- ngIf: ver === 2 --><media ng-if="ver === 2" data="bgImage" size="&#39;original&#39;" class="ng-scope ng-isolate-scope"><img data-ng-src="https://images.apester.com/user-images%2F80%2F8082bceaa907cff9d8e73c66a93a97d1.jpg" zoom="mediaData.position.scale" class="media-image ng-scope" src="user-images-80-8082bceaa907cff9d8e73c66a93a97d1.jpg" style="height: 498px;">
+</media><!-- end ngIf: ver === 2 -->
+  <!-- ngIf: ver !== 2 -->
+</div>
+<div class="bg-overlay" ng-class="{&#39;feedback-overlay&#39;: model.slideFeedback}"></div>
+<!-- ngIf: bgImage.copyRight -->
+
+<p class="powered-by">
+  <span translate=""><span class="ng-scope">Powered by</span></span>
+  <a target="_blank" href="http://apester.com/" class="ic icon-apester-round" title="Apester" ng-click="trackPoweredBy()"></a>
+    <!-- ngIf: isSecondPowerBy -->
+</p>
+
+
+
+
+
+</background>
+      <div class="content" ng-class="slide.design">
+      <i class="circle ic"></i>
+      <div class="slide-header">
+        <h2 ng-show="slides.length &gt; 1" class="ng-binding ng-hide">1/1</h2>
+        <h3 ng-bind="interaction.data.cover.title.value" class="ng-binding"></h3>
+      </div>
+    <!-- ngIf: !shouldShowFeedback() --><div class="block enter-bottom ng-scope" ng-if="!shouldShowFeedback()">
+      <div class="main-title slide-title">
+        <h1 class="ng-binding">What is the one thing you would like to see more of in partner programs?</h1>
+      </div>
+      <div class="options-wrapper">
+        <!-- ngRepeat: option in slide.options track by $index --><div class="option ng-scope" ng-repeat="option in slide.options track by $index" ng-class="{end: shouldShowAnswer(), selected: isOptionSelected(option), &#39;two-answer&#39;: slide.options.length === 2 &amp;&amp; isVideo, &#39;three-answer&#39;: slide.options.length === 3 &amp;&amp; isVideo, &#39;four-answer&#39;: slide.options.length === 4 &amp;&amp; isVideo}" ng-click="vote(option)">
+            <p class="ng-binding">Better incentives</p>
+            <span ng-show="shouldShowAnswer()" ng-bind="model.getOptionPercentage(option)" class="ng-binding ng-hide">0</span>
+          <div class="progress-bar" ng-style="getProgressStyle(option)" style="width: 0%;"></div>
+          <!-- ngIf: option.image -->
+        </div><!-- end ngRepeat: option in slide.options track by $index --><div class="option ng-scope" ng-repeat="option in slide.options track by $index" ng-class="{end: shouldShowAnswer(), selected: isOptionSelected(option), &#39;two-answer&#39;: slide.options.length === 2 &amp;&amp; isVideo, &#39;three-answer&#39;: slide.options.length === 3 &amp;&amp; isVideo, &#39;four-answer&#39;: slide.options.length === 4 &amp;&amp; isVideo}" ng-click="vote(option)">
+            <p class="ng-binding">A greater number of certifications</p>
+            <span ng-show="shouldShowAnswer()" ng-bind="model.getOptionPercentage(option)" class="ng-binding ng-hide">0</span>
+          <div class="progress-bar" ng-style="getProgressStyle(option)" style="width: 0%;"></div>
+          <!-- ngIf: option.image -->
+        </div><!-- end ngRepeat: option in slide.options track by $index --><div class="option ng-scope" ng-repeat="option in slide.options track by $index" ng-class="{end: shouldShowAnswer(), selected: isOptionSelected(option), &#39;two-answer&#39;: slide.options.length === 2 &amp;&amp; isVideo, &#39;three-answer&#39;: slide.options.length === 3 &amp;&amp; isVideo, &#39;four-answer&#39;: slide.options.length === 4 &amp;&amp; isVideo}" ng-click="vote(option)">
+            <p class="ng-binding">Greater consistency of offerings</p>
+            <span ng-show="shouldShowAnswer()" ng-bind="model.getOptionPercentage(option)" class="ng-binding ng-hide">0</span>
+          <div class="progress-bar" ng-style="getProgressStyle(option)" style="width: 0%;"></div>
+          <!-- ngIf: option.image -->
+        </div><!-- end ngRepeat: option in slide.options track by $index --><div class="option ng-scope" ng-repeat="option in slide.options track by $index" ng-class="{end: shouldShowAnswer(), selected: isOptionSelected(option), &#39;two-answer&#39;: slide.options.length === 2 &amp;&amp; isVideo, &#39;three-answer&#39;: slide.options.length === 3 &amp;&amp; isVideo, &#39;four-answer&#39;: slide.options.length === 4 &amp;&amp; isVideo}" ng-click="vote(option)">
+            <p class="ng-binding">More genuine partner engagement</p>
+            <span ng-show="shouldShowAnswer()" ng-bind="model.getOptionPercentage(option)" class="ng-binding ng-hide">0</span>
+          <div class="progress-bar" ng-style="getProgressStyle(option)" style="width: 0%;"></div>
+          <!-- ngIf: option.image -->
+        </div><!-- end ngRepeat: option in slide.options track by $index -->
+      </div>
+       </div><!-- end ngIf: !shouldShowFeedback() -->
+      </div>
+  <!-- ngIf: shouldShowFeedback() -->
+  </div><!-- end ngIf: version === 2 -->
+  <!-- ngIf: version === 1 -->
+</div><!-- end ngIf: States.inState('slides') && States.inSlide($index) --><!-- end ngRepeat: slide in slides -->
+
+  <!-- ngIf: States.inState('resultsSlides') -->
+
+</div>
+</div>
+</div>
+
+<script type="application/json" data-payload-url="/api/interaction/5605b54077aa6c1a03496a88">
+    {"code":200,"message":"ok","payload":{"publisher":{"admins":["5549f14c0f0ce574660eaa79","5549f61b0f0ce574660eaa7f","5549f5df0f0ce574660eaa7d"],"authToken":"5549f65c0f0ce574660eaa80","channels":[],"created":"2015-05-06T11:09:16.411Z","editors":["5549f5fc0f0ce574660eaa7e"],"name":"Channelnomics.com","updated":"2015-05-06T11:09:54.073Z","url":"www.channelnomics.com","users":[],"publisherId":"5549f65c0f0ce574660eaa81"},"creator":{"displayName":"Jessica.meek","picture":{"type":"cdn","path":"user-images/79/7923bcc4fb61650aef60958604d704dc.png"},"username":"Jessica.meek","userId":"5549f61b0f0ce574660eaa7f"},"created":"2015-09-25T20:57:36.058Z","updated":"2015-09-25T20:57:47.060Z","data":{"version":2,"resultsSlides":[{"style":{"backgroundColor":"rgba(255, 255, 255, 0.2)","color":"white","fontSize":20,"fontWeight":"light","fontFamily":"Lato"},"image":{"position":{"scale":1.245,"left":0,"top":-2.842170943040401e-14},"path":"user-images/80/8082bceaa907cff9d8e73c66a93a97d1.jpg","type":"cdn"},"descriptions":[{"value":"You have a voice of your own"},{"value":"You think outside the box"},{"value":"Majority Rules"},{"value":"Go with the flow"}],"cssStyle":{"backgroundColor":"rgba(255, 255, 255, 0.2)","fontSize":"20px","fontWeight":"light"}}],"slides":[{"id":"5605b54077aa6c1a03496a87","style":{"backgroundColor":"rgba(255, 255, 255, 0.2)","color":"white","fontSize":20,"fontWeight":"light","fontFamily":"Lato"},"options":[{"index":0,"value":"Better incentives"},{"index":0,"value":"A greater number of certifications"},{"index":0,"value":"Greater consistency of offerings"},{"index":0,"value":"More genuine partner engagement"}],"image":{"position":{"scale":1.245,"left":0,"top":-2.842170943040401e-14},"path":"user-images/80/8082bceaa907cff9d8e73c66a93a97d1.jpg","type":"cdn"},"title":{"style":{"backgroundColor":"transparent","color":"white","fontSize":28,"fontWeight":"light","fontFamily":"Lato"},"value":"What is the one thing you would like to see more of in partner programs?","cssStyle":{"backgroundColor":"transparent","fontSize":"28px","fontWeight":"light"}},"cssStyle":{"backgroundColor":"rgba(255, 255, 255, 0.2)","fontSize":"20px","fontWeight":"light"}}],"size":{"width":600,"height":498}},"title":"What is the one thing you would like to see more of in partner programs?","publisherId":"5549f65c0f0ce574660eaa81","image":{"position":{"scale":1.245,"left":0,"top":-2.842170943040401e-14},"path":"user-images/80/8082bceaa907cff9d8e73c66a93a97d1.jpg","type":"cdn"},"userId":"5549f61b0f0ce574660eaa7f","interactionId":"5605b54077aa6c1a03496a88","displayAd":null,"random":0.4592941652517766,"published":false,"layout":{"id":"557d52c059081084b94845c3","name":"multi poll two","directive":"multi-poll-two"},"language":"en"}}
+</script>
+
+<!--Script to support iframe resize -->
+<script type="text/javascript">
+    try {
+        var interaction = {"code":200,"message":"ok","payload":{"publisher":{"admins":["5549f14c0f0ce574660eaa79","5549f61b0f0ce574660eaa7f","5549f5df0f0ce574660eaa7d"],"authToken":"5549f65c0f0ce574660eaa80","channels":[],"created":"2015-05-06T11:09:16.411Z","editors":["5549f5fc0f0ce574660eaa7e"],"name":"Channelnomics.com","updated":"2015-05-06T11:09:54.073Z","url":"www.channelnomics.com","users":[],"publisherId":"5549f65c0f0ce574660eaa81"},"creator":{"displayName":"Jessica.meek","picture":{"type":"cdn","path":"user-images/79/7923bcc4fb61650aef60958604d704dc.png"},"username":"Jessica.meek","userId":"5549f61b0f0ce574660eaa7f"},"created":"2015-09-25T20:57:36.058Z","updated":"2015-09-25T20:57:47.060Z","data":{"version":2,"resultsSlides":[{"style":{"backgroundColor":"rgba(255, 255, 255, 0.2)","color":"white","fontSize":20,"fontWeight":"light","fontFamily":"Lato"},"image":{"position":{"scale":1.245,"left":0,"top":-2.842170943040401e-14},"path":"user-images/80/8082bceaa907cff9d8e73c66a93a97d1.jpg","type":"cdn"},"descriptions":[{"value":"You have a voice of your own"},{"value":"You think outside the box"},{"value":"Majority Rules"},{"value":"Go with the flow"}],"cssStyle":{"backgroundColor":"rgba(255, 255, 255, 0.2)","fontSize":"20px","fontWeight":"light"}}],"slides":[{"id":"5605b54077aa6c1a03496a87","style":{"backgroundColor":"rgba(255, 255, 255, 0.2)","color":"white","fontSize":20,"fontWeight":"light","fontFamily":"Lato"},"options":[{"index":0,"value":"Better incentives"},{"index":0,"value":"A greater number of certifications"},{"index":0,"value":"Greater consistency of offerings"},{"index":0,"value":"More genuine partner engagement"}],"image":{"position":{"scale":1.245,"left":0,"top":-2.842170943040401e-14},"path":"user-images/80/8082bceaa907cff9d8e73c66a93a97d1.jpg","type":"cdn"},"title":{"style":{"backgroundColor":"transparent","color":"white","fontSize":28,"fontWeight":"light","fontFamily":"Lato"},"value":"What is the one thing you would like to see more of in partner programs?","cssStyle":{"backgroundColor":"transparent","fontSize":"28px","fontWeight":"light"}},"cssStyle":{"backgroundColor":"rgba(255, 255, 255, 0.2)","fontSize":"20px","fontWeight":"light"}}],"size":{"width":600,"height":498}},"title":"What is the one thing you would like to see more of in partner programs?","publisherId":"5549f65c0f0ce574660eaa81","image":{"position":{"scale":1.245,"left":0,"top":-2.842170943040401e-14},"path":"user-images/80/8082bceaa907cff9d8e73c66a93a97d1.jpg","type":"cdn"},"userId":"5549f61b0f0ce574660eaa7f","interactionId":"5605b54077aa6c1a03496a88","displayAd":null,"random":0.4592941652517766,"published":false,"layout":{"id":"557d52c059081084b94845c3","name":"multi poll two","directive":"multi-poll-two"},"language":"en"}}.payload;
+        window.parent.postMessage(interaction, '*');
+    } catch(e) {
+        if (trackJs) {
+            trackJs.track('Error resizing iframe', e);
+        } else {
+            console.error('Error resizing iframe', e);
+        }
+    }
+</script>
+
+<script type="application/json" data-payload-url="/api/translations/en">
+    {"code":200,"message":"ok","payload":{"Other Challenges":"Other Challenges","Trivia":"Trivia","Challenge":"Challenge","People knew the answer":"People knew the answer","More Challenges":"More Challenges","Your answer was":"Your answer was","Wrong!":"Wrong!","Correct":"Correct","Wrong":"Wrong","Results":"Results","Poll":"Poll","Right!":"Right!","Login with facebook":"Login with facebook","Cancel":"Cancel","Login with twitter":"Login with twitter","Type your question here...":"Type your question here...","Type your option here...":"Type your option here...","Based on":"Based on","votes":"votes","of":"of","answered same like you! Share with your friends!":"answered same like you! Share with your friends!","were right! Share your score!":"were right! Share your score!","+ Add more...":"+ Add more...","Share your score!":"Share your score!","Login with Facebook":"Login with Facebook","Login with Twitter":"Login with Twitter","think like you! Share your vote!":"think like you! Share your vote!","Share your vote!":"Share your vote!","of ":"of "," think like you! Share your vote!":" think like you! Share your vote!","Delete":"Delete","Way to go, you know stuff!":"Way to go, you know stuff!","Answered correctly":"Answered correctly","Go with the flow, we like that":"Go with the flow, we like that","Agree with you":"Agree with you","voters.":"voters.","Share your opinion!":"Share your opinion!","votes. Share your score!":"voters. Share your score!","votes. Share your vote!":"votes. Share your vote!","voters. Share your vote!":"voters. Share your vote!","voters. Share your opinion!":"voters. Share your opinion!","Amazing, you're a trendsetter!":"Amazing, you're a trendsetter!","Oops… wanna try again?":"Oops… wanna try again?","WOW! That's an AMAZING score!":"WOW! That's an AMAZING score!","out of":"out of","You got a voice of your own!":"You got a voice of your own!"}}
+</script>
+
+<script type="text/javascript">
+    window.language = 'en';
+    window.interactionId = '5605b54077aa6c1a03496a88';
+    window.resultsMode = false;
+    window.biMode = false;
+</script>
+
+<!-- TEST OBJECTS -->
+<script type="application/json" payload-url="/api/statistics">
+    {
+        "code": 200,
+        "message": "ok",
+        "payload": {
+            "options": {
+                "Wrong": 40,
+                "Correct": 60
+            }
+        }
+    }
+</script>
+
+<script src="iframe_api"></script>
+
+<script src="b80995f7.vendor.js"></script>
+
+<script src="6b994c06.scripts.js"></script>
+
+
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f3851d6d5" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" src="ping.html" style="display: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_http" src="wjDNIDNrTQG.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Facebook Cross Domain Communication Frame" aria-hidden="true" tabindex="-1" id="fb_xdm_frame_https" src="wjDNIDNrTQG(1).html" style="border: none;"></iframe></div></div></div></body></html>

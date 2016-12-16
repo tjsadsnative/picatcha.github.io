@@ -1,0 +1,1 @@
+define(["managers/edition"],function(e){var t={en:{loadMore:"Show More",page:"Page"},es:{page:"Pagina",loadMore:"Cargar más"}};return t[e.getLanguage()]})
